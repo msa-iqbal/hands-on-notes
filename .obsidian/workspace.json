@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "@web/HTML, CSS, JavaScript Project Folder Structure.md",
+                "file": "Table-Of-Contents.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTML, CSS, JavaScript Project Folder Structure"
+              "title": "Table-Of-Contents"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 279.5
   },
   "right": {
     "id": "66fe40544afcdfd8",
@@ -163,17 +163,31 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-shellcommands:Shell commands: Custom variables": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "7a36ab0ec5547c04",
   "lastOpenFiles": [
-    "@git-github/GitHub All License Intro.md",
-    "@web/HTML, CSS, JavaScript Project Folder Structure.md",
     "README.md",
-    "@web",
-    "@git-github"
+    "Table-Of-Contents.md",
+    "relatives/@web/HTML, CSS, JavaScript Project Folder Structure.md",
+    "relatives/@git-github/GitHub All License Intro.md",
+    "relatives/@web",
+    "relatives/@git-github",
+    "relatives",
+    "r/@web/HTML, CSS, JavaScript Project Folder Structure.md",
+    "r/@git-github/GitHub All License Intro.md",
+    "r/@web",
+    "r/@git-github",
+    "r",
+    "relative/@git-github/GitHub All License Intro.md",
+    "relative/@git-github",
+    "relative/@web/HTML, CSS, JavaScript Project Folder Structure.md",
+    "relative/@web",
+    "relative",
+    "New folder",
+    "View.md",
+    "@web/HTML, CSS, JavaScript Project Folder Structure.md",
+    "@git-github/GitHub All License Intro.md"
   ]
 }

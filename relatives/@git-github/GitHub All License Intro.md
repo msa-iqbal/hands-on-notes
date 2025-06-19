@@ -1,7 +1,5 @@
 Certainly! Below is a concise overview of each license from your GitHub list — focusing on their **rules, policies, and typical use cases** — followed by my **recommendation** for your "Hands-on Notes" repo.
 
----
-
 # 1. Apache License 2.0
 
 - **Permissions:** Free use, modification, distribution, private use
@@ -14,8 +12,6 @@ Certainly! Below is a concise overview of each license from your GitHub list —
     
 - **Restrictions:** Trademark use not granted
     
-
----
 
 # 2. GNU General Public License v3.0 (GPL-3.0)
 
