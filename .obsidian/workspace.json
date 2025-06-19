@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Table-Of-Contents.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Table-Of-Contents"
+              "title": "README"
             }
           }
         ]
@@ -168,8 +168,8 @@
   },
   "active": "7a36ab0ec5547c04",
   "lastOpenFiles": [
-    "README.md",
     "Table-Of-Contents.md",
+    "README.md",
     "relatives/@web/HTML, CSS, JavaScript Project Folder Structure.md",
     "relatives/@git-github/GitHub All License Intro.md",
     "relatives/@web",
