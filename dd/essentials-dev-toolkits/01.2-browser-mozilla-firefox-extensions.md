@@ -1,0 +1,29 @@
+# Firefox Extensions
+
+**Updated**: 2026-08-11
+
+| Category               | Extension                                                                                        | Description                                  | Rating |
+| ---------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------- | ------ |
+| **Ad Blocker**         | [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)                         | Blocks ads, trackers, and unwanted content   | ●●●●●  |
+| **Privacy**            | [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger17/)                     | Blocks invisible trackers                    | ●●●●●  |
+|                        | [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)                         | Protects against CDN tracking                | ●●●●○  |
+| **Security**           | [NoScript](https://addons.mozilla.org/firefox/addon/noscript/)                                   | Controls JavaScript and other active content | ●●●●●  |
+|                        | [ClearURLs](https://addons.mozilla.org/firefox/addon/clearurls/)                                 | Removes tracking parameters from URLs        | ●●●●●  |
+| **Dark Mode**          | [Dark Reader](https://addons.mozilla.org/firefox/addon/darkreader/)                              | Applies dark mode to websites                | ●●●●●  |
+| **Translator**         | [To Google Translate](https://addons.mozilla.org/firefox/addon/to-google-translate/)             | Translates selected text and web pages       | ●●●●○  |
+| **Screenshot**         | [FireShot](https://addons.mozilla.org/firefox/addon/fireshot/)                                   | Captures full web pages and screenshots      | ●●●●●  |
+| **Developer Tools**    | [React Developer Tools](https://addons.mozilla.org/firefox/addon/react-devtools/)                | Debugs React applications                    | ●●●●●  |
+|                        | [Vue.js devtools](https://addons.mozilla.org/firefox/addon/vue-js-devtools/)                     | Debugs Vue.js applications                   | ●●●●●  |
+|                        | [Redux DevTools](https://addons.mozilla.org/firefox/addon/reduxdevtools/)                        | Inspects Redux application state             | ●●●●●  |
+| **Web Development**    | [Wappalyzer](https://addons.mozilla.org/firefox/addon/wappalyzer/)                               | Identifies technologies used by websites     | ●●●●●  |
+|                        | [ColorZilla](https://addons.mozilla.org/firefox/addon/colorzilla/)                               | Color picker and web design tools            | ●●●●○  |
+|                        | [JSONView](https://addons.mozilla.org/firefox/addon/jsonview/)                                   | Formats and displays JSON data               | ●●●●○  |
+| **Productivity**       | [OneTab](https://addons.mozilla.org/firefox/addon/onetab/)                                       | Converts tabs into a list to save memory     | ●●●●●  |
+|                        | [Tree Style Tab](https://addons.mozilla.org/firefox/addon/tree-style-tab/)                       | Organizes tabs in a sidebar tree             | ●●●●●  |
+| **Notes**              | [Textmarker](https://addons.mozilla.org/firefox/addon/textmarkerpro/)                            | Highlights text on web pages                 | ●●●●○  |
+| **Password Manager**   | [Bitwarden](https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/)                | Manages passwords securely                   | ●●●●●  |
+| **Grammar Checker**    | [LanguageTool](https://addons.mozilla.org/firefox/addon/languagetool/)                           | Checks grammar and spelling                  | ●●●●●  |
+| **Picture-in-Picture** | [Video Background Play Fix](https://addons.mozilla.org/firefox/addon/video-background-play-fix/) | Helps maintain video playback in background  | ●●●●○  |
+| **Download Manager**   | [DownThemAll!](https://addons.mozilla.org/firefox/addon/downthemall/)                            | Advanced download manager                    | ●●●●●  |
+| **Markdown**           | [Markdown Viewer Webext](https://addons.mozilla.org/firefox/addon/markdown-viewer-webext/)       | Renders Markdown files in Firefox            | ●●●●○  |
+**Rating:** `●●●●●` Excellent · `●●●●○` Very Good · `●●●○○` Good · `●●○○○` Fair · `●○○○○` Limited
