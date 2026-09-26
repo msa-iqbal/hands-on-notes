@@ -19,11 +19,6 @@ hands-on-notes/
 │   ├── cpp/
 │   ├── javascript/
 │   ├── typescript/
-│   ├── python/
-│   ├── java/
-│   ├── csharp/
-│   ├── go/
-│   └── rust/
 │
 ├── 03-web/
 │   ├── html/
@@ -61,8 +56,6 @@ hands-on-notes/
 ├── 06-database/
 │   ├── sql/
 │   ├── postgresql/
-│   ├── mysql/
-│   ├── sqlite/
 │   ├── mongodb/
 │   ├── redis/
 │   ├── design/
@@ -173,17 +166,13 @@ hands-on-notes/
 ├── 15-mobile/
 │   ├── android/
 │   ├── ios/
-│   ├── react-native/
-│   └── flutter/
+│   └── react-native/
 │
 ├── 16-snippets/
 │   ├── bash/
 │   ├── powershell/
 │   ├── javascript/
 │   ├── typescript/
-│   ├── python/
-│   ├── c/
-│   ├── cpp/
 │   ├── sql/
 │   ├── html/
 │   └── css/
@@ -1184,6 +1173,7 @@ hands-on-notes/
 03-web/
 │
 ├── README.md
+├── TOOLKITS-WEB.md [OK]
 │
 ├── 01-html/
 │   ├── README.md
@@ -2089,6 +2079,7 @@ hands-on-notes/
 │
 ├── 06-validation/
 │   ├── README.md
+|   |
 │   ├── 01-input-validation.md
 │   ├── 02-schema-validation.md
 │   ├── 03-request-validation.md
@@ -2154,6 +2145,7 @@ hands-on-notes/
 │
 ├── 12-performance/
 │   ├── README.md
+|   |
 │   ├── 01-performance-basics.md
 │   ├── 02-latency.md
 │   ├── 03-throughput.md
@@ -2166,6 +2158,7 @@ hands-on-notes/
 │
 ├── 13-background-jobs/
 │   ├── README.md
+|   |
 │   ├── 01-job-queues.md
 │   ├── 02-cron-jobs.md
 │   ├── 03-workers.md
@@ -2175,6 +2168,7 @@ hands-on-notes/
 │
 ├── 14-file-processing/
 │   ├── README.md
+|   |
 │   ├── 01-file-uploads.md
 │   ├── 02-file-downloads.md
 │   ├── 03-streaming.md
@@ -2184,6 +2178,7 @@ hands-on-notes/
 │
 ├── 15-backend-architecture/
 │   ├── README.md
+|   |
 │   ├── 01-project-structure.md
 │   ├── 02-layered-architecture.md
 │   ├── 03-clean-architecture.md
@@ -2195,6 +2190,7 @@ hands-on-notes/
 │
 └── 16-production/
     ├── README.md
+    |
     ├── 01-environment-configuration.md
     ├── 02-graceful-shutdown.md
     ├── 03-health-checks.md
@@ -2217,6 +2213,7 @@ hands-on-notes/
 │
 ├── 01-fundamentals/
 │   ├── README.md
+|   |
 │   ├── 01-database-basics.md
 │   ├── 02-database-types.md
 │   ├── 03-relational-vs-non-relational.md
@@ -2340,57 +2337,164 @@ hands-on-notes/
 │       ├── 04-point-in-time-recovery.md
 │       └── 05-replication.md
 │
-├── 04-mysql/
+├── 04-mongodb/
 │   ├── README.md
-│   ├── 01-installation/
-│   ├── 02-client-tools/
-│   ├── 03-configuration/
-│   ├── 04-users-and-permissions/
-│   ├── 05-indexes/
-│   ├── 06-transactions/
-│   ├── 07-performance/
-│   ├── 08-backup-recovery/
-│   └── 09-replication/
-│
-├── 05-sqlite/
-│   ├── README.md
+│   │
 │   ├── 01-basics/
-│   ├── 02-cli/
-│   ├── 03-database-files/
-│   ├── 04-transactions/
-│   ├── 05-indexes/
-│   ├── 06-performance/
-│   └── 07-backup/
-│
-├── 06-mongodb/
-│   ├── README.md
-│   ├── 01-basics/
+│   │   ├── 01-mongodb-basics.md
+│   │   ├── 02-installation.md
+│   │   ├── 03-client-tools.md
+│   │   └── 04-configuration.md
+│   │
 │   ├── 02-documents/
+│   │   ├── 01-document-basics.md
+│   │   ├── 02-document-structure.md
+│   │   ├── 03-bson.md
+│   │   ├── 04-embedded-documents.md
+│   │   └── 05-document-modeling.md
+│   │
 │   ├── 03-collections/
+│   │   ├── 01-collection-basics.md
+│   │   ├── 02-create-collections.md
+│   │   ├── 03-capped-collections.md
+│   │   └── 04-collection-options.md
+│   │
 │   ├── 04-queries/
+│   │   ├── 01-query-basics.md
+│   │   ├── 02-query-filters.md
+│   │   ├── 03-query-operators.md
+│   │   ├── 04-projection.md
+│   │   └── 05-sorting-and-pagination.md
+│   │
 │   ├── 05-updates/
+│   │   ├── 01-insert.md
+│   │   ├── 02-update.md
+│   │   ├── 03-delete.md
+│   │   ├── 04-update-operators.md
+│   │   └── 05-upsert.md
+│   │
 │   ├── 06-indexes/
+│   │   ├── 01-index-basics.md
+│   │   ├── 02-single-field-index.md
+│   │   ├── 03-compound-index.md
+│   │   ├── 04-multikey-index.md
+│   │   ├── 05-text-index.md
+│   │   └── 06-index-performance.md
+│   │
 │   ├── 07-aggregation/
+│   │   ├── 01-aggregation-basics.md
+│   │   ├── 02-aggregation-pipeline.md
+│   │   ├── 03-match-and-project.md
+│   │   ├── 04-group-and-lookup.md
+│   │   ├── 05-unwind-and-sort.md
+│   │   └── 06-aggregation-performance.md
+│   │
 │   ├── 08-transactions/
+│   │   ├── 01-transaction-basics.md
+│   │   ├── 02-sessions.md
+│   │   ├── 03-multi-document-transactions.md
+│   │   └── 04-transaction-patterns.md
+│   │
 │   ├── 09-replication/
+│   │   ├── 01-replication-basics.md
+│   │   ├── 02-replica-set.md
+│   │   ├── 03-members-and-arbiters.md
+│   │   ├── 04-read-preference.md
+│   │   └── 05-failover-and-recovery.md
+│   │
 │   ├── 10-sharding/
+│   │   ├── 01-sharding-basics.md
+│   │   ├── 02-shard-key.md
+│   │   ├── 03-sharded-cluster.md
+│   │   ├── 04-chunk-management.md
+│   │   └── 05-sharding-performance.md
+│   │
 │   └── 11-backup-recovery/
+│       ├── 01-backup-basics.md
+│       ├── 02-mongodump.md
+│       ├── 03-mongorestore.md
+│       ├── 04-point-in-time-recovery.md
+│       └── 05-disaster-recovery.md
 │
-├── 07-redis/
+├── 05-redis/
 │   ├── README.md
+│   │
 │   ├── 01-basics/
+│   │   ├── 01-redis-basics.md
+│   │   ├── 02-installation.md
+│   │   ├── 03-client-tools.md
+│   │   └── 04-configuration.md
+│   │
 │   ├── 02-data-types/
+│   │   ├── 01-strings.md
+│   │   ├── 02-lists.md
+│   │   ├── 03-sets.md
+│   │   ├── 04-sorted-sets.md
+│   │   ├── 05-hashes.md
+│   │   ├── 06-bitmaps.md
+│   │   └── 07-hyperloglogs.md
+│   │
 │   ├── 03-commands/
+│   │   ├── 01-key-commands.md
+│   │   ├── 02-string-commands.md
+│   │   ├── 03-list-commands.md
+│   │   ├── 04-set-commands.md
+│   │   ├── 05-sorted-set-commands.md
+│   │   └── 06-hash-commands.md
+│   │
 │   ├── 04-expiration-and-ttl/
+│   │   ├── 01-expiration-basics.md
+│   │   ├── 02-ttl-and-pttl.md
+│   │   ├── 03-expire-commands.md
+│   │   └── 04-expiration-patterns.md
+│   │
 │   ├── 05-persistence/
+│   │   ├── 01-persistence-basics.md
+│   │   ├── 02-rdb.md
+│   │   ├── 03-aof.md
+│   │   ├── 04-rdb-vs-aof.md
+│   │   └── 05-persistence-configuration.md
+│   │
 │   ├── 06-pub-sub/
+│   │   ├── 01-pub-sub-basics.md
+│   │   ├── 02-publish-and-subscribe.md
+│   │   ├── 03-pattern-subscriptions.md
+│   │   └── 04-pub-sub-patterns.md
+│   │
 │   ├── 07-streams/
+│   │   ├── 01-stream-basics.md
+│   │   ├── 02-stream-commands.md
+│   │   ├── 03-consumer-groups.md
+│   │   ├── 04-message-processing.md
+│   │   └── 05-stream-patterns.md
+│   │
 │   ├── 08-transactions/
+│   │   ├── 01-transaction-basics.md
+│   │   ├── 02-multi-exec.md
+│   │   ├── 03-watch.md
+│   │   └── 04-transaction-patterns.md
+│   │
 │   ├── 09-caching/
+│   │   ├── 01-cache-basics.md
+│   │   ├── 02-cache-aside.md
+│   │   ├── 03-write-through.md
+│   │   ├── 04-write-behind.md
+│   │   └── 05-cache-invalidation.md
+│   │
 │   ├── 10-replication/
+│   │   ├── 01-replication-basics.md
+│   │   ├── 02-replica-configuration.md
+│   │   ├── 03-replication-and-failover.md
+│   │   └── 04-read-replicas.md
+│   │
 │   └── 11-clustering/
+│       ├── 01-cluster-basics.md
+│       ├── 02-hash-slots.md
+│       ├── 03-cluster-configuration.md
+│       ├── 04-cluster-failover.md
+│       └── 05-cluster-management.md
 │
-├── 08-design/
+├── 06-design/
 │   ├── README.md
 │   │
 │   ├── 01-data-modeling/
@@ -2424,8 +2528,9 @@ hands-on-notes/
 │       ├── 03-polymorphic-data.md
 │       └── 04-multi-tenant-database.md
 │
-├── 09-indexing/
+├── 07-indexing/
 │   ├── README.md
+|   |
 │   ├── 01-index-basics.md
 │   ├── 02-btree.md
 │   ├── 03-hash-index.md
@@ -2437,8 +2542,9 @@ hands-on-notes/
 │   ├── 09-index-maintenance.md
 │   └── 10-index-performance.md
 │
-├── 10-transactions/
+├── 08-transactions/
 │   ├── README.md
+|   |
 │   ├── 01-transaction-basics.md
 │   ├── 02-acid.md
 │   ├── 03-commit.md
@@ -2449,8 +2555,9 @@ hands-on-notes/
 │   ├── 08-optimistic-locking.md
 │   └── 09-pessimistic-locking.md
 │
-├── 11-backup-recovery/
+├── 09-backup-recovery/
 │   ├── README.md
+|   |
 │   ├── 01-backup-basics.md
 │   ├── 02-full-backup.md
 │   ├── 03-incremental-backup.md
@@ -2460,8 +2567,9 @@ hands-on-notes/
 │   ├── 07-disaster-recovery.md
 │   └── 08-backup-strategy.md
 │
-├── 12-replication/
+├── 10-replication/
 │   ├── README.md
+|   |
 │   ├── 01-replication-basics.md
 │   ├── 02-primary-replica.md
 │   ├── 03-synchronous-replication.md
@@ -2469,8 +2577,9 @@ hands-on-notes/
 │   ├── 05-read-replicas.md
 │   └── 06-failover.md
 │
-├── 13-performance/
+├── 11-performance/
 │   ├── README.md
+|   |
 │   ├── 01-query-performance.md
 │   ├── 02-query-plans.md
 │   ├── 03-explain.md
@@ -2480,8 +2589,9 @@ hands-on-notes/
 │   ├── 07-disk-io.md
 │   └── 08-performance-tuning.md
 │
-├── 14-orm-and-tools/
+├── 12-orm-and-tools/
 │   ├── README.md
+|   |
 │   ├── 01-orm-concepts.md
 │   ├── 02-prisma.md
 │   ├── 03-typeorm.md
@@ -2490,8 +2600,9 @@ hands-on-notes/
 │   ├── 06-migrations.md
 │   └── 07-database-clients.md
 │
-└── 15-security/
+└── 13-security/
     ├── README.md
+    |
     ├── 01-users-and-roles.md
     ├── 02-permissions.md
     ├── 03-least-privilege.md
@@ -2505,8 +2616,6 @@ hands-on-notes/
 
 # `07-os`
 
-এটা তোমার requirement-এর জন্য বিশেষ গুরুত্বপূর্ণ।
-
 ```text
 07-os/
 │
@@ -2514,6 +2623,7 @@ hands-on-notes/
 │
 ├── 01-fundamentals/
 │   ├── README.md
+|   |
 │   ├── 01-operating-system-basics.md
 │   ├── 02-kernel.md
 │   ├── 03-user-space.md
@@ -2525,7 +2635,11 @@ hands-on-notes/
 │
 ├── 02-linux/
 │   ├── README.md
+│   ├── TOOLKITS-LINUX.md
 │   │
+│   ├── 00-quick-notes/
+│   │   ├── 01-distributions.md
+|   |
 │   ├── 01-basics/
 │   │   ├── 01-distributions.md
 │   │   ├── 02-kernel.md
@@ -2613,6 +2727,7 @@ hands-on-notes/
 │
 ├── 03-windows/
 │   ├── README.md
+|   ├── TOOLKITS-WINDOWS.md [OK]
 │   │
 │   ├── 01-basics/
 │   │   ├── 01-windows-architecture.md
@@ -2709,7 +2824,8 @@ hands-on-notes/
 │
 ├── 05-android/
 │   ├── README.md
-│   │
+│   ├── TOOLKITS-ANDROID.md [OK]
+|   |
 │   ├── 01-basics/
 │   │   ├── 01-android-architecture.md
 │   │   ├── 02-aosp.md
@@ -2790,6 +2906,7 @@ hands-on-notes/
 │
 ├── 07-filesystem/
 │   ├── README.md
+|   |
 │   ├── 01-files-and-directories.md
 │   ├── 02-paths.md
 │   ├── 03-file-types.md
@@ -2802,6 +2919,7 @@ hands-on-notes/
 │
 ├── 08-process/
 │   ├── README.md
+|   |
 │   ├── 01-process-basics.md
 │   ├── 02-process-lifecycle.md
 │   ├── 03-process-states.md
@@ -2813,6 +2931,7 @@ hands-on-notes/
 │
 ├── 09-services/
 │   ├── README.md
+|   |
 │   ├── 01-service-basics.md
 │   ├── 02-daemons.md
 │   ├── 03-service-lifecycle.md
@@ -2822,6 +2941,7 @@ hands-on-notes/
 │
 ├── 10-permissions/
 │   ├── README.md
+|   |
 │   ├── 01-access-control.md
 │   ├── 02-users.md
 │   ├── 03-groups.md
@@ -2832,6 +2952,7 @@ hands-on-notes/
 │
 ├── 11-storage/
 │   ├── README.md
+|   |
 │   ├── 01-storage-basics.md
 │   ├── 02-disks.md
 │   ├── 03-partitions.md
@@ -2842,6 +2963,7 @@ hands-on-notes/
 │
 ├── 12-networking/
 │   ├── README.md
+|   |
 │   ├── 01-network-stack.md
 │   ├── 02-network-interfaces.md
 │   ├── 03-ip.md
@@ -2853,6 +2975,7 @@ hands-on-notes/
 │
 ├── 13-boot/
 │   ├── README.md
+|   |
 │   ├── 01-boot-process.md
 │   ├── 02-bios.md
 │   ├── 03-uefi.md
@@ -2862,6 +2985,7 @@ hands-on-notes/
 │
 ├── 14-security/
 │   ├── README.md
+|   |
 │   ├── 01-security-models.md
 │   ├── 02-access-control.md
 │   ├── 03-sandboxing.md
@@ -2872,6 +2996,7 @@ hands-on-notes/
 │
 ├── 15-virtualization/
 │   ├── README.md
+|   |
 │   ├── 01-virtualization-basics.md
 │   ├── 02-hypervisors.md
 │   ├── 03-type-1-vs-type-2.md
@@ -2883,6 +3008,7 @@ hands-on-notes/
 │
 └── 16-monitoring/
     ├── README.md
+    |
     ├── 01-cpu.md
     ├── 02-memory.md
     ├── 03-storage.md
@@ -2903,6 +3029,7 @@ hands-on-notes/
 │
 ├── 01-devops-fundamentals/
 │   ├── README.md
+|   |
 │   ├── 01-devops-basics.md
 │   ├── 02-development-to-production.md
 │   ├── 03-devops-lifecycle.md
@@ -3033,6 +3160,7 @@ hands-on-notes/
 │
 ├── 04-nginx/
 │   ├── README.md
+|   |
 │   ├── 01-installation.md
 │   ├── 02-configuration.md
 │   ├── 03-server-blocks.md
@@ -3077,6 +3205,7 @@ hands-on-notes/
 │
 ├── 06-github-actions/
 │   ├── README.md
+|   |
 │   ├── 01-basics.md
 │   ├── 02-workflows.md
 │   ├── 03-events.md
@@ -3243,6 +3372,7 @@ hands-on-notes/
 │
 ├── 12-secrets/
 │   ├── README.md
+|   |
 │   ├── 01-secrets-management.md
 │   ├── 02-environment-variables.md
 │   ├── 03-secret-storage.md
@@ -3252,6 +3382,7 @@ hands-on-notes/
 │
 ├── 13-infrastructure/
 │   ├── README.md
+|   |
 │   ├── 01-infrastructure-basics.md
 │   ├── 02-servers.md
 │   ├── 03-networking.md
@@ -3262,6 +3393,7 @@ hands-on-notes/
 │
 ├── 14-security/
 │   ├── README.md
+|   |
 │   ├── 01-devops-security.md
 │   ├── 02-container-security.md
 │   ├── 03-ci-cd-security.md
@@ -3271,6 +3403,7 @@ hands-on-notes/
 │
 └── 15-troubleshooting/
     ├── README.md
+    |
     ├── 01-docker.md
     ├── 02-kubernetes.md
     ├── 03-nginx.md
@@ -3289,8 +3422,10 @@ hands-on-notes/
 ```text
 09-cloud/
 ├── README.md
+|
 ├── 01-cloud-fundamentals/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-computing.md
 │   ├── 02-cloud-models.md
 │   ├── 03-service-models.md
@@ -3300,38 +3435,39 @@ hands-on-notes/
 │   ├── 07-shared-responsibility.md
 │   ├── 08-cloud-native.md
 │   └── 09-cloud-best-practices.md
+|
 ├── 02-aws/
 │   ├── README.md
+|   |
 │   ├── 01-basics/
-│   │   ├── README.md
 │   │   ├── 01-aws-overview.md
 │   │   ├── 02-account-setup.md
 │   │   ├── 03-regions-and-availability-zones.md
 │   │   ├── 04-management-console.md
 │   │   ├── 05-aws-cli.md
 │   │   └── 06-aws-sdk.md
+|   |
 │   ├── 02-compute/
-│   │   ├── README.md
 │   │   ├── 01-ec2.md
 │   │   ├── 02-ami.md
 │   │   ├── 03-auto-scaling.md
 │   │   ├── 04-elastic-load-balancing.md
 │   │   └── 05-lightsail.md
+|   |
 │   ├── 03-storage/
-│   │   ├── README.md
 │   │   ├── 01-s3.md
 │   │   ├── 02-ebs.md
 │   │   ├── 03-efs.md
 │   │   └── 04-storage-classes.md
+|   |
 │   ├── 04-database/
-│   │   ├── README.md
 │   │   ├── 01-rds.md
 │   │   ├── 02-aurora.md
 │   │   ├── 03-dynamodb.md
 │   │   ├── 04-elasticache.md
 │   │   └── 05-database-migration.md
+|   |
 │   ├── 05-networking/
-│   │   ├── README.md
 │   │   ├── 01-vpc.md
 │   │   ├── 02-subnets.md
 │   │   ├── 03-route-tables.md
@@ -3341,61 +3477,62 @@ hands-on-notes/
 │   │   ├── 07-network-acls.md
 │   │   ├── 08-route-53.md
 │   │   └── 09-vpc-peering.md
+|   |
 │   ├── 06-serverless/
-│   │   ├── README.md
 │   │   ├── 01-lambda.md
 │   │   ├── 02-api-gateway.md
 │   │   ├── 03-eventbridge.md
 │   │   └── 04-step-functions.md
+|   |
 │   ├── 07-iam/
-│   │   ├── README.md
 │   │   ├── 01-users.md
 │   │   ├── 02-groups.md
 │   │   ├── 03-roles.md
 │   │   ├── 04-policies.md
 │   │   └── 05-permissions.md
+|   |
 │   ├── 08-monitoring/
-│   │   ├── README.md
 │   │   ├── 01-cloudwatch.md
 │   │   ├── 02-cloudtrail.md
 │   │   └── 03-logging.md
+|   |
 │   └── 09-troubleshooting/
-│       ├── README.md
 │       ├── 01-ec2.md
 │       ├── 02-s3.md
 │       ├── 03-networking.md
 │       └── 04-iam.md
+|
 ├── 03-azure/
 │   ├── README.md
+|   |
 │   ├── 01-basics/
-│   │   ├── README.md
 │   │   ├── 01-azure-overview.md
 │   │   ├── 02-subscriptions.md
 │   │   ├── 03-resource-groups.md
 │   │   ├── 04-regions.md
 │   │   ├── 05-azure-portal.md
 │   │   └── 06-azure-cli.md
+|   | 
 │   ├── 02-compute/
-│   │   ├── README.md
 │   │   ├── 01-virtual-machines.md
 │   │   ├── 02-vm-scale-sets.md
 │   │   ├── 03-load-balancer.md
 │   │   └── 04-app-service.md
+|   |
 │   ├── 03-storage/
-│   │   ├── README.md
 │   │   ├── 01-storage-accounts.md
 │   │   ├── 02-blob-storage.md
 │   │   ├── 03-file-storage.md
 │   │   ├── 04-disk-storage.md
 │   │   └── 05-storage-tiers.md
+|   |
 │   ├── 04-database/
-│   │   ├── README.md
 │   │   ├── 01-azure-sql.md
 │   │   ├── 02-cosmos-db.md
 │   │   ├── 03-postgresql.md
 │   │   └── 04-mysql.md
+|   |
 │   ├── 05-networking/
-│   │   ├── README.md
 │   │   ├── 01-virtual-network.md
 │   │   ├── 02-subnets.md
 │   │   ├── 03-route-tables.md
@@ -3404,57 +3541,58 @@ hands-on-notes/
 │   │   ├── 06-application-gateway.md
 │   │   ├── 07-dns.md
 │   │   └── 08-vpn.md
+|   |
 │   ├── 06-serverless/
-│   │   ├── README.md
 │   │   ├── 01-azure-functions.md
 │   │   ├── 02-logic-apps.md
 │   │   └── 03-event-grid.md
+|   |
 │   ├── 07-identity/
-│   │   ├── README.md
 │   │   ├── 01-microsoft-entra-id.md
 │   │   ├── 02-users-and-groups.md
 │   │   ├── 03-roles.md
 │   │   └── 04-rbac.md
+|   |
 │   ├── 08-monitoring/
-│   │   ├── README.md
 │   │   ├── 01-azure-monitor.md
 │   │   ├── 02-activity-log.md
 │   │   └── 03-application-insights.md
+|   |
 │   └── 09-troubleshooting/
-│       ├── README.md
 │       ├── 01-virtual-machines.md
 │       ├── 02-storage.md
 │       ├── 03-networking.md
 │       └── 04-identity.md
+|
 ├── 04-gcp/
 │   ├── README.md
+|   |
 │   ├── 01-basics/
-│   │   ├── README.md
 │   │   ├── 01-gcp-overview.md
 │   │   ├── 02-projects.md
 │   │   ├── 03-organizations.md
 │   │   ├── 04-regions-and-zones.md
 │   │   ├── 05-cloud-console.md
 │   │   └── 06-gcloud-cli.md
+|   |
 │   ├── 02-compute/
-│   │   ├── README.md
 │   │   ├── 01-compute-engine.md
 │   │   ├── 02-managed-instance-groups.md
 │   │   ├── 03-cloud-run.md
 │   │   └── 04-load-balancing.md
+|   |
 │   ├── 03-storage/
-│   │   ├── README.md
 │   │   ├── 01-cloud-storage.md
 │   │   ├── 02-storage-classes.md
 │   │   └── 03-persistent-disk.md
+|   |
 │   ├── 04-database/
-│   │   ├── README.md
 │   │   ├── 01-cloud-sql.md
 │   │   ├── 02-firestore.md
 │   │   ├── 03-bigtable.md
 │   │   └── 04-spanner.md
+|   |
 │   ├── 05-networking/
-│   │   ├── README.md
 │   │   ├── 01-vpc.md
 │   │   ├── 02-subnets.md
 │   │   ├── 03-firewall-rules.md
@@ -3462,512 +3600,528 @@ hands-on-notes/
 │   │   ├── 05-load-balancing.md
 │   │   ├── 06-cloud-dns.md
 │   │   └── 07-vpn.md
+|   |
 │   ├── 06-serverless/
-│   │   ├── README.md
 │   │   ├── 01-cloud-functions.md
 │   │   ├── 02-cloud-run.md
 │   │   └── 03-workflows.md
+|   |
 │   ├── 07-iam/
-│   │   ├── README.md
 │   │   ├── 01-users.md
 │   │   ├── 02-service-accounts.md
 │   │   ├── 03-roles.md
 │   │   └── 04-permissions.md
+|   |
 │   ├── 08-monitoring/
-│   │   ├── README.md
 │   │   ├── 01-cloud-monitoring.md
 │   │   ├── 02-cloud-logging.md
 │   │   └── 03-error-reporting.md
+|   |
 │   └── 09-troubleshooting/
-│       ├── README.md
 │       ├── 01-compute.md
 │       ├── 02-storage.md
 │       ├── 03-networking.md
 │       └── 04-iam.md
+|   
 ├── 05-compute/
 │   ├── README.md
+|   |
 │   ├── 01-virtual-machines/
-│   │   ├── README.md
 │   │   ├── 01-vm-basics.md
 │   │   ├── 02-vm-images.md
 │   │   ├── 03-instance-types.md
 │   │   ├── 04-sizing.md
 │   │   └── 05-lifecycle.md
+|   |
 │   ├── 02-auto-scaling/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   ├── 02-horizontal-scaling.md
 │   │   ├── 03-vertical-scaling.md
 │   │   └── 04-scaling-policies.md
+|   |
 │   ├── 03-load-balancing/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   ├── 02-layer-4.md
 │   │   ├── 03-layer-7.md
 │   │   └── 04-health-checks.md
+|   |
 │   └── 04-compute-architecture/
-│       ├── README.md
 │       ├── 01-stateless-compute.md
 │       ├── 02-stateful-compute.md
 │       └── 03-scalable-compute.md
+|
 ├── 06-storage/
 │   ├── README.md
+|   |
 │   ├── 01-object-storage/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   ├── 02-buckets.md
 │   │   ├── 03-objects.md
 │   │   ├── 04-versioning.md
 │   │   └── 05-lifecycle.md
+|   |
 │   ├── 02-block-storage/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   ├── 02-volumes.md
 │   │   └── 03-snapshots.md
+|   |
 │   ├── 03-file-storage/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   ├── 02-shared-file-systems.md
 │   │   └── 03-mounting.md
+|   |
 │   ├── 04-storage-classes/
-│   │   ├── README.md
 │   │   ├── 01-hot-storage.md
 │   │   ├── 02-cool-storage.md
 │   │   └── 03-archive-storage.md
+|   |
 │   ├── 05-data-lifecycle/
-│   │   ├── README.md
 │   │   ├── 01-lifecycle-management.md
 │   │   └── 02-retention-policies.md
+|   |
 │   ├── 06-backup/
-│   │   ├── README.md
 │   │   ├── 01-storage-backup.md
 │   │   └── 02-snapshots.md
+|   |
 │   ├── 07-archival/
-│   │   ├── README.md
 │   │   └── 01-archive-strategies.md
+|   |
 │   └── 08-storage-security/
-│       ├── README.md
 │       ├── 01-encryption.md
 │       ├── 02-access-control.md
 │       └── 03-data-protection.md
+|
 ├── 07-database/
 │   ├── README.md
+|   |
 │   ├── 01-relational/
-│   │   ├── README.md
 │   │   ├── 01-managed-relational-databases.md
 │   │   └── 02-cloud-sql-patterns.md
+|   |
 │   ├── 02-nosql/
-│   │   ├── README.md
 │   │   ├── 01-managed-nosql.md
 │   │   └── 02-nosql-patterns.md
+|   |
 │   ├── 03-managed-databases/
-│   │   ├── README.md
 │   │   ├── 01-database-as-a-service.md
 │   │   └── 02-database-selection.md
+|   |
 │   ├── 04-caching/
-│   │   ├── README.md
 │   │   ├── 01-cloud-caching.md
 │   │   └── 02-distributed-caching.md
+|   |
 │   ├── 05-replication/
-│   │   ├── README.md
 │   │   ├── 01-read-replicas.md
 │   │   └── 02-database-replication.md
+|   |
 │   ├── 06-backup-and-recovery/
-│   │   ├── README.md
 │   │   ├── 01-database-backup.md
 │   │   └── 02-database-recovery.md
+|   |
 │   ├── 07-high-availability/
-│   │   ├── README.md
 │   │   └── 01-ha-database.md
+|   |
 │   └── 08-database-migration/
-│       ├── README.md
 │       ├── 01-migration-basics.md
 │       └── 02-migration-strategies.md
+|
 ├── 08-networking/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-networking/
-│   │   ├── README.md
 │   │   ├── 01-basics.md
 │   │   └── 02-network-architecture.md
+|   |
 │   ├── 02-vpc-and-vnet/
-│   │   ├── README.md
 │   │   ├── 01-vpc.md
 │   │   ├── 02-vnet.md
 │   │   └── 03-subnets.md
+|   |
 │   ├── 03-subnets/
-│   │   ├── README.md
 │   │   ├── 01-public-subnets.md
 │   │   └── 02-private-subnets.md
+|   |
 │   ├── 04-routing/
-│   │   ├── README.md
 │   │   ├── 01-route-tables.md
 │   │   └── 02-routing-strategies.md
+|   |
 │   ├── 05-internet-connectivity/
-│   │   ├── README.md
 │   │   ├── 01-internet-gateway.md
 │   │   └── 02-egress-and-ingress.md
+|   |
 │   ├── 06-nat/
-│   │   ├── README.md
 │   │   ├── 01-nat-basics.md
 │   │   └── 02-nat-gateway.md
+|   |
 │   ├── 07-firewalls/
-│   │   ├── README.md
 │   │   ├── 01-firewall-basics.md
 │   │   └── 02-security-rules.md
+|   |
 │   ├── 08-load-balancing/
-│   │   ├── README.md
 │   │   ├── 01-layer-4.md
 │   │   └── 02-layer-7.md
+|   |
 │   ├── 09-dns/
-│   │   ├── README.md
 │   │   ├── 01-cloud-dns.md
 │   │   └── 02-dns-routing.md
+|   |
 │   ├── 10-vpn/
-│   │   ├── README.md
 │   │   ├── 01-site-to-site-vpn.md
 │   │   └── 02-client-vpn.md
+|   |
 │   ├── 11-private-connectivity/
-│   │   ├── README.md
 │   │   ├── 01-private-endpoints.md
 │   │   └── 02-private-links.md
+|   |
 │   └── 12-network-security/
-│       ├── README.md
 │       ├── 01-network-security.md
 │       └── 02-network-segmentation.md
+|
 ├── 09-serverless/
 │   ├── README.md
+|   |
 │   ├── 01-fundamentals/
-│   │   ├── README.md
 │   │   ├── 01-serverless-basics.md
 │   │   ├── 02-serverless-characteristics.md
 │   │   └── 03-serverless-benefits-and-limitations.md
+|   |
 │   ├── 02-functions/
-│   │   ├── README.md
 │   │   ├── 01-function-basics.md
 │   │   ├── 02-function-lifecycle.md
 │   │   └── 03-function-runtime.md
+|   |
 │   ├── 03-api-gateways/
-│   │   ├── README.md
 │   │   ├── 01-api-gateway-basics.md
 │   │   └── 02-api-gateway-patterns.md
+|   |
 │   ├── 04-event-driven/
-│   │   ├── README.md
 │   │   ├── 01-events.md
 │   │   ├── 02-event-sources.md
 │   │   └── 03-event-processing.md
+|   |
 │   ├── 05-workflows/
-│   │   ├── README.md
 │   │   ├── 01-workflow-basics.md
 │   │   └── 02-workflow-orchestration.md
+|   |
 │   ├── 06-serverless-databases/
-│   │   ├── README.md
 │   │   └── 01-serverless-data.md
+|   |
 │   ├── 07-serverless-security/
-│   │   ├── README.md
 │   │   ├── 01-function-security.md
 │   │   └── 02-api-security.md
+|   |
 │   └── 08-serverless-architecture/
-│       ├── README.md
 │       ├── 01-serverless-patterns.md
 │       └── 02-serverless-applications.md
+|
 ├── 10-containers/
 │   ├── README.md
+|   |
 │   ├── 01-container-platforms/
-│   │   ├── README.md
 │   │   ├── 01-managed-containers.md
 │   │   └── 02-container-services.md
+|   |
 │   ├── 02-container-registries/
-│   │   ├── README.md
 │   │   ├── 01-managed-registries.md
 │   │   └── 02-image-management.md
+|   |
 │   ├── 03-managed-kubernetes/
 │   │   ├── README.md
 │   │   ├── 01-eks.md
 │   │   ├── 02-aks.md
 │   │   └── 03-gke.md
+|   |
 │   ├── 04-container-deployment/
-│   │   ├── README.md
 │   │   ├── 01-deployment-patterns.md
 │   │   └── 02-auto-scaling.md
+|   |
 │   ├── 05-container-networking/
-│   │   ├── README.md
 │   │   └── 01-cloud-container-networking.md
+|   |
 │   └── 06-container-security/
-│       ├── README.md
 │       ├── 01-container-security.md
 │       └── 02-image-security.md
+|
 ├── 11-security/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-security/
-│   │   ├── README.md
 │   │   ├── 01-security-fundamentals.md
 │   │   └── 02-security-best-practices.md
+|   |
 │   ├── 02-network-security/
-│   │   ├── README.md
 │   │   ├── 01-network-protection.md
 │   │   └── 02-network-segmentation.md
+|   |
 │   ├── 03-data-security/
-│   │   ├── README.md
 │   │   ├── 01-data-protection.md
 │   │   └── 02-data-classification.md
+|   |
 │   ├── 04-encryption/
-│   │   ├── README.md
 │   │   ├── 01-encryption-at-rest.md
 │   │   └── 02-encryption-in-transit.md
+|   |
 │   ├── 05-secrets-management/
-│   │   ├── README.md
 │   │   └── 01-cloud-secrets.md
+|   |
 │   ├── 06-security-monitoring/
-│   │   ├── README.md
 │   │   ├── 01-security-logs.md
 │   │   └── 02-security-alerts.md
+|   |
 │   ├── 07-compliance/
-│   │   ├── README.md
 │   │   └── 01-cloud-compliance.md
+|   |
 │   └── 08-security-best-practices/
-│       ├── README.md
 │       └── 01-cloud-security-best-practices.md
+|
 ├── 12-identity-and-access/
 │   ├── README.md
+|   |
 │   ├── 01-iam-fundamentals/
-│   │   ├── README.md
 │   │   ├── 01-iam-basics.md
 │   │   ├── 02-authentication.md
 │   │   └── 03-authorization.md
+|   |
 │   ├── 02-users-and-groups/
-│   │   ├── README.md
 │   │   ├── 01-users.md
 │   │   └── 02-groups.md
+|   |
 │   ├── 03-roles/
-│   │   ├── README.md
 │   │   └── 01-roles.md
+|   |
 │   ├── 04-policies/
-│   │   ├── README.md
 │   │   ├── 01-policies.md
 │   │   └── 02-policy-evaluation.md
+|   |
 │   ├── 05-service-accounts/
-│   │   ├── README.md
 │   │   └── 01-service-accounts.md
+|   |
 │   ├── 06-rbac/
-│   │   ├── README.md
 │   │   └── 01-rbac.md
+|   |
 │   ├── 07-least-privilege/
-│   │   ├── README.md
 │   │   └── 01-least-privilege.md
+|   |
 │   └── 08-federated-identity/
-│       ├── README.md
 │       ├── 01-federation.md
 │       └── 02-single-sign-on.md
+|
 ├── 13-monitoring/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-monitoring/
-│   │   ├── README.md
 │   │   └── 01-monitoring-fundamentals.md
+|   |
 │   ├── 02-metrics/
-│   │   ├── README.md
 │   │   ├── 01-metrics.md
 │   │   └── 02-custom-metrics.md
+|   |
 │   ├── 03-logs/
-│   │   ├── README.md
 │   │   └── 01-cloud-logging.md
+|   |
 │   ├── 04-traces/
-│   │   ├── README.md
 │   │   └── 01-distributed-tracing.md
+|   |
 │   ├── 05-alerting/
-│   │   ├── README.md
 │   │   └── 01-alerts.md
+|   |
 │   ├── 06-dashboards/
-│   │   ├── README.md
 │   │   └── 01-cloud-dashboards.md
+|   |
 │   └── 07-observability/
-│       ├── README.md
 │       ├── 01-cloud-observability.md
 │       └── 02-observability-patterns.md
+|
 ├── 14-cost-management/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-pricing/
-│   │   ├── README.md
 │   │   ├── 01-pricing-models.md
 │   │   └── 02-pay-as-you-go.md
+|   |
 │   ├── 02-billing/
-│   │   ├── README.md
 │   │   ├── 01-billing-basics.md
 │   │   └── 02-billing-reports.md
+|   |
 │   ├── 03-cost-estimation/
-│   │   ├── README.md
 │   │   └── 01-cost-estimation.md
+|   |
 │   ├── 04-cost-optimization/
-│   │   ├── README.md
 │   │   └── 01-cost-optimization.md
+|   |
 │   ├── 05-reserved-capacity/
-│   │   ├── README.md
 │   │   └── 01-reserved-capacity.md
+|   |
 │   ├── 06-right-sizing/
-│   │   ├── README.md
 │   │   └── 01-right-sizing.md
+|   |
 │   ├── 07-budgeting/
-│   │   ├── README.md
 │   │   └── 01-cloud-budgets.md
+|   |
 │   └── 08-cost-monitoring/
-│       ├── README.md
 │       └── 01-cost-monitoring.md
+|
 ├── 15-high-availability/
 │   ├── README.md
+|   |
 │   ├── 01-ha-fundamentals/
-│   │   ├── README.md
 │   │   ├── 01-high-availability.md
 │   │   └── 02-redundancy.md
+|   |
 │   ├── 02-redundancy/
-│   │   ├── README.md
 │   │   └── 01-redundant-systems.md
+|   |
 │   ├── 03-failover/
-│   │   ├── README.md
 │   │   └── 01-failover.md
+|   |
 │   ├── 04-load-balancing/
-│   │   ├── README.md
 │   │   └── 01-ha-load-balancing.md
+|   |
 │   ├── 05-multi-zone/
-│   │   ├── README.md
 │   │   └── 01-multi-zone.md
+|   |
 │   ├── 06-multi-region/
-│   │   ├── README.md
 │   │   └── 01-multi-region.md
+|   |
 │   └── 07-ha-patterns/
-│       ├── README.md
 │       └── 01-ha-architecture-patterns.md
+|
 ├── 16-disaster-recovery/
 │   ├── README.md
+|   |
 │   ├── 01-dr-fundamentals/
-│   │   ├── README.md
 │   │   ├── 01-disaster-recovery.md
 │   │   └── 02-business-continuity.md
+|   |
 │   ├── 02-backup/
-│   │   ├── README.md
 │   │   └── 01-cloud-backup.md
+|   |
 │   ├── 03-recovery/
-│   │   ├── README.md
 │   │   └── 01-recovery-process.md
+|   |
 │   ├── 04-rpo-and-rto/
-│   │   ├── README.md
 │   │   ├── 01-rpo.md
 │   │   └── 02-rto.md
+|   |
 │   ├── 05-failover/
-│   │   ├── README.md
 │   │   └── 01-dr-failover.md
+|   |
 │   ├── 06-business-continuity/
-│   │   ├── README.md
 │   │   └── 01-business-continuity.md
+|   |
 │   └── 07-dr-strategies/
-│       ├── README.md
 │       ├── 01-backup-and-restore.md
 │       ├── 02-pilot-light.md
 │       ├── 03-warm-standby.md
 │       └── 04-multi-site.md
+|
 ├── 17-migration/
 │   ├── README.md
+|   |
 │   ├── 01-cloud-migration/
-│   │   ├── README.md
 │   │   ├── 01-migration-fundamentals.md
 │   │   └── 02-migration-planning.md
+|   |
 │   ├── 02-migration-strategies/
-│   │   ├── README.md
 │   │   ├── 01-rehost.md
 │   │   ├── 02-replatform.md
 │   │   ├── 03-refactor.md
 │   │   ├── 04-repurchase.md
 │   │   ├── 05-retain.md
 │   │   └── 06-retire.md
+|   |
 │   ├── 03-server-migration/
-│   │   ├── README.md
 │   │   └── 01-server-migration.md
+|   |
 │   ├── 04-database-migration/
-│   │   ├── README.md
 │   │   └── 01-database-migration.md
+|   |
 │   ├── 05-application-migration/
-│   │   ├── README.md
 │   │   └── 01-application-migration.md
+|   |
 │   ├── 06-data-migration/
-│   │   ├── README.md
 │   │   └── 01-data-migration.md
+|   |
 │   └── 07-migration-planning/
-│       ├── README.md
 │       ├── 01-assessment.md
 │       └── 02-migration-roadmap.md
+|
 ├── 18-cloud-architecture/
 │   ├── README.md
+|   |
 │   ├── 01-architecture-fundamentals/
-│   │   ├── README.md
 │   │   ├── 01-cloud-architecture.md
 │   │   └── 02-well-architected-principles.md
+|   |
 │   ├── 02-scalability/
-│   │   ├── README.md
 │   │   ├── 01-horizontal-scaling.md
 │   │   └── 02-vertical-scaling.md
+|   |
 │   ├── 03-high-availability/
-│   │   ├── README.md
 │   │   └── 01-ha-architecture.md
+|   |
 │   ├── 04-resilience/
-│   │   ├── README.md
 │   │   └── 01-resilient-architecture.md
+|   |
 │   ├── 05-event-driven-architecture/
-│   │   ├── README.md
 │   │   └── 01-event-driven-cloud.md
+|   |
 │   ├── 06-microservices/
-│   │   ├── README.md
 │   │   └── 01-cloud-microservices.md
+|   |
 │   ├── 07-serverless-architecture/
-│   │   ├── README.md
 │   │   └── 01-serverless-patterns.md
+|   |
 │   ├── 08-multi-region/
-│   │   ├── README.md
 │   │   └── 01-multi-region-architecture.md
+|   |
 │   ├── 09-multi-cloud/
-│   │   ├── README.md
 │   │   └── 01-multi-cloud-architecture.md
+|   |
 │   └── 10-reference-architectures/
-│       ├── README.md
 │       ├── 01-three-tier-application.md
 │       ├── 02-web-application.md
 │       ├── 03-microservices-application.md
 │       └── 04-serverless-application.md
+|
 └── 19-troubleshooting/
     ├── README.md
+    |
     ├── 01-compute/
-    │   ├── README.md
     │   ├── 01-vm-issues.md
     │   └── 02-scaling-issues.md
+    |
     ├── 02-storage/
-    │   ├── README.md
     │   ├── 01-storage-issues.md
     │   └── 02-permission-issues.md
+    |
     ├── 03-database/
-    │   ├── README.md
     │   └── 01-database-issues.md
+    |
     ├── 04-networking/
-    │   ├── README.md
     │   ├── 01-connectivity-issues.md
     │   ├── 02-dns-issues.md
     │   └── 03-routing-issues.md
+    |
     ├── 05-serverless/
-    │   ├── README.md
     │   └── 01-function-issues.md
+    |
     ├── 06-iam/
-    │   ├── README.md
     │   └── 01-access-issues.md
+    |
     ├── 07-security/
-    │   ├── README.md
     │   └── 01-security-issues.md
+    |
     ├── 08-monitoring/
-    │   ├── README.md
     │   └── 01-monitoring-issues.md
+    |
     ├── 09-aws/
-    │   ├── README.md
     │   └── 01-aws-troubleshooting.md
+    |
     ├── 10-azure/
-    │   ├── README.md
     │   └── 01-azure-troubleshooting.md
+    |
     └── 11-gcp/
-        ├── README.md
         └── 01-gcp-troubleshooting.md
 ```
 
@@ -3978,8 +4132,10 @@ hands-on-notes/
 ```text
 10-engineering/
 ├── README.md
+|
 ├── 01-clean-code/
 │   ├── README.md
+|   |
 │   ├── 01-clean-code.md
 │   ├── 02-naming.md
 │   ├── 03-functions.md
@@ -3988,8 +4144,10 @@ hands-on-notes/
 │   ├── 06-code-organization.md
 │   ├── 07-code-smells.md
 │   └── 08-practical-examples.md
+|
 ├── 02-solid/
 │   ├── README.md
+|   |
 │   ├── 01-solid-overview.md
 │   ├── 02-single-responsibility.md
 │   ├── 03-open-closed.md
@@ -3997,8 +4155,10 @@ hands-on-notes/
 │   ├── 05-interface-segregation.md
 │   ├── 06-dependency-inversion.md
 │   └── 07-practical-examples.md
+|
 ├── 03-design-patterns/
 │   ├── README.md
+|   |
 │   ├── 01-patterns-overview.md
 │   ├── 02-creational-patterns.md
 │   ├── 03-structural-patterns.md
@@ -4014,8 +4174,10 @@ hands-on-notes/
 │   ├── 13-observer.md
 │   ├── 14-command.md
 │   └── 15-template-method.md
+|
 ├── 04-refactoring/
 │   ├── README.md
+|   |
 │   ├── 01-refactoring-basics.md
 │   ├── 02-code-smells.md
 │   ├── 03-extract-method.md
@@ -4025,8 +4187,10 @@ hands-on-notes/
 │   ├── 07-remove-duplication.md
 │   ├── 08-replace-complex-logic.md
 │   └── 09-safe-refactoring.md
+|
 ├── 05-debugging/
 │   ├── README.md
+|   |
 │   ├── 01-debugging-fundamentals.md
 │   ├── 02-debugging-workflow.md
 │   ├── 03-breakpoints.md
@@ -4036,8 +4200,10 @@ hands-on-notes/
 │   ├── 07-performance-debugging.md
 │   ├── 08-production-debugging.md
 │   └── 09-debugging-strategies.md
+|
 ├── 06-testing/
 │   ├── README.md
+|   |
 │   ├── 01-testing-fundamentals.md
 │   ├── 02-test-pyramid.md
 │   ├── 03-unit-testing.md
@@ -4052,8 +4218,10 @@ hands-on-notes/
 │   ├── 12-test-driven-development.md
 │   ├── 13-behavior-driven-development.md
 │   └── 14-testing-best-practices.md
+|
 ├── 07-code-review/
 │   ├── README.md
+|   |
 │   ├── 01-code-review-basics.md
 │   ├── 02-review-workflow.md
 │   ├── 03-review-checklist.md
@@ -4062,8 +4230,10 @@ hands-on-notes/
 │   ├── 06-receiving-feedback.md
 │   ├── 07-pull-request-review.md
 │   └── 08-code-review-best-practices.md
+|
 ├── 08-documentation/
 │   ├── README.md
+|   |
 │   ├── 01-documentation-fundamentals.md
 │   ├── 02-code-documentation.md
 │   ├── 03-api-documentation.md
@@ -4072,8 +4242,10 @@ hands-on-notes/
 │   ├── 06-changelogs.md
 │   ├── 07-runbooks.md
 │   └── 08-documentation-best-practices.md
+|
 └── 09-best-practices/
     ├── README.md
+    |
     ├── 01-software-engineering-principles.md
     ├── 02-code-quality.md
     ├── 03-maintainability.md
@@ -4095,8 +4267,10 @@ hands-on-notes/
 ```text
 11-architecture/
 ├── README.md
+|
 ├── 01-system-design/
 │   ├── README.md
+|   |
 │   ├── 01-system-design-fundamentals.md
 │   ├── 02-requirements.md
 │   ├── 03-functional-requirements.md
@@ -4106,8 +4280,10 @@ hands-on-notes/
 │   ├── 07-data-flow.md
 │   ├── 08-system-architecture.md
 │   └── 09-system-design-process.md
+|   
 ├── 02-software-architecture/
 │   ├── README.md
+|   |
 │   ├── 01-architecture-fundamentals.md
 │   ├── 02-layered-architecture.md
 │   ├── 03-client-server.md
@@ -4117,8 +4293,10 @@ hands-on-notes/
 │   ├── 07-onion-architecture.md
 │   ├── 08-event-driven-architecture.md
 │   └── 09-architecture-principles.md
+|
 ├── 03-api-design/
 │   ├── README.md
+|   |
 │   ├── 01-api-design-fundamentals.md
 │   ├── 02-resource-design.md
 │   ├── 03-api-versioning.md
@@ -4128,8 +4306,10 @@ hands-on-notes/
 │   ├── 07-idempotency.md
 │   ├── 08-rate-limiting.md
 │   └── 09-api-best-practices.md
+|
 ├── 04-scalability/
 │   ├── README.md
+|   |
 │   ├── 01-scalability-fundamentals.md
 │   ├── 02-horizontal-scaling.md
 │   ├── 03-vertical-scaling.md
@@ -4139,8 +4319,10 @@ hands-on-notes/
 │   ├── 07-read-scaling.md
 │   ├── 08-write-scaling.md
 │   └── 09-scalability-patterns.md
+|
 ├── 05-reliability/
 │   ├── README.md
+|   |
 │   ├── 01-reliability-fundamentals.md
 │   ├── 02-availability.md
 │   ├── 03-fault-tolerance.md
@@ -4151,8 +4333,10 @@ hands-on-notes/
 │   ├── 08-timeouts.md
 │   ├── 09-circuit-breaker.md
 │   └── 10-resilience-patterns.md
+|
 ├── 06-caching/
 │   ├── README.md
+|   |
 │   ├── 01-caching-fundamentals.md
 │   ├── 02-cache-aside.md
 │   ├── 03-read-through.md
@@ -4162,8 +4346,10 @@ hands-on-notes/
 │   ├── 07-ttl.md
 │   ├── 08-distributed-caching.md
 │   └── 09-caching-patterns.md
+|
 ├── 07-queues/
 │   ├── README.md
+|   |
 │   ├── 01-queue-fundamentals.md
 │   ├── 02-producers-and-consumers.md
 │   ├── 03-message-ordering.md
@@ -4172,8 +4358,10 @@ hands-on-notes/
 │   ├── 06-backpressure.md
 │   ├── 07-priority-queues.md
 │   └── 08-queue-patterns.md
+|
 ├── 08-messaging/
 │   ├── README.md
+|   |
 │   ├── 01-messaging-fundamentals.md
 │   ├── 02-pub-sub.md
 │   ├── 03-message-brokers.md
@@ -4183,8 +4371,10 @@ hands-on-notes/
 │   ├── 07-message-delivery-semantics.md
 │   ├── 08-event-driven-systems.md
 │   └── 09-messaging-patterns.md
+|
 ├── 09-microservices/
 │   ├── README.md
+|   |
 │   ├── 01-microservices-fundamentals.md
 │   ├── 02-service-boundaries.md
 │   ├── 03-service-communication.md
@@ -4196,8 +4386,10 @@ hands-on-notes/
 │   ├── 09-circuit-breaker.md
 │   ├── 10-observability.md
 │   └── 11-microservices-patterns.md
+|
 ├── 10-distributed-systems/
 │   ├── README.md
+|   |
 │   ├── 01-distributed-systems-fundamentals.md
 │   ├── 02-distributed-computing.md
 │   ├── 03-consistency.md
@@ -4211,8 +4403,10 @@ hands-on-notes/
 │   ├── 11-partitioning.md
 │   ├── 12-eventual-consistency.md
 │   └── 13-distributed-systems-patterns.md
+|
 └── 11-domain-driven-design/
     ├── README.md
+    |
     ├── 01-ddd-fundamentals.md
     ├── 02-domain-model.md
     ├── 03-entities.md
@@ -4233,8 +4427,10 @@ hands-on-notes/
 ```text
 12-algorithms/
 ├── README.md
+|
 ├── 01-complexity/
 │   ├── README.md
+|   | 
 │   ├── 01-time-complexity.md
 │   ├── 02-space-complexity.md
 │   ├── 03-big-o.md
@@ -4242,8 +4438,10 @@ hands-on-notes/
 │   ├── 05-big-theta.md
 │   ├── 06-best-average-worst-case.md
 │   └── 07-complexity-analysis.md
+|
 ├── 02-arrays/
 │   ├── README.md
+|   |
 │   ├── 01-array-fundamentals.md
 │   ├── 02-static-and-dynamic-arrays.md
 │   ├── 03-array-traversal.md
@@ -4252,8 +4450,10 @@ hands-on-notes/
 │   ├── 06-sliding-window.md
 │   ├── 07-prefix-sum.md
 │   └── 08-array-problems.md
+|
 ├── 03-strings/
 │   ├── README.md
+|   |
 │   ├── 01-string-fundamentals.md
 │   ├── 02-string-traversal.md
 │   ├── 03-string-manipulation.md
@@ -4262,8 +4462,10 @@ hands-on-notes/
 │   ├── 06-anagrams.md
 │   ├── 07-string-patterns.md
 │   └── 08-string-problems.md
+|
 ├── 04-linked-list/
 │   ├── README.md
+|   |
 │   ├── 01-linked-list-fundamentals.md
 │   ├── 02-singly-linked-list.md
 │   ├── 03-doubly-linked-list.md
@@ -4272,8 +4474,10 @@ hands-on-notes/
 │   ├── 06-reversal.md
 │   ├── 07-fast-and-slow-pointers.md
 │   └── 08-linked-list-problems.md
+|
 ├── 05-stack/
 │   ├── README.md
+|   |
 │   ├── 01-stack-fundamentals.md
 │   ├── 02-stack-implementation.md
 │   ├── 03-monotonic-stack.md
@@ -4281,8 +4485,10 @@ hands-on-notes/
 │   ├── 05-parentheses-matching.md
 │   ├── 06-undo-and-backtracking.md
 │   └── 07-stack-problems.md
+|
 ├── 06-queue/
 │   ├── README.md
+|   |
 │   ├── 01-queue-fundamentals.md
 │   ├── 02-queue-implementation.md
 │   ├── 03-circular-queue.md
@@ -4290,8 +4496,10 @@ hands-on-notes/
 │   ├── 05-priority-queue.md
 │   ├── 06-monotonic-queue.md
 │   └── 07-queue-problems.md
+|
 ├── 07-hash-table/
 │   ├── README.md
+|   |
 │   ├── 01-hash-table-fundamentals.md
 │   ├── 02-hash-functions.md
 │   ├── 03-collision-handling.md
@@ -4300,8 +4508,10 @@ hands-on-notes/
 │   ├── 06-hash-map.md
 │   ├── 07-hash-set.md
 │   └── 08-hash-table-problems.md
+|
 ├── 08-tree/
 │   ├── README.md
+|   |
 │   ├── 01-tree-fundamentals.md
 │   ├── 02-binary-tree.md
 │   ├── 03-tree-traversal.md
@@ -4312,8 +4522,10 @@ hands-on-notes/
 │   ├── 08-segment-tree.md
 │   ├── 09-fenwick-tree.md
 │   └── 10-tree-problems.md
+|
 ├── 09-heap/
 │   ├── README.md
+|   |
 │   ├── 01-heap-fundamentals.md
 │   ├── 02-min-heap.md
 │   ├── 03-max-heap.md
@@ -4321,8 +4533,10 @@ hands-on-notes/
 │   ├── 05-priority-queue.md
 │   ├── 06-heap-sort.md
 │   └── 07-heap-problems.md
+|
 ├── 10-graph/
 │   ├── README.md
+|   |
 │   ├── 01-graph-fundamentals.md
 │   ├── 02-graph-representation.md
 │   ├── 03-breadth-first-search.md
@@ -4337,8 +4551,10 @@ hands-on-notes/
 │   ├── 12-prims.md
 │   ├── 13-union-find.md
 │   └── 14-graph-problems.md
+|
 ├── 11-sorting/
 │   ├── README.md
+|   |
 │   ├── 01-sorting-fundamentals.md
 │   ├── 02-bubble-sort.md
 │   ├── 03-selection-sort.md
@@ -4350,8 +4566,10 @@ hands-on-notes/
 │   ├── 09-radix-sort.md
 │   ├── 10-bucket-sort.md
 │   └── 11-sorting-comparison.md
+|
 ├── 12-searching/
 │   ├── README.md
+|   |
 │   ├── 01-searching-fundamentals.md
 │   ├── 02-linear-search.md
 │   ├── 03-binary-search.md
@@ -4359,8 +4577,10 @@ hands-on-notes/
 │   ├── 05-search-on-answer.md
 │   ├── 06-two-pointer-search.md
 │   └── 07-searching-problems.md
+|
 ├── 13-recursion/
 │   ├── README.md
+|   |
 │   ├── 01-recursion-fundamentals.md
 │   ├── 02-base-case.md
 │   ├── 03-recursive-case.md
@@ -4368,8 +4588,10 @@ hands-on-notes/
 │   ├── 05-tail-recursion.md
 │   ├── 06-backtracking.md
 │   └── 07-recursion-problems.md
+|
 ├── 14-greedy/
 │   ├── README.md
+|   |
 │   ├── 01-greedy-fundamentals.md
 │   ├── 02-greedy-choice.md
 │   ├── 03-activity-selection.md
@@ -4377,8 +4599,10 @@ hands-on-notes/
 │   ├── 05-fractional-knapsack.md
 │   ├── 06-huffman-coding.md
 │   └── 07-greedy-problems.md
+|
 ├── 15-dynamic-programming/
 │   ├── README.md
+|   |
 │   ├── 01-dp-fundamentals.md
 │   ├── 02-overlapping-subproblems.md
 │   ├── 03-optimal-substructure.md
@@ -4391,6 +4615,7 @@ hands-on-notes/
 │   ├── 10-longest-increasing-subsequence.md
 │   ├── 11-coin-change.md
 │   └── 12-dynamic-programming-problems.md
+|
 └── 16-problem-solving/
     ├── README.md
     ├── 01-problem-solving-fundamentals.md
@@ -4416,8 +4641,10 @@ hands-on-notes/
 ```text
 13-security/
 ├── README.md
+|
 ├── 01-fundamentals/
 │   ├── README.md
+|   |
 │   ├── 01-security-fundamentals.md
 │   ├── 02-security-principles.md
 │   ├── 03-confidentiality-integrity-availability.md
@@ -4427,8 +4654,10 @@ hands-on-notes/
 │   ├── 07-security-controls.md
 │   ├── 08-defense-in-depth.md
 │   └── 09-security-best-practices.md
+|
 ├── 02-web/
 │   ├── README.md
+|   |
 │   ├── 01-web-security-fundamentals.md
 │   ├── 02-owasp-top-10.md
 │   ├── 03-sql-injection.md
@@ -4441,8 +4670,10 @@ hands-on-notes/
 │   ├── 10-path-traversal.md
 │   ├── 11-security-headers.md
 │   └── 12-web-security-best-practices.md
+|
 ├── 03-auth/
 │   ├── README.md
+|   |
 │   ├── 01-authentication-fundamentals.md
 │   ├── 02-authorization.md
 │   ├── 03-password-authentication.md
@@ -4453,8 +4684,10 @@ hands-on-notes/
 │   ├── 08-attribute-based-access-control.md
 │   ├── 09-permission-models.md
 │   └── 10-authentication-best-practices.md
+|
 ├── 04-cryptography/
 │   ├── README.md
+|   |
 │   ├── 01-cryptography-fundamentals.md
 │   ├── 02-symmetric-encryption.md
 │   ├── 03-asymmetric-encryption.md
@@ -4465,8 +4698,10 @@ hands-on-notes/
 │   ├── 08-randomness.md
 │   ├── 09-key-exchange.md
 │   └── 10-cryptography-best-practices.md
+|
 ├── 05-tls/
 │   ├── README.md
+|   |
 │   ├── 01-tls-fundamentals.md
 │   ├── 02-ssl-vs-tls.md
 │   ├── 03-tls-handshake.md
@@ -4477,8 +4712,10 @@ hands-on-notes/
 │   ├── 08-cipher-suites.md
 │   ├── 09-mutual-tls.md
 │   └── 10-tls-best-practices.md
+|
 ├── 06-oauth/
 │   ├── README.md
+|   |
 │   ├── 01-oauth-fundamentals.md
 │   ├── 02-oauth-roles.md
 │   ├── 03-oauth-flows.md
@@ -4489,8 +4726,10 @@ hands-on-notes/
 │   ├── 08-scopes-and-consent.md
 │   ├── 09-openid-connect.md
 │   └── 10-oauth-security-best-practices.md
+|
 ├── 07-jwt/
 │   ├── README.md
+|   |
 │   ├── 01-jwt-fundamentals.md
 │   ├── 02-jwt-structure.md
 │   ├── 03-jwt-claims.md
@@ -4501,8 +4740,10 @@ hands-on-notes/
 │   ├── 08-token-storage.md
 │   ├── 09-jwt-security-risks.md
 │   └── 10-jwt-best-practices.md
+|
 ├── 08-secrets/
 │   ├── README.md
+|   |
 │   ├── 01-secrets-management-fundamentals.md
 │   ├── 02-environment-variables.md
 │   ├── 03-configuration-files.md
@@ -4513,6 +4754,7 @@ hands-on-notes/
 │   ├── 08-secret-scanning.md
 │   ├── 09-secret-vaults.md
 │   └── 10-secrets-best-practices.md
+|
 └── 09-secure-coding/
     ├── README.md
     ├── 01-secure-coding-fundamentals.md
@@ -4537,8 +4779,10 @@ hands-on-notes/
 ```text
 14-tools/
 ├── README.md
+|
 ├── 01-vscode/
 │   ├── README.md
+|   |
 │   ├── 01-vscode-fundamentals.md
 │   ├── 02-installation.md
 │   ├── 03-settings.md
@@ -4550,8 +4794,10 @@ hands-on-notes/
 │   ├── 09-tasks.md
 │   ├── 10-remote-development.md
 │   └── 11-troubleshooting.md
+|
 ├── 02-vim/
 │   ├── README.md
+|   |
 │   ├── 01-vim-fundamentals.md
 │   ├── 02-modes.md
 │   ├── 03-navigation.md
@@ -4562,8 +4808,10 @@ hands-on-notes/
 │   ├── 08-registers-and-macros.md
 │   ├── 09-configuration.md
 │   └── 10-vim-commands.md
+|
 ├── 03-postman/
 │   ├── README.md
+|   |
 │   ├── 01-postman-fundamentals.md
 │   ├── 02-requests.md
 │   ├── 03-collections.md
@@ -4574,8 +4822,10 @@ hands-on-notes/
 │   ├── 08-scripts.md
 │   ├── 09-mocking.md
 │   └── 10-cli-and-automation.md
+|
 ├── 04-curl/
 │   ├── README.md
+|   |
 │   ├── 01-curl-fundamentals.md
 │   ├── 02-http-requests.md
 │   ├── 03-get-and-post.md
@@ -4586,8 +4836,10 @@ hands-on-notes/
 │   ├── 08-file-upload-and-download.md
 │   ├── 09-proxy-and-tls.md
 │   └── 10-curl-examples.md
+|
 ├── 05-jq/
 │   ├── README.md
+|   |
 │   ├── 01-jq-fundamentals.md
 │   ├── 02-selecting-data.md
 │   ├── 03-filtering.md
@@ -4597,8 +4849,10 @@ hands-on-notes/
 │   ├── 07-functions.md
 │   ├── 08-formatting-output.md
 │   └── 09-jq-examples.md
+|
 ├── 06-grep/
 │   ├── README.md
+|   |
 │   ├── 01-grep-fundamentals.md
 │   ├── 02-pattern-searching.md
 │   ├── 03-options.md
@@ -4606,8 +4860,10 @@ hands-on-notes/
 │   ├── 05-recursive-search.md
 │   ├── 06-context-lines.md
 │   └── 07-grep-examples.md
+|
 ├── 07-sed/
 │   ├── README.md
+|   |
 │   ├── 01-sed-fundamentals.md
 │   ├── 02-printing.md
 │   ├── 03-substitution.md
@@ -4616,8 +4872,10 @@ hands-on-notes/
 │   ├── 06-addressing.md
 │   ├── 07-regular-expressions.md
 │   └── 08-sed-examples.md
+|
 ├── 08-awk/
 │   ├── README.md
+|   |
 │   ├── 01-awk-fundamentals.md
 │   ├── 02-fields-and-records.md
 │   ├── 03-patterns-and-actions.md
@@ -4626,8 +4884,10 @@ hands-on-notes/
 │   ├── 06-loops.md
 │   ├── 07-functions.md
 │   └── 08-awk-examples.md
+|
 ├── 09-npm/
 │   ├── README.md
+|   |
 │   ├── 01-npm-fundamentals.md
 │   ├── 02-installation.md
 │   ├── 03-package-json.md
@@ -4638,8 +4898,10 @@ hands-on-notes/
 │   ├── 08-publishing-packages.md
 │   ├── 09-npm-security.md
 │   └── 10-npm-commands.md
+|
 ├── 10-pnpm/
 │   ├── README.md
+|   |
 │   ├── 01-pnpm-fundamentals.md
 │   ├── 02-installation.md
 │   ├── 03-package-management.md
@@ -4650,6 +4912,7 @@ hands-on-notes/
 │   ├── 08-pnpm-scripts.md
 │   ├── 09-pnpm-security.md
 │   └── 10-pnpm-commands.md
+|
 └── 11-make/
     ├── README.md
     ├── 01-make-fundamentals.md
@@ -4671,8 +4934,10 @@ hands-on-notes/
 ```text
 15-mobile/
 ├── README.md
+|
 ├── 01-android/
 │   ├── README.md
+|   |
 │   ├── 01-android-fundamentals.md
 │   ├── 02-android-studio.md
 │   ├── 03-project-structure.md
@@ -4692,8 +4957,10 @@ hands-on-notes/
 │   ├── 17-performance.md
 │   ├── 18-security.md
 │   └── 19-publishing.md
+|
 ├── 02-ios/
 │   ├── README.md
+|   |
 │   ├── 01-ios-fundamentals.md
 │   ├── 02-xcode.md
 │   ├── 03-project-structure.md
@@ -4711,36 +4978,19 @@ hands-on-notes/
 │   ├── 15-performance.md
 │   ├── 16-security.md
 │   └── 17-publishing.md
-├── 03-react-native/
-│   ├── README.md
-│   ├── 01-react-native-fundamentals.md
-│   ├── 02-environment-setup.md
-│   ├── 03-project-structure.md
-│   ├── 04-components.md
-│   ├── 05-styling.md
-│   ├── 06-navigation.md
-│   ├── 07-state-management.md
-│   ├── 08-platform-apis.md
-│   ├── 09-native-modules.md
-│   ├── 10-networking.md
-│   ├── 11-storage.md
-│   ├── 12-permissions.md
-│   ├── 13-testing.md
-│   ├── 14-performance.md
-│   ├── 15-debugging.md
-│   ├── 16-security.md
-│   └── 17-publishing.md
-└── 04-flutter/
+|
+└── 03-react-native/
     ├── README.md
-    ├── 01-flutter-fundamentals.md
+    |
+    ├── 01-react-native-fundamentals.md
     ├── 02-environment-setup.md
     ├── 03-project-structure.md
-    ├── 04-dart-fundamentals.md
-    ├── 05-widgets.md
-    ├── 06-layouts.md
-    ├── 07-navigation.md
-    ├── 08-state-management.md
-    ├── 09-platform-apis.md
+    ├── 04-components.md
+    ├── 05-styling.md
+    ├── 06-navigation.md
+    ├── 07-state-management.md
+    ├── 08-platform-apis.md
+    ├── 09-native-modules.md
     ├── 10-networking.md
     ├── 11-storage.md
     ├── 12-permissions.md
@@ -4758,8 +5008,10 @@ hands-on-notes/
 ```text
 16-snippets/
 ├── README.md
+|
 ├── 01-bash/
 │   ├── README.md
+|   |
 │   ├── 01-variables.md
 │   ├── 02-conditions.md
 │   ├── 03-loops.md
@@ -4770,8 +5022,10 @@ hands-on-notes/
 │   ├── 08-processes.md
 │   ├── 09-networking.md
 │   └── 10-system-administration.md
+|
 ├── 02-powershell/
 │   ├── README.md
+|   |
 │   ├── 01-variables.md
 │   ├── 02-conditions.md
 │   ├── 03-loops.md
@@ -4782,8 +5036,10 @@ hands-on-notes/
 │   ├── 08-networking.md
 │   ├── 09-registry.md
 │   └── 10-system-administration.md
+|
 ├── 03-javascript/
 │   ├── README.md
+|   |
 │   ├── 01-arrays.md
 │   ├── 02-objects.md
 │   ├── 03-strings.md
@@ -4794,8 +5050,10 @@ hands-on-notes/
 │   ├── 08-promises.md
 │   ├── 09-fetch.md
 │   └── 10-common-tasks.md
+|
 ├── 04-typescript/
 │   ├── README.md
+|   |
 │   ├── 01-types.md
 │   ├── 02-interfaces.md
 │   ├── 03-types-and-unions.md
@@ -4806,44 +5064,10 @@ hands-on-notes/
 │   ├── 08-arrays.md
 │   ├── 09-error-handling.md
 │   └── 10-common-tasks.md
-├── 05-python/
+|
+├── 05-sql/
 │   ├── README.md
-│   ├── 01-strings.md
-│   ├── 02-lists.md
-│   ├── 03-dictionaries.md
-│   ├── 04-sets.md
-│   ├── 05-functions.md
-│   ├── 06-files.md
-│   ├── 07-json.md
-│   ├── 08-regex.md
-│   ├── 09-http-requests.md
-│   └── 10-common-tasks.md
-├── 06-c/
-│   ├── README.md
-│   ├── 01-strings.md
-│   ├── 02-arrays.md
-│   ├── 03-pointers.md
-│   ├── 04-structs.md
-│   ├── 05-files.md
-│   ├── 06-memory.md
-│   ├── 07-linked-list.md
-│   ├── 08-processes.md
-│   ├── 09-networking.md
-│   └── 10-common-tasks.md
-├── 07-cpp/
-│   ├── README.md
-│   ├── 01-strings.md
-│   ├── 02-vectors.md
-│   ├── 03-arrays.md
-│   ├── 04-maps-and-sets.md
-│   ├── 05-functions.md
-│   ├── 06-classes.md
-│   ├── 07-pointers-and-references.md
-│   ├── 08-stl.md
-│   ├── 09-files.md
-│   └── 10-common-tasks.md
-├── 08-sql/
-│   ├── README.md
+|   |
 │   ├── 01-select.md
 │   ├── 02-insert.md
 │   ├── 03-update.md
@@ -4854,8 +5078,10 @@ hands-on-notes/
 │   ├── 08-cte.md
 │   ├── 09-window-functions.md
 │   └── 10-common-tasks.md
-├── 09-html/
+|
+├── 06-html/
 │   ├── README.md
+|   |
 │   ├── 01-document-structure.md
 │   ├── 02-headings-and-text.md
 │   ├── 03-links.md
@@ -4866,8 +5092,10 @@ hands-on-notes/
 │   ├── 08-semantic-elements.md
 │   ├── 09-meta-tags.md
 │   └── 10-common-tasks.md
-└── 10-css/
+|
+└── 07-css/
     ├── README.md
+    |
     ├── 01-selectors.md
     ├── 02-colors-and-backgrounds.md
     ├── 03-box-model.md
@@ -4887,115 +5115,134 @@ hands-on-notes/
 ```text
 17-recipes/
 ├── README.md
+|
 ├── 01-git/
 │   ├── README.md
-│   ├── recover-deleted-branch.md
-│   ├── recover-lost-commit.md
-│   ├── rewrite-last-commit.md
-│   ├── squash-commits.md
-│   ├── remove-sensitive-file-from-history.md
-│   ├── undo-pushed-commit.md
-│   ├── resolve-merge-conflict.md
-│   ├── create-and-push-tag.md
-│   └── migrate-repository.md
+|   |
+│   ├── 01-recover-deleted-branch.md
+│   ├── 02-recover-lost-commit.md
+│   ├── 03-rewrite-last-commit.md
+│   ├── 04-squash-commits.md
+│   ├── 05-remove-sensitive-file-from-history.md
+│   ├── 06-undo-pushed-commit.md
+│   ├── 07-resolve-merge-conflict.md
+│   ├── 08-create-and-push-tag.md
+│   └── 09-migrate-repository.md
+|
 ├── 02-linux/
 │   ├── README.md
-│   ├── mount-disk.md
-│   ├── mount-disk-at-boot.md
-│   ├── create-systemd-service.md
-│   ├── create-linux-user.md
-│   ├── configure-ssh-server.md
-│   ├── configure-firewall.md
-│   ├── setup-samba-share.md
-│   ├── setup-cron-job.md
-│   ├── manage-disk-space.md
-│   └── create-backup-script.md
+|   |
+│   ├── 01-mount-disk.md
+│   ├── 02-mount-disk-at-boot.md
+│   ├── 03-create-systemd-service.md
+│   ├── 04-create-linux-user.md
+│   ├── 05-configure-ssh-server.md
+│   ├── 06-configure-firewall.md
+│   ├── 07-setup-samba-share.md
+│   ├── 08-setup-cron-job.md
+│   ├── 09-manage-disk-space.md
+│   └── 10-create-backup-script.md
+|
 ├── 03-windows/
 │   ├── README.md
-│   ├── create-local-user.md
-│   ├── configure-remote-desktop.md
-│   ├── configure-windows-service.md
-│   ├── configure-firewall-rule.md
-│   ├── setup-network-share.md
-│   ├── map-network-drive.md
-│   ├── manage-environment-variables.md
-│   └── create-scheduled-task.md
+|   |
+│   ├── 01-create-local-user.md
+│   ├── 02-configure-remote-desktop.md
+│   ├── 03-configure-windows-service.md
+│   ├── 04-configure-firewall-rule.md
+│   ├── 05-setup-network-share.md
+│   ├── 06-map-network-drive.md
+│   ├── 07-manage-environment-variables.md
+│   └── 08-create-scheduled-task.md
+|
 ├── 04-docker/
 │   ├── README.md
-│   ├── setup-node-project.md
-│   ├── setup-python-project.md
-│   ├── create-dockerfile.md
-│   ├── setup-docker-compose.md
-│   ├── persist-container-data.md
-│   ├── connect-containers.md
-│   ├── build-and-push-image.md
-│   ├── run-development-environment.md
-│   └── clean-docker-environment.md
+|   |
+│   ├── 01-setup-node-project.md
+│   ├── 02-setup-python-project.md
+│   ├── 03-create-dockerfile.md
+│   ├── 04-setup-docker-compose.md
+│   ├── 05-persist-container-data.md
+│   ├── 06-connect-containers.md
+│   ├── 07-build-and-push-image.md
+│   ├── 08-run-development-environment.md
+│   └── 09-clean-docker-environment.md
+|
 ├── 05-database/
 │   ├── README.md
-│   ├── backup-postgresql.md
-│   ├── restore-postgresql.md
-│   ├── migrate-postgresql.md
-│   ├── backup-mysql.md
-│   ├── restore-mysql.md
-│   ├── backup-mongodb.md
-│   ├── restore-mongodb.md
-│   ├── backup-sqlite.md
-│   └── migrate-database.md
+|   |
+│   ├── 01-backup-postgresql.md
+│   ├── 02-restore-postgresql.md
+│   ├── 03-migrate-postgresql.md
+│   ├── 04-backup-mysql.md
+│   ├── 05-restore-mysql.md
+│   ├── 06-backup-mongodb.md
+│   ├── 07-restore-mongodb.md
+│   ├── 08-backup-sqlite.md
+│   └── 09-migrate-database.md
+|
 ├── 06-backend/
 │   ├── README.md
-│   ├── setup-node-api.md
-│   ├── setup-express-api.md
-│   ├── setup-nest-js-api.md
-│   ├── add-authentication.md
-│   ├── add-jwt-authentication.md
-│   ├── add-api-validation.md
-│   ├── add-file-upload.md
-│   ├── add-background-job.md
-│   └── add-api-documentation.md
+|   |
+│   ├── 01-setup-node-api.md
+│   ├── 02-setup-express-api.md
+│   ├── 03-setup-nest-js-api.md
+│   ├── 04-add-authentication.md
+│   ├── 05-add-jwt-authentication.md
+│   ├── 06-add-api-validation.md
+│   ├── 07-add-file-upload.md
+│   ├── 08-add-background-job.md
+│   └── 09-add-api-documentation.md
+|
 ├── 07-frontend/
 │   ├── README.md
-│   ├── setup-react-project.md
-│   ├── setup-next-js-project.md
-│   ├── setup-tailwind-css.md
-│   ├── configure-frontend-environment.md
-│   ├── connect-frontend-to-api.md
-│   ├── add-authentication.md
-│   ├── add-form-validation.md
-│   └── deploy-frontend.md
+|   |
+│   ├── 01-setup-react-project.md
+│   ├── 02-setup-next-js-project.md
+│   ├── 03-setup-tailwind-css.md
+│   ├── 04-configure-frontend-environment.md
+│   ├── 05-connect-frontend-to-api.md
+│   ├── 06-add-authentication.md
+│   ├── 07-add-form-validation.md
+│   └── 08-deploy-frontend.md
+|
 ├── 08-devops/
 │   ├── README.md
-│   ├── setup-ci-pipeline.md
-│   ├── setup-cd-pipeline.md
-│   ├── setup-github-actions.md
-│   ├── setup-docker-registry.md
-│   ├── setup-nginx-reverse-proxy.md
-│   ├── setup-ssl-with-nginx.md
-│   ├── setup-terraform-project.md
-│   ├── setup-ansible-project.md
-│   └── setup-monitoring.md
+|   |
+│   ├── 01-setup-ci-pipeline.md
+│   ├── 02-setup-cd-pipeline.md
+│   ├── 03-setup-github-actions.md
+│   ├── 04-setup-docker-registry.md
+│   ├── 05-setup-nginx-reverse-proxy.md
+│   ├── 06-setup-ssl-with-nginx.md
+│   ├── 07-setup-terraform-project.md
+│   ├── 08-setup-ansible-project.md
+│   └── 09-setup-monitoring.md
+|
 ├── 09-cloud/
 │   ├── README.md
-│   ├── deploy-node-app-to-aws.md
-│   ├── deploy-node-app-to-azure.md
-│   ├── deploy-node-app-to-gcp.md
-│   ├── setup-cloud-storage.md
-│   ├── setup-cloud-database.md
-│   ├── setup-cloud-network.md
-│   ├── setup-cloud-iam.md
-│   └── configure-cloud-monitoring.md
+|   |
+│   ├── 01-deploy-node-app-to-aws.md
+│   ├── 02-deploy-node-app-to-azure.md
+│   ├── 03-deploy-node-app-to-gcp.md
+│   ├── 04-setup-cloud-storage.md
+│   ├── 05-setup-cloud-database.md
+│   ├── 06-setup-cloud-network.md
+│   ├── 07-setup-cloud-iam.md
+│   └── 08-configure-cloud-monitoring.md
+|
 └── 10-deployment/
     ├── README.md
-    ├── deploy-node-app.md
-    ├── deploy-python-app.md
-    ├── deploy-docker-app.md
-    ├── deploy-static-site.md
-    ├── deploy-with-nginx.md
-    ├── deploy-with-systemd.md
-    ├── configure-domain.md
-    ├── configure-https.md
-    ├── zero-downtime-deployment.md
-    └── rollback-deployment.md
+    ├── 01-deploy-node-app.md
+    ├── 02-deploy-python-app.md
+    ├── 03-deploy-docker-app.md
+    ├── 04-deploy-static-site.md
+    ├── 05-deploy-with-nginx.md
+    ├── 06-deploy-with-systemd.md
+    ├── 07-configure-domain.md
+    ├── 08-configure-https.md
+    ├── 09-zero-downtime-deployment.md
+    └── 10-rollback-deployment.md
 ```
 
 ---
@@ -5005,156 +5252,178 @@ hands-on-notes/
 ```text
 18-troubleshooting/
 ├── README.md
+|
 ├── 01-linux/
 │   ├── README.md
-│   ├── boot-failure.md
-│   ├── package-installation-failure.md
-│   ├── permission-denied.md
-│   ├── disk-space-full.md
-│   ├── disk-not-detected.md
-│   ├── mount-failure.md
-│   ├── filesystem-errors.md
-│   ├── network-not-working.md
-│   ├── dns-not-working.md
-│   ├── service-not-starting.md
-│   ├── systemd-service-failure.md
-│   ├── high-cpu-usage.md
-│   ├── high-memory-usage.md
-│   └── application-crash.md
+|   |
+│   ├── 01-boot-failure.md
+│   ├── 02-package-installation-failure.md
+│   ├── 03-permission-denied.md
+│   ├── 04-disk-space-full.md
+│   ├── 05-disk-not-detected.md
+│   ├── 06-mount-failure.md
+│   ├── 07-filesystem-errors.md
+│   ├── 08-network-not-working.md
+│   ├── 09-dns-not-working.md
+│   ├── 10-service-not-starting.md
+│   ├── 11-systemd-service-failure.md
+│   ├── 12-high-cpu-usage.md
+│   ├── 13-high-memory-usage.md
+│   └── 14-application-crash.md
+|
 ├── 02-windows/
 │   ├── README.md
-│   ├── boot-failure.md
-│   ├── windows-update-failure.md
-│   ├── driver-problem.md
-│   ├── disk-not-detected.md
-│   ├── disk-space-full.md
-│   ├── permission-denied.md
-│   ├── network-not-working.md
-│   ├── dns-not-working.md
-│   ├── service-not-starting.md
-│   ├── blue-screen.md
-│   ├── high-cpu-usage.md
-│   ├── high-memory-usage.md
-│   └── application-crash.md
+|   |
+│   ├── 01-boot-failure.md
+│   ├── 02-windows-update-failure.md
+│   ├── 03-driver-problem.md
+│   ├── 04-disk-not-detected.md
+│   ├── 05-disk-space-full.md
+│   ├── 06-permission-denied.md
+│   ├── 07-network-not-working.md
+│   ├── 08-dns-not-working.md
+│   ├── 09-service-not-starting.md
+│   ├── 10-blue-screen.md
+│   ├── 11-high-cpu-usage.md
+│   ├── 12-high-memory-usage.md
+│   └── 13-application-crash.md
+|
 ├── 03-macos/
 │   ├── README.md
-│   ├── boot-failure.md
-│   ├── software-installation-failure.md
-│   ├── permission-denied.md
-│   ├── disk-not-detected.md
-│   ├── disk-space-full.md
-│   ├── network-not-working.md
-│   ├── dns-not-working.md
-│   ├── service-not-starting.md
-│   ├── application-crash.md
-│   ├── high-cpu-usage.md
-│   └── high-memory-usage.md
+|   |
+│   ├── 01-boot-failure.md
+│   ├── 02-software-installation-failure.md
+│   ├── 03-permission-denied.md
+│   ├── 04-disk-not-detected.md
+│   ├── 05-disk-space-full.md
+│   ├── 06-network-not-working.md
+│   ├── 07-dns-not-working.md
+│   ├── 08-service-not-starting.md
+│   ├── 09-application-crash.md
+│   ├── 10-high-cpu-usage.md
+│   └── 11-high-memory-usage.md
+|
 ├── 04-android/
 │   ├── README.md
-│   ├── app-crash.md
-│   ├── app-not-installing.md
-│   ├── app-not-updating.md
-│   ├── battery-drain.md
-│   ├── high-memory-usage.md
-│   ├── storage-full.md
-│   ├── wifi-not-working.md
-│   ├── mobile-data-not-working.md
-│   ├── bluetooth-not-working.md
-│   ├── usb-not-detected.md
-│   ├── adb-not-working.md
-│   └── notification-not-working.md
+|   |
+│   ├── 01-app-crash.md
+│   ├── 02-app-not-installing.md
+│   ├── 03-app-not-updating.md
+│   ├── 04-battery-drain.md
+│   ├── 05-high-memory-usage.md
+│   ├── 06-storage-full.md
+│   ├── 07-wifi-not-working.md
+│   ├── 08-mobile-data-not-working.md
+│   ├── 09-bluetooth-not-working.md
+│   ├── 10-usb-not-detected.md
+│   ├── 11-adb-not-working.md
+│   └── 12-notification-not-working.md
+|
 ├── 05-ios/
 │   ├── README.md
-│   ├── app-crash.md
-│   ├── app-not-installing.md
-│   ├── app-not-updating.md
-│   ├── battery-drain.md
-│   ├── storage-full.md
-│   ├── wifi-not-working.md
-│   ├── mobile-data-not-working.md
-│   ├── bluetooth-not-working.md
-│   ├── usb-connection-problem.md
-│   ├── application-performance.md
-│   └── notification-not-working.md
+|   |
+│   ├── 01-app-crash.md
+│   ├── 02-app-not-installing.md
+│   ├── 03-app-not-updating.md
+│   ├── 04-battery-drain.md
+│   ├── 05-storage-full.md
+│   ├── 06-wifi-not-working.md
+│   ├── 07-mobile-data-not-working.md
+│   ├── 08-bluetooth-not-working.md
+│   ├── 09-usb-connection-problem.md
+│   ├── 10-application-performance.md
+│   └── 11-notification-not-working.md
+|
 ├── 06-git/
 │   ├── README.md
-│   ├── merge-conflict.md
-│   ├── detached-head.md
-│   ├── lost-commit.md
-│   ├── deleted-branch.md
-│   ├── rejected-push.md
-│   ├── non-fast-forward.md
-│   ├── authentication-failure.md
-│   ├── remote-not-found.md
-│   ├── wrong-branch.md
-│   ├── accidental-commit.md
-│   └── repository-corruption.md
+|   |
+│   ├── 01-merge-conflict.md
+│   ├── 02-detached-head.md
+│   ├── 03-lost-commit.md
+│   ├── 04-deleted-branch.md
+│   ├── 05-rejected-push.md
+│   ├── 06-non-fast-forward.md
+│   ├── 07-authentication-failure.md
+│   ├── 08-remote-not-found.md
+│   ├── 09-wrong-branch.md
+│   ├── 10-accidental-commit.md
+│   └── 11-repository-corruption.md
+|
 ├── 07-docker/
 │   ├── README.md
-│   ├── container-not-starting.md
-│   ├── image-build-failure.md
-│   ├── image-pull-failure.md
-│   ├── port-not-accessible.md
-│   ├── container-networking.md
-│   ├── volume-permission.md
-│   ├── volume-not-mounted.md
-│   ├── container-memory-problem.md
-│   ├── container-cpu-problem.md
-│   ├── docker-compose-failure.md
-│   └── registry-authentication-failure.md
+|   |
+│   ├── 01-container-not-starting.md
+│   ├── 02-image-build-failure.md
+│   ├── 03-image-pull-failure.md
+│   ├── 04-port-not-accessible.md
+│   ├── 05-container-networking.md
+│   ├── 06-volume-permission.md
+│   ├── 07-volume-not-mounted.md
+│   ├── 08-container-memory-problem.md
+│   ├── 09-container-cpu-problem.md
+│   ├── 10-docker-compose-failure.md
+│   └── 11-registry-authentication-failure.md
+|
 ├── 08-database/
 │   ├── README.md
-│   ├── connection-failure.md
-│   ├── authentication-failure.md
-│   ├── database-not-starting.md
-│   ├── query-performance.md
-│   ├── deadlock.md
-│   ├── lock-wait.md
-│   ├── connection-pool-exhausted.md
-│   ├── migration-failure.md
-│   ├── backup-failure.md
-│   ├── restore-failure.md
-│   └── replication-problem.md
+|   |
+│   ├── 01-connection-failure.md
+│   ├── 02-authentication-failure.md
+│   ├── 03-database-not-starting.md
+│   ├── 04-query-performance.md
+│   ├── 05-deadlock.md
+│   ├── 06-lock-wait.md
+│   ├── 07-connection-pool-exhausted.md
+│   ├── 08-migration-failure.md
+│   ├── 09-backup-failure.md
+│   ├── 10-restore-failure.md
+│   └── 11-replication-problem.md
+|
 ├── 09-frontend/
 │   ├── README.md
-│   ├── build-failure.md
-│   ├── dependency-installation-failure.md
-│   ├── module-not-found.md
-│   ├── runtime-error.md
-│   ├── hydration-error.md
-│   ├── api-request-failure.md
-│   ├── cors-error.md
-│   ├── authentication-problem.md
-│   ├── blank-page.md
-│   ├── slow-page-load.md
-│   └── production-build-problem.md
+|   |
+│   ├── 01-build-failure.md
+│   ├── 02-dependency-installation-failure.md
+│   ├── 03-module-not-found.md
+│   ├── 04-runtime-error.md
+│   ├── 05-hydration-error.md
+│   ├── 06-api-request-failure.md
+│   ├── 07-cors-error.md
+│   ├── 08-authentication-problem.md
+│   ├── 09-blank-page.md
+│   ├── 10-slow-page-load.md
+│   └── 11-production-build-problem.md
+|
 ├── 10-backend/
 │   ├── README.md
-│   ├── application-not-starting.md
-│   ├── dependency-installation-failure.md
-│   ├── module-not-found.md
-│   ├── runtime-error.md
-│   ├── api-error.md
-│   ├── database-connection-failure.md
-│   ├── authentication-problem.md
-│   ├── authorization-failure.md
-│   ├── file-upload-failure.md
-│   ├── memory-leak.md
-│   └── high-cpu-usage.md
+|   |
+│   ├── 01-application-not-starting.md
+│   ├── 02-dependency-installation-failure.md
+│   ├── 03-module-not-found.md
+│   ├── 04-runtime-error.md
+│   ├── 05-api-error.md
+│   ├── 06-database-connection-failure.md
+│   ├── 07-authentication-problem.md
+│   ├── 08-authorization-failure.md
+│   ├── 09-file-upload-failure.md
+│   ├── 10-memory-leak.md
+│   └── 11-high-cpu-usage.md
+|
 └── 11-networking/
     ├── README.md
-    ├── no-network-connectivity.md
-    ├── dns-resolution-failure.md
-    ├── dhcp-failure.md
-    ├── ip-address-problem.md
-    ├── port-not-reachable.md
-    ├── connection-refused.md
-    ├── connection-timeout.md
-    ├── packet-loss.md
-    ├── routing-problem.md
-    ├── firewall-blocking.md
-    ├── proxy-problem.md
-    └── vpn-connection-problem.md
+    |
+    ├── 01-no-network-connectivity.md
+    ├── 02-dns-resolution-failure.md
+    ├── 03-dhcp-failure.md
+    ├── 04-ip-address-problem.md
+    ├── 05-port-not-reachable.md
+    ├── 06-connection-refused.md
+    ├── 07-connection-timeout.md
+    ├── 08-packet-loss.md
+    ├── 09-routing-problem.md
+    ├── 10-firewall-blocking.md
+    ├── 11-proxy-problem.md
+    └── 12-vpn-connection-problem.md
 ```
 
 ---
@@ -5164,99 +5433,115 @@ hands-on-notes/
 ```text
 19-reference/
 ├── README.md
+|
 ├── 01-commands/
 │   ├── README.md
-│   ├── linux-commands.md
-│   ├── git-commands.md
-│   ├── docker-commands.md
-│   ├── kubernetes-commands.md
-│   ├── npm-commands.md
-│   ├── pnpm-commands.md
-│   ├── curl-commands.md
-│   ├── grep-commands.md
-│   ├── sed-commands.md
-│   ├── awk-commands.md
-│   ├── jq-commands.md
-│   ├── terraform-commands.md
-│   └── ansible-commands.md
+|   |
+│   ├── 01-linux-commands.md
+│   ├── 02-git-commands.md
+│   ├── 03-docker-commands.md
+│   ├── 04-kubernetes-commands.md
+│   ├── 05-npm-commands.md
+│   ├── 06-pnpm-commands.md
+│   ├── 07-curl-commands.md
+│   ├── 08-grep-commands.md
+│   ├── 09-sed-commands.md
+│   ├── 10-awk-commands.md
+│   ├── 11-jq-commands.md
+│   ├── 12-terraform-commands.md
+│   └── 13-ansible-commands.md
+|
 ├── 02-shortcuts/
 │   ├── README.md
-│   ├── terminal-shortcuts.md
-│   ├── bash-shortcuts.md
-│   ├── zsh-shortcuts.md
-│   ├── vim-shortcuts.md
-│   ├── vscode-shortcuts.md
-│   ├── git-shortcuts.md
-│   ├── browser-shortcuts.md
-│   ├── windows-shortcuts.md
-│   ├── macos-shortcuts.md
-│   └── linux-shortcuts.md
+|   |
+│   ├── 01-terminal-shortcuts.md
+│   ├── 02-bash-shortcuts.md
+│   ├── 03-zsh-shortcuts.md
+│   ├── 04-vim-shortcuts.md
+│   ├── 05-vscode-shortcuts.md
+│   ├── 06-git-shortcuts.md
+│   ├── 07-browser-shortcuts.md
+│   ├── 08-windows-shortcuts.md
+│   ├── 09-macos-shortcuts.md
+│   └── 10-linux-shortcuts.md
+|
 ├── 03-ports/
 │   ├── README.md
-│   ├── common-ports.md
-│   ├── web-ports.md
-│   ├── database-ports.md
-│   ├── ssh-and-remote-access.md
-│   ├── mail-ports.md
-│   ├── file-sharing-ports.md
-│   ├── container-and-orchestration-ports.md
-│   ├── monitoring-ports.md
-│   └── development-ports.md
+|   |
+│   ├── 01-common-ports.md
+│   ├── 02-web-ports.md
+│   ├── 03-database-ports.md
+│   ├── 04-ssh-and-remote-access.md
+│   ├── 05-mail-ports.md
+│   ├── 06-file-sharing-ports.md
+│   ├── 07-container-and-orchestration-ports.md
+│   ├── 08-monitoring-ports.md
+│   └── 09-development-ports.md
+|
 ├── 04-http-status/
 │   ├── README.md
-│   ├── 1xx-informational.md
-│   ├── 2xx-success.md
-│   ├── 3xx-redirection.md
-│   ├── 4xx-client-errors.md
-│   ├── 5xx-server-errors.md
-│   └── status-code-cheatsheet.md
+|   |
+│   ├── 01-1xx-informational.md
+│   ├── 02-2xx-success.md
+│   ├── 03-3xx-redirection.md
+│   ├── 04-4xx-client-errors.md
+│   ├── 05-5xx-server-errors.md
+│   └── 06-status-code-cheatsheet.md
+|
 ├── 05-mime-types/
 │   ├── README.md
-│   ├── text.md
-│   ├── images.md
-│   ├── audio.md
-│   ├── video.md
-│   ├── application.md
-│   ├── fonts.md
-│   ├── archives.md
-│   └── common-mime-types.md
+|   |
+│   ├── 01-text.md
+│   ├── 02-images.md
+│   ├── 03-audio.md
+│   ├── 04-video.md
+│   ├── 05-application.md
+│   ├── 06-fonts.md
+│   ├── 07-archives.md
+│   └── 08-common-mime-types.md
+|
 ├── 06-file-extensions/
 │   ├── README.md
-│   ├── text-files.md
-│   ├── source-code.md
-│   ├── configuration-files.md
-│   ├── documents.md
-│   ├── images.md
-│   ├── audio.md
-│   ├── video.md
-│   ├── archives.md
-│   ├── databases.md
-│   └── executable-files.md
+|   |
+│   ├── 01-text-files.md
+│   ├── 02-source-code.md
+│   ├── 03-configuration-files.md
+│   ├── 04-documents.md
+│   ├── 05-images.md
+│   ├── 06-audio.md
+│   ├── 07-video.md
+│   ├── 08-archives.md
+│   ├── 09-databases.md
+│   └── 10-executable-files.md
+|
 ├── 07-environment/
 │   ├── README.md
-│   ├── environment-variables.md
-│   ├── path.md
-│   ├── linux-environment.md
-│   ├── windows-environment.md
-│   ├── macos-environment.md
-│   ├── node-js-environment.md
-│   ├── python-environment.md
-│   ├── java-environment.md
-│   ├── docker-environment.md
-│   └── ci-cd-environment.md
+|   |
+│   ├── 01-environment-variables.md
+│   ├── 02-path.md
+│   ├── 03-linux-environment.md
+│   ├── 04-windows-environment.md
+│   ├── 05-macos-environment.md
+│   ├── 06-node-js-environment.md
+│   ├── 07-python-environment.md
+│   ├── 08-java-environment.md
+│   ├── 09-docker-environment.md
+│   └── 10-ci-cd-environment.md
+|
 └── 08-glossary/
     ├── README.md
-    ├── software-engineering-terms.md
-    ├── programming-terms.md
-    ├── web-terms.md
-    ├── backend-terms.md
-    ├── frontend-terms.md
-    ├── database-terms.md
-    ├── devops-terms.md
-    ├── cloud-terms.md
-    ├── networking-terms.md
-    ├── security-terms.md
-    └── architecture-terms.md
+    |
+    ├── 01-software-engineering-terms.md
+    ├── 02-programming-terms.md
+    ├── 03-web-terms.md
+    ├── 04-backend-terms.md
+    ├── 05-frontend-terms.md
+    ├── 06-database-terms.md
+    ├── 07-devops-terms.md
+    ├── 08-cloud-terms.md
+    ├── 09-networking-terms.md
+    ├── 10-security-terms.md
+    └── 11-architecture-terms.md
 ```
 
 ---
@@ -5266,72 +5551,89 @@ hands-on-notes/
 ```text
 20-resources/
 ├── README.md
+|
 ├── 01-books/
 │   ├── README.md
-│   ├── programming.md
-│   ├── software-engineering.md
-│   ├── clean-code.md
-│   ├── design-patterns.md
-│   ├── algorithms-and-data-structures.md
-│   ├── system-design.md
-│   ├── databases.md
-│   ├── networking.md
-│   ├── operating-systems.md
-│   ├── security.md
-│   ├── devops.md
-│   └── cloud.md
+|   |
+│   ├── 01-programming.md
+│   ├── 02-software-engineering.md
+│   ├── 03-clean-code.md
+│   ├── 04-design-patterns.md
+│   ├── 05-algorithms-and-data-structures.md
+│   ├── 06-system-design.md
+│   ├── 07-databases.md
+│   ├── 08-networking.md
+│   ├── 09-operating-systems.md
+│   ├── 10-security.md
+│   ├── 11-devops.md
+│   └── 12-cloud.md
+|
 ├── 02-courses/
 │   ├── README.md
-│   ├── programming.md
-│   ├── software-engineering.md
-│   ├── frontend.md
-│   ├── backend.md
-│   ├── databases.md
-│   ├── algorithms-and-data-structures.md
-│   ├── system-design.md
-│   ├── devops.md
-│   ├── cloud.md
-│   ├── security.md
-│   └── mobile-development.md
+|   |
+│   ├── 01-programming.md
+│   ├── 02-software-engineering.md
+│   ├── 03-frontend.md
+│   ├── 04-backend.md
+│   ├── 05-databases.md
+│   ├── 06-algorithms-and-data-structures.md
+│   ├── 07-system-design.md
+│   ├── 08-devops.md
+│   ├── 09-cloud.md
+│   ├── 10-security.md
+│   └── 11-mobile-development.md
+|
 ├── 03-documentation/
 │   ├── README.md
-│   ├── programming-languages.md
-│   ├── frontend.md
-│   ├── backend.md
-│   ├── databases.md
-│   ├── devops.md
-│   ├── cloud.md
-│   ├── operating-systems.md
-│   ├── networking.md
-│   ├── security.md
-│   ├── frameworks.md
-│   └── tools.md
+|   |
+│   ├── 01-programming-languages.md
+│   ├── 02-frontend.md
+│   ├── 03-backend.md
+│   ├── 04-databases.md
+│   ├── 05-devops.md
+│   ├── 06-cloud.md
+│   ├── 07-operating-systems.md
+│   ├── 08-networking.md
+│   ├── 09-security.md
+│   ├── 10-frameworks.md
+│   └── 11-tools.md
+|
 ├── 04-tools/
 │   ├── README.md
-│   ├── development-tools.md
-│   ├── code-editors.md
-│   ├── terminal-tools.md
-│   ├── api-tools.md
-│   ├── database-tools.md
-│   ├── debugging-tools.md
-│   ├── testing-tools.md
-│   ├── devops-tools.md
-│   ├── cloud-tools.md
-│   └── security-tools.md
-└── 05-links/
+|   |
+│   ├── 01-development-tools.md
+│   ├── 02-code-editors.md
+│   ├── 03-terminal-tools.md
+│   ├── 04-api-tools.md
+│   ├── 05-database-tools.md
+│   ├── 06-debugging-tools.md
+│   ├── 07-testing-tools.md
+│   ├── 08-devops-tools.md
+│   ├── 09-cloud-tools.md
+│   └── 10-security-tools.md
+|
+├── 05-assets/
+│   ├── README.md
+|   |
+│   ├── images/
+│   ├── videos/
+|   └── others/
+|
+└── 06-links/
     ├── README.md
-    ├── programming.md
-    ├── software-engineering.md
-    ├── frontend.md
-    ├── backend.md
-    ├── databases.md
-    ├── algorithms-and-data-structures.md
-    ├── system-design.md
-    ├── devops.md
-    ├── cloud.md
-    ├── security.md
-    ├── networking.md
-    ├── operating-systems.md
-    ├── communities.md
-    └── newsletters.md
+    |
+    ├── 01-programming.md
+    ├── 02-software-engineering.md
+    ├── 03-frontend.md
+    ├── 04-backend.md
+    ├── 05-databases.md
+    ├── 06-algorithms-and-data-structures.md
+    ├── 07-system-design.md
+    ├── 08-devops.md
+    ├── 09-cloud.md
+    ├── 10-security.md
+    ├── 11-networking.md
+    ├── 12-operating-systems.md
+    ├── 13-communities.md
+    └── 14-newsletters.md
 ```
