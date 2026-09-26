@@ -6,6 +6,8 @@ A practical knowledge base for **software development, engineering, DevOps, clou
 
 This repository contains notes, snippets, recipes, troubleshooting guides, references, and useful resources collected from learning and real-world work.
 
+![Hands-on-Notes](/hands-on-notes/20-resources/05-assets/images/cover.jpeg)
+
 ---
 
 ## 📂 Repository Structure
