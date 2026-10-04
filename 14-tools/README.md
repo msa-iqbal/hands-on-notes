@@ -4,19 +4,21 @@ Practical, structured notes for understanding and using **developer tools, edito
 
 ## Contents
 
-|#|Topic|What You'll Learn|
-|---|---|---|
-|01|VS Code|Editor fundamentals, settings, shortcuts, extensions, debugging, source control, tasks, and remote development|
-|02|Vim|Vim fundamentals, modes, navigation, editing, buffers, windows, macros, configuration, and commands|
-|03|Postman|API requests, collections, environments, variables, authentication, tests, scripts, mocking, and automation|
-|04|cURL|HTTP requests, methods, headers, request bodies, authentication, cookies, file transfers, proxy, and TLS|
-|05|jq|JSON processing, filtering, transformation, arrays, objects, pipes, functions, and output formatting|
-|06|grep|Pattern searching, options, regular expressions, recursive search, context lines, and practical usage|
-|07|sed|Text processing, substitution, deletion, insertion, addressing, regular expressions, and practical usage|
-|08|awk|Fields, records, patterns, actions, variables, conditions, loops, functions, and practical usage|
-|09|npm|Package management, package.json, dependencies, scripts, workspaces, publishing, security, and commands|
-|10|pnpm|Package management, lockfiles, dependencies, workspaces, monorepos, scripts, security, and commands|
-|11|Make|Makefiles, targets, variables, dependencies, pattern rules, automatic variables, functions, and build automation|
+| #   | Topic       | What You'll Learn                                                                                                |
+| --- | ----------- | ---------------------------------------------------------------------------------------------------------------- |
+| 01  | VS Code     | Editor fundamentals, settings, shortcuts, extensions, debugging, source control, tasks, and remote development   |
+| 02  | Vim         | Vim fundamentals, modes, navigation, editing, buffers, windows, macros, configuration, and commands              |
+| 03  | Postman     | API requests, collections, environments, variables, authentication, tests, scripts, mocking, and automation      |
+| 04  | Browsers    | Browser settings, profiles, extensions, privacy, security, developer tools, performance, and troubleshooting     |
+| 05  | cURL        | HTTP requests, methods, headers, request bodies, authentication, cookies, file transfers, proxy, and TLS         |
+| 06  | jq          | JSON processing, filtering, transformation, arrays, objects, pipes, functions, and output formatting             |
+| 07  | grep        | Pattern searching, options, regular expressions, recursive search, context lines, and practical usage            |
+| 08  | sed         | Text processing, substitution, deletion, insertion, addressing, regular expressions, and practical usage         |
+| 09  | awk         | Fields, records, patterns, actions, variables, conditions, loops, functions, and practical usage                 |
+| 10  | npm         | Package management, package.json, dependencies, scripts, workspaces, publishing, security, and commands          |
+| 11  | pnpm        | Package management, lockfiles, dependencies, workspaces, monorepos, scripts, security, and commands              |
+| 12  | Make        | Makefiles, targets, variables, dependencies, pattern rules, automatic variables, functions, and build automation |
+| 13  | Note taking | Note organization, Obsidian, note-taking workflows, and knowledge management                                     |
 
 ## Structure
 

@@ -1,45 +1,38 @@
 # Books
 
-Curated books for learning **programming, software engineering, system design, databases, DevOps, cloud, and related technical subjects**.
+Curated **books and book-based learning resources** for programming, web development, software engineering, and technical learning.
 
 ## Contents
 
-|#|Topic|What You'll Learn|
-|---|---|---|
-|01|Programming|Programming fundamentals, languages, and practical development|
-|02|Software Engineering|Engineering principles, practices, and professional development|
-|03|Clean Code|Code quality, readability, maintainability, and design|
-|04|Design Patterns|Reusable software design patterns and principles|
-|05|Algorithms and Data Structures|Algorithms, data structures, complexity, and problem-solving|
-|06|System Design|Scalable systems, architecture, distributed systems, and reliability|
-|07|Databases|Database design, SQL, storage, transactions, and performance|
-|08|Networking|Networking fundamentals, protocols, and network architecture|
-|09|Operating Systems|OS concepts, processes, memory, filesystems, and system internals|
-|10|Security|Security principles, vulnerabilities, cryptography, and secure development|
-|11|DevOps|Automation, containers, CI/CD, infrastructure, and operations|
-|12|Cloud|Cloud platforms, architecture, services, and infrastructure|
+| #  | Topic        | What You'll Find                                                                                                      |
+| -- | ------------ | --------------------------------------------------------------------------------------------------------------------- |
+| 01 | C Language   | Books for learning C programming, fundamentals, problem solving, memory management, and systems programming           |
+| 02 | C++ Language | Books covering C++, object-oriented programming, STL, modern C++, templates, and advanced programming                 |
+| 03 | HTML5        | Books covering HTML5, semantic markup, document structure, forms, accessibility, APIs, and modern web development     |
+| 04 | CSS3         | Books covering CSS3, selectors, layout, Flexbox, Grid, responsive design, animations, and modern CSS                  |
+| 05 | Markdown     | Books and references covering Markdown syntax, documentation, technical writing, GitHub Markdown, and practical usage |
 
 ## Structure
 
-Books are organized by subject so related reading material can be found together. Each file contains useful books, authors, descriptions, and relevant notes.
+Books are organized by subject so programming-language and web-development books can be found without searching through unrelated resources.
 
-The collection focuses on books that support practical learning, deeper understanding, reference, and long-term engineering growth.
+Each Markdown file contains a curated list of relevant books along with useful information such as the author, edition, publication details, topics covered, and resource links where appropriate.
+
+The numbering provides a consistent structure and makes it easy to expand the collection with additional subjects.
 
 ## Focus
 
-- Programming
-- Software engineering
-- Clean code
-- Design patterns
-- Algorithms and data structures
-- System design
-- Databases
-- Networking
-- Operating systems
-- Security
-- DevOps
-- Cloud
+* C programming books
+* C++ programming books
+* HTML5 books
+* CSS3 books
+* Markdown books
+* Programming fundamentals
+* Web development
+* Software engineering
+* Technical references
+* Beginner to advanced learning resources
 
 ## Goal
 
-> Build a focused technical library of books worth reading, studying, and revisiting.
+> Maintain a curated collection of useful technical books that are worth learning from, revisiting, referencing, and recommending during software development.

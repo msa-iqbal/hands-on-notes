@@ -6,34 +6,42 @@ A practical knowledge base for **software development, engineering, DevOps, clou
 
 This repository contains notes, snippets, recipes, troubleshooting guides, references, and useful resources collected from learning and real-world work.
 
-![Hands-on-Notes](/hands-on-notes/20-resources/05-assets/images/cover.jpeg)
+![Hands-on-Notes](./20-resources/05-assets/images/cover.jpeg)
 
 ---
 
 ## 📂 Repository Structure
 
-|#|Category|Purpose|
-|--:|---|---|
-|01|[Core](https://chatgpt.com/c/01-core/)|Fundamental concepts and technologies|
-|02|[Languages](https://chatgpt.com/c/02-languages/)|Programming languages|
-|03|[Web](https://chatgpt.com/c/03-web/)|Web technologies and browser platform|
-|04|[Frontend](https://chatgpt.com/c/04-frontend/)|Frontend development|
-|05|[Backend](https://chatgpt.com/c/05-backend/)|Backend development and APIs|
-|06|[Database](https://chatgpt.com/c/06-database/)|Databases and data management|
-|07|[OS](https://chatgpt.com/c/07-os/)|Operating systems and virtualization|
-|08|[DevOps](https://chatgpt.com/c/08-devops/)|Containers, CI/CD, deployment, and operations|
-|09|[Cloud](https://chatgpt.com/c/09-cloud/)|Cloud platforms and services|
-|10|[Engineering](https://chatgpt.com/c/10-engineering/)|Software engineering practices|
-|11|[Architecture](https://chatgpt.com/c/11-architecture/)|System and software architecture|
-|12|[Algorithms](https://chatgpt.com/c/12-algorithms/)|Algorithms and data structures|
-|13|[Security](https://chatgpt.com/c/13-security/)|Security and secure development|
-|14|[Tools](https://chatgpt.com/c/14-tools/)|Developer and command-line tools|
-|15|[Mobile](https://chatgpt.com/c/15-mobile/)|Mobile development|
-|16|[Snippets](https://chatgpt.com/c/16-snippets/)|Small reusable code and commands|
-|17|[Recipes](https://chatgpt.com/c/17-recipes/)|Step-by-step how-to guides|
-|18|[Troubleshooting](https://chatgpt.com/c/18-troubleshooting/)|Problems, diagnosis, and solutions|
-|19|[Reference](https://chatgpt.com/c/19-reference/)|Quick-reference information|
-|20|[Resources](https://chatgpt.com/c/20-resources/)|Books, courses, docs, tools, and links|
+|   # | Category                                          | Purpose                                       |
+| --: | ------------------------------------------------- | --------------------------------------------- |
+|  01 | [Core](./01-core/README.md)                       | Fundamental concepts and technologies         |
+|  02 | [Languages](./02-languages/README.md)             | Programming languages                         |
+|  03 | [Web](./03-web/README.md)                         | Web technologies and browser platform         |
+|  04 | [Frontend](./04-frontend/README.md)               | Frontend development                          |
+|  05 | [Backend](./05-backend/README.md)                 | Backend development and APIs                  |
+|  06 | [Database](./06-database/README.md)               | Databases and data management                 |
+|  07 | [OS](./07-os/README.md)                           | Operating systems and virtualization          |
+|  08 | [DevOps](./08-devops/README.md)                   | Containers, CI/CD, deployment, and operations |
+|  09 | [Cloud](./09-cloud/README.md)                     | Cloud platforms and services                  |
+|  10 | [Engineering](./10-engineering/README.md)         | Software engineering practices                |
+|  11 | [Architecture](./11-architecture/README.md)       | System and software architecture              |
+|  12 | [Algorithms](./12-algorithms/README.md)           | Algorithms and data structures                |
+|  13 | [Security](./13-security/README.md)               | Security and secure development               |
+|  14 | [Tools](./14-tools/README.md)                     | Developer and command-line tools              |
+|  15 | [Mobile](./15-mobile/README.md)                   | Mobile development                            |
+|  16 | [Snippets](./16-snippets/README.md)               | Small reusable code and commands              |
+|  17 | [Recipes](./17-recipes/README.md)                 | Step-by-step how-to guides                    |
+|  18 | [Troubleshooting](./18-troubleshooting/README.md) | Problems, diagnosis, and solutions            |
+|  19 | [Reference](./19-reference/README.md)             | Quick-reference information                   |
+|  20 | [Resources](./20-resources/README.md)             | Books, courses, docs, tools, and links        |
+
+---
+
+## 🗺️ Master Index
+
+**[Open the complete repository index →](./INDEX.md)**
+
+The index contains the full directory tree, individual notes, and progress tracking.
 
 ---
 
@@ -91,14 +99,6 @@ The same technology may appear in different sections when the **purpose is diffe
 
 ---
 
-## 🗺️ Master Index
-
-For the complete repository tree and progress tracking, see:
-
-**[INDEX.md](/hands-on-notes/INDEX.md)**
-
----
-
 ## 🚀 Philosophy
 
 This is not a copy of official documentation.
@@ -113,4 +113,4 @@ Learn → Build → Debug → Fix → Document → Reuse
 
 ## 📄 License
 
-See the [LICENSE](https://chatgpt.com/c/LICENSE) file for licensing information.
+See the [LICENSE](./LICENSE) file for licensing information.
