@@ -4,7 +4,7 @@ Running Windows inside Ubuntu is one of the most useful applications of Linux vi
 
 This setup provides hardware-assisted virtualization, VirtIO-based storage and networking, UEFI firmware, USB passthrough, snapshots, and convenient VM management.
 
-> **Practical Environment:** This guide uses **Windows 10** as the primary hands-on example. The same general architecture can be used for Windows 11, but Windows 11 requires additional virtual hardware such as TPM 2.0 and Secure Boot-capable UEFI.
+> **Practical Environment:** ==This guide uses **Windows 10** as the primary hands-on example.== The same general architecture can be used for Windows 11, but Windows 11 requires additional virtual hardware such as TPM 2.0 and Secure Boot-capable UEFI.
 >
 > **Important:** Windows 10 reached end of support on **October 14, 2025**. Windows 10 can still run, but standard security and feature updates are no longer provided. For a new VM in 2026, Windows 11 is generally the current supported Windows target; Windows 10 remains useful for legacy applications and compatibility testing.
 

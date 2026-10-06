@@ -8,7 +8,6 @@ Practical **problem-solving and programming practice** notes covering algorithmi
 | --- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 01  | C     | Problem-solving exercises, programming problems, algorithms, data structures, implementation techniques, and solutions using C           |
 | 02  | C++   | Problem-solving exercises, algorithms, data structures, STL-based solutions, competitive programming techniques, and solutions using C++ |
-| 03  | Java  | Problem-solving exercises, algorithms, data structures, collections, implementation techniques, and solutions using Java                 |
 
 ## Structure
 

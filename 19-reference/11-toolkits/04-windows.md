@@ -1,8 +1,5 @@
 # TOOLKITS: WINDOWS OS
 
----
-**Updated**: 2026-08-11
-
 # 🗁 OFFICIAL & ESSENTIALS
 
 🗳 Word Processor: [Microsoft-Office](https://www.microsoft.com/en/microsoft-365/microsoft-office) [LibreOffice(Free)](https://www.libreoffice.org/)

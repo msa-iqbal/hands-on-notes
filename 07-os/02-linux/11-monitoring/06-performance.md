@@ -1,4 +1,4 @@
-# OS-OPTIMIZATION: Ultimate Ubuntu Performance Optimization Guide
+# Ultimate Ubuntu Performance Optimization Guide
 
 This is the setup I would use for a high-performance Ubuntu workstation intended for software development, heavy multitasking, containers, browsers, IDEs, databases, and general productivity.
 

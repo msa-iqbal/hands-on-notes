@@ -1,8 +1,5 @@
 # TOOLKITS: ANDROID OS
 
----
-**Updated**: 2026-08-11
-
 # 🗁 PHONE
 
 🗳 Browser: [Brave-Browser](https://play.google.com/store/apps/details?id=com.brave.browser) [Via-Browser](https://play.google.com/store/apps/details?id=mark.via.gp)

@@ -14,6 +14,7 @@ This repository contains notes, snippets, recipes, troubleshooting guides, refer
 
 |   # | Category                                          | Purpose                                       |
 | --: | ------------------------------------------------- | --------------------------------------------- |
+|  00 | [Index](./00-index/01-master-toc.md)              | Master repository index                       |
 |  01 | [Core](./01-core/README.md)                       | Fundamental concepts and technologies         |
 |  02 | [Languages](./02-languages/README.md)             | Programming languages                         |
 |  03 | [Web](./03-web/README.md)                         | Web technologies and browser platform         |
@@ -39,7 +40,7 @@ This repository contains notes, snippets, recipes, troubleshooting guides, refer
 
 ## 🗺️ Master Index
 
-**[Open the complete repository index →](./INDEX.md)**
+**[Open the complete repository index →](01-master-toc.md)**
 
 The index contains the full directory tree, individual notes, and progress tracking.
 

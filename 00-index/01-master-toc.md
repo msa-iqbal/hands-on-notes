@@ -1,7 +1,34 @@
-# Table of Contents
+# TABLE OF CONTENTS
+
+* [02-linux/](./02-linux/)
+  * [README.md](./02-linux/README.md)
+  * [TOOLKITS-LINUX.md](./02-linux/TOOLKITS-LINUX.md)
+  * [01-basics/](./02-linux/01-basics/)
+    * [01-distributions.md](./02-linux/01-basics/01-distributions.md)
+    * [02-kernel.md](./02-linux/01-basics/02-kernel.md)
+    * [03-shell.md](./02-linux/01-basics/03-shell.md)
+    * [04-terminal.md](./02-linux/01-basics/04-terminal.md)
+    * [05-commands.md](./02-linux/01-basics/05-commands.md)
+    * [06-system-info.md](./02-linux/01-basics/06-system-info.md)
+    * [07-updates-drivers.md](./02-linux/01-basics/
+    07-updates-drivers.md)
+    * New One
+
+---
 
 ```text
+
 hands-on-notes/
+|
+├── 00-index/
+|   ├── 01-master-toc.md
+|   ├── 02-problem-solving-c.md
+|   ├── 03-problem-solving-cpp.md
+|   ├── 04-problem-solving-javascript.md
+|   ├── 05-problem-solving-typescript.md
+|   ├── 06-algorithms-and-data-structures.md
+|   ├── 07-roadmap-web-development.md
+|   └── 08-roadmap-devops.md
 │
 ├── 01-core/
 │   ├── git/
@@ -18,7 +45,7 @@ hands-on-notes/
 │
 ├── 02-languages/
 │   ├── javascript/
-│   ├── typescript/
+│   └── typescript/
 │
 ├── 03-web/
 │   ├── html/
@@ -214,7 +241,8 @@ hands-on-notes/
 │   ├── browser-extensions/
 │   ├── environment/
 |   ├── problem-solving/
-│   └── glossary/
+|   ├── glossary/
+│   └── toolkits/
 │
 └── 20-resources/
     ├── books/
@@ -224,7 +252,172 @@ hands-on-notes/
     └── links/
 ```
 
-# `01-core` — Developer Fundamentals
+# 00-index
+
+```text
+hands-on-notes/
+|
+└── 00-index/
+    ├── 01-master-toc.md
+    ├── 02-problem-solving-c.md
+    ├── 03-problem-solving-cpp.md
+    ├── 04-problem-solving-javascript.md
+    ├── 05-problem-solving-typescript.md
+    ├── 06-roadmap-web-development.md
+    └── 07-roadmap-devops.md
+```
+
+# `01-core`
+
+Developer Fundamentals
+
+```
+01-core/
+├── README.md
+│
+├── 01-git/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-configuration.md
+│   ├── 03-repositories.md
+│   ├── 04-staging-and-commits.md
+│   ├── 05-branching.md
+│   ├── 06-merging.md
+│   ├── 07-rebasing.md
+│   ├── 08-stash.md
+│   ├── 09-tags.md
+│   ├── 10-reset.md
+│   ├── 11-revert.md
+│   ├── 12-cherry-pick.md
+│   ├── 13-remote-repositories.md
+│   ├── 14-submodules.md
+│   └── 15-advanced.md
+│
+├── 02-github/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-repositories.md
+│   ├── 03-issues.md
+│   ├── 04-pull-requests.md
+│   ├── 05-actions.md
+│   ├── 06-releases.md
+│   ├── 07-ssh.md
+│   └── 08-cli.md
+│
+├── 03-terminal/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-commands.md
+│   ├── 03-navigation.md
+│   ├── 04-files-and-directories.md
+│   ├── 05-input-output.md
+│   ├── 06-pipes.md
+│   ├── 07-redirection.md
+│   ├── 08-processes.md
+│   └── 09-shortcuts.md
+│
+├── 04-shell/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-bash.md
+│   ├── 03-zsh.md
+│   ├── 04-variables.md
+│   ├── 05-conditions.md
+│   ├── 06-loops.md
+│   ├── 07-pipes.md
+│   ├── 08-redirection.md
+│   ├── 09-functions.md
+│   └── 10-scripting.md
+│
+├── 05-markdown/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-syntax.md
+│   ├── 03-headings.md
+│   ├── 04-lists.md
+│   ├── 05-links.md
+│   ├── 06-images.md
+│   ├── 07-tables.md
+│   ├── 08-code-blocks.md
+│   ├── 09-github-markdown.md
+│   └── 10-advanced.md
+│
+├── 06-http/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-request.md
+│   ├── 03-response.md
+│   ├── 04-methods.md
+│   ├── 05-headers.md
+│   ├── 06-status-codes.md
+│   ├── 07-cookies.md
+│   ├── 08-sessions.md
+│   ├── 09-caching.md
+│   └── 10-https.md
+│
+├── 07-networking/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-osi-model.md
+│   ├── 03-tcp-ip.md
+│   ├── 04-tcp.md
+│   ├── 05-udp.md
+│   ├── 06-ip.md
+│   ├── 07-dns.md
+│   ├── 08-dhcp.md
+│   ├── 09-ports.md
+│   ├── 10-sockets.md
+│   ├── 11-proxy.md
+│   └── 12-vpn.md
+│
+├── 08-regex/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-character-classes.md
+│   ├── 03-quantifiers.md
+│   ├── 04-anchors.md
+│   ├── 05-groups.md
+│   ├── 06-lookahead-lookbehind.md
+│   └── 07-examples.md
+│
+├── 09-json/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-data-types.md
+│   ├── 03-objects.md
+│   ├── 04-arrays.md
+│   ├── 05-nesting.md
+│   └── 06-common-errors.md
+│
+├── 10-yaml/
+|   ├── README.md
+|   |
+│   ├── 01-basics.md
+│   ├── 02-data-types.md
+│   ├── 03-objects.md
+│   ├── 04-arrays.md
+│   ├── 05-nesting.md
+│   └── 06-common-errors.md
+│
+└── 11-encoding/
+    ├── README.md
+    |
+    ├── 01-basics.md
+    ├── 02-ascii.md
+    ├── 03-unicode.md
+    ├── 04-utf-8.md
+    ├── 05-base64.md
+    └── 06-url-encoding.md
+```
 
 ```text
 01-core/
@@ -376,448 +569,450 @@ hands-on-notes/
 
 ---
 
-# `02-languages` — Programming Languages
+# `02-languages`
 
-* 02-languages/
-* ├── [03-javascript/](./02-languages/01-javascript)
-* │ ├── README.md
-* │ │
-* │ ├ 01-basics/
-* │ │ ├── [01-introduction.md](./02-languages/01-javascript/01-basics/01-introduction.md)
-* │ │ ├── 02-installation.md
-│ │ ├── 03-first-program.md
-│ │ ├── 04-comments.md
-│ │ ├── 05-strict-mode.md
-│ │ └── 06-use-strict.md
-│ │
-│ ├── 02-syntax/
-│ │ ├── 01-statements.md
-│ │ ├── 02-expressions.md
-│ │ ├── 03-operators.md
-│ │ ├── 04-variables.md
-│ │ ├── 05-const-let-var.md
-│ │ ├── 06-semicolons.md
-│ │ └── 07-comments.md
-│ │
-│ ├── 03-types/
-│ │ ├── 01-primitive-types.md
-│ │ ├── 02-string.md
-│ │ ├── 03-number.md
-│ │ ├── 04-bigint.md
-│ │ ├── 05-boolean.md
-│ │ ├── 06-null-and-undefined.md
-│ │ ├── 07-symbol.md
-│ │ ├── 08-object.md
-│ │ ├── 09-typeof.md
-│ │ ├── 10-type-coercion.md
-│ │ └── 11-type-conversion.md
-│ │
-│ ├── 04-control-flow/
-│ │ ├── 01-if-else.md
-│ │ ├── 02-switch.md
-│ │ ├── 03-for-loop.md
-│ │ ├── 04-while-loop.md
-│ │ ├── 05-do-while.md
-│ │ ├── 06-break.md
-│ │ ├── 07-continue.md
-│ │ ├── 08-for-of.md
-│ │ └── 09-for-in.md
-│ │
-│ ├── 05-functions/
-│ │ ├── 01-function-basics.md
-│ │ ├── 02-function-declarations.md
-│ │ ├── 03-function-expressions.md
-│ │ ├── 04-arrow-functions.md
-│ │ ├── 05-parameters-and-arguments.md
-│ │ ├── 06-default-parameters.md
-│ │ ├── 07-rest-parameters.md
-│ │ ├── 08-callback-functions.md
-│ │ ├── 09-higher-order-functions.md
-│ │ ├── 10-recursion.md
-│ │ └── 11-iife.md
-│ │
-│ ├── 06-scope-and-closures/
-│ │ ├── 01-scope.md
-│ │ ├── 02-global-scope.md
-│ │ ├── 03-function-scope.md
-│ │ ├── 04-block-scope.md
-│ │ ├── 05-lexical-scope.md
-│ │ ├── 06-closures.md
-│ │ └── 07-hoisting.md
-│ │
-│ ├── 07-objects/
-│ │ ├── 01-object-basics.md
-│ │ ├── 02-properties.md
-│ │ ├── 03-methods.md
-│ │ ├── 04-object-destructuring.md
-│ │ ├── 05-object-spread.md
-│ │ ├── 06-this.md
-│ │ ├── 07-prototype.md
-│ │ ├── 08-prototype-chain.md
-│ │ ├── 09-object-create.md
-│ │ └── 10-property-descriptors.md
-│ │
-│ ├── 08-classes/
-│ │ ├── 01-class-basics.md
-│ │ ├── 02-constructor.md
-│ │ ├── 03-instance-methods.md
-│ │ ├── 04-static-methods.md
-│ │ ├── 05-getters-and-setters.md
-│ │ ├── 06-inheritance.md
-│ │ ├── 07-super.md
-│ │ └── 08-private-fields.md
-│ │
-│ ├── 09-arrays-and-collections/
-│ │ ├── 01-arrays.md
-│ │ ├── 02-array-methods.md
-│ │ ├── 03-map.md
-│ │ ├── 04-filter.md
-│ │ ├── 05-reduce.md
-│ │ ├── 06-find.md
-│ │ ├── 07-some-and-every.md
-│ │ ├── 08-sort.md
-│ │ ├── 09-set.md
-│ │ ├── 10-map-collection.md
-│ │ ├── 11-weakmap.md
-│ │ └── 12-weakset.md
-│ │
-│ ├── 10-strings-and-regex/
-│ │ ├── 01-string-methods.md
-│ │ ├── 02-template-literals.md
-│ │ ├── 03-string-search.md
-│ │ ├── 04-string-manipulation.md
-│ │ ├── 05-regex-basics.md
-│ │ ├── 06-regex-methods.md
-│ │ └── 07-regex-patterns.md
-│ │
-│ ├── 11-errors-and-debugging/
-│ │ ├── 01-error-basics.md
-│ │ ├── 02-try-catch.md
-│ │ ├── 03-throw.md
-│ │ ├── 04-custom-errors.md
-│ │ ├── 05-error-types.md
-│ │ ├── 06-console-debugging.md
-│ │ ├── 07-browser-devtools.md
-│ │ └── 08-common-errors.md
-│ │
-│ ├── 12-async/
-│ │ ├── 01-synchronous-vs-asynchronous.md
-│ │ ├── 02-callbacks.md
-│ │ ├── 03-callback-hell.md
-│ │ ├── 04-promises.md
-│ │ ├── 05-promise-methods.md
-│ │ ├── 06-async-await.md
-│ │ ├── 07-error-handling.md
-│ │ ├── 08-event-loop.md
-│ │ ├── 09-microtasks-and-macrotasks.md
-│ │ └── 10-timers.md
-│ │
-│ ├── 13-modules/
-│ │ ├── 01-module-basics.md
-│ │ ├── 02-es-modules.md
-│ │ ├── 03-import.md
-│ │ ├── 04-export.md
-│ │ ├── 05-default-export.md
-│ │ ├── 06-dynamic-import.md
-│ │ ├── 07-commonjs.md
-│ │ └── 08-module-patterns.md
-│ │
-│ ├── 14-dom/
-│ │ ├── 01-dom-basics.md
-│ │ ├── 02-selecting-elements.md
-│ │ ├── 03-creating-elements.md
-│ │ ├── 04-modifying-elements.md
-│ │ ├── 05-attributes.md
-│ │ ├── 06-classes-and-styles.md
-│ │ ├── 07-events.md
-│ │ ├── 08-event-delegation.md
-│ │ └── 09-forms.md
-│ │
-│ ├── 15-browser-api/
-│ │ ├── 01-window.md
-│ │ ├── 02-location.md
-│ │ ├── 03-history.md
-│ │ ├── 04-storage.md
-│ │ ├── 05-fetch-api.md
-│ │ ├── 06-url-api.md
-│ │ ├── 07-web-workers.md
-│ │ ├── 08-notifications.md
-│ │ └── 09-clipboard.md
-│ │
-│ ├── 16-json-and-data/
-│ │ ├── 01-json-basics.md
-│ │ ├── 02-json-parse.md
-│ │ ├── 03-json-stringify.md
-│ │ ├── 04-serialization.md
-│ │ └── 05-data-transformation.md
-│ │
-│ ├── 17-functional-programming/
-│ │ ├── 01-pure-functions.md
-│ │ ├── 02-immutability.md
-│ │ ├── 03-higher-order-functions.md
-│ │ ├── 04-function-composition.md
-│ │ ├── 05-currying.md
-│ │ └── 06-functional-patterns.md
-│ │
-│ ├── 18-testing/
-│ │ ├── 01-testing-basics.md
-│ │ ├── 02-unit-testing.md
-│ │ ├── 03-integration-testing.md
-│ │ ├── 04-test-frameworks.md
-│ │ ├── 05-mocking.md
-│ │ └── 06-test-coverage.md
-│ │
-│ ├── 19-tooling/
-│ │ ├── 01-node-js-runtime.md
-│ │ ├── 02-npm.md
-│ │ ├── 03-package-json.md
-│ │ ├── 04-npm-scripts.md
-│ │ ├── 05-package-management.md
-│ │ ├── 06-bundlers.md
-│ │ ├── 07-transpilers.md
-│ │ └── 08-linters-and-formatters.md
-│ │
-│ ├── 20-modern-javascript/
-│ │ ├── 01-es6.md
-│ │ ├── 02-es2016.md
-│ │ ├── 03-es2017.md
-│ │ ├── 04-es2018.md
-│ │ ├── 05-es2019.md
-│ │ ├── 06-es2020.md
-│ │ ├── 07-es2021.md
-│ │ ├── 08-es2022.md
-│ │ ├── 09-es2023.md
-│ │ ├── 10-es2024.md
-│ │ ├── 11-es2025.md
-│ │ └── 12-modern-features.md
-│ │
-│ └── 21-advanced/
-│ ├── 01-execution-context.md
-│ ├── 02-call-stack.md
-│ ├── 03-event-loop.md
-│ ├── 04-lexical-environment.md
-│ ├── 05-execution-model.md
-│ ├── 06-memory-management.md
-│ ├── 07-garbage-collection.md
-│ ├── 08-proxy-and-reflect.md
-│ ├── 09-generators.md
-│ ├── 10-iterators.md
-│ ├── 11-symbols.md
-│ ├── 12-metaprogramming.md
-│ └── 13-performance.md
-│
-└── 04-typescript/
-├── README.md
-│
-├── 01-basics/
-│ ├── 01-introduction.md
-│ ├── 02-installation.md
-│ ├── 03-first-program.md
-│ ├── 04-typescript-vs-javascript.md
-│ ├── 05-compilation.md
-│ └── 06-tsc.md
-│
-├── 02-syntax/
-│ ├── 01-statements.md
-│ ├── 02-expressions.md
-│ ├── 03-variables.md
-│ ├── 04-const-and-let.md
-│ ├── 05-operators.md
-│ ├── 06-comments.md
-│ └── 07-annotations.md
-│
-├── 03-basic-types/
-│ ├── 01-string.md
-│ ├── 02-number.md
-│ ├── 03-boolean.md
-│ ├── 04-null-and-undefined.md
-│ ├── 05-any.md
-│ ├── 06-unknown.md
-│ ├── 07-never.md
-│ ├── 08-void.md
-│ ├── 09-object.md
-│ └── 10-symbol-and-bigint.md
-│
-├── 04-functions/
-│ ├── 01-function-types.md
-│ ├── 02-parameters.md
-│ ├── 03-return-types.md
-│ ├── 04-optional-parameters.md
-│ ├── 05-default-parameters.md
-│ ├── 06-rest-parameters.md
-│ ├── 07-function-overloads.md
-│ ├── 08-arrow-functions.md
-│ ├── 09-callback-functions.md
-│ └── 10-this-parameters.md
-│
-├── 05-arrays-and-tuples/
-│ ├── 01-arrays.md
-│ ├── 02-readonly-arrays.md
-│ ├── 03-tuples.md
-│ ├── 04-optional-tuple-elements.md
-│ ├── 05-rest-elements.md
-│ └── 06-named-tuples.md
-│
-├── 06-objects-and-interfaces/
-│ ├── 01-object-types.md
-│ ├── 02-type-aliases.md
-│ ├── 03-interfaces.md
-│ ├── 04-interface-extension.md
-│ ├── 05-interface-merging.md
-│ ├── 06-optional-properties.md
-│ ├── 07-readonly-properties.md
-│ ├── 08-index-signatures.md
-│ └── 09-function-interfaces.md
-│
-├── 07-unions-and-narrowing/
-│ ├── 01-union-types.md
-│ ├── 02-intersection-types.md
-│ ├── 03-type-narrowing.md
-│ ├── 04-type-guards.md
-│ ├── 05-type-predicates.md
-│ ├── 06-discriminated-unions.md
-│ ├── 07-in-operator.md
-│ ├── 08-instanceof.md
-│ └── 09-exhaustiveness-checking.md
-│
-├── 08-enums-and-literals/
-│ ├── 01-enums.md
-│ ├── 02-numeric-enums.md
-│ ├── 03-string-enums.md
-│ ├── 04-const-enums.md
-│ ├── 05-literal-types.md
-│ ├── 06-template-literal-types.md
-│ └── 07-as-const.md
-│
-├── 09-generics/
-│ ├── 01-generic-basics.md
-│ ├── 02-generic-functions.md
-│ ├── 03-generic-interfaces.md
-│ ├── 04-generic-classes.md
-│ ├── 05-generic-constraints.md
-│ ├── 06-keyof.md
-│ ├── 07-typeof.md
-│ ├── 08-generic-defaults.md
-│ └── 09-generic-utility-patterns.md
-│
-├── 10-classes/
-│ ├── 01-class-basics.md
-│ ├── 02-access-modifiers.md
-│ ├── 03-readonly.md
-│ ├── 04-constructors.md
-│ ├── 05-inheritance.md
-│ ├── 06-abstract-classes.md
-│ ├── 07-implements.md
-│ ├── 08-static-members.md
-│ └── 09-parameter-properties.md
-│
-├── 11-utility-types/
-│ ├── 01-partial.md
-│ ├── 02-required.md
-│ ├── 03-readonly.md
-│ ├── 04-pick.md
-│ ├── 05-omit.md
-│ ├── 06-record.md
-│ ├── 07-exclude.md
-│ ├── 08-extract.md
-│ ├── 09-nonnullable.md
-│ ├── 10-returntype.md
-│ ├── 11-parameters.md
-│ ├── 12-awaited.md
-│ └── 13-satisfies.md
-│
-├── 12-advanced-types/
-│ ├── 01-conditional-types.md
-│ ├── 02-mapped-types.md
-│ ├── 03-indexed-access-types.md
-│ ├── 04-keyof-type-operator.md
-│ ├── 05-typeof-type-operator.md
-│ ├── 06-infer.md
-│ ├── 07-recursive-types.md
-│ ├── 08-distributive-conditional-types.md
-│ ├── 09-branded-types.md
-│ └── 10-type-level-programming.md
-│
-├── 13-modules/
-│ ├── 01-module-basics.md
-│ ├── 02-import.md
-│ ├── 03-export.md
-│ ├── 04-default-export.md
-│ ├── 05-type-only-imports.md
-│ ├── 06-type-only-exports.md
-│ ├── 07-module-resolution.md
-│ └── 08-declaration-merging.md
-│
-├── 14-generators-and-iterators/
-│ ├── 01-iterators.md
-│ ├── 02-iterable.md
-│ ├── 03-generators.md
-│ └── 04-async-iterators.md
-│
-├── 15-decorators/
-│ ├── 01-decorator-basics.md
-│ ├── 02-class-decorators.md
-│ ├── 03-method-decorators.md
-│ ├── 04-property-decorators.md
-│ └── 05-decorator-metadata.md
-│
-├── 16-error-handling/
-│ ├── 01-error-types.md
-│ ├── 02-unknown-in-catch.md
-│ ├── 03-custom-errors.md
-│ ├── 04-error-narrowing.md
-│ └── 05-safe-error-handling.md
-│
-├── 17-configuration/
-│ ├── 01-tsconfig-basics.md
-│ ├── 02-compiler-options.md
-│ ├── 03-strict-mode.md
-│ ├── 04-target.md
-│ ├── 05-module.md
-│ ├── 06-module-resolution.md
-│ ├── 07-path-aliases.md
-│ ├── 08-project-references.md
-│ └── 09-typescript-config-patterns.md
-│
-├── 18-tooling/
-│ ├── 01-tsc.md
-│ ├── 02-ts-node.md
-│ ├── 03-tsx.md
-│ ├── 04-eslint.md
-│ ├── 05-prettier.md
-│ ├── 06-npm.md
-│ ├── 07-package-json.md
-│ └── 08-build-tools.md
-│
-├── 19-testing/
-│ ├── 01-testing-basics.md
-│ ├── 02-unit-testing.md
-│ ├── 03-jest.md
-│ ├── 04-vitest.md
-│ ├── 05-mocking.md
-│ ├── 06-type-testing.md
-│ └── 07-test-coverage.md
-│
-├── 20-javascript-interoperability/
-│ ├── 01-javascript-compatibility.md
-│ ├── 02-checkjs.md
-│ ├── 03-jsdoc.md
-│ ├── 04-declaration-files.md
-│ ├── 05-d-ts.md
-│ ├── 06-ambient-declarations.md
-│ └── 07-third-party-types.md
-│
-└── 21-advanced/
-├── 01-type-system.md
-├── 02-type-inference.md
-├── 03-contextual-typing.md
-├── 04-structural-typing.md
-├── 05-variance.md
-├── 06-declaration-merging.md
-├── 07-module-augmentation.md
-├── 08-global-augmentation.md
-├── 09-performance.md
-└── 10-large-project-patterns.md
+Programming Languages
+
+- 02-languages/
+- ├── [03-javascript/](./02-languages/01-javascript)
+- │ ├── README.md
+- │ │
+- │ ├ 01-basics/
+- │ │ ├── [01-introduction.md](hands-on-notes/02-languages/01-javascript/01-basics/01-introduction.md) [==]
+- │ │ ├── 02-installation.md
+  │ │ ├── 03-first-program.md
+  │ │ ├── 04-comments.md
+  │ │ ├── 05-strict-mode.md
+  │ │ └── 06-use-strict.md
+  │ │
+  │ ├── 02-syntax/
+  │ │ ├── 01-statements.md
+  │ │ ├── 02-expressions.md
+  │ │ ├── 03-operators.md
+  │ │ ├── 04-variables.md
+  │ │ ├── 05-const-let-var.md
+  │ │ ├── 06-semicolons.md
+  │ │ └── 07-comments.md
+  │ │
+  │ ├── 03-types/
+  │ │ ├── 01-primitive-types.md
+  │ │ ├── 02-string.md
+  │ │ ├── 03-number.md
+  │ │ ├── 04-bigint.md
+  │ │ ├── 05-boolean.md
+  │ │ ├── 06-null-and-undefined.md
+  │ │ ├── 07-symbol.md
+  │ │ ├── 08-object.md
+  │ │ ├── 09-typeof.md
+  │ │ ├── 10-type-coercion.md
+  │ │ └── 11-type-conversion.md
+  │ │
+  │ ├── 04-control-flow/
+  │ │ ├── 01-if-else.md
+  │ │ ├── 02-switch.md
+  │ │ ├── 03-for-loop.md
+  │ │ ├── 04-while-loop.md
+  │ │ ├── 05-do-while.md
+  │ │ ├── 06-break.md
+  │ │ ├── 07-continue.md
+  │ │ ├── 08-for-of.md
+  │ │ └── 09-for-in.md
+  │ │
+  │ ├── 05-functions/
+  │ │ ├── 01-function-basics.md
+  │ │ ├── 02-function-declarations.md
+  │ │ ├── 03-function-expressions.md
+  │ │ ├── 04-arrow-functions.md
+  │ │ ├── 05-parameters-and-arguments.md
+  │ │ ├── 06-default-parameters.md
+  │ │ ├── 07-rest-parameters.md
+  │ │ ├── 08-callback-functions.md
+  │ │ ├── 09-higher-order-functions.md
+  │ │ ├── 10-recursion.md
+  │ │ └── 11-iife.md
+  │ │
+  │ ├── 06-scope-and-closures/
+  │ │ ├── 01-scope.md
+  │ │ ├── 02-global-scope.md
+  │ │ ├── 03-function-scope.md
+  │ │ ├── 04-block-scope.md
+  │ │ ├── 05-lexical-scope.md
+  │ │ ├── 06-closures.md
+  │ │ └── 07-hoisting.md
+  │ │
+  │ ├── 07-objects/
+  │ │ ├── 01-object-basics.md
+  │ │ ├── 02-properties.md
+  │ │ ├── 03-methods.md
+  │ │ ├── 04-object-destructuring.md
+  │ │ ├── 05-object-spread.md
+  │ │ ├── 06-this.md
+  │ │ ├── 07-prototype.md
+  │ │ ├── 08-prototype-chain.md
+  │ │ ├── 09-object-create.md
+  │ │ └── 10-property-descriptors.md
+  │ │
+  │ ├── 08-classes/
+  │ │ ├── 01-class-basics.md
+  │ │ ├── 02-constructor.md
+  │ │ ├── 03-instance-methods.md
+  │ │ ├── 04-static-methods.md
+  │ │ ├── 05-getters-and-setters.md
+  │ │ ├── 06-inheritance.md
+  │ │ ├── 07-super.md
+  │ │ └── 08-private-fields.md
+  │ │
+  │ ├── 09-arrays-and-collections/
+  │ │ ├── 01-arrays.md
+  │ │ ├── 02-array-methods.md
+  │ │ ├── 03-map.md
+  │ │ ├── 04-filter.md
+  │ │ ├── 05-reduce.md
+  │ │ ├── 06-find.md
+  │ │ ├── 07-some-and-every.md
+  │ │ ├── 08-sort.md
+  │ │ ├── 09-set.md
+  │ │ ├── 10-map-collection.md
+  │ │ ├── 11-weakmap.md
+  │ │ └── 12-weakset.md
+  │ │
+  │ ├── 10-strings-and-regex/
+  │ │ ├── 01-string-methods.md
+  │ │ ├── 02-template-literals.md
+  │ │ ├── 03-string-search.md
+  │ │ ├── 04-string-manipulation.md
+  │ │ ├── 05-regex-basics.md
+  │ │ ├── 06-regex-methods.md
+  │ │ └── 07-regex-patterns.md
+  │ │
+  │ ├── 11-errors-and-debugging/
+  │ │ ├── 01-error-basics.md
+  │ │ ├── 02-try-catch.md
+  │ │ ├── 03-throw.md
+  │ │ ├── 04-custom-errors.md
+  │ │ ├── 05-error-types.md
+  │ │ ├── 06-console-debugging.md
+  │ │ ├── 07-browser-devtools.md
+  │ │ └── 08-common-errors.md
+  │ │
+  │ ├── 12-async/
+  │ │ ├── 01-synchronous-vs-asynchronous.md
+  │ │ ├── 02-callbacks.md
+  │ │ ├── 03-callback-hell.md
+  │ │ ├── 04-promises.md
+  │ │ ├── 05-promise-methods.md
+  │ │ ├── 06-async-await.md
+  │ │ ├── 07-error-handling.md
+  │ │ ├── 08-event-loop.md
+  │ │ ├── 09-microtasks-and-macrotasks.md
+  │ │ └── 10-timers.md
+  │ │
+  │ ├── 13-modules/
+  │ │ ├── 01-module-basics.md
+  │ │ ├── 02-es-modules.md
+  │ │ ├── 03-import.md
+  │ │ ├── 04-export.md
+  │ │ ├── 05-default-export.md
+  │ │ ├── 06-dynamic-import.md
+  │ │ ├── 07-commonjs.md
+  │ │ └── 08-module-patterns.md
+  │ │
+  │ ├── 14-dom/
+  │ │ ├── 01-dom-basics.md
+  │ │ ├── 02-selecting-elements.md
+  │ │ ├── 03-creating-elements.md
+  │ │ ├── 04-modifying-elements.md
+  │ │ ├── 05-attributes.md
+  │ │ ├── 06-classes-and-styles.md
+  │ │ ├── 07-events.md
+  │ │ ├── 08-event-delegation.md
+  │ │ └── 09-forms.md
+  │ │
+  │ ├── 15-browser-api/
+  │ │ ├── 01-window.md
+  │ │ ├── 02-location.md
+  │ │ ├── 03-history.md
+  │ │ ├── 04-storage.md
+  │ │ ├── 05-fetch-api.md
+  │ │ ├── 06-url-api.md
+  │ │ ├── 07-web-workers.md
+  │ │ ├── 08-notifications.md
+  │ │ └── 09-clipboard.md
+  │ │
+  │ ├── 16-json-and-data/
+  │ │ ├── 01-json-basics.md
+  │ │ ├── 02-json-parse.md
+  │ │ ├── 03-json-stringify.md
+  │ │ ├── 04-serialization.md
+  │ │ └── 05-data-transformation.md
+  │ │
+  │ ├── 17-functional-programming/
+  │ │ ├── 01-pure-functions.md
+  │ │ ├── 02-immutability.md
+  │ │ ├── 03-higher-order-functions.md
+  │ │ ├── 04-function-composition.md
+  │ │ ├── 05-currying.md
+  │ │ └── 06-functional-patterns.md
+  │ │
+  │ ├── 18-testing/
+  │ │ ├── 01-testing-basics.md
+  │ │ ├── 02-unit-testing.md
+  │ │ ├── 03-integration-testing.md
+  │ │ ├── 04-test-frameworks.md
+  │ │ ├── 05-mocking.md
+  │ │ └── 06-test-coverage.md
+  │ │
+  │ ├── 19-tooling/
+  │ │ ├── 01-node-js-runtime.md
+  │ │ ├── 02-npm.md
+  │ │ ├── 03-package-json.md
+  │ │ ├── 04-npm-scripts.md
+  │ │ ├── 05-package-management.md
+  │ │ ├── 06-bundlers.md
+  │ │ ├── 07-transpilers.md
+  │ │ └── 08-linters-and-formatters.md
+  │ │
+  │ ├── 20-modern-javascript/
+  │ │ ├── 01-es6.md
+  │ │ ├── 02-es2016.md
+  │ │ ├── 03-es2017.md
+  │ │ ├── 04-es2018.md
+  │ │ ├── 05-es2019.md
+  │ │ ├── 06-es2020.md
+  │ │ ├── 07-es2021.md
+  │ │ ├── 08-es2022.md
+  │ │ ├── 09-es2023.md
+  │ │ ├── 10-es2024.md
+  │ │ ├── 11-es2025.md
+  │ │ └── 12-modern-features.md
+  │ │
+  │ └── 21-advanced/
+  │ ├── 01-execution-context.md
+  │ ├── 02-call-stack.md
+  │ ├── 03-event-loop.md
+  │ ├── 04-lexical-environment.md
+  │ ├── 05-execution-model.md
+  │ ├── 06-memory-management.md
+  │ ├── 07-garbage-collection.md
+  │ ├── 08-proxy-and-reflect.md
+  │ ├── 09-generators.md
+  │ ├── 10-iterators.md
+  │ ├── 11-symbols.md
+  │ ├── 12-metaprogramming.md
+  │ └── 13-performance.md
+  │
+  └── 04-typescript/
+  ├── README.md
+  │
+  ├── 01-basics/
+  │ ├── 01-introduction.md
+  │ ├── 02-installation.md
+  │ ├── 03-first-program.md
+  │ ├── 04-typescript-vs-javascript.md
+  │ ├── 05-compilation.md
+  │ └── 06-tsc.md
+  │
+  ├── 02-syntax/
+  │ ├── 01-statements.md
+  │ ├── 02-expressions.md
+  │ ├── 03-variables.md
+  │ ├── 04-const-and-let.md
+  │ ├── 05-operators.md
+  │ ├── 06-comments.md
+  │ └── 07-annotations.md
+  │
+  ├── 03-basic-types/
+  │ ├── 01-string.md
+  │ ├── 02-number.md
+  │ ├── 03-boolean.md
+  │ ├── 04-null-and-undefined.md
+  │ ├── 05-any.md
+  │ ├── 06-unknown.md
+  │ ├── 07-never.md
+  │ ├── 08-void.md
+  │ ├── 09-object.md
+  │ └── 10-symbol-and-bigint.md
+  │
+  ├── 04-functions/
+  │ ├── 01-function-types.md
+  │ ├── 02-parameters.md
+  │ ├── 03-return-types.md
+  │ ├── 04-optional-parameters.md
+  │ ├── 05-default-parameters.md
+  │ ├── 06-rest-parameters.md
+  │ ├── 07-function-overloads.md
+  │ ├── 08-arrow-functions.md
+  │ ├── 09-callback-functions.md
+  │ └── 10-this-parameters.md
+  │
+  ├── 05-arrays-and-tuples/
+  │ ├── 01-arrays.md
+  │ ├── 02-readonly-arrays.md
+  │ ├── 03-tuples.md
+  │ ├── 04-optional-tuple-elements.md
+  │ ├── 05-rest-elements.md
+  │ └── 06-named-tuples.md
+  │
+  ├── 06-objects-and-interfaces/
+  │ ├── 01-object-types.md
+  │ ├── 02-type-aliases.md
+  │ ├── 03-interfaces.md
+  │ ├── 04-interface-extension.md
+  │ ├── 05-interface-merging.md
+  │ ├── 06-optional-properties.md
+  │ ├── 07-readonly-properties.md
+  │ ├── 08-index-signatures.md
+  │ └── 09-function-interfaces.md
+  │
+  ├── 07-unions-and-narrowing/
+  │ ├── 01-union-types.md
+  │ ├── 02-intersection-types.md
+  │ ├── 03-type-narrowing.md
+  │ ├── 04-type-guards.md
+  │ ├── 05-type-predicates.md
+  │ ├── 06-discriminated-unions.md
+  │ ├── 07-in-operator.md
+  │ ├── 08-instanceof.md
+  │ └── 09-exhaustiveness-checking.md
+  │
+  ├── 08-enums-and-literals/
+  │ ├── 01-enums.md
+  │ ├── 02-numeric-enums.md
+  │ ├── 03-string-enums.md
+  │ ├── 04-const-enums.md
+  │ ├── 05-literal-types.md
+  │ ├── 06-template-literal-types.md
+  │ └── 07-as-const.md
+  │
+  ├── 09-generics/
+  │ ├── 01-generic-basics.md
+  │ ├── 02-generic-functions.md
+  │ ├── 03-generic-interfaces.md
+  │ ├── 04-generic-classes.md
+  │ ├── 05-generic-constraints.md
+  │ ├── 06-keyof.md
+  │ ├── 07-typeof.md
+  │ ├── 08-generic-defaults.md
+  │ └── 09-generic-utility-patterns.md
+  │
+  ├── 10-classes/
+  │ ├── 01-class-basics.md
+  │ ├── 02-access-modifiers.md
+  │ ├── 03-readonly.md
+  │ ├── 04-constructors.md
+  │ ├── 05-inheritance.md
+  │ ├── 06-abstract-classes.md
+  │ ├── 07-implements.md
+  │ ├── 08-static-members.md
+  │ └── 09-parameter-properties.md
+  │
+  ├── 11-utility-types/
+  │ ├── 01-partial.md
+  │ ├── 02-required.md
+  │ ├── 03-readonly.md
+  │ ├── 04-pick.md
+  │ ├── 05-omit.md
+  │ ├── 06-record.md
+  │ ├── 07-exclude.md
+  │ ├── 08-extract.md
+  │ ├── 09-nonnullable.md
+  │ ├── 10-returntype.md
+  │ ├── 11-parameters.md
+  │ ├── 12-awaited.md
+  │ └── 13-satisfies.md
+  │
+  ├── 12-advanced-types/
+  │ ├── 01-conditional-types.md
+  │ ├── 02-mapped-types.md
+  │ ├── 03-indexed-access-types.md
+  │ ├── 04-keyof-type-operator.md
+  │ ├── 05-typeof-type-operator.md
+  │ ├── 06-infer.md
+  │ ├── 07-recursive-types.md
+  │ ├── 08-distributive-conditional-types.md
+  │ ├── 09-branded-types.md
+  │ └── 10-type-level-programming.md
+  │
+  ├── 13-modules/
+  │ ├── 01-module-basics.md
+  │ ├── 02-import.md
+  │ ├── 03-export.md
+  │ ├── 04-default-export.md
+  │ ├── 05-type-only-imports.md
+  │ ├── 06-type-only-exports.md
+  │ ├── 07-module-resolution.md
+  │ └── 08-declaration-merging.md
+  │
+  ├── 14-generators-and-iterators/
+  │ ├── 01-iterators.md
+  │ ├── 02-iterable.md
+  │ ├── 03-generators.md
+  │ └── 04-async-iterators.md
+  │
+  ├── 15-decorators/
+  │ ├── 01-decorator-basics.md
+  │ ├── 02-class-decorators.md
+  │ ├── 03-method-decorators.md
+  │ ├── 04-property-decorators.md
+  │ └── 05-decorator-metadata.md
+  │
+  ├── 16-error-handling/
+  │ ├── 01-error-types.md
+  │ ├── 02-unknown-in-catch.md
+  │ ├── 03-custom-errors.md
+  │ ├── 04-error-narrowing.md
+  │ └── 05-safe-error-handling.md
+  │
+  ├── 17-configuration/
+  │ ├── 01-tsconfig-basics.md
+  │ ├── 02-compiler-options.md
+  │ ├── 03-strict-mode.md
+  │ ├── 04-target.md
+  │ ├── 05-module.md
+  │ ├── 06-module-resolution.md
+  │ ├── 07-path-aliases.md
+  │ ├── 08-project-references.md
+  │ └── 09-typescript-config-patterns.md
+  │
+  ├── 18-tooling/
+  │ ├── 01-tsc.md
+  │ ├── 02-ts-node.md
+  │ ├── 03-tsx.md
+  │ ├── 04-eslint.md
+  │ ├── 05-prettier.md
+  │ ├── 06-npm.md
+  │ ├── 07-package-json.md
+  │ └── 08-build-tools.md
+  │
+  ├── 19-testing/
+  │ ├── 01-testing-basics.md
+  │ ├── 02-unit-testing.md
+  │ ├── 03-jest.md
+  │ ├── 04-vitest.md
+  │ ├── 05-mocking.md
+  │ ├── 06-type-testing.md
+  │ └── 07-test-coverage.md
+  │
+  ├── 20-javascript-interoperability/
+  │ ├── 01-javascript-compatibility.md
+  │ ├── 02-checkjs.md
+  │ ├── 03-jsdoc.md
+  │ ├── 04-declaration-files.md
+  │ ├── 05-d-ts.md
+  │ ├── 06-ambient-declarations.md
+  │ └── 07-third-party-types.md
+  │
+  └── 21-advanced/
+  ├── 01-type-system.md
+  ├── 02-type-inference.md
+  ├── 03-contextual-typing.md
+  ├── 04-structural-typing.md
+  ├── 05-variance.md
+  ├── 06-declaration-merging.md
+  ├── 07-module-augmentation.md
+  ├── 08-global-augmentation.md
+  ├── 09-performance.md
+  └── 10-large-project-patterns.md
 
 ```text
 02-languages/
@@ -1264,7 +1459,9 @@ hands-on-notes/
 
 ---
 
-# `03-web` — Web Platform
+# `03-web`
+
+Web Platform
 
 ```text
 03-web/
@@ -1591,7 +1788,9 @@ hands-on-notes/
 
 ---
 
-# `04-frontend` — Frontend Application Development
+# `04-frontend`
+
+Frontend Application Development
 
 ```text
 04-frontend/
@@ -2733,17 +2932,15 @@ hands-on-notes/
 │
 ├── 02-linux/
 │   ├── README.md
-│   ├── TOOLKITS-LINUX.md
-│   │
-│   ├── 00-quick-notes/
-│   │   ├── 01-distributions.md
 |   |
 │   ├── 01-basics/
 │   │   ├── 01-distributions.md
 │   │   ├── 02-kernel.md
 │   │   ├── 03-shell.md
 │   │   ├── 04-terminal.md
-│   │   └── 05-package-management.md
+│   │   ├── 05-commands.md        [OK] 2026.10.04
+|   |   ├── 06-system-info.md     [OK] 2026.10.04
+|   |   └── 07-updates-drivers.md [OK] 2026.10.04
 │   │
 │   ├── 02-filesystem/
 │   │   ├── 01-filesystem-hierarchy.md
@@ -2761,7 +2958,7 @@ hands-on-notes/
 │   │   ├── 02-groups.md
 │   │   ├── 03-user-management.md
 │   │   ├── 04-group-management.md
-│   │   └── 05-sudo.md
+|   |   └── 05-passwords.md
 │   │
 │   ├── 04-permissions/
 │   │   ├── 01-file-permissions.md
@@ -2793,7 +2990,8 @@ hands-on-notes/
 │   │   ├── 03-mounting.md
 │   │   ├── 04-fstab.md
 │   │   ├── 05-lvm.md
-│   │   └── 06-disk-usage.md
+│   │   ├── 06-ntfs-usb.md [OK] 2026.10.04
+│   │   └── 07-disk-usage.md
 │   │
 │   ├── 08-networking/
 │   │   ├── 01-network-interfaces.md
@@ -2801,13 +2999,16 @@ hands-on-notes/
 │   │   ├── 03-routing.md
 │   │   ├── 04-dns.md
 │   │   ├── 05-ssh.md
-│   │   └── 06-firewall.md
+│   │   ├── 06-file-sharing.md   [OK] 2026.10.04
+│   │   ├── 07-internet-modem.md [OK] 2026.10.04
+│   │   └── 08-firewall.md
 │   │
 │   ├── 09-boot/
 │   │   ├── 01-boot-process.md
 │   │   ├── 02-grub.md
 │   │   ├── 03-initramfs.md
-│   │   └── 04-systemd-boot.md
+│   │   ├── 04-systemd-boot.md
+|   |   └── 05-dual-boot.md
 │   │
 │   ├── 10-packages/
 │   │   ├── 01-apt.md
@@ -2816,16 +3017,43 @@ hands-on-notes/
 │   │   ├── 04-flatpak.md
 │   │   └── 05-package-repositories.md
 │   │
-│   └── 11-monitoring/
-│       ├── 01-cpu.md
-│       ├── 02-memory.md
-│       ├── 03-disk.md
-│       ├── 04-network.md
-│       └── 05-system-monitoring.md
+|   ├── 11-monitoring/
+│   |   ├── 01-cpu.md
+│   |   ├── 02-memory.md
+│   |   ├── 03-disk.md
+│   |   ├── 04-network.md
+│   |   ├── 05-system-monitoring.md
+│   |   └── 06-performance.md       [OK] 2026.10.04
+|   |
+|   ├── 12-desktop/
+│   |   ├── 01-gnome.md             [OK] 2026.10.04
+│   |   ├── 02-system-tray.md       [OK] 2026.10.04
+│   |   └── 03-bengali-fonts.md     [OK] 2026.10.04
+|   |
+│   ├── 13-applications/
+│   |   ├── 01-appimage.md        [OK] 2026.10.04
+│   |   ├── 02-davinci-resolve.md [OK] 2026.10.04
+│   |   ├── 03-node-js.md         [OK] 2026.10.04
+│   |   └── 04-google-chrome.md   [OK] 2026.10.04
+|   |
+|   ├── 14-multimedia/
+|   │   ├── 01-ffmpeg.md      [OK] 2026.10.04
+|   │   ├── 02-imagemagick.md [OK] 2026.10.04
+|   │   ├── 03-exiftool.md    [OK] 2026.10.04
+|   │   └── 04-yt-dlp.md      [OK] 2026.10.04
+|   |
+│   ├── 15-virtualization/
+│   |   ├── 01-windows-kvm.md      [OK] 2026.10.04
+│   |   └── 02-android-waydroid.md [OK] 2026.10.04
+|   |
+|   ├── 16-documentation/
+|   |   └── 01...
+|   |
+│   └── 17-miscellaneous/
+│       └── 01-android-screen-mirroring.md [OK] 2026.10.04
 │
 ├── 03-windows/
 │   ├── README.md
-|   ├── TOOLKITS-WINDOWS.md [OK]
 │   │
 │   ├── 01-basics/
 │   │   ├── 01-windows-architecture.md
@@ -5661,20 +5889,30 @@ hands-on-notes/
 │   ├── 03-javascript/ [OK] See the internal README.md file for details.
 |   └── 04-typescript/ [OK] See the internal README.md file for details.
 |
-└── 10-glossary/
+├── 10-glossary/
+|   ├── README.md
+|   |
+|   ├── 01-software-engineering-terms.md
+|   ├── 02-programming-terms.md
+|   ├── 03-web-terms.md
+|   ├── 04-backend-terms.md
+|   ├── 05-frontend-terms.md
+|   ├── 06-database-terms.md
+|   ├── 07-devops-terms.md
+|   ├── 08-cloud-terms.md
+|   ├── 09-networking-terms.md
+|   ├── 10-security-terms.md
+|   └── 11-architecture-terms.md
+|
+└── 11-toolkits/
     ├── README.md
     |
-    ├── 01-software-engineering-terms.md
-    ├── 02-programming-terms.md
-    ├── 03-web-terms.md
-    ├── 04-backend-terms.md
-    ├── 05-frontend-terms.md
-    ├── 06-database-terms.md
-    ├── 07-devops-terms.md
-    ├── 08-cloud-terms.md
-    ├── 09-networking-terms.md
-    ├── 10-security-terms.md
-    └── 11-architecture-terms.md
+    ├── 01-web.md     [OK] 2026.10.05
+    ├── 02-linux.md   [OK] 2026.10.05
+    ├── 03-mac.md
+    ├── 04-windows.md [OK] 2026.10.05
+    ├── 05-android.md [OK] 2026.10.05
+    └── 06-ios.md
 ```
 
 ---

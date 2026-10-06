@@ -4,58 +4,6 @@ A practical command reference for downloading, converting, organizing, and troub
 
 ---
 
-# Table of Contents
-
-1. [Introduction](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#1-introduction)
-    - [What is yt-dlp?](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#11-what-is-yt-dlp)
-    - [What is FFmpeg?](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#12-what-is-ffmpeg)
-    - [How yt-dlp + FFmpeg Work Together](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#13-how-yt-dlp--ffmpeg-work-together)
-    - [Prerequisites](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#14-prerequisites)
-    - [Installation & Verification](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#15-installation--verification)
-
-2. [Videos](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#2-videos)
-
-    - [Basic Download](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#21-basic-download)
-    - [Best Quality](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#22-best-quality)
-    - [List Available Formats](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#23-list-available-formats)
-    - [Specific Resolution](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#24-specific-resolution)
-    - [MP4](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#25-mp4)
-    - [1080p MP4](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#26-1080p-mp4)
-    - [720p MP4](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#27-720p-mp4)
-    - [Playlists](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#28-playlists)
-    - [Subtitles](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#29-subtitles)
-    - [Thumbnails & Metadata](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#210-thumbnails--metadata)
-    - [Output Organization](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#211-output-organization)
-
-3. [Audio](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#3-audio)
-
-    - [Audio Only](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#31-audio-only)
-    - [MP3](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#32-mp3)
-    - [MP3 320K](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#33-mp3-320k)
-    - [MP3 + Thumbnail](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#34-mp3--thumbnail)
-    - [Temporary Thumbnail Cleanup](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#35-temporary-thumbnail-cleanup)
-    - [Playlist MP3](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#36-playlist-mp3)
-    - [Other Audio Formats](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#37-other-audio-formats)
-
-4. [Troubleshooting](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#4-troubleshooting)
-
-    - [yt-dlp Not Found](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#41-yt-dlp-not-found)
-    - [FFmpeg Not Found](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#42-ffmpeg-not-found)
-    - [FFmpeg Detection](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#43-ffmpeg-detection)
-    - [Low Video Resolution](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#44-low-video-resolution)
-    - [MP3 Conversion Failure](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#45-mp3-conversion-failure)
-    - [YouTube / Extractor Errors](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#46-youtube--extractor-errors)
-    - [Verbose Debugging](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#47-verbose-debugging)
-    - [Media Inspection with FFprobe](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#48-media-inspection-with-ffprobe)
-    - [Update yt-dlp and FFmpeg](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#49-update-yt-dlp-and-ffmpeg)
-
-5. [Conclusion](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#5-conclusion)
-
-    - [Daily Command Cheat Sheet](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#51-daily-command-cheat-sheet)
-    - [Recommended Workflow](https://chatgpt.com/c/6a9e35be-db3c-83e9-803f-f9bb94127b83#52-recommended-workflow)
-
----
-
 # 1. Introduction
 
 ## 1.1 What is yt-dlp?
@@ -90,21 +38,13 @@ yt-dlp [OPTIONS] URL
 **FFmpeg** is a multimedia framework used for:
 
 - Video conversion
-
 - Audio conversion
-
 - Stream merging
-
 - Encoding
-
 - Decoding
-
 - Transcoding
-
 - Metadata processing
-
 - Subtitle processing
-
 - Thumbnail embedding
 
 FFmpeg is particularly important because many platforms provide video and audio as separate streams.
@@ -159,11 +99,8 @@ FFprobe →  Inspect
 This guide assumes:
 
 - Ubuntu Linux
-
 - Internet connection
-
 - Terminal access
-
 - `sudo` privileges
 
 Check your Ubuntu version:

@@ -1,8 +1,5 @@
 # TOOLKITS: WEB APPS
 
----
-**Updated**: 2026-08-11
-
 On these websites, which act as directories, you will find links to various useful websites.
 
 [Free-Media-Heck-Yeah](https://fmhy.net)
