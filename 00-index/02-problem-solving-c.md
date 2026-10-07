@@ -1,7 +1,15 @@
-- **[01-c/](../19-reference/09-problem-solving/01-c/)**
+# C Problem Solving
+
+> C programming problems organized by topic and learning sequence.
+
+---
+
+## TABLE OF CONTENTS
+
+- **[01-C/](../19-reference/09-problem-solving/01-c/)**
   - [README.md](../19-reference/09-problem-solving/01-c/README.md)
 
-  - **[01-CHARACTER/](../19-reference/09-problem-solving/01-c/01-character/)**
+  - **[01-CHARACTER/](01-character/)**
     - [01-find-ascii-value.md](../19-reference/09-problem-solving/01-c/01-character/01-find-ascii-value.md)
     - [02-find-ascii-value.md](../19-reference/09-problem-solving/01-c/01-character/02-find-ascii-value.md)
     - [03-lowercase-to-uppercase.md](../19-reference/09-problem-solving/01-c/01-character/03-lowercase-to-uppercase.md)
@@ -236,3 +244,37 @@
   - **[14-PREPROCESSOR/](../19-reference/09-problem-solving/01-c/14-preprocessor/)**
     - [01-define-preprocessor.md](../19-reference/09-problem-solving/01-c/14-preprocessor/01-define-preprocessor.md)
     - [02-user-defined-header-file.md](../19-reference/09-problem-solving/01-c/14-preprocessor/02-user-defined-header-file.md)
+
+---
+
+## Online Compiler
+
+You can run the C programs directly in your browser without installing a C compiler.
+
+**ZuupCode Online IDE:** [https://code.zuup.dev/editor](https://code.zuup.dev/editor)
+
+### Quick Test
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int a = 10;
+    int b = 20;
+
+    printf("Sum = %d\n", a + b);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```text
+Sum = 30
+```
+
+---
+
+> **Organized by topic. Numbered by hierarchy. Easy to extend.**

@@ -1,6003 +1,4387 @@
-# TABLE OF CONTENTS
+# MASTER TABLE OF CONTENTS
 
-* [02-linux/](./02-linux/)
-  * [README.md](./02-linux/README.md)
-  * [TOOLKITS-LINUX.md](./02-linux/TOOLKITS-LINUX.md)
-  * [01-basics/](./02-linux/01-basics/)
-    * [01-distributions.md](./02-linux/01-basics/01-distributions.md)
-    * [02-kernel.md](./02-linux/01-basics/02-kernel.md)
-    * [03-shell.md](./02-linux/01-basics/03-shell.md)
-    * [04-terminal.md](./02-linux/01-basics/04-terminal.md)
-    * [05-commands.md](./02-linux/01-basics/05-commands.md)
-    * [06-system-info.md](./02-linux/01-basics/06-system-info.md)
-    * [07-updates-drivers.md](./02-linux/01-basics/
-    07-updates-drivers.md)
-    * New One
+> Central index for all hands-on notes, problem solving, references, recipes, and learning resources.
+
+# 00-INDEX
+
+- [00-INDEX/](../00-index/)
+  - [01-MASTER-TOC.md](../00-index/01-master-toc.md)
+  - [02-PROBLEM-SOLVING-C.md](../00-index/02-problem-solving-c.md)
+  - [03-PROBLEM-SOLVING-CPP.md](../00-index/03-problem-solving-cpp.md)
+  - [04-PROBLEM-SOLVING-JAVASCRIPT.md](../00-index/04-problem-solving-javascript.md)
+  - [05-PROBLEM-SOLVING-TYPESCRIPT.md](../00-index/05-problem-solving-typescript.md)
+  - [06-ALGORITHMS-AND-DATA-STRUCTURES.md](../00-index/06-algorithms-and-data-structures.md)
+  - [07-ROADMAP-WEB-DEVELOPMENT.md](../00-index/07-roadmap-web-development.md)
+  - [08-ROADMAP-DEVOPS.md](../00-index/08-roadmap-devops.md)
 
 ---
-
-```text
-
-hands-on-notes/
-|
-├── 00-index/
-|   ├── 01-master-toc.md
-|   ├── 02-problem-solving-c.md
-|   ├── 03-problem-solving-cpp.md
-|   ├── 04-problem-solving-javascript.md
-|   ├── 05-problem-solving-typescript.md
-|   ├── 06-algorithms-and-data-structures.md
-|   ├── 07-roadmap-web-development.md
-|   └── 08-roadmap-devops.md
-│
-├── 01-core/
-│   ├── git/
-│   ├── github/
-│   ├── terminal/
-│   ├── shell/
-│   ├── markdown/
-│   ├── http/
-│   ├── networking/
-│   ├── regex/
-│   ├── json/
-│   ├── yaml/
-│   └── encoding/
-│
-├── 02-languages/
-│   ├── javascript/
-│   └── typescript/
-│
-├── 03-web/
-│   ├── html/
-│   ├── css/
-│   ├── javascript/
-│   ├── typescript/
-│   ├── browser/
-│   ├── dom/
-│   ├── web-api/
-│   ├── accessibility/
-│   └── performance/
-│
-├── 04-frontend/
-│   ├── react/
-│   ├── next-js/
-│   ├── tailwind-css/
-│   ├── components/
-│   ├── state/
-│   ├── forms/
-│   ├── routing/
-│   └── testing/
-│
-├── 05-backend/
-│   ├── node-js/
-│   ├── nest-js/
-│   ├── express/
-│   ├── rest/
-│   ├── graphql/
-│   ├── websocket/
-│   ├── auth/
-│   ├── validation/
-│   ├── testing/
-│   └── performance/
-│
-├── 06-database/
-│   ├── sql/
-│   ├── postgresql/
-│   ├── mongodb/
-│   ├── redis/
-│   ├── design/
-│   ├── indexing/
-│   ├── transactions/
-│   └── backup/
-│
-├── 07-os/
-│   ├── linux/
-│   ├── windows/
-│   ├── macos/
-│   ├── android/
-│   ├── ios/
-│   ├── filesystem/
-│   ├── process/
-│   ├── service/
-│   ├── permission/
-│   └── virtualization/
-│
-├── 08-devops/
-│   ├── docker/
-│   ├── kubernetes/
-│   ├── nginx/
-│   ├── ci-cd/
-│   ├── github-actions/
-│   ├── deployment/
-│   ├── terraform/
-│   ├── ansible/
-│   ├── monitoring/
-│   └── logging/
-│
-├── 09-cloud/
-│   ├── aws/
-│   ├── azure/
-│   ├── gcp/
-│   ├── compute/
-│   ├── storage/
-│   ├── database/
-│   ├── networking/
-│   └── serverless/
-│
-├── 10-engineering/
-│   ├── clean-code/
-│   ├── solid/
-│   ├── patterns/
-│   ├── refactoring/
-│   ├── debugging/
-│   ├── testing/
-│   ├── code-review/
-│   ├── documentation/
-│   └── best-practices/
-│
-├── 11-architecture/
-│   ├── system-design/
-│   ├── software-architecture/
-│   ├── api-design/
-│   ├── scalability/
-│   ├── reliability/
-│   ├── caching/
-│   ├── queues/
-│   ├── messaging/
-│   ├── microservices/
-│   ├── distributed-systems/
-│   └── domain-driven-design/
-│
-├── 12-algorithms/
-│   ├── complexity/
-│   ├── arrays/
-│   ├── strings/
-│   ├── linked-list/
-│   ├── stack/
-│   ├── queue/
-│   ├── hash-table/
-│   ├── tree/
-│   ├── heap/
-│   ├── graph/
-│   ├── sorting/
-│   ├── searching/
-│   ├── recursion/
-│   ├── greedy/
-│   ├── dynamic-programming/
-│   └── problem-solving/
-│
-├── 13-security/
-│   ├── fundamentals/
-│   ├── web/
-│   ├── auth/
-│   ├── cryptography/
-│   ├── tls/
-│   ├── oauth/
-│   ├── jwt/
-│   ├── secrets/
-│   └── secure-coding/
-│
-├── 14-tools/
-│   ├── vscode/
-│   ├── vim/
-│   ├── postman/
-│   ├── browsers/
-│   ├── curl/
-│   ├── jq/
-│   ├── grep/
-│   ├── sed/
-│   ├── awk/
-│   ├── npm/
-│   ├── pnpm/
-│   ├── make/
-|   └── note-taking/
-│
-├── 15-mobile/
-│   ├── android/
-│   ├── ios/
-│   └── react-native/
-│
-├── 16-snippets/
-│   ├── bash/
-│   ├── powershell/
-│   ├── javascript/
-│   ├── typescript/
-│   ├── sql/
-│   ├── html/
-│   └── css/
-│
-├── 17-recipes/
-│   ├── git/
-│   ├── linux/
-│   ├── windows/
-│   ├── macos/
-│   ├── android/
-│   ├── ios/
-│   ├── docker/
-│   ├── database/
-│   ├── development/
-│   └── deployment/
-│
-├── 18-troubleshooting/
-│   ├── linux/
-│   ├── windows/
-│   ├── macos/
-│   ├── android/
-│   ├── ios/
-│   ├── git/
-│   ├── docker/
-│   ├── database/
-│   ├── frontend/
-│   ├── backend/
-│   └── networking/
-│
-├── 19-reference/
-│   ├── commands/
-│   ├── shortcuts/
-│   ├── ports/
-│   ├── http-status/
-│   ├── mime-types/
-│   ├── file-extensions/
-│   ├── browser-extensions/
-│   ├── environment/
-|   ├── problem-solving/
-|   ├── glossary/
-│   └── toolkits/
-│
-└── 20-resources/
-    ├── books/
-    ├── courses/
-    ├── documentation/
-    ├── tools/
-    └── links/
-```
-
-# 00-index
-
-```text
-hands-on-notes/
-|
-└── 00-index/
-    ├── 01-master-toc.md
-    ├── 02-problem-solving-c.md
-    ├── 03-problem-solving-cpp.md
-    ├── 04-problem-solving-javascript.md
-    ├── 05-problem-solving-typescript.md
-    ├── 06-roadmap-web-development.md
-    └── 07-roadmap-devops.md
-```
-
-# `01-core`
+# 01-CORE
 
 Developer Fundamentals
 
-```
-01-core/
-├── README.md
-│
-├── 01-git/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-configuration.md
-│   ├── 03-repositories.md
-│   ├── 04-staging-and-commits.md
-│   ├── 05-branching.md
-│   ├── 06-merging.md
-│   ├── 07-rebasing.md
-│   ├── 08-stash.md
-│   ├── 09-tags.md
-│   ├── 10-reset.md
-│   ├── 11-revert.md
-│   ├── 12-cherry-pick.md
-│   ├── 13-remote-repositories.md
-│   ├── 14-submodules.md
-│   └── 15-advanced.md
-│
-├── 02-github/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-repositories.md
-│   ├── 03-issues.md
-│   ├── 04-pull-requests.md
-│   ├── 05-actions.md
-│   ├── 06-releases.md
-│   ├── 07-ssh.md
-│   └── 08-cli.md
-│
-├── 03-terminal/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-commands.md
-│   ├── 03-navigation.md
-│   ├── 04-files-and-directories.md
-│   ├── 05-input-output.md
-│   ├── 06-pipes.md
-│   ├── 07-redirection.md
-│   ├── 08-processes.md
-│   └── 09-shortcuts.md
-│
-├── 04-shell/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-bash.md
-│   ├── 03-zsh.md
-│   ├── 04-variables.md
-│   ├── 05-conditions.md
-│   ├── 06-loops.md
-│   ├── 07-pipes.md
-│   ├── 08-redirection.md
-│   ├── 09-functions.md
-│   └── 10-scripting.md
-│
-├── 05-markdown/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-syntax.md
-│   ├── 03-headings.md
-│   ├── 04-lists.md
-│   ├── 05-links.md
-│   ├── 06-images.md
-│   ├── 07-tables.md
-│   ├── 08-code-blocks.md
-│   ├── 09-github-markdown.md
-│   └── 10-advanced.md
-│
-├── 06-http/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-request.md
-│   ├── 03-response.md
-│   ├── 04-methods.md
-│   ├── 05-headers.md
-│   ├── 06-status-codes.md
-│   ├── 07-cookies.md
-│   ├── 08-sessions.md
-│   ├── 09-caching.md
-│   └── 10-https.md
-│
-├── 07-networking/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-osi-model.md
-│   ├── 03-tcp-ip.md
-│   ├── 04-tcp.md
-│   ├── 05-udp.md
-│   ├── 06-ip.md
-│   ├── 07-dns.md
-│   ├── 08-dhcp.md
-│   ├── 09-ports.md
-│   ├── 10-sockets.md
-│   ├── 11-proxy.md
-│   └── 12-vpn.md
-│
-├── 08-regex/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-character-classes.md
-│   ├── 03-quantifiers.md
-│   ├── 04-anchors.md
-│   ├── 05-groups.md
-│   ├── 06-lookahead-lookbehind.md
-│   └── 07-examples.md
-│
-├── 09-json/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-data-types.md
-│   ├── 03-objects.md
-│   ├── 04-arrays.md
-│   ├── 05-nesting.md
-│   └── 06-common-errors.md
-│
-├── 10-yaml/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-data-types.md
-│   ├── 03-objects.md
-│   ├── 04-arrays.md
-│   ├── 05-nesting.md
-│   └── 06-common-errors.md
-│
-└── 11-encoding/
-    ├── README.md
-    |
-    ├── 01-basics.md
-    ├── 02-ascii.md
-    ├── 03-unicode.md
-    ├── 04-utf-8.md
-    ├── 05-base64.md
-    └── 06-url-encoding.md
-```
+- [01-CORE/](../01-core/)
+  - [README.md](../01-core/README.md)
 
-```text
-01-core/
-├── README.md
-│
-├── 01-git/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-configuration.md
-│   ├── 03-repositories.md
-│   ├── 04-staging-and-commits.md
-│   ├── 05-branching.md
-│   ├── 06-merging.md
-│   ├── 07-rebasing.md
-│   ├── 08-stash.md
-│   ├── 09-tags.md
-│   ├── 10-reset.md
-│   ├── 11-revert.md
-│   ├── 12-cherry-pick.md
-│   ├── 13-remote-repositories.md
-│   ├── 14-submodules.md
-│   └── 15-advanced.md
-│
-├── 02-github/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-repositories.md
-│   ├── 03-issues.md
-│   ├── 04-pull-requests.md
-│   ├── 05-actions.md
-│   ├── 06-releases.md
-│   ├── 07-ssh.md
-│   └── 08-cli.md
-│
-├── 03-terminal/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-commands.md
-│   ├── 03-navigation.md
-│   ├── 04-files-and-directories.md
-│   ├── 05-input-output.md
-│   ├── 06-pipes.md
-│   ├── 07-redirection.md
-│   ├── 08-processes.md
-│   └── 09-shortcuts.md
-│
-├── 04-shell/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-bash.md
-│   ├── 03-zsh.md
-│   ├── 04-variables.md
-│   ├── 05-conditions.md
-│   ├── 06-loops.md
-│   ├── 07-pipes.md
-│   ├── 08-redirection.md
-│   ├── 09-functions.md
-│   └── 10-scripting.md
-│
-├── 05-markdown/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-syntax.md
-│   ├── 03-headings.md
-│   ├── 04-lists.md
-│   ├── 05-links.md
-│   ├── 06-images.md
-│   ├── 07-tables.md
-│   ├── 08-code-blocks.md
-│   ├── 09-github-markdown.md
-│   └── 10-advanced.md
-│
-├── 06-http/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-request.md
-│   ├── 03-response.md
-│   ├── 04-methods.md
-│   ├── 05-headers.md
-│   ├── 06-status-codes.md
-│   ├── 07-cookies.md
-│   ├── 08-sessions.md
-│   ├── 09-caching.md
-│   └── 10-https.md
-│
-├── 07-networking/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-osi-model.md
-│   ├── 03-tcp-ip.md
-│   ├── 04-tcp.md
-│   ├── 05-udp.md
-│   ├── 06-ip.md
-│   ├── 07-dns.md
-│   ├── 08-dhcp.md
-│   ├── 09-ports.md
-│   ├── 10-sockets.md
-│   ├── 11-proxy.md
-│   └── 12-vpn.md
-│
-├── 08-regex/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-character-classes.md
-│   ├── 03-quantifiers.md
-│   ├── 04-anchors.md
-│   ├── 05-groups.md
-│   ├── 06-lookahead-lookbehind.md
-│   └── 07-examples.md
-│
-├── 09-json/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-data-types.md
-│   ├── 03-objects.md
-│   ├── 04-arrays.md
-│   ├── 05-nesting.md
-│   └── 06-common-errors.md
-│
-├── 10-yaml/
-|   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-data-types.md
-│   ├── 03-objects.md
-│   ├── 04-arrays.md
-│   ├── 05-nesting.md
-│   └── 06-common-errors.md
-│
-└── 11-encoding/
-    ├── README.md
-    |
-    ├── 01-basics.md
-    ├── 02-ascii.md
-    ├── 03-unicode.md
-    ├── 04-utf-8.md
-    ├── 05-base64.md
-    └── 06-url-encoding.md
-```
+  - [01-GIT/](../01-core/01-git/)
+    - [README.md](../01-core/01-git/README.md)
+    - [01-basics.md](../01-core/01-git/01-basics.md)
+    - [02-configuration.md](../01-core/01-git/02-configuration.md)
+    - [03-repositories.md](../01-core/01-git/03-repositories.md)
+    - [04-staging-and-commits.md](../01-core/01-git/04-staging-and-commits.md)
+    - [05-branching.md](../01-core/01-git/05-branching.md)
+    - [06-merging.md](../01-core/01-git/06-merging.md)
+    - [07-rebasing.md](../01-core/01-git/07-rebasing.md)
+    - [08-stash.md](../01-core/01-git/08-stash.md)
+    - [09-tags.md](../01-core/01-git/09-tags.md)
+    - [10-reset.md](../01-core/01-git/10-reset.md)
+    - [11-revert.md](../01-core/01-git/11-revert.md)
+    - [12-cherry-pick.md](../01-core/01-git/12-cherry-pick.md)
+    - [13-remote-repositories.md](../01-core/01-git/13-remote-repositories.md)
+    - [14-submodules.md](../01-core/01-git/14-submodules.md)
+    - [15-advanced.md](../01-core/01-git/15-advanced.md)
+
+  - [02-GITHUB/](../01-core/02-github/)
+    - [README.md](../01-core/02-github/README.md)
+    - [01-basics.md](../01-core/02-github/01-basics.md)
+    - [02-repositories.md](../01-core/02-github/02-repositories.md)
+    - [03-issues.md](../01-core/02-github/03-issues.md)
+    - [04-pull-requests.md](../01-core/02-github/04-pull-requests.md)
+    - [05-actions.md](../01-core/02-github/05-actions.md)
+    - [06-releases.md](../01-core/02-github/06-releases.md)
+    - [07-ssh.md](../01-core/02-github/07-ssh.md)
+    - [08-cli.md](../01-core/02-github/08-cli.md)
+
+  - [03-TERMINAL/](../01-core/03-terminal/)
+    - [README.md](../01-core/03-terminal/README.md)
+    - [01-basics.md](../01-core/03-terminal/01-basics.md)
+    - [02-commands.md](../01-core/03-terminal/02-commands.md)
+    - [03-navigation.md](../01-core/03-terminal/03-navigation.md)
+    - [04-files-and-directories.md](../01-core/03-terminal/04-files-and-directories.md)
+    - [05-input-output.md](../01-core/03-terminal/05-input-output.md)
+    - [06-pipes.md](../01-core/03-terminal/06-pipes.md)
+    - [07-redirection.md](../01-core/03-terminal/07-redirection.md)
+    - [08-processes.md](../01-core/03-terminal/08-processes.md)
+    - [09-shortcuts.md](../01-core/03-terminal/09-shortcuts.md)
+
+  - [04-SHELL/](../01-core/04-shell/)
+    - [README.md](../01-core/04-shell/README.md)
+    - [01-basics.md](../01-core/04-shell/01-basics.md)
+    - [02-bash.md](../01-core/04-shell/02-bash.md)
+    - [03-zsh.md](../01-core/04-shell/03-zsh.md)
+    - [04-variables.md](../01-core/04-shell/04-variables.md)
+    - [05-conditions.md](../01-core/04-shell/05-conditions.md)
+    - [06-loops.md](../01-core/04-shell/06-loops.md)
+    - [07-pipes.md](../01-core/04-shell/07-pipes.md)
+    - [08-redirection.md](../01-core/04-shell/08-redirection.md)
+    - [09-functions.md](../01-core/04-shell/09-functions.md)
+    - [10-scripting.md](../01-core/04-shell/10-scripting.md)
+
+  - [05-MARKDOWN/](../01-core/05-markdown/)
+    - [README.md](../01-core/05-markdown/README.md)
+    - [01-basics.md](../01-core/05-markdown/01-basics.md)
+    - [02-syntax.md](../01-core/05-markdown/02-syntax.md)
+    - [03-headings.md](../01-core/05-markdown/03-headings.md)
+    - [04-lists.md](../01-core/05-markdown/04-lists.md)
+    - [05-links.md](../01-core/05-markdown/05-links.md)
+    - [06-images.md](../01-core/05-markdown/06-images.md)
+    - [07-tables.md](../01-core/05-markdown/07-tables.md)
+    - [08-code-blocks.md](../01-core/05-markdown/08-code-blocks.md)
+    - [09-github-markdown.md](../01-core/05-markdown/09-github-markdown.md)
+    - [10-advanced.md](../01-core/05-markdown/10-advanced.md)
+
+  - [06-HTTP/](../01-core/06-http/)
+    - [README.md](../01-core/06-http/README.md)
+    - [01-basics.md](../01-core/06-http/01-basics.md)
+    - [02-request.md](../01-core/06-http/02-request.md)
+    - [03-response.md](../01-core/06-http/03-response.md)
+    - [04-methods.md](../01-core/06-http/04-methods.md)
+    - [05-headers.md](../01-core/06-http/05-headers.md)
+    - [06-status-codes.md](../01-core/06-http/06-status-codes.md)
+    - [07-cookies.md](../01-core/06-http/07-cookies.md)
+    - [08-sessions.md](../01-core/06-http/08-sessions.md)
+    - [09-caching.md](../01-core/06-http/09-caching.md)
+    - [10-https.md](../01-core/06-http/10-https.md)
+
+  - [07-NETWORKING/](../01-core/07-networking/)
+    - [README.md](../01-core/07-networking/README.md)
+    - [01-basics.md](../01-core/07-networking/01-basics.md)
+    - [02-osi-model.md](../01-core/07-networking/02-osi-model.md)
+    - [03-tcp-ip.md](../01-core/07-networking/03-tcp-ip.md)
+    - [04-tcp.md](../01-core/07-networking/04-tcp.md)
+    - [05-udp.md](../01-core/07-networking/05-udp.md)
+    - [06-ip.md](../01-core/07-networking/06-ip.md)
+    - [07-dns.md](../01-core/07-networking/07-dns.md)
+    - [08-dhcp.md](../01-core/07-networking/08-dhcp.md)
+    - [09-ports.md](../01-core/07-networking/09-ports.md)
+    - [10-sockets.md](../01-core/07-networking/10-sockets.md)
+    - [11-proxy.md](../01-core/07-networking/11-proxy.md)
+    - [12-vpn.md](../01-core/07-networking/12-vpn.md)
+
+  - [08-REGEX/](../01-core/08-regex/)
+    - [README.md](../01-core/08-regex/README.md)
+    - [01-basics.md](../01-core/08-regex/01-basics.md)
+    - [02-character-classes.md](../01-core/08-regex/02-character-classes.md)
+    - [03-quantifiers.md](../01-core/08-regex/03-quantifiers.md)
+    - [04-anchors.md](../01-core/08-regex/04-anchors.md)
+    - [05-groups.md](../01-core/08-regex/05-groups.md)
+    - [06-lookahead-lookbehind.md](../01-core/08-regex/06-lookahead-lookbehind.md)
+    - [07-examples.md](../01-core/08-regex/07-examples.md)
+
+  - [09-JSON/](../01-core/09-json/)
+    - [README.md](../01-core/09-json/README.md)
+    - [01-basics.md](../01-core/09-json/01-basics.md)
+    - [02-data-types.md](../01-core/09-json/02-data-types.md)
+    - [03-objects.md](../01-core/09-json/03-objects.md)
+    - [04-arrays.md](../01-core/09-json/04-arrays.md)
+    - [05-nesting.md](../01-core/09-json/05-nesting.md)
+    - [06-common-errors.md](../01-core/09-json/06-common-errors.md)
+
+  - [10-YAML/](../01-core/10-yaml/)
+    - [README.md](../01-core/10-yaml/README.md)
+    - [01-basics.md](../01-core/10-yaml/01-basics.md)
+    - [02-data-types.md](../01-core/10-yaml/02-data-types.md)
+    - [03-objects.md](../01-core/10-yaml/03-objects.md)
+    - [04-arrays.md](../01-core/10-yaml/04-arrays.md)
+    - [05-nesting.md](../01-core/10-yaml/05-nesting.md)
+    - [06-common-errors.md](../01-core/10-yaml/06-common-errors.md)
+
+  - [11-ENCODING/](../01-core/11-encoding/)
+    - [README.md](../01-core/11-encoding/README.md)
+    - [01-basics.md](../01-core/11-encoding/01-basics.md)
+    - [02-ascii.md](../01-core/11-encoding/02-ascii.md)
+    - [03-unicode.md](../01-core/11-encoding/03-unicode.md)
+    - [04-utf-8.md](../01-core/11-encoding/04-utf-8.md)
+    - [05-base64.md](../01-core/11-encoding/05-base64.md)
+    - [06-url-encoding.md](../01-core/11-encoding/06-url-encoding.md)
 
 ---
 
-# `02-languages`
+# 02-LANGUAGES
 
 Programming Languages
 
-- 02-languages/
-- ├── [03-javascript/](./02-languages/01-javascript)
-- │ ├── README.md
-- │ │
-- │ ├ 01-basics/
-- │ │ ├── [01-introduction.md](hands-on-notes/02-languages/01-javascript/01-basics/01-introduction.md) [==]
-- │ │ ├── 02-installation.md
-  │ │ ├── 03-first-program.md
-  │ │ ├── 04-comments.md
-  │ │ ├── 05-strict-mode.md
-  │ │ └── 06-use-strict.md
-  │ │
-  │ ├── 02-syntax/
-  │ │ ├── 01-statements.md
-  │ │ ├── 02-expressions.md
-  │ │ ├── 03-operators.md
-  │ │ ├── 04-variables.md
-  │ │ ├── 05-const-let-var.md
-  │ │ ├── 06-semicolons.md
-  │ │ └── 07-comments.md
-  │ │
-  │ ├── 03-types/
-  │ │ ├── 01-primitive-types.md
-  │ │ ├── 02-string.md
-  │ │ ├── 03-number.md
-  │ │ ├── 04-bigint.md
-  │ │ ├── 05-boolean.md
-  │ │ ├── 06-null-and-undefined.md
-  │ │ ├── 07-symbol.md
-  │ │ ├── 08-object.md
-  │ │ ├── 09-typeof.md
-  │ │ ├── 10-type-coercion.md
-  │ │ └── 11-type-conversion.md
-  │ │
-  │ ├── 04-control-flow/
-  │ │ ├── 01-if-else.md
-  │ │ ├── 02-switch.md
-  │ │ ├── 03-for-loop.md
-  │ │ ├── 04-while-loop.md
-  │ │ ├── 05-do-while.md
-  │ │ ├── 06-break.md
-  │ │ ├── 07-continue.md
-  │ │ ├── 08-for-of.md
-  │ │ └── 09-for-in.md
-  │ │
-  │ ├── 05-functions/
-  │ │ ├── 01-function-basics.md
-  │ │ ├── 02-function-declarations.md
-  │ │ ├── 03-function-expressions.md
-  │ │ ├── 04-arrow-functions.md
-  │ │ ├── 05-parameters-and-arguments.md
-  │ │ ├── 06-default-parameters.md
-  │ │ ├── 07-rest-parameters.md
-  │ │ ├── 08-callback-functions.md
-  │ │ ├── 09-higher-order-functions.md
-  │ │ ├── 10-recursion.md
-  │ │ └── 11-iife.md
-  │ │
-  │ ├── 06-scope-and-closures/
-  │ │ ├── 01-scope.md
-  │ │ ├── 02-global-scope.md
-  │ │ ├── 03-function-scope.md
-  │ │ ├── 04-block-scope.md
-  │ │ ├── 05-lexical-scope.md
-  │ │ ├── 06-closures.md
-  │ │ └── 07-hoisting.md
-  │ │
-  │ ├── 07-objects/
-  │ │ ├── 01-object-basics.md
-  │ │ ├── 02-properties.md
-  │ │ ├── 03-methods.md
-  │ │ ├── 04-object-destructuring.md
-  │ │ ├── 05-object-spread.md
-  │ │ ├── 06-this.md
-  │ │ ├── 07-prototype.md
-  │ │ ├── 08-prototype-chain.md
-  │ │ ├── 09-object-create.md
-  │ │ └── 10-property-descriptors.md
-  │ │
-  │ ├── 08-classes/
-  │ │ ├── 01-class-basics.md
-  │ │ ├── 02-constructor.md
-  │ │ ├── 03-instance-methods.md
-  │ │ ├── 04-static-methods.md
-  │ │ ├── 05-getters-and-setters.md
-  │ │ ├── 06-inheritance.md
-  │ │ ├── 07-super.md
-  │ │ └── 08-private-fields.md
-  │ │
-  │ ├── 09-arrays-and-collections/
-  │ │ ├── 01-arrays.md
-  │ │ ├── 02-array-methods.md
-  │ │ ├── 03-map.md
-  │ │ ├── 04-filter.md
-  │ │ ├── 05-reduce.md
-  │ │ ├── 06-find.md
-  │ │ ├── 07-some-and-every.md
-  │ │ ├── 08-sort.md
-  │ │ ├── 09-set.md
-  │ │ ├── 10-map-collection.md
-  │ │ ├── 11-weakmap.md
-  │ │ └── 12-weakset.md
-  │ │
-  │ ├── 10-strings-and-regex/
-  │ │ ├── 01-string-methods.md
-  │ │ ├── 02-template-literals.md
-  │ │ ├── 03-string-search.md
-  │ │ ├── 04-string-manipulation.md
-  │ │ ├── 05-regex-basics.md
-  │ │ ├── 06-regex-methods.md
-  │ │ └── 07-regex-patterns.md
-  │ │
-  │ ├── 11-errors-and-debugging/
-  │ │ ├── 01-error-basics.md
-  │ │ ├── 02-try-catch.md
-  │ │ ├── 03-throw.md
-  │ │ ├── 04-custom-errors.md
-  │ │ ├── 05-error-types.md
-  │ │ ├── 06-console-debugging.md
-  │ │ ├── 07-browser-devtools.md
-  │ │ └── 08-common-errors.md
-  │ │
-  │ ├── 12-async/
-  │ │ ├── 01-synchronous-vs-asynchronous.md
-  │ │ ├── 02-callbacks.md
-  │ │ ├── 03-callback-hell.md
-  │ │ ├── 04-promises.md
-  │ │ ├── 05-promise-methods.md
-  │ │ ├── 06-async-await.md
-  │ │ ├── 07-error-handling.md
-  │ │ ├── 08-event-loop.md
-  │ │ ├── 09-microtasks-and-macrotasks.md
-  │ │ └── 10-timers.md
-  │ │
-  │ ├── 13-modules/
-  │ │ ├── 01-module-basics.md
-  │ │ ├── 02-es-modules.md
-  │ │ ├── 03-import.md
-  │ │ ├── 04-export.md
-  │ │ ├── 05-default-export.md
-  │ │ ├── 06-dynamic-import.md
-  │ │ ├── 07-commonjs.md
-  │ │ └── 08-module-patterns.md
-  │ │
-  │ ├── 14-dom/
-  │ │ ├── 01-dom-basics.md
-  │ │ ├── 02-selecting-elements.md
-  │ │ ├── 03-creating-elements.md
-  │ │ ├── 04-modifying-elements.md
-  │ │ ├── 05-attributes.md
-  │ │ ├── 06-classes-and-styles.md
-  │ │ ├── 07-events.md
-  │ │ ├── 08-event-delegation.md
-  │ │ └── 09-forms.md
-  │ │
-  │ ├── 15-browser-api/
-  │ │ ├── 01-window.md
-  │ │ ├── 02-location.md
-  │ │ ├── 03-history.md
-  │ │ ├── 04-storage.md
-  │ │ ├── 05-fetch-api.md
-  │ │ ├── 06-url-api.md
-  │ │ ├── 07-web-workers.md
-  │ │ ├── 08-notifications.md
-  │ │ └── 09-clipboard.md
-  │ │
-  │ ├── 16-json-and-data/
-  │ │ ├── 01-json-basics.md
-  │ │ ├── 02-json-parse.md
-  │ │ ├── 03-json-stringify.md
-  │ │ ├── 04-serialization.md
-  │ │ └── 05-data-transformation.md
-  │ │
-  │ ├── 17-functional-programming/
-  │ │ ├── 01-pure-functions.md
-  │ │ ├── 02-immutability.md
-  │ │ ├── 03-higher-order-functions.md
-  │ │ ├── 04-function-composition.md
-  │ │ ├── 05-currying.md
-  │ │ └── 06-functional-patterns.md
-  │ │
-  │ ├── 18-testing/
-  │ │ ├── 01-testing-basics.md
-  │ │ ├── 02-unit-testing.md
-  │ │ ├── 03-integration-testing.md
-  │ │ ├── 04-test-frameworks.md
-  │ │ ├── 05-mocking.md
-  │ │ └── 06-test-coverage.md
-  │ │
-  │ ├── 19-tooling/
-  │ │ ├── 01-node-js-runtime.md
-  │ │ ├── 02-npm.md
-  │ │ ├── 03-package-json.md
-  │ │ ├── 04-npm-scripts.md
-  │ │ ├── 05-package-management.md
-  │ │ ├── 06-bundlers.md
-  │ │ ├── 07-transpilers.md
-  │ │ └── 08-linters-and-formatters.md
-  │ │
-  │ ├── 20-modern-javascript/
-  │ │ ├── 01-es6.md
-  │ │ ├── 02-es2016.md
-  │ │ ├── 03-es2017.md
-  │ │ ├── 04-es2018.md
-  │ │ ├── 05-es2019.md
-  │ │ ├── 06-es2020.md
-  │ │ ├── 07-es2021.md
-  │ │ ├── 08-es2022.md
-  │ │ ├── 09-es2023.md
-  │ │ ├── 10-es2024.md
-  │ │ ├── 11-es2025.md
-  │ │ └── 12-modern-features.md
-  │ │
-  │ └── 21-advanced/
-  │ ├── 01-execution-context.md
-  │ ├── 02-call-stack.md
-  │ ├── 03-event-loop.md
-  │ ├── 04-lexical-environment.md
-  │ ├── 05-execution-model.md
-  │ ├── 06-memory-management.md
-  │ ├── 07-garbage-collection.md
-  │ ├── 08-proxy-and-reflect.md
-  │ ├── 09-generators.md
-  │ ├── 10-iterators.md
-  │ ├── 11-symbols.md
-  │ ├── 12-metaprogramming.md
-  │ └── 13-performance.md
-  │
-  └── 04-typescript/
-  ├── README.md
-  │
-  ├── 01-basics/
-  │ ├── 01-introduction.md
-  │ ├── 02-installation.md
-  │ ├── 03-first-program.md
-  │ ├── 04-typescript-vs-javascript.md
-  │ ├── 05-compilation.md
-  │ └── 06-tsc.md
-  │
-  ├── 02-syntax/
-  │ ├── 01-statements.md
-  │ ├── 02-expressions.md
-  │ ├── 03-variables.md
-  │ ├── 04-const-and-let.md
-  │ ├── 05-operators.md
-  │ ├── 06-comments.md
-  │ └── 07-annotations.md
-  │
-  ├── 03-basic-types/
-  │ ├── 01-string.md
-  │ ├── 02-number.md
-  │ ├── 03-boolean.md
-  │ ├── 04-null-and-undefined.md
-  │ ├── 05-any.md
-  │ ├── 06-unknown.md
-  │ ├── 07-never.md
-  │ ├── 08-void.md
-  │ ├── 09-object.md
-  │ └── 10-symbol-and-bigint.md
-  │
-  ├── 04-functions/
-  │ ├── 01-function-types.md
-  │ ├── 02-parameters.md
-  │ ├── 03-return-types.md
-  │ ├── 04-optional-parameters.md
-  │ ├── 05-default-parameters.md
-  │ ├── 06-rest-parameters.md
-  │ ├── 07-function-overloads.md
-  │ ├── 08-arrow-functions.md
-  │ ├── 09-callback-functions.md
-  │ └── 10-this-parameters.md
-  │
-  ├── 05-arrays-and-tuples/
-  │ ├── 01-arrays.md
-  │ ├── 02-readonly-arrays.md
-  │ ├── 03-tuples.md
-  │ ├── 04-optional-tuple-elements.md
-  │ ├── 05-rest-elements.md
-  │ └── 06-named-tuples.md
-  │
-  ├── 06-objects-and-interfaces/
-  │ ├── 01-object-types.md
-  │ ├── 02-type-aliases.md
-  │ ├── 03-interfaces.md
-  │ ├── 04-interface-extension.md
-  │ ├── 05-interface-merging.md
-  │ ├── 06-optional-properties.md
-  │ ├── 07-readonly-properties.md
-  │ ├── 08-index-signatures.md
-  │ └── 09-function-interfaces.md
-  │
-  ├── 07-unions-and-narrowing/
-  │ ├── 01-union-types.md
-  │ ├── 02-intersection-types.md
-  │ ├── 03-type-narrowing.md
-  │ ├── 04-type-guards.md
-  │ ├── 05-type-predicates.md
-  │ ├── 06-discriminated-unions.md
-  │ ├── 07-in-operator.md
-  │ ├── 08-instanceof.md
-  │ └── 09-exhaustiveness-checking.md
-  │
-  ├── 08-enums-and-literals/
-  │ ├── 01-enums.md
-  │ ├── 02-numeric-enums.md
-  │ ├── 03-string-enums.md
-  │ ├── 04-const-enums.md
-  │ ├── 05-literal-types.md
-  │ ├── 06-template-literal-types.md
-  │ └── 07-as-const.md
-  │
-  ├── 09-generics/
-  │ ├── 01-generic-basics.md
-  │ ├── 02-generic-functions.md
-  │ ├── 03-generic-interfaces.md
-  │ ├── 04-generic-classes.md
-  │ ├── 05-generic-constraints.md
-  │ ├── 06-keyof.md
-  │ ├── 07-typeof.md
-  │ ├── 08-generic-defaults.md
-  │ └── 09-generic-utility-patterns.md
-  │
-  ├── 10-classes/
-  │ ├── 01-class-basics.md
-  │ ├── 02-access-modifiers.md
-  │ ├── 03-readonly.md
-  │ ├── 04-constructors.md
-  │ ├── 05-inheritance.md
-  │ ├── 06-abstract-classes.md
-  │ ├── 07-implements.md
-  │ ├── 08-static-members.md
-  │ └── 09-parameter-properties.md
-  │
-  ├── 11-utility-types/
-  │ ├── 01-partial.md
-  │ ├── 02-required.md
-  │ ├── 03-readonly.md
-  │ ├── 04-pick.md
-  │ ├── 05-omit.md
-  │ ├── 06-record.md
-  │ ├── 07-exclude.md
-  │ ├── 08-extract.md
-  │ ├── 09-nonnullable.md
-  │ ├── 10-returntype.md
-  │ ├── 11-parameters.md
-  │ ├── 12-awaited.md
-  │ └── 13-satisfies.md
-  │
-  ├── 12-advanced-types/
-  │ ├── 01-conditional-types.md
-  │ ├── 02-mapped-types.md
-  │ ├── 03-indexed-access-types.md
-  │ ├── 04-keyof-type-operator.md
-  │ ├── 05-typeof-type-operator.md
-  │ ├── 06-infer.md
-  │ ├── 07-recursive-types.md
-  │ ├── 08-distributive-conditional-types.md
-  │ ├── 09-branded-types.md
-  │ └── 10-type-level-programming.md
-  │
-  ├── 13-modules/
-  │ ├── 01-module-basics.md
-  │ ├── 02-import.md
-  │ ├── 03-export.md
-  │ ├── 04-default-export.md
-  │ ├── 05-type-only-imports.md
-  │ ├── 06-type-only-exports.md
-  │ ├── 07-module-resolution.md
-  │ └── 08-declaration-merging.md
-  │
-  ├── 14-generators-and-iterators/
-  │ ├── 01-iterators.md
-  │ ├── 02-iterable.md
-  │ ├── 03-generators.md
-  │ └── 04-async-iterators.md
-  │
-  ├── 15-decorators/
-  │ ├── 01-decorator-basics.md
-  │ ├── 02-class-decorators.md
-  │ ├── 03-method-decorators.md
-  │ ├── 04-property-decorators.md
-  │ └── 05-decorator-metadata.md
-  │
-  ├── 16-error-handling/
-  │ ├── 01-error-types.md
-  │ ├── 02-unknown-in-catch.md
-  │ ├── 03-custom-errors.md
-  │ ├── 04-error-narrowing.md
-  │ └── 05-safe-error-handling.md
-  │
-  ├── 17-configuration/
-  │ ├── 01-tsconfig-basics.md
-  │ ├── 02-compiler-options.md
-  │ ├── 03-strict-mode.md
-  │ ├── 04-target.md
-  │ ├── 05-module.md
-  │ ├── 06-module-resolution.md
-  │ ├── 07-path-aliases.md
-  │ ├── 08-project-references.md
-  │ └── 09-typescript-config-patterns.md
-  │
-  ├── 18-tooling/
-  │ ├── 01-tsc.md
-  │ ├── 02-ts-node.md
-  │ ├── 03-tsx.md
-  │ ├── 04-eslint.md
-  │ ├── 05-prettier.md
-  │ ├── 06-npm.md
-  │ ├── 07-package-json.md
-  │ └── 08-build-tools.md
-  │
-  ├── 19-testing/
-  │ ├── 01-testing-basics.md
-  │ ├── 02-unit-testing.md
-  │ ├── 03-jest.md
-  │ ├── 04-vitest.md
-  │ ├── 05-mocking.md
-  │ ├── 06-type-testing.md
-  │ └── 07-test-coverage.md
-  │
-  ├── 20-javascript-interoperability/
-  │ ├── 01-javascript-compatibility.md
-  │ ├── 02-checkjs.md
-  │ ├── 03-jsdoc.md
-  │ ├── 04-declaration-files.md
-  │ ├── 05-d-ts.md
-  │ ├── 06-ambient-declarations.md
-  │ └── 07-third-party-types.md
-  │
-  └── 21-advanced/
-  ├── 01-type-system.md
-  ├── 02-type-inference.md
-  ├── 03-contextual-typing.md
-  ├── 04-structural-typing.md
-  ├── 05-variance.md
-  ├── 06-declaration-merging.md
-  ├── 07-module-augmentation.md
-  ├── 08-global-augmentation.md
-  ├── 09-performance.md
-  └── 10-large-project-patterns.md
+- [02-LANGUAGES/](../02-languages/)
+  - [01-JAVASCRIPT/](../02-languages/01-javascript/)
+    - [README.md](../02-languages/01-javascript/README.md)
+    - [01-BASICS/](../02-languages/01-javascript/01-basics/)
+      - [01-introduction.md](../02-languages/01-javascript/01-basics/01-introduction.md)
+      - [02-installation.md](../02-languages/01-javascript/01-basics/02-installation.md)
+      - [03-first-program.md](../02-languages/01-javascript/01-basics/03-first-program.md)
+      - [04-comments.md](../02-languages/01-javascript/01-basics/04-comments.md)
+      - [05-strict-mode.md](../02-languages/01-javascript/01-basics/05-strict-mode.md)
+      - [06-use-strict.md](../02-languages/01-javascript/01-basics/06-use-strict.md)
+    - [02-SYNTAX/](../02-languages/01-javascript/02-syntax/)
+      - [01-statements.md](../02-languages/01-javascript/02-syntax/01-statements.md)
+      - [02-expressions.md](../02-languages/01-javascript/02-syntax/02-expressions.md)
+      - [03-operators.md](../02-languages/01-javascript/02-syntax/03-operators.md)
+      - [04-variables.md](../02-languages/01-javascript/02-syntax/04-variables.md)
+      - [05-const-let-var.md](../02-languages/01-javascript/02-syntax/05-const-let-var.md)
+      - [06-semicolons.md](../02-languages/01-javascript/02-syntax/06-semicolons.md)
+      - [07-comments.md](../02-languages/01-javascript/02-syntax/07-comments.md)
+    - [03-TYPES/](../02-languages/01-javascript/03-types/)
+      - [01-primitive-types.md](../02-languages/01-javascript/03-types/01-primitive-types.md)
+      - [02-string.md](../02-languages/01-javascript/03-types/02-string.md)
+      - [03-number.md](../02-languages/01-javascript/03-types/03-number.md)
+      - [04-bigint.md](../02-languages/01-javascript/03-types/04-bigint.md)
+      - [05-boolean.md](../02-languages/01-javascript/03-types/05-boolean.md)
+      - [06-null-and-undefined.md](../02-languages/01-javascript/03-types/06-null-and-undefined.md)
+      - [07-symbol.md](../02-languages/01-javascript/03-types/07-symbol.md)
+      - [08-object.md](../02-languages/01-javascript/03-types/08-object.md)
+      - [09-typeof.md](../02-languages/01-javascript/03-types/09-typeof.md)
+      - [10-type-coercion.md](../02-languages/01-javascript/03-types/10-type-coercion.md)
+      - [11-type-conversion.md](../02-languages/01-javascript/03-types/11-type-conversion.md)
+    - [04-CONTROL-FLOW/](../02-languages/01-javascript/04-control-flow/)
+      - [01-if-else.md](../02-languages/01-javascript/04-control-flow/01-if-else.md)
+      - [02-switch.md](../02-languages/01-javascript/04-control-flow/02-switch.md)
+      - [03-for-loop.md](../02-languages/01-javascript/04-control-flow/03-for-loop.md)
+      - [04-while-loop.md](../02-languages/01-javascript/04-control-flow/04-while-loop.md)
+      - [05-do-while.md](../02-languages/01-javascript/04-control-flow/05-do-while.md)
+      - [06-break.md](../02-languages/01-javascript/04-control-flow/06-break.md)
+      - [07-continue.md](../02-languages/01-javascript/04-control-flow/07-continue.md)
+      - [08-for-of.md](../02-languages/01-javascript/04-control-flow/08-for-of.md)
+      - [09-for-in.md](../02-languages/01-javascript/04-control-flow/09-for-in.md)
+    - [05-FUNCTIONS/](../02-languages/01-javascript/05-functions/)
+      - [01-function-basics.md](../02-languages/01-javascript/05-functions/01-function-basics.md)
+      - [02-function-declarations.md](../02-languages/01-javascript/05-functions/02-function-declarations.md)
+      - [03-function-expressions.md](../02-languages/01-javascript/05-functions/03-function-expressions.md)
+      - [04-arrow-functions.md](../02-languages/01-javascript/05-functions/04-arrow-functions.md)
+      - [05-parameters-and-arguments.md](../02-languages/01-javascript/05-functions/05-parameters-and-arguments.md)
+      - [06-default-parameters.md](../02-languages/01-javascript/05-functions/06-default-parameters.md)
+      - [07-rest-parameters.md](../02-languages/01-javascript/05-functions/07-rest-parameters.md)
+      - [08-callback-functions.md](../02-languages/01-javascript/05-functions/08-callback-functions.md)
+      - [09-higher-order-functions.md](../02-languages/01-javascript/05-functions/09-higher-order-functions.md)
+      - [10-recursion.md](../02-languages/01-javascript/05-functions/10-recursion.md)
+      - [11-iife.md](../02-languages/01-javascript/05-functions/11-iife.md)
+    - [06-SCOPE-AND-CLOSURES/](../02-languages/01-javascript/06-scope-and-closures/)
+      - [01-scope.md](../02-languages/01-javascript/06-scope-and-closures/01-scope.md)
+      - [02-global-scope.md](../02-languages/01-javascript/06-scope-and-closures/02-global-scope.md)
+      - [03-function-scope.md](../02-languages/01-javascript/06-scope-and-closures/03-function-scope.md)
+      - [04-block-scope.md](../02-languages/01-javascript/06-scope-and-closures/04-block-scope.md)
+      - [05-lexical-scope.md](../02-languages/01-javascript/06-scope-and-closures/05-lexical-scope.md)
+      - [06-closures.md](../02-languages/01-javascript/06-scope-and-closures/06-closures.md)
+      - [07-hoisting.md](../02-languages/01-javascript/06-scope-and-closures/07-hoisting.md)
+    - [07-OBJECTS/](../02-languages/01-javascript/07-objects/)
+      - [01-object-basics.md](../02-languages/01-javascript/07-objects/01-object-basics.md)
+      - [02-properties.md](../02-languages/01-javascript/07-objects/02-properties.md)
+      - [03-methods.md](../02-languages/01-javascript/07-objects/03-methods.md)
+      - [04-object-destructuring.md](../02-languages/01-javascript/07-objects/04-object-destructuring.md)
+      - [05-object-spread.md](../02-languages/01-javascript/07-objects/05-object-spread.md)
+      - [06-this.md](../02-languages/01-javascript/07-objects/06-this.md)
+      - [07-prototype.md](../02-languages/01-javascript/07-objects/07-prototype.md)
+      - [08-prototype-chain.md](../02-languages/01-javascript/07-objects/08-prototype-chain.md)
+      - [09-object-create.md](../02-languages/01-javascript/07-objects/09-object-create.md)
+      - [10-property-descriptors.md](../02-languages/01-javascript/07-objects/10-property-descriptors.md)
+    - [08-CLASSES/](../02-languages/01-javascript/08-classes/)
+      - [01-class-basics.md](../02-languages/01-javascript/08-classes/01-class-basics.md)
+      - [02-constructor.md](../02-languages/01-javascript/08-classes/02-constructor.md)
+      - [03-instance-methods.md](../02-languages/01-javascript/08-classes/03-instance-methods.md)
+      - [04-static-methods.md](../02-languages/01-javascript/08-classes/04-static-methods.md)
+      - [05-getters-and-setters.md](../02-languages/01-javascript/08-classes/05-getters-and-setters.md)
+      - [06-inheritance.md](../02-languages/01-javascript/08-classes/06-inheritance.md)
+      - [07-super.md](../02-languages/01-javascript/08-classes/07-super.md)
+      - [08-private-fields.md](../02-languages/01-javascript/08-classes/08-private-fields.md)
+    - [09-ARRAYS-AND-COLLECTIONS/](../02-languages/01-javascript/09-arrays-and-collections/)
+      - [01-arrays.md](../02-languages/01-javascript/09-arrays-and-collections/01-arrays.md)
+      - [02-array-methods.md](../02-languages/01-javascript/09-arrays-and-collections/02-array-methods.md)
+      - [03-map.md](../02-languages/01-javascript/09-arrays-and-collections/03-map.md)
+      - [04-filter.md](../02-languages/01-javascript/09-arrays-and-collections/04-filter.md)
+      - [05-reduce.md](../02-languages/01-javascript/09-arrays-and-collections/05-reduce.md)
+      - [06-find.md](../02-languages/01-javascript/09-arrays-and-collections/06-find.md)
+      - [07-some-and-every.md](../02-languages/01-javascript/09-arrays-and-collections/07-some-and-every.md)
+      - [08-sort.md](../02-languages/01-javascript/09-arrays-and-collections/08-sort.md)
+      - [09-set.md](../02-languages/01-javascript/09-arrays-and-collections/09-set.md)
+      - [10-map-collection.md](../02-languages/01-javascript/09-arrays-and-collections/10-map-collection.md)
+      - [11-weakmap.md](../02-languages/01-javascript/09-arrays-and-collections/11-weakmap.md)
+      - [12-weakset.md](../02-languages/01-javascript/09-arrays-and-collections/12-weakset.md)
+    - [10-STRINGS-AND-REGEX/](../02-languages/01-javascript/10-strings-and-regex/)
+      - [01-string-methods.md](../02-languages/01-javascript/10-strings-and-regex/01-string-methods.md)
+      - [02-template-literals.md](../02-languages/01-javascript/10-strings-and-regex/02-template-literals.md)
+      - [03-string-search.md](../02-languages/01-javascript/10-strings-and-regex/03-string-search.md)
+      - [04-string-manipulation.md](../02-languages/01-javascript/10-strings-and-regex/04-string-manipulation.md)
+      - [05-regex-basics.md](../02-languages/01-javascript/10-strings-and-regex/05-regex-basics.md)
+      - [06-regex-methods.md](../02-languages/01-javascript/10-strings-and-regex/06-regex-methods.md)
+      - [07-regex-patterns.md](../02-languages/01-javascript/10-strings-and-regex/07-regex-patterns.md)
+    - [11-ERRORS-AND-DEBUGGING/](../02-languages/01-javascript/11-errors-and-debugging/)
+      - [01-error-basics.md](../02-languages/01-javascript/11-errors-and-debugging/01-error-basics.md)
+      - [02-try-catch.md](../02-languages/01-javascript/11-errors-and-debugging/02-try-catch.md)
+      - [03-throw.md](../02-languages/01-javascript/11-errors-and-debugging/03-throw.md)
+      - [04-custom-errors.md](../02-languages/01-javascript/11-errors-and-debugging/04-custom-errors.md)
+      - [05-error-types.md](../02-languages/01-javascript/11-errors-and-debugging/05-error-types.md)
+      - [06-console-debugging.md](../02-languages/01-javascript/11-errors-and-debugging/06-console-debugging.md)
+      - [07-browser-devtools.md](../02-languages/01-javascript/11-errors-and-debugging/07-browser-devtools.md)
+      - [08-common-errors.md](../02-languages/01-javascript/11-errors-and-debugging/08-common-errors.md)
+    - [12-ASYNC/](../02-languages/01-javascript/12-async/)
+      - [01-synchronous-vs-asynchronous.md](../02-languages/01-javascript/12-async/01-synchronous-vs-asynchronous.md)
+      - [02-callbacks.md](../02-languages/01-javascript/12-async/02-callbacks.md)
+      - [03-callback-hell.md](../02-languages/01-javascript/12-async/03-callback-hell.md)
+      - [04-promises.md](../02-languages/01-javascript/12-async/04-promises.md)
+      - [05-promise-methods.md](../02-languages/01-javascript/12-async/05-promise-methods.md)
+      - [06-async-await.md](../02-languages/01-javascript/12-async/06-async-await.md)
+      - [07-error-handling.md](../02-languages/01-javascript/12-async/07-error-handling.md)
+      - [08-event-loop.md](../02-languages/01-javascript/12-async/08-event-loop.md)
+      - [09-microtasks-and-macrotasks.md](../02-languages/01-javascript/12-async/09-microtasks-and-macrotasks.md)
+      - [10-timers.md](../02-languages/01-javascript/12-async/10-timers.md)
+    - [13-MODULES/](../02-languages/01-javascript/13-modules/)
+      - [01-module-basics.md](../02-languages/01-javascript/13-modules/01-module-basics.md)
+      - [02-es-modules.md](../02-languages/01-javascript/13-modules/02-es-modules.md)
+      - [03-import.md](../02-languages/01-javascript/13-modules/03-import.md)
+      - [04-export.md](../02-languages/01-javascript/13-modules/04-export.md)
+      - [05-default-export.md](../02-languages/01-javascript/13-modules/05-default-export.md)
+      - [06-dynamic-import.md](../02-languages/01-javascript/13-modules/06-dynamic-import.md)
+      - [07-commonjs.md](../02-languages/01-javascript/13-modules/07-commonjs.md)
+      - [08-module-patterns.md](../02-languages/01-javascript/13-modules/08-module-patterns.md)
+    - [14-DOM/](../02-languages/01-javascript/14-dom/)
+      - [01-dom-basics.md](../02-languages/01-javascript/14-dom/01-dom-basics.md)
+      - [02-selecting-elements.md](../02-languages/01-javascript/14-dom/02-selecting-elements.md)
+      - [03-creating-elements.md](../02-languages/01-javascript/14-dom/03-creating-elements.md)
+      - [04-modifying-elements.md](../02-languages/01-javascript/14-dom/04-modifying-elements.md)
+      - [05-attributes.md](../02-languages/01-javascript/14-dom/05-attributes.md)
+      - [06-classes-and-styles.md](../02-languages/01-javascript/14-dom/06-classes-and-styles.md)
+      - [07-events.md](../02-languages/01-javascript/14-dom/07-events.md)
+      - [08-event-delegation.md](../02-languages/01-javascript/14-dom/08-event-delegation.md)
+      - [09-forms.md](../02-languages/01-javascript/14-dom/09-forms.md)
+    - [15-BROWSER-API/](../02-languages/01-javascript/15-browser-api/)
+      - [01-window.md](../02-languages/01-javascript/15-browser-api/01-window.md)
+      - [02-location.md](../02-languages/01-javascript/15-browser-api/02-location.md)
+      - [03-history.md](../02-languages/01-javascript/15-browser-api/03-history.md)
+      - [04-storage.md](../02-languages/01-javascript/15-browser-api/04-storage.md)
+      - [05-fetch-api.md](../02-languages/01-javascript/15-browser-api/05-fetch-api.md)
+      - [06-url-api.md](../02-languages/01-javascript/15-browser-api/06-url-api.md)
+      - [07-web-workers.md](../02-languages/01-javascript/15-browser-api/07-web-workers.md)
+      - [08-notifications.md](../02-languages/01-javascript/15-browser-api/08-notifications.md)
+      - [09-clipboard.md](../02-languages/01-javascript/15-browser-api/09-clipboard.md)
+    - [16-JSON-AND-DATA/](../02-languages/01-javascript/16-json-and-data/)
+      - [01-json-basics.md](../02-languages/01-javascript/16-json-and-data/01-json-basics.md)
+      - [02-json-parse.md](../02-languages/01-javascript/16-json-and-data/02-json-parse.md)
+      - [03-json-stringify.md](../02-languages/01-javascript/16-json-and-data/03-json-stringify.md)
+      - [04-serialization.md](../02-languages/01-javascript/16-json-and-data/04-serialization.md)
+      - [05-data-transformation.md](../02-languages/01-javascript/16-json-and-data/05-data-transformation.md)
+    - [17-FUNCTIONAL-PROGRAMMING/](../02-languages/01-javascript/17-functional-programming/)
+      - [01-pure-functions.md](../02-languages/01-javascript/17-functional-programming/01-pure-functions.md)
+      - [02-immutability.md](../02-languages/01-javascript/17-functional-programming/02-immutability.md)
+      - [03-higher-order-functions.md](../02-languages/01-javascript/17-functional-programming/03-higher-order-functions.md)
+      - [04-function-composition.md](../02-languages/01-javascript/17-functional-programming/04-function-composition.md)
+      - [05-currying.md](../02-languages/01-javascript/17-functional-programming/05-currying.md)
+      - [06-functional-patterns.md](../02-languages/01-javascript/17-functional-programming/06-functional-patterns.md)
+    - [18-TESTING/](../02-languages/01-javascript/18-testing/)
+      - [01-testing-basics.md](../02-languages/01-javascript/18-testing/01-testing-basics.md)
+      - [02-unit-testing.md](../02-languages/01-javascript/18-testing/02-unit-testing.md)
+      - [03-integration-testing.md](../02-languages/01-javascript/18-testing/03-integration-testing.md)
+      - [04-test-frameworks.md](../02-languages/01-javascript/18-testing/04-test-frameworks.md)
+      - [05-mocking.md](../02-languages/01-javascript/18-testing/05-mocking.md)
+      - [06-test-coverage.md](../02-languages/01-javascript/18-testing/06-test-coverage.md)
+    - [19-TOOLING/](../02-languages/01-javascript/19-tooling/)
+      - [01-node-js-runtime.md](../02-languages/01-javascript/19-tooling/01-node-js-runtime.md)
+      - [02-npm.md](../02-languages/01-javascript/19-tooling/02-npm.md)
+      - [03-package-json.md](../02-languages/01-javascript/19-tooling/03-package-json.md)
+      - [04-npm-scripts.md](../02-languages/01-javascript/19-tooling/04-npm-scripts.md)
+      - [05-package-management.md](../02-languages/01-javascript/19-tooling/05-package-management.md)
+      - [06-bundlers.md](../02-languages/01-javascript/19-tooling/06-bundlers.md)
+      - [07-transpilers.md](../02-languages/01-javascript/19-tooling/07-transpilers.md)
+      - [08-linters-and-formatters.md](../02-languages/01-javascript/19-tooling/08-linters-and-formatters.md)
+    - [20-MODERN-JAVASCRIPT/](../02-languages/01-javascript/20-modern-javascript/)
+      - [01-es6.md](../02-languages/01-javascript/20-modern-javascript/01-es6.md)
+      - [02-es2016.md](../02-languages/01-javascript/20-modern-javascript/02-es2016.md)
+      - [03-es2017.md](../02-languages/01-javascript/20-modern-javascript/03-es2017.md)
+      - [04-es2018.md](../02-languages/01-javascript/20-modern-javascript/04-es2018.md)
+      - [05-es2019.md](../02-languages/01-javascript/20-modern-javascript/05-es2019.md)
+      - [06-es2020.md](../02-languages/01-javascript/20-modern-javascript/06-es2020.md)
+      - [07-es2021.md](../02-languages/01-javascript/20-modern-javascript/07-es2021.md)
+      - [08-es2022.md](../02-languages/01-javascript/20-modern-javascript/08-es2022.md)
+      - [09-es2023.md](../02-languages/01-javascript/20-modern-javascript/09-es2023.md)
+      - [10-es2024.md](../02-languages/01-javascript/20-modern-javascript/10-es2024.md)
+      - [11-es2025.md](../02-languages/01-javascript/20-modern-javascript/11-es2025.md)
+      - [12-modern-features.md](../02-languages/01-javascript/20-modern-javascript/12-modern-features.md)
+    - [21-ADVANCED/](../02-languages/01-javascript/21-advanced/)
+      - [01-execution-context.md](../02-languages/01-javascript/21-advanced/01-execution-context.md)
+      - [02-call-stack.md](../02-languages/01-javascript/21-advanced/02-call-stack.md)
+      - [03-event-loop.md](../02-languages/01-javascript/21-advanced/03-event-loop.md)
+      - [04-lexical-environment.md](../02-languages/01-javascript/21-advanced/04-lexical-environment.md)
+      - [05-execution-model.md](../02-languages/01-javascript/21-advanced/05-execution-model.md)
+      - [06-memory-management.md](../02-languages/01-javascript/21-advanced/06-memory-management.md)
+      - [07-garbage-collection.md](../02-languages/01-javascript/21-advanced/07-garbage-collection.md)
+      - [08-proxy-and-reflect.md](../02-languages/01-javascript/21-advanced/08-proxy-and-reflect.md)
+      - [09-generators.md](../02-languages/01-javascript/21-advanced/09-generators.md)
+      - [10-iterators.md](../02-languages/01-javascript/21-advanced/10-iterators.md)
+      - [11-symbols.md](../02-languages/01-javascript/21-advanced/11-symbols.md)
+      - [12-metaprogramming.md](../02-languages/01-javascript/21-advanced/12-metaprogramming.md)
+      - [13-performance.md](../02-languages/01-javascript/21-advanced/13-performance.md)
 
-```text
-02-languages/
-├── 03-javascript/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-installation.md
-│   │   ├── 03-first-program.md
-│   │   ├── 04-comments.md
-│   │   ├── 05-strict-mode.md
-│   │   └── 06-use-strict.md
-│   │
-│   ├── 02-syntax/
-│   │   ├── 01-statements.md
-│   │   ├── 02-expressions.md
-│   │   ├── 03-operators.md
-│   │   ├── 04-variables.md
-│   │   ├── 05-const-let-var.md
-│   │   ├── 06-semicolons.md
-│   │   └── 07-comments.md
-│   │
-│   ├── 03-types/
-│   │   ├── 01-primitive-types.md
-│   │   ├── 02-string.md
-│   │   ├── 03-number.md
-│   │   ├── 04-bigint.md
-│   │   ├── 05-boolean.md
-│   │   ├── 06-null-and-undefined.md
-│   │   ├── 07-symbol.md
-│   │   ├── 08-object.md
-│   │   ├── 09-typeof.md
-│   │   ├── 10-type-coercion.md
-│   │   └── 11-type-conversion.md
-│   │
-│   ├── 04-control-flow/
-│   │   ├── 01-if-else.md
-│   │   ├── 02-switch.md
-│   │   ├── 03-for-loop.md
-│   │   ├── 04-while-loop.md
-│   │   ├── 05-do-while.md
-│   │   ├── 06-break.md
-│   │   ├── 07-continue.md
-│   │   ├── 08-for-of.md
-│   │   └── 09-for-in.md
-│   │
-│   ├── 05-functions/
-│   │   ├── 01-function-basics.md
-│   │   ├── 02-function-declarations.md
-│   │   ├── 03-function-expressions.md
-│   │   ├── 04-arrow-functions.md
-│   │   ├── 05-parameters-and-arguments.md
-│   │   ├── 06-default-parameters.md
-│   │   ├── 07-rest-parameters.md
-│   │   ├── 08-callback-functions.md
-│   │   ├── 09-higher-order-functions.md
-│   │   ├── 10-recursion.md
-│   │   └── 11-iife.md
-│   │
-│   ├── 06-scope-and-closures/
-│   │   ├── 01-scope.md
-│   │   ├── 02-global-scope.md
-│   │   ├── 03-function-scope.md
-│   │   ├── 04-block-scope.md
-│   │   ├── 05-lexical-scope.md
-│   │   ├── 06-closures.md
-│   │   └── 07-hoisting.md
-│   │
-│   ├── 07-objects/
-│   │   ├── 01-object-basics.md
-│   │   ├── 02-properties.md
-│   │   ├── 03-methods.md
-│   │   ├── 04-object-destructuring.md
-│   │   ├── 05-object-spread.md
-│   │   ├── 06-this.md
-│   │   ├── 07-prototype.md
-│   │   ├── 08-prototype-chain.md
-│   │   ├── 09-object-create.md
-│   │   └── 10-property-descriptors.md
-│   │
-│   ├── 08-classes/
-│   │   ├── 01-class-basics.md
-│   │   ├── 02-constructor.md
-│   │   ├── 03-instance-methods.md
-│   │   ├── 04-static-methods.md
-│   │   ├── 05-getters-and-setters.md
-│   │   ├── 06-inheritance.md
-│   │   ├── 07-super.md
-│   │   └── 08-private-fields.md
-│   │
-│   ├── 09-arrays-and-collections/
-│   │   ├── 01-arrays.md
-│   │   ├── 02-array-methods.md
-│   │   ├── 03-map.md
-│   │   ├── 04-filter.md
-│   │   ├── 05-reduce.md
-│   │   ├── 06-find.md
-│   │   ├── 07-some-and-every.md
-│   │   ├── 08-sort.md
-│   │   ├── 09-set.md
-│   │   ├── 10-map-collection.md
-│   │   ├── 11-weakmap.md
-│   │   └── 12-weakset.md
-│   │
-│   ├── 10-strings-and-regex/
-│   │   ├── 01-string-methods.md
-│   │   ├── 02-template-literals.md
-│   │   ├── 03-string-search.md
-│   │   ├── 04-string-manipulation.md
-│   │   ├── 05-regex-basics.md
-│   │   ├── 06-regex-methods.md
-│   │   └── 07-regex-patterns.md
-│   │
-│   ├── 11-errors-and-debugging/
-│   │   ├── 01-error-basics.md
-│   │   ├── 02-try-catch.md
-│   │   ├── 03-throw.md
-│   │   ├── 04-custom-errors.md
-│   │   ├── 05-error-types.md
-│   │   ├── 06-console-debugging.md
-│   │   ├── 07-browser-devtools.md
-│   │   └── 08-common-errors.md
-│   │
-│   ├── 12-async/
-│   │   ├── 01-synchronous-vs-asynchronous.md
-│   │   ├── 02-callbacks.md
-│   │   ├── 03-callback-hell.md
-│   │   ├── 04-promises.md
-│   │   ├── 05-promise-methods.md
-│   │   ├── 06-async-await.md
-│   │   ├── 07-error-handling.md
-│   │   ├── 08-event-loop.md
-│   │   ├── 09-microtasks-and-macrotasks.md
-│   │   └── 10-timers.md
-│   │
-│   ├── 13-modules/
-│   │   ├── 01-module-basics.md
-│   │   ├── 02-es-modules.md
-│   │   ├── 03-import.md
-│   │   ├── 04-export.md
-│   │   ├── 05-default-export.md
-│   │   ├── 06-dynamic-import.md
-│   │   ├── 07-commonjs.md
-│   │   └── 08-module-patterns.md
-│   │
-│   ├── 14-dom/
-│   │   ├── 01-dom-basics.md
-│   │   ├── 02-selecting-elements.md
-│   │   ├── 03-creating-elements.md
-│   │   ├── 04-modifying-elements.md
-│   │   ├── 05-attributes.md
-│   │   ├── 06-classes-and-styles.md
-│   │   ├── 07-events.md
-│   │   ├── 08-event-delegation.md
-│   │   └── 09-forms.md
-│   │
-│   ├── 15-browser-api/
-│   │   ├── 01-window.md
-│   │   ├── 02-location.md
-│   │   ├── 03-history.md
-│   │   ├── 04-storage.md
-│   │   ├── 05-fetch-api.md
-│   │   ├── 06-url-api.md
-│   │   ├── 07-web-workers.md
-│   │   ├── 08-notifications.md
-│   │   └── 09-clipboard.md
-│   │
-│   ├── 16-json-and-data/
-│   │   ├── 01-json-basics.md
-│   │   ├── 02-json-parse.md
-│   │   ├── 03-json-stringify.md
-│   │   ├── 04-serialization.md
-│   │   └── 05-data-transformation.md
-│   │
-│   ├── 17-functional-programming/
-│   │   ├── 01-pure-functions.md
-│   │   ├── 02-immutability.md
-│   │   ├── 03-higher-order-functions.md
-│   │   ├── 04-function-composition.md
-│   │   ├── 05-currying.md
-│   │   └── 06-functional-patterns.md
-│   │
-│   ├── 18-testing/
-│   │   ├── 01-testing-basics.md
-│   │   ├── 02-unit-testing.md
-│   │   ├── 03-integration-testing.md
-│   │   ├── 04-test-frameworks.md
-│   │   ├── 05-mocking.md
-│   │   └── 06-test-coverage.md
-│   │
-│   ├── 19-tooling/
-│   │   ├── 01-node-js-runtime.md
-│   │   ├── 02-npm.md
-│   │   ├── 03-package-json.md
-│   │   ├── 04-npm-scripts.md
-│   │   ├── 05-package-management.md
-│   │   ├── 06-bundlers.md
-│   │   ├── 07-transpilers.md
-│   │   └── 08-linters-and-formatters.md
-│   │
-│   ├── 20-modern-javascript/
-│   │   ├── 01-es6.md
-│   │   ├── 02-es2016.md
-│   │   ├── 03-es2017.md
-│   │   ├── 04-es2018.md
-│   │   ├── 05-es2019.md
-│   │   ├── 06-es2020.md
-│   │   ├── 07-es2021.md
-│   │   ├── 08-es2022.md
-│   │   ├── 09-es2023.md
-│   │   ├── 10-es2024.md
-│   │   ├── 11-es2025.md
-│   │   └── 12-modern-features.md
-│   │
-│   └── 21-advanced/
-│       ├── 01-execution-context.md
-│       ├── 02-call-stack.md
-│       ├── 03-event-loop.md
-│       ├── 04-lexical-environment.md
-│       ├── 05-execution-model.md
-│       ├── 06-memory-management.md
-│       ├── 07-garbage-collection.md
-│       ├── 08-proxy-and-reflect.md
-│       ├── 09-generators.md
-│       ├── 10-iterators.md
-│       ├── 11-symbols.md
-│       ├── 12-metaprogramming.md
-│       └── 13-performance.md
-│
-└── 04-typescript/
-    ├── README.md
-    │
-    ├── 01-basics/
-    │   ├── 01-introduction.md
-    │   ├── 02-installation.md
-    │   ├── 03-first-program.md
-    │   ├── 04-typescript-vs-javascript.md
-    │   ├── 05-compilation.md
-    │   └── 06-tsc.md
-    │
-    ├── 02-syntax/
-    │   ├── 01-statements.md
-    │   ├── 02-expressions.md
-    │   ├── 03-variables.md
-    │   ├── 04-const-and-let.md
-    │   ├── 05-operators.md
-    │   ├── 06-comments.md
-    │   └── 07-annotations.md
-    │
-    ├── 03-basic-types/
-    │   ├── 01-string.md
-    │   ├── 02-number.md
-    │   ├── 03-boolean.md
-    │   ├── 04-null-and-undefined.md
-    │   ├── 05-any.md
-    │   ├── 06-unknown.md
-    │   ├── 07-never.md
-    │   ├── 08-void.md
-    │   ├── 09-object.md
-    │   └── 10-symbol-and-bigint.md
-    │
-    ├── 04-functions/
-    │   ├── 01-function-types.md
-    │   ├── 02-parameters.md
-    │   ├── 03-return-types.md
-    │   ├── 04-optional-parameters.md
-    │   ├── 05-default-parameters.md
-    │   ├── 06-rest-parameters.md
-    │   ├── 07-function-overloads.md
-    │   ├── 08-arrow-functions.md
-    │   ├── 09-callback-functions.md
-    │   └── 10-this-parameters.md
-    │
-    ├── 05-arrays-and-tuples/
-    │   ├── 01-arrays.md
-    │   ├── 02-readonly-arrays.md
-    │   ├── 03-tuples.md
-    │   ├── 04-optional-tuple-elements.md
-    │   ├── 05-rest-elements.md
-    │   └── 06-named-tuples.md
-    │
-    ├── 06-objects-and-interfaces/
-    │   ├── 01-object-types.md
-    │   ├── 02-type-aliases.md
-    │   ├── 03-interfaces.md
-    │   ├── 04-interface-extension.md
-    │   ├── 05-interface-merging.md
-    │   ├── 06-optional-properties.md
-    │   ├── 07-readonly-properties.md
-    │   ├── 08-index-signatures.md
-    │   └── 09-function-interfaces.md
-    │
-    ├── 07-unions-and-narrowing/
-    │   ├── 01-union-types.md
-    │   ├── 02-intersection-types.md
-    │   ├── 03-type-narrowing.md
-    │   ├── 04-type-guards.md
-    │   ├── 05-type-predicates.md
-    │   ├── 06-discriminated-unions.md
-    │   ├── 07-in-operator.md
-    │   ├── 08-instanceof.md
-    │   └── 09-exhaustiveness-checking.md
-    │
-    ├── 08-enums-and-literals/
-    │   ├── 01-enums.md
-    │   ├── 02-numeric-enums.md
-    │   ├── 03-string-enums.md
-    │   ├── 04-const-enums.md
-    │   ├── 05-literal-types.md
-    │   ├── 06-template-literal-types.md
-    │   └── 07-as-const.md
-    │
-    ├── 09-generics/
-    │   ├── 01-generic-basics.md
-    │   ├── 02-generic-functions.md
-    │   ├── 03-generic-interfaces.md
-    │   ├── 04-generic-classes.md
-    │   ├── 05-generic-constraints.md
-    │   ├── 06-keyof.md
-    │   ├── 07-typeof.md
-    │   ├── 08-generic-defaults.md
-    │   └── 09-generic-utility-patterns.md
-    │
-    ├── 10-classes/
-    │   ├── 01-class-basics.md
-    │   ├── 02-access-modifiers.md
-    │   ├── 03-readonly.md
-    │   ├── 04-constructors.md
-    │   ├── 05-inheritance.md
-    │   ├── 06-abstract-classes.md
-    │   ├── 07-implements.md
-    │   ├── 08-static-members.md
-    │   └── 09-parameter-properties.md
-    │
-    ├── 11-utility-types/
-    │   ├── 01-partial.md
-    │   ├── 02-required.md
-    │   ├── 03-readonly.md
-    │   ├── 04-pick.md
-    │   ├── 05-omit.md
-    │   ├── 06-record.md
-    │   ├── 07-exclude.md
-    │   ├── 08-extract.md
-    │   ├── 09-nonnullable.md
-    │   ├── 10-returntype.md
-    │   ├── 11-parameters.md
-    │   ├── 12-awaited.md
-    │   └── 13-satisfies.md
-    │
-    ├── 12-advanced-types/
-    │   ├── 01-conditional-types.md
-    │   ├── 02-mapped-types.md
-    │   ├── 03-indexed-access-types.md
-    │   ├── 04-keyof-type-operator.md
-    │   ├── 05-typeof-type-operator.md
-    │   ├── 06-infer.md
-    │   ├── 07-recursive-types.md
-    │   ├── 08-distributive-conditional-types.md
-    │   ├── 09-branded-types.md
-    │   └── 10-type-level-programming.md
-    │
-    ├── 13-modules/
-    │   ├── 01-module-basics.md
-    │   ├── 02-import.md
-    │   ├── 03-export.md
-    │   ├── 04-default-export.md
-    │   ├── 05-type-only-imports.md
-    │   ├── 06-type-only-exports.md
-    │   ├── 07-module-resolution.md
-    │   └── 08-declaration-merging.md
-    │
-    ├── 14-generators-and-iterators/
-    │   ├── 01-iterators.md
-    │   ├── 02-iterable.md
-    │   ├── 03-generators.md
-    │   └── 04-async-iterators.md
-    │
-    ├── 15-decorators/
-    │   ├── 01-decorator-basics.md
-    │   ├── 02-class-decorators.md
-    │   ├── 03-method-decorators.md
-    │   ├── 04-property-decorators.md
-    │   └── 05-decorator-metadata.md
-    │
-    ├── 16-error-handling/
-    │   ├── 01-error-types.md
-    │   ├── 02-unknown-in-catch.md
-    │   ├── 03-custom-errors.md
-    │   ├── 04-error-narrowing.md
-    │   └── 05-safe-error-handling.md
-    │
-    ├── 17-configuration/
-    │   ├── 01-tsconfig-basics.md
-    │   ├── 02-compiler-options.md
-    │   ├── 03-strict-mode.md
-    │   ├── 04-target.md
-    │   ├── 05-module.md
-    │   ├── 06-module-resolution.md
-    │   ├── 07-path-aliases.md
-    │   ├── 08-project-references.md
-    │   └── 09-typescript-config-patterns.md
-    │
-    ├── 18-tooling/
-    │   ├── 01-tsc.md
-    │   ├── 02-ts-node.md
-    │   ├── 03-tsx.md
-    │   ├── 04-eslint.md
-    │   ├── 05-prettier.md
-    │   ├── 06-npm.md
-    │   ├── 07-package-json.md
-    │   └── 08-build-tools.md
-    │
-    ├── 19-testing/
-    │   ├── 01-testing-basics.md
-    │   ├── 02-unit-testing.md
-    │   ├── 03-jest.md
-    │   ├── 04-vitest.md
-    │   ├── 05-mocking.md
-    │   ├── 06-type-testing.md
-    │   └── 07-test-coverage.md
-    │
-    ├── 20-javascript-interoperability/
-    │   ├── 01-javascript-compatibility.md
-    │   ├── 02-checkjs.md
-    │   ├── 03-jsdoc.md
-    │   ├── 04-declaration-files.md
-    │   ├── 05-d-ts.md
-    │   ├── 06-ambient-declarations.md
-    │   └── 07-third-party-types.md
-    │
-    └── 21-advanced/
-        ├── 01-type-system.md
-        ├── 02-type-inference.md
-        ├── 03-contextual-typing.md
-        ├── 04-structural-typing.md
-        ├── 05-variance.md
-        ├── 06-declaration-merging.md
-        ├── 07-module-augmentation.md
-        ├── 08-global-augmentation.md
-        ├── 09-performance.md
-        └── 10-large-project-patterns.md
-```
+  - [02-TYPESCRIPT/](../02-languages/02-typescript/)
+    - [README.md](../02-languages/02-typescript/README.md)
+    - [01-BASICS/](../02-languages/02-typescript/01-basics/)
+      - [01-introduction.md](../02-languages/02-typescript/01-basics/01-introduction.md)
+      - [02-installation.md](../02-languages/02-typescript/01-basics/02-installation.md)
+      - [03-first-program.md](../02-languages/02-typescript/01-basics/03-first-program.md)
+      - [04-typescript-vs-javascript.md](../02-languages/02-typescript/01-basics/04-typescript-vs-javascript.md)
+      - [05-compilation.md](../02-languages/02-typescript/01-basics/05-compilation.md)
+      - [06-tsc.md](../02-languages/02-typescript/01-basics/06-tsc.md)
+    - [02-SYNTAX/](../02-languages/02-typescript/02-syntax/)
+      - [01-statements.md](../02-languages/02-typescript/02-syntax/01-statements.md)
+      - [02-expressions.md](../02-languages/02-typescript/02-syntax/02-expressions.md)
+      - [03-variables.md](../02-languages/02-typescript/02-syntax/03-variables.md)
+      - [04-const-and-let.md](../02-languages/02-typescript/02-syntax/04-const-and-let.md)
+      - [05-operators.md](../02-languages/02-typescript/02-syntax/05-operators.md)
+      - [06-comments.md](../02-languages/02-typescript/02-syntax/06-comments.md)
+      - [07-annotations.md](../02-languages/02-typescript/02-syntax/07-annotations.md)
+    - [03-BASIC-TYPES/](../02-languages/02-typescript/03-basic-types/)
+      - [01-string.md](../02-languages/02-typescript/03-basic-types/01-string.md)
+      - [02-number.md](../02-languages/02-typescript/03-basic-types/02-number.md)
+      - [03-boolean.md](../02-languages/02-typescript/03-basic-types/03-boolean.md)
+      - [04-null-and-undefined.md](../02-languages/02-typescript/03-basic-types/04-null-and-undefined.md)
+      - [05-any.md](../02-languages/02-typescript/03-basic-types/05-any.md)
+      - [06-unknown.md](../02-languages/02-typescript/03-basic-types/06-unknown.md)
+      - [07-never.md](../02-languages/02-typescript/03-basic-types/07-never.md)
+      - [08-void.md](../02-languages/02-typescript/03-basic-types/08-void.md)
+      - [09-object.md](../02-languages/02-typescript/03-basic-types/09-object.md)
+      - [10-symbol-and-bigint.md](../02-languages/02-typescript/03-basic-types/10-symbol-and-bigint.md)
+    - [04-FUNCTIONS/](../02-languages/02-typescript/04-functions/)
+      - [01-function-types.md](../02-languages/02-typescript/04-functions/01-function-types.md)
+      - [02-parameters.md](../02-languages/02-typescript/04-functions/02-parameters.md)
+      - [03-return-types.md](../02-languages/02-typescript/04-functions/03-return-types.md)
+      - [04-optional-parameters.md](../02-languages/02-typescript/04-functions/04-optional-parameters.md)
+      - [05-default-parameters.md](../02-languages/02-typescript/04-functions/05-default-parameters.md)
+      - [06-rest-parameters.md](../02-languages/02-typescript/04-functions/06-rest-parameters.md)
+      - [07-function-overloads.md](../02-languages/02-typescript/04-functions/07-function-overloads.md)
+      - [08-arrow-functions.md](../02-languages/02-typescript/04-functions/08-arrow-functions.md)
+      - [09-callback-functions.md](../02-languages/02-typescript/04-functions/09-callback-functions.md)
+      - [10-this-parameters.md](../02-languages/02-typescript/04-functions/10-this-parameters.md)
+    - [05-ARRAYS-AND-TUPLES/](../02-languages/02-typescript/05-arrays-and-tuples/)
+      - [01-arrays.md](../02-languages/02-typescript/05-arrays-and-tuples/01-arrays.md)
+      - [02-readonly-arrays.md](../02-languages/02-typescript/05-arrays-and-tuples/02-readonly-arrays.md)
+      - [03-tuples.md](../02-languages/02-typescript/05-arrays-and-tuples/03-tuples.md)
+      - [04-optional-tuple-elements.md](../02-languages/02-typescript/05-arrays-and-tuples/04-optional-tuple-elements.md)
+      - [05-rest-elements.md](../02-languages/02-typescript/05-arrays-and-tuples/05-rest-elements.md)
+      - [06-named-tuples.md](../02-languages/02-typescript/05-arrays-and-tuples/06-named-tuples.md)
+    - [06-OBJECTS-AND-INTERFACES/](../02-languages/02-typescript/06-objects-and-interfaces/)
+      - [01-object-types.md](../02-languages/02-typescript/06-objects-and-interfaces/01-object-types.md)
+      - [02-type-aliases.md](../02-languages/02-typescript/06-objects-and-interfaces/02-type-aliases.md)
+      - [03-interfaces.md](../02-languages/02-typescript/06-objects-and-interfaces/03-interfaces.md)
+      - [04-interface-extension.md](../02-languages/02-typescript/06-objects-and-interfaces/04-interface-extension.md)
+      - [05-interface-merging.md](../02-languages/02-typescript/06-objects-and-interfaces/05-interface-merging.md)
+      - [06-optional-properties.md](../02-languages/02-typescript/06-objects-and-interfaces/06-optional-properties.md)
+      - [07-readonly-properties.md](../02-languages/02-typescript/06-objects-and-interfaces/07-readonly-properties.md)
+      - [08-index-signatures.md](../02-languages/02-typescript/06-objects-and-interfaces/08-index-signatures.md)
+      - [09-function-interfaces.md](../02-languages/02-typescript/06-objects-and-interfaces/09-function-interfaces.md)
+    - [07-UNIONS-AND-NARROWING/](../02-languages/02-typescript/07-unions-and-narrowing/)
+      - [01-union-types.md](../02-languages/02-typescript/07-unions-and-narrowing/01-union-types.md)
+      - [02-intersection-types.md](../02-languages/02-typescript/07-unions-and-narrowing/02-intersection-types.md)
+      - [03-type-narrowing.md](../02-languages/02-typescript/07-unions-and-narrowing/03-type-narrowing.md)
+      - [04-type-guards.md](../02-languages/02-typescript/07-unions-and-narrowing/04-type-guards.md)
+      - [05-type-predicates.md](../02-languages/02-typescript/07-unions-and-narrowing/05-type-predicates.md)
+      - [06-discriminated-unions.md](../02-languages/02-typescript/07-unions-and-narrowing/06-discriminated-unions.md)
+      - [07-in-operator.md](../02-languages/02-typescript/07-unions-and-narrowing/07-in-operator.md)
+      - [08-instanceof.md](../02-languages/02-typescript/07-unions-and-narrowing/08-instanceof.md)
+      - [09-exhaustiveness-checking.md](../02-languages/02-typescript/07-unions-and-narrowing/09-exhaustiveness-checking.md)
+    - [08-ENUMS-AND-LITERALS/](../02-languages/02-typescript/08-enums-and-literals/)
+      - [01-enums.md](../02-languages/02-typescript/08-enums-and-literals/01-enums.md)
+      - [02-numeric-enums.md](../02-languages/02-typescript/08-enums-and-literals/02-numeric-enums.md)
+      - [03-string-enums.md](../02-languages/02-typescript/08-enums-and-literals/03-string-enums.md)
+      - [04-const-enums.md](../02-languages/02-typescript/08-enums-and-literals/04-const-enums.md)
+      - [05-literal-types.md](../02-languages/02-typescript/08-enums-and-literals/05-literal-types.md)
+      - [06-template-literal-types.md](../02-languages/02-typescript/08-enums-and-literals/06-template-literal-types.md)
+      - [07-as-const.md](../02-languages/02-typescript/08-enums-and-literals/07-as-const.md)
+    - [09-GENERICS/](../02-languages/02-typescript/09-generics/)
+      - [01-generic-basics.md](../02-languages/02-typescript/09-generics/01-generic-basics.md)
+      - [02-generic-functions.md](../02-languages/02-typescript/09-generics/02-generic-functions.md)
+      - [03-generic-interfaces.md](../02-languages/02-typescript/09-generics/03-generic-interfaces.md)
+      - [04-generic-classes.md](../02-languages/02-typescript/09-generics/04-generic-classes.md)
+      - [05-generic-constraints.md](../02-languages/02-typescript/09-generics/05-generic-constraints.md)
+      - [06-keyof.md](../02-languages/02-typescript/09-generics/06-keyof.md)
+      - [07-typeof.md](../02-languages/02-typescript/09-generics/07-typeof.md)
+      - [08-generic-defaults.md](../02-languages/02-typescript/09-generics/08-generic-defaults.md)
+      - [09-generic-utility-patterns.md](../02-languages/02-typescript/09-generics/09-generic-utility-patterns.md)
+    - [10-CLASSES/](../02-languages/02-typescript/10-classes/)
+      - [01-class-basics.md](../02-languages/02-typescript/10-classes/01-class-basics.md)
+      - [02-access-modifiers.md](../02-languages/02-typescript/10-classes/02-access-modifiers.md)
+      - [03-readonly.md](../02-languages/02-typescript/10-classes/03-readonly.md)
+      - [04-constructors.md](../02-languages/02-typescript/10-classes/04-constructors.md)
+      - [05-inheritance.md](../02-languages/02-typescript/10-classes/05-inheritance.md)
+      - [06-abstract-classes.md](../02-languages/02-typescript/10-classes/06-abstract-classes.md)
+      - [07-implements.md](../02-languages/02-typescript/10-classes/07-implements.md)
+      - [08-static-members.md](../02-languages/02-typescript/10-classes/08-static-members.md)
+      - [09-parameter-properties.md](../02-languages/02-typescript/10-classes/09-parameter-properties.md)
+    - [11-UTILITY-TYPES/](../02-languages/02-typescript/11-utility-types/)
+      - [01-partial.md](../02-languages/02-typescript/11-utility-types/01-partial.md)
+      - [02-required.md](../02-languages/02-typescript/11-utility-types/02-required.md)
+      - [03-readonly.md](../02-languages/02-typescript/11-utility-types/03-readonly.md)
+      - [04-pick.md](../02-languages/02-typescript/11-utility-types/04-pick.md)
+      - [05-omit.md](../02-languages/02-typescript/11-utility-types/05-omit.md)
+      - [06-record.md](../02-languages/02-typescript/11-utility-types/06-record.md)
+      - [07-exclude.md](../02-languages/02-typescript/11-utility-types/07-exclude.md)
+      - [08-extract.md](../02-languages/02-typescript/11-utility-types/08-extract.md)
+      - [09-nonnullable.md](../02-languages/02-typescript/11-utility-types/09-nonnullable.md)
+      - [10-returntype.md](../02-languages/02-typescript/11-utility-types/10-returntype.md)
+      - [11-parameters.md](../02-languages/02-typescript/11-utility-types/11-parameters.md)
+      - [12-awaited.md](../02-languages/02-typescript/11-utility-types/12-awaited.md)
+      - [13-satisfies.md](../02-languages/02-typescript/11-utility-types/13-satisfies.md)
+    - [12-ADVANCED-TYPES/](../02-languages/02-typescript/12-advanced-types/)
+      - [01-conditional-types.md](../02-languages/02-typescript/12-advanced-types/01-conditional-types.md)
+      - [02-mapped-types.md](../02-languages/02-typescript/12-advanced-types/02-mapped-types.md)
+      - [03-indexed-access-types.md](../02-languages/02-typescript/12-advanced-types/03-indexed-access-types.md)
+      - [04-keyof-type-operator.md](../02-languages/02-typescript/12-advanced-types/04-keyof-type-operator.md)
+      - [05-typeof-type-operator.md](../02-languages/02-typescript/12-advanced-types/05-typeof-type-operator.md)
+      - [06-infer.md](../02-languages/02-typescript/12-advanced-types/06-infer.md)
+      - [07-recursive-types.md](../02-languages/02-typescript/12-advanced-types/07-recursive-types.md)
+      - [08-distributive-conditional-types.md](../02-languages/02-typescript/12-advanced-types/08-distributive-conditional-types.md)
+      - [09-branded-types.md](../02-languages/02-typescript/12-advanced-types/09-branded-types.md)
+      - [10-type-level-programming.md](../02-languages/02-typescript/12-advanced-types/10-type-level-programming.md)
+    - [13-MODULES/](../02-languages/02-typescript/13-modules/)
+      - [01-module-basics.md](../02-languages/02-typescript/13-modules/01-module-basics.md)
+      - [02-import.md](../02-languages/02-typescript/13-modules/02-import.md)
+      - [03-export.md](../02-languages/02-typescript/13-modules/03-export.md)
+      - [04-default-export.md](../02-languages/02-typescript/13-modules/04-default-export.md)
+      - [05-type-only-imports.md](../02-languages/02-typescript/13-modules/05-type-only-imports.md)
+      - [06-type-only-exports.md](../02-languages/02-typescript/13-modules/06-type-only-exports.md)
+      - [07-module-resolution.md](../02-languages/02-typescript/13-modules/07-module-resolution.md)
+      - [08-declaration-merging.md](../02-languages/02-typescript/13-modules/08-declaration-merging.md)
+    - [14-GENERATORS-AND-ITERATORS/](../02-languages/02-typescript/14-generators-and-iterators/)
+      - [01-iterators.md](../02-languages/02-typescript/14-generators-and-iterators/01-iterators.md)
+      - [02-iterable.md](../02-languages/02-typescript/14-generators-and-iterators/02-iterable.md)
+      - [03-generators.md](../02-languages/02-typescript/14-generators-and-iterators/03-generators.md)
+      - [04-async-iterators.md](../02-languages/02-typescript/14-generators-and-iterators/04-async-iterators.md)
+    - [15-DECORATORS/](../02-languages/02-typescript/15-decorators/)
+      - [01-decorator-basics.md](../02-languages/02-typescript/15-decorators/01-decorator-basics.md)
+      - [02-class-decorators.md](../02-languages/02-typescript/15-decorators/02-class-decorators.md)
+      - [03-method-decorators.md](../02-languages/02-typescript/15-decorators/03-method-decorators.md)
+      - [04-property-decorators.md](../02-languages/02-typescript/15-decorators/04-property-decorators.md)
+      - [05-decorator-metadata.md](../02-languages/02-typescript/15-decorators/05-decorator-metadata.md)
+    - [16-ERROR-HANDLING/](../02-languages/02-typescript/16-error-handling/)
+      - [01-error-types.md](../02-languages/02-typescript/16-error-handling/01-error-types.md)
+      - [02-unknown-in-catch.md](../02-languages/02-typescript/16-error-handling/02-unknown-in-catch.md)
+      - [03-custom-errors.md](../02-languages/02-typescript/16-error-handling/03-custom-errors.md)
+      - [04-error-narrowing.md](../02-languages/02-typescript/16-error-handling/04-error-narrowing.md)
+      - [05-safe-error-handling.md](../02-languages/02-typescript/16-error-handling/05-safe-error-handling.md)
+    - [17-CONFIGURATION/](../02-languages/02-typescript/17-configuration/)
+      - [01-tsconfig-basics.md](../02-languages/02-typescript/17-configuration/01-tsconfig-basics.md)
+      - [02-compiler-options.md](../02-languages/02-typescript/17-configuration/02-compiler-options.md)
+      - [03-strict-mode.md](../02-languages/02-typescript/17-configuration/03-strict-mode.md)
+      - [04-target.md](../02-languages/02-typescript/17-configuration/04-target.md)
+      - [05-module.md](../02-languages/02-typescript/17-configuration/05-module.md)
+      - [06-module-resolution.md](../02-languages/02-typescript/17-configuration/06-module-resolution.md)
+      - [07-path-aliases.md](../02-languages/02-typescript/17-configuration/07-path-aliases.md)
+      - [08-project-references.md](../02-languages/02-typescript/17-configuration/08-project-references.md)
+      - [09-typescript-config-patterns.md](../02-languages/02-typescript/17-configuration/09-typescript-config-patterns.md)
+    - [18-TOOLING/](../02-languages/02-typescript/18-tooling/)
+      - [01-tsc.md](../02-languages/02-typescript/18-tooling/01-tsc.md)
+      - [02-ts-node.md](../02-languages/02-typescript/18-tooling/02-ts-node.md)
+      - [03-tsx.md](../02-languages/02-typescript/18-tooling/03-tsx.md)
+      - [04-eslint.md](../02-languages/02-typescript/18-tooling/04-eslint.md)
+      - [05-prettier.md](../02-languages/02-typescript/18-tooling/05-prettier.md)
+      - [06-npm.md](../02-languages/02-typescript/18-tooling/06-npm.md)
+      - [07-package-json.md](../02-languages/02-typescript/18-tooling/07-package-json.md)
+      - [08-build-tools.md](../02-languages/02-typescript/18-tooling/08-build-tools.md)
+    - [19-TESTING/](../02-languages/02-typescript/19-testing/)
+      - [01-testing-basics.md](../02-languages/02-typescript/19-testing/01-testing-basics.md)
+      - [02-unit-testing.md](../02-languages/02-typescript/19-testing/02-unit-testing.md)
+      - [03-jest.md](../02-languages/02-typescript/19-testing/03-jest.md)
+      - [04-vitest.md](../02-languages/02-typescript/19-testing/04-vitest.md)
+      - [05-mocking.md](../02-languages/02-typescript/19-testing/05-mocking.md)
+      - [06-type-testing.md](../02-languages/02-typescript/19-testing/06-type-testing.md)
+      - [07-test-coverage.md](../02-languages/02-typescript/19-testing/07-test-coverage.md)
+    - [20-JAVASCRIPT-INTEROPERABILITY/](../02-languages/02-typescript/20-javascript-interoperability/)
+      - [01-javascript-compatibility.md](../02-languages/02-typescript/20-javascript-interoperability/01-javascript-compatibility.md)
+      - [02-checkjs.md](../02-languages/02-typescript/20-javascript-interoperability/02-checkjs.md)
+      - [03-jsdoc.md](../02-languages/02-typescript/20-javascript-interoperability/03-jsdoc.md)
+      - [04-declaration-files.md](../02-languages/02-typescript/20-javascript-interoperability/04-declaration-files.md)
+      - [05-d-ts.md](../02-languages/02-typescript/20-javascript-interoperability/05-d-ts.md)
+      - [06-ambient-declarations.md](../02-languages/02-typescript/20-javascript-interoperability/06-ambient-declarations.md)
+      - [07-third-party-types.md](../02-languages/02-typescript/20-javascript-interoperability/07-third-party-types.md)
+    - [21-ADVANCED/](../02-languages/02-typescript/21-advanced/)
+      - [01-type-system.md](../02-languages/02-typescript/21-advanced/01-type-system.md)
+      - [02-type-inference.md](../02-languages/02-typescript/21-advanced/02-type-inference.md)
+      - [03-contextual-typing.md](../02-languages/02-typescript/21-advanced/03-contextual-typing.md)
+      - [04-structural-typing.md](../02-languages/02-typescript/21-advanced/04-structural-typing.md)
+      - [05-variance.md](../02-languages/02-typescript/21-advanced/05-variance.md)
+      - [06-declaration-merging.md](../02-languages/02-typescript/21-advanced/06-declaration-merging.md)
+      - [07-module-augmentation.md](../02-languages/02-typescript/21-advanced/07-module-augmentation.md)
+      - [08-global-augmentation.md](../02-languages/02-typescript/21-advanced/08-global-augmentation.md)
+      - [09-performance.md](../02-languages/02-typescript/21-advanced/09-performance.md)
+      - [10-large-project-patterns.md](../02-languages/02-typescript/21-advanced/10-large-project-patterns.md)
 
 ---
 
-# `03-web`
+# 03-WEB
 
 Web Platform
 
-```text
-03-web/
-│
-├── README.md
-├── TOOLKITS-WEB.md [OK]
-│
-├── 01-html/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-document-structure.md
-│   │   ├── 03-doctype.md
-│   │   ├── 04-head-and-body.md
-│   │   ├── 05-html-attributes.md
-│   │   └── 06-comments.md
-│   │
-│   ├── 02-elements/
-│   │   ├── 01-headings.md
-│   │   ├── 02-paragraphs.md
-│   │   ├── 03-links.md
-│   │   ├── 04-lists.md
-│   │   ├── 05-div-and-span.md
-│   │   ├── 06-text-elements.md
-│   │   └── 07-other-elements.md
-│   │
-│   ├── 03-attributes/
-│   │   ├── 01-global-attributes.md
-│   │   ├── 02-id-and-class.md
-│   │   ├── 03-data-attributes.md
-│   │   ├── 04-boolean-attributes.md
-│   │   └── 05-custom-attributes.md
-│   │
-│   ├── 04-semantic-html/
-│   │   ├── 01-header.md
-│   │   ├── 02-nav.md
-│   │   ├── 03-main.md
-│   │   ├── 04-section.md
-│   │   ├── 05-article.md
-│   │   ├── 06-aside.md
-│   │   └── 07-footer.md
-│   │
-│   ├── 05-forms/
-│   │   ├── 01-form.md
-│   │   ├── 02-input.md
-│   │   ├── 03-label.md
-│   │   ├── 04-select.md
-│   │   ├── 05-textarea.md
-│   │   ├── 06-button.md
-│   │   ├── 07-validation.md
-│   │   └── 08-form-data.md
-│   │
-│   ├── 06-tables/
-│   │   ├── 01-table.md
-│   │   ├── 02-table-rows.md
-│   │   ├── 03-table-headings.md
-│   │   ├── 04-table-sections.md
-│   │   └── 05-accessible-tables.md
-│   │
-│   ├── 07-media/
-│   │   ├── 01-images.md
-│   │   ├── 02-audio.md
-│   │   ├── 03-video.md
-│   │   ├── 04-picture.md
-│   │   ├── 05-responsive-images.md
-│   │   └── 06-embedded-content.md
-│   │
-│   └── 08-accessibility/
-│       ├── 01-accessible-html.md
-│       ├── 02-landmarks.md
-│       ├── 03-heading-hierarchy.md
-│       ├── 04-labels.md
-│       ├── 05-alt-text.md
-│       └── 06-aria-basics.md
-│
-├── 02-css/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-syntax.md
-│   │   ├── 03-including-css.md
-│   │   ├── 04-cascade.md
-│   │   ├── 05-inheritance.md
-│   │   └── 06-specificity.md
-│   │
-│   ├── 02-selectors/
-│   │   ├── 01-element-selectors.md
-│   │   ├── 02-class-selectors.md
-│   │   ├── 03-id-selectors.md
-│   │   ├── 04-attribute-selectors.md
-│   │   ├── 05-pseudo-classes.md
-│   │   ├── 06-pseudo-elements.md
-│   │   └── 07-combinators.md
-│   │
-│   ├── 03-box-model/
-│   │   ├── 01-width-and-height.md
-│   │   ├── 02-margin.md
-│   │   ├── 03-padding.md
-│   │   ├── 04-border.md
-│   │   ├── 05-box-sizing.md
-│   │   └── 06-overflow.md
-│   │
-│   ├── 04-layout/
-│   │   ├── 01-display.md
-│   │   ├── 02-normal-flow.md
-│   │   ├── 03-float.md
-│   │   ├── 04-positioning.md
-│   │   ├── 05-z-index.md
-│   │   └── 06-stacking-context.md
-│   │
-│   ├── 05-flexbox/
-│   │   ├── 01-basics.md
-│   │   ├── 02-container-properties.md
-│   │   ├── 03-item-properties.md
-│   │   ├── 04-alignment.md
-│   │   └── 05-common-patterns.md
-│   │
-│   ├── 06-grid/
-│   │   ├── 01-basics.md
-│   │   ├── 02-grid-container.md
-│   │   ├── 03-grid-items.md
-│   │   ├── 04-template-columns.md
-│   │   ├── 05-template-rows.md
-│   │   ├── 06-grid-areas.md
-│   │   └── 07-common-patterns.md
-│   │
-│   ├── 07-responsive/
-│   │   ├── 01-responsive-design.md
-│   │   ├── 02-media-queries.md
-│   │   ├── 03-breakpoints.md
-│   │   ├── 04-mobile-first.md
-│   │   └── 05-container-queries.md
-│   │
-│   ├── 08-typography/
-│   │   ├── 01-fonts.md
-│   │   ├── 02-font-size.md
-│   │   ├── 03-line-height.md
-│   │   ├── 04-text-properties.md
-│   │   └── 05-web-fonts.md
-│   │
-│   ├── 09-colors-and-backgrounds/
-│   │   ├── 01-colors.md
-│   │   ├── 02-backgrounds.md
-│   │   ├── 03-gradients.md
-│   │   └── 04-opacity.md
-│   │
-│   ├── 10-animations/
-│   │   ├── 01-transitions.md
-│   │   ├── 02-transform.md
-│   │   ├── 03-keyframes.md
-│   │   └── 04-animation-patterns.md
-│   │
-│   ├── 11-variables/
-│   │   ├── 01-custom-properties.md
-│   │   ├── 02-fallbacks.md
-│   │   └── 03-theming.md
-│   │
-│   └── 12-modern-css/
-│       ├── 01-logical-properties.md
-│       ├── 02-css-functions.md
-│       ├── 03-clamp.md
-│       ├── 04-calc.md
-│       ├── 05-min-max.md
-│       └── 06-modern-layout.md
-│
-├── 03-javascript/
-│   ├── README.md
-│   ├── 01-browser-javascript.md
-│   ├── 02-script-loading.md
-│   ├── 03-defer-and-async.md
-│   ├── 04-module-scripts.md
-│   └── 05-browser-specific-javascript.md
-│
-├── 04-typescript/
-│   ├── README.md
-│   ├── 01-typescript-in-browser.md
-│   ├── 02-compilation.md
-│   ├── 03-module-configuration.md
-│   ├── 04-browser-builds.md
-│   └── 05-source-maps.md
-│
-├── 05-browser/
-│   ├── README.md
-│   │
-│   ├── 01-devtools/
-│   │   ├── 01-elements.md
-│   │   ├── 02-console.md
-│   │   ├── 03-network.md
-│   │   ├── 04-sources.md
-│   │   ├── 05-application.md
-│   │   ├── 06-performance.md
-│   │   └── 07-security.md
-│   │
-│   ├── 02-storage/
-│   │   ├── 01-cookies.md
-│   │   ├── 02-local-storage.md
-│   │   ├── 03-session-storage.md
-│   │   ├── 04-indexeddb.md
-│   │   └── 05-storage-quotas.md
-│   │
-│   ├── 03-rendering/
-│   │   ├── 01-rendering-pipeline.md
-│   │   ├── 02-dom-and-cssom.md
-│   │   ├── 03-render-tree.md
-│   │   ├── 04-layout.md
-│   │   ├── 05-paint.md
-│   │   └── 06-compositing.md
-│   │
-│   ├── 04-browser-security/
-│   │   ├── 01-same-origin-policy.md
-│   │   ├── 02-cors.md
-│   │   ├── 03-csp.md
-│   │   ├── 04-clickjacking.md
-│   │   └── 05-secure-contexts.md
-│   │
-│   └── 05-browser-features/
-│       ├── 01-tabs-and-windows.md
-│       ├── 02-history.md
-│       ├── 03-location.md
-│       ├── 04-clipboard.md
-│       └── 05-notifications.md
-│
-├── 06-dom/
-│   ├── README.md
-│   ├── 01-dom-basics.md
-│   ├── 02-document.md
-│   ├── 03-selecting-elements.md
-│   ├── 04-creating-elements.md
-│   ├── 05-modifying-elements.md
-│   ├── 06-attributes.md
-│   ├── 07-classes.md
-│   ├── 08-styles.md
-│   ├── 09-events.md
-│   ├── 10-event-delegation.md
-│   ├── 11-forms.md
-│   ├── 12-observers.md
-│   └── 13-dom-performance.md
-│
-├── 07-web-api/
-│   ├── README.md
-│   │
-│   ├── 01-fetch/
-│   │   ├── 01-fetch-basics.md
-│   │   ├── 02-request.md
-│   │   ├── 03-response.md
-│   │   ├── 04-headers.md
-│   │   ├── 05-abort-controller.md
-│   │   └── 06-error-handling.md
-│   │
-│   ├── 02-url/
-│   │   ├── 01-url.md
-│   │   ├── 02-urlsearchparams.md
-│   │   └── 03-url-pattern.md
-│   │
-│   ├── 03-storage/
-│   │   ├── 01-local-storage.md
-│   │   ├── 02-session-storage.md
-│   │   └── 03-indexeddb.md
-│   │
-│   ├── 04-workers/
-│   │   ├── 01-web-workers.md
-│   │   ├── 02-shared-workers.md
-│   │   └── 03-service-workers.md
-│   │
-│   ├── 05-communication/
-│   │   ├── 01-websocket.md
-│   │   ├── 02-server-sent-events.md
-│   │   └── 03-broadcast-channel.md
-│   │
-│   ├── 06-media/
-│   │   ├── 01-media-devices.md
-│   │   ├── 02-camera.md
-│   │   ├── 03-microphone.md
-│   │   └── 04-screen-capture.md
-│   │
-│   └── 07-other/
-│       ├── 01-clipboard.md
-│       ├── 02-geolocation.md
-│       ├── 03-notifications.md
-│       ├── 04-intersection-observer.md
-│       └── 05-resize-observer.md
-│
-├── 08-accessibility/
-│   ├── README.md
-│   ├── 01-web-accessibility.md
-│   ├── 02-wcag-basics.md
-│   ├── 03-semantic-html.md
-│   ├── 04-keyboard-navigation.md
-│   ├── 05-focus-management.md
-│   ├── 06-screen-readers.md
-│   ├── 07-aria.md
-│   ├── 08-color-and-contrast.md
-│   └── 09-accessible-forms.md
-│
-├── 09-performance/
-│   ├── README.md
-│   ├── 01-web-performance-basics.md
-│   ├── 02-critical-rendering-path.md
-│   ├── 03-core-web-vitals.md
-│   ├── 04-lcp.md
-│   ├── 05-inp.md
-│   ├── 06-cls.md
-│   ├── 07-javascript-performance.md
-│   ├── 08-css-performance.md
-│   ├── 09-image-optimization.md
-│   ├── 10-font-optimization.md
-│   ├── 11-network-performance.md
-│   ├── 12-caching.md
-│   └── 13-lazy-loading.md
-│
-└── 10-web-standards/
-    ├── README.md
-    ├── 01-web-standards.md
-    ├── 02-html-standards.md
-    ├── 03-css-standards.md
-    ├── 04-dom-standards.md
-    ├── 05-web-api-standards.md
-    ├── 06-browser-compatibility.md
-    ├── 07-progressive-enhancement.md
-    └── 08-feature-detection.md
-```
+- **[03-WEB/](../03-web/)**
+  - [README.md](../03-web/README.md)
+  - **[01-HTML/](../03-web/01-html/)**
+    - [README.md](../03-web/01-html/README.md)
+    - **[01-BASICS/](../03-web/01-html/01-basics/)**
+      - [01-introduction.md](../03-web/01-html/01-basics/01-introduction.md)
+      - [02-document-structure.md](../03-web/01-html/01-basics/02-document-structure.md)
+      - [03-doctype.md](../03-web/01-html/01-basics/03-doctype.md)
+      - [04-head-and-body.md](../03-web/01-html/01-basics/04-head-and-body.md)
+      - [05-html-attributes.md](../03-web/01-html/01-basics/05-html-attributes.md)
+      - [06-comments.md](../03-web/01-html/01-basics/06-comments.md)
+    - **[02-ELEMENTS/](../03-web/01-html/02-elements/)**
+      - [01-headings.md](../03-web/01-html/02-elements/01-headings.md)
+      - [02-paragraphs.md](../03-web/01-html/02-elements/02-paragraphs.md)
+      - [03-links.md](../03-web/01-html/02-elements/03-links.md)
+      - [04-lists.md](../03-web/01-html/02-elements/04-lists.md)
+      - [05-div-and-span.md](../03-web/01-html/02-elements/05-div-and-span.md)
+      - [06-text-elements.md](../03-web/01-html/02-elements/06-text-elements.md)
+      - [07-other-elements.md](../03-web/01-html/02-elements/07-other-elements.md)
+    - **[03-ATTRIBUTES/](../03-web/01-html/03-attributes/)**
+      - [01-global-attributes.md](../03-web/01-html/03-attributes/01-global-attributes.md)
+      - [02-id-and-class.md](../03-web/01-html/03-attributes/02-id-and-class.md)
+      - [03-data-attributes.md](../03-web/01-html/03-attributes/03-data-attributes.md)
+      - [04-boolean-attributes.md](../03-web/01-html/03-attributes/04-boolean-attributes.md)
+      - [05-custom-attributes.md](../03-web/01-html/03-attributes/05-custom-attributes.md)
+    - **[04-SEMANTIC-HTML/](../03-web/01-html/04-semantic-html/)**
+      - [01-header.md](../03-web/01-html/04-semantic-html/01-header.md)
+      - [02-nav.md](../03-web/01-html/04-semantic-html/02-nav.md)
+      - [03-main.md](../03-web/01-html/04-semantic-html/03-main.md)
+      - [04-section.md](../03-web/01-html/04-semantic-html/04-section.md)
+      - [05-article.md](../03-web/01-html/04-semantic-html/05-article.md)
+      - [06-aside.md](../03-web/01-html/04-semantic-html/06-aside.md)
+      - [07-footer.md](../03-web/01-html/04-semantic-html/07-footer.md)
+    - **[05-FORMS/](../03-web/01-html/05-forms/)**
+      - [01-form.md](../03-web/01-html/05-forms/01-form.md)
+      - [02-input.md](../03-web/01-html/05-forms/02-input.md)
+      - [03-label.md](../03-web/01-html/05-forms/03-label.md)
+      - [04-select.md](../03-web/01-html/05-forms/04-select.md)
+      - [05-textarea.md](../03-web/01-html/05-forms/05-textarea.md)
+      - [06-button.md](../03-web/01-html/05-forms/06-button.md)
+      - [07-validation.md](../03-web/01-html/05-forms/07-validation.md)
+      - [08-form-data.md](../03-web/01-html/05-forms/08-form-data.md)
+    - **[06-TABLES/](../03-web/01-html/06-tables/)**
+      - [01-table.md](../03-web/01-html/06-tables/01-table.md)
+      - [02-table-rows.md](../03-web/01-html/06-tables/02-table-rows.md)
+      - [03-table-headings.md](../03-web/01-html/06-tables/03-table-headings.md)
+      - [04-table-sections.md](../03-web/01-html/06-tables/04-table-sections.md)
+      - [05-accessible-tables.md](../03-web/01-html/06-tables/05-accessible-tables.md)
+    - **[07-MEDIA/](../03-web/01-html/07-media/)**
+      - [01-images.md](../03-web/01-html/07-media/01-images.md)
+      - [02-audio.md](../03-web/01-html/07-media/02-audio.md)
+      - [03-video.md](../03-web/01-html/07-media/03-video.md)
+      - [04-picture.md](../03-web/01-html/07-media/04-picture.md)
+      - [05-responsive-images.md](../03-web/01-html/07-media/05-responsive-images.md)
+      - [06-embedded-content.md](../03-web/01-html/07-media/06-embedded-content.md)
+    - **[08-ACCESSIBILITY/](../03-web/01-html/08-accessibility/)**
+      - [01-accessible-html.md](../03-web/01-html/08-accessibility/01-accessible-html.md)
+      - [02-landmarks.md](../03-web/01-html/08-accessibility/02-landmarks.md)
+      - [03-heading-hierarchy.md](../03-web/01-html/08-accessibility/03-heading-hierarchy.md)
+      - [04-labels.md](../03-web/01-html/08-accessibility/04-labels.md)
+      - [05-alt-text.md](../03-web/01-html/08-accessibility/05-alt-text.md)
+      - [06-aria-basics.md](../03-web/01-html/08-accessibility/06-aria-basics.md)
+
+  - **[02-CSS/](../03-web/02-css/)**
+    - [README.md](../03-web/02-css/README.md)
+    - **[01-BASICS/](../03-web/02-css/01-basics/)**
+      - [01-introduction.md](../03-web/02-css/01-basics/01-introduction.md)
+      - [02-syntax.md](../03-web/02-css/01-basics/02-syntax.md)
+      - [03-including-css.md](../03-web/02-css/01-basics/03-including-css.md)
+      - [04-cascade.md](../03-web/02-css/01-basics/04-cascade.md)
+      - [05-inheritance.md](../03-web/02-css/01-basics/05-inheritance.md)
+      - [06-specificity.md](../03-web/02-css/01-basics/06-specificity.md)
+    - **[02-SELECTORS/](../03-web/02-css/02-selectors/)**
+      - [01-element-selectors.md](../03-web/02-css/02-selectors/01-element-selectors.md)
+      - [02-class-selectors.md](../03-web/02-css/02-selectors/02-class-selectors.md)
+      - [03-id-selectors.md](../03-web/02-css/02-selectors/03-id-selectors.md)
+      - [04-attribute-selectors.md](../03-web/02-css/02-selectors/04-attribute-selectors.md)
+      - [05-pseudo-classes.md](../03-web/02-css/02-selectors/05-pseudo-classes.md)
+      - [06-pseudo-elements.md](../03-web/02-css/02-selectors/06-pseudo-elements.md)
+      - [07-combinators.md](../03-web/02-css/02-selectors/07-combinators.md)
+    - **[03-BOX-MODEL/](../03-web/02-css/03-box-model/)**
+      - [01-width-and-height.md](../03-web/02-css/03-box-model/01-width-and-height.md)
+      - [02-margin.md](../03-web/02-css/03-box-model/02-margin.md)
+      - [03-padding.md](../03-web/02-css/03-box-model/03-padding.md)
+      - [04-border.md](../03-web/02-css/03-box-model/04-border.md)
+      - [05-box-sizing.md](../03-web/02-css/03-box-model/05-box-sizing.md)
+      - [06-overflow.md](../03-web/02-css/03-box-model/06-overflow.md)
+    - **[04-LAYOUT/](../03-web/02-css/04-layout/)**
+      - [01-display.md](../03-web/02-css/04-layout/01-display.md)
+      - [02-normal-flow.md](../03-web/02-css/04-layout/02-normal-flow.md)
+      - [03-float.md](../03-web/02-css/04-layout/03-float.md)
+      - [04-positioning.md](../03-web/02-css/04-layout/04-positioning.md)
+      - [05-z-index.md](../03-web/02-css/04-layout/05-z-index.md)
+      - [06-stacking-context.md](../03-web/02-css/04-layout/06-stacking-context.md)
+    - **[05-FLEXBOX/](../03-web/02-css/05-flexbox/)**
+      - [01-basics.md](../03-web/02-css/05-flexbox/01-basics.md)
+      - [02-container-properties.md](../03-web/02-css/05-flexbox/02-container-properties.md)
+      - [03-item-properties.md](../03-web/02-css/05-flexbox/03-item-properties.md)
+      - [04-alignment.md](../03-web/02-css/05-flexbox/04-alignment.md)
+      - [05-common-patterns.md](../03-web/02-css/05-flexbox/05-common-patterns.md)
+    - **[06-GRID/](../03-web/02-css/06-grid/)**
+      - [01-basics.md](../03-web/02-css/06-grid/01-basics.md)
+      - [02-grid-container.md](../03-web/02-css/06-grid/02-grid-container.md)
+      - [03-grid-items.md](../03-web/02-css/06-grid/03-grid-items.md)
+      - [04-template-columns.md](../03-web/02-css/06-grid/04-template-columns.md)
+      - [05-template-rows.md](../03-web/02-css/06-grid/05-template-rows.md)
+      - [06-grid-areas.md](../03-web/02-css/06-grid/06-grid-areas.md)
+      - [07-common-patterns.md](../03-web/02-css/06-grid/07-common-patterns.md)
+    - **[07-RESPONSIVE/](../03-web/02-css/07-responsive/)**
+      - [01-responsive-design.md](../03-web/02-css/07-responsive/01-responsive-design.md)
+      - [02-media-queries.md](../03-web/02-css/07-responsive/02-media-queries.md)
+      - [03-breakpoints.md](../03-web/02-css/07-responsive/03-breakpoints.md)
+      - [04-mobile-first.md](../03-web/02-css/07-responsive/04-mobile-first.md)
+      - [05-container-queries.md](../03-web/02-css/07-responsive/05-container-queries.md)
+    - **[08-TYPOGRAPHY/](../03-web/02-css/08-typography/)**
+      - [01-fonts.md](../03-web/02-css/08-typography/01-fonts.md)
+      - [02-font-size.md](../03-web/02-css/08-typography/02-font-size.md)
+      - [03-line-height.md](../03-web/02-css/08-typography/03-line-height.md)
+      - [04-text-properties.md](../03-web/02-css/08-typography/04-text-properties.md)
+      - [05-web-fonts.md](../03-web/02-css/08-typography/05-web-fonts.md)
+    - **[09-COLORS-AND-BACKGROUNDS/](../03-web/02-css/09-colors-and-backgrounds/)**
+      - [01-colors.md](../03-web/02-css/09-colors-and-backgrounds/01-colors.md)
+      - [02-backgrounds.md](../03-web/02-css/09-colors-and-backgrounds/02-backgrounds.md)
+      - [03-gradients.md](../03-web/02-css/09-colors-and-backgrounds/03-gradients.md)
+      - [04-opacity.md](../03-web/02-css/09-colors-and-backgrounds/04-opacity.md)
+    - **[10-ANIMATIONS/](../03-web/02-css/10-animations/)**
+      - [01-transitions.md](../03-web/02-css/10-animations/01-transitions.md)
+      - [02-transform.md](../03-web/02-css/10-animations/02-transform.md)
+      - [03-keyframes.md](../03-web/02-css/10-animations/03-keyframes.md)
+      - [04-animation-patterns.md](../03-web/02-css/10-animations/04-animation-patterns.md)
+    - **[11-VARIABLES/](../03-web/02-css/11-variables/)**
+      - [01-custom-properties.md](../03-web/02-css/11-variables/01-custom-properties.md)
+      - [02-fallbacks.md](../03-web/02-css/11-variables/02-fallbacks.md)
+      - [03-theming.md](../03-web/02-css/11-variables/03-theming.md)
+    - **[12-MODERN-CSS/](../03-web/02-css/12-modern-css/)**
+      - [01-logical-properties.md](../03-web/02-css/12-modern-css/01-logical-properties.md)
+      - [02-css-functions.md](../03-web/02-css/12-modern-css/02-css-functions.md)
+      - [03-clamp.md](../03-web/02-css/12-modern-css/03-clamp.md)
+      - [04-calc.md](../03-web/02-css/12-modern-css/04-calc.md)
+      - [05-min-max.md](../03-web/02-css/12-modern-css/05-min-max.md)
+      - [06-modern-layout.md](../03-web/02-css/12-modern-css/06-modern-layout.md)
+
+  - **[03-JAVASCRIPT/](../03-web/03-javascript/)**
+    - [README.md](../03-web/03-javascript/README.md)
+    - [01-browser-javascript.md](../03-web/03-javascript/01-browser-javascript.md)
+    - [02-script-loading.md](../03-web/03-javascript/02-script-loading.md)
+    - [03-defer-and-async.md](../03-web/03-javascript/03-defer-and-async.md)
+    - [04-module-scripts.md](../03-web/03-javascript/04-module-scripts.md)
+    - [05-browser-specific-javascript.md](../03-web/03-javascript/05-browser-specific-javascript.md)
+
+  - **[04-TYPESCRIPT/](../03-web/04-typescript/)**
+    - [README.md](../03-web/04-typescript/README.md)
+    - [01-typescript-in-browser.md](../03-web/04-typescript/01-typescript-in-browser.md)
+    - [02-compilation.md](../03-web/04-typescript/02-compilation.md)
+    - [03-module-configuration.md](../03-web/04-typescript/03-module-configuration.md)
+    - [04-browser-builds.md](../03-web/04-typescript/04-browser-builds.md)
+    - [05-source-maps.md](../03-web/04-typescript/05-source-maps.md)
+
+  - **[05-BROWSER/](../03-web/05-browser/)**
+    - [README.md](../03-web/05-browser/README.md)
+    - **[01-DEVTOOLS/](../03-web/05-browser/01-devtools/)**
+      - [01-elements.md](../03-web/05-browser/01-devtools/01-elements.md)
+      - [02-console.md](../03-web/05-browser/01-devtools/02-console.md)
+      - [03-network.md](../03-web/05-browser/01-devtools/03-network.md)
+      - [04-sources.md](../03-web/05-browser/01-devtools/04-sources.md)
+      - [05-application.md](../03-web/05-browser/01-devtools/05-application.md)
+      - [06-performance.md](../03-web/05-browser/01-devtools/06-performance.md)
+      - [07-security.md](../03-web/05-browser/01-devtools/07-security.md)
+    - **[02-STORAGE/](../03-web/05-browser/02-storage/)**
+      - [01-cookies.md](../03-web/05-browser/02-storage/01-cookies.md)
+      - [02-local-storage.md](../03-web/05-browser/02-storage/02-local-storage.md)
+      - [03-session-storage.md](../03-web/05-browser/02-storage/03-session-storage.md)
+      - [04-indexeddb.md](../03-web/05-browser/02-storage/04-indexeddb.md)
+      - [05-storage-quotas.md](../03-web/05-browser/02-storage/05-storage-quotas.md)
+    - **[03-RENDERING/](../03-web/05-browser/03-rendering/)**
+      - [01-rendering-pipeline.md](../03-web/05-browser/03-rendering/01-rendering-pipeline.md)
+      - [02-dom-and-cssom.md](../03-web/05-browser/03-rendering/02-dom-and-cssom.md)
+      - [03-render-tree.md](../03-web/05-browser/03-rendering/03-render-tree.md)
+      - [04-layout.md](../03-web/05-browser/03-rendering/04-layout.md)
+      - [05-paint.md](../03-web/05-browser/03-rendering/05-paint.md)
+      - [06-compositing.md](../03-web/05-browser/03-rendering/06-compositing.md)
+    - **[04-BROWSER-SECURITY/](../03-web/05-browser/04-browser-security/)**
+      - [01-same-origin-policy.md](../03-web/05-browser/04-browser-security/01-same-origin-policy.md)
+      - [02-cors.md](../03-web/05-browser/04-browser-security/02-cors.md)
+      - [03-csp.md](../03-web/05-browser/04-browser-security/03-csp.md)
+      - [04-clickjacking.md](../03-web/05-browser/04-browser-security/04-clickjacking.md)
+      - [05-secure-contexts.md](../03-web/05-browser/04-browser-security/05-secure-contexts.md)
+    - **[05-BROWSER-FEATURES/](../03-web/05-browser/05-browser-features/)**
+      - [01-tabs-and-windows.md](../03-web/05-browser/05-browser-features/01-tabs-and-windows.md)
+      - [02-history.md](../03-web/05-browser/05-browser-features/02-history.md)
+      - [03-location.md](../03-web/05-browser/05-browser-features/03-location.md)
+      - [04-clipboard.md](../03-web/05-browser/05-browser-features/04-clipboard.md)
+      - [05-notifications.md](../03-web/05-browser/05-browser-features/05-notifications.md)
+
+  - **[06-DOM/](../03-web/06-dom/)**
+    - [README.md](../03-web/06-dom/README.md)
+    - [01-dom-basics.md](../03-web/06-dom/01-dom-basics.md)
+    - [02-document.md](../03-web/06-dom/02-document.md)
+    - [03-selecting-elements.md](../03-web/06-dom/03-selecting-elements.md)
+    - [04-creating-elements.md](../03-web/06-dom/04-creating-elements.md)
+    - [05-modifying-elements.md](../03-web/06-dom/05-modifying-elements.md)
+    - [06-attributes.md](../03-web/06-dom/06-attributes.md)
+    - [07-classes.md](../03-web/06-dom/07-classes.md)
+    - [08-styles.md](../03-web/06-dom/08-styles.md)
+    - [09-events.md](../03-web/06-dom/09-events.md)
+    - [10-event-delegation.md](../03-web/06-dom/10-event-delegation.md)
+    - [11-forms.md](../03-web/06-dom/11-forms.md)
+    - [12-observers.md](../03-web/06-dom/12-observers.md)
+    - [13-dom-performance.md](../03-web/06-dom/13-dom-performance.md)
+
+  - **[07-WEB-API/](../03-web/07-web-api/)**
+    - [README.md](../03-web/07-web-api/README.md)
+    - **[01-FETCH/](../03-web/07-web-api/01-fetch/)**
+      - [01-fetch-basics.md](../03-web/07-web-api/01-fetch/01-fetch-basics.md)
+      - [02-request.md](../03-web/07-web-api/01-fetch/02-request.md)
+      - [03-response.md](../03-web/07-web-api/01-fetch/03-response.md)
+      - [04-headers.md](../03-web/07-web-api/01-fetch/04-headers.md)
+      - [05-abort-controller.md](../03-web/07-web-api/01-fetch/05-abort-controller.md)
+      - [06-error-handling.md](../03-web/07-web-api/01-fetch/06-error-handling.md)
+    - **[02-URL/](../03-web/07-web-api/02-url/)**
+      - [01-url.md](../03-web/07-web-api/02-url/01-url.md)
+      - [02-urlsearchparams.md](../03-web/07-web-api/02-url/02-urlsearchparams.md)
+      - [03-url-pattern.md](../03-web/07-web-api/02-url/03-url-pattern.md)
+    - **[03-STORAGE/](../03-web/07-web-api/03-storage/)**
+      - [01-local-storage.md](../03-web/07-web-api/03-storage/01-local-storage.md)
+      - [02-session-storage.md](../03-web/07-web-api/03-storage/02-session-storage.md)
+      - [03-indexeddb.md](../03-web/07-web-api/03-storage/03-indexeddb.md)
+    - **[04-WORKERS/](../03-web/07-web-api/04-workers/)**
+      - [01-web-workers.md](../03-web/07-web-api/04-workers/01-web-workers.md)
+      - [02-shared-workers.md](../03-web/07-web-api/04-workers/02-shared-workers.md)
+      - [03-service-workers.md](../03-web/07-web-api/04-workers/03-service-workers.md)
+    - **[05-COMMUNICATION/](../03-web/07-web-api/05-communication/)**
+      - [01-websocket.md](../03-web/07-web-api/05-communication/01-websocket.md)
+      - [02-server-sent-events.md](../03-web/07-web-api/05-communication/02-server-sent-events.md)
+      - [03-broadcast-channel.md](../03-web/07-web-api/05-communication/03-broadcast-channel.md)
+    - **[06-MEDIA/](../03-web/07-web-api/06-media/)**
+      - [01-media-devices.md](../03-web/07-web-api/06-media/01-media-devices.md)
+      - [02-camera.md](../03-web/07-web-api/06-media/02-camera.md)
+      - [03-microphone.md](../03-web/07-web-api/06-media/03-microphone.md)
+      - [04-screen-capture.md](../03-web/07-web-api/06-media/04-screen-capture.md)
+    - **[07-OTHER/](../03-web/07-web-api/07-other/)**
+      - [01-clipboard.md](../03-web/07-web-api/07-other/01-clipboard.md)
+      - [02-geolocation.md](../03-web/07-web-api/07-other/02-geolocation.md)
+      - [03-notifications.md](../03-web/07-web-api/07-other/03-notifications.md)
+      - [04-intersection-observer.md](../03-web/07-web-api/07-other/04-intersection-observer.md)
+      - [05-resize-observer.md](../03-web/07-web-api/07-other/05-resize-observer.md)
+
+  - **[08-ACCESSIBILITY/](../03-web/08-accessibility/)**
+    - [README.md](../03-web/08-accessibility/README.md)
+    - [01-web-accessibility.md](../03-web/08-accessibility/01-web-accessibility.md)
+    - [02-wcag-basics.md](../03-web/08-accessibility/02-wcag-basics.md)
+    - [03-semantic-html.md](../03-web/08-accessibility/03-semantic-html.md)
+    - [04-keyboard-navigation.md](../03-web/08-accessibility/04-keyboard-navigation.md)
+    - [05-focus-management.md](../03-web/08-accessibility/05-focus-management.md)
+    - [06-screen-readers.md](../03-web/08-accessibility/06-screen-readers.md)
+    - [07-aria.md](../03-web/08-accessibility/07-aria.md)
+    - [08-color-and-contrast.md](../03-web/08-accessibility/08-color-and-contrast.md)
+    - [09-accessible-forms.md](../03-web/08-accessibility/09-accessible-forms.md)
+
+  - **[09-PERFORMANCE/](../03-web/09-performance/)**
+    - [README.md](../03-web/09-performance/README.md)
+    - [01-web-performance-basics.md](../03-web/09-performance/01-web-performance-basics.md)
+    - [02-critical-rendering-path.md](../03-web/09-performance/02-critical-rendering-path.md)
+    - [03-core-web-vitals.md](../03-web/09-performance/03-core-web-vitals.md)
+    - [04-lcp.md](../03-web/09-performance/04-lcp.md)
+    - [05-inp.md](../03-web/09-performance/05-inp.md)
+    - [06-cls.md](../03-web/09-performance/06-cls.md)
+    - [07-javascript-performance.md](../03-web/09-performance/07-javascript-performance.md)
+    - [08-css-performance.md](../03-web/09-performance/08-css-performance.md)
+    - [09-image-optimization.md](../03-web/09-performance/09-image-optimization.md)
+    - [10-font-optimization.md](../03-web/09-performance/10-font-optimization.md)
+    - [11-network-performance.md](../03-web/09-performance/11-network-performance.md)
+    - [12-caching.md](../03-web/09-performance/12-caching.md)
+    - [13-lazy-loading.md](../03-web/09-performance/13-lazy-loading.md)
+
+  - **[10-WEB-STANDARDS/](../03-web/10-web-standards/)**
+    - [README.md](../03-web/10-web-standards/README.md)
+    - [01-web-standards.md](../03-web/10-web-standards/01-web-standards.md)
+    - [02-html-standards.md](../03-web/10-web-standards/02-html-standards.md)
+    - [03-css-standards.md](../03-web/10-web-standards/03-css-standards.md)
+    - [04-dom-standards.md](../03-web/10-web-standards/04-dom-standards.md)
+    - [05-web-api-standards.md](../03-web/10-web-standards/05-web-api-standards.md)
+    - [06-browser-compatibility.md](../03-web/10-web-standards/06-browser-compatibility.md)
+    - [07-progressive-enhancement.md](../03-web/10-web-standards/07-progressive-enhancement.md)
+    - [08-feature-detection.md](../03-web/10-web-standards/08-feature-detection.md)
 
 ---
 
-# `04-frontend`
+# 04-FRONTEND
 
 Frontend Application Development
 
-```text
-04-frontend/
-│
-├── README.md
-│
-├── 01-react/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-project-setup.md
-│   │   ├── 03-jsx.md
-│   │   ├── 04-components.md
-│   │   ├── 05-props.md
-│   │   └── 06-composition.md
-│   │
-│   ├── 02-components/
-│   │   ├── 01-functional-components.md
-│   │   ├── 02-component-props.md
-│   │   ├── 03-component-composition.md
-│   │   ├── 04-children.md
-│   │   ├── 05-reusable-components.md
-│   │   └── 06-component-patterns.md
-│   │
-│   ├── 03-state/
-│   │   ├── 01-state-basics.md
-│   │   ├── 02-usestate.md
-│   │   ├── 03-state-updates.md
-│   │   ├── 04-derived-state.md
-│   │   ├── 05-lifting-state.md
-│   │   └── 06-state-architecture.md
-│   │
-│   ├── 04-hooks/
-│   │   ├── 01-hooks-basics.md
-│   │   ├── 02-use-state.md
-│   │   ├── 03-use-effect.md
-│   │   ├── 04-use-ref.md
-│   │   ├── 05-use-context.md
-│   │   ├── 06-use-reducer.md
-│   │   ├── 07-use-memo.md
-│   │   ├── 08-use-callback.md
-│   │   ├── 09-custom-hooks.md
-│   │   └── 10-hook-patterns.md
-│   │
-│   ├── 05-context/
-│   │   ├── 01-context-api.md
-│   │   ├── 02-provider-pattern.md
-│   │   ├── 03-consuming-context.md
-│   │   └── 04-context-patterns.md
-│   │
-│   ├── 06-events-and-forms/
-│   │   ├── 01-events.md
-│   │   ├── 02-event-handlers.md
-│   │   ├── 03-controlled-components.md
-│   │   ├── 04-uncontrolled-components.md
-│   │   └── 05-form-handling.md
-│   │
-│   ├── 07-rendering/
-│   │   ├── 01-rendering-basics.md
-│   │   ├── 02-conditional-rendering.md
-│   │   ├── 03-lists-and-keys.md
-│   │   ├── 04-reconciliation.md
-│   │   ├── 05-render-and-commit.md
-│   │   └── 06-strict-mode.md
-│   │
-│   ├── 08-performance/
-│   │   ├── 01-performance-basics.md
-│   │   ├── 02-memo.md
-│   │   ├── 03-use-memo.md
-│   │   ├── 04-use-callback.md
-│   │   ├── 05-code-splitting.md
-│   │   ├── 06-lazy-loading.md
-│   │   └── 07-rendering-optimization.md
-│   │
-│   ├── 09-data-fetching/
-│   │   ├── 01-fetching-data.md
-│   │   ├── 02-loading-states.md
-│   │   ├── 03-error-states.md
-│   │   ├── 04-caching.md
-│   │   └── 05-server-state.md
-│   │
-│   └── 10-advanced/
-│       ├── 01-refs.md
-│       ├── 02-portals.md
-│       ├── 03-error-boundaries.md
-│       ├── 04-suspense.md
-│       ├── 05-concurrent-rendering.md
-│       └── 06-react-architecture.md
-│
-├── 02-next-js/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-project-setup.md
-│   │   ├── 03-project-structure.md
-│   │   ├── 04-next-config.md
-│   │   └── 05-development-workflow.md
-│   │
-│   ├── 02-routing/
-│   │   ├── 01-app-router.md
-│   │   ├── 02-pages-and-layouts.md
-│   │   ├── 03-dynamic-routes.md
-│   │   ├── 04-route-groups.md
-│   │   ├── 05-parallel-routes.md
-│   │   ├── 06-intercepting-routes.md
-│   │   ├── 07-navigation.md
-│   │   └── 08-route-handlers.md
-│   │
-│   ├── 03-rendering/
-│   │   ├── 01-rendering-overview.md
-│   │   ├── 02-static-rendering.md
-│   │   ├── 03-dynamic-rendering.md
-│   │   ├── 04-server-rendering.md
-│   │   ├── 05-client-rendering.md
-│   │   └── 06-streaming.md
-│   │
-│   ├── 04-server-components/
-│   │   ├── 01-server-components.md
-│   │   ├── 02-client-components.md
-│   │   ├── 03-use-client.md
-│   │   ├── 04-component-boundaries.md
-│   │   └── 05-server-client-patterns.md
-│   │
-│   ├── 05-data-fetching/
-│   │   ├── 01-fetching-data.md
-│   │   ├── 02-caching.md
-│   │   ├── 03-revalidation.md
-│   │   ├── 04-loading-ui.md
-│   │   ├── 05-error-handling.md
-│   │   └── 06-server-actions.md
-│   │
-│   ├── 06-api/
-│   │   ├── 01-route-handlers.md
-│   │   ├── 02-request-response.md
-│   │   ├── 03-headers.md
-│   │   ├── 04-cookies.md
-│   │   ├── 05-redirects.md
-│   │   └── 06-api-patterns.md
-│   │
-│   ├── 07-middleware-and-proxy/
-│   │   ├── 01-middleware.md
-│   │   ├── 02-proxy.md
-│   │   ├── 03-rewrites.md
-│   │   ├── 04-redirects.md
-│   │   └── 05-request-processing.md
-│   │
-│   ├── 08-assets-and-styling/
-│   │   ├── 01-images.md
-│   │   ├── 02-fonts.md
-│   │   ├── 03-metadata.md
-│   │   ├── 04-css.md
-│   │   └── 05-static-assets.md
-│   │
-│   ├── 09-authentication/
-│   │   ├── 01-authentication.md
-│   │   ├── 02-authorization.md
-│   │   ├── 03-sessions.md
-│   │   ├── 04-cookies.md
-│   │   └── 05-auth-patterns.md
-│   │
-│   ├── 10-performance/
-│   │   ├── 01-performance-basics.md
-│   │   ├── 02-code-splitting.md
-│   │   ├── 03-image-optimization.md
-│   │   ├── 04-font-optimization.md
-│   │   ├── 05-caching.md
-│   │   └── 06-bundle-optimization.md
-│   │
-│   └── 11-deployment/
-│       ├── 01-build.md
-│       ├── 02-environment-variables.md
-│       ├── 03-static-export.md
-│       ├── 04-node-deployment.md
-│       ├── 05-docker-deployment.md
-│       ├── 06-platform-deployment.md
-│       └── 07-production-checklist.md
-│
-├── 03-tailwind-css/
-│   ├── README.md
-│   ├── 01-basics/
-│   │   ├── 01-installation.md
-│   │   ├── 02-utility-classes.md
-│   │   ├── 03-responsive-design.md
-│   │   └── 04-states.md
-│   ├── 02-layout/
-│   │   ├── 01-container.md
-│   │   ├── 02-flexbox.md
-│   │   ├── 03-grid.md
-│   │   ├── 04-positioning.md
-│   │   └── 05-spacing.md
-│   ├── 03-typography/
-│   │   ├── 01-fonts.md
-│   │   ├── 02-text.md
-│   │   └── 03-responsive-typography.md
-│   ├── 04-colors-and-backgrounds/
-│   │   ├── 01-colors.md
-│   │   ├── 02-backgrounds.md
-│   │   └── 03-gradients.md
-│   ├── 05-components/
-│   │   ├── 01-buttons.md
-│   │   ├── 02-forms.md
-│   │   ├── 03-cards.md
-│   │   └── 04-navigation.md
-│   ├── 06-customization/
-│   │   ├── 01-theme.md
-│   │   ├── 02-custom-utilities.md
-│   │   ├── 03-custom-components.md
-│   │   └── 04-plugins.md
-│   └── 07-production/
-│       ├── 01-optimization.md
-│       ├── 02-purge-and-content.md
-│       ├── 03-production-build.md
-│       └── 04-best-practices.md
-│
-├── 04-components/
-│   ├── README.md
-│   ├── 01-component-design.md
-│   ├── 02-reusable-components.md
-│   ├── 03-composition.md
-│   ├── 04-component-api.md
-│   ├── 05-design-tokens.md
-│   ├── 06-design-systems.md
-│   ├── 07-headless-components.md
-│   ├── 08-accessible-components.md
-│   └── 09-component-patterns.md
-│
-├── 05-state/
-│   ├── README.md
-│   ├── 01-state-management.md
-│   ├── 02-local-state.md
-│   ├── 03-global-state.md
-│   ├── 04-server-state.md
-│   ├── 05-url-state.md
-│   ├── 06-form-state.md
-│   ├── 07-state-machines.md
-│   └── 08-state-management-patterns.md
-│
-├── 06-forms/
-│   ├── README.md
-│   ├── 01-form-basics.md
-│   ├── 02-controlled-forms.md
-│   ├── 03-uncontrolled-forms.md
-│   ├── 04-validation.md
-│   ├── 05-schema-validation.md
-│   ├── 06-error-handling.md
-│   ├── 07-file-uploads.md
-│   └── 08-form-patterns.md
-│
-├── 07-routing/
-│   ├── README.md
-│   ├── 01-routing-concepts.md
-│   ├── 02-client-side-routing.md
-│   ├── 03-dynamic-routes.md
-│   ├── 04-nested-routes.md
-│   ├── 05-route-protection.md
-│   ├── 06-navigation.md
-│   └── 07-routing-patterns.md
-│
-├── 08-data-fetching/
-│   ├── README.md
-│   ├── 01-fetching.md
-│   ├── 02-loading-states.md
-│   ├── 03-error-handling.md
-│   ├── 04-caching.md
-│   ├── 05-pagination.md
-│   ├── 06-infinite-scroll.md
-│   └── 07-optimistic-updates.md
-│
-├── 09-testing/
-│   ├── README.md
-│   ├── 01-testing-strategy.md
-│   ├── 02-unit-testing.md
-│   ├── 03-component-testing.md
-│   ├── 04-integration-testing.md
-│   ├── 05-e2e-testing.md
-│   ├── 06-mocking.md
-│   ├── 07-test-coverage.md
-│   └── 08-testing-patterns.md
-│
-├── 10-styling/
-│   ├── README.md
-│   ├── 01-css-architecture.md
-│   ├── 02-css-modules.md
-│   ├── 03-css-in-js.md
-│   ├── 04-tailwind.md
-│   ├── 05-design-tokens.md
-│   └── 06-theming.md
-│
-├── 11-frontend-architecture/
-│   ├── README.md
-│   ├── 01-project-structure.md
-│   ├── 02-feature-based-architecture.md
-│   ├── 03-layered-architecture.md
-│   ├── 04-separation-of-concerns.md
-│   ├── 05-dependency-management.md
-│   ├── 06-error-boundaries.md
-│   └── 07-scalable-frontend.md
-│
-└── 12-performance/
-    ├── README.md
-    ├── 01-performance-basics.md
-    ├── 02-bundle-size.md
-    ├── 03-code-splitting.md
-    ├── 04-lazy-loading.md
-    ├── 05-rendering-performance.md
-    ├── 06-image-optimization.md
-    ├── 07-font-optimization.md
-    ├── 08-caching.md
-    ├── 09-web-vitals.md
-    └── 10-performance-debugging.md
-```
+- **[04-FRONTEND/](../04-frontend/)**
+  - [README.md](../04-frontend/README.md)
+  - **[01-REACT/](../04-frontend/01-react/)**
+    - [README.md](../04-frontend/01-react/README.md)
+    - **[01-BASICS/](../04-frontend/01-react/01-basics/)**
+      - [01-introduction.md](../04-frontend/01-react/01-basics/01-introduction.md)
+      - [02-project-setup.md](../04-frontend/01-react/01-basics/02-project-setup.md)
+      - [03-jsx.md](../04-frontend/01-react/01-basics/03-jsx.md)
+      - [04-components.md](../04-frontend/01-react/01-basics/04-components.md)
+      - [05-props.md](../04-frontend/01-react/01-basics/05-props.md)
+      - [06-composition.md](../04-frontend/01-react/01-basics/06-composition.md)
+    - **[02-COMPONENTS/](../04-frontend/01-react/02-components/)**
+      - [01-functional-components.md](../04-frontend/01-react/02-components/01-functional-components.md)
+      - [02-component-props.md](../04-frontend/01-react/02-components/02-component-props.md)
+      - [03-component-composition.md](../04-frontend/01-react/02-components/03-component-composition.md)
+      - [04-children.md](../04-frontend/01-react/02-components/04-children.md)
+      - [05-reusable-components.md](../04-frontend/01-react/02-components/05-reusable-components.md)
+      - [06-component-patterns.md](../04-frontend/01-react/02-components/06-component-patterns.md)
+    - **[03-STATE/](../04-frontend/01-react/03-state/)**
+      - [01-state-basics.md](../04-frontend/01-react/03-state/01-state-basics.md)
+      - [02-usestate.md](../04-frontend/01-react/03-state/02-usestate.md)
+      - [03-state-updates.md](../04-frontend/01-react/03-state/03-state-updates.md)
+      - [04-derived-state.md](../04-frontend/01-react/03-state/04-derived-state.md)
+      - [05-lifting-state.md](../04-frontend/01-react/03-state/05-lifting-state.md)
+      - [06-state-architecture.md](../04-frontend/01-react/03-state/06-state-architecture.md)
+    - **[04-HOOKS/](../04-frontend/01-react/04-hooks/)**
+      - [01-hooks-basics.md](../04-frontend/01-react/04-hooks/01-hooks-basics.md)
+      - [02-use-state.md](../04-frontend/01-react/04-hooks/02-use-state.md)
+      - [03-use-effect.md](../04-frontend/01-react/04-hooks/03-use-effect.md)
+      - [04-use-ref.md](../04-frontend/01-react/04-hooks/04-use-ref.md)
+      - [05-use-context.md](../04-frontend/01-react/04-hooks/05-use-context.md)
+      - [06-use-reducer.md](../04-frontend/01-react/04-hooks/06-use-reducer.md)
+      - [07-use-memo.md](../04-frontend/01-react/04-hooks/07-use-memo.md)
+      - [08-use-callback.md](../04-frontend/01-react/04-hooks/08-use-callback.md)
+      - [09-custom-hooks.md](../04-frontend/01-react/04-hooks/09-custom-hooks.md)
+      - [10-hook-patterns.md](../04-frontend/01-react/04-hooks/10-hook-patterns.md)
+    - **[05-CONTEXT/](../04-frontend/01-react/05-context/)**
+      - [01-context-api.md](../04-frontend/01-react/05-context/01-context-api.md)
+      - [02-provider-pattern.md](../04-frontend/01-react/05-context/02-provider-pattern.md)
+      - [03-consuming-context.md](../04-frontend/01-react/05-context/03-consuming-context.md)
+      - [04-context-patterns.md](../04-frontend/01-react/05-context/04-context-patterns.md)
+    - **[06-EVENTS-AND-FORMS/](../04-frontend/01-react/06-events-and-forms/)**
+      - [01-events.md](../04-frontend/01-react/06-events-and-forms/01-events.md)
+      - [02-event-handlers.md](../04-frontend/01-react/06-events-and-forms/02-event-handlers.md)
+      - [03-controlled-components.md](../04-frontend/01-react/06-events-and-forms/03-controlled-components.md)
+      - [04-uncontrolled-components.md](../04-frontend/01-react/06-events-and-forms/04-uncontrolled-components.md)
+      - [05-form-handling.md](../04-frontend/01-react/06-events-and-forms/05-form-handling.md)
+    - **[07-RENDERING/](../04-frontend/01-react/07-rendering/)**
+      - [01-rendering-basics.md](../04-frontend/01-react/07-rendering/01-rendering-basics.md)
+      - [02-conditional-rendering.md](../04-frontend/01-react/07-rendering/02-conditional-rendering.md)
+      - [03-lists-and-keys.md](../04-frontend/01-react/07-rendering/03-lists-and-keys.md)
+      - [04-reconciliation.md](../04-frontend/01-react/07-rendering/04-reconciliation.md)
+      - [05-render-and-commit.md](../04-frontend/01-react/07-rendering/05-render-and-commit.md)
+      - [06-strict-mode.md](../04-frontend/01-react/07-rendering/06-strict-mode.md)
+    - **[08-PERFORMANCE/](../04-frontend/01-react/08-performance/)**
+      - [01-performance-basics.md](../04-frontend/01-react/08-performance/01-performance-basics.md)
+      - [02-memo.md](../04-frontend/01-react/08-performance/02-memo.md)
+      - [03-use-memo.md](../04-frontend/01-react/08-performance/03-use-memo.md)
+      - [04-use-callback.md](../04-frontend/01-react/08-performance/04-use-callback.md)
+      - [05-code-splitting.md](../04-frontend/01-react/08-performance/05-code-splitting.md)
+      - [06-lazy-loading.md](../04-frontend/01-react/08-performance/06-lazy-loading.md)
+      - [07-rendering-optimization.md](../04-frontend/01-react/08-performance/07-rendering-optimization.md)
+    - **[09-DATA-FETCHING/](../04-frontend/01-react/09-data-fetching/)**
+      - [01-fetching-data.md](../04-frontend/01-react/09-data-fetching/01-fetching-data.md)
+      - [02-loading-states.md](../04-frontend/01-react/09-data-fetching/02-loading-states.md)
+      - [03-error-states.md](../04-frontend/01-react/09-data-fetching/03-error-states.md)
+      - [04-caching.md](../04-frontend/01-react/09-data-fetching/04-caching.md)
+      - [05-server-state.md](../04-frontend/01-react/09-data-fetching/05-server-state.md)
+    - **[10-ADVANCED/](../04-frontend/01-react/10-advanced/)**
+      - [01-refs.md](../04-frontend/01-react/10-advanced/01-refs.md)
+      - [02-portals.md](../04-frontend/01-react/10-advanced/02-portals.md)
+      - [03-error-boundaries.md](../04-frontend/01-react/10-advanced/03-error-boundaries.md)
+      - [04-suspense.md](../04-frontend/01-react/10-advanced/04-suspense.md)
+      - [05-concurrent-rendering.md](../04-frontend/01-react/10-advanced/05-concurrent-rendering.md)
+      - [06-react-architecture.md](../04-frontend/01-react/10-advanced/06-react-architecture.md)
+  - **[02-NEXT-JS/](../04-frontend/02-next-js/)**
+    - [README.md](../04-frontend/02-next-js/README.md)
+    - **[01-BASICS/](../04-frontend/02-next-js/01-basics/)**
+      - [01-introduction.md](../04-frontend/02-next-js/01-basics/01-introduction.md)
+      - [02-project-setup.md](../04-frontend/02-next-js/01-basics/02-project-setup.md)
+      - [03-project-structure.md](../04-frontend/02-next-js/01-basics/03-project-structure.md)
+      - [04-next-config.md](../04-frontend/02-next-js/01-basics/04-next-config.md)
+      - [05-development-workflow.md](../04-frontend/02-next-js/01-basics/05-development-workflow.md)
+    - **[02-ROUTING/](../04-frontend/02-next-js/02-routing/)**
+      - [01-app-router.md](../04-frontend/02-next-js/02-routing/01-app-router.md)
+      - [02-pages-and-layouts.md](../04-frontend/02-next-js/02-routing/02-pages-and-layouts.md)
+      - [03-dynamic-routes.md](../04-frontend/02-next-js/02-routing/03-dynamic-routes.md)
+      - [04-route-groups.md](../04-frontend/02-next-js/02-routing/04-route-groups.md)
+      - [05-parallel-routes.md](../04-frontend/02-next-js/02-routing/05-parallel-routes.md)
+      - [06-intercepting-routes.md](../04-frontend/02-next-js/02-routing/06-intercepting-routes.md)
+      - [07-navigation.md](../04-frontend/02-next-js/02-routing/07-navigation.md)
+      - [08-route-handlers.md](../04-frontend/02-next-js/02-routing/08-route-handlers.md)
+    - **[03-RENDERING/](../04-frontend/02-next-js/03-rendering/)**
+      - [01-rendering-overview.md](../04-frontend/02-next-js/03-rendering/01-rendering-overview.md)
+      - [02-static-rendering.md](../04-frontend/02-next-js/03-rendering/02-static-rendering.md)
+      - [03-dynamic-rendering.md](../04-frontend/02-next-js/03-rendering/03-dynamic-rendering.md)
+      - [04-server-rendering.md](../04-frontend/02-next-js/03-rendering/04-server-rendering.md)
+      - [05-client-rendering.md](../04-frontend/02-next-js/03-rendering/05-client-rendering.md)
+      - [06-streaming.md](../04-frontend/02-next-js/03-rendering/06-streaming.md)
+    - **[04-SERVER-COMPONENTS/](../04-frontend/02-next-js/04-server-components/)**
+      - [01-server-components.md](../04-frontend/02-next-js/04-server-components/01-server-components.md)
+      - [02-client-components.md](../04-frontend/02-next-js/04-server-components/02-client-components.md)
+      - [03-use-client.md](../04-frontend/02-next-js/04-server-components/03-use-client.md)
+      - [04-component-boundaries.md](../04-frontend/02-next-js/04-server-components/04-component-boundaries.md)
+      - [05-server-client-patterns.md](../04-frontend/02-next-js/04-server-components/05-server-client-patterns.md)
+    - **[05-DATA-FETCHING/](../04-frontend/02-next-js/05-data-fetching/)**
+      - [01-fetching-data.md](../04-frontend/02-next-js/05-data-fetching/01-fetching-data.md)
+      - [02-caching.md](../04-frontend/02-next-js/05-data-fetching/02-caching.md)
+      - [03-revalidation.md](../04-frontend/02-next-js/05-data-fetching/03-revalidation.md)
+      - [04-loading-ui.md](../04-frontend/02-next-js/05-data-fetching/04-loading-ui.md)
+      - [05-error-handling.md](../04-frontend/02-next-js/05-data-fetching/05-error-handling.md)
+      - [06-server-actions.md](../04-frontend/02-next-js/05-data-fetching/06-server-actions.md)
+    - **[06-API/](../04-frontend/02-next-js/06-api/)**
+      - [01-route-handlers.md](../04-frontend/02-next-js/06-api/01-route-handlers.md)
+      - [02-request-response.md](../04-frontend/02-next-js/06-api/02-request-response.md)
+      - [03-headers.md](../04-frontend/02-next-js/06-api/03-headers.md)
+      - [04-cookies.md](../04-frontend/02-next-js/06-api/04-cookies.md)
+      - [05-redirects.md](../04-frontend/02-next-js/06-api/05-redirects.md)
+      - [06-api-patterns.md](../04-frontend/02-next-js/06-api/06-api-patterns.md)
+    - **[07-MIDDLEWARE-AND-PROXY/](../04-frontend/02-next-js/07-middleware-and-proxy/)**
+      - [01-middleware.md](../04-frontend/02-next-js/07-middleware-and-proxy/01-middleware.md)
+      - [02-proxy.md](../04-frontend/02-next-js/07-middleware-and-proxy/02-proxy.md)
+      - [03-rewrites.md](../04-frontend/02-next-js/07-middleware-and-proxy/03-rewrites.md)
+      - [04-redirects.md](../04-frontend/02-next-js/07-middleware-and-proxy/04-redirects.md)
+      - [05-request-processing.md](../04-frontend/02-next-js/07-middleware-and-proxy/05-request-processing.md)
+    - **[08-ASSETS-AND-STYLING/](../04-frontend/02-next-js/08-assets-and-styling/)**
+      - [01-images.md](../04-frontend/02-next-js/08-assets-and-styling/01-images.md)
+      - [02-fonts.md](../04-frontend/02-next-js/08-assets-and-styling/02-fonts.md)
+      - [03-metadata.md](../04-frontend/02-next-js/08-assets-and-styling/03-metadata.md)
+      - [04-css.md](../04-frontend/02-next-js/08-assets-and-styling/04-css.md)
+      - [05-static-assets.md](../04-frontend/02-next-js/08-assets-and-styling/05-static-assets.md)
+    - **[09-AUTHENTICATION/](../04-frontend/02-next-js/09-authentication/)**
+      - [01-authentication.md](../04-frontend/02-next-js/09-authentication/01-authentication.md)
+      - [02-authorization.md](../04-frontend/02-next-js/09-authentication/02-authorization.md)
+      - [03-sessions.md](../04-frontend/02-next-js/09-authentication/03-sessions.md)
+      - [04-cookies.md](../04-frontend/02-next-js/09-authentication/04-cookies.md)
+      - [05-auth-patterns.md](../04-frontend/02-next-js/09-authentication/05-auth-patterns.md)
+    - **[10-PERFORMANCE/](../04-frontend/02-next-js/10-performance/)**
+      - [01-performance-basics.md](../04-frontend/02-next-js/10-performance/01-performance-basics.md)
+      - [02-code-splitting.md](../04-frontend/02-next-js/10-performance/02-code-splitting.md)
+      - [03-image-optimization.md](../04-frontend/02-next-js/10-performance/03-image-optimization.md)
+      - [04-font-optimization.md](../04-frontend/02-next-js/10-performance/04-font-optimization.md)
+      - [05-caching.md](../04-frontend/02-next-js/10-performance/05-caching.md)
+      - [06-bundle-optimization.md](../04-frontend/02-next-js/10-performance/06-bundle-optimization.md)
+    - **[11-DEPLOYMENT/](../04-frontend/02-next-js/11-deployment/)**
+      - [01-build.md](../04-frontend/02-next-js/11-deployment/01-build.md)
+      - [02-environment-variables.md](../04-frontend/02-next-js/11-deployment/02-environment-variables.md)
+      - [03-static-export.md](../04-frontend/02-next-js/11-deployment/03-static-export.md)
+      - [04-node-deployment.md](../04-frontend/02-next-js/11-deployment/04-node-deployment.md)
+      - [05-docker-deployment.md](../04-frontend/02-next-js/11-deployment/05-docker-deployment.md)
+      - [06-platform-deployment.md](../04-frontend/02-next-js/11-deployment/06-platform-deployment.md)
+      - [07-production-checklist.md](../04-frontend/02-next-js/11-deployment/07-production-checklist.md)
+  - **[03-TAILWIND-CSS/](../04-frontend/03-tailwind-css/)**
+    - [README.md](../04-frontend/03-tailwind-css/README.md)
+    - **[01-BASICS/](../04-frontend/03-tailwind-css/01-basics/)**
+      - [01-installation.md](../04-frontend/03-tailwind-css/01-basics/01-installation.md)
+      - [02-utility-classes.md](../04-frontend/03-tailwind-css/01-basics/02-utility-classes.md)
+      - [03-responsive-design.md](../04-frontend/03-tailwind-css/01-basics/03-responsive-design.md)
+      - [04-states.md](../04-frontend/03-tailwind-css/01-basics/04-states.md)
+    - **[02-LAYOUT/](../04-frontend/03-tailwind-css/02-layout/)**
+      - [01-container.md](../04-frontend/03-tailwind-css/02-layout/01-container.md)
+      - [02-flexbox.md](../04-frontend/03-tailwind-css/02-layout/02-flexbox.md)
+      - [03-grid.md](../04-frontend/03-tailwind-css/02-layout/03-grid.md)
+      - [04-positioning.md](../04-frontend/03-tailwind-css/02-layout/04-positioning.md)
+      - [05-spacing.md](../04-frontend/03-tailwind-css/02-layout/05-spacing.md)
+    - **[03-TYPOGRAPHY/](../04-frontend/03-tailwind-css/03-typography/)**
+      - [01-fonts.md](../04-frontend/03-tailwind-css/03-typography/01-fonts.md)
+      - [02-text.md](../04-frontend/03-tailwind-css/03-typography/02-text.md)
+      - [03-responsive-typography.md](../04-frontend/03-tailwind-css/03-typography/03-responsive-typography.md)
+    - **[04-COLORS-AND-BACKGROUNDS/](../04-frontend/03-tailwind-css/04-colors-and-backgrounds/)**
+      - [01-colors.md](../04-frontend/03-tailwind-css/04-colors-and-backgrounds/01-colors.md)
+      - [02-backgrounds.md](../04-frontend/03-tailwind-css/04-colors-and-backgrounds/02-backgrounds.md)
+      - [03-gradients.md](../04-frontend/03-tailwind-css/04-colors-and-backgrounds/03-gradients.md)
+    - **[05-COMPONENTS/](../04-frontend/03-tailwind-css/05-components/)**
+      - [01-buttons.md](../04-frontend/03-tailwind-css/05-components/01-buttons.md)
+      - [02-forms.md](../04-frontend/03-tailwind-css/05-components/02-forms.md)
+      - [03-cards.md](../04-frontend/03-tailwind-css/05-components/03-cards.md)
+      - [04-navigation.md](../04-frontend/03-tailwind-css/05-components/04-navigation.md)
+    - **[06-CUSTOMIZATION/](../04-frontend/03-tailwind-css/06-customization/)**
+      - [01-theme.md](../04-frontend/03-tailwind-css/06-customization/01-theme.md)
+      - [02-custom-utilities.md](../04-frontend/03-tailwind-css/06-customization/02-custom-utilities.md)
+      - [03-custom-components.md](../04-frontend/03-tailwind-css/06-customization/03-custom-components.md)
+      - [04-plugins.md](../04-frontend/03-tailwind-css/06-customization/04-plugins.md)
+    - **[07-PRODUCTION/](../04-frontend/03-tailwind-css/07-production/)**
+      - [01-optimization.md](../04-frontend/03-tailwind-css/07-production/01-optimization.md)
+      - [02-purge-and-content.md](../04-frontend/03-tailwind-css/07-production/02-purge-and-content.md)
+      - [03-production-build.md](../04-frontend/03-tailwind-css/07-production/03-production-build.md)
+      - [04-best-practices.md](../04-frontend/03-tailwind-css/07-production/04-best-practices.md)
+  - **[04-COMPONENTS/](../04-frontend/04-components/)**
+    - [README.md](../04-frontend/04-components/README.md)
+    - [01-component-design.md](../04-frontend/04-components/01-component-design.md)
+    - [02-reusable-components.md](../04-frontend/04-components/02-reusable-components.md)
+    - [03-composition.md](../04-frontend/04-components/03-composition.md)
+    - [04-component-api.md](../04-frontend/04-components/04-component-api.md)
+    - [05-design-tokens.md](../04-frontend/04-components/05-design-tokens.md)
+    - [06-design-systems.md](../04-frontend/04-components/06-design-systems.md)
+    - [07-headless-components.md](../04-frontend/04-components/07-headless-components.md)
+    - [08-accessible-components.md](../04-frontend/04-components/08-accessible-components.md)
+    - [09-component-patterns.md](../04-frontend/04-components/09-component-patterns.md)
+  - **[05-STATE/](../04-frontend/05-state/)**
+    - [README.md](../04-frontend/05-state/README.md)
+    - [01-state-management.md](../04-frontend/05-state/01-state-management.md)
+    - [02-local-state.md](../04-frontend/05-state/02-local-state.md)
+    - [03-global-state.md](../04-frontend/05-state/03-global-state.md)
+    - [04-server-state.md](../04-frontend/05-state/04-server-state.md)
+    - [05-url-state.md](../04-frontend/05-state/05-url-state.md)
+    - [06-form-state.md](../04-frontend/05-state/06-form-state.md)
+    - [07-state-machines.md](../04-frontend/05-state/07-state-machines.md)
+    - [08-state-management-patterns.md](../04-frontend/05-state/08-state-management-patterns.md)
+  - **[06-FORMS/](../04-frontend/06-forms/)**
+    - [README.md](../04-frontend/06-forms/README.md)
+    - [01-form-basics.md](../04-frontend/06-forms/01-form-basics.md)
+    - [02-controlled-forms.md](../04-frontend/06-forms/02-controlled-forms.md)
+    - [03-uncontrolled-forms.md](../04-frontend/06-forms/03-uncontrolled-forms.md)
+    - [04-validation.md](../04-frontend/06-forms/04-validation.md)
+    - [05-schema-validation.md](../04-frontend/06-forms/05-schema-validation.md)
+    - [06-error-handling.md](../04-frontend/06-forms/06-error-handling.md)
+    - [07-file-uploads.md](../04-frontend/06-forms/07-file-uploads.md)
+    - [08-form-patterns.md](../04-frontend/06-forms/08-form-patterns.md)
+  - **[07-ROUTING/](../04-frontend/07-routing/)**
+    - [README.md](../04-frontend/07-routing/README.md)
+    - [01-routing-concepts.md](../04-frontend/07-routing/01-routing-concepts.md)
+    - [02-client-side-routing.md](../04-frontend/07-routing/02-client-side-routing.md)
+    - [03-dynamic-routes.md](../04-frontend/07-routing/03-dynamic-routes.md)
+    - [04-nested-routes.md](../04-frontend/07-routing/04-nested-routes.md)
+    - [05-route-protection.md](../04-frontend/07-routing/05-route-protection.md)
+    - [06-navigation.md](../04-frontend/07-routing/06-navigation.md)
+    - [07-routing-patterns.md](../04-frontend/07-routing/07-routing-patterns.md)
+  - **[08-DATA-FETCHING/](../04-frontend/08-data-fetching/)**
+    - [README.md](../04-frontend/08-data-fetching/README.md)
+    - [01-fetching.md](../04-frontend/08-data-fetching/01-fetching.md)
+    - [02-loading-states.md](../04-frontend/08-data-fetching/02-loading-states.md)
+    - [03-error-handling.md](../04-frontend/08-data-fetching/03-error-handling.md)
+    - [04-caching.md](../04-frontend/08-data-fetching/04-caching.md)
+    - [05-pagination.md](../04-frontend/08-data-fetching/05-pagination.md)
+    - [06-infinite-scroll.md](../04-frontend/08-data-fetching/06-infinite-scroll.md)
+    - [07-optimistic-updates.md](../04-frontend/08-data-fetching/07-optimistic-updates.md)
+  - **[09-TESTING/](../04-frontend/09-testing/)**
+    - [README.md](../04-frontend/09-testing/README.md)
+    - [01-testing-strategy.md](../04-frontend/09-testing/01-testing-strategy.md)
+    - [02-unit-testing.md](../04-frontend/09-testing/02-unit-testing.md)
+    - [03-component-testing.md](../04-frontend/09-testing/03-component-testing.md)
+    - [04-integration-testing.md](../04-frontend/09-testing/04-integration-testing.md)
+    - [05-e2e-testing.md](../04-frontend/09-testing/05-e2e-testing.md)
+    - [06-mocking.md](../04-frontend/09-testing/06-mocking.md)
+    - [07-test-coverage.md](../04-frontend/09-testing/07-test-coverage.md)
+    - [08-testing-patterns.md](../04-frontend/09-testing/08-testing-patterns.md)
+  - **[10-STYLING/](../04-frontend/10-styling/)**
+    - [README.md](../04-frontend/10-styling/README.md)
+    - [01-css-architecture.md](../04-frontend/10-styling/01-css-architecture.md)
+    - [02-css-modules.md](../04-frontend/10-styling/02-css-modules.md)
+    - [03-css-in-js.md](../04-frontend/10-styling/03-css-in-js.md)
+    - [04-tailwind.md](../04-frontend/10-styling/04-tailwind.md)
+    - [05-design-tokens.md](../04-frontend/10-styling/05-design-tokens.md)
+    - [06-theming.md](../04-frontend/10-styling/06-theming.md)
+  - **[11-FRONTEND-ARCHITECTURE/](../04-frontend/11-frontend-architecture/)**
+    - [README.md](../04-frontend/11-frontend-architecture/README.md)
+    - [01-project-structure.md](../04-frontend/11-frontend-architecture/01-project-structure.md)
+    - [02-feature-based-architecture.md](../04-frontend/11-frontend-architecture/02-feature-based-architecture.md)
+    - [03-layered-architecture.md](../04-frontend/11-frontend-architecture/03-layered-architecture.md)
+    - [04-separation-of-concerns.md](../04-frontend/11-frontend-architecture/04-separation-of-concerns.md)
+    - [05-dependency-management.md](../04-frontend/11-frontend-architecture/05-dependency-management.md)
+    - [06-error-boundaries.md](../04-frontend/11-frontend-architecture/06-error-boundaries.md)
+    - [07-scalable-frontend.md](../04-frontend/11-frontend-architecture/07-scalable-frontend.md)
+  - **[12-PERFORMANCE/](../04-frontend/12-performance/)**
+    - [README.md](../04-frontend/12-performance/README.md)
+    - [01-performance-basics.md](../04-frontend/12-performance/01-performance-basics.md)
+    - [02-bundle-size.md](../04-frontend/12-performance/02-bundle-size.md)
+    - [03-code-splitting.md](../04-frontend/12-performance/03-code-splitting.md)
+    - [04-lazy-loading.md](../04-frontend/12-performance/04-lazy-loading.md)
+    - [05-rendering-performance.md](../04-frontend/12-performance/05-rendering-performance.md)
+    - [06-image-optimization.md](../04-frontend/12-performance/06-image-optimization.md)
+    - [07-font-optimization.md](../04-frontend/12-performance/07-font-optimization.md)
+    - [08-caching.md](../04-frontend/12-performance/08-caching.md)
+    - [09-web-vitals.md](../04-frontend/12-performance/09-web-vitals.md)
+    - [10-performance-debugging.md](../04-frontend/12-performance/10-performance-debugging.md)
 
 ---
 
-# `05-backend`
+# 05-BACKEND
 
-```text
-05-backend/
-│
-├── README.md
-│
-├── 01-node-js/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-runtime.md
-│   │   ├── 03-modules.md
-│   │   ├── 04-commonjs.md
-│   │   ├── 05-es-modules.md
-│   │   └── 06-package-json.md
-│   │
-│   ├── 02-runtime/
-│   │   ├── 01-event-loop.md
-│   │   ├── 02-call-stack.md
-│   │   ├── 03-task-queue.md
-│   │   ├── 04-microtask-queue.md
-│   │   ├── 05-process.md
-│   │   └── 06-runtime-patterns.md
-│   │
-│   ├── 03-built-in-modules/
-│   │   ├── 01-fs.md
-│   │   ├── 02-path.md
-│   │   ├── 03-url.md
-│   │   ├── 04-http.md
-│   │   ├── 05-crypto.md
-│   │   ├── 06-events.md
-│   │   ├── 07-stream.md
-│   │   ├── 08-buffer.md
-│   │   └── 09-child-process.md
-│   │
-│   ├── 04-async/
-│   │   ├── 01-callbacks.md
-│   │   ├── 02-promises.md
-│   │   ├── 03-async-await.md
-│   │   ├── 04-error-handling.md
-│   │   └── 05-concurrency.md
-│   │
-│   ├── 05-streams/
-│   │   ├── 01-readable.md
-│   │   ├── 02-writable.md
-│   │   ├── 03-duplex.md
-│   │   ├── 04-transform.md
-│   │   └── 05-stream-pipelines.md
-│   │
-│   ├── 06-process-and-environment/
-│   │   ├── 01-process.md
-│   │   ├── 02-environment-variables.md
-│   │   ├── 03-signals.md
-│   │   ├── 04-exit-codes.md
-│   │   └── 05-graceful-shutdown.md
-│   │
-│   └── 07-performance/
-│       ├── 01-performance-basics.md
-│       ├── 02-memory.md
-│       ├── 03-profiling.md
-│       ├── 04-worker-threads.md
-│       └── 05-performance-debugging.md
-│
-├── 02-express/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-installation.md
-│   │   ├── 02-server.md
-│   │   ├── 03-routes.md
-│   │   └── 04-request-response.md
-│   │
-│   ├── 02-routing/
-│   │   ├── 01-route-basics.md
-│   │   ├── 02-route-parameters.md
-│   │   ├── 03-query-parameters.md
-│   │   ├── 04-router.md
-│   │   └── 05-nested-routes.md
-│   │
-│   ├── 03-middleware/
-│   │   ├── 01-middleware-basics.md
-│   │   ├── 02-built-in-middleware.md
-│   │   ├── 03-custom-middleware.md
-│   │   ├── 04-error-middleware.md
-│   │   └── 05-middleware-patterns.md
-│   │
-│   ├── 04-request-response/
-│   │   ├── 01-request.md
-│   │   ├── 02-response.md
-│   │   ├── 03-headers.md
-│   │   ├── 04-cookies.md
-│   │   └── 05-file-response.md
-│   │
-│   ├── 05-error-handling/
-│   │   ├── 01-errors.md
-│   │   ├── 02-error-middleware.md
-│   │   └── 03-production-errors.md
-│   │
-│   └── 06-production/
-│       ├── 01-security.md
-│       ├── 02-logging.md
-│       ├── 03-graceful-shutdown.md
-│       └── 04-production-checklist.md
-│
-├── 03-nest-js/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-introduction.md
-│   │   ├── 02-cli.md
-│   │   ├── 03-project-structure.md
-│   │   └── 04-configuration.md
-│   │
-│   ├── 02-modules/
-│   │   ├── 01-modules.md
-│   │   ├── 02-feature-modules.md
-│   │   ├── 03-global-modules.md
-│   │   └── 04-dynamic-modules.md
-│   │
-│   ├── 03-controllers/
-│   │   ├── 01-controllers.md
-│   │   ├── 02-routes.md
-│   │   ├── 03-parameters.md
-│   │   └── 04-request-response.md
-│   │
-│   ├── 04-providers/
-│   │   ├── 01-providers.md
-│   │   ├── 02-services.md
-│   │   ├── 03-dependency-injection.md
-│   │   └── 04-custom-providers.md
-│   │
-│   ├── 05-pipes/
-│   │   ├── 01-pipes.md
-│   │   ├── 02-validation-pipes.md
-│   │   └── 03-transformation-pipes.md
-│   │
-│   ├── 06-guards/
-│   │   ├── 01-guards.md
-│   │   ├── 02-authentication-guards.md
-│   │   └── 03-authorization-guards.md
-│   │
-│   ├── 07-interceptors/
-│   │   ├── 01-interceptors.md
-│   │   ├── 02-logging.md
-│   │   ├── 03-response-transformation.md
-│   │   └── 04-performance.md
-│   │
-│   ├── 08-exception-filters/
-│   │   ├── 01-exception-filters.md
-│   │   ├── 02-http-exceptions.md
-│   │   └── 03-custom-exceptions.md
-│   │
-│   ├── 09-middleware/
-│   │   ├── 01-middleware.md
-│   │   ├── 02-global-middleware.md
-│   │   └── 03-route-middleware.md
-│   │
-│   ├── 10-config/
-│   │   ├── 01-configuration.md
-│   │   ├── 02-environment-variables.md
-│   │   ├── 03-config-validation.md
-│   │   └── 04-config-patterns.md
-│   │
-│   ├── 11-testing/
-│   │   ├── 01-unit-testing.md
-│   │   ├── 02-integration-testing.md
-│   │   ├── 03-e2e-testing.md
-│   │   └── 04-testing-module.md
-│   │
-│   ├── 12-websockets/
-│   │   ├── 01-gateways.md
-│   │   ├── 02-events.md
-│   │   └── 03-adapters.md
-│   │
-│   ├── 13-graphql/
-│   │   ├── 01-graphql-module.md
-│   │   ├── 02-code-first.md
-│   │   ├── 03-schema-first.md
-│   │   ├── 04-resolvers.md
-│   │   └── 05-graphql-patterns.md
-│   │
-│   └── 14-microservices/
-│       ├── 01-microservices.md
-│       ├── 02-transporters.md
-│       ├── 03-message-patterns.md
-│       ├── 04-rpc.md
-│       └── 05-microservice-patterns.md
-│
-├── 04-api/
-│   ├── README.md
-│   │
-│   ├── 01-rest/
-│   │   ├── 01-rest-basics.md
-│   │   ├── 02-resources.md
-│   │   ├── 03-http-methods.md
-│   │   ├── 04-status-codes.md
-│   │   ├── 05-headers.md
-│   │   ├── 06-query-parameters.md
-│   │   ├── 07-pagination.md
-│   │   ├── 08-filtering.md
-│   │   ├── 09-sorting.md
-│   │   └── 10-versioning.md
-│   │
-│   ├── 02-graphql/
-│   │   ├── 01-schema.md
-│   │   ├── 02-types.md
-│   │   ├── 03-queries.md
-│   │   ├── 04-mutations.md
-│   │   ├── 05-subscriptions.md
-│   │   ├── 06-resolvers.md
-│   │   └── 07-fragments.md
-│   │
-│   ├── 03-websocket/
-│   │   ├── 01-websocket-basics.md
-│   │   ├── 02-connections.md
-│   │   ├── 03-events.md
-│   │   ├── 04-reconnection.md
-│   │   └── 05-real-time-patterns.md
-│   │
-│   └── 04-api-design/
-│       ├── 01-resource-design.md
-│       ├── 02-error-format.md
-│       ├── 03-api-versioning.md
-│       ├── 04-idempotency.md
-│       ├── 05-rate-limiting.md
-│       └── 06-api-documentation.md
-│
-├── 05-auth/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-authentication.md
-│   │   ├── 02-authorization.md
-│   │   ├── 03-sessions.md
-│   │   └── 04-access-control.md
-│   │
-│   ├── 02-passwords/
-│   │   ├── 01-password-hashing.md
-│   │   ├── 02-password-policy.md
-│   │   └── 03-password-reset.md
-│   │
-│   ├── 03-jwt/
-│   │   ├── 01-jwt-basics.md
-│   │   ├── 02-access-tokens.md
-│   │   ├── 03-refresh-tokens.md
-│   │   └── 04-token-security.md
-│   │
-│   ├── 04-oauth/
-│   │   ├── 01-oauth-basics.md
-│   │   ├── 02-oauth2.md
-│   │   ├── 03-authorization-code.md
-│   │   └── 04-openid-connect.md
-│   │
-│   ├── 05-rbac/
-│   │   ├── 01-role-based-access.md
-│   │   ├── 02-permissions.md
-│   │   └── 03-policy-patterns.md
-│   │
-│   └── 06-security/
-│       ├── 01-session-security.md
-│       ├── 02-cookie-security.md
-│       ├── 03-csrf.md
-│       ├── 04-cors.md
-│       └── 05-brute-force-protection.md
-│
-├── 06-validation/
-│   ├── README.md
-|   |
-│   ├── 01-input-validation.md
-│   ├── 02-schema-validation.md
-│   ├── 03-request-validation.md
-│   ├── 04-response-validation.md
-│   ├── 05-error-messages.md
-│   ├── 06-zod.md
-│   ├── 07-joi.md
-│   ├── 08-class-validator.md
-│   └── 09-validation-patterns.md
-│
-├── 07-database/
-│   ├── README.md
-│   ├── 01-database-integration.md
-│   ├── 02-connection-pooling.md
-│   ├── 03-transactions.md
-│   ├── 04-migrations.md
-│   ├── 05-orm.md
-│   ├── 06-query-builders.md
-│   ├── 07-repositories.md
-│   └── 08-database-patterns.md
-│
-├── 08-caching/
-│   ├── README.md
-│   ├── 01-caching-basics.md
-│   ├── 02-cache-strategies.md
-│   ├── 03-redis.md
-│   ├── 04-ttl.md
-│   ├── 05-cache-invalidation.md
-│   └── 06-distributed-caching.md
-│
-├── 09-messaging/
-│   ├── README.md
-│   ├── 01-message-queues.md
-│   ├── 02-pub-sub.md
-│   ├── 03-rabbitmq.md
-│   ├── 04-kafka.md
-│   ├── 05-events.md
-│   ├── 06-retries.md
-│   ├── 07-dead-letter-queues.md
-│   └── 08-message-patterns.md
-│
-├── 10-testing/
-│   ├── README.md
-│   ├── 01-testing-strategy.md
-│   ├── 02-unit-testing.md
-│   ├── 03-integration-testing.md
-│   ├── 04-api-testing.md
-│   ├── 05-e2e-testing.md
-│   ├── 06-mocking.md
-│   ├── 07-test-doubles.md
-│   ├── 08-contract-testing.md
-│   └── 09-test-coverage.md
-│
-├── 11-observability/
-│   ├── README.md
-│   ├── 01-logging.md
-│   ├── 02-structured-logging.md
-│   ├── 03-metrics.md
-│   ├── 04-tracing.md
-│   ├── 05-health-checks.md
-│   ├── 06-alerting.md
-│   └── 07-open-telemetry.md
-│
-├── 12-performance/
-│   ├── README.md
-|   |
-│   ├── 01-performance-basics.md
-│   ├── 02-latency.md
-│   ├── 03-throughput.md
-│   ├── 04-concurrency.md
-│   ├── 05-memory.md
-│   ├── 06-database-performance.md
-│   ├── 07-caching.md
-│   ├── 08-load-testing.md
-│   └── 09-performance-debugging.md
-│
-├── 13-background-jobs/
-│   ├── README.md
-|   |
-│   ├── 01-job-queues.md
-│   ├── 02-cron-jobs.md
-│   ├── 03-workers.md
-│   ├── 04-retries.md
-│   ├── 05-scheduling.md
-│   └── 06-idempotency.md
-│
-├── 14-file-processing/
-│   ├── README.md
-|   |
-│   ├── 01-file-uploads.md
-│   ├── 02-file-downloads.md
-│   ├── 03-streaming.md
-│   ├── 04-images.md
-│   ├── 05-pdf.md
-│   └── 06-object-storage.md
-│
-├── 15-backend-architecture/
-│   ├── README.md
-|   |
-│   ├── 01-project-structure.md
-│   ├── 02-layered-architecture.md
-│   ├── 03-clean-architecture.md
-│   ├── 04-hexagonal-architecture.md
-│   ├── 05-dependency-inversion.md
-│   ├── 06-modular-monolith.md
-│   ├── 07-microservices.md
-│   └── 08-domain-driven-design.md
-│
-└── 16-production/
-    ├── README.md
-    |
-    ├── 01-environment-configuration.md
-    ├── 02-graceful-shutdown.md
-    ├── 03-health-checks.md
-    ├── 04-rate-limiting.md
-    ├── 05-security-checklist.md
-    ├── 06-logging.md
-    ├── 07-monitoring.md
-    ├── 08-deployment-checklist.md
-    └── 09-production-checklist.md
-```
+- **[05-BACKEND/](../05-backend/)**
+  - [README.md](../05-backend/README.md)
+  - **[01-NODE-JS/](../05-backend/01-node-js/)**
+    - [README.md](../05-backend/01-node-js/README.md)
+    - **[01-BASICS/](../05-backend/01-node-js/01-basics/)**
+      - [01-introduction.md](../05-backend/01-node-js/01-basics/01-introduction.md)
+      - [02-runtime.md](../05-backend/01-node-js/01-basics/02-runtime.md)
+      - [03-modules.md](../05-backend/01-node-js/01-basics/03-modules.md)
+      - [04-commonjs.md](../05-backend/01-node-js/01-basics/04-commonjs.md)
+      - [05-es-modules.md](../05-backend/01-node-js/01-basics/05-es-modules.md)
+      - [06-package-json.md](../05-backend/01-node-js/01-basics/06-package-json.md)
+    - **[02-RUNTIME/](../05-backend/01-node-js/02-runtime/)**
+      - [01-event-loop.md](../05-backend/01-node-js/02-runtime/01-event-loop.md)
+      - [02-call-stack.md](../05-backend/01-node-js/02-runtime/02-call-stack.md)
+      - [03-task-queue.md](../05-backend/01-node-js/02-runtime/03-task-queue.md)
+      - [04-microtask-queue.md](../05-backend/01-node-js/02-runtime/04-microtask-queue.md)
+      - [05-process.md](../05-backend/01-node-js/02-runtime/05-process.md)
+      - [06-runtime-patterns.md](../05-backend/01-node-js/02-runtime/06-runtime-patterns.md)
+    - **[03-BUILT-IN-MODULES/](../05-backend/01-node-js/03-built-in-modules/)**
+      - [01-fs.md](../05-backend/01-node-js/03-built-in-modules/01-fs.md)
+      - [02-path.md](../05-backend/01-node-js/03-built-in-modules/02-path.md)
+      - [03-url.md](../05-backend/01-node-js/03-built-in-modules/03-url.md)
+      - [04-http.md](../05-backend/01-node-js/03-built-in-modules/04-http.md)
+      - [05-crypto.md](../05-backend/01-node-js/03-built-in-modules/05-crypto.md)
+      - [06-events.md](../05-backend/01-node-js/03-built-in-modules/06-events.md)
+      - [07-stream.md](../05-backend/01-node-js/03-built-in-modules/07-stream.md)
+      - [08-buffer.md](../05-backend/01-node-js/03-built-in-modules/08-buffer.md)
+      - [09-child-process.md](../05-backend/01-node-js/03-built-in-modules/09-child-process.md)
+    - **[04-ASYNC/](../05-backend/01-node-js/04-async/)**
+      - [01-callbacks.md](../05-backend/01-node-js/04-async/01-callbacks.md)
+      - [02-promises.md](../05-backend/01-node-js/04-async/02-promises.md)
+      - [03-async-await.md](../05-backend/01-node-js/04-async/03-async-await.md)
+      - [04-error-handling.md](../05-backend/01-node-js/04-async/04-error-handling.md)
+      - [05-concurrency.md](../05-backend/01-node-js/04-async/05-concurrency.md)
+    - **[05-STREAMS/](../05-backend/01-node-js/05-streams/)**
+      - [01-readable.md](../05-backend/01-node-js/05-streams/01-readable.md)
+      - [02-writable.md](../05-backend/01-node-js/05-streams/02-writable.md)
+      - [03-duplex.md](../05-backend/01-node-js/05-streams/03-duplex.md)
+      - [04-transform.md](../05-backend/01-node-js/05-streams/04-transform.md)
+      - [05-stream-pipelines.md](../05-backend/01-node-js/05-streams/05-stream-pipelines.md)
+    - **[06-PROCESS-AND-ENVIRONMENT/](../05-backend/01-node-js/06-process-and-environment/)**
+      - [01-process.md](../05-backend/01-node-js/06-process-and-environment/01-process.md)
+      - [02-environment-variables.md](../05-backend/01-node-js/06-process-and-environment/02-environment-variables.md)
+      - [03-signals.md](../05-backend/01-node-js/06-process-and-environment/03-signals.md)
+      - [04-exit-codes.md](../05-backend/01-node-js/06-process-and-environment/04-exit-codes.md)
+      - [05-graceful-shutdown.md](../05-backend/01-node-js/06-process-and-environment/05-graceful-shutdown.md)
+    - **[07-PERFORMANCE/](../05-backend/01-node-js/07-performance/)**
+      - [01-performance-basics.md](../05-backend/01-node-js/07-performance/01-performance-basics.md)
+      - [02-memory.md](../05-backend/01-node-js/07-performance/02-memory.md)
+      - [03-profiling.md](../05-backend/01-node-js/07-performance/03-profiling.md)
+      - [04-worker-threads.md](../05-backEND/01-node-js/07-performance/04-worker-threads.md)
+      - [05-performance-debugging.md](../05-backend/01-node-js/07-performance/05-performance-debugging.md)
+  - **[02-EXPRESS/](../05-backend/02-express/)**
+    - [README.md](../05-backend/02-express/README.md)
+    - **[01-BASICS/](../05-backend/02-express/01-basics/)**
+      - [01-installation.md](../05-backend/02-express/01-basics/01-installation.md)
+      - [02-server.md](../05-backend/02-express/01-basics/02-server.md)
+      - [03-routes.md](../05-backend/02-express/01-basics/03-routes.md)
+      - [04-request-response.md](../05-backend/02-express/01-basics/04-request-response.md)
+    - **[02-ROUTING/](../05-backend/02-express/02-routing/)**
+      - [01-route-basics.md](../05-backend/02-express/02-routing/01-route-basics.md)
+      - [02-route-parameters.md](../05-backend/02-express/02-routing/02-route-parameters.md)
+      - [03-query-parameters.md](../05-backend/02-express/02-routing/03-query-parameters.md)
+      - [04-router.md](../05-backend/02-express/02-routing/04-router.md)
+      - [05-nested-routes.md](../05-backend/02-express/02-routing/05-nested-routes.md)
+    - **[03-MIDDLEWARE/](../05-backend/02-express/03-middleware/)**
+      - [01-middleware-basics.md](../05-backend/02-express/03-middleware/01-middleware-basics.md)
+      - [02-built-in-middleware.md](../05-backend/02-express/03-middleware/02-built-in-middleware.md)
+      - [03-custom-middleware.md](../05-backend/02-express/03-middleware/03-custom-middleware.md)
+      - [04-error-middleware.md](../05-backend/02-express/03-middleware/04-error-middleware.md)
+      - [05-middleware-patterns.md](../05-backend/02-express/03-middleware/05-middleware-patterns.md)
+    - **[04-REQUEST-RESPONSE/](../05-backend/02-express/04-request-response/)**
+      - [01-request.md](../05-backend/02-express/04-request-response/01-request.md)
+      - [02-response.md](../05-backend/02-express/04-request-response/02-response.md)
+      - [03-headers.md](../05-backend/02-express/04-request-response/03-headers.md)
+      - [04-cookies.md](../05-backend/02-express/04-request-response/04-cookies.md)
+      - [05-file-response.md](../05-backend/02-express/04-request-response/05-file-response.md)
+    - **[05-ERROR-HANDLING/](../05-backend/02-express/05-error-handling/)**
+      - [01-errors.md](../05-backend/02-express/05-error-handling/01-errors.md)
+      - [02-error-middleware.md](../05-backend/02-express/05-error-handling/02-error-middleware.md)
+      - [03-production-errors.md](../05-backend/02-express/05-error-handling/03-production-errors.md)
+    - **[06-PRODUCTION/](../05-backend/02-express/06-production/)**
+      - [01-security.md](../05-backend/02-express/06-production/01-security.md)
+      - [02-logging.md](../05-backend/02-express/06-production/02-logging.md)
+      - [03-graceful-shutdown.md](../05-backend/02-express/06-production/03-graceful-shutdown.md)
+      - [04-production-checklist.md](../05-backend/02-express/06-production/04-production-checklist.md)
+  - **[03-NEST-JS/](../05-backend/03-nest-js/)**
+    - [README.md](../05-backend/03-nest-js/README.md)
+    - **[01-BASICS/](../05-backend/03-nest-js/01-basics/)**
+      - [01-introduction.md](../05-backend/03-nest-js/01-basics/01-introduction.md)
+      - [02-cli.md](../05-backend/03-nest-js/01-basics/02-cli.md)
+      - [03-project-structure.md](../05-backend/03-nest-js/01-basics/03-project-structure.md)
+      - [04-configuration.md](../05-backend/03-nest-js/01-basics/04-configuration.md)
+    - **[02-MODULES/](../05-backend/03-nest-js/02-modules/)**
+      - [01-modules.md](../05-backend/03-nest-js/02-modules/01-modules.md)
+      - [02-feature-modules.md](../05-backend/03-nest-js/02-modules/02-feature-modules.md)
+      - [03-global-modules.md](../05-backend/03-nest-js/02-modules/03-global-modules.md)
+      - [04-dynamic-modules.md](../05-backend/03-nest-js/02-modules/04-dynamic-modules.md)
+    - **[03-CONTROLLERS/](../05-backend/03-nest-js/03-controllers/)**
+      - [01-controllers.md](../05-backend/03-nest-js/03-controllers/01-controllers.md)
+      - [02-routes.md](../05-backend/03-nest-js/03-controllers/02-routes.md)
+      - [03-parameters.md](../05-backend/03-nest-js/03-controllers/03-parameters.md)
+      - [04-request-response.md](../05-backend/03-nest-js/03-controllers/04-request-response.md)
+    - **[04-PROVIDERS/](../05-backend/03-nest-js/04-providers/)**
+      - [01-providers.md](../05-backend/03-nest-js/04-providers/01-providers.md)
+      - [02-services.md](../05-backend/03-nest-js/04-providers/02-services.md)
+      - [03-dependency-injection.md](../05-backend/03-nest-js/04-providers/03-dependency-injection.md)
+      - [04-custom-providers.md](../05-backend/03-nest-js/04-providers/04-custom-providers.md)
+    - **[05-PIPES/](../05-backend/03-nest-js/05-pipes/)**
+      - [01-pipes.md](../05-backend/03-nest-js/05-pipes/01-pipes.md)
+      - [02-validation-pipes.md](../05-backend/03-nest-js/05-pipes/02-validation-pipes.md)
+      - [03-transformation-pipes.md](../05-backend/03-nest-js/05-pipes/03-transformation-pipes.md)
+    - **[06-GUARDS/](../05-backend/03-nest-js/06-guards/)**
+      - [01-guards.md](../05-backend/03-nest-js/06-guards/01-guards.md)
+      - [02-authentication-guards.md](../05-backend/03-nest-js/06-guards/02-authentication-guards.md)
+      - [03-authorization-guards.md](../05-backend/03-nest-js/06-guards/03-authorization-guards.md)
+    - **[07-INTERCEPTORS/](../05-backend/03-nest-js/07-interceptors/)**
+      - [01-interceptors.md](../05-backend/03-nest-js/07-interceptors/01-interceptors.md)
+      - [02-logging.md](../05-backend/03-nest-js/07-interceptors/02-logging.md)
+      - [03-response-transformation.md](../05-backend/03-nest-js/07-interceptors/03-response-transformation.md)
+      - [04-performance.md](../05-backend/03-nest-js/07-interceptors/04-performance.md)
+    - **[08-EXCEPTION-FILTERS/](../05-backend/03-nest-js/08-exception-filters/)**
+      - [01-exception-filters.md](../05-backend/03-nest-js/08-exception-filters/01-exception-filters.md)
+      - [02-http-exceptions.md](../05-backend/03-nest-js/08-exception-filters/02-http-exceptions.md)
+      - [03-custom-exceptions.md](../05-backend/03-nest-js/08-exception-filters/03-custom-exceptions.md)
+    - **[09-MIDDLEWARE/](../05-backend/03-nest-js/09-middleware/)**
+      - [01-middleware.md](../05-backend/03-nest-js/09-middleware/01-middleware.md)
+      - [02-global-middleware.md](../05-backend/03-nest-js/09-middleware/02-global-middleware.md)
+      - [03-route-middleware.md](../05-backend/03-nest-js/09-middleware/03-route-middleware.md)
+    - **[10-CONFIG/](../05-backend/03-nest-js/10-config/)**
+      - [01-configuration.md](../05-backend/03-nest-js/10-config/01-configuration.md)
+      - [02-environment-variables.md](../05-backend/03-nest-js/10-config/02-environment-variables.md)
+      - [03-config-validation.md](../05-backend/03-nest-js/10-config/03-config-validation.md)
+      - [04-config-patterns.md](../05-backend/03-nest-js/10-config/04-config-patterns.md)
+    - **[11-TESTING/](../05-backend/03-nest-js/11-testing/)**
+      - [01-unit-testing.md](../05-backend/03-nest-js/11-testing/01-unit-testing.md)
+      - [02-integration-testing.md](../05-backend/03-nest-js/11-testing/02-integration-testing.md)
+      - [03-e2e-testing.md](../05-backend/03-nest-js/11-testing/03-e2e-testing.md)
+      - [04-testing-module.md](../05-backend/03-nest-js/11-testing/04-testing-module.md)
+    - **[12-WEBSOCKETS/](../05-backend/03-nest-js/12-websockets/)**
+      - [01-gateways.md](../05-backend/03-nest-js/12-websockets/01-gateways.md)
+      - [02-events.md](../05-backend/03-nest-js/12-websockets/02-events.md)
+      - [03-adapters.md](../05-backend/03-nest-js/12-websockets/03-adapters.md)
+    - **[13-GRAPHQL/](../05-backend/03-nest-js/13-graphql/)**
+      - [01-graphql-module.md](../05-backend/03-nest-js/13-graphql/01-graphql-module.md)
+      - [02-code-first.md](../05-backend/03-nest-js/13-graphql/02-code-first.md)
+      - [03-schema-first.md](../05-backend/03-nest-js/13-graphql/03-schema-first.md)
+      - [04-resolvers.md](../05-backend/03-nest-js/13-graphql/04-resolvers.md)
+      - [05-graphql-patterns.md](../05-backend/03-nest-js/13-graphql/05-graphql-patterns.md)
+    - **[14-MICROSERVICES/](../05-backend/03-nest-js/14-microservices/)**
+      - [01-microservices.md](../05-backend/03-nest-js/14-microservices/01-microservices.md)
+      - [02-transporters.md](../05-backend/03-nest-js/14-microservices/02-transporters.md)
+      - [03-message-patterns.md](../05-backend/03-nest-js/14-microservices/03-message-patterns.md)
+      - [04-rpc.md](../05-backend/03-nest-js/14-microservices/04-rpc.md)
+      - [05-microservice-patterns.md](../05-backend/03-nest-js/14-microservices/05-microservice-patterns.md)
+  - **[04-API/](../05-backend/04-api/)**
+    - [README.md](../05-backend/04-api/README.md)
+    - **[01-REST/](../05-backend/04-api/01-rest/)**
+      - [01-rest-basics.md](../05-backend/04-api/01-rest/01-rest-basics.md)
+      - [02-resources.md](../05-backend/04-api/01-rest/02-resources.md)
+      - [03-http-methods.md](../05-backend/04-api/01-rest/03-http-methods.md)
+      - [04-status-codes.md](../05-backend/04-api/01-rest/04-status-codes.md)
+      - [05-headers.md](../05-backend/04-api/01-rest/05-headers.md)
+      - [06-query-parameters.md](../05-backend/04-api/01-rest/06-query-parameters.md)
+      - [07-pagination.md](../05-backend/04-api/01-rest/07-pagination.md)
+      - [08-filtering.md](../05-backend/04-api/01-rest/08-filtering.md)
+      - [09-sorting.md](../05-backend/04-api/01-rest/09-sorting.md)
+      - [10-versioning.md](../05-backend/04-api/01-rest/10-versioning.md)
+    - **[02-GRAPHQL/](../05-backend/04-api/02-graphql/)**
+      - [01-schema.md](../05-backend/04-api/02-graphql/01-schema.md)
+      - [02-types.md](../05-backend/04-api/02-graphql/02-types.md)
+      - [03-queries.md](../05-backend/04-api/02-graphql/03-queries.md)
+      - [04-mutations.md](../05-backend/04-api/02-graphql/04-mutations.md)
+      - [05-subscriptions.md](../05-backend/04-api/02-graphql/05-subscriptions.md)
+      - [06-resolvers.md](../05-backend/04-api/02-graphql/06-resolvers.md)
+      - [07-fragments.md](../05-backend/04-api/02-graphql/07-fragments.md)
+    - **[03-WEBSOCKET/](../05-backend/04-api/03-websocket/)**
+      - [01-websocket-basics.md](../05-backend/04-api/03-websocket/01-websocket-basics.md)
+      - [02-connections.md](../05-backend/04-api/03-websocket/02-connections.md)
+      - [03-events.md](../05-backend/04-api/03-websocket/03-events.md)
+      - [04-reconnection.md](../05-backend/04-api/03-websocket/04-reconnection.md)
+      - [05-real-time-patterns.md](../05-backend/04-api/03-websocket/05-real-time-patterns.md)
+    - **[04-API-DESIGN/](../05-backend/04-api/04-api-design/)**
+      - [01-resource-design.md](../05-backend/04-api/04-api-design/01-resource-design.md)
+      - [02-error-format.md](../05-backend/04-api/04-api-design/02-error-format.md)
+      - [03-api-versioning.md](../05-backend/04-api/04-api-design/03-api-versioning.md)
+      - [04-idempotency.md](../05-backend/04-api/04-api-design/04-idempotency.md)
+      - [05-rate-limiting.md](../05-backend/04-api/04-api-design/05-rate-limiting.md)
+      - [06-api-documentation.md](../05-backend/04-api/04-api-design/06-api-documentation.md)
+  - **[05-AUTH/](../05-backend/05-auth/)**
+    - [README.md](../05-backend/05-auth/README.md)
+    - **[01-FUNDAMENTALS/](../05-backend/05-auth/01-fundamentals/)**
+      - [01-authentication.md](../05-backend/05-auth/01-fundamentals/01-authentication.md)
+      - [02-authorization.md](../05-backend/05-auth/01-fundamentals/02-authorization.md)
+      - [03-sessions.md](../05-backend/05-auth/01-fundamentals/03-sessions.md)
+      - [04-access-control.md](../05-backend/05-auth/01-fundamentals/04-access-control.md)
+    - **[02-PASSWORDS/](../05-backend/05-auth/02-passwords/)**
+      - [01-password-hashing.md](../05-backend/05-auth/02-passwords/01-password-hashing.md)
+      - [02-password-policy.md](../05-backend/05-auth/02-passwords/02-password-policy.md)
+      - [03-password-reset.md](../05-backend/05-auth/02-passwords/03-password-reset.md)
+    - **[03-JWT/](../05-backend/05-auth/03-jwt/)**
+      - [01-jwt-basics.md](../05-backend/05-auth/03-jwt/01-jwt-basics.md)
+      - [02-access-tokens.md](../05-backend/05-auth/03-jwt/02-access-tokens.md)
+      - [03-refresh-tokens.md](../05-backend/05-auth/03-jwt/03-refresh-tokens.md)
+      - [04-token-security.md](../05-backend/05-auth/03-jwt/04-token-security.md)
+    - **[04-OAUTH/](../05-backend/05-auth/04-oauth/)**
+      - [01-oauth-basics.md](../05-backend/05-auth/04-oauth/01-oauth-basics.md)
+      - [02-oauth2.md](../05-backend/05-auth/04-oauth/02-oauth2.md)
+      - [03-authorization-code.md](../05-backend/05-auth/04-oauth/03-authorization-code.md)
+      - [04-openid-connect.md](../05-backend/05-auth/04-oauth/04-openid-connect.md)
+    - **[05-RBAC/](../05-backend/05-auth/05-rbac/)**
+      - [01-role-based-access.md](../05-backend/05-auth/05-rbac/01-role-based-access.md)
+      - [02-permissions.md](../05-backend/05-auth/05-rbac/02-permissions.md)
+      - [03-policy-patterns.md](../05-backend/05-auth/05-rbac/03-policy-patterns.md)
+    - **[06-SECURITY/](../05-backend/05-auth/06-security/)**
+      - [01-session-security.md](../05-backend/05-auth/06-security/01-session-security.md)
+      - [02-cookie-security.md](../05-backend/05-auth/06-security/02-cookie-security.md)
+      - [03-csrf.md](../05-backend/05-auth/06-security/03-csrf.md)
+      - [04-cors.md](../05-backend/05-auth/06-security/04-cors.md)
+      - [05-brute-force-protection.md](../05-backend/05-auth/06-security/05-brute-force-protection.md)
+  - **[06-VALIDATION/](../05-backend/06-validation/)**
+    - [README.md](../05-backend/06-validation/README.md)
+    - [01-input-validation.md](../05-backend/06-validation/01-input-validation.md)
+    - [02-schema-validation.md](../05-backend/06-validation/02-schema-validation.md)
+    - [03-request-validation.md](../05-backend/06-validation/03-request-validation.md)
+    - [04-response-validation.md](../05-backend/06-validation/04-response-validation.md)
+    - [05-error-messages.md](../05-backend/06-validation/05-error-messages.md)
+    - [06-zod.md](../05-backend/06-validation/06-zod.md)
+    - [07-joi.md](../05-backend/06-validation/07-joi.md)
+    - [08-class-validator.md](../05-backend/06-validation/08-class-validator.md)
+    - [09-validation-patterns.md](../05-backend/06-validation/09-validation-patterns.md)
+  - **[07-DATABASE/](../05-backend/07-database/)**
+    - [README.md](../05-backend/07-database/README.md)
+    - [01-database-integration.md](../05-backend/07-database/01-database-integration.md)
+    - [02-connection-pooling.md](../05-backend/07-database/02-connection-pooling.md)
+    - [03-transactions.md](../05-backend/07-database/03-transactions.md)
+    - [04-migrations.md](../05-backend/07-database/04-migrations.md)
+    - [05-orm.md](../05-backend/07-database/05-orm.md)
+    - [06-query-builders.md](../05-backend/07-database/06-query-builders.md)
+    - [07-repositories.md](../05-backend/07-database/07-repositories.md)
+    - [08-database-patterns.md](../05-backend/07-database/08-database-patterns.md)
+  - **[08-CACHING/](../05-backend/08-caching/)**
+    - [README.md](../05-backend/08-caching/README.md)
+    - [01-caching-basics.md](../05-backend/08-caching/01-caching-basics.md)
+    - [02-cache-strategies.md](../05-backend/08-caching/02-cache-strategies.md)
+    - [03-redis.md](../05-backend/08-caching/03-redis.md)
+    - [04-ttl.md](../05-backend/08-caching/04-ttl.md)
+    - [05-cache-invalidation.md](../05-backend/08-caching/05-cache-invalidation.md)
+    - [06-distributed-caching.md](../05-backend/08-caching/06-distributed-caching.md)
+  - **[09-MESSAGING/](../05-backend/09-messaging/)**
+    - [README.md](../05-backend/09-messaging/README.md)
+    - [01-message-queues.md](../05-backend/09-messaging/01-message-queues.md)
+    - [02-pub-sub.md](../05-backend/09-messaging/02-pub-sub.md)
+    - [03-rabbitmq.md](../05-backend/09-messaging/03-rabbitmq.md)
+    - [04-kafka.md](../05-backend/09-messaging/04-kafka.md)
+    - [05-events.md](../05-backend/09-messaging/05-events.md)
+    - [06-retries.md](../05-backend/09-messaging/06-retries.md)
+    - [07-dead-letter-queues.md](../05-backend/09-messaging/07-dead-letter-queues.md)
+    - [08-message-patterns.md](../05-backend/09-messaging/08-message-patterns.md)
+  - **[10-TESTING/](../05-backend/10-testing/)**
+    - [README.md](../05-backend/10-testing/README.md)
+    - [01-testing-strategy.md](../05-backend/10-testing/01-testing-strategy.md)
+    - [02-unit-testing.md](../05-backend/10-testing/02-unit-testing.md)
+    - [03-integration-testing.md](../05-backend/10-testing/03-integration-testing.md)
+    - [04-api-testing.md](../05-backend/10-testing/04-api-testing.md)
+    - [05-e2e-testing.md](../05-backend/10-testing/05-e2e-testing.md)
+    - [06-mocking.md](../05-backend/10-testing/06-mocking.md)
+    - [07-test-doubles.md](../05-backend/10-testing/07-test-doubles.md)
+    - [08-contract-testing.md](../05-backend/10-testing/08-contract-testing.md)
+    - [09-test-coverage.md](../05-backend/10-testing/09-test-coverage.md)
+  - **[11-OBSERVABILITY/](../05-backend/11-observability/)**
+    - [README.md](../05-backend/11-observability/README.md)
+    - [01-logging.md](../05-backend/11-observability/01-logging.md)
+    - [02-structured-logging.md](../05-backend/11-observability/02-structured-logging.md)
+    - [03-metrics.md](../05-backend/11-observability/03-metrics.md)
+    - [04-tracing.md](../05-backend/11-observability/04-tracing.md)
+    - [05-health-checks.md](../05-backend/11-observability/05-health-checks.md)
+    - [06-alerting.md](../05-backend/11-observability/06-alerting.md)
+    - [07-open-telemetry.md](../05-backend/11-observability/07-open-telemetry.md)
+  - **[12-PERFORMANCE/](../05-backend/12-performance/)**
+    - [README.md](../05-backend/12-performance/README.md)
+    - [01-performance-basics.md](../05-backend/12-performance/01-performance-basics.md)
+    - [02-latency.md](../05-backend/12-performance/02-latency.md)
+    - [03-throughput.md](../05-backend/12-performance/03-throughput.md)
+    - [04-concurrency.md](../05-backend/12-performance/04-concurrency.md)
+    - [05-memory.md](../05-backend/12-performance/05-memory.md)
+    - [06-database-performance.md](../05-backend/12-performance/06-database-performance.md)
+    - [07-caching.md](../05-backend/12-performance/07-caching.md)
+    - [08-load-testing.md](../05-backend/12-performance/08-load-testing.md)
+    - [09-performance-debugging.md](../05-backend/12-performance/09-performance-debugging.md)
+  - **[13-BACKGROUND-JOBS/](../05-backend/13-background-jobs/)**
+    - [README.md](../05-backend/13-background-jobs/README.md)
+    - [01-job-queues.md](../05-backend/13-background-jobs/01-job-queues.md)
+    - [02-cron-jobs.md](../05-backend/13-background-jobs/02-cron-jobs.md)
+    - [03-workers.md](../05-backend/13-background-jobs/03-workers.md)
+    - [04-retries.md](../05-backend/13-background-jobs/04-retries.md)
+    - [05-scheduling.md](../05-backend/13-background-jobs/05-scheduling.md)
+    - [06-idempotency.md](../05-backend/13-background-jobs/06-idempotency.md)
+  - **[14-FILE-PROCESSING/](../05-backend/14-file-processing/)**
+    - [README.md](../05-backend/14-file-processing/README.md)
+    - [01-file-uploads.md](../05-backend/14-file-processing/01-file-uploads.md)
+    - [02-file-downloads.md](../05-backend/14-file-processing/02-file-downloads.md)
+    - [03-streaming.md](../05-backend/14-file-processing/03-streaming.md)
+    - [04-images.md](../05-backend/14-file-processing/04-images.md)
+    - [05-pdf.md](../05-backend/14-file-processing/05-pdf.md)
+    - [06-object-storage.md](../05-backend/14-file-processing/06-object-storage.md)
+  - **[15-BACKEND-ARCHITECTURE/](../05-backend/15-backend-architecture/)**
+    - [README.md](../05-backend/15-backend-architecture/README.md)
+    - [01-project-structure.md](../05-backend/15-backend-architecture/01-project-structure.md)
+    - [02-layered-architecture.md](../05-backend/15-backend-architecture/02-layered-architecture.md)
+    - [03-clean-architecture.md](../05-backend/15-backend-architecture/03-clean-architecture.md)
+    - [04-hexagonal-architecture.md](../05-backend/15-backend-architecture/04-hexagonal-architecture.md)
+    - [05-dependency-inversion.md](../05-backend/15-backend-architecture/05-dependency-inversion.md)
+    - [06-modular-monolith.md](../05-backend/15-backend-architecture/06-modular-monolith.md)
+    - [07-microservices.md](../05-backend/15-backend-architecture/07-microservices.md)
+    - [08-domain-driven-design.md](../05-backend/15-backend-architecture/08-domain-driven-design.md)
+  - **[16-PRODUCTION/](../05-backend/16-production/)**
+    - [README.md](../05-backend/16-production/README.md)
+    - [01-environment-configuration.md](../05-backend/16-production/01-environment-configuration.md)
+    - [02-graceful-shutdown.md](../05-backend/16-production/02-graceful-shutdown.md)
+    - [03-health-checks.md](../05-backend/16-production/03-health-checks.md)
+    - [04-rate-limiting.md](../05-backend/16-production/04-rate-limiting.md)
+    - [05-security-checklist.md](../05-backend/16-production/05-security-checklist.md)
+    - [06-logging.md](../05-backend/16-production/06-logging.md)
+    - [07-monitoring.md](../05-backend/16-production/07-monitoring.md)
+    - [08-deployment-checklist.md](../05-backend/16-production/08-deployment-checklist.md)
+    - [09-production-checklist.md](../05-backend/16-production/09-production-checklist.md)
 
 ---
 
-# `06-database`
+# 06-DATABASE
 
-```text
-06-database/
-│
-├── README.md
-│
-├── 01-fundamentals/
-│   ├── README.md
-|   |
-│   ├── 01-database-basics.md
-│   ├── 02-database-types.md
-│   ├── 03-relational-vs-non-relational.md
-│   ├── 04-database-architecture.md
-│   ├── 05-database-server.md
-│   ├── 06-database-client.md
-│   ├── 07-database-connection.md
-│   └── 08-database-terminology.md
-│
-├── 02-sql/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-select.md
-│   │   ├── 02-where.md
-│   │   ├── 03-order-by.md
-│   │   ├── 04-limit-offset.md
-│   │   └── 05-distinct.md
-│   │
-│   ├── 02-data-definition/
-│   │   ├── 01-create.md
-│   │   ├── 02-alter.md
-│   │   ├── 03-drop.md
-│   │   └── 04-truncate.md
-│   │
-│   ├── 03-data-manipulation/
-│   │   ├── 01-insert.md
-│   │   ├── 02-update.md
-│   │   ├── 03-delete.md
-│   │   └── 04-upsert.md
-│   │
-│   ├── 04-joins/
-│   │   ├── 01-inner-join.md
-│   │   ├── 02-left-join.md
-│   │   ├── 03-right-join.md
-│   │   ├── 04-full-join.md
-│   │   ├── 05-cross-join.md
-│   │   └── 06-self-join.md
-│   │
-│   ├── 05-functions/
-│   │   ├── 01-aggregate-functions.md
-│   │   ├── 02-string-functions.md
-│   │   ├── 03-date-functions.md
-│   │   ├── 04-numeric-functions.md
-│   │   └── 05-null-functions.md
-│   │
-│   ├── 06-subqueries/
-│   │   ├── 01-subqueries.md
-│   │   ├── 02-correlated-subqueries.md
-│   │   └── 03-exists.md
-│   │
-│   ├── 07-cte/
-│   │   ├── 01-cte.md
-│   │   ├── 02-recursive-cte.md
-│   │   └── 03-cte-patterns.md
-│   │
-│   ├── 08-window-functions/
-│   │   ├── 01-window-basics.md
-│   │   ├── 02-ranking.md
-│   │   ├── 03-partitioning.md
-│   │   └── 04-window-frames.md
-│   │
-│   └── 09-advanced/
-│       ├── 01-views.md
-│       ├── 02-materialized-views.md
-│       ├── 03-stored-procedures.md
-│       ├── 04-functions.md
-│       └── 05-triggers.md
-│
-├── 03-postgresql/
-│   ├── README.md
-│   │
-│   ├── 01-installation/
-│   │   ├── 01-installation.md
-│   │   ├── 02-client-tools.md
-│   │   └── 03-configuration.md
-│   │
-│   ├── 02-psql/
-│   │   ├── 01-psql-basics.md
-│   │   ├── 02-meta-commands.md
-│   │   └── 03-useful-commands.md
-│   │
-│   ├── 03-features/
-│   │   ├── 01-schemas.md
-│   │   ├── 02-extensions.md
-│   │   ├── 03-json-jsonb.md
-│   │   ├── 04-arrays.md
-│   │   └── 05-full-text-search.md
-│   │
-│   ├── 04-indexes/
-│   │   ├── 01-btree.md
-│   │   ├── 02-hash.md
-│   │   ├── 03-gin.md
-│   │   ├── 04-gist.md
-│   │   └── 05-partial-indexes.md
-│   │
-│   ├── 05-transactions/
-│   │   ├── 01-transactions.md
-│   │   ├── 02-isolation-levels.md
-│   │   ├── 03-locking.md
-│   │   └── 04-deadlocks.md
-│   │
-│   ├── 06-performance/
-│   │   ├── 01-explain.md
-│   │   ├── 02-explain-analyze.md
-│   │   ├── 03-query-planning.md
-│   │   ├── 04-vacuum.md
-│   │   └── 05-analyze.md
-│   │
-│   ├── 07-administration/
-│   │   ├── 01-users-and-roles.md
-│   │   ├── 02-permissions.md
-│   │   ├── 03-configuration.md
-│   │   ├── 04-logging.md
-│   │   └── 05-monitoring.md
-│   │
-│   └── 08-backup-recovery/
-│       ├── 01-backup.md
-│       ├── 02-pgdump.md
-│       ├── 03-pgrestore.md
-│       ├── 04-point-in-time-recovery.md
-│       └── 05-replication.md
-│
-├── 04-mongodb/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-mongodb-basics.md
-│   │   ├── 02-installation.md
-│   │   ├── 03-client-tools.md
-│   │   └── 04-configuration.md
-│   │
-│   ├── 02-documents/
-│   │   ├── 01-document-basics.md
-│   │   ├── 02-document-structure.md
-│   │   ├── 03-bson.md
-│   │   ├── 04-embedded-documents.md
-│   │   └── 05-document-modeling.md
-│   │
-│   ├── 03-collections/
-│   │   ├── 01-collection-basics.md
-│   │   ├── 02-create-collections.md
-│   │   ├── 03-capped-collections.md
-│   │   └── 04-collection-options.md
-│   │
-│   ├── 04-queries/
-│   │   ├── 01-query-basics.md
-│   │   ├── 02-query-filters.md
-│   │   ├── 03-query-operators.md
-│   │   ├── 04-projection.md
-│   │   └── 05-sorting-and-pagination.md
-│   │
-│   ├── 05-updates/
-│   │   ├── 01-insert.md
-│   │   ├── 02-update.md
-│   │   ├── 03-delete.md
-│   │   ├── 04-update-operators.md
-│   │   └── 05-upsert.md
-│   │
-│   ├── 06-indexes/
-│   │   ├── 01-index-basics.md
-│   │   ├── 02-single-field-index.md
-│   │   ├── 03-compound-index.md
-│   │   ├── 04-multikey-index.md
-│   │   ├── 05-text-index.md
-│   │   └── 06-index-performance.md
-│   │
-│   ├── 07-aggregation/
-│   │   ├── 01-aggregation-basics.md
-│   │   ├── 02-aggregation-pipeline.md
-│   │   ├── 03-match-and-project.md
-│   │   ├── 04-group-and-lookup.md
-│   │   ├── 05-unwind-and-sort.md
-│   │   └── 06-aggregation-performance.md
-│   │
-│   ├── 08-transactions/
-│   │   ├── 01-transaction-basics.md
-│   │   ├── 02-sessions.md
-│   │   ├── 03-multi-document-transactions.md
-│   │   └── 04-transaction-patterns.md
-│   │
-│   ├── 09-replication/
-│   │   ├── 01-replication-basics.md
-│   │   ├── 02-replica-set.md
-│   │   ├── 03-members-and-arbiters.md
-│   │   ├── 04-read-preference.md
-│   │   └── 05-failover-and-recovery.md
-│   │
-│   ├── 10-sharding/
-│   │   ├── 01-sharding-basics.md
-│   │   ├── 02-shard-key.md
-│   │   ├── 03-sharded-cluster.md
-│   │   ├── 04-chunk-management.md
-│   │   └── 05-sharding-performance.md
-│   │
-│   └── 11-backup-recovery/
-│       ├── 01-backup-basics.md
-│       ├── 02-mongodump.md
-│       ├── 03-mongorestore.md
-│       ├── 04-point-in-time-recovery.md
-│       └── 05-disaster-recovery.md
-│
-├── 05-redis/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-redis-basics.md
-│   │   ├── 02-installation.md
-│   │   ├── 03-client-tools.md
-│   │   └── 04-configuration.md
-│   │
-│   ├── 02-data-types/
-│   │   ├── 01-strings.md
-│   │   ├── 02-lists.md
-│   │   ├── 03-sets.md
-│   │   ├── 04-sorted-sets.md
-│   │   ├── 05-hashes.md
-│   │   ├── 06-bitmaps.md
-│   │   └── 07-hyperloglogs.md
-│   │
-│   ├── 03-commands/
-│   │   ├── 01-key-commands.md
-│   │   ├── 02-string-commands.md
-│   │   ├── 03-list-commands.md
-│   │   ├── 04-set-commands.md
-│   │   ├── 05-sorted-set-commands.md
-│   │   └── 06-hash-commands.md
-│   │
-│   ├── 04-expiration-and-ttl/
-│   │   ├── 01-expiration-basics.md
-│   │   ├── 02-ttl-and-pttl.md
-│   │   ├── 03-expire-commands.md
-│   │   └── 04-expiration-patterns.md
-│   │
-│   ├── 05-persistence/
-│   │   ├── 01-persistence-basics.md
-│   │   ├── 02-rdb.md
-│   │   ├── 03-aof.md
-│   │   ├── 04-rdb-vs-aof.md
-│   │   └── 05-persistence-configuration.md
-│   │
-│   ├── 06-pub-sub/
-│   │   ├── 01-pub-sub-basics.md
-│   │   ├── 02-publish-and-subscribe.md
-│   │   ├── 03-pattern-subscriptions.md
-│   │   └── 04-pub-sub-patterns.md
-│   │
-│   ├── 07-streams/
-│   │   ├── 01-stream-basics.md
-│   │   ├── 02-stream-commands.md
-│   │   ├── 03-consumer-groups.md
-│   │   ├── 04-message-processing.md
-│   │   └── 05-stream-patterns.md
-│   │
-│   ├── 08-transactions/
-│   │   ├── 01-transaction-basics.md
-│   │   ├── 02-multi-exec.md
-│   │   ├── 03-watch.md
-│   │   └── 04-transaction-patterns.md
-│   │
-│   ├── 09-caching/
-│   │   ├── 01-cache-basics.md
-│   │   ├── 02-cache-aside.md
-│   │   ├── 03-write-through.md
-│   │   ├── 04-write-behind.md
-│   │   └── 05-cache-invalidation.md
-│   │
-│   ├── 10-replication/
-│   │   ├── 01-replication-basics.md
-│   │   ├── 02-replica-configuration.md
-│   │   ├── 03-replication-and-failover.md
-│   │   └── 04-read-replicas.md
-│   │
-│   └── 11-clustering/
-│       ├── 01-cluster-basics.md
-│       ├── 02-hash-slots.md
-│       ├── 03-cluster-configuration.md
-│       ├── 04-cluster-failover.md
-│       └── 05-cluster-management.md
-│
-├── 06-design/
-│   ├── README.md
-│   │
-│   ├── 01-data-modeling/
-│   │   ├── 01-entities.md
-│   │   ├── 02-relationships.md
-│   │   ├── 03-cardinality.md
-│   │   ├── 04-primary-keys.md
-│   │   └── 05-foreign-keys.md
-│   │
-│   ├── 02-normalization/
-│   │   ├── 01-normalization.md
-│   │   ├── 02-first-normal-form.md
-│   │   ├── 03-second-normal-form.md
-│   │   ├── 04-third-normal-form.md
-│   │   └── 05-denormalization.md
-│   │
-│   ├── 03-relationships/
-│   │   ├── 01-one-to-one.md
-│   │   ├── 02-one-to-many.md
-│   │   └── 03-many-to-many.md
-│   │
-│   ├── 04-schema-design/
-│   │   ├── 01-schema-design.md
-│   │   ├── 02-naming-conventions.md
-│   │   ├── 03-constraints.md
-│   │   └── 04-schema-evolution.md
-│   │
-│   └── 05-patterns/
-│       ├── 01-audit-fields.md
-│       ├── 02-soft-delete.md
-│       ├── 03-polymorphic-data.md
-│       └── 04-multi-tenant-database.md
-│
-├── 07-indexing/
-│   ├── README.md
-|   |
-│   ├── 01-index-basics.md
-│   ├── 02-btree.md
-│   ├── 03-hash-index.md
-│   ├── 04-composite-index.md
-│   ├── 05-covering-index.md
-│   ├── 06-partial-index.md
-│   ├── 07-full-text-index.md
-│   ├── 08-index-selectivity.md
-│   ├── 09-index-maintenance.md
-│   └── 10-index-performance.md
-│
-├── 08-transactions/
-│   ├── README.md
-|   |
-│   ├── 01-transaction-basics.md
-│   ├── 02-acid.md
-│   ├── 03-commit.md
-│   ├── 04-rollback.md
-│   ├── 05-isolation-levels.md
-│   ├── 06-locking.md
-│   ├── 07-deadlocks.md
-│   ├── 08-optimistic-locking.md
-│   └── 09-pessimistic-locking.md
-│
-├── 09-backup-recovery/
-│   ├── README.md
-|   |
-│   ├── 01-backup-basics.md
-│   ├── 02-full-backup.md
-│   ├── 03-incremental-backup.md
-│   ├── 04-logical-backup.md
-│   ├── 05-physical-backup.md
-│   ├── 06-point-in-time-recovery.md
-│   ├── 07-disaster-recovery.md
-│   └── 08-backup-strategy.md
-│
-├── 10-replication/
-│   ├── README.md
-|   |
-│   ├── 01-replication-basics.md
-│   ├── 02-primary-replica.md
-│   ├── 03-synchronous-replication.md
-│   ├── 04-asynchronous-replication.md
-│   ├── 05-read-replicas.md
-│   └── 06-failover.md
-│
-├── 11-performance/
-│   ├── README.md
-|   |
-│   ├── 01-query-performance.md
-│   ├── 02-query-plans.md
-│   ├── 03-explain.md
-│   ├── 04-connection-pooling.md
-│   ├── 05-lock-contention.md
-│   ├── 06-memory.md
-│   ├── 07-disk-io.md
-│   └── 08-performance-tuning.md
-│
-├── 12-orm-and-tools/
-│   ├── README.md
-|   |
-│   ├── 01-orm-concepts.md
-│   ├── 02-prisma.md
-│   ├── 03-typeorm.md
-│   ├── 04-sequelize.md
-│   ├── 05-drizzle.md
-│   ├── 06-migrations.md
-│   └── 07-database-clients.md
-│
-└── 13-security/
-    ├── README.md
-    |
-    ├── 01-users-and-roles.md
-    ├── 02-permissions.md
-    ├── 03-least-privilege.md
-    ├── 04-sql-injection.md
-    ├── 05-secrets.md
-    ├── 06-encryption.md
-    └── 07-database-security-checklist.md
-```
+- **[06-DATABASE/](../06-database/)**
+  - [README.md](../06-database/README.md)
+  - **[01-FUNDAMENTALS/](../06-database/01-fundamentals/)**
+    - [README.md](../06-database/01-fundamentals/README.md)
+    - [01-database-basics.md](../06-database/01-fundamentals/01-database-basics.md)
+    - [02-database-types.md](../06-database/01-fundamentals/02-database-types.md)
+    - [03-relational-vs-non-relational.md](../06-database/01-fundamentals/03-relational-vs-non-relational.md)
+    - [04-database-architecture.md](../06-database/01-fundamentals/04-database-architecture.md)
+    - [05-database-server.md](../06-database/01-fundamentals/05-database-server.md)
+    - [06-database-client.md](../06-database/01-fundamentals/06-database-client.md)
+    - [07-database-connection.md](../06-database/01-fundamentals/07-database-connection.md)
+    - [08-database-terminology.md](../06-database/01-fundamentals/08-database-terminology.md)
+
+  - **[02-SQL/](../06-database/02-sql/)**
+    - [README.md](../06-database/02-sql/README.md)
+    - **[01-BASICS/](../06-database/02-sql/01-basics/)**
+      - [01-select.md](../06-database/02-sql/01-basics/01-select.md)
+      - [02-where.md](../06-database/02-sql/01-basics/02-where.md)
+      - [03-order-by.md](../06-database/02-sql/01-basics/03-order-by.md)
+      - [04-limit-offset.md](../06-database/02-sql/01-basics/04-limit-offset.md)
+      - [05-distinct.md](../06-database/02-sql/01-basics/05-distinct.md)
+    - **[02-DATA-DEFINITION/](../06-database/02-sql/02-data-definition/)**
+      - [01-create.md](../06-database/02-sql/02-data-definition/01-create.md)
+      - [02-alter.md](../06-database/02-sql/02-data-definition/02-alter.md)
+      - [03-drop.md](../06-database/02-sql/02-data-definition/03-drop.md)
+      - [04-truncate.md](../06-database/02-sql/02-data-definition/04-truncate.md)
+    - **[03-DATA-MANIPULATION/](../06-database/02-sql/03-data-manipulation/)**
+      - [01-insert.md](../06-database/02-sql/03-data-manipulation/01-insert.md)
+      - [02-update.md](../06-database/02-sql/03-data-manipulation/02-update.md)
+      - [03-delete.md](../06-database/02-sql/03-data-manipulation/03-delete.md)
+      - [04-upsert.md](../06-database/02-sql/03-data-manipulation/04-upsert.md)
+    - **[04-JOINS/](../06-database/02-sql/04-joins/)**
+      - [01-inner-join.md](../06-database/02-sql/04-joins/01-inner-join.md)
+      - [02-left-join.md](../06-database/02-sql/04-joins/02-left-join.md)
+      - [03-right-join.md](../06-database/02-sql/04-joins/03-right-join.md)
+      - [04-full-join.md](../06-database/02-sql/04-joins/04-full-join.md)
+      - [05-cross-join.md](../06-database/02-sql/04-joins/05-cross-join.md)
+      - [06-self-join.md](../06-database/02-sql/04-joins/06-self-join.md)
+    - **[05-FUNCTIONS/](../06-database/02-sql/05-functions/)**
+      - [01-aggregate-functions.md](../06-database/02-sql/05-functions/01-aggregate-functions.md)
+      - [02-string-functions.md](../06-database/02-sql/05-functions/02-string-functions.md)
+      - [03-date-functions.md](../06-database/02-sql/05-functions/03-date-functions.md)
+      - [04-numeric-functions.md](../06-database/02-sql/05-functions/04-numeric-functions.md)
+      - [05-null-functions.md](../06-database/02-sql/05-functions/05-null-functions.md)
+    - **[06-SUBQUERIES/](../06-database/02-sql/06-subqueries/)**
+      - [01-subqueries.md](../06-database/02-sql/06-subqueries/01-subqueries.md)
+      - [02-correlated-subqueries.md](../06-database/02-sql/06-subqueries/02-correlated-subqueries.md)
+      - [03-exists.md](../06-database/02-sql/06-subqueries/03-exists.md)
+    - **[07-CTE/](../06-database/02-sql/07-cte/)**
+      - [01-cte.md](../06-database/02-sql/07-cte/01-cte.md)
+      - [02-recursive-cte.md](../06-database/02-sql/07-cte/02-recursive-cte.md)
+      - [03-cte-patterns.md](../06-database/02-sql/07-cte/03-cte-patterns.md)
+    - **[08-WINDOW-FUNCTIONS/](../06-database/02-sql/08-window-functions/)**
+      - [01-window-basics.md](../06-database/02-sql/08-window-functions/01-window-basics.md)
+      - [02-ranking.md](../06-database/02-sql/08-window-functions/02-ranking.md)
+      - [03-partitioning.md](../06-database/02-sql/08-window-functions/03-partitioning.md)
+      - [04-window-frames.md](../06-database/02-sql/08-window-functions/04-window-frames.md)
+    - **[09-ADVANCED/](../06-database/02-sql/09-advanced/)**
+      - [01-views.md](../06-database/02-sql/09-advanced/01-views.md)
+      - [02-materialized-views.md](../06-database/02-sql/09-advanced/02-materialized-views.md)
+      - [03-stored-procedures.md](../06-database/02-sql/09-advanced/03-stored-procedures.md)
+      - [04-functions.md](../06-database/02-sql/09-advanced/04-functions.md)
+      - [05-triggers.md](../06-database/02-sql/09-advanced/05-triggers.md)
+
+  - **[03-POSTGRESQL/](../06-database/03-postgresql/)**
+    - [README.md](../06-database/03-postgresql/README.md)
+    - **[01-INSTALLATION/](../06-database/03-postgresql/01-installation/)**
+      - [01-installation.md](../06-database/03-postgresql/01-installation/01-installation.md)
+      - [02-client-tools.md](../06-database/03-postgresql/01-installation/02-client-tools.md)
+      - [03-configuration.md](../06-database/03-postgresql/01-installation/03-configuration.md)
+    - **[02-PSQL/](../06-database/03-postgresql/02-psql/)**
+      - [01-psql-basics.md](../06-database/03-postgresql/02-psql/01-psql-basics.md)
+      - [02-meta-commands.md](../06-database/03-postgresql/02-psql/02-meta-commands.md)
+      - [03-useful-commands.md](../06-database/03-postgresql/02-psql/03-useful-commands.md)
+    - **[03-FEATURES/](../06-database/03-postgresql/03-features/)**
+      - [01-schemas.md](../06-database/03-postgresql/03-features/01-schemas.md)
+      - [02-extensions.md](../06-database/03-postgresql/03-features/02-extensions.md)
+      - [03-json-jsonb.md](../06-database/03-postgresql/03-features/03-json-jsonb.md)
+      - [04-arrays.md](../06-database/03-postgresql/03-features/04-arrays.md)
+      - [05-full-text-search.md](../06-database/03-postgresql/03-features/05-full-text-search.md)
+    - **[04-INDEXES/](../06-database/03-postgresql/04-indexes/)**
+      - [01-btree.md](../06-database/03-postgresql/04-indexes/01-btree.md)
+      - [02-hash.md](../06-database/03-postgresql/04-indexes/02-hash.md)
+      - [03-gin.md](../06-database/03-postgresql/04-indexes/03-gin.md)
+      - [04-gist.md](../06-database/03-postgresql/04-indexes/04-gist.md)
+      - [05-partial-indexes.md](../06-database/03-postgresql/04-indexes/05-partial-indexes.md)
+    - **[05-TRANSACTIONS/](../06-database/03-postgresql/05-transactions/)**
+      - [01-transactions.md](../06-database/03-postgresql/05-transactions/01-transactions.md)
+      - [02-isolation-levels.md](../06-database/03-postgresql/05-transactions/02-isolation-levels.md)
+      - [03-locking.md](../06-database/03-postgresql/05-transactions/03-locking.md)
+      - [04-deadlocks.md](../06-database/03-postgresql/05-transactions/04-deadlocks.md)
+    - **[06-PERFORMANCE/](../06-database/03-postgresql/06-performance/)**
+      - [01-explain.md](../06-database/03-postgresql/06-performance/01-explain.md)
+      - [02-explain-analyze.md](../06-database/03-postgresql/06-performance/02-explain-analyze.md)
+      - [03-query-planning.md](../06-database/03-postgresql/06-performance/03-query-planning.md)
+      - [04-vacuum.md](../06-database/03-postgresql/06-performance/04-vacuum.md)
+      - [05-analyze.md](../06-database/03-postgresql/06-performance/05-analyze.md)
+    - **[07-ADMINISTRATION/](../06-database/03-postgresql/07-administration/)**
+      - [01-users-and-roles.md](../06-database/03-postgresql/07-administration/01-users-and-roles.md)
+      - [02-permissions.md](../06-database/03-postgresql/07-administration/02-permissions.md)
+      - [03-configuration.md](../06-database/03-postgresql/07-administration/03-configuration.md)
+      - [04-logging.md](../06-database/03-postgresql/07-administration/04-logging.md)
+      - [05-monitoring.md](../06-database/03-postgresql/07-administration/05-monitoring.md)
+    - **[08-BACKUP-RECOVERY/](../06-database/03-postgresql/08-backup-recovery/)**
+      - [01-backup.md](../06-database/03-postgresql/08-backup-recovery/01-backup.md)
+      - [02-pgdump.md](../06-database/03-postgresql/08-backup-recovery/02-pgdump.md)
+      - [03-pgrestore.md](../06-database/03-postgresql/08-backup-recovery/03-pgrestore.md)
+      - [04-point-in-time-recovery.md](../06-database/03-postgresql/08-backup-recovery/04-point-in-time-recovery.md)
+      - [05-replication.md](../06-database/03-postgresql/08-backup-recovery/05-replication.md)
+
+  - **[04-MONGODB/](../06-database/04-mongodb/)**
+    - [README.md](../06-database/04-mongodb/README.md)
+    - **[01-BASICS/](../06-database/04-mongodb/01-basics/)**
+      - [01-mongodb-basics.md](../06-database/04-mongodb/01-basics/01-mongodb-basics.md)
+      - [02-installation.md](../06-database/04-mongodb/01-basics/02-installation.md)
+      - [03-client-tools.md](../06-database/04-mongodb/01-basics/03-client-tools.md)
+      - [04-configuration.md](../06-database/04-mongodb/01-basics/04-configuration.md)
+    - **[02-DOCUMENTS/](../06-database/04-mongodb/02-documents/)**
+      - [01-document-basics.md](../06-database/04-mongodb/02-documents/01-document-basics.md)
+      - [02-document-structure.md](../06-database/04-mongodb/02-documents/02-document-structure.md)
+      - [03-bson.md](../06-database/04-mongodb/02-documents/03-bson.md)
+      - [04-embedded-documents.md](../06-database/04-mongodb/02-documents/04-embedded-documents.md)
+      - [05-document-modeling.md](../06-database/04-mongodb/02-documents/05-document-modeling.md)
+    - **[03-COLLECTIONS/](../06-database/04-mongodb/03-collections/)**
+      - [01-collection-basics.md](../06-database/04-mongodb/03-collections/01-collection-basics.md)
+      - [02-create-collections.md](../06-database/04-mongodb/03-collections/02-create-collections.md)
+      - [03-capped-collections.md](../06-database/04-mongodb/03-collections/03-capped-collections.md)
+      - [04-collection-options.md](../06-database/04-mongodb/03-collections/04-collection-options.md)
+    - **[04-QUERIES/](../06-database/04-mongodb/04-queries/)**
+      - [01-query-basics.md](../06-database/04-mongodb/04-queries/01-query-basics.md)
+      - [02-query-filters.md](../06-database/04-mongodb/04-queries/02-query-filters.md)
+      - [03-query-operators.md](../06-database/04-mongodb/04-queries/03-query-operators.md)
+      - [04-projection.md](../06-database/04-mongodb/04-queries/04-projection.md)
+      - [05-sorting-and-pagination.md](../06-database/04-mongodb/04-queries/05-sorting-and-pagination.md)
+    - **[05-UPDATES/](../06-database/04-mongodb/05-updates/)**
+      - [01-insert.md](../06-database/04-mongodb/05-updates/01-insert.md)
+      - [02-update.md](../06-database/04-mongodb/05-updates/02-update.md)
+      - [03-delete.md](../06-database/04-mongodb/05-updates/03-delete.md)
+      - [04-update-operators.md](../06-database/04-mongodb/05-updates/04-update-operators.md)
+      - [05-upsert.md](../06-database/04-mongodb/05-updates/05-upsert.md)
+    - **[06-INDEXES/](../06-database/04-mongodb/06-indexes/)**
+      - [01-index-basics.md](../06-database/04-mongodb/06-indexes/01-index-basics.md)
+      - [02-single-field-index.md](../06-database/04-mongodb/06-indexes/02-single-field-index.md)
+      - [03-compound-index.md](../06-database/04-mongodb/06-indexes/03-compound-index.md)
+      - [04-multikey-index.md](../06-database/04-mongodb/06-indexes/04-multikey-index.md)
+      - [05-text-index.md](../06-database/04-mongodb/06-indexes/05-text-index.md)
+      - [06-index-performance.md](../06-database/04-mongodb/06-indexes/06-index-performance.md)
+    - **[07-AGGREGATION/](../06-database/04-mongodb/07-aggregation/)**
+      - [01-aggregation-basics.md](../06-database/04-mongodb/07-aggregation/01-aggregation-basics.md)
+      - [02-aggregation-pipeline.md](../06-database/04-mongodb/07-aggregation/02-aggregation-pipeline.md)
+      - [03-match-and-project.md](../06-database/04-mongodb/07-aggregation/03-match-and-project.md)
+      - [04-group-and-lookup.md](../06-database/04-mongodb/07-aggregation/04-group-and-lookup.md)
+      - [05-unwind-and-sort.md](../06-database/04-mongodb/07-aggregation/05-unwind-and-sort.md)
+      - [06-aggregation-performance.md](../06-database/04-mongodb/07-aggregation/06-aggregation-performance.md)
+    - **[08-TRANSACTIONS/](../06-database/04-mongodb/08-transactions/)**
+      - [01-transaction-basics.md](../06-database/04-mongodb/08-transactions/01-transaction-basics.md)
+      - [02-sessions.md](../06-database/04-mongodb/08-transactions/02-sessions.md)
+      - [03-multi-document-transactions.md](../06-database/04-mongodb/08-transactions/03-multi-document-transactions.md)
+      - [04-transaction-patterns.md](../06-database/04-mongodb/08-transactions/04-transaction-patterns.md)
+    - **[09-REPLICATION/](../06-database/04-mongodb/09-replication/)**
+      - [01-replication-basics.md](../06-database/04-mongodb/09-replication/01-replication-basics.md)
+      - [02-replica-set.md](../06-database/04-mongodb/09-replication/02-replica-set.md)
+      - [03-members-and-arbiters.md](../06-database/04-mongodb/09-replication/03-members-and-arbiters.md)
+      - [04-read-preference.md](../06-database/04-mongodb/09-replication/04-read-preference.md)
+      - [05-failover-and-recovery.md](../06-database/04-mongodb/09-replication/05-failover-and-recovery.md)
+    - **[10-SHARDING/](../06-database/04-mongodb/10-sharding/)**
+      - [01-sharding-basics.md](../06-database/04-mongodb/10-sharding/01-sharding-basics.md)
+      - [02-shard-key.md](../06-database/04-mongodb/10-sharding/02-shard-key.md)
+      - [03-sharded-cluster.md](../06-database/04-mongodb/10-sharding/03-sharded-cluster.md)
+      - [04-chunk-management.md](../06-database/04-mongodb/10-sharding/04-chunk-management.md)
+      - [05-sharding-performance.md](../06-database/04-mongodb/10-sharding/05-sharding-performance.md)
+    - **[11-BACKUP-RECOVERY/](../06-database/04-mongodb/11-backup-recovery/)**
+      - [01-backup-basics.md](../06-database/04-mongodb/11-backup-recovery/01-backup-basics.md)
+      - [02-mongodump.md](../06-database/04-mongodb/11-backup-recovery/02-mongodump.md)
+      - [03-mongorestore.md](../06-database/04-mongodb/11-backup-recovery/03-mongorestore.md)
+      - [04-point-in-time-recovery.md](../06-database/04-mongodb/11-backup-recovery/04-point-in-time-recovery.md)
+      - [05-disaster-recovery.md](../06-database/04-mongodb/11-backup-recovery/05-disaster-recovery.md)
+
+  - **[05-REDIS/](../06-database/05-redis/)**
+    - [README.md](../06-database/05-redis/README.md)
+    - **[01-BASICS/](../06-database/05-redis/01-basics/)**
+      - [01-redis-basics.md](../06-database/05-redis/01-basics/01-redis-basics.md)
+      - [02-installation.md](../06-database/05-redis/01-basics/02-installation.md)
+      - [03-client-tools.md](../06-database/05-redis/01-basics/03-client-tools.md)
+      - [04-configuration.md](../06-database/05-redis/01-basics/04-configuration.md)
+    - **[02-DATA-TYPES/](../06-database/05-redis/02-data-types/)**
+      - [01-strings.md](../06-database/05-redis/02-data-types/01-strings.md)
+      - [02-lists.md](../06-database/05-redis/02-data-types/02-lists.md)
+      - [03-sets.md](../06-database/05-redis/02-data-types/03-sets.md)
+      - [04-sorted-sets.md](../06-database/05-redis/02-data-types/04-sorted-sets.md)
+      - [05-hashes.md](../06-database/05-redis/02-data-types/05-hashes.md)
+      - [06-bitmaps.md](../06-database/05-redis/02-data-types/06-bitmaps.md)
+      - [07-hyperloglogs.md](../06-database/05-redis/02-data-types/07-hyperloglogs.md)
+    - **[03-COMMANDS/](../06-database/05-redis/03-commands/)**
+      - [01-key-commands.md](../06-database/05-redis/03-commands/01-key-commands.md)
+      - [02-string-commands.md](../06-database/05-redis/03-commands/02-string-commands.md)
+      - [03-list-commands.md](../06-database/05-redis/03-commands/03-list-commands.md)
+      - [04-set-commands.md](../06-database/05-redis/03-commands/04-set-commands.md)
+      - [05-sorted-set-commands.md](../06-database/05-redis/03-commands/05-sorted-set-commands.md)
+      - [06-hash-commands.md](../06-database/05-redis/03-commands/06-hash-commands.md)
+    - **[04-EXPIRATION-AND-TTL/](../06-database/05-redis/04-expiration-and-ttl/)**
+      - [01-expiration-basics.md](../06-database/05-redis/04-expiration-and-ttl/01-expiration-basics.md)
+      - [02-ttl-and-pttl.md](../06-database/05-redis/04-expiration-and-ttl/02-ttl-and-pttl.md)
+      - [03-expire-commands.md](../06-database/05-redis/04-expiration-and-ttl/03-expire-commands.md)
+      - [04-expiration-patterns.md](../06-database/05-redis/04-expiration-and-ttl/04-expiration-patterns.md)
+    - **[05-PERSISTENCE/](../06-database/05-redis/05-persistence/)**
+      - [01-persistence-basics.md](../06-database/05-redis/05-persistence/01-persistence-basics.md)
+      - [02-rdb.md](../06-database/05-redis/05-persistence/02-rdb.md)
+      - [03-aof.md](../06-database/05-redis/05-persistence/03-aof.md)
+      - [04-rdb-vs-aof.md](../06-database/05-redis/05-persistence/04-rdb-vs-aof.md)
+      - [05-persistence-configuration.md](../06-database/05-redis/05-persistence/05-persistence-configuration.md)
+    - **[06-PUB-SUB/](../06-database/05-redis/06-pub-sub/)**
+      - [01-pub-sub-basics.md](../06-database/05-redis/06-pub-sub/01-pub-sub-basics.md)
+      - [02-publish-and-subscribe.md](../06-database/05-redis/06-pub-sub/02-publish-and-subscribe.md)
+      - [03-pattern-subscriptions.md](../06-database/05-redis/06-pub-sub/03-pattern-subscriptions.md)
+      - [04-pub-sub-patterns.md](../06-database/05-redis/06-pub-sub/04-pub-sub-patterns.md)
+    - **[07-STREAMS/](../06-database/05-redis/07-streams/)**
+      - [01-stream-basics.md](../06-database/05-redis/07-streams/01-stream-basics.md)
+      - [02-stream-commands.md](../06-database/05-redis/07-streams/02-stream-commands.md)
+      - [03-consumer-groups.md](../06-database/05-redis/07-streams/03-consumer-groups.md)
+      - [04-message-processing.md](../06-database/05-redis/07-streams/04-message-processing.md)
+      - [05-stream-patterns.md](../06-database/05-redis/07-streams/05-stream-patterns.md)
+    - **[08-TRANSACTIONS/](../06-database/05-redis/08-transactions/)**
+      - [01-transaction-basics.md](../06-database/05-redis/08-transactions/01-transaction-basics.md)
+      - [02-multi-exec.md](../06-database/05-redis/08-transactions/02-multi-exec.md)
+      - [03-watch.md](../06-database/05-redis/08-transactions/03-watch.md)
+      - [04-transaction-patterns.md](../06-database/05-redis/08-transactions/04-transaction-patterns.md)
+    - **[09-CACHING/](../06-database/05-redis/09-caching/)**
+      - [01-cache-basics.md](../06-database/05-redis/09-caching/01-cache-basics.md)
+      - [02-cache-aside.md](../06-database/05-redis/09-caching/02-cache-aside.md)
+      - [03-write-through.md](../06-database/05-redis/09-caching/03-write-through.md)
+      - [04-write-behind.md](../06-database/05-redis/09-caching/04-write-behind.md)
+      - [05-cache-invalidation.md](../06-database/05-redis/09-caching/05-cache-invalidation.md)
+    - **[10-REPLICATION/](../06-database/05-redis/10-replication/)**
+      - [01-replication-basics.md](../06-database/05-redis/10-replication/01-replication-basics.md)
+      - [02-replica-configuration.md](../06-database/05-redis/10-replication/02-replica-configuration.md)
+      - [03-replication-and-failover.md](../06-database/05-redis/10-replication/03-replication-and-failover.md)
+      - [04-read-replicas.md](../06-database/05-redis/10-replication/04-read-replicas.md)
+    - **[11-CLUSTERING/](../06-database/05-redis/11-clustering/)**
+      - [01-cluster-basics.md](../06-database/05-redis/11-clustering/01-cluster-basics.md)
+      - [02-hash-slots.md](../06-database/05-redis/11-clustering/02-hash-slots.md)
+      - [03-cluster-configuration.md](../06-database/05-redis/11-clustering/03-cluster-configuration.md)
+      - [04-cluster-failover.md](../06-database/05-redis/11-clustering/04-cluster-failover.md)
+      - [05-cluster-management.md](../06-database/05-redis/11-clustering/05-cluster-management.md)
+
+  - **[06-DESIGN/](../06-database/06-design/)**
+    - [README.md](../06-database/06-design/README.md)
+    - **[01-DATA-MODELING/](../06-database/06-design/01-data-modeling/)**
+      - [01-entities.md](../06-database/06-design/01-data-modeling/01-entities.md)
+      - [02-relationships.md](../06-database/06-design/01-data-modeling/02-relationships.md)
+      - [03-cardinality.md](../06-database/06-design/01-data-modeling/03-cardinality.md)
+      - [04-primary-keys.md](../06-database/06-design/01-data-modeling/04-primary-keys.md)
+      - [05-foreign-keys.md](../06-database/06-design/01-data-modeling/05-foreign-keys.md)
+    - **[02-NORMALIZATION/](../06-database/06-design/02-normalization/)**
+      - [01-normalization.md](../06-database/06-design/02-normalization/01-normalization.md)
+      - [02-first-normal-form.md](../06-database/06-design/02-normalization/02-first-normal-form.md)
+      - [03-second-normal-form.md](../06-database/06-design/02-normalization/03-second-normal-form.md)
+      - [04-third-normal-form.md](../06-database/06-design/02-normalization/04-third-normal-form.md)
+      - [05-denormalization.md](../06-database/06-design/02-normalization/05-denormalization.md)
+    - **[03-RELATIONSHIPS/](../06-database/06-design/03-relationships/)**
+      - [01-one-to-one.md](../06-database/06-design/03-relationships/01-one-to-one.md)
+      - [02-one-to-many.md](../06-database/06-design/03-relationships/02-one-to-many.md)
+      - [03-many-to-many.md](../06-database/06-design/03-relationships/03-many-to-many.md)
+    - **[04-SCHEMA-DESIGN/](../06-database/06-design/04-schema-design/)**
+      - [01-schema-design.md](../06-database/06-design/04-schema-design/01-schema-design.md)
+      - [02-naming-conventions.md](../06-database/06-design/04-schema-design/02-naming-conventions.md)
+      - [03-constraints.md](../06-database/06-design/04-schema-design/03-constraints.md)
+      - [04-schema-evolution.md](../06-database/06-design/04-schema-design/04-schema-evolution.md)
+    - **[05-PATTERNS/](../06-database/06-design/05-patterns/)**
+      - [01-audit-fields.md](../06-database/06-design/05-patterns/01-audit-fields.md)
+      - [02-soft-delete.md](../06-database/06-design/05-patterns/02-soft-delete.md)
+      - [03-polymorphic-data.md](../06-database/06-design/05-patterns/03-polymorphic-data.md)
+      - [04-multi-tenant-database.md](../06-database/06-design/05-patterns/04-multi-tenant-database.md)
+
+  - **[07-INDEXING/](../06-database/07-indexing/)**
+    - [README.md](../06-database/07-indexing/README.md)
+    - [01-index-basics.md](../06-database/07-indexing/01-index-basics.md)
+    - [02-btree.md](../06-database/07-indexing/02-btree.md)
+    - [03-hash-index.md](../06-database/07-indexing/03-hash-index.md)
+    - [04-composite-index.md](../06-database/07-indexing/04-composite-index.md)
+    - [05-covering-index.md](../06-database/07-indexing/05-covering-index.md)
+    - [06-partial-index.md](../06-database/07-indexing/06-partial-index.md)
+    - [07-full-text-index.md](../06-database/07-indexing/07-full-text-index.md)
+    - [08-index-selectivity.md](../06-database/07-indexing/08-index-selectivity.md)
+    - [09-index-maintenance.md](../06-database/07-indexing/09-index-maintenance.md)
+    - [10-index-performance.md](../06-database/07-indexing/10-index-performance.md)
+
+  - **[08-TRANSACTIONS/](../06-database/08-transactions/)**
+    - [README.md](../06-database/08-transactions/README.md)
+    - [01-transaction-basics.md](../06-database/08-transactions/01-transaction-basics.md)
+    - [02-acid.md](../06-database/08-transactions/02-acid.md)
+    - [03-commit.md](../06-database/08-transactions/03-commit.md)
+    - [04-rollback.md](../06-database/08-transactions/04-rollback.md)
+    - [05-isolation-levels.md](../06-database/08-transactions/05-isolation-levels.md)
+    - [06-locking.md](../06-database/08-transactions/06-locking.md)
+    - [07-deadlocks.md](../06-database/08-transactions/07-deadlocks.md)
+    - [08-optimistic-locking.md](../06-database/08-transactions/08-optimistic-locking.md)
+    - [09-pessimistic-locking.md](../06-database/08-transactions/09-pessimistic-locking.md)
+
+  - **[09-BACKUP-RECOVERY/](../06-database/09-backup-recovery/)**
+    - [README.md](../06-database/09-backup-recovery/README.md)
+    - [01-backup-basics.md](../06-database/09-backup-recovery/01-backup-basics.md)
+    - [02-full-backup.md](../06-database/09-backup-recovery/02-full-backup.md)
+    - [03-incremental-backup.md](../06-database/09-backup-recovery/03-incremental-backup.md)
+    - [04-logical-backup.md](../06-database/09-backup-recovery/04-logical-backup.md)
+    - [05-physical-backup.md](../06-database/09-backup-recovery/05-physical-backup.md)
+    - [06-point-in-time-recovery.md](../06-database/09-backup-recovery/06-point-in-time-recovery.md)
+    - [07-disaster-recovery.md](../06-database/09-backup-recovery/07-disaster-recovery.md)
+    - [08-backup-strategy.md](../06-database/09-backup-recovery/08-backup-strategy.md)
+
+  - **[10-REPLICATION/](../06-database/10-replication/)**
+    - [README.md](../06-database/10-replication/README.md)
+    - [01-replication-basics.md](../06-database/10-replication/01-replication-basics.md)
+    - [02-primary-replica.md](../06-database/10-replication/02-primary-replica.md)
+    - [03-synchronous-replication.md](../06-database/10-replication/03-synchronous-replication.md)
+    - [04-asynchronous-replication.md](../06-database/10-replication/04-asynchronous-replication.md)
+    - [05-read-replicas.md](../06-database/10-replication/05-read-replicas.md)
+    - [06-failover.md](../06-database/10-replication/06-failover.md)
+
+  - **[11-PERFORMANCE/](../06-database/11-performance/)**
+    - [README.md](../06-database/11-performance/README.md)
+    - [01-query-performance.md](../06-database/11-performance/01-query-performance.md)
+    - [02-query-plans.md](../06-database/11-performance/02-query-plans.md)
+    - [03-explain.md](../06-database/11-performance/03-explain.md)
+    - [04-connection-pooling.md](../06-database/11-performance/04-connection-pooling.md)
+    - [05-lock-contention.md](../06-database/11-performance/05-lock-contention.md)
+    - [06-memory.md](../06-database/11-performance/06-memory.md)
+    - [07-disk-io.md](../06-database/11-performance/07-disk-io.md)
+    - [08-performance-tuning.md](../06-database/11-performance/08-performance-tuning.md)
+
+  - **[12-ORM-AND-TOOLS/](../06-database/12-orm-and-tools/)**
+    - [README.md](../06-database/12-orm-and-tools/README.md)
+    - [01-orm-concepts.md](../06-database/12-orm-and-tools/01-orm-concepts.md)
+    - [02-prisma.md](../06-database/12-orm-and-tools/02-prisma.md)
+    - [03-typeorm.md](../06-database/12-orm-and-tools/03-typeorm.md)
+    - [04-sequelize.md](../06-database/12-orm-and-tools/04-sequelize.md)
+    - [05-drizzle.md](../06-database/12-orm-and-tools/05-drizzle.md)
+    - [06-migrations.md](../06-database/12-orm-and-tools/06-migrations.md)
+    - [07-database-clients.md](../06-database/12-orm-and-tools/07-database-clients.md)
+
+  - **[13-SECURITY/](../06-database/13-security/)**
+    - [README.md](../06-database/13-security/README.md)
+    - [01-users-and-roles.md](../06-database/13-security/01-users-and-roles.md)
+    - [02-permissions.md](../06-database/13-security/02-permissions.md)
+    - [03-least-privilege.md](../06-database/13-security/03-least-privilege.md)
+    - [04-sql-injection.md](../06-database/13-security/04-sql-injection.md)
+    - [05-secrets.md](../06-database/13-security/05-secrets.md)
+    - [06-encryption.md](../06-database/13-security/06-encryption.md)
+    - [07-database-security-checklist.md](../06-database/13-security/07-database-security-checklist.md)
 
 ---
 
-# `07-os`
+# 07-OS
 
-```text
-07-os/
-│
-├── README.md
-│
-├── 01-fundamentals/
-│   ├── README.md
-|   |
-│   ├── 01-operating-system-basics.md
-│   ├── 02-kernel.md
-│   ├── 03-user-space.md
-│   ├── 04-system-calls.md
-│   ├── 05-process-vs-thread.md
-│   ├── 06-interrupts.md
-│   ├── 07-drivers.md
-│   └── 08-system-architecture.md
-│
-├── 02-linux/
-│   ├── README.md
-|   |
-│   ├── 01-basics/
-│   │   ├── 01-distributions.md
-│   │   ├── 02-kernel.md
-│   │   ├── 03-shell.md
-│   │   ├── 04-terminal.md
-│   │   ├── 05-commands.md        [OK] 2026.10.04
-|   |   ├── 06-system-info.md     [OK] 2026.10.04
-|   |   └── 07-updates-drivers.md [OK] 2026.10.04
-│   │
-│   ├── 02-filesystem/
-│   │   ├── 01-filesystem-hierarchy.md
-│   │   ├── 02-root.md
-│   │   ├── 03-home.md
-│   │   ├── 04-etc.md
-│   │   ├── 05-var.md
-│   │   ├── 06-usr.md
-│   │   ├── 07-opt.md
-│   │   ├── 08-tmp.md
-│   │   └── 09-dev.md
-│   │
-│   ├── 03-users-and-groups/
-│   │   ├── 01-users.md
-│   │   ├── 02-groups.md
-│   │   ├── 03-user-management.md
-│   │   ├── 04-group-management.md
-|   |   └── 05-passwords.md
-│   │
-│   ├── 04-permissions/
-│   │   ├── 01-file-permissions.md
-│   │   ├── 02-chmod.md
-│   │   ├── 03-chown.md
-│   │   ├── 04-umask.md
-│   │   ├── 05-acl.md
-│   │   └── 06-sudo.md
-│   │
-│   ├── 05-processes/
-│   │   ├── 01-processes.md
-│   │   ├── 02-ps.md
-│   │   ├── 03-top.md
-│   │   ├── 04-kill.md
-│   │   ├── 05-signals.md
-│   │   ├── 06-jobs.md
-│   │   └── 07-process-priority.md
-│   │
-│   ├── 06-services/
-│   │   ├── 01-systemd.md
-│   │   ├── 02-systemctl.md
-│   │   ├── 03-service-files.md
-│   │   ├── 04-journald.md
-│   │   └── 05-service-management.md
-│   │
-│   ├── 07-storage/
-│   │   ├── 01-disks.md
-│   │   ├── 02-partitions.md
-│   │   ├── 03-mounting.md
-│   │   ├── 04-fstab.md
-│   │   ├── 05-lvm.md
-│   │   ├── 06-ntfs-usb.md [OK] 2026.10.04
-│   │   └── 07-disk-usage.md
-│   │
-│   ├── 08-networking/
-│   │   ├── 01-network-interfaces.md
-│   │   ├── 02-ip.md
-│   │   ├── 03-routing.md
-│   │   ├── 04-dns.md
-│   │   ├── 05-ssh.md
-│   │   ├── 06-file-sharing.md   [OK] 2026.10.04
-│   │   ├── 07-internet-modem.md [OK] 2026.10.04
-│   │   └── 08-firewall.md
-│   │
-│   ├── 09-boot/
-│   │   ├── 01-boot-process.md
-│   │   ├── 02-grub.md
-│   │   ├── 03-initramfs.md
-│   │   ├── 04-systemd-boot.md
-|   |   └── 05-dual-boot.md
-│   │
-│   ├── 10-packages/
-│   │   ├── 01-apt.md
-│   │   ├── 02-dpkg.md
-│   │   ├── 03-snap.md
-│   │   ├── 04-flatpak.md
-│   │   └── 05-package-repositories.md
-│   │
-|   ├── 11-monitoring/
-│   |   ├── 01-cpu.md
-│   |   ├── 02-memory.md
-│   |   ├── 03-disk.md
-│   |   ├── 04-network.md
-│   |   ├── 05-system-monitoring.md
-│   |   └── 06-performance.md       [OK] 2026.10.04
-|   |
-|   ├── 12-desktop/
-│   |   ├── 01-gnome.md             [OK] 2026.10.04
-│   |   ├── 02-system-tray.md       [OK] 2026.10.04
-│   |   └── 03-bengali-fonts.md     [OK] 2026.10.04
-|   |
-│   ├── 13-applications/
-│   |   ├── 01-appimage.md        [OK] 2026.10.04
-│   |   ├── 02-davinci-resolve.md [OK] 2026.10.04
-│   |   ├── 03-node-js.md         [OK] 2026.10.04
-│   |   └── 04-google-chrome.md   [OK] 2026.10.04
-|   |
-|   ├── 14-multimedia/
-|   │   ├── 01-ffmpeg.md      [OK] 2026.10.04
-|   │   ├── 02-imagemagick.md [OK] 2026.10.04
-|   │   ├── 03-exiftool.md    [OK] 2026.10.04
-|   │   └── 04-yt-dlp.md      [OK] 2026.10.04
-|   |
-│   ├── 15-virtualization/
-│   |   ├── 01-windows-kvm.md      [OK] 2026.10.04
-│   |   └── 02-android-waydroid.md [OK] 2026.10.04
-|   |
-|   ├── 16-documentation/
-|   |   └── 01...
-|   |
-│   └── 17-miscellaneous/
-│       └── 01-android-screen-mirroring.md [OK] 2026.10.04
-│
-├── 03-windows/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-windows-architecture.md
-│   │   ├── 02-windows-editions.md
-│   │   └── 03-system-settings.md
-│   │
-│   ├── 02-filesystem/
-│   │   ├── 01-file-system.md
-│   │   ├── 02-ntfs.md
-│   │   ├── 03-drives.md
-│   │   ├── 04-paths.md
-│   │   └── 05-windows-directories.md
-│   │
-│   ├── 03-users-and-permissions/
-│   │   ├── 01-user-accounts.md
-│   │   ├── 02-groups.md
-│   │   ├── 03-ntfs-permissions.md
-│   │   ├── 04-uac.md
-│   │   └── 05-administration.md
-│   │
-│   ├── 04-processes/
-│   │   ├── 01-processes.md
-│   │   ├── 02-task-manager.md
-│   │   ├── 03-taskkill.md
-│   │   └── 04-process-management.md
-│   │
-│   ├── 05-services/
-│   │   ├── 01-windows-services.md
-│   │   ├── 02-service-management.md
-│   │   └── 03-event-viewer.md
-│   │
-│   ├── 06-powershell/
-│   │   ├── 01-basics.md
-│   │   ├── 02-commands.md
-│   │   ├── 03-pipelines.md
-│   │   ├── 04-scripting.md
-│   │   └── 05-automation.md
-│   │
-│   ├── 07-networking/
-│   │   ├── 01-network-settings.md
-│   │   ├── 02-ipconfig.md
-│   │   ├── 03-ping.md
-│   │   ├── 04-netstat.md
-│   │   ├── 05-dns.md
-│   │   └── 06-firewall.md
-│   │
-│   └── 08-administration/
-│       ├── 01-registry.md
-│       ├── 02-event-logs.md
-│       ├── 03-task-scheduler.md
-│       └── 04-system-management.md
-│
-├── 04-macos/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-macos-architecture.md
-│   │   ├── 02-system-settings.md
-│   │   └── 03-terminal.md
-│   │
-│   ├── 02-filesystem/
-│   │   ├── 01-filesystem.md
-│   │   ├── 02-apfs.md
-│   │   ├── 03-directories.md
-│   │   └── 04-volumes.md
-│   │
-│   ├── 03-terminal/
-│   │   ├── 01-shell.md
-│   │   ├── 02-zsh.md
-│   │   ├── 03-homebrew.md
-│   │   └── 04-cli-tools.md
-│   │
-│   ├── 04-processes/
-│   │   ├── 01-processes.md
-│   │   ├── 02-activity-monitor.md
-│   │   └── 03-process-management.md
-│   │
-│   ├── 05-services/
-│   │   ├── 01-launchd.md
-│   │   ├── 02-daemons.md
-│   │   └── 03-service-management.md
-│   │
-│   ├── 06-networking/
-│   │   ├── 01-network-settings.md
-│   │   ├── 02-network-tools.md
-│   │   ├── 03-dns.md
-│   │   └── 04-ssh.md
-│   │
-│   └── 07-development/
-│       ├── 01-xcode.md
-│       ├── 02-command-line-tools.md
-│       ├── 03-homebrew.md
-│       └── 04-development-environment.md
-│
-├── 05-android/
-│   ├── README.md
-│   ├── TOOLKITS-ANDROID.md [OK]
-|   |
-│   ├── 01-basics/
-│   │   ├── 01-android-architecture.md
-│   │   ├── 02-aosp.md
-│   │   ├── 03-android-runtime.md
-│   │   └── 04-android-components.md
-│   │
-│   ├── 02-filesystem/
-│   │   ├── 01-filesystem.md
-│   │   ├── 02-storage.md
-│   │   ├── 03-app-storage.md
-│   │   └── 04-permissions.md
-│   │
-│   ├── 03-adb/
-│   │   ├── 01-adb-basics.md
-│   │   ├── 02-devices.md
-│   │   ├── 03-shell.md
-│   │   ├── 04-file-transfer.md
-│   │   └── 05-debugging.md
-│   │
-│   ├── 04-apps/
-│   │   ├── 01-app-components.md
-│   │   ├── 02-activities.md
-│   │   ├── 03-services.md
-│   │   ├── 04-broadcast-receivers.md
-│   │   └── 05-content-providers.md
-│   │
-│   ├── 05-permissions/
-│   │   ├── 01-runtime-permissions.md
-│   │   ├── 02-app-permissions.md
-│   │   └── 03-security-model.md
-│   │
-│   ├── 06-processes/
-│   │   ├── 01-process-model.md
-│   │   ├── 02-app-lifecycle.md
-│   │   └── 03-background-execution.md
-│   │
-│   └── 07-debugging/
-│       ├── 01-logcat.md
-│       ├── 02-debugging.md
-│       ├── 03-crash-analysis.md
-│       └── 04-performance.md
-│
-├── 06-ios/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-ios-architecture.md
-│   │   ├── 02-system-frameworks.md
-│   │   └── 03-ios-security.md
-│   │
-│   ├── 02-filesystem/
-│   │   ├── 01-filesystem.md
-│   │   ├── 02-sandbox.md
-│   │   ├── 03-app-storage.md
-│   │   └── 04-file-management.md
-│   │
-│   ├── 03-development/
-│   │   ├── 01-xcode.md
-│   │   ├── 02-swift.md
-│   │   ├── 03-swiftui.md
-│   │   └── 04-project-structure.md
-│   │
-│   ├── 04-app-lifecycle/
-│   │   ├── 01-app-lifecycle.md
-│   │   ├── 02-background-tasks.md
-│   │   └── 03-state-restoration.md
-│   │
-│   ├── 05-permissions/
-│   │   ├── 01-permissions.md
-│   │   ├── 02-privacy.md
-│   │   └── 03-capabilities.md
-│   │
-│   └── 06-debugging/
-│       ├── 01-console.md
-│       ├── 02-xcode-debugging.md
-│       ├── 03-crash-logs.md
-│       └── 04-performance.md
-│
-├── 07-filesystem/
-│   ├── README.md
-|   |
-│   ├── 01-files-and-directories.md
-│   ├── 02-paths.md
-│   ├── 03-file-types.md
-│   ├── 04-permissions.md
-│   ├── 05-links.md
-│   ├── 06-mounting.md
-│   ├── 07-filesystem-types.md
-│   ├── 08-storage.md
-│   └── 09-file-system-performance.md
-│
-├── 08-process/
-│   ├── README.md
-|   |
-│   ├── 01-process-basics.md
-│   ├── 02-process-lifecycle.md
-│   ├── 03-process-states.md
-│   ├── 04-process-priority.md
-│   ├── 05-signals.md
-│   ├── 06-process-communication.md
-│   ├── 07-process-monitoring.md
-│   └── 08-process-debugging.md
-│
-├── 09-services/
-│   ├── README.md
-|   |
-│   ├── 01-service-basics.md
-│   ├── 02-daemons.md
-│   ├── 03-service-lifecycle.md
-│   ├── 04-service-discovery.md
-│   ├── 05-startup.md
-│   └── 06-service-monitoring.md
-│
-├── 10-permissions/
-│   ├── README.md
-|   |
-│   ├── 01-access-control.md
-│   ├── 02-users.md
-│   ├── 03-groups.md
-│   ├── 04-file-permissions.md
-│   ├── 05-acl.md
-│   ├── 06-privileges.md
-│   └── 07-least-privilege.md
-│
-├── 11-storage/
-│   ├── README.md
-|   |
-│   ├── 01-storage-basics.md
-│   ├── 02-disks.md
-│   ├── 03-partitions.md
-│   ├── 04-volumes.md
-│   ├── 05-mounting.md
-│   ├── 06-filesystems.md
-│   └── 07-disk-monitoring.md
-│
-├── 12-networking/
-│   ├── README.md
-|   |
-│   ├── 01-network-stack.md
-│   ├── 02-network-interfaces.md
-│   ├── 03-ip.md
-│   ├── 04-routing.md
-│   ├── 05-dns.md
-│   ├── 06-sockets.md
-│   ├── 07-firewall.md
-│   └── 08-network-debugging.md
-│
-├── 13-boot/
-│   ├── README.md
-|   |
-│   ├── 01-boot-process.md
-│   ├── 02-bios.md
-│   ├── 03-uefi.md
-│   ├── 04-bootloader.md
-│   ├── 05-kernel-loading.md
-│   └── 06-system-initialization.md
-│
-├── 14-security/
-│   ├── README.md
-|   |
-│   ├── 01-security-models.md
-│   ├── 02-access-control.md
-│   ├── 03-sandboxing.md
-│   ├── 04-isolation.md
-│   ├── 05-encryption.md
-│   ├── 06-secure-boot.md
-│   └── 07-security-hardening.md
-│
-├── 15-virtualization/
-│   ├── README.md
-|   |
-│   ├── 01-virtualization-basics.md
-│   ├── 02-hypervisors.md
-│   ├── 03-type-1-vs-type-2.md
-│   ├── 04-vm.md
-│   ├── 05-containers.md
-│   ├── 06-networking.md
-│   ├── 07-storage.md
-│   └── 08-device-passthrough.md
-│
-└── 16-monitoring/
-    ├── README.md
-    |
-    ├── 01-cpu.md
-    ├── 02-memory.md
-    ├── 03-storage.md
-    ├── 04-network.md
-    ├── 05-processes.md
-    ├── 06-system-logs.md
-    └── 07-performance-monitoring.md
-```
+- **[07-OS/](../07-os/)**
+  - [README.md](../07-os/README.md)
+
+  - **[01-FUNDAMENTALS/](../07-os/01-fundamentals/)**
+    - [README.md](../07-os/01-fundamentals/README.md)
+    - [01-operating-system-basics.md](../07-os/01-fundamentals/01-operating-system-basics.md)
+    - [02-kernel.md](../07-os/01-fundamentals/02-kernel.md)
+    - [03-user-space.md](../07-os/01-fundamentals/03-user-space.md)
+    - [04-system-calls.md](../07-os/01-fundamentals/04-system-calls.md)
+    - [05-process-vs-thread.md](../07-os/01-fundamentals/05-process-vs-thread.md)
+    - [06-interrupts.md](../07-os/01-fundamentals/06-interrupts.md)
+    - [07-drivers.md](../07-os/01-fundamentals/07-drivers.md)
+    - [08-system-architecture.md](../07-os/01-fundamentals/08-system-architecture.md)
+
+  - **[02-LINUX/](../07-os/02-linux/)**
+    - [README.md](../07-os/02-linux/README.md)
+    - **[01-BASICS/](../07-os/02-linux/01-basics/)**
+      - [01-distributions.md](../07-os/02-linux/01-basics/01-distributions.md)
+      - [02-kernel.md](../07-os/02-linux/01-basics/02-kernel.md)
+      - [03-shell.md](../07-os/02-linux/01-basics/03-shell.md)
+      - [04-terminal.md](../07-os/02-linux/01-basics/04-terminal.md)
+      - [05-commands.md](../07-os/02-linux/01-basics/05-commands.md)
+      - [06-system-info.md](../07-os/02-linux/01-basics/06-system-info.md)
+      - [07-updates-drivers.md](../07-os/02-linux/01-basics/07-updates-drivers.md)
+    - **[02-FILESYSTEM/](../07-os/02-linux/02-filesystem/)**
+      - [01-filesystem-hierarchy.md](../07-os/02-linux/02-filesystem/01-filesystem-hierarchy.md)
+      - [02-root.md](../07-os/02-linux/02-filesystem/02-root.md)
+      - [03-home.md](../07-os/02-linux/02-filesystem/03-home.md)
+      - [04-etc.md](../07-os/02-linux/02-filesystem/04-etc.md)
+      - [05-var.md](../07-os/02-linux/02-filesystem/05-var.md)
+      - [06-usr.md](../07-os/02-linux/02-filesystem/06-usr.md)
+      - [07-opt.md](../07-os/02-linux/02-filesystem/07-opt.md)
+      - [08-tmp.md](../07-os/02-linux/02-filesystem/08-tmp.md)
+      - [09-dev.md](../07-os/02-linux/02-filesystem/09-dev.md)
+    - **[03-USERS-AND-GROUPS/](../07-os/02-linux/03-users-and-groups/)**
+      - [01-users.md](../07-os/02-linux/03-users-and-groups/01-users.md)
+      - [02-groups.md](../07-os/02-linux/03-users-and-groups/02-groups.md)
+      - [03-user-management.md](../07-os/02-linux/03-users-and-groups/03-user-management.md)
+      - [04-group-management.md](../07-os/02-linux/03-users-and-groups/04-group-management.md)
+      - [05-passwords.md](../07-os/02-linux/03-users-and-groups/05-passwords.md)
+    - **[04-PERMISSIONS/](../07-os/02-linux/04-permissions/)**
+      - [01-file-permissions.md](../07-os/02-linux/04-permissions/01-file-permissions.md)
+      - [02-chmod.md](../07-os/02-linux/04-permissions/02-chmod.md)
+      - [03-chown.md](../07-os/02-linux/04-permissions/03-chown.md)
+      - [04-umask.md](../07-os/02-linux/04-permissions/04-umask.md)
+      - [05-acl.md](../07-os/02-linux/04-permissions/05-acl.md)
+      - [06-sudo.md](../07-os/02-linux/04-permissions/06-sudo.md)
+    - **[05-PROCESSES/](../07-os/02-linux/05-processes/)**
+      - [01-processes.md](../07-os/02-linux/05-processes/01-processes.md)
+      - [02-ps.md](../07-os/02-linux/05-processes/02-ps.md)
+      - [03-top.md](../07-os/02-linux/05-processes/03-top.md)
+      - [04-kill.md](../07-os/02-linux/05-processes/04-kill.md)
+      - [05-signals.md](../07-os/02-linux/05-processes/05-signals.md)
+      - [06-jobs.md](../07-os/02-linux/05-processes/06-jobs.md)
+      - [07-process-priority.md](../07-os/02-linux/05-processes/07-process-priority.md)
+    - **[06-SERVICES/](../07-os/02-linux/06-services/)**
+      - [01-systemd.md](../07-os/02-linux/06-services/01-systemd.md)
+      - [02-systemctl.md](../07-os/02-linux/06-services/02-systemctl.md)
+      - [03-service-files.md](../07-os/02-linux/06-services/03-service-files.md)
+      - [04-journald.md](../07-os/02-linux/06-services/04-journald.md)
+      - [05-service-management.md](../07-os/02-linux/06-services/05-service-management.md)
+    - **[07-STORAGE/](../07-os/02-linux/07-storage/)**
+      - [01-disks.md](../07-os/02-linux/07-storage/01-disks.md)
+      - [02-partitions.md](../07-os/02-linux/07-storage/02-partitions.md)
+      - [03-mounting.md](../07-os/02-linux/07-storage/03-mounting.md)
+      - [04-fstab.md](../07-os/02-linux/07-storage/04-fstab.md)
+      - [05-lvm.md](../07-os/02-linux/07-storage/05-lvm.md)
+      - [06-ntfs-usb.md](../07-os/02-linux/07-storage/06-ntfs-usb.md)
+      - [07-disk-usage.md](../07-os/02-linux/07-storage/07-disk-usage.md)
+    - **[08-NETWORKING/](../07-os/02-linux/08-networking/)**
+      - [01-network-interfaces.md](../07-os/02-linux/08-networking/01-network-interfaces.md)
+      - [02-ip.md](../07-os/02-linux/08-networking/02-ip.md)
+      - [03-routing.md](../07-os/02-linux/08-networking/03-routing.md)
+      - [04-dns.md](../07-os/02-linux/08-networking/04-dns.md)
+      - [05-ssh.md](../07-os/02-linux/08-networking/05-ssh.md)
+      - [06-file-sharing.md](../07-os/02-linux/08-networking/06-file-sharing.md)
+      - [07-internet-modem.md](../07-os/02-linux/08-networking/07-internet-modem.md)
+      - [08-firewall.md](../07-os/02-linux/08-networking/08-firewall.md)
+    - **[09-BOOT/](../07-os/02-linux/09-boot/)**
+      - [01-boot-process.md](../07-os/02-linux/09-boot/01-boot-process.md)
+      - [02-grub.md](../07-os/02-linux/09-boot/02-grub.md)
+      - [03-initramfs.md](../07-os/02-linux/09-boot/03-initramfs.md)
+      - [04-systemd-boot.md](../07-os/02-linux/09-boot/04-systemd-boot.md)
+      - [05-dual-boot.md](../07-os/02-linux/09-boot/05-dual-boot.md)
+    - **[10-PACKAGES/](../07-os/02-linux/10-packages/)**
+      - [01-apt.md](../07-os/02-linux/10-packages/01-apt.md)
+      - [02-dpkg.md](../07-os/02-linux/10-packages/02-dpkg.md)
+      - [03-snap.md](../07-os/02-linux/10-packages/03-snap.md)
+      - [04-flatpak.md](../07-os/02-linux/10-packages/04-flatpak.md)
+      - [05-package-repositories.md](../07-os/02-linux/10-packages/05-package-repositories.md)
+    - **[11-MONITORING/](../07-os/02-linux/11-monitoring/)**
+      - [01-cpu.md](../07-os/02-linux/11-monitoring/01-cpu.md)
+      - [02-memory.md](../07-os/02-linux/11-monitoring/02-memory.md)
+      - [03-disk.md](../07-os/02-linux/11-monitoring/03-disk.md)
+      - [04-network.md](../07-os/02-linux/11-monitoring/04-network.md)
+      - [05-system-monitoring.md](../07-os/02-linux/11-monitoring/05-system-monitoring.md)
+      - [06-performance.md](../07-os/02-linux/11-monitoring/06-performance.md)
+    - **[12-DESKTOP/](../07-os/02-linux/12-desktop/)**
+      - [01-gnome.md](../07-os/02-linux/12-desktop/01-gnome.md)
+      - [02-system-tray.md](../07-os/02-linux/12-desktop/02-system-tray.md)
+      - [03-bengali-fonts.md](../07-os/02-linux/12-desktop/03-bengali-fonts.md)
+    - **[13-APPLICATIONS/](../07-os/02-linux/13-applications/)**
+      - [01-appimage.md](../07-os/02-linux/13-applications/01-appimage.md)
+      - [02-davinci-resolve.md](../07-os/02-linux/13-applications/02-davinci-resolve.md)
+      - [03-node-js.md](../07-os/02-linux/13-applications/03-node-js.md)
+      - [04-google-chrome.md](../07-os/02-linux/13-applications/04-google-chrome.md)
+    - **[14-MULTIMEDIA/](../07-os/02-linux/14-multimedia/)**
+      - [01-ffmpeg.md](../07-os/02-linux/14-multimedia/01-ffmpeg.md)
+      - [02-imagemagick.md](../07-os/02-linux/14-multimedia/02-imagemagick.md)
+      - [03-exiftool.md](../07-os/02-linux/14-multimedia/03-exiftool.md)
+      - [04-yt-dlp.md](../07-os/02-linux/14-multimedia/04-yt-dlp.md)
+    - **[15-VIRTUALIZATION/](../07-os/02-linux/15-virtualization/)**
+      - [01-windows-kvm.md](../07-os/02-linux/15-virtualization/01-windows-kvm.md)
+      - [02-android-waydroid.md](../07-os/02-linux/15-virtualization/02-android-waydroid.md)
+    - **[16-DOCUMENTATION/](../07-os/02-linux/16-documentation/)**
+      - [01...](../07-os/02-linux/16-documentation/01...)
+    - **[17-MISCELLANEOUS/](../07-os/02-linux/17-miscellaneous/)**
+      - [01-android-screen-mirroring.md](../07-os/02-linux/17-miscellaneous/01-android-screen-mirroring.md)
+
+  - **[03-WINDOWS/](../07-os/03-windows/)**
+    - [README.md](../07-os/03-windows/README.md)
+    - **[01-BASICS/](../07-os/03-windows/01-basics/)**
+      - [01-windows-architecture.md](../07-os/03-windows/01-basics/01-windows-architecture.md)
+      - [02-windows-editions.md](../07-os/03-windows/01-basics/02-windows-editions.md)
+      - [03-system-settings.md](../07-os/03-windows/01-basics/03-system-settings.md)
+    - **[02-FILESYSTEM/](../07-os/03-windows/02-filesystem/)**
+      - [01-file-system.md](../07-os/03-windows/02-filesystem/01-file-system.md)
+      - [02-ntfs.md](../07-os/03-windows/02-filesystem/02-ntfs.md)
+      - [03-drives.md](../07-os/03-windows/02-filesystem/03-drives.md)
+      - [04-paths.md](../07-os/03-windows/02-filesystem/04-paths.md)
+      - [05-windows-directories.md](../07-os/03-windows/02-filesystem/05-windows-directories.md)
+    - **[03-USERS-AND-PERMISSIONS/](../07-os/03-windows/03-users-and-permissions/)**
+      - [01-user-accounts.md](../07-os/03-windows/03-users-and-permissions/01-user-accounts.md)
+      - [02-groups.md](../07-os/03-windows/03-users-and-permissions/02-groups.md)
+      - [03-ntfs-permissions.md](../07-os/03-windows/03-users-and-permissions/03-ntfs-permissions.md)
+      - [04-uac.md](../07-os/03-windows/03-users-and-permissions/04-uac.md)
+      - [05-administration.md](../07-os/03-windows/03-users-and-permissions/05-administration.md)
+    - **[04-PROCESSES/](../07-os/03-windows/04-processes/)**
+      - [01-processes.md](../07-os/03-windows/04-processes/01-processes.md)
+      - [02-task-manager.md](../07-os/03-windows/04-processes/02-task-manager.md)
+      - [03-taskkill.md](../07-os/03-windows/04-processes/03-taskkill.md)
+      - [04-process-management.md](../07-os/03-windows/04-processes/04-process-management.md)
+    - **[05-SERVICES/](../07-os/03-windows/05-services/)**
+      - [01-windows-services.md](../07-os/03-windows/05-services/01-windows-services.md)
+      - [02-service-management.md](../07-os/03-windows/05-services/02-service-management.md)
+      - [03-event-viewer.md](../07-os/03-windows/05-services/03-event-viewer.md)
+    - **[06-POWERSHELL/](../07-os/03-windows/06-powershell/)**
+      - [01-basics.md](../07-os/03-windows/06-powershell/01-basics.md)
+      - [02-commands.md](../07-os/03-windows/06-powershell/02-commands.md)
+      - [03-pipelines.md](../07-os/03-windows/06-powershell/03-pipelines.md)
+      - [04-scripting.md](../07-os/03-windows/06-powershell/04-scripting.md)
+      - [05-automation.md](../07-os/03-windows/06-powershell/05-automation.md)
+    - **[07-NETWORKING/](../07-os/03-windows/07-networking/)**
+      - [01-network-settings.md](../07-os/03-windows/07-networking/01-network-settings.md)
+      - [02-ipconfig.md](../07-os/03-windows/07-networking/02-ipconfig.md)
+      - [03-ping.md](../07-os/03-windows/07-networking/03-ping.md)
+      - [04-netstat.md](../07-os/03-windows/07-networking/04-netstat.md)
+      - [05-dns.md](../07-os/03-windows/07-networking/05-dns.md)
+      - [06-firewall.md](../07-os/03-windows/07-networking/06-firewall.md)
+    - **[08-ADMINISTRATION/](../07-os/03-windows/08-administration/)**
+      - [01-registry.md](../07-os/03-windows/08-administration/01-registry.md)
+      - [02-event-logs.md](../07-os/03-windows/08-administration/02-event-logs.md)
+      - [03-task-scheduler.md](../07-os/03-windows/08-administration/03-task-scheduler.md)
+      - [04-system-management.md](../07-os/03-windows/08-administration/04-system-management.md)
+
+  - **[04-MACOS/](../07-os/04-macos/)**
+    - [README.md](../07-os/04-macos/README.md)
+    - **[01-BASICS/](../07-os/04-macos/01-basics/)**
+      - [01-macos-architecture.md](../07-os/04-macos/01-basics/01-macos-architecture.md)
+      - [02-system-settings.md](../07-os/04-macos/01-basics/02-system-settings.md)
+      - [03-terminal.md](../07-os/04-macos/01-basics/03-terminal.md)
+    - **[02-FILESYSTEM/](../07-os/04-macos/02-filesystem/)**
+      - [01-filesystem.md](../07-os/04-macos/02-filesystem/01-filesystem.md)
+      - [02-apfs.md](../07-os/04-macos/02-filesystem/02-apfs.md)
+      - [03-directories.md](../07-os/04-macos/02-filesystem/03-directories.md)
+      - [04-volumes.md](../07-os/04-macos/02-filesystem/04-volumes.md)
+    - **[03-TERMINAL/](../07-os/04-macos/03-terminal/)**
+      - [01-shell.md](../07-os/04-macos/03-terminal/01-shell.md)
+      - [02-zsh.md](../07-os/04-macos/03-terminal/02-zsh.md)
+      - [03-homebrew.md](../07-os/04-macos/03-terminal/03-homebrew.md)
+      - [04-cli-tools.md](../07-os/04-macos/03-terminal/04-cli-tools.md)
+    - **[04-PROCESSES/](../07-os/04-macos/04-processes/)**
+      - [01-processes.md](../07-os/04-macos/04-processes/01-processes.md)
+      - [02-activity-monitor.md](../07-os/04-macos/04-processes/02-activity-monitor.md)
+      - [03-process-management.md](../07-os/04-macos/04-processes/03-process-management.md)
+    - **[05-SERVICES/](../07-os/04-macos/05-services/)**
+      - [01-launchd.md](../07-os/04-macos/05-services/01-launchd.md)
+      - [02-daemons.md](../07-os/04-macos/05-services/02-daemons.md)
+      - [03-service-management.md](../07-os/04-macos/05-services/03-service-management.md)
+    - **[06-NETWORKING/](../07-os/04-macos/06-networking/)**
+      - [01-network-settings.md](../07-os/04-macos/06-networking/01-network-settings.md)
+      - [02-network-tools.md](../07-os/04-macos/06-networking/02-network-tools.md)
+      - [03-dns.md](../07-os/04-macos/06-networking/03-dns.md)
+      - [04-ssh.md](../07-os/04-macos/06-networking/04-ssh.md)
+    - **[07-DEVELOPMENT/](../07-os/04-macos/07-development/)**
+      - [01-xcode.md](../07-os/04-macos/07-development/01-xcode.md)
+      - [02-command-line-tools.md](../07-os/04-macos/07-development/02-command-line-tools.md)
+      - [03-homebrew.md](../07-os/04-macos/07-development/03-homebrew.md)
+      - [04-development-environment.md](../07-os/04-macos/07-development/04-development-environment.md)
+
+  - **[05-ANDROID/](../07-os/05-android/)**
+    - [README.md](../07-os/05-android/README.md)
+    - [TOOLKITS-ANDROID.md](../07-os/05-android/toolkits-android.md)
+    - **[01-BASICS/](../07-os/05-android/01-basics/)**
+      - [01-android-architecture.md](../07-os/05-android/01-basics/01-android-architecture.md)
+      - [02-aosp.md](../07-os/05-android/01-basics/02-aosp.md)
+      - [03-android-runtime.md](../07-os/05-android/01-basics/03-android-runtime.md)
+      - [04-android-components.md](../07-os/05-android/01-basics/04-android-components.md)
+    - **[02-FILESYSTEM/](../07-os/05-android/02-filesystem/)**
+      - [01-filesystem.md](../07-os/05-android/02-filesystem/01-filesystem.md)
+      - [02-storage.md](../07-os/05-android/02-filesystem/02-storage.md)
+      - [03-app-storage.md](../07-os/05-android/02-filesystem/03-app-storage.md)
+      - [04-permissions.md](../07-os/05-android/02-filesystem/04-permissions.md)
+    - **[03-ADB/](../07-os/05-android/03-adb/)**
+      - [01-adb-basics.md](../07-os/05-android/03-adb/01-adb-basics.md)
+      - [02-devices.md](../07-os/05-android/03-adb/02-devices.md)
+      - [03-shell.md](../07-os/05-android/03-adb/03-shell.md)
+      - [04-file-transfer.md](../07-os/05-android/03-adb/04-file-transfer.md)
+      - [05-debugging.md](../07-os/05-android/03-adb/05-debugging.md)
+    - **[04-APPS/](../07-os/05-android/04-apps/)**
+      - [01-app-components.md](../07-os/05-android/04-apps/01-app-components.md)
+      - [02-activities.md](../07-os/05-android/04-apps/02-activities.md)
+      - [03-services.md](../07-os/05-android/04-apps/03-services.md)
+      - [04-broadcast-receivers.md](../07-os/05-android/04-apps/04-broadcast-receivers.md)
+      - [05-content-providers.md](../07-os/05-android/04-apps/05-content-providers.md)
+    - **[05-PERMISSIONS/](../07-os/05-android/05-permissions/)**
+      - [01-runtime-permissions.md](../07-os/05-android/05-permissions/01-runtime-permissions.md)
+      - [02-app-permissions.md](../07-os/05-android/05-permissions/02-app-permissions.md)
+      - [03-security-model.md](../07-os/05-android/05-permissions/03-security-model.md)
+    - **[06-PROCESSES/](../07-os/05-android/06-processes/)**
+      - [01-process-model.md](../07-os/05-android/06-processes/01-process-model.md)
+      - [02-app-lifecycle.md](../07-os/05-android/06-processes/02-app-lifecycle.md)
+      - [03-background-execution.md](../07-os/05-android/06-processes/03-background-execution.md)
+    - **[07-DEBUGGING/](../07-os/05-android/07-debugging/)**
+      - [01-logcat.md](../07-os/05-android/07-debugging/01-logcat.md)
+      - [02-debugging.md](../07-os/05-android/07-debugging/02-debugging.md)
+      - [03-crash-analysis.md](../07-os/05-android/07-debugging/03-crash-analysis.md)
+      - [04-performance.md](../07-os/05-android/07-debugging/04-performance.md)
+
+  - **[06-IOS/](../07-os/06-ios/)**
+    - [README.md](../07-os/06-ios/README.md)
+    - **[01-BASICS/](../07-os/06-ios/01-basics/)**
+      - [01-ios-architecture.md](../07-os/06-ios/01-basics/01-ios-architecture.md)
+      - [02-system-frameworks.md](../07-os/06-ios/01-basics/02-system-frameworks.md)
+      - [03-ios-security.md](../07-os/06-ios/01-basics/03-ios-security.md)
+    - **[02-FILESYSTEM/](../07-os/06-ios/02-filesystem/)**
+      - [01-filesystem.md](../07-os/06-ios/02-filesystem/01-filesystem.md)
+      - [02-sandbox.md](../07-os/06-ios/02-filesystem/02-sandbox.md)
+      - [03-app-storage.md](../07-os/06-ios/02-filesystem/03-app-storage.md)
+      - [04-file-management.md](../07-os/06-ios/02-filesystem/04-file-management.md)
+    - **[03-DEVELOPMENT/](../07-os/06-ios/03-development/)**
+      - [01-xcode.md](../07-os/06-ios/03-development/01-xcode.md)
+      - [02-swift.md](../07-os/06-ios/03-development/02-swift.md)
+      - [03-swiftui.md](../07-os/06-ios/03-development/03-swiftui.md)
+      - [04-project-structure.md](../07-os/06-ios/03-development/04-project-structure.md)
+    - **[04-APP-LIFECYCLE/](../07-os/06-ios/04-app-lifecycle/)**
+      - [01-app-lifecycle.md](../07-os/06-ios/04-app-lifecycle/01-app-lifecycle.md)
+      - [02-background-tasks.md](../07-os/06-ios/04-app-lifecycle/02-background-tasks.md)
+      - [03-state-restoration.md](../07-os/06-ios/04-app-lifecycle/03-state-restoration.md)
+    - **[05-PERMISSIONS/](../07-os/06-ios/05-permissions/)**
+      - [01-permissions.md](../07-os/06-ios/05-permissions/01-permissions.md)
+      - [02-privacy.md](../07-os/06-ios/05-permissions/02-privacy.md)
+      - [03-capabilities.md](../07-os/06-ios/05-permissions/03-capabilities.md)
+    - **[06-DEBUGGING/](../07-os/06-ios/06-debugging/)**
+      - [01-console.md](../07-os/06-ios/06-debugging/01-console.md)
+      - [02-xcode-debugging.md](../07-os/06-ios/06-debugging/02-xcode-debugging.md)
+      - [03-crash-logs.md](../07-os/06-ios/06-debugging/03-crash-logs.md)
+      - [04-performance.md](../07-os/06-ios/06-debugging/04-performance.md)
+
+  - **[07-FILESYSTEM/](../07-os/07-filesystem/)**
+    - [README.md](../07-os/07-filesystem/README.md)
+    - [01-files-and-directories.md](../07-os/07-filesystem/01-files-and-directories.md)
+    - [02-paths.md](../07-os/07-filesystem/02-paths.md)
+    - [03-file-types.md](../07-os/07-filesystem/03-file-types.md)
+    - [04-permissions.md](../07-os/07-filesystem/04-permissions.md)
+    - [05-links.md](../07-os/07-filesystem/05-links.md)
+    - [06-mounting.md](../07-os/07-filesystem/06-mounting.md)
+    - [07-filesystem-types.md](../07-os/07-filesystem/07-filesystem-types.md)
+    - [08-storage.md](../07-os/07-filesystem/08-storage.md)
+    - [09-file-system-performance.md](../07-os/07-filesystem/09-file-system-performance.md)
+
+  - **[08-PROCESS/](../07-os/08-process/)**
+    - [README.md](../07-os/08-process/README.md)
+    - [01-process-basics.md](../07-os/08-process/01-process-basics.md)
+    - [02-process-lifecycle.md](../07-os/08-process/02-process-lifecycle.md)
+    - [03-process-states.md](../07-os/08-process/03-process-states.md)
+    - [04-process-priority.md](../07-os/08-process/04-process-priority.md)
+    - [05-signals.md](../07-os/08-process/05-signals.md)
+    - [06-process-communication.md](../07-os/08-process/06-process-communication.md)
+    - [07-process-monitoring.md](../07-os/08-process/07-process-monitoring.md)
+    - [08-process-debugging.md](../07-os/08-process/08-process-debugging.md)
+
+  - **[09-SERVICES/](../07-os/09-services/)**
+    - [README.md](../07-os/09-services/README.md)
+    - [01-service-basics.md](../07-os/09-services/01-service-basics.md)
+    - [02-daemons.md](../07-os/09-services/02-daemons.md)
+    - [03-service-lifecycle.md](../07-os/09-services/03-service-lifecycle.md)
+    - [04-service-discovery.md](../07-os/09-services/04-service-discovery.md)
+    - [05-startup.md](../07-os/09-services/05-startup.md)
+    - [06-service-monitoring.md](../07-os/09-services/06-service-monitoring.md)
+
+  - **[10-PERMISSIONS/](../07-os/10-permissions/)**
+    - [README.md](../07-os/10-permissions/README.md)
+    - [01-access-control.md](../07-os/10-permissions/01-access-control.md)
+    - [02-users.md](../07-os/10-permissions/02-users.md)
+    - [03-groups.md](../07-os/10-permissions/03-groups.md)
+    - [04-file-permissions.md](../07-os/10-permissions/04-file-permissions.md)
+    - [05-acl.md](../07-os/10-permissions/05-acl.md)
+    - [06-privileges.md](../07-os/10-permissions/06-privileges.md)
+    - [07-least-privilege.md](../07-os/10-permissions/07-least-privilege.md)
+
+  - **[11-STORAGE/](../07-os/11-storage/)**
+    - [README.md](../07-os/11-storage/README.md)
+    - [01-storage-basics.md](../07-os/11-storage/01-storage-basics.md)
+    - [02-disks.md](../07-os/11-storage/02-disks.md)
+    - [03-partitions.md](../07-os/11-storage/03-partitions.md)
+    - [04-volumes.md](../07-os/11-storage/04-volumes.md)
+    - [05-mounting.md](../07-os/11-storage/05-mounting.md)
+    - [06-filesystems.md](../07-os/11-storage/06-filesystems.md)
+    - [07-disk-monitoring.md](../07-os/11-storage/07-disk-monitoring.md)
+
+  - **[12-NETWORKING/](../07-os/12-networking/)**
+    - [README.md](../07-os/12-networking/README.md)
+    - [01-network-stack.md](../07-os/12-networking/01-network-stack.md)
+    - [02-network-interfaces.md](../07-os/12-networking/02-network-interfaces.md)
+    - [03-ip.md](../07-os/12-networking/03-ip.md)
+    - [04-routing.md](../07-os/12-networking/04-routing.md)
+    - [05-dns.md](../07-os/12-networking/05-dns.md)
+    - [06-sockets.md](../07-os/12-networking/06-sockets.md)
+    - [07-firewall.md](../07-os/12-networking/07-firewall.md)
+    - [08-network-debugging.md](../07-os/12-networking/08-network-debugging.md)
+
+  - **[13-BOOT/](../07-os/13-boot/)**
+    - [README.md](../07-os/13-boot/README.md)
+    - [01-boot-process.md](../07-os/13-boot/01-boot-process.md)
+    - [02-bios.md](../07-os/13-boot/02-bios.md)
+    - [03-uefi.md](../07-os/13-boot/03-uefi.md)
+    - [04-bootloader.md](../07-os/13-boot/04-bootloader.md)
+    - [05-kernel-loading.md](../07-os/13-boot/05-kernel-loading.md)
+    - [06-system-initialization.md](../07-os/13-boot/06-system-initialization.md)
+
+  - **[14-SECURITY/](../07-os/14-security/)**
+    - [README.md](../07-os/14-security/README.md)
+    - [01-security-models.md](../07-os/14-security/01-security-models.md)
+    - [02-access-control.md](../07-os/14-security/02-access-control.md)
+    - [03-sandboxing.md](../07-os/14-security/03-sandboxing.md)
+    - [04-isolation.md](../07-os/14-security/04-isolation.md)
+    - [05-encryption.md](../07-os/14-security/05-encryption.md)
+    - [06-secure-boot.md](../07-os/14-security/06-secure-boot.md)
+    - [07-security-hardening.md](../07-os/14-security/07-security-hardening.md)
+
+  - **[15-VIRTUALIZATION/](../07-os/15-virtualization/)**
+    - [README.md](../07-os/15-virtualization/README.md)
+    - [01-virtualization-basics.md](../07-os/15-virtualization/01-virtualization-basics.md)
+    - [02-hypervisors.md](../07-os/15-virtualization/02-hypervisors.md)
+    - [03-type-1-vs-type-2.md](../07-os/15-virtualization/03-type-1-vs-type-2.md)
+    - [04-vm.md](../07-os/15-virtualization/04-vm.md)
+    - [05-containers.md](../07-os/15-virtualization/05-containers.md)
+    - [06-networking.md](../07-os/15-virtualization/06-networking.md)
+    - [07-storage.md](../07-os/15-virtualization/07-storage.md)
+    - [08-device-passthrough.md](../07-os/15-virtualization/08-device-passthrough.md)
+
+  - **[16-MONITORING/](../07-os/16-monitoring/)**
+    - [README.md](../07-os/16-monitoring/README.md)
+    - [01-cpu.md](../07-os/16-monitoring/01-cpu.md)
+    - [02-memory.md](../07-os/16-monitoring/02-memory.md)
+    - [03-storage.md](../07-os/16-monitoring/03-storage.md)
+    - [04-network.md](../07-os/16-monitoring/04-network.md)
+    - [05-processes.md](../07-os/16-monitoring/05-processes.md)
+    - [06-system-logs.md](../07-os/16-monitoring/06-system-logs.md)
+    - [07-performance-monitoring.md](../07-os/16-monitoring/07-performance-monitoring.md)
 
 ---
 
-# `08-devops`
+# 08-DEVOPS
 
-```text
-08-devops/
-│
-├── README.md
-│
-├── 01-devops-fundamentals/
-│   ├── README.md
-|   |
-│   ├── 01-devops-basics.md
-│   ├── 02-development-to-production.md
-│   ├── 03-devops-lifecycle.md
-│   ├── 04-infrastructure.md
-│   ├── 05-automation.md
-│   ├── 06-configuration-management.md
-│   └── 07-devops-best-practices.md
-│
-├── 02-docker/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-docker-basics.md
-│   │   ├── 02-installation.md
-│   │   ├── 03-docker-cli.md
-│   │   └── 04-docker-architecture.md
-│   │
-│   ├── 02-images/
-│   │   ├── 01-images.md
-│   │   ├── 02-dockerfile.md
-│   │   ├── 03-image-layers.md
-│   │   ├── 04-build-context.md
-│   │   ├── 05-build-cache.md
-│   │   └── 06-multi-stage-builds.md
-│   │
-│   ├── 03-containers/
-│   │   ├── 01-containers.md
-│   │   ├── 02-container-lifecycle.md
-│   │   ├── 03-container-commands.md
-│   │   ├── 04-environment-variables.md
-│   │   ├── 05-container-resources.md
-│   │   └── 06-container-healthchecks.md
-│   │
-│   ├── 04-volumes/
-│   │   ├── 01-volumes.md
-│   │   ├── 02-bind-mounts.md
-│   │   ├── 03-named-volumes.md
-│   │   ├── 04-volume-backup.md
-│   │   └── 05-storage-management.md
-│   │
-│   ├── 05-networks/
-│   │   ├── 01-network-basics.md
-│   │   ├── 02-bridge-network.md
-│   │   ├── 03-host-network.md
-│   │   ├── 04-container-networking.md
-│   │   └── 05-dns-and-service-discovery.md
-│   │
-│   ├── 06-compose/
-│   │   ├── 01-compose-basics.md
-│   │   ├── 02-compose-file.md
-│   │   ├── 03-services.md
-│   │   ├── 04-networks.md
-│   │   ├── 05-volumes.md
-│   │   ├── 06-environment.md
-│   │   └── 07-production-compose.md
-│   │
-│   ├── 07-registry/
-│   │   ├── 01-container-registries.md
-│   │   ├── 02-push-and-pull.md
-│   │   ├── 03-private-registry.md
-│   │   └── 04-image-tagging.md
-│   │
-│   └── 08-security/
-│       ├── 01-container-security.md
-│       ├── 02-image-security.md
-│       ├── 03-secrets.md
-│       └── 04-rootless-containers.md
-│
-├── 03-kubernetes/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-kubernetes-basics.md
-│   │   ├── 02-cluster-architecture.md
-│   │   ├── 03-control-plane.md
-│   │   ├── 04-nodes.md
-│   │   └── 05-kubectl.md
-│   │
-│   ├── 02-workloads/
-│   │   ├── 01-pods.md
-│   │   ├── 02-deployments.md
-│   │   ├── 03-replicasets.md
-│   │   ├── 04-statefulsets.md
-│   │   ├── 05-daemonsets.md
-│   │   └── 06-jobs-and-cronjobs.md
-│   │
-│   ├── 03-services/
-│   │   ├── 01-services.md
-│   │   ├── 02-cluster-ip.md
-│   │   ├── 03-node-port.md
-│   │   ├── 04-load-balancer.md
-│   │   └── 05-service-discovery.md
-│   │
-│   ├── 04-networking/
-│   │   ├── 01-networking-basics.md
-│   │   ├── 02-ingress.md
-│   │   ├── 03-network-policies.md
-│   │   └── 04-dns.md
-│   │
-│   ├── 05-storage/
-│   │   ├── 01-volumes.md
-│   │   ├── 02-persistent-volumes.md
-│   │   ├── 03-persistent-volume-claims.md
-│   │   └── 04-storage-classes.md
-│   │
-│   ├── 06-configuration/
-│   │   ├── 01-configmaps.md
-│   │   ├── 02-secrets.md
-│   │   └── 03-environment-configuration.md
-│   │
-│   ├── 07-security/
-│   │   ├── 01-rbac.md
-│   │   ├── 02-service-accounts.md
-│   │   ├── 03-security-context.md
-│   │   └── 04-network-policies.md
-│   │
-│   ├── 08-helm/
-│   │   ├── 01-helm-basics.md
-│   │   ├── 02-charts.md
-│   │   ├── 03-values.md
-│   │   └── 04-templates.md
-│   │
-│   └── 09-troubleshooting/
-│       ├── 01-pod-debugging.md
-│       ├── 02-service-debugging.md
-│       ├── 03-network-debugging.md
-│       └── 04-resource-debugging.md
-│
-├── 04-nginx/
-│   ├── README.md
-|   |
-│   ├── 01-installation.md
-│   ├── 02-configuration.md
-│   ├── 03-server-blocks.md
-│   ├── 04-reverse-proxy.md
-│   ├── 05-load-balancing.md
-│   ├── 06-static-files.md
-│   ├── 07-ssl-tls.md
-│   ├── 08-caching.md
-│   ├── 09-security.md
-│   ├── 10-logging.md
-│   └── 11-troubleshooting.md
-│
-├── 05-ci-cd/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-ci-cd-basics.md
-│   │   ├── 02-continuous-integration.md
-│   │   ├── 03-continuous-delivery.md
-│   │   ├── 04-continuous-deployment.md
-│   │   └── 05-pipeline-design.md
-│   │
-│   ├── 02-pipelines/
-│   │   ├── 01-pipeline-stages.md
-│   │   ├── 02-build.md
-│   │   ├── 03-test.md
-│   │   ├── 04-package.md
-│   │   ├── 05-deploy.md
-│   │   └── 06-rollback.md
-│   │
-│   ├── 03-strategies/
-│   │   ├── 01-blue-green.md
-│   │   ├── 02-canary.md
-│   │   ├── 03-rolling-deployment.md
-│   │   └── 04-feature-flags.md
-│   │
-│   └── 04-security/
-│       ├── 01-secrets.md
-│       ├── 02-artifact-security.md
-│       ├── 03-dependency-scanning.md
-│       └── 04-pipeline-security.md
-│
-├── 06-github-actions/
-│   ├── README.md
-|   |
-│   ├── 01-basics.md
-│   ├── 02-workflows.md
-│   ├── 03-events.md
-│   ├── 04-jobs.md
-│   ├── 05-steps.md
-│   ├── 06-actions.md
-│   ├── 07-runners.md
-│   ├── 08-secrets.md
-│   ├── 09-environments.md
-│   ├── 10-artifacts.md
-│   ├── 11-matrices.md
-│   ├── 12-reusable-workflows.md
-│   ├── 13-deployment.md
-│   └── 14-troubleshooting.md
-│
-├── 07-deployment/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-deployment-basics.md
-│   │   ├── 02-environments.md
-│   │   ├── 03-configuration.md
-│   │   └── 04-deployment-checklist.md
-│   │
-│   ├── 02-strategies/
-│   │   ├── 01-recreate.md
-│   │   ├── 02-rolling.md
-│   │   ├── 03-blue-green.md
-│   │   ├── 04-canary.md
-│   │   └── 05-shadow.md
-│   │
-│   ├── 03-release/
-│   │   ├── 01-release-management.md
-│   │   ├── 02-versioning.md
-│   │   ├── 03-release-notes.md
-│   │   └── 04-rollback.md
-│   │
-│   └── 04-zero-downtime/
-│       ├── 01-health-checks.md
-│       ├── 02-load-balancing.md
-│       ├── 03-graceful-shutdown.md
-│       └── 04-database-migrations.md
-│
-├── 08-terraform/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-terraform-basics.md
-│   │   ├── 02-installation.md
-│   │   ├── 03-providers.md
-│   │   ├── 04-resources.md
-│   │   └── 05-data-sources.md
-│   │
-│   ├── 02-configuration/
-│   │   ├── 01-variables.md
-│   │   ├── 02-locals.md
-│   │   ├── 03-outputs.md
-│   │   ├── 04-expressions.md
-│   │   └── 05-functions.md
-│   │
-│   ├── 03-state/
-│   │   ├── 01-state-basics.md
-│   │   ├── 02-state-files.md
-│   │   ├── 03-remote-state.md
-│   │   ├── 04-state-locking.md
-│   │   └── 05-state-management.md
-│   │
-│   ├── 04-modules/
-│   │   ├── 01-modules.md
-│   │   ├── 02-module-structure.md
-│   │   ├── 03-reusable-modules.md
-│   │   └── 04-module-versioning.md
-│   │
-│   └── 05-workflow/
-│       ├── 01-init.md
-│       ├── 02-plan.md
-│       ├── 03-apply.md
-│       ├── 04-destroy.md
-│       └── 05-import.md
-│
-├── 09-ansible/
-│   ├── README.md
-│   │
-│   ├── 01-basics/
-│   │   ├── 01-ansible-basics.md
-│   │   ├── 02-inventory.md
-│   │   ├── 03-configuration.md
-│   │   └── 04-ad-hoc-commands.md
-│   │
-│   ├── 02-playbooks/
-│   │   ├── 01-playbooks.md
-│   │   ├── 02-tasks.md
-│   │   ├── 03-handlers.md
-│   │   ├── 04-variables.md
-│   │   └── 05-conditionals.md
-│   │
-│   ├── 03-roles/
-│   │   ├── 01-roles.md
-│   │   ├── 02-role-structure.md
-│   │   └── 03-reusable-roles.md
-│   │
-│   └── 04-advanced/
-│       ├── 01-vault.md
-│       ├── 02-templates.md
-│       ├── 03-loops.md
-│       └── 04-error-handling.md
-│
-├── 10-monitoring/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-monitoring-basics.md
-│   │   ├── 02-metrics.md
-│   │   ├── 03-logs.md
-│   │   ├── 04-traces.md
-│   │   └── 05-alerts.md
-│   │
-│   ├── 02-prometheus/
-│   │   ├── 01-basics.md
-│   │   ├── 02-metrics.md
-│   │   ├── 03-promql.md
-│   │   ├── 04-targets.md
-│   │   └── 05-alerting.md
-│   │
-│   ├── 03-grafana/
-│   │   ├── 01-basics.md
-│   │   ├── 02-dashboards.md
-│   │   ├── 03-data-sources.md
-│   │   └── 04-alerting.md
-│   │
-│   └── 04-health-checks/
-│       ├── 01-health-checks.md
-│       ├── 02-readiness.md
-│       ├── 03-liveness.md
-│       └── 04-startup-checks.md
-│
-├── 11-logging/
-│   ├── README.md
-│   │
-│   ├── 01-fundamentals/
-│   │   ├── 01-logging-basics.md
-│   │   ├── 02-log-levels.md
-│   │   ├── 03-structured-logging.md
-│   │   └── 04-log-formats.md
-│   │
-│   ├── 02-collection/
-│   │   ├── 01-log-collection.md
-│   │   ├── 02-log-forwarding.md
-│   │   ├── 03-log-aggregation.md
-│   │   └── 04-log-rotation.md
-│   │
-│   ├── 03-tools/
-│   │   ├── 01-journald.md
-│   │   ├── 02-fluent-bit.md
-│   │   ├── 03-fluentd.md
-│   │   ├── 04-logstash.md
-│   │   └── 05-elasticsearch.md
-│   │
-│   └── 04-analysis/
-│       ├── 01-log-search.md
-│       ├── 02-log-correlation.md
-│       ├── 03-error-analysis.md
-│       └── 04-log-retention.md
-│
-├── 12-secrets/
-│   ├── README.md
-|   |
-│   ├── 01-secrets-management.md
-│   ├── 02-environment-variables.md
-│   ├── 03-secret-storage.md
-│   ├── 04-secret-rotation.md
-│   ├── 05-vault.md
-│   └── 06-secret-security.md
-│
-├── 13-infrastructure/
-│   ├── README.md
-|   |
-│   ├── 01-infrastructure-basics.md
-│   ├── 02-servers.md
-│   ├── 03-networking.md
-│   ├── 04-storage.md
-│   ├── 05-load-balancers.md
-│   ├── 06-dns.md
-│   └── 07-infrastructure-patterns.md
-│
-├── 14-security/
-│   ├── README.md
-|   |
-│   ├── 01-devops-security.md
-│   ├── 02-container-security.md
-│   ├── 03-ci-cd-security.md
-│   ├── 04-secrets-security.md
-│   ├── 05-image-scanning.md
-│   └── 06-supply-chain-security.md
-│
-└── 15-troubleshooting/
-    ├── README.md
-    |
-    ├── 01-docker.md
-    ├── 02-kubernetes.md
-    ├── 03-nginx.md
-    ├── 04-ci-cd.md
-    ├── 05-deployment.md
-    ├── 06-terraform.md
-    ├── 07-ansible.md
-    ├── 08-monitoring.md
-    └── 09-logging.md
-```
+- **[08-DEVOPS/](../08-devops/)**
+  - [README.md](../08-devops/README.md)
+  - **[01-DEVOPS-FUNDAMENTALS/](../08-devops/01-devops-fundamentals/)**
+    - [README.md](../08-devops/01-devops-fundamentals/README.md)
+    - [01-devops-basics.md](../08-devops/01-devops-fundamentals/01-devops-basics.md)
+    - [02-development-to-production.md](../08-devops/01-devops-fundamentals/02-development-to-production.md)
+    - [03-devops-lifecycle.md](../08-devops/01-devops-fundamentals/03-devops-lifecycle.md)
+    - [04-infrastructure.md](../08-devops/01-devops-fundamentals/04-infrastructure.md)
+    - [05-automation.md](../08-devops/01-devops-fundamentals/05-automation.md)
+    - [06-configuration-management.md](../08-devops/01-devops-fundamentals/06-configuration-management.md)
+    - [07-devops-best-practices.md](../08-devops/01-devops-fundamentals/07-devops-best-practices.md)
+  - **[02-DOCKER/](../08-devops/02-docker/)**
+    - [README.md](../08-devops/02-docker/README.md)
+    - **[01-BASICS/](../08-devops/02-docker/01-basics/)**
+      - [01-docker-basics.md](../08-devops/02-docker/01-basics/01-docker-basics.md)
+      - [02-installation.md](../08-devops/02-docker/01-basics/02-installation.md)
+      - [03-docker-cli.md](../08-devops/02-docker/01-basics/03-docker-cli.md)
+      - [04-docker-architecture.md](../08-devops/02-docker/01-basics/04-docker-architecture.md)
+    - **[02-IMAGES/](../08-devops/02-docker/02-images/)**
+      - [01-images.md](../08-devops/02-docker/02-images/01-images.md)
+      - [02-dockerfile.md](../08-devops/02-docker/02-images/02-dockerfile.md)
+      - [03-image-layers.md](../08-devops/02-docker/02-images/03-image-layers.md)
+      - [04-build-context.md](../08-devops/02-docker/02-images/04-build-context.md)
+      - [05-build-cache.md](../08-devops/02-docker/02-images/05-build-cache.md)
+      - [06-multi-stage-builds.md](../08-devops/02-docker/02-images/06-multi-stage-builds.md)
+    - **[03-CONTAINERS/](../08-devops/02-docker/03-containers/)**
+      - [01-containers.md](../08-devops/02-docker/03-containers/01-containers.md)
+      - [02-container-lifecycle.md](../08-devops/02-docker/03-containers/02-container-lifecycle.md)
+      - [03-container-commands.md](../08-devops/02-docker/03-containers/03-container-commands.md)
+      - [04-environment-variables.md](../08-devops/02-docker/03-containers/04-environment-variables.md)
+      - [05-container-resources.md](../08-devops/02-docker/03-containers/05-container-resources.md)
+      - [06-container-healthchecks.md](../08-devops/02-docker/03-containers/06-container-healthchecks.md)
+    - **[04-VOLUMES/](../08-devops/02-docker/04-volumes/)**
+      - [01-volumes.md](../08-devops/02-docker/04-volumes/01-volumes.md)
+      - [02-bind-mounts.md](../08-devops/02-docker/04-volumes/02-bind-mounts.md)
+      - [03-named-volumes.md](../08-devops/02-docker/04-volumes/03-named-volumes.md)
+      - [04-volume-backup.md](../08-devops/02-docker/04-volumes/04-volume-backup.md)
+      - [05-storage-management.md](../08-devops/02-docker/04-volumes/05-storage-management.md)
+    - **[05-NETWORKS/](../08-devops/02-docker/05-networks/)**
+      - [01-network-basics.md](../08-devops/02-docker/05-networks/01-network-basics.md)
+      - [02-bridge-network.md](../08-devops/02-docker/05-networks/02-bridge-network.md)
+      - [03-host-network.md](../08-devops/02-docker/05-networks/03-host-network.md)
+      - [04-container-networking.md](../08-devops/02-docker/05-networks/04-container-networking.md)
+      - [05-dns-and-service-discovery.md](../08-devops/02-docker/05-networks/05-dns-and-service-discovery.md)
+    - **[06-COMPOSE/](../08-devops/02-docker/06-compose/)**
+      - [01-compose-basics.md](../08-devops/02-docker/06-compose/01-compose-basics.md)
+      - [02-compose-file.md](../08-devops/02-docker/06-compose/02-compose-file.md)
+      - [03-services.md](../08-devops/02-docker/06-compose/03-services.md)
+      - [04-networks.md](../08-devops/02-docker/06-compose/04-networks.md)
+      - [05-volumes.md](../08-devops/02-docker/06-compose/05-volumes.md)
+      - [06-environment.md](../08-devops/02-docker/06-compose/06-environment.md)
+      - [07-production-compose.md](../08-devops/02-docker/06-compose/07-production-compose.md)
+    - **[07-REGISTRY/](../08-devops/02-docker/07-registry/)**
+      - [01-container-registries.md](../08-devops/02-docker/07-registry/01-container-registries.md)
+      - [02-push-and-pull.md](../08-devops/02-docker/07-registry/02-push-and-pull.md)
+      - [03-private-registry.md](../08-devops/02-docker/07-registry/03-private-registry.md)
+      - [04-image-tagging.md](../08-devops/02-docker/07-registry/04-image-tagging.md)
+    - **[08-SECURITY/](../08-devops/02-docker/08-security/)**
+      - [01-container-security.md](../08-devops/02-docker/08-security/01-container-security.md)
+      - [02-image-security.md](../08-devops/02-docker/08-security/02-image-security.md)
+      - [03-secrets.md](../08-devops/02-docker/08-security/03-secrets.md)
+      - [04-rootless-containers.md](../08-devops/02-docker/08-security/04-rootless-containers.md)
+  - **[03-KUBERNETES/](../08-devops/03-kubernetes/)**
+    - [README.md](../08-devops/03-kubernetes/README.md)
+    - **[01-FUNDAMENTALS/](../08-devops/03-kubernetes/01-fundamentals/)**
+      - [01-kubernetes-basics.md](../08-devops/03-kubernetes/01-fundamentals/01-kubernetes-basics.md)
+      - [02-cluster-architecture.md](../08-devops/03-kubernetes/01-fundamentals/02-cluster-architecture.md)
+      - [03-control-plane.md](../08-devops/03-kubernetes/01-fundamentals/03-control-plane.md)
+      - [04-nodes.md](../08-devops/03-kubernetes/01-fundamentals/04-nodes.md)
+      - [05-kubectl.md](../08-devops/03-kubernetes/01-fundamentals/05-kubectl.md)
+    - **[02-WORKLOADS/](../08-devops/03-kubernetes/02-workloads/)**
+      - [01-pods.md](../08-devops/03-kubernetes/02-workloads/01-pods.md)
+      - [02-deployments.md](../08-devops/03-kubernetes/02-workloads/02-deployments.md)
+      - [03-replicasets.md](../08-devops/03-kubernetes/02-workloads/03-replicasets.md)
+      - [04-statefulsets.md](../08-devops/03-kubernetes/02-workloads/04-statefulsets.md)
+      - [05-daemonsets.md](../08-devops/03-kubernetes/02-workloads/05-daemonsets.md)
+      - [06-jobs-and-cronjobs.md](../08-devops/03-kubernetes/02-workloads/06-jobs-and-cronjobs.md)
+    - **[03-SERVICES/](../08-devops/03-kubernetes/03-services/)**
+      - [01-services.md](../08-devops/03-kubernetes/03-services/01-services.md)
+      - [02-cluster-ip.md](../08-devops/03-kubernetes/03-services/02-cluster-ip.md)
+      - [03-node-port.md](../08-devops/03-kubernetes/03-services/03-node-port.md)
+      - [04-load-balancer.md](../08-devops/03-kubernetes/03-services/04-load-balancer.md)
+      - [05-service-discovery.md](../08-devops/03-kubernetes/03-services/05-service-discovery.md)
+    - **[04-NETWORKING/](../08-devops/03-kubernetes/04-networking/)**
+      - [01-networking-basics.md](../08-devops/03-kubernetes/04-networking/01-networking-basics.md)
+      - [02-ingress.md](../08-devops/03-kubernetes/04-networking/02-ingress.md)
+      - [03-network-policies.md](../08-devops/03-kubernetes/04-networking/03-network-policies.md)
+      - [04-dns.md](../08-devops/03-kubernetes/04-networking/04-dns.md)
+    - **[05-STORAGE/](../08-devops/03-kubernetes/05-storage/)**
+      - [01-volumes.md](../08-devops/03-kubernetes/05-storage/01-volumes.md)
+      - [02-persistent-volumes.md](../08-devops/03-kubernetes/05-storage/02-persistent-volumes.md)
+      - [03-persistent-volume-claims.md](../08-devops/03-kubernetes/05-storage/03-persistent-volume-claims.md)
+      - [04-storage-classes.md](../08-devops/03-kubernetes/05-storage/04-storage-classes.md)
+    - **[06-CONFIGURATION/](../08-devops/03-kubernetes/06-configuration/)**
+      - [01-configmaps.md](../08-devops/03-kubernetes/06-configuration/01-configmaps.md)
+      - [02-secrets.md](../08-devops/03-kubernetes/06-configuration/02-secrets.md)
+      - [03-environment-configuration.md](../08-devops/03-kubernetes/06-configuration/03-environment-configuration.md)
+    - **[07-SECURITY/](../08-devops/03-kubernetes/07-security/)**
+      - [01-rbac.md](../08-devops/03-kubernetes/07-security/01-rbac.md)
+      - [02-service-accounts.md](../08-devops/03-kubernetes/07-security/02-service-accounts.md)
+      - [03-security-context.md](../08-devops/03-kubernetes/07-security/03-security-context.md)
+      - [04-network-policies.md](../08-devops/03-kubernetes/07-security/04-network-policies.md)
+    - **[08-HELM/](../08-devops/03-kubernetes/08-helm/)**
+      - [01-helm-basics.md](../08-devops/03-kubernetes/08-helm/01-helm-basics.md)
+      - [02-charts.md](../08-devops/03-kubernetes/08-helm/02-charts.md)
+      - [03-values.md](../08-devops/03-kubernetes/08-helm/03-values.md)
+      - [04-templates.md](../08-devops/03-kubernetes/08-helm/04-templates.md)
+    - **[09-TROUBLESHOOTING/](../08-devops/03-kubernetes/09-troubleshooting/)**
+      - [01-pod-debugging.md](../08-devops/03-kubernetes/09-troubleshooting/01-pod-debugging.md)
+      - [02-service-debugging.md](../08-devops/03-kubernetes/09-troubleshooting/02-service-debugging.md)
+      - [03-network-debugging.md](../08-devops/03-kubernetes/09-troubleshooting/03-network-debugging.md)
+      - [04-resource-debugging.md](../08-devops/03-kubernetes/09-troubleshooting/04-resource-debugging.md)
+  - **[04-NGINX/](../08-devops/04-nginx/)**
+    - [README.md](../08-devops/04-nginx/README.md)
+    - [01-installation.md](../08-devops/04-nginx/01-installation.md)
+    - [02-configuration.md](../08-devops/04-nginx/02-configuration.md)
+    - [03-server-blocks.md](../08-devops/04-nginx/03-server-blocks.md)
+    - [04-reverse-proxy.md](../08-devops/04-nginx/04-reverse-proxy.md)
+    - [05-load-balancing.md](../08-devops/04-nginx/05-load-balancing.md)
+    - [06-static-files.md](../08-devops/04-nginx/06-static-files.md)
+    - [07-ssl-tls.md](../08-devops/04-nginx/07-ssl-tls.md)
+    - [08-caching.md](../08-devops/04-nginx/08-caching.md)
+    - [09-security.md](../08-devops/04-nginx/09-security.md)
+    - [10-logging.md](../08-devops/04-nginx/10-logging.md)
+    - [11-troubleshooting.md](../08-devops/04-nginx/11-troubleshooting.md)
+  - **[05-CI-CD/](../08-devops/05-ci-cd/)**
+    - [README.md](../08-devops/05-ci-cd/README.md)
+    - **[01-FUNDAMENTALS/](../08-devops/05-ci-cd/01-fundamentals/)**
+      - [01-ci-cd-basics.md](../08-devops/05-ci-cd/01-fundamentals/01-ci-cd-basics.md)
+      - [02-continuous-integration.md](../08-devops/05-ci-cd/01-fundamentals/02-continuous-integration.md)
+      - [03-continuous-delivery.md](../08-devops/05-ci-cd/01-fundamentals/03-continuous-delivery.md)
+      - [04-continuous-deployment.md](../08-devops/05-ci-cd/01-fundamentals/04-continuous-deployment.md)
+      - [05-pipeline-design.md](../08-devops/05-ci-cd/01-fundamentals/05-pipeline-design.md)
+    - **[02-PIPELINES/](../08-devops/05-ci-cd/02-pipelines/)**
+      - [01-pipeline-stages.md](../08-devops/05-ci-cd/02-pipelines/01-pipeline-stages.md)
+      - [02-build.md](../08-devops/05-ci-cd/02-pipelines/02-build.md)
+      - [03-test.md](../08-devops/05-ci-cd/02-pipelines/03-test.md)
+      - [04-package.md](../08-devops/05-ci-cd/02-pipelines/04-package.md)
+      - [05-deploy.md](../08-devops/05-ci-cd/02-pipelines/05-deploy.md)
+      - [06-rollback.md](../08-devops/05-ci-cd/02-pipelines/06-rollback.md)
+    - **[03-STRATEGIES/](../08-devops/05-ci-cd/03-strategies/)**
+      - [01-blue-green.md](../08-devops/05-ci-cd/03-strategies/01-blue-green.md)
+      - [02-canary.md](../08-devops/05-ci-cd/03-strategies/02-canary.md)
+      - [03-rolling-deployment.md](../08-devops/05-ci-cd/03-strategies/03-rolling-deployment.md)
+      - [04-feature-flags.md](../08-devops/05-ci-cd/03-strategies/04-feature-flags.md)
+    - **[04-SECURITY/](../08-devops/05-ci-cd/04-security/)**
+      - [01-secrets.md](../08-devops/05-ci-cd/04-security/01-secrets.md)
+      - [02-artifact-security.md](../08-devops/05-ci-cd/04-security/02-artifact-security.md)
+      - [03-dependency-scanning.md](../08-devops/05-ci-cd/04-security/03-dependency-scanning.md)
+      - [04-pipeline-security.md](../08-devops/05-ci-cd/04-security/04-pipeline-security.md)
+  - **[06-GITHUB-ACTIONS/](../08-devops/06-github-actions/)**
+    - [README.md](../08-devops/06-github-actions/README.md)
+    - [01-basics.md](../08-devops/06-github-actions/01-basics.md)
+    - [02-workflows.md](../08-devops/06-github-actions/02-workflows.md)
+    - [03-events.md](../08-devops/06-github-actions/03-events.md)
+    - [04-jobs.md](../08-devops/06-github-actions/04-jobs.md)
+    - [05-steps.md](../08-devops/06-github-actions/05-steps.md)
+    - [06-actions.md](../08-devops/06-github-actions/06-actions.md)
+    - [07-runners.md](../08-devops/06-github-actions/07-runners.md)
+    - [08-secrets.md](../08-devops/06-github-actions/08-secrets.md)
+    - [09-environments.md](../08-devops/06-github-actions/09-environments.md)
+    - [10-artifacts.md](../08-devops/06-github-actions/10-artifacts.md)
+    - [11-matrices.md](../08-devops/06-github-actions/11-matrices.md)
+    - [12-reusable-workflows.md](../08-devops/06-github-actions/12-reusable-workflows.md)
+    - [13-deployment.md](../08-devops/06-github-actions/13-deployment.md)
+    - [14-troubleshooting.md](../08-devops/06-github-actions/14-troubleshooting.md)
+  - **[07-DEPLOYMENT/](../08-devops/07-deployment/)**
+    - [README.md](../08-devops/07-deployment/README.md)
+    - **[01-FUNDAMENTALS/](../08-devops/07-deployment/01-fundamentals/)**
+      - [01-deployment-basics.md](../08-devops/07-deployment/01-fundamentals/01-deployment-basics.md)
+      - [02-environments.md](../08-devops/07-deployment/01-fundamentals/02-environments.md)
+      - [03-configuration.md](../08-devops/07-deployment/01-fundamentals/03-configuration.md)
+      - [04-deployment-checklist.md](../08-devops/07-deployment/01-fundamentals/04-deployment-checklist.md)
+    - **[02-STRATEGIES/](../08-devops/07-deployment/02-strategies/)**
+      - [01-recreate.md](../08-devops/07-deployment/02-strategies/01-recreate.md)
+      - [02-rolling.md](../08-devops/07-deployment/02-strategies/02-rolling.md)
+      - [03-blue-green.md](../08-devops/07-deployment/02-strategies/03-blue-green.md)
+      - [04-canary.md](../08-devops/07-deployment/02-strategies/04-canary.md)
+      - [05-shadow.md](../08-devops/07-deployment/02-strategies/05-shadow.md)
+    - **[03-RELEASE/](../08-devops/07-deployment/03-release/)**
+      - [01-release-management.md](../08-devops/07-deployment/03-release/01-release-management.md)
+      - [02-versioning.md](../08-devops/07-deployment/03-release/02-versioning.md)
+      - [03-release-notes.md](../08-devops/07-deployment/03-release/03-release-notes.md)
+      - [04-rollback.md](../08-devops/07-deployment/03-release/04-rollback.md)
+    - **[04-ZERO-DOWNTIME/](../08-devops/07-deployment/04-zero-downtime/)**
+      - [01-health-checks.md](../08-devops/07-deployment/04-zero-downtime/01-health-checks.md)
+      - [02-load-balancing.md](../08-devops/07-deployment/04-zero-downtime/02-load-balancing.md)
+      - [03-graceful-shutdown.md](../08-devops/07-deployment/04-zero-downtime/03-graceful-shutdown.md)
+      - [04-database-migrations.md](../08-devops/07-deployment/04-zero-downtime/04-database-migrations.md)
+  - **[08-TERRAFORM/](../08-devops/08-terraform/)**
+    - [README.md](../08-devops/08-terraform/README.md)
+    - **[01-BASICS/](../08-devops/08-terraform/01-basics/)**
+      - [01-terraform-basics.md](../08-devops/08-terraform/01-basics/01-terraform-basics.md)
+      - [02-installation.md](../08-devops/08-terraform/01-basics/02-installation.md)
+      - [03-providers.md](../08-devops/08-terraform/01-basics/03-providers.md)
+      - [04-resources.md](../08-devops/08-terraform/01-basics/04-resources.md)
+      - [05-data-sources.md](../08-devops/08-terraform/01-basics/05-data-sources.md)
+    - **[02-CONFIGURATION/](../08-devops/08-terraform/02-configuration/)**
+      - [01-variables.md](../08-devops/08-terraform/02-configuration/01-variables.md)
+      - [02-locals.md](../08-devops/08-terraform/02-configuration/02-locals.md)
+      - [03-outputs.md](../08-devops/08-terraform/02-configuration/03-outputs.md)
+      - [04-expressions.md](../08-devops/08-terraform/02-configuration/04-expressions.md)
+      - [05-functions.md](../08-devops/08-terraform/02-configuration/05-functions.md)
+    - **[03-STATE/](../08-devops/08-terraform/03-state/)**
+      - [01-state-basics.md](../08-devops/08-terraform/03-state/01-state-basics.md)
+      - [02-state-files.md](../08-devops/08-terraform/03-state/02-state-files.md)
+      - [03-remote-state.md](../08-devops/08-terraform/03-state/03-remote-state.md)
+      - [04-state-locking.md](../08-devops/08-terraform/03-state/04-state-locking.md)
+      - [05-state-management.md](../08-devops/08-terraform/03-state/05-state-management.md)
+    - **[04-MODULES/](../08-devops/08-terraform/04-modules/)**
+      - [01-modules.md](../08-devops/08-terraform/04-modules/01-modules.md)
+      - [02-module-structure.md](../08-devops/08-terraform/04-modules/02-module-structure.md)
+      - [03-reusable-modules.md](../08-devops/08-terraform/04-modules/03-reusable-modules.md)
+      - [04-module-versioning.md](../08-devops/08-terraform/04-modules/04-module-versioning.md)
+    - **[05-WORKFLOW/](../08-devops/08-terraform/05-workflow/)**
+      - [01-init.md](../08-devops/08-terraform/05-workflow/01-init.md)
+      - [02-plan.md](../08-devops/08-terraform/05-workflow/02-plan.md)
+      - [03-apply.md](../08-devops/08-terraform/05-workflow/03-apply.md)
+      - [04-destroy.md](../08-devops/08-terraform/05-workflow/04-destroy.md)
+      - [05-import.md](../08-devops/08-terraform/05-workflow/05-import.md)
+  - **[09-ANSIBLE/](../08-devops/09-ansible/)**
+    - [README.md](../08-devops/09-ansible/README.md)
+    - **[01-BASICS/](../08-devops/09-ansible/01-basics/)**
+      - [01-ansible-basics.md](../08-devops/09-ansible/01-basics/01-ansible-basics.md)
+      - [02-inventory.md](../08-devops/09-ansible/01-basics/02-inventory.md)
+      - [03-configuration.md](../08-devops/09-ansible/01-basics/03-configuration.md)
+      - [04-ad-hoc-commands.md](../08-devops/09-ansible/01-basics/04-ad-hoc-commands.md)
+    - **[02-PLAYBOOKS/](../08-devops/09-ansible/02-playbooks/)**
+      - [01-playbooks.md](../08-devops/09-ansible/02-playbooks/01-playbooks.md)
+      - [02-tasks.md](../08-devops/09-ansible/02-playbooks/02-tasks.md)
+      - [03-handlers.md](../08-devops/09-ansible/02-playbooks/03-handlers.md)
+      - [04-variables.md](../08-devops/09-ansible/02-playbooks/04-variables.md)
+      - [05-conditionals.md](../08-devops/09-ansible/02-playbooks/05-conditionals.md)
+    - **[03-ROLES/](../08-devops/09-ansible/03-roles/)**
+      - [01-roles.md](../08-devops/09-ansible/03-roles/01-roles.md)
+      - [02-role-structure.md](../08-devops/09-ansible/03-roles/02-role-structure.md)
+      - [03-reusable-roles.md](../08-devops/09-ansible/03-roles/03-reusable-roles.md)
+    - **[04-ADVANCED/](../08-devops/09-ansible/04-advanced/)**
+      - [01-vault.md](../08-devops/09-ansible/04-advanced/01-vault.md)
+      - [02-templates.md](../08-devops/09-ansible/04-advanced/02-templates.md)
+      - [03-loops.md](../08-devops/09-ansible/04-advanced/03-loops.md)
+      - [04-error-handling.md](../08-devops/09-ansible/04-advanced/04-error-handling.md)
+  - **[10-MONITORING/](../08-devops/10-monitoring/)**
+    - [README.md](../08-devops/10-monitoring/README.md)
+    - **[01-FUNDAMENTALS/](../08-devops/10-monitoring/01-fundamentals/)**
+      - [01-monitoring-basics.md](../08-devops/10-monitoring/01-fundamentals/01-monitoring-basics.md)
+      - [02-metrics.md](../08-devops/10-monitoring/01-fundamentals/02-metrics.md)
+      - [03-logs.md](../08-devops/10-monitoring/01-fundamentals/03-logs.md)
+      - [04-traces.md](../08-devops/10-monitoring/01-fundamentals/04-traces.md)
+      - [05-alerts.md](../08-devops/10-monitoring/01-fundamentals/05-alerts.md)
+    - **[02-PROMETHEUS/](../08-devops/10-monitoring/02-prometheus/)**
+      - [01-basics.md](../08-devops/10-monitoring/02-prometheus/01-basics.md)
+      - [02-metrics.md](../08-devops/10-monitoring/02-prometheus/02-metrics.md)
+      - [03-promql.md](../08-devops/10-monitoring/02-prometheus/03-promql.md)
+      - [04-targets.md](../08-devops/10-monitoring/02-prometheus/04-targets.md)
+      - [05-alerting.md](../08-devops/10-monitoring/02-prometheus/05-alerting.md)
+    - **[03-GRAFANA/](../08-devops/10-monitoring/03-grafana/)**
+      - [01-basics.md](../08-devops/10-monitoring/03-grafana/01-basics.md)
+      - [02-dashboards.md](../08-devops/10-monitoring/03-grafana/02-dashboards.md)
+      - [03-data-sources.md](../08-devops/10-monitoring/03-grafana/03-data-sources.md)
+      - [04-alerting.md](../08-devops/10-monitoring/03-grafana/04-alerting.md)
+    - **[04-HEALTH-CHECKS/](../08-devops/10-monitoring/04-health-checks/)**
+      - [01-health-checks.md](../08-devops/10-monitoring/04-health-checks/01-health-checks.md)
+      - [02-readiness.md](../08-devops/10-monitoring/04-health-checks/02-readiness.md)
+      - [03-liveness.md](../08-devops/10-monitoring/04-health-checks/03-liveness.md)
+      - [04-startup-checks.md](../08-devops/10-monitoring/04-health-checks/04-startup-checks.md)
+  - **[11-LOGGING/](../08-devops/11-logging/)**
+    - [README.md](../08-devops/11-logging/README.md)
+    - **[01-FUNDAMENTALS/](../08-devops/11-logging/01-fundamentals/)**
+      - [01-logging-basics.md](../08-devops/11-logging/01-fundamentals/01-logging-basics.md)
+      - [02-log-levels.md](../08-devops/11-logging/01-fundamentals/02-log-levels.md)
+      - [03-structured-logging.md](../08-devops/11-logging/01-fundamentals/03-structured-logging.md)
+      - [04-log-formats.md](../08-devops/11-logging/01-fundamentals/04-log-formats.md)
+    - **[02-COLLECTION/](../08-devops/11-logging/02-collection/)**
+      - [01-log-collection.md](../08-devops/11-logging/02-collection/01-log-collection.md)
+      - [02-log-forwarding.md](../08-devops/11-logging/02-collection/02-log-forwarding.md)
+      - [03-log-aggregation.md](../08-devops/11-logging/02-collection/03-log-aggregation.md)
+      - [04-log-rotation.md](../08-devops/11-logging/02-collection/04-log-rotation.md)
+    - **[03-TOOLS/](../08-devops/11-logging/03-tools/)**
+      - [01-journald.md](../08-devops/11-logging/03-tools/01-journald.md)
+      - [02-fluent-bit.md](../08-devops/11-logging/03-tools/02-fluent-bit.md)
+      - [03-fluentd.md](../08-devops/11-logging/03-tools/03-fluentd.md)
+      - [04-logstash.md](../08-devops/11-logging/03-tools/04-logstash.md)
+      - [05-elasticsearch.md](../08-devops/11-logging/03-tools/05-elasticsearch.md)
+    - **[04-ANALYSIS/](../08-devops/11-logging/04-analysis/)**
+      - [01-log-search.md](../08-devops/11-logging/04-analysis/01-log-search.md)
+      - [02-log-correlation.md](../08-devops/11-logging/04-analysis/02-log-correlation.md)
+      - [03-error-analysis.md](../08-devops/11-logging/04-analysis/03-error-analysis.md)
+      - [04-log-retention.md](../08-devops/11-logging/04-analysis/04-log-retention.md)
+  - **[12-SECRETS/](../08-devops/12-secrets/)**
+    - [README.md](../08-devops/12-secrets/README.md)
+    - [01-secrets-management.md](../08-devops/12-secrets/01-secrets-management.md)
+    - [02-environment-variables.md](../08-devops/12-secrets/02-environment-variables.md)
+    - [03-secret-storage.md](../08-devops/12-secrets/03-secret-storage.md)
+    - [04-secret-rotation.md](../08-devops/12-secrets/04-secret-rotation.md)
+    - [05-vault.md](../08-devops/12-secrets/05-vault.md)
+    - [06-secret-security.md](../08-devops/12-secrets/06-secret-security.md)
+  - **[13-INFRASTRUCTURE/](../08-devops/13-infrastructure/)**
+    - [README.md](../08-devops/13-infrastructure/README.md)
+    - [01-infrastructure-basics.md](../08-devops/13-infrastructure/01-infrastructure-basics.md)
+    - [02-servers.md](../08-devops/13-infrastructure/02-servers.md)
+    - [03-networking.md](../08-devops/13-infrastructure/03-networking.md)
+    - [04-storage.md](../08-devops/13-infrastructure/04-storage.md)
+    - [05-load-balancers.md](../08-devops/13-infrastructure/05-load-balancers.md)
+    - [06-dns.md](../08-devops/13-infrastructure/06-dns.md)
+    - [07-infrastructure-patterns.md](../08-devops/13-infrastructure/07-infrastructure-patterns.md)
+  - **[14-SECURITY/](../08-devops/14-security/)**
+    - [README.md](../08-devops/14-security/README.md)
+    - [01-devops-security.md](../08-devops/14-security/01-devops-security.md)
+    - [02-container-security.md](../08-devops/14-security/02-container-security.md)
+    - [03-ci-cd-security.md](../08-devops/14-security/03-ci-cd-security.md)
+    - [04-secrets-security.md](../08-devops/14-security/04-secrets-security.md)
+    - [05-image-scanning.md](../08-devops/14-security/05-image-scanning.md)
+    - [06-supply-chain-security.md](../08-devops/14-security/06-supply-chain-security.md)
+  - **[15-TROUBLESHOOTING/](../08-devops/15-troubleshooting/)**
+    - [README.md](../08-devops/15-troubleshooting/README.md)
+    - [01-docker.md](../08-devops/15-troubleshooting/01-docker.md)
+    - [02-kubernetes.md](../08-devops/15-troubleshooting/02-kubernetes.md)
+    - [03-nginx.md](../08-devops/15-troubleshooting/03-nginx.md)
+    - [04-ci-cd.md](../08-devops/15-troubleshooting/04-ci-cd.md)
+    - [05-deployment.md](../08-devops/15-troubleshooting/05-deployment.md)
+    - [06-terraform.md](../08-devops/15-troubleshooting/06-terraform.md)
+    - [07-ansible.md](../08-devops/15-troubleshooting/07-ansible.md)
+    - [08-monitoring.md](../08-devops/15-troubleshooting/08-monitoring.md)
+    - [09-logging.md](../08-devops/15-troubleshooting/09-logging.md)
 
 ---
 
-# `09-cloud`
+# 09-CLOUD
 
-```text
-09-cloud/
-├── README.md
-|
-├── 01-cloud-fundamentals/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-computing.md
-│   ├── 02-cloud-models.md
-│   ├── 03-service-models.md
-│   ├── 04-public-private-hybrid-cloud.md
-│   ├── 05-multi-cloud.md
-│   ├── 06-regions-and-availability-zones.md
-│   ├── 07-shared-responsibility.md
-│   ├── 08-cloud-native.md
-│   └── 09-cloud-best-practices.md
-|
-├── 02-aws/
-│   ├── README.md
-|   |
-│   ├── 01-basics/
-│   │   ├── 01-aws-overview.md
-│   │   ├── 02-account-setup.md
-│   │   ├── 03-regions-and-availability-zones.md
-│   │   ├── 04-management-console.md
-│   │   ├── 05-aws-cli.md
-│   │   └── 06-aws-sdk.md
-|   |
-│   ├── 02-compute/
-│   │   ├── 01-ec2.md
-│   │   ├── 02-ami.md
-│   │   ├── 03-auto-scaling.md
-│   │   ├── 04-elastic-load-balancing.md
-│   │   └── 05-lightsail.md
-|   |
-│   ├── 03-storage/
-│   │   ├── 01-s3.md
-│   │   ├── 02-ebs.md
-│   │   ├── 03-efs.md
-│   │   └── 04-storage-classes.md
-|   |
-│   ├── 04-database/
-│   │   ├── 01-rds.md
-│   │   ├── 02-aurora.md
-│   │   ├── 03-dynamodb.md
-│   │   ├── 04-elasticache.md
-│   │   └── 05-database-migration.md
-|   |
-│   ├── 05-networking/
-│   │   ├── 01-vpc.md
-│   │   ├── 02-subnets.md
-│   │   ├── 03-route-tables.md
-│   │   ├── 04-internet-gateway.md
-│   │   ├── 05-nat-gateway.md
-│   │   ├── 06-security-groups.md
-│   │   ├── 07-network-acls.md
-│   │   ├── 08-route-53.md
-│   │   └── 09-vpc-peering.md
-|   |
-│   ├── 06-serverless/
-│   │   ├── 01-lambda.md
-│   │   ├── 02-api-gateway.md
-│   │   ├── 03-eventbridge.md
-│   │   └── 04-step-functions.md
-|   |
-│   ├── 07-iam/
-│   │   ├── 01-users.md
-│   │   ├── 02-groups.md
-│   │   ├── 03-roles.md
-│   │   ├── 04-policies.md
-│   │   └── 05-permissions.md
-|   |
-│   ├── 08-monitoring/
-│   │   ├── 01-cloudwatch.md
-│   │   ├── 02-cloudtrail.md
-│   │   └── 03-logging.md
-|   |
-│   └── 09-troubleshooting/
-│       ├── 01-ec2.md
-│       ├── 02-s3.md
-│       ├── 03-networking.md
-│       └── 04-iam.md
-|
-├── 03-azure/
-│   ├── README.md
-|   |
-│   ├── 01-basics/
-│   │   ├── 01-azure-overview.md
-│   │   ├── 02-subscriptions.md
-│   │   ├── 03-resource-groups.md
-│   │   ├── 04-regions.md
-│   │   ├── 05-azure-portal.md
-│   │   └── 06-azure-cli.md
-|   |
-│   ├── 02-compute/
-│   │   ├── 01-virtual-machines.md
-│   │   ├── 02-vm-scale-sets.md
-│   │   ├── 03-load-balancer.md
-│   │   └── 04-app-service.md
-|   |
-│   ├── 03-storage/
-│   │   ├── 01-storage-accounts.md
-│   │   ├── 02-blob-storage.md
-│   │   ├── 03-file-storage.md
-│   │   ├── 04-disk-storage.md
-│   │   └── 05-storage-tiers.md
-|   |
-│   ├── 04-database/
-│   │   ├── 01-azure-sql.md
-│   │   ├── 02-cosmos-db.md
-│   │   ├── 03-postgresql.md
-│   │   └── 04-mysql.md
-|   |
-│   ├── 05-networking/
-│   │   ├── 01-virtual-network.md
-│   │   ├── 02-subnets.md
-│   │   ├── 03-route-tables.md
-│   │   ├── 04-network-security-groups.md
-│   │   ├── 05-load-balancer.md
-│   │   ├── 06-application-gateway.md
-│   │   ├── 07-dns.md
-│   │   └── 08-vpn.md
-|   |
-│   ├── 06-serverless/
-│   │   ├── 01-azure-functions.md
-│   │   ├── 02-logic-apps.md
-│   │   └── 03-event-grid.md
-|   |
-│   ├── 07-identity/
-│   │   ├── 01-microsoft-entra-id.md
-│   │   ├── 02-users-and-groups.md
-│   │   ├── 03-roles.md
-│   │   └── 04-rbac.md
-|   |
-│   ├── 08-monitoring/
-│   │   ├── 01-azure-monitor.md
-│   │   ├── 02-activity-log.md
-│   │   └── 03-application-insights.md
-|   |
-│   └── 09-troubleshooting/
-│       ├── 01-virtual-machines.md
-│       ├── 02-storage.md
-│       ├── 03-networking.md
-│       └── 04-identity.md
-|
-├── 04-gcp/
-│   ├── README.md
-|   |
-│   ├── 01-basics/
-│   │   ├── 01-gcp-overview.md
-│   │   ├── 02-projects.md
-│   │   ├── 03-organizations.md
-│   │   ├── 04-regions-and-zones.md
-│   │   ├── 05-cloud-console.md
-│   │   └── 06-gcloud-cli.md
-|   |
-│   ├── 02-compute/
-│   │   ├── 01-compute-engine.md
-│   │   ├── 02-managed-instance-groups.md
-│   │   ├── 03-cloud-run.md
-│   │   └── 04-load-balancing.md
-|   |
-│   ├── 03-storage/
-│   │   ├── 01-cloud-storage.md
-│   │   ├── 02-storage-classes.md
-│   │   └── 03-persistent-disk.md
-|   |
-│   ├── 04-database/
-│   │   ├── 01-cloud-sql.md
-│   │   ├── 02-firestore.md
-│   │   ├── 03-bigtable.md
-│   │   └── 04-spanner.md
-|   |
-│   ├── 05-networking/
-│   │   ├── 01-vpc.md
-│   │   ├── 02-subnets.md
-│   │   ├── 03-firewall-rules.md
-│   │   ├── 04-cloud-nat.md
-│   │   ├── 05-load-balancing.md
-│   │   ├── 06-cloud-dns.md
-│   │   └── 07-vpn.md
-|   |
-│   ├── 06-serverless/
-│   │   ├── 01-cloud-functions.md
-│   │   ├── 02-cloud-run.md
-│   │   └── 03-workflows.md
-|   |
-│   ├── 07-iam/
-│   │   ├── 01-users.md
-│   │   ├── 02-service-accounts.md
-│   │   ├── 03-roles.md
-│   │   └── 04-permissions.md
-|   |
-│   ├── 08-monitoring/
-│   │   ├── 01-cloud-monitoring.md
-│   │   ├── 02-cloud-logging.md
-│   │   └── 03-error-reporting.md
-|   |
-│   └── 09-troubleshooting/
-│       ├── 01-compute.md
-│       ├── 02-storage.md
-│       ├── 03-networking.md
-│       └── 04-iam.md
-|
-├── 05-compute/
-│   ├── README.md
-|   |
-│   ├── 01-virtual-machines/
-│   │   ├── 01-vm-basics.md
-│   │   ├── 02-vm-images.md
-│   │   ├── 03-instance-types.md
-│   │   ├── 04-sizing.md
-│   │   └── 05-lifecycle.md
-|   |
-│   ├── 02-auto-scaling/
-│   │   ├── 01-basics.md
-│   │   ├── 02-horizontal-scaling.md
-│   │   ├── 03-vertical-scaling.md
-│   │   └── 04-scaling-policies.md
-|   |
-│   ├── 03-load-balancing/
-│   │   ├── 01-basics.md
-│   │   ├── 02-layer-4.md
-│   │   ├── 03-layer-7.md
-│   │   └── 04-health-checks.md
-|   |
-│   └── 04-compute-architecture/
-│       ├── 01-stateless-compute.md
-│       ├── 02-stateful-compute.md
-│       └── 03-scalable-compute.md
-|
-├── 06-storage/
-│   ├── README.md
-|   |
-│   ├── 01-object-storage/
-│   │   ├── 01-basics.md
-│   │   ├── 02-buckets.md
-│   │   ├── 03-objects.md
-│   │   ├── 04-versioning.md
-│   │   └── 05-lifecycle.md
-|   |
-│   ├── 02-block-storage/
-│   │   ├── 01-basics.md
-│   │   ├── 02-volumes.md
-│   │   └── 03-snapshots.md
-|   |
-│   ├── 03-file-storage/
-│   │   ├── 01-basics.md
-│   │   ├── 02-shared-file-systems.md
-│   │   └── 03-mounting.md
-|   |
-│   ├── 04-storage-classes/
-│   │   ├── 01-hot-storage.md
-│   │   ├── 02-cool-storage.md
-│   │   └── 03-archive-storage.md
-|   |
-│   ├── 05-data-lifecycle/
-│   │   ├── 01-lifecycle-management.md
-│   │   └── 02-retention-policies.md
-|   |
-│   ├── 06-backup/
-│   │   ├── 01-storage-backup.md
-│   │   └── 02-snapshots.md
-|   |
-│   ├── 07-archival/
-│   │   └── 01-archive-strategies.md
-|   |
-│   └── 08-storage-security/
-│       ├── 01-encryption.md
-│       ├── 02-access-control.md
-│       └── 03-data-protection.md
-|
-├── 07-database/
-│   ├── README.md
-|   |
-│   ├── 01-relational/
-│   │   ├── 01-managed-relational-databases.md
-│   │   └── 02-cloud-sql-patterns.md
-|   |
-│   ├── 02-nosql/
-│   │   ├── 01-managed-nosql.md
-│   │   └── 02-nosql-patterns.md
-|   |
-│   ├── 03-managed-databases/
-│   │   ├── 01-database-as-a-service.md
-│   │   └── 02-database-selection.md
-|   |
-│   ├── 04-caching/
-│   │   ├── 01-cloud-caching.md
-│   │   └── 02-distributed-caching.md
-|   |
-│   ├── 05-replication/
-│   │   ├── 01-read-replicas.md
-│   │   └── 02-database-replication.md
-|   |
-│   ├── 06-backup-and-recovery/
-│   │   ├── 01-database-backup.md
-│   │   └── 02-database-recovery.md
-|   |
-│   ├── 07-high-availability/
-│   │   └── 01-ha-database.md
-|   |
-│   └── 08-database-migration/
-│       ├── 01-migration-basics.md
-│       └── 02-migration-strategies.md
-|
-├── 08-networking/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-networking/
-│   │   ├── 01-basics.md
-│   │   └── 02-network-architecture.md
-|   |
-│   ├── 02-vpc-and-vnet/
-│   │   ├── 01-vpc.md
-│   │   ├── 02-vnet.md
-│   │   └── 03-subnets.md
-|   |
-│   ├── 03-subnets/
-│   │   ├── 01-public-subnets.md
-│   │   └── 02-private-subnets.md
-|   |
-│   ├── 04-routing/
-│   │   ├── 01-route-tables.md
-│   │   └── 02-routing-strategies.md
-|   |
-│   ├── 05-internet-connectivity/
-│   │   ├── 01-internet-gateway.md
-│   │   └── 02-egress-and-ingress.md
-|   |
-│   ├── 06-nat/
-│   │   ├── 01-nat-basics.md
-│   │   └── 02-nat-gateway.md
-|   |
-│   ├── 07-firewalls/
-│   │   ├── 01-firewall-basics.md
-│   │   └── 02-security-rules.md
-|   |
-│   ├── 08-load-balancing/
-│   │   ├── 01-layer-4.md
-│   │   └── 02-layer-7.md
-|   |
-│   ├── 09-dns/
-│   │   ├── 01-cloud-dns.md
-│   │   └── 02-dns-routing.md
-|   |
-│   ├── 10-vpn/
-│   │   ├── 01-site-to-site-vpn.md
-│   │   └── 02-client-vpn.md
-|   |
-│   ├── 11-private-connectivity/
-│   │   ├── 01-private-endpoints.md
-│   │   └── 02-private-links.md
-|   |
-│   └── 12-network-security/
-│       ├── 01-network-security.md
-│       └── 02-network-segmentation.md
-|
-├── 09-serverless/
-│   ├── README.md
-|   |
-│   ├── 01-fundamentals/
-│   │   ├── 01-serverless-basics.md
-│   │   ├── 02-serverless-characteristics.md
-│   │   └── 03-serverless-benefits-and-limitations.md
-|   |
-│   ├── 02-functions/
-│   │   ├── 01-function-basics.md
-│   │   ├── 02-function-lifecycle.md
-│   │   └── 03-function-runtime.md
-|   |
-│   ├── 03-api-gateways/
-│   │   ├── 01-api-gateway-basics.md
-│   │   └── 02-api-gateway-patterns.md
-|   |
-│   ├── 04-event-driven/
-│   │   ├── 01-events.md
-│   │   ├── 02-event-sources.md
-│   │   └── 03-event-processing.md
-|   |
-│   ├── 05-workflows/
-│   │   ├── 01-workflow-basics.md
-│   │   └── 02-workflow-orchestration.md
-|   |
-│   ├── 06-serverless-databases/
-│   │   └── 01-serverless-data.md
-|   |
-│   ├── 07-serverless-security/
-│   │   ├── 01-function-security.md
-│   │   └── 02-api-security.md
-|   |
-│   └── 08-serverless-architecture/
-│       ├── 01-serverless-patterns.md
-│       └── 02-serverless-applications.md
-|
-├── 10-containers/
-│   ├── README.md
-|   |
-│   ├── 01-container-platforms/
-│   │   ├── 01-managed-containers.md
-│   │   └── 02-container-services.md
-|   |
-│   ├── 02-container-registries/
-│   │   ├── 01-managed-registries.md
-│   │   └── 02-image-management.md
-|   |
-│   ├── 03-managed-kubernetes/
-│   │   ├── README.md
-│   │   ├── 01-eks.md
-│   │   ├── 02-aks.md
-│   │   └── 03-gke.md
-|   |
-│   ├── 04-container-deployment/
-│   │   ├── 01-deployment-patterns.md
-│   │   └── 02-auto-scaling.md
-|   |
-│   ├── 05-container-networking/
-│   │   └── 01-cloud-container-networking.md
-|   |
-│   └── 06-container-security/
-│       ├── 01-container-security.md
-│       └── 02-image-security.md
-|
-├── 11-security/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-security/
-│   │   ├── 01-security-fundamentals.md
-│   │   └── 02-security-best-practices.md
-|   |
-│   ├── 02-network-security/
-│   │   ├── 01-network-protection.md
-│   │   └── 02-network-segmentation.md
-|   |
-│   ├── 03-data-security/
-│   │   ├── 01-data-protection.md
-│   │   └── 02-data-classification.md
-|   |
-│   ├── 04-encryption/
-│   │   ├── 01-encryption-at-rest.md
-│   │   └── 02-encryption-in-transit.md
-|   |
-│   ├── 05-secrets-management/
-│   │   └── 01-cloud-secrets.md
-|   |
-│   ├── 06-security-monitoring/
-│   │   ├── 01-security-logs.md
-│   │   └── 02-security-alerts.md
-|   |
-│   ├── 07-compliance/
-│   │   └── 01-cloud-compliance.md
-|   |
-│   └── 08-security-best-practices/
-│       └── 01-cloud-security-best-practices.md
-|
-├── 12-identity-and-access/
-│   ├── README.md
-|   |
-│   ├── 01-iam-fundamentals/
-│   │   ├── 01-iam-basics.md
-│   │   ├── 02-authentication.md
-│   │   └── 03-authorization.md
-|   |
-│   ├── 02-users-and-groups/
-│   │   ├── 01-users.md
-│   │   └── 02-groups.md
-|   |
-│   ├── 03-roles/
-│   │   └── 01-roles.md
-|   |
-│   ├── 04-policies/
-│   │   ├── 01-policies.md
-│   │   └── 02-policy-evaluation.md
-|   |
-│   ├── 05-service-accounts/
-│   │   └── 01-service-accounts.md
-|   |
-│   ├── 06-rbac/
-│   │   └── 01-rbac.md
-|   |
-│   ├── 07-least-privilege/
-│   │   └── 01-least-privilege.md
-|   |
-│   └── 08-federated-identity/
-│       ├── 01-federation.md
-│       └── 02-single-sign-on.md
-|
-├── 13-monitoring/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-monitoring/
-│   │   └── 01-monitoring-fundamentals.md
-|   |
-│   ├── 02-metrics/
-│   │   ├── 01-metrics.md
-│   │   └── 02-custom-metrics.md
-|   |
-│   ├── 03-logs/
-│   │   └── 01-cloud-logging.md
-|   |
-│   ├── 04-traces/
-│   │   └── 01-distributed-tracing.md
-|   |
-│   ├── 05-alerting/
-│   │   └── 01-alerts.md
-|   |
-│   ├── 06-dashboards/
-│   │   └── 01-cloud-dashboards.md
-|   |
-│   └── 07-observability/
-│       ├── 01-cloud-observability.md
-│       └── 02-observability-patterns.md
-|
-├── 14-cost-management/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-pricing/
-│   │   ├── 01-pricing-models.md
-│   │   └── 02-pay-as-you-go.md
-|   |
-│   ├── 02-billing/
-│   │   ├── 01-billing-basics.md
-│   │   └── 02-billing-reports.md
-|   |
-│   ├── 03-cost-estimation/
-│   │   └── 01-cost-estimation.md
-|   |
-│   ├── 04-cost-optimization/
-│   │   └── 01-cost-optimization.md
-|   |
-│   ├── 05-reserved-capacity/
-│   │   └── 01-reserved-capacity.md
-|   |
-│   ├── 06-right-sizing/
-│   │   └── 01-right-sizing.md
-|   |
-│   ├── 07-budgeting/
-│   │   └── 01-cloud-budgets.md
-|   |
-│   └── 08-cost-monitoring/
-│       └── 01-cost-monitoring.md
-|
-├── 15-high-availability/
-│   ├── README.md
-|   |
-│   ├── 01-ha-fundamentals/
-│   │   ├── 01-high-availability.md
-│   │   └── 02-redundancy.md
-|   |
-│   ├── 02-redundancy/
-│   │   └── 01-redundant-systems.md
-|   |
-│   ├── 03-failover/
-│   │   └── 01-failover.md
-|   |
-│   ├── 04-load-balancing/
-│   │   └── 01-ha-load-balancing.md
-|   |
-│   ├── 05-multi-zone/
-│   │   └── 01-multi-zone.md
-|   |
-│   ├── 06-multi-region/
-│   │   └── 01-multi-region.md
-|   |
-│   └── 07-ha-patterns/
-│       └── 01-ha-architecture-patterns.md
-|
-├── 16-disaster-recovery/
-│   ├── README.md
-|   |
-│   ├── 01-dr-fundamentals/
-│   │   ├── 01-disaster-recovery.md
-│   │   └── 02-business-continuity.md
-|   |
-│   ├── 02-backup/
-│   │   └── 01-cloud-backup.md
-|   |
-│   ├── 03-recovery/
-│   │   └── 01-recovery-process.md
-|   |
-│   ├── 04-rpo-and-rto/
-│   │   ├── 01-rpo.md
-│   │   └── 02-rto.md
-|   |
-│   ├── 05-failover/
-│   │   └── 01-dr-failover.md
-|   |
-│   ├── 06-business-continuity/
-│   │   └── 01-business-continuity.md
-|   |
-│   └── 07-dr-strategies/
-│       ├── 01-backup-and-restore.md
-│       ├── 02-pilot-light.md
-│       ├── 03-warm-standby.md
-│       └── 04-multi-site.md
-|
-├── 17-migration/
-│   ├── README.md
-|   |
-│   ├── 01-cloud-migration/
-│   │   ├── 01-migration-fundamentals.md
-│   │   └── 02-migration-planning.md
-|   |
-│   ├── 02-migration-strategies/
-│   │   ├── 01-rehost.md
-│   │   ├── 02-replatform.md
-│   │   ├── 03-refactor.md
-│   │   ├── 04-repurchase.md
-│   │   ├── 05-retain.md
-│   │   └── 06-retire.md
-|   |
-│   ├── 03-server-migration/
-│   │   └── 01-server-migration.md
-|   |
-│   ├── 04-database-migration/
-│   │   └── 01-database-migration.md
-|   |
-│   ├── 05-application-migration/
-│   │   └── 01-application-migration.md
-|   |
-│   ├── 06-data-migration/
-│   │   └── 01-data-migration.md
-|   |
-│   └── 07-migration-planning/
-│       ├── 01-assessment.md
-│       └── 02-migration-roadmap.md
-|
-├── 18-cloud-architecture/
-│   ├── README.md
-|   |
-│   ├── 01-architecture-fundamentals/
-│   │   ├── 01-cloud-architecture.md
-│   │   └── 02-well-architected-principles.md
-|   |
-│   ├── 02-scalability/
-│   │   ├── 01-horizontal-scaling.md
-│   │   └── 02-vertical-scaling.md
-|   |
-│   ├── 03-high-availability/
-│   │   └── 01-ha-architecture.md
-|   |
-│   ├── 04-resilience/
-│   │   └── 01-resilient-architecture.md
-|   |
-│   ├── 05-event-driven-architecture/
-│   │   └── 01-event-driven-cloud.md
-|   |
-│   ├── 06-microservices/
-│   │   └── 01-cloud-microservices.md
-|   |
-│   ├── 07-serverless-architecture/
-│   │   └── 01-serverless-patterns.md
-|   |
-│   ├── 08-multi-region/
-│   │   └── 01-multi-region-architecture.md
-|   |
-│   ├── 09-multi-cloud/
-│   │   └── 01-multi-cloud-architecture.md
-|   |
-│   └── 10-reference-architectures/
-│       ├── 01-three-tier-application.md
-│       ├── 02-web-application.md
-│       ├── 03-microservices-application.md
-│       └── 04-serverless-application.md
-|
-└── 19-troubleshooting/
-    ├── README.md
-    |
-    ├── 01-compute/
-    │   ├── 01-vm-issues.md
-    │   └── 02-scaling-issues.md
-    |
-    ├── 02-storage/
-    │   ├── 01-storage-issues.md
-    │   └── 02-permission-issues.md
-    |
-    ├── 03-database/
-    │   └── 01-database-issues.md
-    |
-    ├── 04-networking/
-    │   ├── 01-connectivity-issues.md
-    │   ├── 02-dns-issues.md
-    │   └── 03-routing-issues.md
-    |
-    ├── 05-serverless/
-    │   └── 01-function-issues.md
-    |
-    ├── 06-iam/
-    │   └── 01-access-issues.md
-    |
-    ├── 07-security/
-    │   └── 01-security-issues.md
-    |
-    ├── 08-monitoring/
-    │   └── 01-monitoring-issues.md
-    |
-    ├── 09-aws/
-    │   └── 01-aws-troubleshooting.md
-    |
-    ├── 10-azure/
-    │   └── 01-azure-troubleshooting.md
-    |
-    └── 11-gcp/
-        └── 01-gcp-troubleshooting.md
-```
+- **[09-CLOUD/](../09-cloud/)**
+  - [README.md](../09-cloud/README.md)
+  - **[01-CLOUD-FUNDAMENTALS/](../09-cloud/01-cloud-fundamentals/)**
+    - [README.md](../09-cloud/01-cloud-fundamentals/README.md)
+    - [01-cloud-computing.md](../09-cloud/01-cloud-fundamentals/01-cloud-computing.md)
+    - [02-cloud-models.md](../09-cloud/01-cloud-fundamentals/02-cloud-models.md)
+    - [03-service-models.md](../09-cloud/01-cloud-fundamentals/03-service-models.md)
+    - [04-public-private-hybrid-cloud.md](../09-cloud/01-cloud-fundamentals/04-public-private-hybrid-cloud.md)
+    - [05-multi-cloud.md](../09-cloud/01-cloud-fundamentals/05-multi-cloud.md)
+    - [06-regions-and-availability-zones.md](../09-cloud/01-cloud-fundamentals/06-regions-and-availability-zones.md)
+    - [07-shared-responsibility.md](../09-cloud/01-cloud-fundamentals/07-shared-responsibility.md)
+    - [08-cloud-native.md](../09-cloud/01-cloud-fundamentals/08-cloud-native.md)
+    - [09-cloud-best-practices.md](../09-cloud/01-cloud-fundamentals/09-cloud-best-practices.md)
+  - **[02-AWS/](../09-cloud/02-aws/)**
+    - [README.md](../09-cloud/02-aws/README.md)
+    - **[01-BASICS/](../09-cloud/02-aws/01-basics/)**
+      - [01-aws-overview.md](../09-cloud/02-aws/01-basics/01-aws-overview.md)
+      - [02-account-setup.md](../09-cloud/02-aws/01-basics/02-account-setup.md)
+      - [03-regions-and-availability-zones.md](../09-cloud/02-aws/01-basics/03-regions-and-availability-zones.md)
+      - [04-management-console.md](../09-cloud/02-aws/01-basics/04-management-console.md)
+      - [05-aws-cli.md](../09-cloud/02-aws/01-basics/05-aws-cli.md)
+      - [06-aws-sdk.md](../09-cloud/02-aws/01-basics/06-aws-sdk.md)
+    - **[02-COMPUTE/](../09-cloud/02-aws/02-compute/)**
+      - [01-ec2.md](../09-cloud/02-aws/02-compute/01-ec2.md)
+      - [02-ami.md](../09-cloud/02-aws/02-compute/02-ami.md)
+      - [03-auto-scaling.md](../09-cloud/02-aws/02-compute/03-auto-scaling.md)
+      - [04-elastic-load-balancing.md](../09-cloud/02-aws/02-compute/04-elastic-load-balancing.md)
+      - [05-lightsail.md](../09-cloud/02-aws/02-compute/05-lightsail.md)
+    - **[03-STORAGE/](../09-cloud/02-aws/03-storage/)**
+      - [01-s3.md](../09-cloud/02-aws/03-storage/01-s3.md)
+      - [02-ebs.md](../09-cloud/02-aws/03-storage/02-ebs.md)
+      - [03-efs.md](../09-cloud/02-aws/03-storage/03-efs.md)
+      - [04-storage-classes.md](../09-cloud/02-aws/03-storage/04-storage-classes.md)
+    - **[04-DATABASE/](../09-cloud/02-aws/04-database/)**
+      - [01-rds.md](../09-cloud/02-aws/04-database/01-rds.md)
+      - [02-aurora.md](../09-cloud/02-aws/04-database/02-aurora.md)
+      - [03-dynamodb.md](../09-cloud/02-aws/04-database/03-dynamodb.md)
+      - [04-elasticache.md](../09-cloud/02-aws/04-database/04-elasticache.md)
+      - [05-database-migration.md](../09-cloud/02-aws/04-database/05-database-migration.md)
+    - **[05-NETWORKING/](../09-cloud/02-aws/05-networking/)**
+      - [01-vpc.md](../09-cloud/02-aws/05-networking/01-vpc.md)
+      - [02-subnets.md](../09-cloud/02-aws/05-networking/02-subnets.md)
+      - [03-route-tables.md](../09-cloud/02-aws/05-networking/03-route-tables.md)
+      - [04-internet-gateway.md](../09-cloud/02-aws/05-networking/04-internet-gateway.md)
+      - [05-nat-gateway.md](../09-cloud/02-aws/05-networking/05-nat-gateway.md)
+      - [06-security-groups.md](../09-cloud/02-aws/05-networking/06-security-groups.md)
+      - [07-network-acls.md](../09-cloud/02-aws/05-networking/07-network-acls.md)
+      - [08-route-53.md](../09-cloud/02-aws/05-networking/08-route-53.md)
+      - [09-vpc-peering.md](../09-cloud/02-aws/05-networking/09-vpc-peering.md)
+    - **[06-SERVERLESS/](../09-cloud/02-aws/06-serverless/)**
+      - [01-lambda.md](../09-cloud/02-aws/06-serverless/01-lambda.md)
+      - [02-api-gateway.md](../09-cloud/02-aws/06-serverless/02-api-gateway.md)
+      - [03-eventbridge.md](../09-cloud/02-aws/06-serverless/03-eventbridge.md)
+      - [04-step-functions.md](../09-cloud/02-aws/06-serverless/04-step-functions.md)
+    - **[07-IAM/](../09-cloud/02-aws/07-iam/)**
+      - [01-users.md](../09-cloud/02-aws/07-iam/01-users.md)
+      - [02-groups.md](../09-cloud/02-aws/07-iam/02-groups.md)
+      - [03-roles.md](../09-cloud/02-aws/07-iam/03-roles.md)
+      - [04-policies.md](../09-cloud/02-aws/07-iam/04-policies.md)
+      - [05-permissions.md](../09-cloud/02-aws/07-iam/05-permissions.md)
+    - **[08-MONITORING/](../09-cloud/02-aws/08-monitoring/)**
+      - [01-cloudwatch.md](../09-cloud/02-aws/08-monitoring/01-cloudwatch.md)
+      - [02-cloudtrail.md](../09-cloud/02-aws/08-monitoring/02-cloudtrail.md)
+      - [03-logging.md](../09-cloud/02-aws/08-monitoring/03-logging.md)
+    - **[09-TROUBLESHOOTING/](../09-cloud/02-aws/09-troubleshooting/)**
+      - [01-ec2.md](../09-cloud/02-aws/09-troubleshooting/01-ec2.md)
+      - [02-s3.md](../09-cloud/02-aws/09-troubleshooting/02-s3.md)
+      - [03-networking.md](../09-cloud/02-aws/09-troubleshooting/03-networking.md)
+      - [04-iam.md](../09-cloud/02-aws/09-troubleshooting/04-iam.md)
+  - **[03-AZURE/](../09-cloud/03-azure/)**
+    - [README.md](../09-cloud/03-azure/README.md)
+    - **[01-BASICS/](../09-cloud/03-azure/01-basics/)**
+      - [01-azure-overview.md](../09-cloud/03-azure/01-basics/01-azure-overview.md)
+      - [02-subscriptions.md](../09-cloud/03-azure/01-basics/02-subscriptions.md)
+      - [03-resource-groups.md](../09-cloud/03-azure/01-basics/03-resource-groups.md)
+      - [04-regions.md](../09-cloud/03-azure/01-basics/04-regions.md)
+      - [05-azure-portal.md](../09-cloud/03-azure/01-basics/05-azure-portal.md)
+      - [06-azure-cli.md](../09-cloud/03-azure/01-basics/06-azure-cli.md)
+    - **[02-COMPUTE/](../09-cloud/03-azure/02-compute/)**
+      - [01-virtual-machines.md](../09-cloud/03-azure/02-compute/01-virtual-machines.md)
+      - [02-vm-scale-sets.md](../09-cloud/03-azure/02-compute/02-vm-scale-sets.md)
+      - [03-load-balancer.md](../09-cloud/03-azure/02-compute/03-load-balancer.md)
+      - [04-app-service.md](../09-cloud/03-azure/02-compute/04-app-service.md)
+    - **[03-STORAGE/](../09-cloud/03-azure/03-storage/)**
+      - [01-storage-accounts.md](../09-cloud/03-azure/03-storage/01-storage-accounts.md)
+      - [02-blob-storage.md](../09-cloud/03-azure/03-storage/02-blob-storage.md)
+      - [03-file-storage.md](../09-cloud/03-azure/03-storage/03-file-storage.md)
+      - [04-disk-storage.md](../09-cloud/03-azure/03-storage/04-disk-storage.md)
+      - [05-storage-tiers.md](../09-cloud/03-azure/03-storage/05-storage-tiers.md)
+    - **[04-DATABASE/](../09-cloud/03-azure/04-database/)**
+      - [01-azure-sql.md](../09-cloud/03-azure/04-database/01-azure-sql.md)
+      - [02-cosmos-db.md](../09-cloud/03-azure/04-database/02-cosmos-db.md)
+      - [03-postgresql.md](../09-cloud/03-azure/04-database/03-postgresql.md)
+      - [04-mysql.md](../09-cloud/03-azure/04-database/04-mysql.md)
+    - **[05-NETWORKING/](../09-cloud/03-azure/05-networking/)**
+      - [01-virtual-network.md](../09-cloud/03-azure/05-networking/01-virtual-network.md)
+      - [02-subnets.md](../09-cloud/03-azure/05-networking/02-subnets.md)
+      - [03-route-tables.md](../09-cloud/03-azure/05-networking/03-route-tables.md)
+      - [04-network-security-groups.md](../09-cloud/03-azure/05-networking/04-network-security-groups.md)
+      - [05-load-balancer.md](../09-cloud/03-azure/05-networking/05-load-balancer.md)
+      - [06-application-gateway.md](../09-cloud/03-azure/05-networking/06-application-gateway.md)
+      - [07-dns.md](../09-cloud/03-azure/05-networking/07-dns.md)
+      - [08-vpn.md](../09-cloud/03-azure/05-networking/08-vpn.md)
+    - **[06-SERVERLESS/](../09-cloud/03-azure/06-serverless/)**
+      - [01-azure-functions.md](../09-cloud/03-azure/06-serverless/01-azure-functions.md)
+      - [02-logic-apps.md](../09-cloud/03-azure/06-serverless/02-logic-apps.md)
+      - [03-event-grid.md](../09-cloud/03-azure/06-serverless/03-event-grid.md)
+    - **[07-IDENTITY/](../09-cloud/03-azure/07-identity/)**
+      - [01-microsoft-entra-id.md](../09-cloud/03-azure/07-identity/01-microsoft-entra-id.md)
+      - [02-users-and-groups.md](../09-cloud/03-azure/07-identity/02-users-and-groups.md)
+      - [03-roles.md](../09-cloud/03-azure/07-identity/03-roles.md)
+      - [04-rbac.md](../09-cloud/03-azure/07-identity/04-rbac.md)
+    - **[08-MONITORING/](../09-cloud/03-azure/08-monitoring/)**
+      - [01-azure-monitor.md](../09-cloud/03-azure/08-monitoring/01-azure-monitor.md)
+      - [02-activity-log.md](../09-cloud/03-azure/08-monitoring/02-activity-log.md)
+      - [03-application-insights.md](../09-cloud/03-azure/08-monitoring/03-application-insights.md)
+    - **[09-TROUBLESHOOTING/](../09-cloud/03-azure/09-troubleshooting/)**
+      - [01-virtual-machines.md](../09-cloud/03-azure/09-troubleshooting/01-virtual-machines.md)
+      - [02-storage.md](../09-cloud/03-azure/09-troubleshooting/02-storage.md)
+      - [03-networking.md](../09-cloud/03-azure/09-troubleshooting/03-networking.md)
+      - [04-identity.md](../09-cloud/03-azure/09-troubleshooting/04-identity.md)
+  - **[04-GCP/](../09-cloud/04-gcp/)**
+    - [README.md](../09-cloud/04-gcp/README.md)
+    - **[01-BASICS/](../09-cloud/04-gcp/01-basics/)**
+      - [01-gcp-overview.md](../09-cloud/04-gcp/01-basics/01-gcp-overview.md)
+      - [02-projects.md](../09-cloud/04-gcp/01-basics/02-projects.md)
+      - [03-organizations.md](../09-cloud/04-gcp/01-basics/03-organizations.md)
+      - [04-regions-and-zones.md](../09-cloud/04-gcp/01-basics/04-regions-and-zones.md)
+      - [05-cloud-console.md](../09-cloud/04-gcp/01-basics/05-cloud-console.md)
+      - [06-gcloud-cli.md](../09-cloud/04-gcp/01-basics/06-gcloud-cli.md)
+    - **[02-COMPUTE/](../09-cloud/04-gcp/02-compute/)**
+      - [01-compute-engine.md](../09-cloud/04-gcp/02-compute/01-compute-engine.md)
+      - [02-managed-instance-groups.md](../09-cloud/04-gcp/02-compute/02-managed-instance-groups.md)
+      - [03-cloud-run.md](../09-cloud/04-gcp/02-compute/03-cloud-run.md)
+      - [04-load-balancing.md](../09-cloud/04-gcp/02-compute/04-load-balancing.md)
+    - **[03-STORAGE/](../09-cloud/04-gcp/03-storage/)**
+      - [01-cloud-storage.md](../09-cloud/04-gcp/03-storage/01-cloud-storage.md)
+      - [02-storage-classes.md](../09-cloud/04-gcp/03-storage/02-storage-classes.md)
+      - [03-persistent-disk.md](../09-cloud/04-gcp/03-storage/03-persistent-disk.md)
+    - **[04-DATABASE/](../09-cloud/04-gcp/04-database/)**
+      - [01-cloud-sql.md](../09-cloud/04-gcp/04-database/01-cloud-sql.md)
+      - [02-firestore.md](../09-cloud/04-gcp/04-database/02-firestore.md)
+      - [03-bigtable.md](../09-cloud/04-gcp/04-database/03-bigtable.md)
+      - [04-spanner.md](../09-cloud/04-gcp/04-database/04-spanner.md)
+    - **[05-NETWORKING/](../09-cloud/04-gcp/05-networking/)**
+      - [01-vpc.md](../09-cloud/04-gcp/05-networking/01-vpc.md)
+      - [02-subnets.md](../09-cloud/04-gcp/05-networking/02-subnets.md)
+      - [03-firewall-rules.md](../09-cloud/04-gcp/05-networking/03-firewall-rules.md)
+      - [04-cloud-nat.md](../09-cloud/04-gcp/05-networking/04-cloud-nat.md)
+      - [05-load-balancing.md](../09-cloud/04-gcp/05-networking/05-load-balancing.md)
+      - [06-cloud-dns.md](../09-cloud/04-gcp/05-networking/06-cloud-dns.md)
+      - [07-vpn.md](../09-cloud/04-gcp/05-networking/07-vpn.md)
+    - **[06-SERVERLESS/](../09-cloud/04-gcp/06-serverless/)**
+      - [01-cloud-functions.md](../09-cloud/04-gcp/06-serverless/01-cloud-functions.md)
+      - [02-cloud-run.md](../09-cloud/04-gcp/06-serverless/02-cloud-run.md)
+      - [03-workflows.md](../09-cloud/04-gcp/06-serverless/03-workflows.md)
+    - **[07-IAM/](../09-cloud/04-gcp/07-iam/)**
+      - [01-users.md](../09-cloud/04-gcp/07-iam/01-users.md)
+      - [02-service-accounts.md](../09-cloud/04-gcp/07-iam/02-service-accounts.md)
+      - [03-roles.md](../09-cloud/04-gcp/07-iam/03-roles.md)
+      - [04-permissions.md](../09-cloud/04-gcp/07-iam/04-permissions.md)
+    - **[08-MONITORING/](../09-cloud/04-gcp/08-monitoring/)**
+      - [01-cloud-monitoring.md](../09-cloud/04-gcp/08-monitoring/01-cloud-monitoring.md)
+      - [02-cloud-logging.md](../09-cloud/04-gcp/08-monitoring/02-cloud-logging.md)
+      - [03-error-reporting.md](../09-cloud/04-gcp/08-monitoring/03-error-reporting.md)
+    - **[09-TROUBLESHOOTING/](../09-cloud/04-gcp/09-troubleshooting/)**
+      - [01-compute.md](../09-cloud/04-gcp/09-troubleshooting/01-compute.md)
+      - [02-storage.md](../09-cloud/04-gcp/09-troubleshooting/02-storage.md)
+      - [03-networking.md](../09-cloud/04-gcp/09-troubleshooting/03-networking.md)
+      - [04-iam.md](../09-cloud/04-gcp/09-troubleshooting/04-iam.md)
+  - **[05-COMPUTE/](../09-cloud/05-compute/)**
+    - [README.md](../09-cloud/05-compute/README.md)
+    - **[01-VIRTUAL-MACHINES/](../09-cloud/05-compute/01-virtual-machines/)**
+      - [01-vm-basics.md](../09-cloud/05-compute/01-virtual-machines/01-vm-basics.md)
+      - [02-vm-images.md](../09-cloud/05-compute/01-virtual-machines/02-vm-images.md)
+      - [03-instance-types.md](../09-cloud/05-compute/01-virtual-machines/03-instance-types.md)
+      - [04-sizing.md](../09-cloud/05-compute/01-virtual-machines/04-sizing.md)
+      - [05-lifecycle.md](../09-cloud/05-compute/01-virtual-machines/05-lifecycle.md)
+    - **[02-AUTO-SCALING/](../09-cloud/05-compute/02-auto-scaling/)**
+      - [01-basics.md](../09-cloud/05-compute/02-auto-scaling/01-basics.md)
+      - [02-horizontal-scaling.md](../09-cloud/05-compute/02-auto-scaling/02-horizontal-scaling.md)
+      - [03-vertical-scaling.md](../09-cloud/05-compute/02-auto-scaling/03-vertical-scaling.md)
+      - [04-scaling-policies.md](../09-cloud/05-compute/02-auto-scaling/04-scaling-policies.md)
+    - **[03-LOAD-BALANCING/](../09-cloud/05-compute/03-load-balancing/)**
+      - [01-basics.md](../09-cloud/05-compute/03-load-balancing/01-basics.md)
+      - [02-layer-4.md](../09-cloud/05-compute/03-load-balancing/02-layer-4.md)
+      - [03-layer-7.md](../09-cloud/05-compute/03-load-balancing/03-layer-7.md)
+      - [04-health-checks.md](../09-cloud/05-compute/03-load-balancing/04-health-checks.md)
+    - **[04-COMPUTE-ARCHITECTURE/](../09-cloud/05-compute/04-compute-architecture/)**
+      - [01-stateless-compute.md](../09-cloud/05-compute/04-compute-architecture/01-stateless-compute.md)
+      - [02-stateful-compute.md](../09-cloud/05-compute/04-compute-architecture/02-stateful-compute.md)
+      - [03-scalable-compute.md](../09-cloud/05-compute/04-compute-architecture/03-scalable-compute.md)
+  - **[06-STORAGE/](../09-cloud/06-storage/)**
+    - [README.md](../09-cloud/06-storage/README.md)
+    - **[01-OBJECT-STORAGE/](../09-cloud/06-storage/01-object-storage/)**
+      - [01-basics.md](../09-cloud/06-storage/01-object-storage/01-basics.md)
+      - [02-buckets.md](../09-cloud/06-storage/01-object-storage/02-buckets.md)
+      - [03-objects.md](../09-cloud/06-storage/01-object-storage/03-objects.md)
+      - [04-versioning.md](../09-cloud/06-storage/01-object-storage/04-versioning.md)
+      - [05-lifecycle.md](../09-cloud/06-storage/01-object-storage/05-lifecycle.md)
+    - **[02-BLOCK-STORAGE/](../09-cloud/06-storage/02-block-storage/)**
+      - [01-basics.md](../09-cloud/06-storage/02-block-storage/01-basics.md)
+      - [02-volumes.md](../09-cloud/06-storage/02-block-storage/02-volumes.md)
+      - [03-snapshots.md](../09-cloud/06-storage/02-block-storage/03-snapshots.md)
+    - **[03-FILE-STORAGE/](../09-cloud/06-storage/03-file-storage/)**
+      - [01-basics.md](../09-cloud/06-storage/03-file-storage/01-basics.md)
+      - [02-shared-file-systems.md](../09-cloud/06-storage/03-file-storage/02-shared-file-systems.md)
+      - [03-mounting.md](../09-cloud/06-storage/03-file-storage/03-mounting.md)
+    - **[04-STORAGE-CLASSES/](../09-cloud/06-storage/04-storage-classes/)**
+      - [01-hot-storage.md](../09-cloud/06-storage/04-storage-classes/01-hot-storage.md)
+      - [02-cool-storage.md](../09-cloud/06-storage/04-storage-classes/02-cool-storage.md)
+      - [03-archive-storage.md](../09-cloud/06-storage/04-storage-classes/03-archive-storage.md)
+    - **[05-DATA-LIFECYCLE/](../09-cloud/06-storage/05-data-lifecycle/)**
+      - [01-lifecycle-management.md](../09-cloud/06-storage/05-data-lifecycle/01-lifecycle-management.md)
+      - [02-retention-policies.md](../09-cloud/06-storage/05-data-lifecycle/02-retention-policies.md)
+    - **[06-BACKUP/](../09-cloud/06-storage/06-backup/)**
+      - [01-storage-backup.md](../09-cloud/06-storage/06-backup/01-storage-backup.md)
+      - [02-snapshots.md](../09-cloud/06-storage/06-backup/02-snapshots.md)
+    - **[07-ARCHIVAL/](../09-cloud/06-storage/07-archival/)**
+      - [01-archive-strategies.md](../09-cloud/06-storage/07-archival/01-archive-strategies.md)
+    - **[08-STORAGE-SECURITY/](../09-cloud/06-storage/08-storage-security/)**
+      - [01-encryption.md](../09-cloud/06-storage/08-storage-security/01-encryption.md)
+      - [02-access-control.md](../09-cloud/06-storage/08-storage-security/02-access-control.md)
+      - [03-data-protection.md](../09-cloud/06-storage/08-storage-security/03-data-protection.md)
+  - **[07-DATABASE/](../09-cloud/07-database/)**
+    - [README.md](../09-cloud/07-database/README.md)
+    - **[01-RELATIONAL/](../09-cloud/07-database/01-relational/)**
+      - [01-managed-relational-databases.md](../09-cloud/07-database/01-relational/01-managed-relational-databases.md)
+      - [02-cloud-sql-patterns.md](../09-cloud/07-database/01-relational/02-cloud-sql-patterns.md)
+    - **[02-NOSQL/](../09-cloud/07-database/02-nosql/)**
+      - [01-managed-nosql.md](../09-cloud/07-database/02-nosql/01-managed-nosql.md)
+      - [02-nosql-patterns.md](../09-cloud/07-database/02-nosql/02-nosql-patterns.md)
+    - **[03-MANAGED-DATABASES/](../09-cloud/07-database/03-managed-databases/)**
+      - [01-database-as-a-service.md](../09-cloud/07-database/03-managed-databases/01-database-as-a-service.md)
+      - [02-database-selection.md](../09-cloud/07-database/03-managed-databases/02-database-selection.md)
+    - **[04-CACHING/](../09-cloud/07-database/04-caching/)**
+      - [01-cloud-caching.md](../09-cloud/07-database/04-caching/01-cloud-caching.md)
+      - [02-distributed-caching.md](../09-cloud/07-database/04-caching/02-distributed-caching.md)
+    - **[05-REPLICATION/](../09-cloud/07-database/05-replication/)**
+      - [01-read-replicas.md](../09-cloud/07-database/05-replication/01-read-replicas.md)
+      - [02-database-replication.md](../09-cloud/07-database/05-replication/02-database-replication.md)
+    - **[06-BACKUP-AND-RECOVERY/](../09-cloud/07-database/06-backup-and-recovery/)**
+      - [01-database-backup.md](../09-cloud/07-database/06-backup-and-recovery/01-database-backup.md)
+      - [02-database-recovery.md](../09-cloud/07-database/06-backup-and-recovery/02-database-recovery.md)
+    - **[07-HIGH-AVAILABILITY/](../09-cloud/07-database/07-high-availability/)**
+      - [01-ha-database.md](../09-cloud/07-database/07-high-availability/01-ha-database.md)
+    - **[08-DATABASE-MIGRATION/](../09-cloud/07-database/08-database-migration/)**
+      - [01-migration-basics.md](../09-cloud/07-database/08-database-migration/01-migration-basics.md)
+      - [02-migration-strategies.md](../09-cloud/07-database/08-database-migration/02-migration-strategies.md)
+  - **[08-NETWORKING/](../09-cloud/08-networking/)**
+    - [README.md](../09-cloud/08-networking/README.md)
+    - **[01-CLOUD-NETWORKING/](../09-cloud/08-networking/01-cloud-networking/)**
+      - [01-basics.md](../09-cloud/08-networking/01-cloud-networking/01-basics.md)
+      - [02-network-architecture.md](../09-cloud/08-networking/01-cloud-networking/02-network-architecture.md)
+    - **[02-VPC-AND-VNET/](../09-cloud/08-networking/02-vpc-and-vnet/)**
+      - [01-vpc.md](../09-cloud/08-networking/02-vpc-and-vnet/01-vpc.md)
+      - [02-vnet.md](../09-cloud/08-networking/02-vpc-and-vnet/02-vnet.md)
+      - [03-subnets.md](../09-cloud/08-networking/02-vpc-and-vnet/03-subnets.md)
+    - **[03-SUBNETS/](../09-cloud/08-networking/03-subnets/)**
+      - [01-public-subnets.md](../09-cloud/08-networking/03-subnets/01-public-subnets.md)
+      - [02-private-subnets.md](../09-cloud/08-networking/03-subnets/02-private-subnets.md)
+    - **[04-ROUTING/](../09-cloud/08-networking/04-routing/)**
+      - [01-route-tables.md](../09-cloud/08-networking/04-routing/01-route-tables.md)
+      - [02-routing-strategies.md](../09-cloud/08-networking/04-routing/02-routing-strategies.md)
+    - **[05-INTERNET-CONNECTIVITY/](../09-cloud/08-networking/05-internet-connectivity/)**
+      - [01-internet-gateway.md](../09-cloud/08-networking/05-internet-connectivity/01-internet-gateway.md)
+      - [02-egress-and-ingress.md](../09-cloud/08-networking/05-internet-connectivity/02-egress-and-ingress.md)
+    - **[06-NAT/](../09-cloud/08-networking/06-nat/)**
+      - [01-nat-basics.md](../09-cloud/08-networking/06-nat/01-nat-basics.md)
+      - [02-nat-gateway.md](../09-cloud/08-networking/06-nat/02-nat-gateway.md)
+    - **[07-FIREWALLS/](../09-cloud/08-networking/07-firewalls/)**
+      - [01-firewall-basics.md](../09-cloud/08-networking/07-firewalls/01-firewall-basics.md)
+      - [02-security-rules.md](../09-cloud/08-networking/07-firewalls/02-security-rules.md)
+    - **[08-LOAD-BALANCING/](../09-cloud/08-networking/08-load-balancing/)**
+      - [01-layer-4.md](../09-cloud/08-networking/08-load-balancing/01-layer-4.md)
+      - [02-layer-7.md](../09-cloud/08-networking/08-load-balancing/02-layer-7.md)
+    - **[09-DNS/](../09-cloud/08-networking/09-dns/)**
+      - [01-cloud-dns.md](../09-cloud/08-networking/09-dns/01-cloud-dns.md)
+      - [02-dns-routing.md](../09-cloud/08-networking/09-dns/02-dns-routing.md)
+    - **[10-VPN/](../09-cloud/08-networking/10-vpn/)**
+      - [01-site-to-site-vpn.md](../09-cloud/08-networking/10-vpn/01-site-to-site-vpn.md)
+      - [02-client-vpn.md](../09-cloud/08-networking/10-vpn/02-client-vpn.md)
+    - **[11-PRIVATE-CONNECTIVITY/](../09-cloud/08-networking/11-private-connectivity/)**
+      - [01-private-endpoints.md](../09-cloud/08-networking/11-private-connectivity/01-private-endpoints.md)
+      - [02-private-links.md](../09-cloud/08-networking/11-private-connectivity/02-private-links.md)
+    - **[12-NETWORK-SECURITY/](../09-cloud/08-networking/12-network-security/)**
+      - [01-network-security.md](../09-cloud/08-networking/12-network-security/01-network-security.md)
+      - [02-network-segmentation.md](../09-cloud/08-networking/12-network-security/02-network-segmentation.md)
+  - **[09-SERVERLESS/](../09-cloud/09-serverless/)**
+    - [README.md](../09-cloud/09-serverless/README.md)
+    - **[01-FUNDAMENTALS/](../09-cloud/09-serverless/01-fundamentals/)**
+      - [01-serverless-basics.md](../09-cloud/09-serverless/01-fundamentals/01-serverless-basics.md)
+      - [02-serverless-characteristics.md](../09-cloud/09-serverless/01-fundamentals/02-serverless-characteristics.md)
+      - [03-serverless-benefits-and-limitations.md](../09-cloud/09-serverless/01-fundamentals/03-serverless-benefits-and-limitations.md)
+    - **[02-FUNCTIONS/](../09-cloud/09-serverless/02-functions/)**
+      - [01-function-basics.md](../09-cloud/09-serverless/02-functions/01-function-basics.md)
+      - [02-function-lifecycle.md](../09-cloud/09-serverless/02-functions/02-function-lifecycle.md)
+      - [03-function-runtime.md](../09-cloud/09-serverless/02-functions/03-function-runtime.md)
+    - **[03-API-GATEWAYS/](../09-cloud/09-serverless/03-api-gateways/)**
+      - [01-api-gateway-basics.md](../09-cloud/09-serverless/03-api-gateways/01-api-gateway-basics.md)
+      - [02-api-gateway-patterns.md](../09-cloud/09-serverless/03-api-gateways/02-api-gateway-patterns.md)
+    - **[04-EVENT-DRIVEN/](../09-cloud/09-serverless/04-event-driven/)**
+      - [01-events.md](../09-cloud/09-serverless/04-event-driven/01-events.md)
+      - [02-event-sources.md](../09-cloud/09-serverless/04-event-driven/02-event-sources.md)
+      - [03-event-processing.md](../09-cloud/09-serverless/04-event-driven/03-event-processing.md)
+    - **[05-WORKFLOWS/](../09-cloud/09-serverless/05-workflows/)**
+      - [01-workflow-basics.md](../09-cloud/09-serverless/05-workflows/01-workflow-basics.md)
+      - [02-workflow-orchestration.md](../09-cloud/09-serverless/05-workflows/02-workflow-orchestration.md)
+    - **[06-SERVERLESS-DATABASES/](../09-cloud/09-serverless/06-serverless-databases/)**
+      - [01-serverless-data.md](../09-cloud/09-serverless/06-serverless-databases/01-serverless-data.md)
+    - **[07-SERVERLESS-SECURITY/](../09-cloud/09-serverless/07-serverless-security/)**
+      - [01-function-security.md](../09-cloud/09-serverless/07-serverless-security/01-function-security.md)
+      - [02-api-security.md](../09-cloud/09-serverless/07-serverless-security/02-api-security.md)
+    - **[08-SERVERLESS-ARCHITECTURE/](../09-cloud/09-serverless/08-serverless-architecture/)**
+      - [01-serverless-patterns.md](../09-cloud/09-serverless/08-serverless-architecture/01-serverless-patterns.md)
+      - [02-serverless-applications.md](../09-cloud/09-serverless/08-serverless-architecture/02-serverless-applications.md)
+  - **[10-CONTAINERS/](../09-cloud/10-containers/)**
+    - [README.md](../09-cloud/10-containers/README.md)
+    - **[01-CONTAINER-PLATFORMS/](../09-cloud/10-containers/01-container-platforms/)**
+      - [01-managed-containers.md](../09-cloud/10-containers/01-container-platforms/01-managed-containers.md)
+      - [02-container-services.md](../09-cloud/10-containers/01-container-platforms/02-container-services.md)
+    - **[02-CONTAINER-REGISTRIES/](../09-cloud/10-containers/02-container-registries/)**
+      - [01-managed-registries.md](../09-cloud/10-containers/02-container-registries/01-managed-registries.md)
+      - [02-image-management.md](../09-cloud/10-containers/02-container-registries/02-image-management.md)
+    - **[03-MANAGED-KUBERNETES/](../09-cloud/10-containers/03-managed-kubernetes/)**
+      - [README.md](../09-cloud/10-containers/03-managed-kubernetes/README.md)
+      - [01-eks.md](../09-cloud/10-containers/03-managed-kubernetes/01-eks.md)
+      - [02-aks.md](../09-cloud/10-containers/03-managed-kubernetes/02-aks.md)
+      - [03-gke.md](../09-cloud/10-containers/03-managed-kubernetes/03-gke.md)
+    - **[04-CONTAINER-DEPLOYMENT/](../09-cloud/10-containers/04-container-deployment/)**
+      - [01-deployment-patterns.md](../09-cloud/10-containers/04-container-deployment/01-deployment-patterns.md)
+      - [02-auto-scaling.md](../09-cloud/10-containers/04-container-deployment/02-auto-scaling.md)
+    - **[05-CONTAINER-NETWORKING/](../09-cloud/10-containers/05-container-networking/)**
+      - [01-cloud-container-networking.md](../09-cloud/10-containers/05-container-networking/01-cloud-container-networking.md)
+    - **[06-CONTAINER-SECURITY/](../09-cloud/10-containers/06-container-security/)**
+      - [01-container-security.md](../09-cloud/10-containers/06-container-security/01-container-security.md)
+      - [02-image-security.md](../09-cloud/10-containers/06-container-security/02-image-security.md)
+  - **[11-SECURITY/](../09-cloud/11-security/)**
+    - [README.md](../09-cloud/11-security/README.md)
+    - **[01-CLOUD-SECURITY/](../09-cloud/11-security/01-cloud-security/)**
+      - [01-security-fundamentals.md](../09-cloud/11-security/01-cloud-security/01-security-fundamentals.md)
+      - [02-security-best-practices.md](../09-cloud/11-security/01-cloud-security/02-security-best-practices.md)
+    - **[02-NETWORK-SECURITY/](../09-cloud/11-security/02-network-security/)**
+      - [01-network-protection.md](../09-cloud/11-security/02-network-security/01-network-protection.md)
+      - [02-network-segmentation.md](../09-cloud/11-security/02-network-security/02-network-segmentation.md)
+    - **[03-DATA-SECURITY/](../09-cloud/11-security/03-data-security/)**
+      - [01-data-protection.md](../09-cloud/11-security/03-data-security/01-data-protection.md)
+      - [02-data-classification.md](../09-cloud/11-security/03-data-security/02-data-classification.md)
+    - **[04-ENCRYPTION/](../09-cloud/11-security/04-encryption/)**
+      - [01-encryption-at-rest.md](../09-cloud/11-security/04-encryption/01-encryption-at-rest.md)
+      - [02-encryption-in-transit.md](../09-cloud/11-security/04-encryption/02-encryption-in-transit.md)
+    - **[05-SECRETS-MANAGEMENT/](../09-cloud/11-security/05-secrets-management/)**
+      - [01-cloud-secrets.md](../09-cloud/11-security/05-secrets-management/01-cloud-secrets.md)
+    - **[06-SECURITY-MONITORING/](../09-cloud/11-security/06-security-monitoring/)**
+      - [01-security-logs.md](../09-cloud/11-security/06-security-monitoring/01-security-logs.md)
+      - [02-security-alerts.md](../09-cloud/11-security/06-security-monitoring/02-security-alerts.md)
+    - **[07-COMPLIANCE/](../09-cloud/11-security/07-compliance/)**
+      - [01-cloud-compliance.md](../09-cloud/11-security/07-compliance/01-cloud-compliance.md)
+    - **[08-SECURITY-BEST-PRACTICES/](../09-cloud/11-security/08-security-best-practices/)**
+      - [01-cloud-security-best-practices.md](../09-cloud/11-security/08-security-best-practices/01-cloud-security-best-practices.md)
+  - **[12-IDENTITY-AND-ACCESS/](../09-cloud/12-identity-and-access/)**
+    - [README.md](../09-cloud/12-identity-and-access/README.md)
+    - **[01-IAM-FUNDAMENTALS/](../09-cloud/12-identity-and-access/01-iam-fundamentals/)**
+      - [01-iam-basics.md](../09-cloud/12-identity-and-access/01-iam-fundamentals/01-iam-basics.md)
+      - [02-authentication.md](../09-cloud/12-identity-and-access/01-iam-fundamentals/02-authentication.md)
+      - [03-authorization.md](../09-cloud/12-identity-and-access/01-iam-fundamentals/03-authorization.md)
+    - **[02-USERS-AND-GROUPS/](../09-cloud/12-identity-and-access/02-users-and-groups/)**
+      - [01-users.md](../09-cloud/12-identity-and-access/02-users-and-groups/01-users.md)
+      - [02-groups.md](../09-cloud/12-identity-and-access/02-users-and-groups/02-groups.md)
+    - **[03-ROLES/](../09-cloud/12-identity-and-access/03-roles/)**
+      - [01-roles.md](../09-cloud/12-identity-and-access/03-roles/01-roles.md)
+    - **[04-POLICIES/](../09-cloud/12-identity-and-access/04-policies/)**
+      - [01-policies.md](../09-cloud/12-identity-and-access/04-policies/01-policies.md)
+      - [02-policy-evaluation.md](../09-cloud/12-identity-and-access/04-policies/02-policy-evaluation.md)
+    - **[05-SERVICE-ACCOUNTS/](../09-cloud/12-identity-and-access/05-service-accounts/)**
+      - [01-service-accounts.md](../09-cloud/12-identity-and-access/05-service-accounts/01-service-accounts.md)
+    - **[06-RBAC/](../09-cloud/12-identity-and-access/06-rbac/)**
+      - [01-rbac.md](../09-cloud/12-identity-and-access/06-rbac/01-rbac.md)
+    - **[07-LEAST-PRIVILEGE/](../09-cloud/12-identity-and-access/07-least-privilege/)**
+      - [01-least-privilege.md](../09-cloud/12-identity-and-access/07-least-privilege/01-least-privilege.md)
+    - **[08-FEDERATED-IDENTITY/](../09-cloud/12-identity-and-access/08-federated-identity/)**
+      - [01-federation.md](../09-cloud/12-identity-and-access/08-federated-identity/01-federation.md)
+      - [02-single-sign-on.md](../09-cloud/12-identity-and-access/08-federated-identity/02-single-sign-on.md)
+  - **[13-MONITORING/](../09-cloud/13-monitoring/)**
+    - [README.md](../09-cloud/13-monitoring/README.md)
+    - **[01-CLOUD-MONITORING/](../09-cloud/13-monitoring/01-cloud-monitoring/)**
+      - [01-monitoring-fundamentals.md](../09-cloud/13-monitoring/01-cloud-monitoring/01-monitoring-fundamentals.md)
+    - **[02-METRICS/](../09-cloud/13-monitoring/02-metrics/)**
+      - [01-metrics.md](../09-cloud/13-monitoring/02-metrics/01-metrics.md)
+      - [02-custom-metrics.md](../09-cloud/13-monitoring/02-metrics/02-custom-metrics.md)
+    - **[03-LOGS/](../09-cloud/13-monitoring/03-logs/)**
+      - [01-cloud-logging.md](../09-cloud/13-monitoring/03-logs/01-cloud-logging.md)
+    - **[04-TRACES/](../09-cloud/13-monitoring/04-traces/)**
+      - [01-distributed-tracing.md](../09-cloud/13-monitoring/04-traces/01-distributed-tracing.md)
+    - **[05-ALERTING/](../09-cloud/13-monitoring/05-alerting/)**
+      - [01-alerts.md](../09-cloud/13-monitoring/05-alerting/01-alerts.md)
+    - **[06-DASHBOARDS/](../09-cloud/13-monitoring/06-dashboards/)**
+      - [01-cloud-dashboards.md](../09-cloud/13-monitoring/06-dashboards/01-cloud-dashboards.md)
+    - **[07-OBSERVABILITY/](../09-cloud/13-monitoring/07-observability/)**
+      - [01-cloud-observability.md](../09-cloud/13-monitoring/07-observability/01-cloud-observability.md)
+      - [02-observability-patterns.md](../09-cloud/13-monitoring/07-observability/02-observability-patterns.md)
+  - **[14-COST-MANAGEMENT/](../09-cloud/14-cost-management/)**
+    - [README.md](../09-cloud/14-cost-management/README.md)
+    - **[01-CLOUD-PRICING/](../09-cloud/14-cost-management/01-cloud-pricing/)**
+      - [01-pricing-models.md](../09-cloud/14-cost-management/01-cloud-pricing/01-pricing-models.md)
+      - [02-pay-as-you-go.md](../09-cloud/14-cost-management/01-cloud-pricing/02-pay-as-you-go.md)
+    - **[02-BILLING/](../09-cloud/14-cost-management/02-billing/)**
+      - [01-billing-basics.md](../09-cloud/14-cost-management/02-billing/01-billing-basics.md)
+      - [02-billing-reports.md](../09-cloud/14-cost-management/02-billing/02-billing-reports.md)
+    - **[03-COST-ESTIMATION/](../09-cloud/14-cost-management/03-cost-estimation/)**
+      - [01-cost-estimation.md](../09-cloud/14-cost-management/03-cost-estimation/01-cost-estimation.md)
+    - **[04-COST-OPTIMIZATION/](../09-cloud/14-cost-management/04-cost-optimization/)**
+      - [01-cost-optimization.md](../09-cloud/14-cost-management/04-cost-optimization/01-cost-optimization.md)
+    - **[05-RESERVED-CAPACITY/](../09-cloud/14-cost-management/05-reserved-capacity/)**
+      - [01-reserved-capacity.md](../09-cloud/14-cost-management/05-reserved-capacity/01-reserved-capacity.md)
+    - **[06-RIGHT-SIZING/](../09-cloud/14-cost-management/06-right-sizing/)**
+      - [01-right-sizing.md](../09-cloud/14-cost-management/06-right-sizing/01-right-sizing.md)
+    - **[07-BUDGETING/](../09-cloud/14-cost-management/07-budgeting/)**
+      - [01-cloud-budgets.md](../09-cloud/14-cost-management/07-budgeting/01-cloud-budgets.md)
+    - **[08-COST-MONITORING/](../09-cloud/14-cost-management/08-cost-monitoring/)**
+      - [01-cost-monitoring.md](../09-cloud/14-cost-management/08-cost-monitoring/01-cost-monitoring.md)
+  - **[15-HIGH-AVAILABILITY/](../09-cloud/15-high-availability/)**
+    - [README.md](../09-cloud/15-high-availability/README.md)
+    - **[01-HA-FUNDAMENTALS/](../09-cloud/15-high-availability/01-ha-fundamentals/)**
+      - [01-high-availability.md](../09-cloud/15-high-availability/01-ha-fundamentals/01-high-availability.md)
+      - [02-redundancy.md](../09-cloud/15-high-availability/01-ha-fundamentals/02-redundancy.md)
+    - **[02-REDUNDANCY/](../09-cloud/15-high-availability/02-redundancy/)**
+      - [01-redundant-systems.md](../09-cloud/15-high-availability/02-redundancy/01-redundant-systems.md)
+    - **[03-FAILOVER/](../09-cloud/15-high-availability/03-failover/)**
+      - [01-failover.md](../09-cloud/15-high-availability/03-failover/01-failover.md)
+    - **[04-LOAD-BALANCING/](../09-cloud/15-high-availability/04-load-balancing/)**
+      - [01-ha-load-balancing.md](../09-cloud/15-high-availability/04-load-balancing/01-ha-load-balancing.md)
+    - **[05-MULTI-ZONE/](../09-cloud/15-high-availability/05-multi-zone/)**
+      - [01-multi-zone.md](../09-cloud/15-high-availability/05-multi-zone/01-multi-zone.md)
+    - **[06-MULTI-REGION/](../09-cloud/15-high-availability/06-multi-region/)**
+      - [01-multi-region.md](../09-cloud/15-high-availability/06-multi-region/01-multi-region.md)
+    - **[07-HA-PATTERNS/](../09-cloud/15-high-availability/07-ha-patterns/)**
+      - [01-ha-architecture-patterns.md](../09-cloud/15-high-availability/07-ha-patterns/01-ha-architecture-patterns.md)
+  - **[16-DISASTER-RECOVERY/](../09-cloud/16-disaster-recovery/)**
+    - [README.md](../09-cloud/16-disaster-recovery/README.md)
+    - **[01-DR-FUNDAMENTALS/](../09-cloud/16-disaster-recovery/01-dr-fundamentals/)**
+      - [01-disaster-recovery.md](../09-cloud/16-disaster-recovery/01-dr-fundamentals/01-disaster-recovery.md)
+      - [02-business-continuity.md](../09-cloud/16-disaster-recovery/01-dr-fundamentals/02-business-continuity.md)
+    - **[02-BACKUP/](../09-cloud/16-disaster-recovery/02-backup/)**
+      - [01-cloud-backup.md](../09-cloud/16-disaster-recovery/02-backup/01-cloud-backup.md)
+    - **[03-RECOVERY/](../09-cloud/16-disaster-recovery/03-recovery/)**
+      - [01-recovery-process.md](../09-cloud/16-disaster-recovery/03-recovery/01-recovery-process.md)
+    - **[04-RPO-AND-RTO/](../09-cloud/16-disaster-recovery/04-rpo-and-rto/)**
+      - [01-rpo.md](../09-cloud/16-disaster-recovery/04-rpo-and-rto/01-rpo.md)
+      - [02-rto.md](../09-cloud/16-disaster-recovery/04-rpo-and-rto/02-rto.md)
+    - **[05-FAILOVER/](../09-cloud/16-disaster-recovery/05-failover/)**
+      - [01-dr-failover.md](../09-cloud/16-disaster-recovery/05-failover/01-dr-failover.md)
+    - **[06-BUSINESS-CONTINUITY/](../09-cloud/16-disaster-recovery/06-business-continuity/)**
+      - [01-business-continuity.md](../09-cloud/16-disaster-recovery/06-business-continuity/01-business-continuity.md)
+    - **[07-DR-STRATEGIES/](../09-cloud/16-disaster-recovery/07-dr-strategies/)**
+      - [01-backup-and-restore.md](../09-cloud/16-disaster-recovery/07-dr-strategies/01-backup-and-restore.md)
+      - [02-pilot-light.md](../09-cloud/16-disaster-recovery/07-dr-strategies/02-pilot-light.md)
+      - [03-warm-standby.md](../09-cloud/16-disaster-recovery/07-dr-strategies/03-warm-standby.md)
+      - [04-multi-site.md](../09-cloud/16-disaster-recovery/07-dr-strategies/04-multi-site.md)
+  - **[17-MIGRATION/](../09-cloud/17-migration/)**
+    - [README.md](../09-cloud/17-migration/README.md)
+    - **[01-CLOUD-MIGRATION/](../09-cloud/17-migration/01-cloud-migration/)**
+      - [01-migration-fundamentals.md](../09-cloud/17-migration/01-cloud-migration/01-migration-fundamentals.md)
+      - [02-migration-planning.md](../09-cloud/17-migration/01-cloud-migration/02-migration-planning.md)
+    - **[02-MIGRATION-STRATEGIES/](../09-cloud/17-migration/02-migration-strategies/)**
+      - [01-rehost.md](../09-cloud/17-migration/02-migration-strategies/01-rehost.md)
+      - [02-replatform.md](../09-cloud/17-migration/02-migration-strategies/02-replatform.md)
+      - [03-refactor.md](../09-cloud/17-migration/02-migration-strategies/03-refactor.md)
+      - [04-repurchase.md](../09-cloud/17-migration/02-migration-strategies/04-repurchase.md)
+      - [05-retain.md](../09-cloud/17-migration/02-migration-strategies/05-retain.md)
+      - [06-retire.md](../09-cloud/17-migration/02-migration-strategies/06-retire.md)
+    - **[03-SERVER-MIGRATION/](../09-cloud/17-migration/03-server-migration/)**
+      - [01-server-migration.md](../09-cloud/17-migration/03-server-migration/01-server-migration.md)
+    - **[04-DATABASE-MIGRATION/](../09-cloud/17-migration/04-database-migration/)**
+      - [01-database-migration.md](../09-cloud/17-migration/04-database-migration/01-database-migration.md)
+    - **[05-APPLICATION-MIGRATION/](../09-cloud/17-migration/05-application-migration/)**
+      - [01-application-migration.md](../09-cloud/17-migration/05-application-migration/01-application-migration.md)
+    - **[06-DATA-MIGRATION/](../09-cloud/17-migration/06-data-migration/)**
+      - [01-data-migration.md](../09-cloud/17-migration/06-data-migration/01-data-migration.md)
+    - **[07-MIGRATION-PLANNING/](../09-cloud/17-migration/07-migration-planning/)**
+      - [01-assessment.md](../09-cloud/17-migration/07-migration-planning/01-assessment.md)
+      - [02-migration-roadmap.md](../09-cloud/17-migration/07-migration-planning/02-migration-roadmap.md)
+  - **[18-CLOUD-ARCHITECTURE/](../09-cloud/18-cloud-architecture/)**
+    - [README.md](../09-cloud/18-cloud-architecture/README.md)
+    - **[01-ARCHITECTURE-FUNDAMENTALS/](../09-cloud/18-cloud-architecture/01-architecture-fundamentals/)**
+      - [01-cloud-architecture.md](../09-cloud/18-cloud-architecture/01-architecture-fundamentals/01-cloud-architecture.md)
+      - [02-well-architected-principles.md](../09-cloud/18-cloud-architecture/01-architecture-fundamentals/02-well-architected-principles.md)
+    - **[02-SCALABILITY/](../09-cloud/18-cloud-architecture/02-scalability/)**
+      - [01-horizontal-scaling.md](../09-cloud/18-cloud-architecture/02-scalability/01-horizontal-scaling.md)
+      - [02-vertical-scaling.md](../09-cloud/18-cloud-architecture/02-scalability/02-vertical-scaling.md)
+    - **[03-HIGH-AVAILABILITY/](../09-cloud/18-cloud-architecture/03-high-availability/)**
+      - [01-ha-architecture.md](../09-cloud/18-cloud-architecture/03-high-availability/01-ha-architecture.md)
+    - **[04-RESILIENCE/](../09-cloud/18-cloud-architecture/04-resilience/)**
+      - [01-resilient-architecture.md](../09-cloud/18-cloud-architecture/04-resilience/01-resilient-architecture.md)
+    - **[05-EVENT-DRIVEN-ARCHITECTURE/](../09-cloud/18-cloud-architecture/05-event-driven-architecture/)**
+      - [01-event-driven-cloud.md](../09-cloud/18-cloud-architecture/05-event-driven-architecture/01-event-driven-cloud.md)
+    - **[06-MICROSERVICES/](../09-cloud/18-cloud-architecture/06-microservices/)**
+      - [01-cloud-microservices.md](../09-cloud/18-cloud-architecture/06-microservices/01-cloud-microservices.md)
+    - **[07-SERVERLESS-ARCHITECTURE/](../09-cloud/18-cloud-architecture/07-serverless-architecture/)**
+      - [01-serverless-patterns.md](../09-cloud/18-cloud-architecture/07-serverless-architecture/01-serverless-patterns.md)
+    - **[08-MULTI-REGION/](../09-cloud/18-cloud-architecture/08-multi-region/)**
+      - [01-multi-region-architecture.md](../09-cloud/18-cloud-architecture/08-multi-region/01-multi-region-architecture.md)
+    - **[09-MULTI-CLOUD/](../09-cloud/18-cloud-architecture/09-multi-cloud/)**
+      - [01-multi-cloud-architecture.md](../09-cloud/18-cloud-architecture/09-multi-cloud/01-multi-cloud-architecture.md)
+    - **[10-REFERENCE-ARCHITECTURES/](../09-cloud/18-cloud-architecture/10-reference-architectures/)**
+      - [01-three-tier-application.md](../09-cloud/18-cloud-architecture/10-reference-architectures/01-three-tier-application.md)
+      - [02-web-application.md](../09-cloud/18-cloud-architecture/10-reference-architectures/02-web-application.md)
+      - [03-microservices-application.md](../09-cloud/18-cloud-architecture/10-reference-architectures/03-microservices-application.md)
+      - [04-serverless-application.md](../09-cloud/18-cloud-architecture/10-reference-architectures/04-serverless-application.md)
+  - **[19-TROUBLESHOOTING/](../09-cloud/19-troubleshooting/)**
+    - [README.md](../09-cloud/19-troubleshooting/README.md)
+    - **[01-COMPUTE/](../09-cloud/19-troubleshooting/01-compute/)**
+      - [01-vm-issues.md](../09-cloud/19-troubleshooting/01-compute/01-vm-issues.md)
+      - [02-scaling-issues.md](../09-cloud/19-troubleshooting/01-compute/02-scaling-issues.md)
+    - **[02-STORAGE/](../09-cloud/19-troubleshooting/02-storage/)**
+      - [01-storage-issues.md](../09-cloud/19-troubleshooting/02-storage/01-storage-issues.md)
+      - [02-permission-issues.md](../09-cloud/19-troubleshooting/02-storage/02-permission-issues.md)
+    - **[03-DATABASE/](../09-cloud/19-troubleshooting/03-database/)**
+      - [01-database-issues.md](../09-cloud/19-troubleshooting/03-database/01-database-issues.md)
+    - **[04-NETWORKING/](../09-cloud/19-troubleshooting/04-networking/)**
+      - [01-connectivity-issues.md](../09-cloud/19-troubleshooting/04-networking/01-connectivity-issues.md)
+      - [02-dns-issues.md](../09-cloud/19-troubleshooting/04-networking/02-dns-issues.md)
+      - [03-routing-issues.md](../09-cloud/19-troubleshooting/04-networking/03-routing-issues.md)
+    - **[05-SERVERLESS/](../09-cloud/19-troubleshooting/05-serverless/)**
+      - [01-function-issues.md](../09-cloud/19-troubleshooting/05-serverless/01-function-issues.md)
+    - **[06-IAM/](../09-cloud/19-troubleshooting/06-iam/)**
+      - [01-access-issues.md](../09-cloud/19-troubleshooting/06-iam/01-access-issues.md)
+    - **[07-SECURITY/](../09-cloud/19-troubleshooting/07-security/)**
+      - [01-security-issues.md](../09-cloud/19-troubleshooting/07-security/01-security-issues.md)
+    - **[08-MONITORING/](../09-cloud/19-troubleshooting/08-monitoring/)**
+      - [01-monitoring-issues.md](../09-cloud/19-troubleshooting/08-monitoring/01-monitoring-issues.md)
+    - **[09-AWS/](../09-cloud/19-troubleshooting/09-aws/)**
+      - [01-aws-troubleshooting.md](../09-cloud/19-troubleshooting/09-aws/01-aws-troubleshooting.md)
+    - **[10-AZURE/](../09-cloud/19-troubleshooting/10-azure/)**
+      - [01-azure-troubleshooting.md](../09-cloud/19-troubleshooting/10-azure/01-azure-troubleshooting.md)
+    - **[11-GCP/](../09-cloud/19-troubleshooting/11-gcp/)**
+      - [01-gcp-troubleshooting.md](../09-cloud/19-troubleshooting/11-gcp/01-gcp-troubleshooting.md)
 
 ---
 
-# `10-engineering`
+# 10-ENGINEERING
 
-```text
-10-engineering/
-├── README.md
-|
-├── 01-clean-code/
-│   ├── README.md
-|   |
-│   ├── 01-clean-code.md
-│   ├── 02-naming.md
-│   ├── 03-functions.md
-│   ├── 04-comments.md
-│   ├── 05-error-handling.md
-│   ├── 06-code-organization.md
-│   ├── 07-code-smells.md
-│   └── 08-practical-examples.md
-|
-├── 02-solid/
-│   ├── README.md
-|   |
-│   ├── 01-solid-overview.md
-│   ├── 02-single-responsibility.md
-│   ├── 03-open-closed.md
-│   ├── 04-liskov-substitution.md
-│   ├── 05-interface-segregation.md
-│   ├── 06-dependency-inversion.md
-│   └── 07-practical-examples.md
-|
-├── 03-design-patterns/
-│   ├── README.md
-|   |
-│   ├── 01-patterns-overview.md
-│   ├── 02-creational-patterns.md
-│   ├── 03-structural-patterns.md
-│   ├── 04-behavioral-patterns.md
-│   ├── 05-factory.md
-│   ├── 06-builder.md
-│   ├── 07-singleton.md
-│   ├── 08-adapter.md
-│   ├── 09-decorator.md
-│   ├── 10-facade.md
-│   ├── 11-proxy.md
-│   ├── 12-strategy.md
-│   ├── 13-observer.md
-│   ├── 14-command.md
-│   └── 15-template-method.md
-|
-├── 04-refactoring/
-│   ├── README.md
-|   |
-│   ├── 01-refactoring-basics.md
-│   ├── 02-code-smells.md
-│   ├── 03-extract-method.md
-│   ├── 04-extract-class.md
-│   ├── 05-rename.md
-│   ├── 06-simplify-conditionals.md
-│   ├── 07-remove-duplication.md
-│   ├── 08-replace-complex-logic.md
-│   └── 09-safe-refactoring.md
-|
-├── 05-debugging/
-│   ├── README.md
-|   |
-│   ├── 01-debugging-fundamentals.md
-│   ├── 02-debugging-workflow.md
-│   ├── 03-breakpoints.md
-│   ├── 04-stack-traces.md
-│   ├── 05-logs.md
-│   ├── 06-memory-debugging.md
-│   ├── 07-performance-debugging.md
-│   ├── 08-production-debugging.md
-│   └── 09-debugging-strategies.md
-|
-├── 06-testing/
-│   ├── README.md
-|   |
-│   ├── 01-testing-fundamentals.md
-│   ├── 02-test-pyramid.md
-│   ├── 03-unit-testing.md
-│   ├── 04-integration-testing.md
-│   ├── 05-system-testing.md
-│   ├── 06-end-to-end-testing.md
-│   ├── 07-test-doubles.md
-│   ├── 08-mocking.md
-│   ├── 09-test-fixtures.md
-│   ├── 10-test-data.md
-│   ├── 11-test-coverage.md
-│   ├── 12-test-driven-development.md
-│   ├── 13-behavior-driven-development.md
-│   └── 14-testing-best-practices.md
-|
-├── 07-code-review/
-│   ├── README.md
-|   |
-│   ├── 01-code-review-basics.md
-│   ├── 02-review-workflow.md
-│   ├── 03-review-checklist.md
-│   ├── 04-reviewing-code.md
-│   ├── 05-giving-feedback.md
-│   ├── 06-receiving-feedback.md
-│   ├── 07-pull-request-review.md
-│   └── 08-code-review-best-practices.md
-|
-├── 08-documentation/
-│   ├── README.md
-|   |
-│   ├── 01-documentation-fundamentals.md
-│   ├── 02-code-documentation.md
-│   ├── 03-api-documentation.md
-│   ├── 04-architecture-documentation.md
-│   ├── 05-readme-files.md
-│   ├── 06-changelogs.md
-│   ├── 07-runbooks.md
-│   └── 08-documentation-best-practices.md
-|
-└── 09-best-practices/
-    ├── README.md
-    |
-    ├── 01-software-engineering-principles.md
-    ├── 02-code-quality.md
-    ├── 03-maintainability.md
-    ├── 04-reusability.md
-    ├── 05-scalability.md
-    ├── 06-reliability.md
-    ├── 07-performance.md
-    ├── 08-security-practices.md
-    ├── 09-dependency-management.md
-    ├── 10-versioning.md
-    ├── 11-backward-compatibility.md
-    └── 12-engineering-best-practices.md
-```
+- **[10-ENGINEERING/](../10-engineering/)**
+  - [README.md](../10-engineering/README.md)
+  - **[01-CLEAN-CODE/](../10-engineering/01-clean-code/)**
+    - [README.md](../10-engineering/01-clean-code/README.md)
+    - [01-clean-code.md](../10-engineering/01-clean-code/01-clean-code.md)
+    - [02-naming.md](../10-engineering/01-clean-code/02-naming.md)
+    - [03-functions.md](../10-engineering/01-clean-code/03-functions.md)
+    - [04-comments.md](../10-engineering/01-clean-code/04-comments.md)
+    - [05-error-handling.md](../10-engineering/01-clean-code/05-error-handling.md)
+    - [06-code-organization.md](../10-engineering/01-clean-code/06-code-organization.md)
+    - [07-code-smells.md](../10-engineering/01-clean-code/07-code-smells.md)
+    - [08-practical-examples.md](../10-engineering/01-clean-code/08-practical-examples.md)
+  - **[02-SOLID/](../10-engineering/02-solid/)**
+    - [README.md](../10-engineering/02-solid/README.md)
+    - [01-solid-overview.md](../10-engineering/02-solid/01-solid-overview.md)
+    - [02-single-responsibility.md](../10-engineering/02-solid/02-single-responsibility.md)
+    - [03-open-closed.md](../10-engineering/02-solid/03-open-closed.md)
+    - [04-liskov-substitution.md](../10-engineering/02-solid/04-liskov-substitution.md)
+    - [05-interface-segregation.md](../10-engineering/02-solid/05-interface-segregation.md)
+    - [06-dependency-inversion.md](../10-engineering/02-solid/06-dependency-inversion.md)
+    - [07-practical-examples.md](../10-engineering/02-solid/07-practical-examples.md)
+  - **[03-DESIGN-PATTERNS/](../10-engineering/03-design-patterns/)**
+    - [README.md](../10-engineering/03-design-patterns/README.md)
+    - [01-patterns-overview.md](../10-engineering/03-design-patterns/01-patterns-overview.md)
+    - [02-creational-patterns.md](../10-engineering/03-design-patterns/02-creational-patterns.md)
+    - [03-structural-patterns.md](../10-engineering/03-design-patterns/03-structural-patterns.md)
+    - [04-behavioral-patterns.md](../10-engineering/03-design-patterns/04-behavioral-patterns.md)
+    - [05-factory.md](../10-engineering/03-design-patterns/05-factory.md)
+    - [06-builder.md](../10-engineering/03-design-patterns/06-builder.md)
+    - [07-singleton.md](../10-engineering/03-design-patterns/07-singleton.md)
+    - [08-adapter.md](../10-engineering/03-design-patterns/08-adapter.md)
+    - [09-decorator.md](../10-engineering/03-design-patterns/09-decorator.md)
+    - [10-facade.md](../10-engineering/03-design-patterns/10-facade.md)
+    - [11-proxy.md](../10-engineering/03-design-patterns/11-proxy.md)
+    - [12-strategy.md](../10-engineering/03-design-patterns/12-strategy.md)
+    - [13-observer.md](../10-engineering/03-design-patterns/13-observer.md)
+    - [14-command.md](../10-engineering/03-design-patterns/14-command.md)
+    - [15-template-method.md](../10-engineering/03-design-patterns/15-template-method.md)
+  - **[04-REFACTORING/](../10-engineering/04-refactoring/)**
+    - [README.md](../10-engineering/04-refactoring/README.md)
+    - [01-refactoring-basics.md](../10-engineering/04-refactoring/01-refactoring-basics.md)
+    - [02-code-smells.md](../10-engineering/04-refactoring/02-code-smells.md)
+    - [03-extract-method.md](../10-engineering/04-refactoring/03-extract-method.md)
+    - [04-extract-class.md](../10-engineering/04-refactoring/04-extract-class.md)
+    - [05-rename.md](../10-engineering/04-refactoring/05-rename.md)
+    - [06-simplify-conditionals.md](../10-engineering/04-refactoring/06-simplify-conditionals.md)
+    - [07-remove-duplication.md](../10-engineering/04-refactoring/07-remove-duplication.md)
+    - [08-replace-complex-logic.md](../10-engineering/04-refactoring/08-replace-complex-logic.md)
+    - [09-safe-refactoring.md](../10-engineering/04-refactoring/09-safe-refactoring.md)
+  - **[05-DEBUGGING/](../10-engineering/05-debugging/)**
+    - [README.md](../10-engineering/05-debugging/README.md)
+    - [01-debugging-fundamentals.md](../10-engineering/05-debugging/01-debugging-fundamentals.md)
+    - [02-debugging-workflow.md](../10-engineering/05-debugging/02-debugging-workflow.md)
+    - [03-breakpoints.md](../10-engineering/05-debugging/03-breakpoints.md)
+    - [04-stack-traces.md](../10-engineering/05-debugging/04-stack-traces.md)
+    - [05-logs.md](../10-engineering/05-debugging/05-logs.md)
+    - [06-memory-debugging.md](../10-engineering/05-debugging/06-memory-debugging.md)
+    - [07-performance-debugging.md](../10-engineering/05-debugging/07-performance-debugging.md)
+    - [08-production-debugging.md](../10-engineering/05-debugging/08-production-debugging.md)
+    - [09-debugging-strategies.md](../10-engineering/05-debugging/09-debugging-strategies.md)
+  - **[06-TESTING/](../10-engineering/06-testing/)**
+    - [README.md](../10-engineering/06-testing/README.md)
+    - [01-testing-fundamentals.md](../10-engineering/06-testing/01-testing-fundamentals.md)
+    - [02-test-pyramid.md](../10-engineering/06-testing/02-test-pyramid.md)
+    - [03-unit-testing.md](../10-engineering/06-testing/03-unit-testing.md)
+    - [04-integration-testing.md](../10-engineering/06-testing/04-integration-testing.md)
+    - [05-system-testing.md](../10-engineering/06-testing/05-system-testing.md)
+    - [06-end-to-end-testing.md](../10-engineering/06-testing/06-end-to-end-testing.md)
+    - [07-test-doubles.md](../10-engineering/06-testing/07-test-doubles.md)
+    - [08-mocking.md](../10-engineering/06-testing/08-mocking.md)
+    - [09-test-fixtures.md](../10-engineering/06-testing/09-test-fixtures.md)
+    - [10-test-data.md](../10-engineering/06-testing/10-test-data.md)
+    - [11-test-coverage.md](../10-engineering/06-testing/11-test-coverage.md)
+    - [12-test-driven-development.md](../10-engineering/06-testing/12-test-driven-development.md)
+    - [13-behavior-driven-development.md](../10-engineering/06-testing/13-behavior-driven-development.md)
+    - [14-testing-best-practices.md](../10-engineering/06-testing/14-testing-best-practices.md)
+  - **[07-CODE-REVIEW/](../10-engineering/07-code-review/)**
+    - [README.md](../10-engineering/07-code-review/README.md)
+    - [01-code-review-basics.md](../10-engineering/07-code-review/01-code-review-basics.md)
+    - [02-review-workflow.md](../10-engineering/07-code-review/02-review-workflow.md)
+    - [03-review-checklist.md](../10-engineering/07-code-review/03-review-checklist.md)
+    - [04-reviewing-code.md](../10-engineering/07-code-review/04-reviewing-code.md)
+    - [05-giving-feedback.md](../10-engineering/07-code-review/05-giving-feedback.md)
+    - [06-receiving-feedback.md](../10-engineering/07-code-review/06-receiving-feedback.md)
+    - [07-pull-request-review.md](../10-engineering/07-code-review/07-pull-request-review.md)
+    - [08-code-review-best-practices.md](../10-engineering/07-code-review/08-code-review-best-practices.md)
+  - **[08-DOCUMENTATION/](../10-engineering/08-documentation/)**
+    - [README.md](../10-engineering/08-documentation/README.md)
+    - [01-documentation-fundamentals.md](../10-engineering/08-documentation/01-documentation-fundamentals.md)
+    - [02-code-documentation.md](../10-engineering/08-documentation/02-code-documentation.md)
+    - [03-api-documentation.md](../10-engineering/08-documentation/03-api-documentation.md)
+    - [04-architecture-documentation.md](../10-engineering/08-documentation/04-architecture-documentation.md)
+    - [05-readme-files.md](../10-engineering/08-documentation/05-readme-files.md)
+    - [06-changelogs.md](../10-engineering/08-documentation/06-changelogs.md)
+    - [07-runbooks.md](../10-engineering/08-documentation/07-runbooks.md)
+    - [08-documentation-best-practices.md](../10-engineering/08-documentation/08-documentation-best-practices.md)
+  - **[09-BEST-PRACTICES/](../10-engineering/09-best-practices/)**
+    - [README.md](../10-engineering/09-best-practices/README.md)
+    - [01-software-engineering-principles.md](../10-engineering/09-best-practices/01-software-engineering-principles.md)
+    - [02-code-quality.md](../10-engineering/09-best-practices/02-code-quality.md)
+    - [03-maintainability.md](../10-engineering/09-best-practices/03-maintainability.md)
+    - [04-reusability.md](../10-engineering/09-best-practices/04-reusability.md)
+    - [05-scalability.md](../10-engineering/09-best-practices/05-scalability.md)
+    - [06-reliability.md](../10-engineering/09-best-practices/06-reliability.md)
+    - [07-performance.md](../10-engineering/09-best-practices/07-performance.md)
+    - [08-security-practices.md](../10-engineering/09-best-practices/08-security-practices.md)
+    - [09-dependency-management.md](../10-engineering/09-best-practices/09-dependency-management.md)
+    - [10-versioning.md](../10-engineering/09-best-practices/10-versioning.md)
+    - [11-backward-compatibility.md](../10-engineering/09-best-practices/11-backward-compatibility.md)
+    - [12-engineering-best-practices.md](../10-engineering/09-best-practices/12-engineering-best-practices.md)
 
 ---
 
-# `11-architecture`
+# 11-ARCHITECTURE
 
-```text
-11-architecture/
-├── README.md
-|
-├── 01-system-design/
-│   ├── README.md
-|   |
-│   ├── 01-system-design-fundamentals.md
-│   ├── 02-requirements.md
-│   ├── 03-functional-requirements.md
-│   ├── 04-non-functional-requirements.md
-│   ├── 05-capacity-estimation.md
-│   ├── 06-system-components.md
-│   ├── 07-data-flow.md
-│   ├── 08-system-architecture.md
-│   └── 09-system-design-process.md
-|
-├── 02-software-architecture/
-│   ├── README.md
-|   |
-│   ├── 01-architecture-fundamentals.md
-│   ├── 02-layered-architecture.md
-│   ├── 03-client-server.md
-│   ├── 04-three-tier.md
-│   ├── 05-hexagonal.md
-│   ├── 06-clean-architecture.md
-│   ├── 07-onion-architecture.md
-│   ├── 08-event-driven-architecture.md
-│   └── 09-architecture-principles.md
-|
-├── 03-api-design/
-│   ├── README.md
-|   |
-│   ├── 01-api-design-fundamentals.md
-│   ├── 02-resource-design.md
-│   ├── 03-api-versioning.md
-│   ├── 04-pagination.md
-│   ├── 05-filtering-and-sorting.md
-│   ├── 06-error-handling.md
-│   ├── 07-idempotency.md
-│   ├── 08-rate-limiting.md
-│   └── 09-api-best-practices.md
-|
-├── 04-scalability/
-│   ├── README.md
-|   |
-│   ├── 01-scalability-fundamentals.md
-│   ├── 02-horizontal-scaling.md
-│   ├── 03-vertical-scaling.md
-│   ├── 04-load-balancing.md
-│   ├── 05-auto-scaling.md
-│   ├── 06-database-scaling.md
-│   ├── 07-read-scaling.md
-│   ├── 08-write-scaling.md
-│   └── 09-scalability-patterns.md
-|
-├── 05-reliability/
-│   ├── README.md
-|   |
-│   ├── 01-reliability-fundamentals.md
-│   ├── 02-availability.md
-│   ├── 03-fault-tolerance.md
-│   ├── 04-redundancy.md
-│   ├── 05-failover.md
-│   ├── 06-health-checks.md
-│   ├── 07-retries.md
-│   ├── 08-timeouts.md
-│   ├── 09-circuit-breaker.md
-│   └── 10-resilience-patterns.md
-|
-├── 06-caching/
-│   ├── README.md
-|   |
-│   ├── 01-caching-fundamentals.md
-│   ├── 02-cache-aside.md
-│   ├── 03-read-through.md
-│   ├── 04-write-through.md
-│   ├── 05-write-behind.md
-│   ├── 06-cache-invalidation.md
-│   ├── 07-ttl.md
-│   ├── 08-distributed-caching.md
-│   └── 09-caching-patterns.md
-|
-├── 07-queues/
-│   ├── README.md
-|   |
-│   ├── 01-queue-fundamentals.md
-│   ├── 02-producers-and-consumers.md
-│   ├── 03-message-ordering.md
-│   ├── 04-message-delivery.md
-│   ├── 05-retries-and-dead-letter.md
-│   ├── 06-backpressure.md
-│   ├── 07-priority-queues.md
-│   └── 08-queue-patterns.md
-|
-├── 08-messaging/
-│   ├── README.md
-|   |
-│   ├── 01-messaging-fundamentals.md
-│   ├── 02-pub-sub.md
-│   ├── 03-message-brokers.md
-│   ├── 04-event-streaming.md
-│   ├── 05-synchronous-messaging.md
-│   ├── 06-asynchronous-messaging.md
-│   ├── 07-message-delivery-semantics.md
-│   ├── 08-event-driven-systems.md
-│   └── 09-messaging-patterns.md
-|
-├── 09-microservices/
-│   ├── README.md
-|   |
-│   ├── 01-microservices-fundamentals.md
-│   ├── 02-service-boundaries.md
-│   ├── 03-service-communication.md
-│   ├── 04-service-discovery.md
-│   ├── 05-api-gateway.md
-│   ├── 06-data-management.md
-│   ├── 07-distributed-transactions.md
-│   ├── 08-saga-pattern.md
-│   ├── 09-circuit-breaker.md
-│   ├── 10-observability.md
-│   └── 11-microservices-patterns.md
-|
-├── 10-distributed-systems/
-│   ├── README.md
-|   |
-│   ├── 01-distributed-systems-fundamentals.md
-│   ├── 02-distributed-computing.md
-│   ├── 03-consistency.md
-│   ├── 04-availability.md
-│   ├── 05-partition-tolerance.md
-│   ├── 06-cap-theorem.md
-│   ├── 07-consensus.md
-│   ├── 08-leader-election.md
-│   ├── 09-distributed-locking.md
-│   ├── 10-replication.md
-│   ├── 11-partitioning.md
-│   ├── 12-eventual-consistency.md
-│   └── 13-distributed-systems-patterns.md
-|
-└── 11-domain-driven-design/
-    ├── README.md
-    |
-    ├── 01-ddd-fundamentals.md
-    ├── 02-domain-model.md
-    ├── 03-entities.md
-    ├── 04-value-objects.md
-    ├── 05-aggregates.md
-    ├── 06-repositories.md
-    ├── 07-domain-services.md
-    ├── 08-domain-events.md
-    ├── 09-bounded-contexts.md
-    ├── 10-context-mapping.md
-    └── 11-ddd-patterns.md
-```
+- **[11-ARCHITECTURE/](../11-architecture/)**
+  - [README.md](../11-architecture/README.md)
+  - **[01-SYSTEM-DESIGN/](../11-architecture/01-system-design/)**
+    - [README.md](../11-architecture/01-system-design/README.md)
+    - [01-system-design-fundamentals.md](../11-architecture/01-system-design/01-system-design-fundamentals.md)
+    - [02-requirements.md](../11-architecture/01-system-design/02-requirements.md)
+    - [03-functional-requirements.md](../11-architecture/01-system-design/03-functional-requirements.md)
+    - [04-non-functional-requirements.md](../11-architecture/01-system-design/04-non-functional-requirements.md)
+    - [05-capacity-estimation.md](../11-architecture/01-system-design/05-capacity-estimation.md)
+    - [06-system-components.md](../11-architecture/01-system-design/06-system-components.md)
+    - [07-data-flow.md](../11-architecture/01-system-design/07-data-flow.md)
+    - [08-system-architecture.md](../11-architecture/01-system-design/08-system-architecture.md)
+    - [09-system-design-process.md](../11-architecture/01-system-design/09-system-design-process.md)
+  - **[02-SOFTWARE-ARCHITECTURE/](../11-architecture/02-software-architecture/)**
+    - [README.md](../11-architecture/02-software-architecture/README.md)
+    - [01-architecture-fundamentals.md](../11-architecture/02-software-architecture/01-architecture-fundamentals.md)
+    - [02-layered-architecture.md](../11-architecture/02-software-architecture/02-layered-architecture.md)
+    - [03-client-server.md](../11-architecture/02-software-architecture/03-client-server.md)
+    - [04-three-tier.md](../11-architecture/02-software-architecture/04-three-tier.md)
+    - [05-hexagonal.md](../11-architecture/02-software-architecture/05-hexagonal.md)
+    - [06-clean-architecture.md](../11-architecture/02-software-architecture/06-clean-architecture.md)
+    - [07-onion-architecture.md](../11-architecture/02-software-architecture/07-onion-architecture.md)
+    - [08-event-driven-architecture.md](../11-architecture/02-software-architecture/08-event-driven-architecture.md)
+    - [09-architecture-principles.md](../11-architecture/02-software-architecture/09-architecture-principles.md)
+  - **[03-API-DESIGN/](../11-architecture/03-api-design/)**
+    - [README.md](../11-architecture/03-api-design/README.md)
+    - [01-api-design-fundamentals.md](../11-architecture/03-api-design/01-api-design-fundamentals.md)
+    - [02-resource-design.md](../11-architecture/03-api-design/02-resource-design.md)
+    - [03-api-versioning.md](../11-architecture/03-api-design/03-api-versioning.md)
+    - [04-pagination.md](../11-architecture/03-api-design/04-pagination.md)
+    - [05-filtering-and-sorting.md](../11-architecture/03-api-design/05-filtering-and-sorting.md)
+    - [06-error-handling.md](../11-architecture/03-api-design/06-error-handling.md)
+    - [07-idempotency.md](../11-architecture/03-api-design/07-idempotency.md)
+    - [08-rate-limiting.md](../11-architecture/03-api-design/08-rate-limiting.md)
+    - [09-api-best-practices.md](../11-architecture/03-api-design/09-api-best-practices.md)
+  - **[04-SCALABILITY/](../11-architecture/04-scalability/)**
+    - [README.md](../11-architecture/04-scalability/README.md)
+    - [01-scalability-fundamentals.md](../11-architecture/04-scalability/01-scalability-fundamentals.md)
+    - [02-horizontal-scaling.md](../11-architecture/04-scalability/02-horizontal-scaling.md)
+    - [03-vertical-scaling.md](../11-architecture/04-scalability/03-vertical-scaling.md)
+    - [04-load-balancing.md](../11-architecture/04-scalability/04-load-balancing.md)
+    - [05-auto-scaling.md](../11-architecture/04-scalability/05-auto-scaling.md)
+    - [06-database-scaling.md](../11-architecture/04-scalability/06-database-scaling.md)
+    - [07-read-scaling.md](../11-architecture/04-scalability/07-read-scaling.md)
+    - [08-write-scaling.md](../11-architecture/04-scalability/08-write-scaling.md)
+    - [09-scalability-patterns.md](../11-architecture/04-scalability/09-scalability-patterns.md)
+  - **[05-RELIABILITY/](../11-architecture/05-reliability/)**
+    - [README.md](../11-architecture/05-reliability/README.md)
+    - [01-reliability-fundamentals.md](../11-architecture/05-reliability/01-reliability-fundamentals.md)
+    - [02-availability.md](../11-architecture/05-reliability/02-availability.md)
+    - [03-fault-tolerance.md](../11-architecture/05-reliability/03-fault-tolerance.md)
+    - [04-redundancy.md](../11-architecture/05-reliability/04-redundancy.md)
+    - [05-failover.md](../11-architecture/05-reliability/05-failover.md)
+    - [06-health-checks.md](../11-architecture/05-reliability/06-health-checks.md)
+    - [07-retries.md](../11-architecture/05-reliability/07-retries.md)
+    - [08-timeouts.md](../11-architecture/05-reliability/08-timeouts.md)
+    - [09-circuit-breaker.md](../11-architecture/05-reliability/09-circuit-breaker.md)
+    - [10-resilience-patterns.md](../11-architecture/05-reliability/10-resilience-patterns.md)
+  - **[06-CACHING/](../11-architecture/06-caching/)**
+    - [README.md](../11-architecture/06-caching/README.md)
+    - [01-caching-fundamentals.md](../11-architecture/06-caching/01-caching-fundamentals.md)
+    - [02-cache-aside.md](../11-architecture/06-caching/02-cache-aside.md)
+    - [03-read-through.md](../11-architecture/06-caching/03-read-through.md)
+    - [04-write-through.md](../11-architecture/06-caching/04-write-through.md)
+    - [05-write-behind.md](../11-architecture/06-caching/05-write-behind.md)
+    - [06-cache-invalidation.md](../11-architecture/06-caching/06-cache-invalidation.md)
+    - [07-ttl.md](../11-architecture/06-caching/07-ttl.md)
+    - [08-distributed-caching.md](../11-architecture/06-caching/08-distributed-caching.md)
+    - [09-caching-patterns.md](../11-architecture/06-caching/09-caching-patterns.md)
+  - **[07-QUEUES/](../11-architecture/07-queues/)**
+    - [README.md](../11-architecture/07-queues/README.md)
+    - [01-queue-fundamentals.md](../11-architecture/07-queues/01-queue-fundamentals.md)
+    - [02-producers-and-consumers.md](../11-architecture/07-queues/02-producers-and-consumers.md)
+    - [03-message-ordering.md](../11-architecture/07-queues/03-message-ordering.md)
+    - [04-message-delivery.md](../11-architecture/07-queues/04-message-delivery.md)
+    - [05-retries-and-dead-letter.md](../11-architecture/07-queues/05-retries-and-dead-letter.md)
+    - [06-backpressure.md](../11-architecture/07-queues/06-backpressure.md)
+    - [07-priority-queues.md](../11-architecture/07-queues/07-priority-queues.md)
+    - [08-queue-patterns.md](../11-architecture/07-queues/08-queue-patterns.md)
+  - **[08-MESSAGING/](../11-architecture/08-messaging/)**
+    - [README.md](../11-architecture/08-messaging/README.md)
+    - [01-messaging-fundamentals.md](../11-architecture/08-messaging/01-messaging-fundamentals.md)
+    - [02-pub-sub.md](../11-architecture/08-messaging/02-pub-sub.md)
+    - [03-message-brokers.md](../11-architecture/08-messaging/03-message-brokers.md)
+    - [04-event-streaming.md](../11-architecture/08-messaging/04-event-streaming.md)
+    - [05-synchronous-messaging.md](../11-architecture/08-messaging/05-synchronous-messaging.md)
+    - [06-asynchronous-messaging.md](../11-architecture/08-messaging/06-asynchronous-messaging.md)
+    - [07-message-delivery-semantics.md](../11-architecture/08-messaging/07-message-delivery-semantics.md)
+    - [08-event-driven-systems.md](../11-architecture/08-messaging/08-event-driven-systems.md)
+    - [09-messaging-patterns.md](../11-architecture/08-messaging/09-messaging-patterns.md)
+  - **[09-MICROSERVICES/](../11-architecture/09-microservices/)**
+    - [README.md](../11-architecture/09-microservices/README.md)
+    - [01-microservices-fundamentals.md](../11-architecture/09-microservices/01-microservices-fundamentals.md)
+    - [02-service-boundaries.md](../11-architecture/09-microservices/02-service-boundaries.md)
+    - [03-service-communication.md](../11-architecture/09-microservices/03-service-communication.md)
+    - [04-service-discovery.md](../11-architecture/09-microservices/04-service-discovery.md)
+    - [05-api-gateway.md](../11-architecture/09-microservices/05-api-gateway.md)
+    - [06-data-management.md](../11-architecture/09-microservices/06-data-management.md)
+    - [07-distributed-transactions.md](../11-architecture/09-microservices/07-distributed-transactions.md)
+    - [08-saga-pattern.md](../11-architecture/09-microservices/08-saga-pattern.md)
+    - [09-circuit-breaker.md](../11-architecture/09-microservices/09-circuit-breaker.md)
+    - [10-observability.md](../11-architecture/09-microservices/10-observability.md)
+    - [11-microservices-patterns.md](../11-architecture/09-microservices/11-microservices-patterns.md)
+  - **[10-DISTRIBUTED-SYSTEMS/](../11-architecture/10-distributed-systems/)**
+    - [README.md](../11-architecture/10-distributed-systems/README.md)
+    - [01-distributed-systems-fundamentals.md](../11-architecture/10-distributed-systems/01-distributed-systems-fundamentals.md)
+    - [02-distributed-computing.md](../11-architecture/10-distributed-systems/02-distributed-computing.md)
+    - [03-consistency.md](../11-architecture/10-distributed-systems/03-consistency.md)
+    - [04-availability.md](../11-architecture/10-distributed-systems/04-availability.md)
+    - [05-partition-tolerance.md](../11-architecture/10-distributed-systems/05-partition-tolerance.md)
+    - [06-cap-theorem.md](../11-architecture/10-distributed-systems/06-cap-theorem.md)
+    - [07-consensus.md](../11-architecture/10-distributed-systems/07-consensus.md)
+    - [08-leader-election.md](../11-architecture/10-distributed-systems/08-leader-election.md)
+    - [09-distributed-locking.md](../11-architecture/10-distributed-systems/09-distributed-locking.md)
+    - [10-replication.md](../11-architecture/10-distributed-systems/10-replication.md)
+    - [11-partitioning.md](../11-architecture/10-distributed-systems/11-partitioning.md)
+    - [12-eventual-consistency.md](../11-architecture/10-distributed-systems/12-eventual-consistency.md)
+    - [13-distributed-systems-patterns.md](../11-architecture/10-distributed-systems/13-distributed-systems-patterns.md)
+  - **[11-DOMAIN-DRIVEN-DESIGN/](../11-architecture/11-domain-driven-design/)**
+    - [README.md](../11-architecture/11-domain-driven-design/README.md)
+    - [01-ddd-fundamentals.md](../11-architecture/11-domain-driven-design/01-ddd-fundamentals.md)
+    - [02-domain-model.md](../11-architecture/11-domain-driven-design/02-domain-model.md)
+    - [03-entities.md](../11-architecture/11-domain-driven-design/03-entities.md)
+    - [04-value-objects.md](../11-architecture/11-domain-driven-design/04-value-objects.md)
+    - [05-aggregates.md](../11-architecture/11-domain-driven-design/05-aggregates.md)
+    - [06-repositories.md](../11-architecture/11-domain-driven-design/06-repositories.md)
+    - [07-domain-services.md](../11-architecture/11-domain-driven-design/07-domain-services.md)
+    - [08-domain-events.md](../11-architecture/11-domain-driven-design/08-domain-events.md)
+    - [09-bounded-contexts.md](../11-architecture/11-domain-driven-design/09-bounded-contexts.md)
+    - [10-context-mapping.md](../11-architecture/11-domain-driven-design/10-context-mapping.md)
+    - [11-ddd-patterns.md](../11-architecture/11-domain-driven-design/11-ddd-patterns.md)
 
 ---
 
-# `12-algorithms`
+# 12-ALGORITHMS
 
-```text
-12-algorithms/
-├── README.md
-|
-├── 01-complexity/
-│   ├── README.md
-|   |
-│   ├── 01-time-complexity.md
-│   ├── 02-space-complexity.md
-│   ├── 03-big-o.md
-│   ├── 04-big-omega.md
-│   ├── 05-big-theta.md
-│   ├── 06-best-average-worst-case.md
-│   └── 07-complexity-analysis.md
-|
-├── 02-arrays/
-│   ├── README.md
-|   |
-│   ├── 01-array-fundamentals.md
-│   ├── 02-static-and-dynamic-arrays.md
-│   ├── 03-array-traversal.md
-│   ├── 04-insertion-and-deletion.md
-│   ├── 05-two-pointers.md
-│   ├── 06-sliding-window.md
-│   ├── 07-prefix-sum.md
-│   └── 08-array-problems.md
-|
-├── 03-strings/
-│   ├── README.md
-|   |
-│   ├── 01-string-fundamentals.md
-│   ├── 02-string-traversal.md
-│   ├── 03-string-manipulation.md
-│   ├── 04-string-search.md
-│   ├── 05-palindrome.md
-│   ├── 06-anagrams.md
-│   ├── 07-string-patterns.md
-│   └── 08-string-problems.md
-|
-├── 04-linked-list/
-│   ├── README.md
-|   |
-│   ├── 01-linked-list-fundamentals.md
-│   ├── 02-singly-linked-list.md
-│   ├── 03-doubly-linked-list.md
-│   ├── 04-circular-linked-list.md
-│   ├── 05-insertion-and-deletion.md
-│   ├── 06-reversal.md
-│   ├── 07-fast-and-slow-pointers.md
-│   └── 08-linked-list-problems.md
-|
-├── 05-stack/
-│   ├── README.md
-|   |
-│   ├── 01-stack-fundamentals.md
-│   ├── 02-stack-implementation.md
-│   ├── 03-monotonic-stack.md
-│   ├── 04-expression-evaluation.md
-│   ├── 05-parentheses-matching.md
-│   ├── 06-undo-and-backtracking.md
-│   └── 07-stack-problems.md
-|
-├── 06-queue/
-│   ├── README.md
-|   |
-│   ├── 01-queue-fundamentals.md
-│   ├── 02-queue-implementation.md
-│   ├── 03-circular-queue.md
-│   ├── 04-deque.md
-│   ├── 05-priority-queue.md
-│   ├── 06-monotonic-queue.md
-│   └── 07-queue-problems.md
-|
-├── 07-hash-table/
-│   ├── README.md
-|   |
-│   ├── 01-hash-table-fundamentals.md
-│   ├── 02-hash-functions.md
-│   ├── 03-collision-handling.md
-│   ├── 04-chaining.md
-│   ├── 05-open-addressing.md
-│   ├── 06-hash-map.md
-│   ├── 07-hash-set.md
-│   └── 08-hash-table-problems.md
-|
-├── 08-tree/
-│   ├── README.md
-|   |
-│   ├── 01-tree-fundamentals.md
-│   ├── 02-binary-tree.md
-│   ├── 03-tree-traversal.md
-│   ├── 04-binary-search-tree.md
-│   ├── 05-avl-tree.md
-│   ├── 06-red-black-tree.md
-│   ├── 07-trie.md
-│   ├── 08-segment-tree.md
-│   ├── 09-fenwick-tree.md
-│   └── 10-tree-problems.md
-|
-├── 09-heap/
-│   ├── README.md
-|   |
-│   ├── 01-heap-fundamentals.md
-│   ├── 02-min-heap.md
-│   ├── 03-max-heap.md
-│   ├── 04-heap-implementation.md
-│   ├── 05-priority-queue.md
-│   ├── 06-heap-sort.md
-│   └── 07-heap-problems.md
-|
-├── 10-graph/
-│   ├── README.md
-|   |
-│   ├── 01-graph-fundamentals.md
-│   ├── 02-graph-representation.md
-│   ├── 03-breadth-first-search.md
-│   ├── 04-depth-first-search.md
-│   ├── 05-topological-sort.md
-│   ├── 06-shortest-path.md
-│   ├── 07-dijkstra.md
-│   ├── 08-bellman-ford.md
-│   ├── 09-floyd-warshall.md
-│   ├── 10-minimum-spanning-tree.md
-│   ├── 11-kruskal.md
-│   ├── 12-prims.md
-│   ├── 13-union-find.md
-│   └── 14-graph-problems.md
-|
-├── 11-sorting/
-│   ├── README.md
-|   |
-│   ├── 01-sorting-fundamentals.md
-│   ├── 02-bubble-sort.md
-│   ├── 03-selection-sort.md
-│   ├── 04-insertion-sort.md
-│   ├── 05-merge-sort.md
-│   ├── 06-quick-sort.md
-│   ├── 07-heap-sort.md
-│   ├── 08-counting-sort.md
-│   ├── 09-radix-sort.md
-│   ├── 10-bucket-sort.md
-│   └── 11-sorting-comparison.md
-|
-├── 12-searching/
-│   ├── README.md
-|   |
-│   ├── 01-searching-fundamentals.md
-│   ├── 02-linear-search.md
-│   ├── 03-binary-search.md
-│   ├── 04-interpolation-search.md
-│   ├── 05-search-on-answer.md
-│   ├── 06-two-pointer-search.md
-│   └── 07-searching-problems.md
-|
-├── 13-recursion/
-│   ├── README.md
-|   |
-│   ├── 01-recursion-fundamentals.md
-│   ├── 02-base-case.md
-│   ├── 03-recursive-case.md
-│   ├── 04-call-stack.md
-│   ├── 05-tail-recursion.md
-│   ├── 06-backtracking.md
-│   └── 07-recursion-problems.md
-|
-├── 14-greedy/
-│   ├── README.md
-|   |
-│   ├── 01-greedy-fundamentals.md
-│   ├── 02-greedy-choice.md
-│   ├── 03-activity-selection.md
-│   ├── 04-interval-scheduling.md
-│   ├── 05-fractional-knapsack.md
-│   ├── 06-huffman-coding.md
-│   └── 07-greedy-problems.md
-|
-├── 15-dynamic-programming/
-│   ├── README.md
-|   |
-│   ├── 01-dp-fundamentals.md
-│   ├── 02-overlapping-subproblems.md
-│   ├── 03-optimal-substructure.md
-│   ├── 04-memoization.md
-│   ├── 05-tabulation.md
-│   ├── 06-one-dimensional-dp.md
-│   ├── 07-two-dimensional-dp.md
-│   ├── 08-knapsack.md
-│   ├── 09-longest-common-subsequence.md
-│   ├── 10-longest-increasing-subsequence.md
-│   ├── 11-coin-change.md
-│   └── 12-dynamic-programming-problems.md
-|
-└── 16-problem-solving/
-    ├── README.md
-    ├── 01-problem-solving-fundamentals.md
-    ├── 02-problem-analysis.md
-    ├── 03-brute-force.md
-    ├── 04-two-pointers.md
-    ├── 05-sliding-window.md
-    ├── 06-prefix-sum.md
-    ├── 07-binary-search.md
-    ├── 08-backtracking.md
-    ├── 09-divide-and-conquer.md
-    ├── 10-bit-manipulation.md
-    ├── 11-invariants.md
-    ├── 12-edge-cases.md
-    ├── 13-optimization.md
-    └── 14-problem-solving-strategies.md
-```
+- **[12-ALGORITHMS/](../12-algorithms/)**
+  - [README.md](../12-algorithms/README.md)
+  - **[01-COMPLEXITY/](../12-algorithms/01-complexity/)**
+    - [README.md](../12-algorithms/01-complexity/README.md)
+    - [01-time-complexity.md](../12-algorithms/01-complexity/01-time-complexity.md)
+    - [02-space-complexity.md](../12-algorithms/01-complexity/02-space-complexity.md)
+    - [03-big-o.md](../12-algorithms/01-complexity/03-big-o.md)
+    - [04-big-omega.md](../12-algorithms/01-complexity/04-big-omega.md)
+    - [05-big-theta.md](../12-algorithms/01-complexity/05-big-theta.md)
+    - [06-best-average-worst-case.md](../12-algorithms/01-complexity/06-best-average-worst-case.md)
+    - [07-complexity-analysis.md](../12-algorithms/01-complexity/07-complexity-analysis.md)
+  - **[02-ARRAYS/](../12-algorithms/02-arrays/)**
+    - [README.md](../12-algorithms/02-arrays/README.md)
+    - [01-array-fundamentals.md](../12-algorithms/02-arrays/01-array-fundamentals.md)
+    - [02-static-and-dynamic-arrays.md](../12-algorithms/02-arrays/02-static-and-dynamic-arrays.md)
+    - [03-array-traversal.md](../12-algorithms/02-arrays/03-array-traversal.md)
+    - [04-insertion-and-deletion.md](../12-algorithms/02-arrays/04-insertion-and-deletion.md)
+    - [05-two-pointers.md](../12-algorithms/02-arrays/05-two-pointers.md)
+    - [06-sliding-window.md](../12-algorithms/02-arrays/06-sliding-window.md)
+    - [07-prefix-sum.md](../12-algorithms/02-arrays/07-prefix-sum.md)
+    - [08-array-problems.md](../12-algorithms/02-arrays/08-array-problems.md)
+  - **[03-STRINGS/](../12-algorithms/03-strings/)**
+    - [README.md](../12-algorithms/03-strings/README.md)
+    - [01-string-fundamentals.md](../12-algorithms/03-strings/01-string-fundamentals.md)
+    - [02-string-traversal.md](../12-algorithms/03-strings/02-string-traversal.md)
+    - [03-string-manipulation.md](../12-algorithms/03-strings/03-string-manipulation.md)
+    - [04-string-search.md](../12-algorithms/03-strings/04-string-search.md)
+    - [05-palindrome.md](../12-algorithms/03-strings/05-palindrome.md)
+    - [06-anagrams.md](../12-algorithms/03-strings/06-anagrams.md)
+    - [07-string-patterns.md](../12-algorithms/03-strings/07-string-patterns.md)
+    - [08-string-problems.md](../12-algorithms/03-strings/08-string-problems.md)
+  - **[04-LINKED-LIST/](../12-algorithms/04-linked-list/)**
+    - [README.md](../12-algorithms/04-linked-list/README.md)
+    - [01-linked-list-fundamentals.md](../12-algorithms/04-linked-list/01-linked-list-fundamentals.md)
+    - [02-singly-linked-list.md](../12-algorithms/04-linked-list/02-singly-linked-list.md)
+    - [03-doubly-linked-list.md](../12-algorithms/04-linked-list/03-doubly-linked-list.md)
+    - [04-circular-linked-list.md](../12-algorithms/04-linked-list/04-circular-linked-list.md)
+    - [05-insertion-and-deletion.md](../12-algorithms/04-linked-list/05-insertion-and-deletion.md)
+    - [06-reversal.md](../12-algorithms/04-linked-list/06-reversal.md)
+    - [07-fast-and-slow-pointers.md](../12-algorithms/04-linked-list/07-fast-and-slow-pointers.md)
+    - [08-linked-list-problems.md](../12-algorithms/04-linked-list/08-linked-list-problems.md)
+  - **[05-STACK/](../12-algorithms/05-stack/)**
+    - [README.md](../12-algorithms/05-stack/README.md)
+    - [01-stack-fundamentals.md](../12-algorithms/05-stack/01-stack-fundamentals.md)
+    - [02-stack-implementation.md](../12-algorithms/05-stack/02-stack-implementation.md)
+    - [03-monotonic-stack.md](../12-algorithms/05-stack/03-monotonic-stack.md)
+    - [04-expression-evaluation.md](../12-algorithms/05-stack/04-expression-evaluation.md)
+    - [05-parentheses-matching.md](../12-algorithms/05-stack/05-parentheses-matching.md)
+    - [06-undo-and-backtracking.md](../12-algorithms/05-stack/06-undo-and-backtracking.md)
+    - [07-stack-problems.md](../12-algorithms/05-stack/07-stack-problems.md)
+  - **[06-QUEUE/](../12-algorithms/06-queue/)**
+    - [README.md](../12-algorithms/06-queue/README.md)
+    - [01-queue-fundamentals.md](../12-algorithms/06-queue/01-queue-fundamentals.md)
+    - [02-queue-implementation.md](../12-algorithms/06-queue/02-queue-implementation.md)
+    - [03-circular-queue.md](../12-algorithms/06-queue/03-circular-queue.md)
+    - [04-deque.md](../12-algorithms/06-queue/04-deque.md)
+    - [05-priority-queue.md](../12-algorithms/06-queue/05-priority-queue.md)
+    - [06-monotonic-queue.md](../12-algorithms/06-queue/06-monotonic-queue.md)
+    - [07-queue-problems.md](../12-algorithms/06-queue/07-queue-problems.md)
+  - **[07-HASH-TABLE/](../12-algorithms/07-hash-table/)**
+    - [README.md](../12-algorithms/07-hash-table/README.md)
+    - [01-hash-table-fundamentals.md](../12-algorithms/07-hash-table/01-hash-table-fundamentals.md)
+    - [02-hash-functions.md](../12-algorithms/07-hash-table/02-hash-functions.md)
+    - [03-collision-handling.md](../12-algorithms/07-hash-table/03-collision-handling.md)
+    - [04-chaining.md](../12-algorithms/07-hash-table/04-chaining.md)
+    - [05-open-addressing.md](../12-algorithms/07-hash-table/05-open-addressing.md)
+    - [06-hash-map.md](../12-algorithms/07-hash-table/06-hash-map.md)
+    - [07-hash-set.md](../12-algorithms/07-hash-table/07-hash-set.md)
+    - [08-hash-table-problems.md](../12-algorithms/07-hash-table/08-hash-table-problems.md)
+  - **[08-TREE/](../12-algorithms/08-tree/)**
+    - [README.md](../12-algorithms/08-tree/README.md)
+    - [01-tree-fundamentals.md](../12-algorithms/08-tree/01-tree-fundamentals.md)
+    - [02-binary-tree.md](../12-algorithms/08-tree/02-binary-tree.md)
+    - [03-tree-traversal.md](../12-algorithms/08-tree/03-tree-traversal.md)
+    - [04-binary-search-tree.md](../12-algorithms/08-tree/04-binary-search-tree.md)
+    - [05-avl-tree.md](../12-algorithms/08-tree/05-avl-tree.md)
+    - [06-red-black-tree.md](../12-algorithms/08-tree/06-red-black-tree.md)
+    - [07-trie.md](../12-algorithms/08-tree/07-trie.md)
+    - [08-segment-tree.md](../12-algorithms/08-tree/08-segment-tree.md)
+    - [09-fenwick-tree.md](../12-algorithms/08-tree/09-fenwick-tree.md)
+    - [10-tree-problems.md](../12-algorithms/08-tree/10-tree-problems.md)
+  - **[09-HEAP/](../12-algorithms/09-heap/)**
+    - [README.md](../12-algorithms/09-heap/README.md)
+    - [01-heap-fundamentals.md](../12-algorithms/09-heap/01-heap-fundamentals.md)
+    - [02-min-heap.md](../12-algorithms/09-heap/02-min-heap.md)
+    - [03-max-heap.md](../12-algorithms/09-heap/03-max-heap.md)
+    - [04-heap-implementation.md](../12-algorithms/09-heap/04-heap-implementation.md)
+    - [05-priority-queue.md](../12-algorithms/09-heap/05-priority-queue.md)
+    - [06-heap-sort.md](../12-algorithms/09-heap/06-heap-sort.md)
+    - [07-heap-problems.md](../12-algorithms/09-heap/07-heap-problems.md)
+  - **[10-GRAPH/](../12-algorithms/10-graph/)**
+    - [README.md](../12-algorithms/10-graph/README.md)
+    - [01-graph-fundamentals.md](../12-algorithms/10-graph/01-graph-fundamentals.md)
+    - [02-graph-representation.md](../12-algorithms/10-graph/02-graph-representation.md)
+    - [03-breadth-first-search.md](../12-algorithms/10-graph/03-breadth-first-search.md)
+    - [04-depth-first-search.md](../12-algorithms/10-graph/04-depth-first-search.md)
+    - [05-topological-sort.md](../12-algorithms/10-graph/05-topological-sort.md)
+    - [06-shortest-path.md](../12-algorithms/10-graph/06-shortest-path.md)
+    - [07-dijkstra.md](../12-algorithms/10-graph/07-dijkstra.md)
+    - [08-bellman-ford.md](../12-algorithms/10-graph/08-bellman-ford.md)
+    - [09-floyd-warshall.md](../12-algorithms/10-graph/09-floyd-warshall.md)
+    - [10-minimum-spanning-tree.md](../12-algorithms/10-graph/10-minimum-spanning-tree.md)
+    - [11-kruskal.md](../12-algorithms/10-graph/11-kruskal.md)
+    - [12-prims.md](../12-algorithms/10-graph/12-prims.md)
+    - [13-union-find.md](../12-algorithms/10-graph/13-union-find.md)
+    - [14-graph-problems.md](../12-algorithms/10-graph/14-graph-problems.md)
+  - **[11-SORTING/](../12-algorithms/11-sorting/)**
+    - [README.md](../12-algorithms/11-sorting/README.md)
+    - [01-sorting-fundamentals.md](../12-algorithms/11-sorting/01-sorting-fundamentals.md)
+    - [02-bubble-sort.md](../12-algorithms/11-sorting/02-bubble-sort.md)
+    - [03-selection-sort.md](../12-algorithms/11-sorting/03-selection-sort.md)
+    - [04-insertion-sort.md](../12-algorithms/11-sorting/04-insertion-sort.md)
+    - [05-merge-sort.md](../12-algorithms/11-sorting/05-merge-sort.md)
+    - [06-quick-sort.md](../12-algorithms/11-sorting/06-quick-sort.md)
+    - [07-heap-sort.md](../12-algorithms/11-sorting/07-heap-sort.md)
+    - [08-counting-sort.md](../12-algorithms/11-sorting/08-counting-sort.md)
+    - [09-radix-sort.md](../12-algorithms/11-sorting/09-radix-sort.md)
+    - [10-bucket-sort.md](../12-algorithms/11-sorting/10-bucket-sort.md)
+    - [11-sorting-comparison.md](../12-algorithms/11-sorting/11-sorting-comparison.md)
+  - **[12-SEARCHING/](../12-algorithms/12-searching/)**
+    - [README.md](../12-algorithms/12-searching/README.md)
+    - [01-searching-fundamentals.md](../12-algorithms/12-searching/01-searching-fundamentals.md)
+    - [02-linear-search.md](../12-algorithms/12-searching/02-linear-search.md)
+    - [03-binary-search.md](../12-algorithms/12-searching/03-binary-search.md)
+    - [04-interpolation-search.md](../12-algorithms/12-searching/04-interpolation-search.md)
+    - [05-search-on-answer.md](../12-algorithms/12-searching/05-search-on-answer.md)
+    - [06-two-pointer-search.md](../12-algorithms/12-searching/06-two-pointer-search.md)
+    - [07-searching-problems.md](../12-algorithms/12-searching/07-searching-problems.md)
+  - **[13-RECURSION/](../12-algorithms/13-recursion/)**
+    - [README.md](../12-algorithms/13-recursion/README.md)
+    - [01-recursion-fundamentals.md](../12-algorithms/13-recursion/01-recursion-fundamentals.md)
+    - [02-base-case.md](../12-algorithms/13-recursion/02-base-case.md)
+    - [03-recursive-case.md](../12-algorithms/13-recursion/03-recursive-case.md)
+    - [04-call-stack.md](../12-algorithms/13-recursion/04-call-stack.md)
+    - [05-tail-recursion.md](../12-algorithms/13-recursion/05-tail-recursion.md)
+    - [06-backtracking.md](../12-algorithms/13-recursion/06-backtracking.md)
+    - [07-recursion-problems.md](../12-algorithms/13-recursion/07-recursion-problems.md)
+  - **[14-GREEDY/](../12-algorithms/14-greedy/)**
+    - [README.md](../12-algorithms/14-greedy/README.md)
+    - [01-greedy-fundamentals.md](../12-algorithms/14-greedy/01-greedy-fundamentals.md)
+    - [02-greedy-choice.md](../12-algorithms/14-greedy/02-greedy-choice.md)
+    - [03-activity-selection.md](../12-algorithms/14-greedy/03-activity-selection.md)
+    - [04-interval-scheduling.md](../12-algorithms/14-greedy/04-interval-scheduling.md)
+    - [05-fractional-knapsack.md](../12-algorithms/14-greedy/05-fractional-knapsack.md)
+    - [06-huffman-coding.md](../12-algorithms/14-greedy/06-huffman-coding.md)
+    - [07-greedy-problems.md](../12-algorithms/14-greedy/07-greedy-problems.md)
+  - **[15-DYNAMIC-PROGRAMMING/](../12-algorithms/15-dynamic-programming/)**
+    - [README.md](../12-algorithms/15-dynamic-programming/README.md)
+    - [01-dp-fundamentals.md](../12-algorithms/15-dynamic-programming/01-dp-fundamentals.md)
+    - [02-overlapping-subproblems.md](../12-algorithms/15-dynamic-programming/02-overlapping-subproblems.md)
+    - [03-optimal-substructure.md](../12-algorithms/15-dynamic-programming/03-optimal-substructure.md)
+    - [04-memoization.md](../12-algorithms/15-dynamic-programming/04-memoization.md)
+    - [05-tabulation.md](../12-algorithms/15-dynamic-programming/05-tabulation.md)
+    - [06-one-dimensional-dp.md](../12-algorithms/15-dynamic-programming/06-one-dimensional-dp.md)
+    - [07-two-dimensional-dp.md](../12-algorithms/15-dynamic-programming/07-two-dimensional-dp.md)
+    - [08-knapsack.md](../12-algorithms/15-dynamic-programming/08-knapsack.md)
+    - [09-longest-common-subsequence.md](../12-algorithms/15-dynamic-programming/09-longest-common-subsequence.md)
+    - [10-longest-increasing-subsequence.md](../12-algorithms/15-dynamic-programming/10-longest-increasing-subsequence.md)
+    - [11-coin-change.md](../12-algorithms/15-dynamic-programming/11-coin-change.md)
+    - [12-dynamic-programming-problems.md](../12-algorithms/15-dynamic-programming/12-dynamic-programming-problems.md)
+  - **[16-PROBLEM-SOLVING/](../12-algorithms/16-problem-solving/)**
+    - [README.md](../12-algorithms/16-problem-solving/README.md)
+    - [01-problem-solving-fundamentals.md](../12-algorithms/16-problem-solving/01-problem-solving-fundamentals.md)
+    - [02-problem-analysis.md](../12-algorithms/16-problem-solving/02-problem-analysis.md)
+    - [03-brute-force.md](../12-algorithms/16-problem-solving/03-brute-force.md)
+    - [04-two-pointers.md](../12-algorithms/16-problem-solving/04-two-pointers.md)
+    - [05-sliding-window.md](../12-algorithms/16-problem-solving/05-sliding-window.md)
+    - [06-prefix-sum.md](../12-algorithms/16-problem-solving/06-prefix-sum.md)
+    - [07-binary-search.md](../12-algorithms/16-problem-solving/07-binary-search.md)
+    - [08-backtracking.md](../12-algorithms/16-problem-solving/08-backtracking.md)
+    - [09-divide-and-conquer.md](../12-algorithms/16-problem-solving/09-divide-and-conquer.md)
+    - [10-bit-manipulation.md](../12-algorithms/16-problem-solving/10-bit-manipulation.md)
+    - [11-invariants.md](../12-algorithms/16-problem-solving/11-invariants.md)
+    - [12-edge-cases.md](../12-algorithms/16-problem-solving/12-edge-cases.md)
+    - [13-optimization.md](../12-algorithms/16-problem-solving/13-optimization.md)
+    - [14-problem-solving-strategies.md](../12-algorithms/16-problem-solving/14-problem-solving-strategies.md)
 
 ---
 
-# `13-security`
+# 13-SECURITY
 
-```text
-13-security/
-├── README.md
-|
-├── 01-fundamentals/
-│   ├── README.md
-|   |
-│   ├── 01-security-fundamentals.md
-│   ├── 02-security-principles.md
-│   ├── 03-confidentiality-integrity-availability.md
-│   ├── 04-threats-and-vulnerabilities.md
-│   ├── 05-risk-management.md
-│   ├── 06-threat-modeling.md
-│   ├── 07-security-controls.md
-│   ├── 08-defense-in-depth.md
-│   └── 09-security-best-practices.md
-|
-├── 02-web/
-│   ├── README.md
-|   |
-│   ├── 01-web-security-fundamentals.md
-│   ├── 02-owasp-top-10.md
-│   ├── 03-sql-injection.md
-│   ├── 04-xss.md
-│   ├── 05-csrf.md
-│   ├── 06-ssrf.md
-│   ├── 07-clickjacking.md
-│   ├── 08-file-upload-security.md
-│   ├── 09-command-injection.md
-│   ├── 10-path-traversal.md
-│   ├── 11-security-headers.md
-│   └── 12-web-security-best-practices.md
-|
-├── 03-auth/
-│   ├── README.md
-|   |
-│   ├── 01-authentication-fundamentals.md
-│   ├── 02-authorization.md
-│   ├── 03-password-authentication.md
-│   ├── 04-password-hashing.md
-│   ├── 05-multi-factor-authentication.md
-│   ├── 06-session-management.md
-│   ├── 07-role-based-access-control.md
-│   ├── 08-attribute-based-access-control.md
-│   ├── 09-permission-models.md
-│   └── 10-authentication-best-practices.md
-|
-├── 04-cryptography/
-│   ├── README.md
-|   |
-│   ├── 01-cryptography-fundamentals.md
-│   ├── 02-symmetric-encryption.md
-│   ├── 03-asymmetric-encryption.md
-│   ├── 04-hashing.md
-│   ├── 05-message-authentication-codes.md
-│   ├── 06-digital-signatures.md
-│   ├── 07-key-management.md
-│   ├── 08-randomness.md
-│   ├── 09-key-exchange.md
-│   └── 10-cryptography-best-practices.md
-|
-├── 05-tls/
-│   ├── README.md
-|   |
-│   ├── 01-tls-fundamentals.md
-│   ├── 02-ssl-vs-tls.md
-│   ├── 03-tls-handshake.md
-│   ├── 04-certificates.md
-│   ├── 05-certificate-authorities.md
-│   ├── 06-public-key-infrastructure.md
-│   ├── 07-tls-versions.md
-│   ├── 08-cipher-suites.md
-│   ├── 09-mutual-tls.md
-│   └── 10-tls-best-practices.md
-|
-├── 06-oauth/
-│   ├── README.md
-|   |
-│   ├── 01-oauth-fundamentals.md
-│   ├── 02-oauth-roles.md
-│   ├── 03-oauth-flows.md
-│   ├── 04-authorization-code.md
-│   ├── 05-pkce.md
-│   ├── 06-client-credentials.md
-│   ├── 07-refresh-tokens.md
-│   ├── 08-scopes-and-consent.md
-│   ├── 09-openid-connect.md
-│   └── 10-oauth-security-best-practices.md
-|
-├── 07-jwt/
-│   ├── README.md
-|   |
-│   ├── 01-jwt-fundamentals.md
-│   ├── 02-jwt-structure.md
-│   ├── 03-jwt-claims.md
-│   ├── 04-jwt-signing.md
-│   ├── 05-jwt-verification.md
-│   ├── 06-access-and-refresh-tokens.md
-│   ├── 07-token-expiration.md
-│   ├── 08-token-storage.md
-│   ├── 09-jwt-security-risks.md
-│   └── 10-jwt-best-practices.md
-|
-├── 08-secrets/
-│   ├── README.md
-|   |
-│   ├── 01-secrets-management-fundamentals.md
-│   ├── 02-environment-variables.md
-│   ├── 03-configuration-files.md
-│   ├── 04-api-keys.md
-│   ├── 05-passwords-and-credentials.md
-│   ├── 06-secret-storage.md
-│   ├── 07-secret-rotation.md
-│   ├── 08-secret-scanning.md
-│   ├── 09-secret-vaults.md
-│   └── 10-secrets-best-practices.md
-|
-└── 09-secure-coding/
-    ├── README.md
-    ├── 01-secure-coding-fundamentals.md
-    ├── 02-input-validation.md
-    ├── 03-output-encoding.md
-    ├── 04-secure-error-handling.md
-    ├── 05-secure-logging.md
-    ├── 06-dependency-security.md
-    ├── 07-memory-safety.md
-    ├── 08-secure-file-handling.md
-    ├── 09-secure-api-development.md
-    ├── 10-security-testing.md
-    ├── 11-static-analysis.md
-    ├── 12-dependency-scanning.md
-    └── 13-secure-coding-best-practices.md
-```
+- **[13-SECURITY/](../13-security/)**
+  - [README.md](../13-security/README.md)
+  - **[01-FUNDAMENTALS/](../13-security/01-fundamentals/)**
+    - [README.md](../13-security/01-fundamentals/README.md)
+    - [01-security-fundamentals.md](../13-security/01-fundamentals/01-security-fundamentals.md)
+    - [02-security-principles.md](../13-security/01-fundamentals/02-security-principles.md)
+    - [03-confidentiality-integrity-availability.md](../13-security/01-fundamentals/03-confidentiality-integrity-availability.md)
+    - [04-threats-and-vulnerabilities.md](../13-security/01-fundamentals/04-threats-and-vulnerabilities.md)
+    - [05-risk-management.md](../13-security/01-fundamentals/05-risk-management.md)
+    - [06-threat-modeling.md](../13-security/01-fundamentals/06-threat-modeling.md)
+    - [07-security-controls.md](../13-security/01-fundamentals/07-security-controls.md)
+    - [08-defense-in-depth.md](../13-security/01-fundamentals/08-defense-in-depth.md)
+    - [09-security-best-practices.md](../13-security/01-fundamentals/09-security-best-practices.md)
+  - **[02-WEB/](../13-security/02-web/)**
+    - [README.md](../13-security/02-web/README.md)
+    - [01-web-security-fundamentals.md](../13-security/02-web/01-web-security-fundamentals.md)
+    - [02-owasp-top-10.md](../13-security/02-web/02-owasp-top-10.md)
+    - [03-sql-injection.md](../13-security/02-web/03-sql-injection.md)
+    - [04-xss.md](../13-security/02-web/04-xss.md)
+    - [05-csrf.md](../13-security/02-web/05-csrf.md)
+    - [06-ssrf.md](../13-security/02-web/06-ssrf.md)
+    - [07-clickjacking.md](../13-security/02-web/07-clickjacking.md)
+    - [08-file-upload-security.md](../13-security/02-web/08-file-upload-security.md)
+    - [09-command-injection.md](../13-security/02-web/09-command-injection.md)
+    - [10-path-traversal.md](../13-security/02-web/10-path-traversal.md)
+    - [11-security-headers.md](../13-security/02-web/11-security-headers.md)
+    - [12-web-security-best-practices.md](../13-security/02-web/12-web-security-best-practices.md)
+  - **[03-AUTH/](../13-security/03-auth/)**
+    - [README.md](../13-security/03-auth/README.md)
+    - [01-authentication-fundamentals.md](../13-security/03-auth/01-authentication-fundamentals.md)
+    - [02-authorization.md](../13-security/03-auth/02-authorization.md)
+    - [03-password-authentication.md](../13-security/03-auth/03-password-authentication.md)
+    - [04-password-hashing.md](../13-security/03-auth/04-password-hashing.md)
+    - [05-multi-factor-authentication.md](../13-security/03-auth/05-multi-factor-authentication.md)
+    - [06-session-management.md](../13-security/03-auth/06-session-management.md)
+    - [07-role-based-access-control.md](../13-security/03-auth/07-role-based-access-control.md)
+    - [08-attribute-based-access-control.md](../13-security/03-auth/08-attribute-based-access-control.md)
+    - [09-permission-models.md](../13-security/03-auth/09-permission-models.md)
+    - [10-authentication-best-practices.md](../13-security/03-auth/10-authentication-best-practices.md)
+  - **[04-CRYPTOGRAPHY/](../13-security/04-cryptography/)**
+    - [README.md](../13-security/04-cryptography/README.md)
+    - [01-cryptography-fundamentals.md](../13-security/04-cryptography/01-cryptography-fundamentals.md)
+    - [02-symmetric-encryption.md](../13-security/04-cryptography/02-symmetric-encryption.md)
+    - [03-asymmetric-encryption.md](../13-security/04-cryptography/03-asymmetric-encryption.md)
+    - [04-hashing.md](../13-security/04-cryptography/04-hashing.md)
+    - [05-message-authentication-codes.md](../13-security/04-cryptography/05-message-authentication-codes.md)
+    - [06-digital-signatures.md](../13-security/04-cryptography/06-digital-signatures.md)
+    - [07-key-management.md](../13-security/04-cryptography/07-key-management.md)
+    - [08-randomness.md](../13-security/04-cryptography/08-randomness.md)
+    - [09-key-exchange.md](../13-security/04-cryptography/09-key-exchange.md)
+    - [10-cryptography-best-practices.md](../13-security/04-cryptography/10-cryptography-best-practices.md)
+  - **[05-TLS/](../13-security/05-tls/)**
+    - [README.md](../13-security/05-tls/README.md)
+    - [01-tls-fundamentals.md](../13-security/05-tls/01-tls-fundamentals.md)
+    - [02-ssl-vs-tls.md](../13-security/05-tls/02-ssl-vs-tls.md)
+    - [03-tls-handshake.md](../13-security/05-tls/03-tls-handshake.md)
+    - [04-certificates.md](../13-security/05-tls/04-certificates.md)
+    - [05-certificate-authorities.md](../13-security/05-tls/05-certificate-authorities.md)
+    - [06-public-key-infrastructure.md](../13-security/05-tls/06-public-key-infrastructure.md)
+    - [07-tls-versions.md](../13-security/05-tls/07-tls-versions.md)
+    - [08-cipher-suites.md](../13-security/05-tls/08-cipher-suites.md)
+    - [09-mutual-tls.md](../13-security/05-tls/09-mutual-tls.md)
+    - [10-tls-best-practices.md](../13-security/05-tls/10-tls-best-practices.md)
+  - **[06-OAUTH/](../13-security/06-oauth/)**
+    - [README.md](../13-security/06-oauth/README.md)
+    - [01-oauth-fundamentals.md](../13-security/06-oauth/01-oauth-fundamentals.md)
+    - [02-oauth-roles.md](../13-security/06-oauth/02-oauth-roles.md)
+    - [03-oauth-flows.md](../13-security/06-oauth/03-oauth-flows.md)
+    - [04-authorization-code.md](../13-security/06-oauth/04-authorization-code.md)
+    - [05-pkce.md](../13-security/06-oauth/05-pkce.md)
+    - [06-client-credentials.md](../13-security/06-oauth/06-client-credentials.md)
+    - [07-refresh-tokens.md](../13-security/06-oauth/07-refresh-tokens.md)
+    - [08-scopes-and-consent.md](../13-security/06-oauth/08-scopes-and-consent.md)
+    - [09-openid-connect.md](../13-security/06-oauth/09-openid-connect.md)
+    - [10-oauth-security-best-practices.md](../13-security/06-oauth/10-oauth-security-best-practices.md)
+  - **[07-JWT/](../13-security/07-jwt/)**
+    - [README.md](../13-security/07-jwt/README.md)
+    - [01-jwt-fundamentals.md](../13-security/07-jwt/01-jwt-fundamentals.md)
+    - [02-jwt-structure.md](../13-security/07-jwt/02-jwt-structure.md)
+    - [03-jwt-claims.md](../13-security/07-jwt/03-jwt-claims.md)
+    - [04-jwt-signing.md](../13-security/07-jwt/04-jwt-signing.md)
+    - [05-jwt-verification.md](../13-security/07-jwt/05-jwt-verification.md)
+    - [06-access-and-refresh-tokens.md](../13-security/07-jwt/06-access-and-refresh-tokens.md)
+    - [07-token-expiration.md](../13-security/07-jwt/07-token-expiration.md)
+    - [08-token-storage.md](../13-security/07-jwt/08-token-storage.md)
+    - [09-jwt-security-risks.md](../13-security/07-jwt/09-jwt-security-risks.md)
+    - [10-jwt-best-practices.md](../13-security/07-jwt/10-jwt-best-practices.md)
+  - **[08-SECRETS/](../13-security/08-secrets/)**
+    - [README.md](../13-security/08-secrets/README.md)
+    - [01-secrets-management-fundamentals.md](../13-security/08-secrets/01-secrets-management-fundamentals.md)
+    - [02-environment-variables.md](../13-security/08-secrets/02-environment-variables.md)
+    - [03-configuration-files.md](../13-security/08-secrets/03-configuration-files.md)
+    - [04-api-keys.md](../13-security/08-secrets/04-api-keys.md)
+    - [05-passwords-and-credentials.md](../13-security/08-secrets/05-passwords-and-credentials.md)
+    - [06-secret-storage.md](../13-security/08-secrets/06-secret-storage.md)
+    - [07-secret-rotation.md](../13-security/08-secrets/07-secret-rotation.md)
+    - [08-secret-scanning.md](../13-security/08-secrets/08-secret-scanning.md)
+    - [09-secret-vaults.md](../13-security/08-secrets/09-secret-vaults.md)
+    - [10-secrets-best-practices.md](../13-security/08-secrets/10-secrets-best-practices.md)
+  - **[09-SECURE-CODING/](../13-security/09-secure-coding/)**
+    - [README.md](../13-security/09-secure-coding/README.md)
+    - [01-secure-coding-fundamentals.md](../13-security/09-secure-coding/01-secure-coding-fundamentals.md)
+    - [02-input-validation.md](../13-security/09-secure-coding/02-input-validation.md)
+    - [03-output-encoding.md](../13-security/09-secure-coding/03-output-encoding.md)
+    - [04-secure-error-handling.md](../13-security/09-secure-coding/04-secure-error-handling.md)
+    - [05-secure-logging.md](../13-security/09-secure-coding/05-secure-logging.md)
+    - [06-dependency-security.md](../13-security/09-secure-coding/06-dependency-security.md)
+    - [07-memory-safety.md](../13-security/09-secure-coding/07-memory-safety.md)
+    - [08-secure-file-handling.md](../13-security/09-secure-coding/08-secure-file-handling.md)
+    - [09-secure-api-development.md](../13-security/09-secure-coding/09-secure-api-development.md)
+    - [10-security-testing.md](../13-security/09-secure-coding/10-security-testing.md)
+    - [11-static-analysis.md](../13-security/09-secure-coding/11-static-analysis.md)
+    - [12-dependency-scanning.md](../13-security/09-secure-coding/12-dependency-scanning.md)
+    - [13-secure-coding-best-practices.md](../13-security/09-secure-coding/13-secure-coding-best-practices.md)
 
 ---
 
-# `14-tools`
+# 14-TOOLS
 
-```text
-14-tools/
-├── README.md
-|
-├── 01-vscode/
-│   ├── README.md
-|   |
-│   ├── 01-vscode-fundamentals.md
-│   ├── 02-installation.md
-│   ├── 03-settings.md               [OK] 2026.10.03
-│   ├── 04-keyboard-shortcuts.md
-│   ├── 05-extensions.md             [OK] 2026.10.03
-│   ├── 06-integrated-terminal.md
-│   ├── 07-debugging.md
-│   ├── 08-source-control.md
-│   ├── 09-tasks.md
-│   ├── 10-remote-development.md
-│   └── 11-troubleshooting.md
-|
-├── 02-vim/
-│   ├── README.md
-|   |
-│   ├── 01-vim-fundamentals.md
-│   ├── 02-modes.md
-│   ├── 03-navigation.md
-│   ├── 04-editing.md
-│   ├── 05-search-and-replace.md
-│   ├── 06-buffers.md
-│   ├── 07-windows-and-tabs.md
-│   ├── 08-registers-and-macros.md
-│   ├── 09-configuration.md
-│   └── 10-vim-commands.md
-|
-├── 03-postman/
-│   ├── README.md
-|   |
-│   ├── 01-postman-fundamentals.md
-│   ├── 02-requests.md
-│   ├── 03-collections.md
-│   ├── 04-environments.md
-│   ├── 05-variables.md
-│   ├── 06-authentication.md
-│   ├── 07-tests.md
-│   ├── 08-scripts.md
-│   ├── 09-mocking.md
-│   └── 10-cli-and-automation.md
-|
-├── 04-browsers/
-│   ├── README.md
-|   |
-|   ├── 01-google-chrome-optimization.md   [OK] 2026.10.03
-|   ├── 02-mozilla-firefox-optimization.md [OK] 2026.10.03
-│   └── 03-brave-browser-optimization.md   [OK] 2026.10.03
-|
-├── 05-curl/
-│   ├── README.md
-|   |
-│   ├── 01-curl-fundamentals.md
-│   ├── 02-http-requests.md
-│   ├── 03-get-and-post.md
-│   ├── 04-headers.md
-│   ├── 05-request-body.md
-│   ├── 06-authentication.md
-│   ├── 07-cookies.md
-│   ├── 08-file-upload-and-download.md
-│   ├── 09-proxy-and-tls.md
-│   └── 10-curl-examples.md
-|
-├── 06-jq/
-│   ├── README.md
-|   |
-│   ├── 01-jq-fundamentals.md
-│   ├── 02-selecting-data.md
-│   ├── 03-filtering.md
-│   ├── 04-transforming-data.md
-│   ├── 05-arrays-and-objects.md
-│   ├── 06-pipes.md
-│   ├── 07-functions.md
-│   ├── 08-formatting-output.md
-│   └── 09-jq-examples.md
-|
-├── 07-grep/
-│   ├── README.md
-|   |
-│   ├── 01-grep-fundamentals.md
-│   ├── 02-pattern-searching.md
-│   ├── 03-options.md
-│   ├── 04-regular-expressions.md
-│   ├── 05-recursive-search.md
-│   ├── 06-context-lines.md
-│   └── 07-grep-examples.md
-|
-├── 08-sed/
-│   ├── README.md
-|   |
-│   ├── 01-sed-fundamentals.md
-│   ├── 02-printing.md
-│   ├── 03-substitution.md
-│   ├── 04-deletion.md
-│   ├── 05-insertion-and-appending.md
-│   ├── 06-addressing.md
-│   ├── 07-regular-expressions.md
-│   └── 08-sed-examples.md
-|
-├── 09-awk/
-│   ├── README.md
-|   |
-│   ├── 01-awk-fundamentals.md
-│   ├── 02-fields-and-records.md
-│   ├── 03-patterns-and-actions.md
-│   ├── 04-variables.md
-│   ├── 05-conditions.md
-│   ├── 06-loops.md
-│   ├── 07-functions.md
-│   └── 08-awk-examples.md
-|
-├── 10-npm/
-│   ├── README.md
-|   |
-│   ├── 01-npm-fundamentals.md
-│   ├── 02-installation.md
-│   ├── 03-package-json.md
-│   ├── 04-packages.md
-│   ├── 05-dependencies.md
-│   ├── 06-scripts.md
-│   ├── 07-npm-workspaces.md
-│   ├── 08-publishing-packages.md
-│   ├── 09-npm-security.md
-│   └── 10-npm-commands.md
-|
-├── 11-pnpm/
-│   ├── README.md
-|   |
-│   ├── 01-pnpm-fundamentals.md
-│   ├── 02-installation.md
-│   ├── 03-package-management.md
-│   ├── 04-dependencies.md
-│   ├── 05-pnpm-lockfile.md
-│   ├── 06-pnpm-workspaces.md
-│   ├── 07-monorepos.md
-│   ├── 08-pnpm-scripts.md
-│   ├── 09-pnpm-security.md
-│   └── 10-pnpm-commands.md
-|
-├── 12-make/
-|   ├── README.md
-|   ├── 01-make-fundamentals.md
-|   ├── 02-makefile.md
-|   ├── 03-targets.md
-|   ├── 04-variables.md
-|   ├── 05-pattern-rules.md
-|   ├── 06-dependencies.md
-|   ├── 07-automatic-variables.md
-|   ├── 08-functions.md
-|   ├── 09-conditional-rules.md
-|   └── 10-make-examples.md
-|
-└── 13-note-taking/
-    ├── README.md
-    |
-    └── 01-obsidian.md [OK] 2026.10.03
-```
+- **[14-TOOLS/](../14-tools/)**
+  - [README.md](../14-tools/README.md)
+  - **[01-VSCODE/](../14-tools/01-vscode/)**
+    - [README.md](../14-tools/01-vscode/README.md)
+    - [01-vscode-fundamentals.md](../14-tools/01-vscode/01-vscode-fundamentals.md)
+    - [02-installation.md](../14-tools/01-vscode/02-installation.md)
+    - [03-settings.md](../14-tools/01-vscode/03-settings.md)
+    - [04-keyboard-shortcuts.md](../14-tools/01-vscode/04-keyboard-shortcuts.md)
+    - [05-extensions.md](../14-tools/01-vscode/05-extensions.md)
+    - [06-integrated-terminal.md](../14-tools/01-vscode/06-integrated-terminal.md)
+    - [07-debugging.md](../14-tools/01-vscode/07-debugging.md)
+    - [08-source-control.md](../14-tools/01-vscode/08-source-control.md)
+    - [09-tasks.md](../14-tools/01-vscode/09-tasks.md)
+    - [10-remote-development.md](../14-tools/01-vscode/10-remote-development.md)
+    - [11-troubleshooting.md](../14-tools/01-vscode/11-troubleshooting.md)
+  - **[02-VIM/](../14-tools/02-vim/)**
+    - [README.md](../14-tools/02-vim/README.md)
+    - [01-vim-fundamentals.md](../14-tools/02-vim/01-vim-fundamentals.md)
+    - [02-modes.md](../14-tools/02-vim/02-modes.md)
+    - [03-navigation.md](../14-tools/02-vim/03-navigation.md)
+    - [04-editing.md](../14-tools/02-vim/04-editing.md)
+    - [05-search-and-replace.md](../14-tools/02-vim/05-search-and-replace.md)
+    - [06-buffers.md](../14-tools/02-vim/06-buffers.md)
+    - [07-windows-and-tabs.md](../14-tools/02-vim/07-windows-and-tabs.md)
+    - [08-registers-and-macros.md](../14-tools/02-vim/08-registers-and-macros.md)
+    - [09-configuration.md](../14-tools/02-vim/09-configuration.md)
+    - [10-vim-commands.md](../14-tools/02-vim/10-vim-commands.md)
+  - **[03-POSTMAN/](../14-tools/03-postman/)**
+    - [README.md](../14-tools/03-postman/README.md)
+    - [01-postman-fundamentals.md](../14-tools/03-postman/01-postman-fundamentals.md)
+    - [02-requests.md](../14-tools/03-postman/02-requests.md)
+    - [03-collections.md](../14-tools/03-postman/03-collections.md)
+    - [04-environments.md](../14-tools/03-postman/04-environments.md)
+    - [05-variables.md](../14-tools/03-postman/05-variables.md)
+    - [06-authentication.md](../14-tools/03-postman/06-authentication.md)
+    - [07-tests.md](../14-tools/03-postman/07-tests.md)
+    - [08-scripts.md](../14-tools/03-postman/08-scripts.md)
+    - [09-mocking.md](../14-tools/03-postman/09-mocking.md)
+    - [10-cli-and-automation.md](../14-tools/03-postman/10-cli-and-automation.md)
+  - **[04-BROWSERS/](../14-tools/04-browsers/)**
+    - [README.md](../14-tools/04-browsers/README.md)
+    - [01-google-chrome-optimization.md](../14-tools/04-browsers/01-google-chrome-optimization.md)
+    - [02-mozilla-firefox-optimization.md](../14-tools/04-browsers/02-mozilla-firefox-optimization.md)
+    - [03-brave-browser-optimization.md](../14-tools/04-browsers/03-brave-browser-optimization.md)
+  - **[05-CURL/](../14-tools/05-curl/)**
+    - [README.md](../14-tools/05-curl/README.md)
+    - [01-curl-fundamentals.md](../14-tools/05-curl/01-curl-fundamentals.md)
+    - [02-http-requests.md](../14-tools/05-curl/02-http-requests.md)
+    - [03-get-and-post.md](../14-tools/05-curl/03-get-and-post.md)
+    - [04-headers.md](../14-tools/05-curl/04-headers.md)
+    - [05-request-body.md](../14-tools/05-curl/05-request-body.md)
+    - [06-authentication.md](../14-tools/05-curl/06-authentication.md)
+    - [07-cookies.md](../14-tools/05-curl/07-cookies.md)
+    - [08-file-upload-and-download.md](../14-tools/05-curl/08-file-upload-and-download.md)
+    - [09-proxy-and-tls.md](../14-tools/05-curl/09-proxy-and-tls.md)
+    - [10-curl-examples.md](../14-tools/05-curl/10-curl-examples.md)
+  - **[06-JQ/](../14-tools/06-jq/)**
+    - [README.md](../14-tools/06-jq/README.md)
+    - [01-jq-fundamentals.md](../14-tools/06-jq/01-jq-fundamentals.md)
+    - [02-selecting-data.md](../14-tools/06-jq/02-selecting-data.md)
+    - [03-filtering.md](../14-tools/06-jq/03-filtering.md)
+    - [04-transforming-data.md](../14-tools/06-jq/04-transforming-data.md)
+    - [05-arrays-and-objects.md](../14-tools/06-jq/05-arrays-and-objects.md)
+    - [06-pipes.md](../14-tools/06-jq/06-pipes.md)
+    - [07-functions.md](../14-tools/06-jq/07-functions.md)
+    - [08-formatting-output.md](../14-tools/06-jq/08-formatting-output.md)
+    - [09-jq-examples.md](../14-tools/06-jq/09-jq-examples.md)
+  - **[07-GREP/](../14-tools/07-grep/)**
+    - [README.md](../14-tools/07-grep/README.md)
+    - [01-grep-fundamentals.md](../14-tools/07-grep/01-grep-fundamentals.md)
+    - [02-pattern-searching.md](../14-tools/07-grep/02-pattern-searching.md)
+    - [03-options.md](../14-tools/07-grep/03-options.md)
+    - [04-regular-expressions.md](../14-tools/07-grep/04-regular-expressions.md)
+    - [05-recursive-search.md](../14-tools/07-grep/05-recursive-search.md)
+    - [06-context-lines.md](../14-tools/07-grep/06-context-lines.md)
+    - [07-grep-examples.md](../14-tools/07-grep/07-grep-examples.md)
+  - **[08-SED/](../14-tools/08-sed/)**
+    - [README.md](../14-tools/08-sed/README.md)
+    - [01-sed-fundamentals.md](../14-tools/08-sed/01-sed-fundamentals.md)
+    - [02-printing.md](../14-tools/08-sed/02-printing.md)
+    - [03-substitution.md](../14-tools/08-sed/03-substitution.md)
+    - [04-deletion.md](../14-tools/08-sed/04-deletion.md)
+    - [05-insertion-and-appending.md](../14-tools/08-sed/05-insertion-and-appending.md)
+    - [06-addressing.md](../14-tools/08-sed/06-addressing.md)
+    - [07-regular-expressions.md](../14-tools/08-sed/07-regular-expressions.md)
+    - [08-sed-examples.md](../14-tools/08-sed/08-sed-examples.md)
+  - **[09-AWK/](../14-tools/09-awk/)**
+    - [README.md](../14-tools/09-awk/README.md)
+    - [01-awk-fundamentals.md](../14-tools/09-awk/01-awk-fundamentals.md)
+    - [02-fields-and-records.md](../14-tools/09-awk/02-fields-and-records.md)
+    - [03-patterns-and-actions.md](../14-tools/09-awk/03-patterns-and-actions.md)
+    - [04-variables.md](../14-tools/09-awk/04-variables.md)
+    - [05-conditions.md](../14-tools/09-awk/05-conditions.md)
+    - [06-loops.md](../14-tools/09-awk/06-loops.md)
+    - [07-functions.md](../14-tools/09-awk/07-functions.md)
+    - [08-awk-examples.md](../14-tools/09-awk/08-awk-examples.md)
+  - **[10-NPM/](../14-tools/10-npm/)**
+    - [README.md](../14-tools/10-npm/README.md)
+    - [01-npm-fundamentals.md](../14-tools/10-npm/01-npm-fundamentals.md)
+    - [02-installation.md](../14-tools/10-npm/02-installation.md)
+    - [03-package-json.md](../14-tools/10-npm/03-package-json.md)
+    - [04-packages.md](../14-tools/10-npm/04-packages.md)
+    - [05-dependencies.md](../14-tools/10-npm/05-dependencies.md)
+    - [06-scripts.md](../14-tools/10-npm/06-scripts.md)
+    - [07-npm-workspaces.md](../14-tools/10-npm/07-npm-workspaces.md)
+    - [08-publishing-packages.md](../14-tools/10-npm/08-publishing-packages.md)
+    - [09-npm-security.md](../14-tools/10-npm/09-npm-security.md)
+    - [10-npm-commands.md](../14-tools/10-npm/10-npm-commands.md)
+  - **[11-PNPM/](../14-tools/11-pnpm/)**
+    - [README.md](../14-tools/11-pnpm/README.md)
+    - [01-pnpm-fundamentals.md](../14-tools/11-pnpm/01-pnpm-fundamentals.md)
+    - [02-installation.md](../14-tools/11-pnpm/02-installation.md)
+    - [03-package-management.md](../14-tools/11-pnpm/03-package-management.md)
+    - [04-dependencies.md](../14-tools/11-pnpm/04-dependencies.md)
+    - [05-pnpm-lockfile.md](../14-tools/11-pnpm/05-pnpm-lockfile.md)
+    - [06-pnpm-workspaces.md](../14-tools/11-pnpm/06-pnpm-workspaces.md)
+    - [07-monorepos.md](../14-tools/11-pnpm/07-monorepos.md)
+    - [08-pnpm-scripts.md](../14-tools/11-pnpm/08-pnpm-scripts.md)
+    - [09-pnpm-security.md](../14-tools/11-pnpm/09-pnpm-security.md)
+    - [10-pnpm-commands.md](../14-tools/11-pnpm/10-pnpm-commands.md)
+  - **[12-MAKE/](../14-tools/12-make/)**
+    - [README.md](../14-tools/12-make/README.md)
+    - [01-make-fundamentals.md](../14-tools/12-make/01-make-fundamentals.md)
+    - [02-makefile.md](../14-tools/12-make/02-makefile.md)
+    - [03-targets.md](../14-tools/12-make/03-targets.md)
+    - [04-variables.md](../14-tools/12-make/04-variables.md)
+    - [05-pattern-rules.md](../14-tools/12-make/05-pattern-rules.md)
+    - [06-dependencies.md](../14-tools/12-make/06-dependencies.md)
+    - [07-automatic-variables.md](../14-tools/12-make/07-automatic-variables.md)
+    - [08-functions.md](../14-tools/12-make/08-functions.md)
+    - [09-conditional-rules.md](../14-tools/12-make/09-conditional-rules.md)
+    - [10-make-examples.md](../14-tools/12-make/10-make-examples.md)
+  - **[13-NOTE-TAKING/](../14-tools/13-note-taking/)**
+    - [README.md](../14-tools/13-note-taking/README.md)
+    - [01-obsidian.md](../14-tools/13-note-taking/01-obsidian.md)
 
 ---
 
-# `15-mobile`
+# 15-MOBILE
 
-```text
-15-mobile/
-├── README.md
-|
-├── 01-android/
-│   ├── README.md
-|   |
-│   ├── 01-android-fundamentals.md
-│   ├── 02-android-studio.md
-│   ├── 03-project-structure.md
-│   ├── 04-activities.md
-│   ├── 05-fragments.md
-│   ├── 06-intents.md
-│   ├── 07-views-and-layouts.md
-│   ├── 08-resources.md
-│   ├── 09-lifecycle.md
-│   ├── 10-navigation.md
-│   ├── 11-storage.md
-│   ├── 12-networking.md
-│   ├── 13-permissions.md
-│   ├── 14-background-work.md
-│   ├── 15-notifications.md
-│   ├── 16-testing.md
-│   ├── 17-performance.md
-│   ├── 18-security.md
-│   └── 19-publishing.md
-|
-├── 02-ios/
-│   ├── README.md
-|   |
-│   ├── 01-ios-fundamentals.md
-│   ├── 02-xcode.md
-│   ├── 03-project-structure.md
-│   ├── 04-view-controllers.md
-│   ├── 05-swiftui.md
-│   ├── 06-uikit.md
-│   ├── 07-navigation.md
-│   ├── 08-app-lifecycle.md
-│   ├── 09-storage.md
-│   ├── 10-networking.md
-│   ├── 11-permissions.md
-│   ├── 12-background-work.md
-│   ├── 13-notifications.md
-│   ├── 14-testing.md
-│   ├── 15-performance.md
-│   ├── 16-security.md
-│   └── 17-publishing.md
-|
-└── 03-react-native/
-    ├── README.md
-    |
-    ├── 01-react-native-fundamentals.md
-    ├── 02-environment-setup.md
-    ├── 03-project-structure.md
-    ├── 04-components.md
-    ├── 05-styling.md
-    ├── 06-navigation.md
-    ├── 07-state-management.md
-    ├── 08-platform-apis.md
-    ├── 09-native-modules.md
-    ├── 10-networking.md
-    ├── 11-storage.md
-    ├── 12-permissions.md
-    ├── 13-testing.md
-    ├── 14-performance.md
-    ├── 15-debugging.md
-    ├── 16-security.md
-    └── 17-publishing.md
-```
+- **[15-MOBILE/](../15-mobile/)**
+  - [README.md](../15-mobile/README.md)
+  - **[01-ANDROID/](../15-mobile/01-android/)**
+    - [README.md](../15-mobile/01-android/README.md)
+    - [01-android-fundamentals.md](../15-mobile/01-android/01-android-fundamentals.md)
+    - [02-android-studio.md](../15-mobile/01-android/02-android-studio.md)
+    - [03-project-structure.md](../15-mobile/01-android/03-project-structure.md)
+    - [04-activities.md](../15-mobile/01-android/04-activities.md)
+    - [05-fragments.md](../15-mobile/01-android/05-fragments.md)
+    - [06-intents.md](../15-mobile/01-android/06-intents.md)
+    - [07-views-and-layouts.md](../15-mobile/01-android/07-views-and-layouts.md)
+    - [08-resources.md](../15-mobile/01-android/08-resources.md)
+    - [09-lifecycle.md](../15-mobile/01-android/09-lifecycle.md)
+    - [10-navigation.md](../15-mobile/01-android/10-navigation.md)
+    - [11-storage.md](../15-mobile/01-android/11-storage.md)
+    - [12-networking.md](../15-mobile/01-android/12-networking.md)
+    - [13-permissions.md](../15-mobile/01-android/13-permissions.md)
+    - [14-background-work.md](../15-mobile/01-android/14-background-work.md)
+    - [15-notifications.md](../15-mobile/01-android/15-notifications.md)
+    - [16-testing.md](../15-mobile/01-android/16-testing.md)
+    - [17-performance.md](../15-mobile/01-android/17-performance.md)
+    - [18-security.md](../15-mobile/01-android/18-security.md)
+    - [19-publishing.md](../15-mobile/01-android/19-publishing.md)
+  - **[02-IOS/](../15-mobile/02-ios/)**
+    - [README.md](../15-mobile/02-ios/README.md)
+    - [01-ios-fundamentals.md](../15-mobile/02-ios/01-ios-fundamentals.md)
+    - [02-xcode.md](../15-mobile/02-ios/02-xcode.md)
+    - [03-project-structure.md](../15-mobile/02-ios/03-project-structure.md)
+    - [04-view-controllers.md](../15-mobile/02-ios/04-view-controllers.md)
+    - [05-swiftui.md](../15-mobile/02-ios/05-swiftui.md)
+    - [06-uikit.md](../15-mobile/02-ios/06-uikit.md)
+    - [07-navigation.md](../15-mobile/02-ios/07-navigation.md)
+    - [08-app-lifecycle.md](../15-mobile/02-ios/08-app-lifecycle.md)
+    - [09-storage.md](../15-mobile/02-ios/09-storage.md)
+    - [10-networking.md](../15-mobile/02-ios/10-networking.md)
+    - [11-permissions.md](../15-mobile/02-ios/11-permissions.md)
+    - [12-background-work.md](../15-mobile/02-ios/12-background-work.md)
+    - [13-notifications.md](../15-mobile/02-ios/13-notifications.md)
+    - [14-testing.md](../15-mobile/02-ios/14-testing.md)
+    - [15-performance.md](../15-mobile/02-ios/15-performance.md)
+    - [16-security.md](../15-mobile/02-ios/16-security.md)
+    - [17-publishing.md](../15-mobile/02-ios/17-publishing.md)
+  - **[03-REACT-NATIVE/](../15-mobile/03-react-native/)**
+    - [README.md](../15-mobile/03-react-native/README.md)
+    - [01-react-native-fundamentals.md](../15-mobile/03-react-native/01-react-native-fundamentals.md)
+    - [02-environment-setup.md](../15-mobile/03-react-native/02-environment-setup.md)
+    - [03-project-structure.md](../15-mobile/03-react-native/03-project-structure.md)
+    - [04-components.md](../15-mobile/03-react-native/04-components.md)
+    - [05-styling.md](../15-mobile/03-react-native/05-styling.md)
+    - [06-navigation.md](../15-mobile/03-react-native/06-navigation.md)
+    - [07-state-management.md](../15-mobile/03-react-native/07-state-management.md)
+    - [08-platform-apis.md](../15-mobile/03-react-native/08-platform-apis.md)
+    - [09-native-modules.md](../15-mobile/03-react-native/09-native-modules.md)
+    - [10-networking.md](../15-mobile/03-react-native/10-networking.md)
+    - [11-storage.md](../15-mobile/03-react-native/11-storage.md)
+    - [12-permissions.md](../15-mobile/03-react-native/12-permissions.md)
+    - [13-testing.md](../15-mobile/03-react-native/13-testing.md)
+    - [14-performance.md](../15-mobile/03-react-native/14-performance.md)
+    - [15-debugging.md](../15-mobile/03-react-native/15-debugging.md)
+    - [16-security.md](../15-mobile/03-react-native/16-security.md)
+    - [17-publishing.md](../15-mobile/03-react-native/17-publishing.md)
 
 ---
 
-# `16-snippets`
+# 16-SNIPPETS
 
-```text
-16-snippets/
-├── README.md
-|
-├── 01-bash/
-│   ├── README.md
-|   |
-│   ├── 01-variables.md
-│   ├── 02-conditions.md
-│   ├── 03-loops.md
-│   ├── 04-functions.md
-│   ├── 05-arrays.md
-│   ├── 06-files-and-directories.md
-│   ├── 07-text-processing.md
-│   ├── 08-processes.md
-│   ├── 09-networking.md
-│   └── 10-system-administration.md
-|
-├── 02-powershell/
-│   ├── README.md
-|   |
-│   ├── 01-variables.md
-│   ├── 02-conditions.md
-│   ├── 03-loops.md
-│   ├── 04-functions.md
-│   ├── 05-arrays-and-hashtables.md
-│   ├── 06-files-and-directories.md
-│   ├── 07-processes-and-services.md
-│   ├── 08-networking.md
-│   ├── 09-registry.md
-│   └── 10-system-administration.md
-|
-├── 03-code-editor/
-│   ├── README.md
-|   |
-│   └── 01-vs-code.md [OK] 2026.10.03
-|
-├── 04-javascript/
-│   ├── README.md
-|   |
-│   ├── 01-arrays.md
-│   ├── 02-objects.md
-│   ├── 03-strings.md
-│   ├── 04-functions.md
-│   ├── 05-dates.md
-│   ├── 06-json.md
-│   ├── 07-regex.md
-│   ├── 08-promises.md
-│   ├── 09-fetch.md
-│   └── 10-common-tasks.md
-|
-├── 05-typescript/
-│   ├── README.md
-|   |
-│   ├── 01-types.md
-│   ├── 02-interfaces.md
-│   ├── 03-types-and-unions.md
-│   ├── 04-generics.md
-│   ├── 05-functions.md
-│   ├── 06-utility-types.md
-│   ├── 07-objects.md
-│   ├── 08-arrays.md
-│   ├── 09-error-handling.md
-│   └── 10-common-tasks.md
-|
-├── 06-sql/
-│   ├── README.md
-|   |
-│   ├── 01-select.md
-│   ├── 02-insert.md
-│   ├── 03-update.md
-│   ├── 04-delete.md
-│   ├── 05-joins.md
-│   ├── 06-aggregation.md
-│   ├── 07-subqueries.md
-│   ├── 08-cte.md
-│   ├── 09-window-functions.md
-│   └── 10-common-tasks.md
-|
-├── 07-html/
-│   ├── README.md
-|   |
-│   ├── 01-document-structure.md
-│   ├── 02-headings-and-text.md
-│   ├── 03-links.md
-│   ├── 04-images.md
-│   ├── 05-lists.md
-│   ├── 06-tables.md
-│   ├── 07-forms.md
-│   ├── 08-semantic-elements.md
-│   ├── 09-meta-tags.md
-│   └── 10-common-tasks.md
-|
-└── 08-css/
-    ├── README.md
-    |
-    ├── 01-selectors.md
-    ├── 02-colors-and-backgrounds.md
-    ├── 03-box-model.md
-    ├── 04-flexbox.md
-    ├── 05-grid.md
-    ├── 06-positioning.md
-    ├── 07-responsive-design.md
-    ├── 08-animations.md
-    ├── 09-pseudo-classes-and-elements.md
-    └── 10-common-tasks.md
-```
+- **[16-SNIPPETS/](../16-snippets/)**
+  - [README.md](../16-snippets/README.md)
+  - **[01-BASH/](../16-snippets/01-bash/)**
+    - [README.md](../16-snippets/01-bash/README.md)
+    - [01-variables.md](../16-snippets/01-bash/01-variables.md)
+    - [02-conditions.md](../16-snippets/01-bash/02-conditions.md)
+    - [03-loops.md](../16-snippets/01-bash/03-loops.md)
+    - [04-functions.md](../16-snippets/01-bash/04-functions.md)
+    - [05-arrays.md](../16-snippets/01-bash/05-arrays.md)
+    - [06-files-and-directories.md](../16-snippets/01-bash/06-files-and-directories.md)
+    - [07-text-processing.md](../16-snippets/01-bash/07-text-processing.md)
+    - [08-processes.md](../16-snippets/01-bash/08-processes.md)
+    - [09-networking.md](../16-snippets/01-bash/09-networking.md)
+    - [10-system-administration.md](../16-snippets/01-bash/10-system-administration.md)
+  - **[02-POWERSHELL/](../16-snippets/02-powershell/)**
+    - [README.md](../16-snippets/02-powershell/README.md)
+    - [01-variables.md](../16-snippets/02-powershell/01-variables.md)
+    - [02-conditions.md](../16-snippets/02-powershell/02-conditions.md)
+    - [03-loops.md](../16-snippets/02-powershell/03-loops.md)
+    - [04-functions.md](../16-snippets/02-powershell/04-functions.md)
+    - [05-arrays-and-hashtables.md](../16-snippets/02-powershell/05-arrays-and-hashtables.md)
+    - [06-files-and-directories.md](../16-snippets/02-powershell/06-files-and-directories.md)
+    - [07-processes-and-services.md](../16-snippets/02-powershell/07-processes-and-services.md)
+    - [08-networking.md](../16-snippets/02-powershell/08-networking.md)
+    - [09-registry.md](../16-snippets/02-powershell/09-registry.md)
+    - [10-system-administration.md](../16-snippets/02-powershell/10-system-administration.md)
+  - **[03-CODE-EDITOR/](../16-snippets/03-code-editor/)**
+    - [README.md](../16-snippets/03-code-editor/README.md)
+    - [01-vs-code.md](../16-snippets/03-code-editor/01-vs-code.md)
+  - **[04-JAVASCRIPT/](../16-snippets/04-javascript/)**
+    - [README.md](../16-snippets/04-javascript/README.md)
+    - [01-arrays.md](../16-snippets/04-javascript/01-arrays.md)
+    - [02-objects.md](../16-snippets/04-javascript/02-objects.md)
+    - [03-strings.md](../16-snippets/04-javascript/03-strings.md)
+    - [04-functions.md](../16-snippets/04-javascript/04-functions.md)
+    - [05-dates.md](../16-snippets/04-javascript/05-dates.md)
+    - [06-json.md](../16-snippets/04-javascript/06-json.md)
+    - [07-regex.md](../16-snippets/04-javascript/07-regex.md)
+    - [08-promises.md](../16-snippets/04-javascript/08-promises.md)
+    - [09-fetch.md](../16-snippets/04-javascript/09-fetch.md)
+    - [10-common-tasks.md](../16-snippets/04-javascript/10-common-tasks.md)
+  - **[05-TYPESCRIPT/](../16-snippets/05-typescript/)**
+    - [README.md](../16-snippets/05-typescript/README.md)
+    - [01-types.md](../16-snippets/05-typescript/01-types.md)
+    - [02-interfaces.md](../16-snippets/05-typescript/02-interfaces.md)
+    - [03-types-and-unions.md](../16-snippets/05-typescript/03-types-and-unions.md)
+    - [04-generics.md](../16-snippets/05-typescript/04-generics.md)
+    - [05-functions.md](../16-snippets/05-typescript/05-functions.md)
+    - [06-utility-types.md](../16-snippets/05-typescript/06-utility-types.md)
+    - [07-objects.md](../16-snippets/05-typescript/07-objects.md)
+    - [08-arrays.md](../16-snippets/05-typescript/08-arrays.md)
+    - [09-error-handling.md](../16-snippets/05-typescript/09-error-handling.md)
+    - [10-common-tasks.md](../16-snippets/05-typescript/10-common-tasks.md)
+  - **[06-SQL/](../16-snippets/06-sql/)**
+    - [README.md](../16-snippets/06-sql/README.md)
+    - [01-select.md](../16-snippets/06-sql/01-select.md)
+    - [02-insert.md](../16-snippets/06-sql/02-insert.md)
+    - [03-update.md](../16-snippets/06-sql/03-update.md)
+    - [04-delete.md](../16-snippets/06-sql/04-delete.md)
+    - [05-joins.md](../16-snippets/06-sql/05-joins.md)
+    - [06-aggregation.md](../16-snippets/06-sql/06-aggregation.md)
+    - [07-subqueries.md](../16-snippets/06-sql/07-subqueries.md)
+    - [08-cte.md](../16-snippets/06-sql/08-cte.md)
+    - [09-window-functions.md](../16-snippets/06-sql/09-window-functions.md)
+    - [10-common-tasks.md](../16-snippets/06-sql/10-common-tasks.md)
+  - **[07-HTML/](../16-snippets/07-html/)**
+    - [README.md](../16-snippets/07-html/README.md)
+    - [01-document-structure.md](../16-snippets/07-html/01-document-structure.md)
+    - [02-headings-and-text.md](../16-snippets/07-html/02-headings-and-text.md)
+    - [03-links.md](../16-snippets/07-html/03-links.md)
+    - [04-images.md](../16-snippets/07-html/04-images.md)
+    - [05-lists.md](../16-snippets/07-html/05-lists.md)
+    - [06-tables.md](../16-snippets/07-html/06-tables.md)
+    - [07-forms.md](../16-snippets/07-html/07-forms.md)
+    - [08-semantic-elements.md](../16-snippets/07-html/08-semantic-elements.md)
+    - [09-meta-tags.md](../16-snippets/07-html/09-meta-tags.md)
+    - [10-common-tasks.md](../16-snippets/07-html/10-common-tasks.md)
+  - **[08-CSS/](../16-snippets/08-css/)**
+    - [README.md](../16-snippets/08-css/README.md)
+    - [01-selectors.md](../16-snippets/08-css/01-selectors.md)
+    - [02-colors-and-backgrounds.md](../16-snippets/08-css/02-colors-and-backgrounds.md)
+    - [03-box-model.md](../16-snippets/08-css/03-box-model.md)
+    - [04-flexbox.md](../16-snippets/08-css/04-flexbox.md)
+    - [05-grid.md](../16-snippets/08-css/05-grid.md)
+    - [06-positioning.md](../16-snippets/08-css/06-positioning.md)
+    - [07-responsive-design.md](../16-snippets/08-css/07-responsive-design.md)
+    - [08-animations.md](../16-snippets/08-css/08-animations.md)
+    - [09-pseudo-classes-and-elements.md](../16-snippets/08-css/09-pseudo-classes-and-elements.md)
+    - [10-common-tasks.md](../16-snippets/08-css/10-common-tasks.md)
 
 ---
 
-# `17-recipes`
+# 17-RECIPES
 
-```text
-17-recipes/
-├── README.md
-|
-├── 01-git/
-│   ├── README.md
-|   |
-│   ├── 01-recover-deleted-branch.md
-│   ├── 02-recover-lost-commit.md
-│   ├── 03-rewrite-last-commit.md
-│   ├── 04-squash-commits.md
-│   ├── 05-remove-sensitive-file-from-history.md
-│   ├── 06-undo-pushed-commit.md
-│   ├── 07-resolve-merge-conflict.md
-│   ├── 08-create-and-push-tag.md
-│   └── 09-migrate-repository.md
-|
-├── 02-linux/
-│   ├── README.md
-|   |
-│   ├── 01-mount-disk.md
-│   ├── 02-mount-disk-at-boot.md
-│   ├── 03-create-systemd-service.md
-│   ├── 04-create-linux-user.md
-│   ├── 05-configure-ssh-server.md
-│   ├── 06-configure-firewall.md
-│   ├── 07-setup-samba-share.md
-│   ├── 08-setup-cron-job.md
-│   ├── 09-manage-disk-space.md
-│   └── 10-create-backup-script.md
-|
-├── 03-windows/
-│   ├── README.md
-|   |
-│   ├── 01-create-local-user.md
-│   ├── 02-configure-remote-desktop.md
-│   ├── 03-configure-windows-service.md
-│   ├── 04-configure-firewall-rule.md
-│   ├── 05-setup-network-share.md
-│   ├── 06-map-network-drive.md
-│   ├── 07-manage-environment-variables.md
-│   └── 08-create-scheduled-task.md
-|
-├── 04-docker/
-│   ├── README.md
-|   |
-│   ├── 01-setup-node-project.md
-│   ├── 02-setup-python-project.md
-│   ├── 03-create-dockerfile.md
-│   ├── 04-setup-docker-compose.md
-│   ├── 05-persist-container-data.md
-│   ├── 06-connect-containers.md
-│   ├── 07-build-and-push-image.md
-│   ├── 08-run-development-environment.md
-│   └── 09-clean-docker-environment.md
-|
-├── 05-database/
-│   ├── README.md
-|   |
-│   ├── 01-backup-postgresql.md
-│   ├── 02-restore-postgresql.md
-│   ├── 03-migrate-postgresql.md
-│   ├── 04-backup-mysql.md
-│   ├── 05-restore-mysql.md
-│   ├── 06-backup-mongodb.md
-│   ├── 07-restore-mongodb.md
-│   ├── 08-backup-sqlite.md
-│   └── 09-migrate-database.md
-|
-├── 06-backend/
-│   ├── README.md
-|   |
-│   ├── 01-setup-node-api.md
-│   ├── 02-setup-express-api.md
-│   ├── 03-setup-nest-js-api.md
-│   ├── 04-add-authentication.md
-│   ├── 05-add-jwt-authentication.md
-│   ├── 06-add-api-validation.md
-│   ├── 07-add-file-upload.md
-│   ├── 08-add-background-job.md
-│   └── 09-add-api-documentation.md
-|
-├── 07-frontend/
-│   ├── README.md
-|   |
-│   ├── 01-setup-react-project.md
-│   ├── 02-setup-next-js-project.md
-│   ├── 03-setup-tailwind-css.md
-│   ├── 04-configure-frontend-environment.md
-│   ├── 05-connect-frontend-to-api.md
-│   ├── 06-add-authentication.md
-│   ├── 07-add-form-validation.md
-│   └── 08-deploy-frontend.md
-|
-├── 08-devops/
-│   ├── README.md
-|   |
-│   ├── 01-setup-ci-pipeline.md
-│   ├── 02-setup-cd-pipeline.md
-│   ├── 03-setup-github-actions.md
-│   ├── 04-setup-docker-registry.md
-│   ├── 05-setup-nginx-reverse-proxy.md
-│   ├── 06-setup-ssl-with-nginx.md
-│   ├── 07-setup-terraform-project.md
-│   ├── 08-setup-ansible-project.md
-│   └── 09-setup-monitoring.md
-|
-├── 09-cloud/
-│   ├── README.md
-|   |
-│   ├── 01-deploy-node-app-to-aws.md
-│   ├── 02-deploy-node-app-to-azure.md
-│   ├── 03-deploy-node-app-to-gcp.md
-│   ├── 04-setup-cloud-storage.md
-│   ├── 05-setup-cloud-database.md
-│   ├── 06-setup-cloud-network.md
-│   ├── 07-setup-cloud-iam.md
-│   └── 08-configure-cloud-monitoring.md
-|
-└── 10-deployment/
-    ├── README.md
-    ├── 01-deploy-node-app.md
-    ├── 02-deploy-python-app.md
-    ├── 03-deploy-docker-app.md
-    ├── 04-deploy-static-site.md
-    ├── 05-deploy-with-nginx.md
-    ├── 06-deploy-with-systemd.md
-    ├── 07-configure-domain.md
-    ├── 08-configure-https.md
-    ├── 09-zero-downtime-deployment.md
-    └── 10-rollback-deployment.md
-```
+- **[17-RECIPES/](../17-recipes/)**
+  - [README.md](../17-recipes/README.md)
+  - **[01-GIT/](../17-recipes/01-git/)**
+    - [README.md](../17-recipes/01-git/README.md)
+    - [01-recover-deleted-branch.md](../17-recipes/01-git/01-recover-deleted-branch.md)
+    - [02-recover-lost-commit.md](../17-recipes/01-git/02-recover-lost-commit.md)
+    - [03-rewrite-last-commit.md](../17-recipes/01-git/03-rewrite-last-commit.md)
+    - [04-squash-commits.md](../17-recipes/01-git/04-squash-commits.md)
+    - [05-remove-sensitive-file-from-history.md](../17-recipes/01-git/05-remove-sensitive-file-from-history.md)
+    - [06-undo-pushed-commit.md](../17-recipes/01-git/06-undo-pushed-commit.md)
+    - [07-resolve-merge-conflict.md](../17-recipes/01-git/07-resolve-merge-conflict.md)
+    - [08-create-and-push-tag.md](../17-recipes/01-git/08-create-and-push-tag.md)
+    - [09-migrate-repository.md](../17-recipes/01-git/09-migrate-repository.md)
+  - **[02-LINUX/](../17-recipes/02-linux/)**
+    - [README.md](../17-recipes/02-linux/README.md)
+    - [01-mount-disk.md](../17-recipes/02-linux/01-mount-disk.md)
+    - [02-mount-disk-at-boot.md](../17-recipes/02-linux/02-mount-disk-at-boot.md)
+    - [03-create-systemd-service.md](../17-recipes/02-linux/03-create-systemd-service.md)
+    - [04-create-linux-user.md](../17-recipes/02-linux/04-create-linux-user.md)
+    - [05-configure-ssh-server.md](../17-recipes/02-linux/05-configure-ssh-server.md)
+    - [06-configure-firewall.md](../17-recipes/02-linux/06-configure-firewall.md)
+    - [07-setup-samba-share.md](../17-recipes/02-linux/07-setup-samba-share.md)
+    - [08-setup-cron-job.md](../17-recipes/02-linux/08-setup-cron-job.md)
+    - [09-manage-disk-space.md](../17-recipes/02-linux/09-manage-disk-space.md)
+    - [10-create-backup-script.md](../17-recipes/02-linux/10-create-backup-script.md)
+  - **[03-WINDOWS/](../17-recipes/03-windows/)**
+    - [README.md](../17-recipes/03-windows/README.md)
+    - [01-create-local-user.md](../17-recipes/03-windows/01-create-local-user.md)
+    - [02-configure-remote-desktop.md](../17-recipes/03-windows/02-configure-remote-desktop.md)
+    - [03-configure-windows-service.md](../17-recipes/03-windows/03-configure-windows-service.md)
+    - [04-configure-firewall-rule.md](../17-recipes/03-windows/04-configure-firewall-rule.md)
+    - [05-setup-network-share.md](../17-recipes/03-windows/05-setup-network-share.md)
+    - [06-map-network-drive.md](../17-recipes/03-windows/06-map-network-drive.md)
+    - [07-manage-environment-variables.md](../17-recipes/03-windows/07-manage-environment-variables.md)
+    - [08-create-scheduled-task.md](../17-recipes/03-windows/08-create-scheduled-task.md)
+  - **[04-DOCKER/](../17-recipes/04-docker/)**
+    - [README.md](../17-recipes/04-docker/README.md)
+    - [01-setup-node-project.md](../17-recipes/04-docker/01-setup-node-project.md)
+    - [02-setup-python-project.md](../17-recipes/04-docker/02-setup-python-project.md)
+    - [03-create-dockerfile.md](../17-recipes/04-docker/03-create-dockerfile.md)
+    - [04-setup-docker-compose.md](../17-recipes/04-docker/04-setup-docker-compose.md)
+    - [05-persist-container-data.md](../17-recipes/04-docker/05-persist-container-data.md)
+    - [06-connect-containers.md](../17-recipes/04-docker/06-connect-containers.md)
+    - [07-build-and-push-image.md](../17-recipes/04-docker/07-build-and-push-image.md)
+    - [08-run-development-environment.md](../17-recipes/04-docker/08-run-development-environment.md)
+    - [09-clean-docker-environment.md](../17-recipes/04-docker/09-clean-docker-environment.md)
+  - **[05-DATABASE/](../17-recipes/05-database/)**
+    - [README.md](../17-recipes/05-database/README.md)
+    - [01-backup-postgresql.md](../17-recipes/05-database/01-backup-postgresql.md)
+    - [02-restore-postgresql.md](../17-recipes/05-database/02-restore-postgresql.md)
+    - [03-migrate-postgresql.md](../17-recipes/05-database/03-migrate-postgresql.md)
+    - [04-backup-mysql.md](../17-recipes/05-database/04-backup-mysql.md)
+    - [05-restore-mysql.md](../17-recipes/05-database/05-restore-mysql.md)
+    - [06-backup-mongodb.md](../17-recipes/05-database/06-backup-mongodb.md)
+    - [07-restore-mongodb.md](../17-recipes/05-database/07-restore-mongodb.md)
+    - [08-backup-sqlite.md](../17-recipes/05-database/08-backup-sqlite.md)
+    - [09-migrate-database.md](../17-recipes/05-database/09-migrate-database.md)
+  - **[06-BACKEND/](../17-recipes/06-backend/)**
+    - [README.md](../17-recipes/06-backend/README.md)
+    - [01-setup-node-api.md](../17-recipes/06-backend/01-setup-node-api.md)
+    - [02-setup-express-api.md](../17-recipes/06-backend/02-setup-express-api.md)
+    - [03-setup-nest-js-api.md](../17-recipes/06-backend/03-setup-nest-js-api.md)
+    - [04-add-authentication.md](../17-recipes/06-backend/04-add-authentication.md)
+    - [05-add-jwt-authentication.md](../17-recipes/06-backend/05-add-jwt-authentication.md)
+    - [06-add-api-validation.md](../17-recipes/06-backend/06-add-api-validation.md)
+    - [07-add-file-upload.md](../17-recipes/06-backend/07-add-file-upload.md)
+    - [08-add-background-job.md](../17-recipes/06-backend/08-add-background-job.md)
+    - [09-add-api-documentation.md](../17-recipes/06-backend/09-add-api-documentation.md)
+  - **[07-FRONTEND/](../17-recipes/07-frontend/)**
+    - [README.md](../17-recipes/07-frontend/README.md)
+    - [01-setup-react-project.md](../17-recipes/07-frontend/01-setup-react-project.md)
+    - [02-setup-next-js-project.md](../17-recipes/07-frontend/02-setup-next-js-project.md)
+    - [03-setup-tailwind-css.md](../17-recipes/07-frontend/03-setup-tailwind-css.md)
+    - [04-configure-frontend-environment.md](../17-recipes/07-frontend/04-configure-frontend-environment.md)
+    - [05-connect-frontend-to-api.md](../17-recipes/07-frontend/05-connect-frontend-to-api.md)
+    - [06-add-authentication.md](../17-recipes/07-frontend/06-add-authentication.md)
+    - [07-add-form-validation.md](../17-recipes/07-frontend/07-add-form-validation.md)
+    - [08-deploy-frontend.md](../17-recipes/07-frontend/08-deploy-frontend.md)
+  - **[08-DEVOPS/](../17-recipes/08-devops/)**
+    - [README.md](../17-recipes/08-devops/README.md)
+    - [01-setup-ci-pipeline.md](../17-recipes/08-devops/01-setup-ci-pipeline.md)
+    - [02-setup-cd-pipeline.md](../17-recipes/08-devops/02-setup-cd-pipeline.md)
+    - [03-setup-github-actions.md](../17-recipes/08-devops/03-setup-github-actions.md)
+    - [04-setup-docker-registry.md](../17-recipes/08-devops/04-setup-docker-registry.md)
+    - [05-setup-nginx-reverse-proxy.md](../17-recipes/08-devops/05-setup-nginx-reverse-proxy.md)
+    - [06-setup-ssl-with-nginx.md](../17-recipes/08-devops/06-setup-ssl-with-nginx.md)
+    - [07-setup-terraform-project.md](../17-recipes/08-devops/07-setup-terraform-project.md)
+    - [08-setup-ansible-project.md](../17-recipes/08-devops/08-setup-ansible-project.md)
+    - [09-setup-monitoring.md](../17-recipes/08-devops/09-setup-monitoring.md)
+  - **[09-CLOUD/](../17-recipes/09-cloud/)**
+    - [README.md](../17-recipes/09-cloud/README.md)
+    - [01-deploy-node-app-to-aws.md](../17-recipes/09-cloud/01-deploy-node-app-to-aws.md)
+    - [02-deploy-node-app-to-azure.md](../17-recipes/09-cloud/02-deploy-node-app-to-azure.md)
+    - [03-deploy-node-app-to-gcp.md](../17-recipes/09-cloud/03-deploy-node-app-to-gcp.md)
+    - [04-setup-cloud-storage.md](../17-recipes/09-cloud/04-setup-cloud-storage.md)
+    - [05-setup-cloud-database.md](../17-recipes/09-cloud/05-setup-cloud-database.md)
+    - [06-setup-cloud-network.md](../17-recipes/09-cloud/06-setup-cloud-network.md)
+    - [07-setup-cloud-iam.md](../17-recipes/09-cloud/07-setup-cloud-iam.md)
+    - [08-configure-cloud-monitoring.md](../17-recipes/09-cloud/08-configure-cloud-monitoring.md)
+  - **[10-DEPLOYMENT/](../17-recipes/10-deployment/)**
+    - [README.md](../17-recipes/10-deployment/README.md)
+    - [01-deploy-node-app.md](../17-recipes/10-deployment/01-deploy-node-app.md)
+    - [02-deploy-python-app.md](../17-recipes/10-deployment/02-deploy-python-app.md)
+    - [03-deploy-docker-app.md](../17-recipes/10-deployment/03-deploy-docker-app.md)
+    - [04-deploy-static-site.md](../17-recipes/10-deployment/04-deploy-static-site.md)
+    - [05-deploy-with-nginx.md](../17-recipes/10-deployment/05-deploy-with-nginx.md)
+    - [06-deploy-with-systemd.md](../17-recipes/10-deployment/06-deploy-with-systemd.md)
+    - [07-configure-domain.md](../17-recipes/10-deployment/07-configure-domain.md)
+    - [08-configure-https.md](../17-recipes/10-deployment/08-configure-https.md)
+    - [09-zero-downtime-deployment.md](../17-recipes/10-deployment/09-zero-downtime-deployment.md)
+    - [10-rollback-deployment.md](../17-recipes/10-deployment/10-rollback-deployment.md)
 
 ---
 
-# `18-troubleshooting`
+# 18-TROUBLESHOOTING
 
-```text
-18-troubleshooting/
-├── README.md
-|
-├── 01-linux/
-│   ├── README.md
-|   |
-│   ├── 01-boot-failure.md
-│   ├── 02-package-installation-failure.md
-│   ├── 03-permission-denied.md
-│   ├── 04-disk-space-full.md
-│   ├── 05-disk-not-detected.md
-│   ├── 06-mount-failure.md
-│   ├── 07-filesystem-errors.md
-│   ├── 08-network-not-working.md
-│   ├── 09-dns-not-working.md
-│   ├── 10-service-not-starting.md
-│   ├── 11-systemd-service-failure.md
-│   ├── 12-high-cpu-usage.md
-│   ├── 13-high-memory-usage.md
-│   └── 14-application-crash.md
-|
-├── 02-windows/
-│   ├── README.md
-|   |
-|   ├── 01-system/
-│   |   ├── 01-boot-failure.md
-│   |   ├── 02-windows-update-failure.md
-│   |   ├── 03-driver-problem.md
-│   |   ├── 04-disk-not-detected.md
-│   |   ├── 05-disk-space-full.md
-│   |   ├── 06-permission-denied.md
-│   |   ├── 07-network-not-working.md
-│   |   ├── 08-dns-not-working.md
-│   |   ├── 09-service-not-starting.md
-│   |   ├── 10-blue-screen.md
-│   |   ├── 11-high-cpu-usage.md
-│   |   ├── 12-high-memory-usage.md
-│   |   └── 13-application-crash.md
-|   |
-|   └── 02-applications/
-│       └── 01-dropbox-icon-remove-explorer-tray.md [OK] 2026.10.03
-|
-├── 03-macos/
-│   ├── README.md
-|   |
-│   ├── 01-boot-failure.md
-│   ├── 02-software-installation-failure.md
-│   ├── 03-permission-denied.md
-│   ├── 04-disk-not-detected.md
-│   ├── 05-disk-space-full.md
-│   ├── 06-network-not-working.md
-│   ├── 07-dns-not-working.md
-│   ├── 08-service-not-starting.md
-│   ├── 09-application-crash.md
-│   ├── 10-high-cpu-usage.md
-│   └── 11-high-memory-usage.md
-|
-├── 04-android/
-│   ├── README.md
-|   |
-│   ├── 01-app-crash.md
-│   ├── 02-app-not-installing.md
-│   ├── 03-app-not-updating.md
-│   ├── 04-battery-drain.md
-│   ├── 05-high-memory-usage.md
-│   ├── 06-storage-full.md
-│   ├── 07-wifi-not-working.md
-│   ├── 08-mobile-data-not-working.md
-│   ├── 09-bluetooth-not-working.md
-│   ├── 10-usb-not-detected.md
-│   ├── 11-adb-not-working.md
-│   └── 12-notification-not-working.md
-|
-├── 05-ios/
-│   ├── README.md
-|   |
-│   ├── 01-app-crash.md
-│   ├── 02-app-not-installing.md
-│   ├── 03-app-not-updating.md
-│   ├── 04-battery-drain.md
-│   ├── 05-storage-full.md
-│   ├── 06-wifi-not-working.md
-│   ├── 07-mobile-data-not-working.md
-│   ├── 08-bluetooth-not-working.md
-│   ├── 09-usb-connection-problem.md
-│   ├── 10-application-performance.md
-│   └── 11-notification-not-working.md
-|
-├── 06-git/
-│   ├── README.md
-|   |
-│   ├── 01-merge-conflict.md
-│   ├── 02-detached-head.md
-│   ├── 03-lost-commit.md
-│   ├── 04-deleted-branch.md
-│   ├── 05-rejected-push.md
-│   ├── 06-non-fast-forward.md
-│   ├── 07-authentication-failure.md
-│   ├── 08-remote-not-found.md
-│   ├── 09-wrong-branch.md
-│   ├── 10-accidental-commit.md
-│   └── 11-repository-corruption.md
-|
-├── 07-docker/
-│   ├── README.md
-|   |
-│   ├── 01-container-not-starting.md
-│   ├── 02-image-build-failure.md
-│   ├── 03-image-pull-failure.md
-│   ├── 04-port-not-accessible.md
-│   ├── 05-container-networking.md
-│   ├── 06-volume-permission.md
-│   ├── 07-volume-not-mounted.md
-│   ├── 08-container-memory-problem.md
-│   ├── 09-container-cpu-problem.md
-│   ├── 10-docker-compose-failure.md
-│   └── 11-registry-authentication-failure.md
-|
-├── 08-database/
-│   ├── README.md
-|   |
-│   ├── 01-connection-failure.md
-│   ├── 02-authentication-failure.md
-│   ├── 03-database-not-starting.md
-│   ├── 04-query-performance.md
-│   ├── 05-deadlock.md
-│   ├── 06-lock-wait.md
-│   ├── 07-connection-pool-exhausted.md
-│   ├── 08-migration-failure.md
-│   ├── 09-backup-failure.md
-│   ├── 10-restore-failure.md
-│   └── 11-replication-problem.md
-|
-├── 09-frontend/
-│   ├── README.md
-|   |
-│   ├── 01-build-failure.md
-│   ├── 02-dependency-installation-failure.md
-│   ├── 03-module-not-found.md
-│   ├── 04-runtime-error.md
-│   ├── 05-hydration-error.md
-│   ├── 06-api-request-failure.md
-│   ├── 07-cors-error.md
-│   ├── 08-authentication-problem.md
-│   ├── 09-blank-page.md
-│   ├── 10-slow-page-load.md
-│   └── 11-production-build-problem.md
-|
-├── 10-backend/
-│   ├── README.md
-|   |
-│   ├── 01-application-not-starting.md
-│   ├── 02-dependency-installation-failure.md
-│   ├── 03-module-not-found.md
-│   ├── 04-runtime-error.md
-│   ├── 05-api-error.md
-│   ├── 06-database-connection-failure.md
-│   ├── 07-authentication-problem.md
-│   ├── 08-authorization-failure.md
-│   ├── 09-file-upload-failure.md
-│   ├── 10-memory-leak.md
-│   └── 11-high-cpu-usage.md
-|
-└── 11-networking/
-    ├── README.md
-    |
-    ├── 01-no-network-connectivity.md
-    ├── 02-dns-resolution-failure.md
-    ├── 03-dhcp-failure.md
-    ├── 04-ip-address-problem.md
-    ├── 05-port-not-reachable.md
-    ├── 06-connection-refused.md
-    ├── 07-connection-timeout.md
-    ├── 08-packet-loss.md
-    ├── 09-routing-problem.md
-    ├── 10-firewall-blocking.md
-    ├── 11-proxy-problem.md
-    └── 12-vpn-connection-problem.md
-```
+- **[18-TROUBLESHOOTING/](../18-troubleshooting/)**
+  - [README.md](../18-troubleshooting/README.md)
+  - **[01-LINUX/](../18-troubleshooting/01-linux/)**
+    - [README.md](../18-troubleshooting/01-linux/README.md)
+    - [01-boot-failure.md](../18-troubleshooting/01-linux/01-boot-failure.md)
+    - [02-package-installation-failure.md](../18-troubleshooting/01-linux/02-package-installation-failure.md)
+    - [03-permission-denied.md](../18-troubleshooting/01-linux/03-permission-denied.md)
+    - [04-disk-space-full.md](../18-troubleshooting/01-linux/04-disk-space-full.md)
+    - [05-disk-not-detected.md](../18-troubleshooting/01-linux/05-disk-not-detected.md)
+    - [06-mount-failure.md](../18-troubleshooting/01-linux/06-mount-failure.md)
+    - [07-filesystem-errors.md](../18-troubleshooting/01-linux/07-filesystem-errors.md)
+    - [08-network-not-working.md](../18-troubleshooting/01-linux/08-network-not-working.md)
+    - [09-dns-not-working.md](../18-troubleshooting/01-linux/09-dns-not-working.md)
+    - [10-service-not-starting.md](../18-troubleshooting/01-linux/10-service-not-starting.md)
+    - [11-systemd-service-failure.md](../18-troubleshooting/01-linux/11-systemd-service-failure.md)
+    - [12-high-cpu-usage.md](../18-troubleshooting/01-linux/12-high-cpu-usage.md)
+    - [13-high-memory-usage.md](../18-troubleshooting/01-linux/13-high-memory-usage.md)
+    - [14-application-crash.md](../18-troubleshooting/01-linux/14-application-crash.md)
+  - **[02-WINDOWS/](../18-troubleshooting/02-windows/)**
+    - [README.md](../18-troubleshooting/02-windows/README.md)
+    - **[01-SYSTEM/](../18-troubleshooting/02-windows/01-system/)**
+      - [01-boot-failure.md](../18-troubleshooting/02-windows/01-system/01-boot-failure.md)
+      - [02-windows-update-failure.md](../18-troubleshooting/02-windows/01-system/02-windows-update-failure.md)
+      - [03-driver-problem.md](../18-troubleshooting/02-windows/01-system/03-driver-problem.md)
+      - [04-disk-not-detected.md](../18-troubleshooting/02-windows/01-system/04-disk-not-detected.md)
+      - [05-disk-space-full.md](../18-troubleshooting/02-windows/01-system/05-disk-space-full.md)
+      - [06-permission-denied.md](../18-troubleshooting/02-windows/01-system/06-permission-denied.md)
+      - [07-network-not-working.md](../18-troubleshooting/02-windows/01-system/07-network-not-working.md)
+      - [08-dns-not-working.md](../18-troubleshooting/02-windows/01-system/08-dns-not-working.md)
+      - [09-service-not-starting.md](../18-troubleshooting/02-windows/01-system/09-service-not-starting.md)
+      - [10-blue-screen.md](../18-troubleshooting/02-windows/01-system/10-blue-screen.md)
+      - [11-high-cpu-usage.md](../18-troubleshooting/02-windows/01-system/11-high-cpu-usage.md)
+      - [12-high-memory-usage.md](../18-troubleshooting/02-windows/01-system/12-high-memory-usage.md)
+      - [13-application-crash.md](../18-troubleshooting/02-windows/01-system/13-application-crash.md)
+    - **[02-APPLICATIONS/](../18-troubleshooting/02-windows/02-applications/)**
+      - [01-dropbox-icon-remove-explorer-tray.md](../18-troubleshooting/02-windows/02-applications/01-dropbox-icon-remove-explorer-tray.md)
+  - **[03-MACOS/](../18-troubleshooting/03-macos/)**
+    - [README.md](../18-troubleshooting/03-macos/README.md)
+    - [01-boot-failure.md](../18-troubleshooting/03-macos/01-boot-failure.md)
+    - [02-software-installation-failure.md](../18-troubleshooting/03-macos/02-software-installation-failure.md)
+    - [03-permission-denied.md](../18-troubleshooting/03-macos/03-permission-denied.md)
+    - [04-disk-not-detected.md](../18-troubleshooting/03-macos/04-disk-not-detected.md)
+    - [05-disk-space-full.md](../18-troubleshooting/03-macos/05-disk-space-full.md)
+    - [06-network-not-working.md](../18-troubleshooting/03-macos/06-network-not-working.md)
+    - [07-dns-not-working.md](../18-troubleshooting/03-macos/07-dns-not-working.md)
+    - [08-service-not-starting.md](../18-troubleshooting/03-macos/08-service-not-starting.md)
+    - [09-application-crash.md](../18-troubleshooting/03-macos/09-application-crash.md)
+    - [10-high-cpu-usage.md](../18-troubleshooting/03-macos/10-high-cpu-usage.md)
+    - [11-high-memory-usage.md](../18-troubleshooting/03-macos/11-high-memory-usage.md)
+  - **[04-ANDROID/](../18-troubleshooting/04-android/)**
+    - [README.md](../18-troubleshooting/04-android/README.md)
+    - [01-app-crash.md](../18-troubleshooting/04-android/01-app-crash.md)
+    - [02-app-not-installing.md](../18-troubleshooting/04-android/02-app-not-installing.md)
+    - [03-app-not-updating.md](../18-troubleshooting/04-android/03-app-not-updating.md)
+    - [04-battery-drain.md](../18-troubleshooting/04-android/04-battery-drain.md)
+    - [05-high-memory-usage.md](../18-troubleshooting/04-android/05-high-memory-usage.md)
+    - [06-storage-full.md](../18-troubleshooting/04-android/06-storage-full.md)
+    - [07-wifi-not-working.md](../18-troubleshooting/04-android/07-wifi-not-working.md)
+    - [08-mobile-data-not-working.md](../18-troubleshooting/04-android/08-mobile-data-not-working.md)
+    - [09-bluetooth-not-working.md](../18-troubleshooting/04-android/09-bluetooth-not-working.md)
+    - [10-usb-not-detected.md](../18-troubleshooting/04-android/10-usb-not-detected.md)
+    - [11-adb-not-working.md](../18-troubleshooting/04-android/11-adb-not-working.md)
+    - [12-notification-not-working.md](../18-troubleshooting/04-android/12-notification-not-working.md)
+  - **[05-IOS/](../18-troubleshooting/05-ios/)**
+    - [README.md](../18-troubleshooting/05-ios/README.md)
+    - [01-app-crash.md](../18-troubleshooting/05-ios/01-app-crash.md)
+    - [02-app-not-installing.md](../18-troubleshooting/05-ios/02-app-not-installing.md)
+    - [03-app-not-updating.md](../18-troubleshooting/05-ios/03-app-not-updating.md)
+    - [04-battery-drain.md](../18-troubleshooting/05-ios/04-battery-drain.md)
+    - [05-storage-full.md](../18-troubleshooting/05-ios/05-storage-full.md)
+    - [06-wifi-not-working.md](../18-troubleshooting/05-ios/06-wifi-not-working.md)
+    - [07-mobile-data-not-working.md](../18-troubleshooting/05-ios/07-mobile-data-not-working.md)
+    - [08-bluetooth-not-working.md](../18-troubleshooting/05-ios/08-bluetooth-not-working.md)
+    - [09-usb-connection-problem.md](../18-troubleshooting/05-ios/09-usb-connection-problem.md)
+    - [10-application-performance.md](../18-troubleshooting/05-ios/10-application-performance.md)
+    - [11-notification-not-working.md](../18-troubleshooting/05-ios/11-notification-not-working.md)
+  - **[06-GIT/](../18-troubleshooting/06-git/)**
+    - [README.md](../18-troubleshooting/06-git/README.md)
+    - [01-merge-conflict.md](../18-troubleshooting/06-git/01-merge-conflict.md)
+    - [02-detached-head.md](../18-troubleshooting/06-git/02-detached-head.md)
+    - [03-lost-commit.md](../18-troubleshooting/06-git/03-lost-commit.md)
+    - [04-deleted-branch.md](../18-troubleshooting/06-git/04-deleted-branch.md)
+    - [05-rejected-push.md](../18-troubleshooting/06-git/05-rejected-push.md)
+    - [06-non-fast-forward.md](../18-troubleshooting/06-git/06-non-fast-forward.md)
+    - [07-authentication-failure.md](../18-troubleshooting/06-git/07-authentication-failure.md)
+    - [08-remote-not-found.md](../18-troubleshooting/06-git/08-remote-not-found.md)
+    - [09-wrong-branch.md](../18-troubleshooting/06-git/09-wrong-branch.md)
+    - [10-accidental-commit.md](../18-troubleshooting/06-git/10-accidental-commit.md)
+    - [11-repository-corruption.md](../18-troubleshooting/06-git/11-repository-corruption.md)
+  - **[07-DOCKER/](../18-troubleshooting/07-docker/)**
+    - [README.md](../18-troubleshooting/07-docker/README.md)
+    - [01-container-not-starting.md](../18-troubleshooting/07-docker/01-container-not-starting.md)
+    - [02-image-build-failure.md](../18-troubleshooting/07-docker/02-image-build-failure.md)
+    - [03-image-pull-failure.md](../18-troubleshooting/07-docker/03-image-pull-failure.md)
+    - [04-port-not-accessible.md](../18-troubleshooting/07-docker/04-port-not-accessible.md)
+    - [05-container-networking.md](../18-troubleshooting/07-docker/05-container-networking.md)
+    - [06-volume-permission.md](../18-troubleshooting/07-docker/06-volume-permission.md)
+    - [07-volume-not-mounted.md](../18-troubleshooting/07-docker/07-volume-not-mounted.md)
+    - [08-container-memory-problem.md](../18-troubleshooting/07-docker/08-container-memory-problem.md)
+    - [09-container-cpu-problem.md](../18-troubleshooting/07-docker/09-container-cpu-problem.md)
+    - [10-docker-compose-failure.md](../18-troubleshooting/07-docker/10-docker-compose-failure.md)
+    - [11-registry-authentication-failure.md](../18-troubleshooting/07-docker/11-registry-authentication-failure.md)
+  - **[08-DATABASE/](../18-troubleshooting/08-database/)**
+    - [README.md](../18-troubleshooting/08-database/README.md)
+    - [01-connection-failure.md](../18-troubleshooting/08-database/01-connection-failure.md)
+    - [02-authentication-failure.md](../18-troubleshooting/08-database/02-authentication-failure.md)
+    - [03-database-not-starting.md](../18-troubleshooting/08-database/03-database-not-starting.md)
+    - [04-query-performance.md](../18-troubleshooting/08-database/04-query-performance.md)
+    - [05-deadlock.md](../18-troubleshooting/08-database/05-deadlock.md)
+    - [06-lock-wait.md](../18-troubleshooting/08-database/06-lock-wait.md)
+    - [07-connection-pool-exhausted.md](../18-troubleshooting/08-database/07-connection-pool-exhausted.md)
+    - [08-migration-failure.md](../18-troubleshooting/08-database/08-migration-failure.md)
+    - [09-backup-failure.md](../18-troubleshooting/08-database/09-backup-failure.md)
+    - [10-restore-failure.md](../18-troubleshooting/08-database/10-restore-failure.md)
+    - [11-replication-problem.md](../18-troubleshooting/08-database/11-replication-problem.md)
+  - **[09-FRONTEND/](../18-troubleshooting/09-frontend/)**
+    - [README.md](../18-troubleshooting/09-frontend/README.md)
+    - [01-build-failure.md](../18-troubleshooting/09-frontend/01-build-failure.md)
+    - [02-dependency-installation-failure.md](../18-troubleshooting/09-frontend/02-dependency-installation-failure.md)
+    - [03-module-not-found.md](../18-troubleshooting/09-frontend/03-module-not-found.md)
+    - [04-runtime-error.md](../18-troubleshooting/09-frontend/04-runtime-error.md)
+    - [05-hydration-error.md](../18-troubleshooting/09-frontend/05-hydration-error.md)
+    - [06-api-request-failure.md](../18-troubleshooting/09-frontend/06-api-request-failure.md)
+    - [07-cors-error.md](../18-troubleshooting/09-frontend/07-cors-error.md)
+    - [08-authentication-problem.md](../18-troubleshooting/09-frontend/08-authentication-problem.md)
+    - [09-blank-page.md](../18-troubleshooting/09-frontend/09-blank-page.md)
+    - [10-slow-page-load.md](../18-troubleshooting/09-frontend/10-slow-page-load.md)
+    - [11-production-build-problem.md](../18-troubleshooting/09-frontend/11-production-build-problem.md)
+  - **[10-BACKEND/](../18-troubleshooting/10-backend/)**
+    - [README.md](../18-troubleshooting/10-backend/README.md)
+    - [01-application-not-starting.md](../18-troubleshooting/10-backend/01-application-not-starting.md)
+    - [02-dependency-installation-failure.md](../18-troubleshooting/10-backend/02-dependency-installation-failure.md)
+    - [03-module-not-found.md](../18-troubleshooting/10-backend/03-module-not-found.md)
+    - [04-runtime-error.md](../18-troubleshooting/10-backend/04-runtime-error.md)
+    - [05-api-error.md](../18-troubleshooting/10-backend/05-api-error.md)
+    - [06-database-connection-failure.md](../18-troubleshooting/10-backend/06-database-connection-failure.md)
+    - [07-authentication-problem.md](../18-troubleshooting/10-backend/07-authentication-problem.md)
+    - [08-authorization-failure.md](../18-troubleshooting/10-backend/08-authorization-failure.md)
+    - [09-file-upload-failure.md](../18-troubleshooting/10-backend/09-file-upload-failure.md)
+    - [10-memory-leak.md](../18-troubleshooting/10-backend/10-memory-leak.md)
+    - [11-high-cpu-usage.md](../18-troubleshooting/10-backend/11-high-cpu-usage.md)
+  - **[11-NETWORKING/](../18-troubleshooting/11-networking/)**
+    - [README.md](../18-troubleshooting/11-networking/README.md)
+    - [01-no-network-connectivity.md](../18-troubleshooting/11-networking/01-no-network-connectivity.md)
+    - [02-dns-resolution-failure.md](../18-troubleshooting/11-networking/02-dns-resolution-failure.md)
+    - [03-dhcp-failure.md](../18-troubleshooting/11-networking/03-dhcp-failure.md)
+    - [04-ip-address-problem.md](../18-troubleshooting/11-networking/04-ip-address-problem.md)
+    - [05-port-not-reachable.md](../18-troubleshooting/11-networking/05-port-not-reachable.md)
+    - [06-connection-refused.md](../18-troubleshooting/11-networking/06-connection-refused.md)
+    - [07-connection-timeout.md](../18-troubleshooting/11-networking/07-connection-timeout.md)
+    - [08-packet-loss.md](../18-troubleshooting/11-networking/08-packet-loss.md)
+    - [09-routing-problem.md](../18-troubleshooting/11-networking/09-routing-problem.md)
+    - [10-firewall-blocking.md](../18-troubleshooting/11-networking/10-firewall-blocking.md)
+    - [11-proxy-problem.md](../18-troubleshooting/11-networking/11-proxy-problem.md)
+    - [12-vpn-connection-problem.md](../18-troubleshooting/11-networking/12-vpn-connection-problem.md)
 
 ---
 
-# `19-reference`
+# 19-REFERENCE
 
-```text
-19-reference/
-├── README.md
-|
-├── 01-commands/
-│   ├── README.md
-|   |
-│   ├── 01-linux-commands.md
-│   ├── 02-git-commands.md
-│   ├── 03-docker-commands.md
-│   ├── 04-kubernetes-commands.md
-│   ├── 05-npm-commands.md
-│   ├── 06-pnpm-commands.md
-│   ├── 07-curl-commands.md
-│   ├── 08-grep-commands.md
-│   ├── 09-sed-commands.md
-│   ├── 10-awk-commands.md
-│   ├── 11-jq-commands.md
-│   ├── 12-terraform-commands.md
-│   └── 13-ansible-commands.md
-|
-├── 02-shortcuts/
-│   ├── README.md
-|   |
-│   ├── 01-terminal-shortcuts.md
-│   ├── 02-bash-shortcuts.md
-│   ├── 03-zsh-shortcuts.md
-│   ├── 04-vim-shortcuts.md
-│   ├── 05-vscode-shortcuts.md
-│   ├── 06-git-shortcuts.md
-│   ├── 07-browser-shortcuts.md
-│   ├── 08-windows-shortcuts.md
-│   ├── 09-macos-shortcuts.md
-│   └── 10-linux-shortcuts.md
-|
-├── 03-ports/
-│   ├── README.md
-|   |
-│   ├── 01-common-ports.md
-│   ├── 02-web-ports.md
-│   ├── 03-database-ports.md
-│   ├── 04-ssh-and-remote-access.md
-│   ├── 05-mail-ports.md
-│   ├── 06-file-sharing-ports.md
-│   ├── 07-container-and-orchestration-ports.md
-│   ├── 08-monitoring-ports.md
-│   └── 09-development-ports.md
-|
-├── 04-http-status/
-│   ├── README.md
-|   |
-│   ├── 01-1xx-informational.md
-│   ├── 02-2xx-success.md
-│   ├── 03-3xx-redirection.md
-│   ├── 04-4xx-client-errors.md
-│   ├── 05-5xx-server-errors.md
-│   └── 06-status-code-cheatsheet.md
-|
-├── 05-mime-types/
-│   ├── README.md
-|   |
-│   ├── 01-text.md
-│   ├── 02-images.md
-│   ├── 03-audio.md
-│   ├── 04-video.md
-│   ├── 05-application.md
-│   ├── 06-fonts.md
-│   ├── 07-archives.md
-│   └── 08-common-mime-types.md
-|
-├── 06-file-extensions/
-│   ├── README.md
-|   |
-│   ├── 01-text-files.md
-│   ├── 02-source-code.md
-│   ├── 03-configuration-files.md
-│   ├── 04-documents.md
-│   ├── 05-images.md
-│   ├── 06-audio.md
-│   ├── 07-video.md
-│   ├── 08-archives.md
-│   ├── 09-databases.md
-│   └── 10-executable-files.md
-|
-├── 07-browser-extensions/
-│   ├── README.md
-|   |
-│   ├── 01-google-chrome.md  [OK] 2026.10.03
-│   └── 02-mozila-firefox.md [OK] 2026.10.03
-|
-├── 08-environment/
-│   ├── README.md
-|   |
-│   ├── 01-environment-variables.md
-│   ├── 02-path.md
-│   ├── 03-linux-environment.md
-│   ├── 04-windows-environment.md
-│   ├── 05-macos-environment.md
-│   ├── 06-node-js-environment.md
-│   ├── 07-python-environment.md
-│   ├── 08-java-environment.md
-│   ├── 09-docker-environment.md
-│   └── 10-ci-cd-environment.md
-|
-├── 09-problem-solving/
-│   ├── README.md
-|   |
-│   ├── 01-c/          [OK] See the internal README.md file for details.
-│   ├── 02-cpp/        [OK] See the internal README.md file for details.
-│   ├── 03-javascript/ [OK] See the internal README.md file for details.
-|   └── 04-typescript/ [OK] See the internal README.md file for details.
-|
-├── 10-glossary/
-|   ├── README.md
-|   |
-|   ├── 01-software-engineering-terms.md
-|   ├── 02-programming-terms.md
-|   ├── 03-web-terms.md
-|   ├── 04-backend-terms.md
-|   ├── 05-frontend-terms.md
-|   ├── 06-database-terms.md
-|   ├── 07-devops-terms.md
-|   ├── 08-cloud-terms.md
-|   ├── 09-networking-terms.md
-|   ├── 10-security-terms.md
-|   └── 11-architecture-terms.md
-|
-└── 11-toolkits/
-    ├── README.md
-    |
-    ├── 01-web.md     [OK] 2026.10.05
-    ├── 02-linux.md   [OK] 2026.10.05
-    ├── 03-mac.md
-    ├── 04-windows.md [OK] 2026.10.05
-    ├── 05-android.md [OK] 2026.10.05
-    └── 06-ios.md
-```
+- **[19-REFERENCE/](../19-reference/)**
+  - [README.md](../19-reference/README.md)
+  - **[01-COMMANDS/](../19-reference/01-commands/)**
+    - [README.md](../19-reference/01-commands/README.md)
+    - [01-linux-commands.md](../19-reference/01-commands/01-linux-commands.md)
+    - [02-git-commands.md](../19-reference/01-commands/02-git-commands.md)
+    - [03-docker-commands.md](../19-reference/01-commands/03-docker-commands.md)
+    - [04-kubernetes-commands.md](../19-reference/01-commands/04-kubernetes-commands.md)
+    - [05-npm-commands.md](../19-reference/01-commands/05-npm-commands.md)
+    - [06-pnpm-commands.md](../19-reference/01-commands/06-pnpm-commands.md)
+    - [07-curl-commands.md](../19-reference/01-commands/07-curl-commands.md)
+    - [08-grep-commands.md](../19-reference/01-commands/08-grep-commands.md)
+    - [09-sed-commands.md](../19-reference/01-commands/09-sed-commands.md)
+    - [10-awk-commands.md](../19-reference/01-commands/10-awk-commands.md)
+    - [11-jq-commands.md](../19-reference/01-commands/11-jq-commands.md)
+    - [12-terraform-commands.md](../19-reference/01-commands/12-terraform-commands.md)
+    - [13-ansible-commands.md](../19-reference/01-commands/13-ansible-commands.md)
+  - **[02-SHORTCUTS/](../19-reference/02-shortcuts/)**
+    - [README.md](../19-reference/02-shortcuts/README.md)
+    - [01-terminal-shortcuts.md](../19-reference/02-shortcuts/01-terminal-shortcuts.md)
+    - [02-bash-shortcuts.md](../19-reference/02-shortcuts/02-bash-shortcuts.md)
+    - [03-zsh-shortcuts.md](../19-reference/02-shortcuts/03-zsh-shortcuts.md)
+    - [04-vim-shortcuts.md](../19-reference/02-shortcuts/04-vim-shortcuts.md)
+    - [05-vscode-shortcuts.md](../19-reference/02-shortcuts/05-vscode-shortcuts.md)
+    - [06-git-shortcuts.md](../19-reference/02-shortcuts/06-git-shortcuts.md)
+    - [07-browser-shortcuts.md](../19-reference/02-shortcuts/07-browser-shortcuts.md)
+    - [08-windows-shortcuts.md](../19-reference/02-shortcuts/08-windows-shortcuts.md)
+    - [09-macos-shortcuts.md](../19-reference/02-shortcuts/09-macos-shortcuts.md)
+    - [10-linux-shortcuts.md](../19-reference/02-shortcuts/10-linux-shortcuts.md)
+  - **[03-PORTS/](../19-reference/03-ports/)**
+    - [README.md](../19-reference/03-ports/README.md)
+    - [01-common-ports.md](../19-reference/03-ports/01-common-ports.md)
+    - [02-web-ports.md](../19-reference/03-ports/02-web-ports.md)
+    - [03-database-ports.md](../19-reference/03-ports/03-database-ports.md)
+    - [04-ssh-and-remote-access.md](../19-reference/03-ports/04-ssh-and-remote-access.md)
+    - [05-mail-ports.md](../19-reference/03-ports/05-mail-ports.md)
+    - [06-file-sharing-ports.md](../19-reference/03-ports/06-file-sharing-ports.md)
+    - [07-container-and-orchestration-ports.md](../19-reference/03-ports/07-container-and-orchestration-ports.md)
+    - [08-monitoring-ports.md](../19-reference/03-ports/08-monitoring-ports.md)
+    - [09-development-ports.md](../19-reference/03-ports/09-development-ports.md)
+  - **[04-HTTP-STATUS/](../19-reference/04-http-status/)**
+    - [README.md](../19-reference/04-http-status/README.md)
+    - [01-1xx-informational.md](../19-reference/04-http-status/01-1xx-informational.md)
+    - [02-2xx-success.md](../19-reference/04-http-status/02-2xx-success.md)
+    - [03-3xx-redirection.md](../19-reference/04-http-status/03-3xx-redirection.md)
+    - [04-4xx-client-errors.md](../19-reference/04-http-status/04-4xx-client-errors.md)
+    - [05-5xx-server-errors.md](../19-reference/04-http-status/05-5xx-server-errors.md)
+    - [06-status-code-cheatsheet.md](../19-reference/04-http-status/06-status-code-cheatsheet.md)
+  - **[05-MIME-TYPES/](../19-reference/05-mime-types/)**
+    - [README.md](../19-reference/05-mime-types/README.md)
+    - [01-text.md](../19-reference/05-mime-types/01-text.md)
+    - [02-images.md](../19-reference/05-mime-types/02-images.md)
+    - [03-audio.md](../19-reference/05-mime-types/03-audio.md)
+    - [04-video.md](../19-reference/05-mime-types/04-video.md)
+    - [05-application.md](../19-reference/05-mime-types/05-application.md)
+    - [06-fonts.md](../19-reference/05-mime-types/06-fonts.md)
+    - [07-archives.md](../19-reference/05-mime-types/07-archives.md)
+    - [08-common-mime-types.md](../19-reference/05-mime-types/08-common-mime-types.md)
+  - **[06-FILE-EXTENSIONS/](../19-reference/06-file-extensions/)**
+    - [README.md](../19-reference/06-file-extensions/README.md)
+    - [01-text-files.md](../19-reference/06-file-extensions/01-text-files.md)
+    - [02-source-code.md](../19-reference/06-file-extensions/02-source-code.md)
+    - [03-configuration-files.md](../19-reference/06-file-extensions/03-configuration-files.md)
+    - [04-documents.md](../19-reference/06-file-extensions/04-documents.md)
+    - [05-images.md](../19-reference/06-file-extensions/05-images.md)
+    - [06-audio.md](../19-reference/06-file-extensions/06-audio.md)
+    - [07-video.md](../19-reference/06-file-extensions/07-video.md)
+    - [08-archives.md](../19-reference/06-file-extensions/08-archives.md)
+    - [09-databases.md](../19-reference/06-file-extensions/09-databases.md)
+    - [10-executable-files.md](../19-reference/06-file-extensions/10-executable-files.md)
+  - **[07-BROWSER-EXTENSIONS/](../19-reference/07-browser-extensions/)**
+    - [README.md](../19-reference/07-browser-extensions/README.md)
+    - [01-google-chrome.md](../19-reference/07-browser-extensions/01-google-chrome.md)
+    - [02-mozila-firefox.md](../19-reference/07-browser-extensions/02-mozila-firefox.md)
+  - **[08-ENVIRONMENT/](../19-reference/08-environment/)**
+    - [README.md](../19-reference/08-environment/README.md)
+    - [01-environment-variables.md](../19-reference/08-environment/01-environment-variables.md)
+    - [02-path.md](../19-reference/08-environment/02-path.md)
+    - [03-linux-environment.md](../19-reference/08-environment/03-linux-environment.md)
+    - [04-windows-environment.md](../19-reference/08-environment/04-windows-environment.md)
+    - [05-macos-environment.md](../19-reference/08-environment/05-macos-environment.md)
+    - [06-node-js-environment.md](../19-reference/08-environment/06-node-js-environment.md)
+    - [07-python-environment.md](../19-reference/08-environment/07-python-environment.md)
+    - [08-java-environment.md](../19-reference/08-environment/08-java-environment.md)
+    - [09-docker-environment.md](../19-reference/08-environment/09-docker-environment.md)
+    - [10-ci-cd-environment.md](../19-reference/08-environment/10-ci-cd-environment.md)
+  - **[09-PROBLEM-SOLVING/](../19-reference/09-problem-solving/)**
+    - [README.md](../19-reference/09-problem-solving/README.md)
+    - [01-c/](../19-reference/09-problem-solving/01-c/)
+    - [02-cpp/](../19-reference/09-problem-solving/02-cpp/)
+    - [03-javascript/](../19-reference/09-problem-solving/03-javascript/)
+    - [04-typescript/](../19-reference/09-problem-solving/04-typescript/)
+  - **[10-GLOSSARY/](../19-reference/10-glossary/)**
+    - [README.md](../19-reference/10-glossary/README.md)
+    - [01-software-engineering-terms.md](../19-reference/10-glossary/01-software-engineering-terms.md)
+    - [02-programming-terms.md](../19-reference/10-glossary/02-programming-terms.md)
+    - [03-web-terms.md](../19-reference/10-glossary/03-web-terms.md)
+    - [04-backend-terms.md](../19-reference/10-glossary/04-backend-terms.md)
+    - [05-frontend-terms.md](../19-reference/10-glossary/05-frontend-terms.md)
+    - [06-database-terms.md](../19-reference/10-glossary/06-database-terms.md)
+    - [07-devops-terms.md](../19-reference/10-glossary/07-devops-terms.md)
+    - [08-cloud-terms.md](../19-reference/10-glossary/08-cloud-terms.md)
+    - [09-networking-terms.md](../19-reference/10-glossary/09-networking-terms.md)
+    - [10-security-terms.md](../19-reference/10-glossary/10-security-terms.md)
+    - [11-architecture-terms.md](../19-reference/10-glossary/11-architecture-terms.md)
+  - **[11-TOOLKITS/](../19-reference/11-toolkits/)**
+    - [README.md](../19-reference/11-toolkits/README.md)
+    - [01-web.md](../19-reference/11-toolkits/01-web.md)
+    - [02-linux.md](../19-reference/11-toolkits/02-linux.md)
+    - [03-mac.md](../19-reference/11-toolkits/03-mac.md)
+    - [04-windows.md](../19-reference/11-toolkits/04-windows.md)
+    - [05-android.md](../19-reference/11-toolkits/05-android.md)
+    - [06-ios.md](../19-reference/11-toolkits/06-ios.md)
 
 ---
 
-# `20-resources`
+# 20-RESOURCES
 
-```text
-20-resources/
-├── README.md
-|
-├── 01-books/
-│   ├── README.md
-|   |
-│   ├── 01-c-language.md    [OK] 2026.11.27
-│   ├── 02-cpp-language.md  [OK] 2026.11.27
-|   ├── 03-html5.md         [OK] 2026.11.27
-|   ├── 04-css3.md          [OK] 2026.11.27
-|   └── 05-markdown.md      [OK] 2026.11.27
-|
-├── 02-courses/
-│   ├── README.md
-|   |
-│   ├── 01-programming.md
-│   ├── 02-software-engineering.md
-│   ├── 03-frontend.md
-│   ├── 04-backend.md
-│   ├── 05-databases.md
-│   ├── 06-algorithms-and-data-structures.md
-│   ├── 07-system-design.md
-│   ├── 08-devops.md
-│   ├── 09-cloud.md
-│   ├── 10-security.md
-│   └── 11-mobile-development.md
-|
-├── 03-documentation/
-│   ├── README.md
-|   |
-│   ├── 01-programming-languages.md
-│   ├── 02-frontend.md
-│   ├── 03-backend.md
-│   ├── 04-databases.md
-│   ├── 05-devops.md
-│   ├── 06-cloud.md
-│   ├── 07-operating-systems.md
-│   ├── 08-networking.md
-│   ├── 09-security.md
-│   ├── 10-frameworks.md
-│   └── 11-tools.md
-|
-├── 04-tools/
-│   ├── README.md
-|   |
-│   ├── 01-development-tools.md
-│   ├── 02-code-editors.md
-│   ├── 03-terminal-tools.md
-│   ├── 04-api-tools.md
-│   ├── 05-database-tools.md
-│   ├── 06-debugging-tools.md
-│   ├── 07-testing-tools.md
-│   ├── 08-devops-tools.md
-│   ├── 09-cloud-tools.md
-│   └── 10-security-tools.md
-|
-├── 05-assets/
-│   ├── README.md
-|   |
-│   ├── images/
-│   ├── videos/
-|   └── others/
-|
-└── 06-links/
-    ├── README.md
-    |
-    ├── 01-programming.md
-    ├── 02-software-engineering.md
-    ├── 03-frontend.md
-    ├── 04-backend.md
-    ├── 05-databases.md
-    ├── 06-algorithms-and-data-structures.md
-    ├── 07-system-design.md
-    ├── 08-devops.md
-    ├── 09-cloud.md
-    ├── 10-security.md
-    ├── 11-networking.md
-    ├── 12-operating-systems.md
-    ├── 13-communities.md
-    └── 14-newsletters.md
-```
+- **[20-RESOURCES/](../20-resources/)**
+  - [README.md](../20-resources/README.md)
+  - **[01-BOOKS/](../20-resources/01-books/)**
+    - [README.md](../20-resources/01-books/README.md)
+    - [01-c-language.md](../20-resources/01-books/01-c-language.md)
+    - [02-cpp-language.md](../20-resources/01-books/02-cpp-language.md)
+    - [03-html5.md](../20-resources/01-books/03-html5.md)
+    - [04-css3.md](../20-resources/01-books/04-css3.md)
+    - [05-markdown.md](../20-resources/01-books/05-markdown.md)
+  - **[02-COURSES/](../20-resources/02-courses/)**
+    - [README.md](../20-resources/02-courses/README.md)
+    - [01-programming.md](../20-resources/02-courses/01-programming.md)
+    - [02-software-engineering.md](../20-resources/02-courses/02-software-engineering.md)
+    - [03-frontend.md](../20-resources/02-courses/03-frontend.md)
+    - [04-backend.md](../20-resources/02-courses/04-backend.md)
+    - [05-databases.md](../20-resources/02-courses/05-databases.md)
+    - [06-algorithms-and-data-structures.md](../20-resources/02-courses/06-algorithms-and-data-structures.md)
+    - [07-system-design.md](../20-resources/02-courses/07-system-design.md)
+    - [08-devops.md](../20-resources/02-courses/08-devops.md)
+    - [09-cloud.md](../20-resources/02-courses/09-cloud.md)
+    - [10-security.md](../20-resources/02-courses/10-security.md)
+    - [11-mobile-development.md](../20-resources/02-courses/11-mobile-development.md)
+  - **[03-DOCUMENTATION/](../20-resources/03-documentation/)**
+    - [README.md](../20-resources/03-documentation/README.md)
+    - [01-programming-languages.md](../20-resources/03-documentation/01-programming-languages.md)
+    - [02-frontend.md](../20-resources/03-documentation/02-frontend.md)
+    - [03-backend.md](../20-resources/03-documentation/03-backend.md)
+    - [04-databases.md](../20-resources/03-documentation/04-databases.md)
+    - [05-devops.md](../20-resources/03-documentation/05-devops.md)
+    - [06-cloud.md](../20-resources/03-documentation/06-cloud.md)
+    - [07-operating-systems.md](../20-resources/03-documentation/07-operating-systems.md)
+    - [08-networking.md](../20-resources/03-documentation/08-networking.md)
+    - [09-security.md](../20-resources/03-documentation/09-security.md)
+    - [10-frameworks.md](../20-resources/03-documentation/10-frameworks.md)
+    - [11-tools.md](../20-resources/03-documentation/11-tools.md)
+  - **[04-TOOLS/](../20-resources/04-tools/)**
+    - [README.md](../20-resources/04-tools/README.md)
+    - [01-development-tools.md](../20-resources/04-tools/01-development-tools.md)
+    - [02-code-editors.md](../20-resources/04-tools/02-code-editors.md)
+    - [03-terminal-tools.md](../20-resources/04-tools/03-terminal-tools.md)
+    - [04-api-tools.md](../20-resources/04-tools/04-api-tools.md)
+    - [05-database-tools.md](../20-resources/04-tools/05-database-tools.md)
+    - [06-debugging-tools.md](../20-resources/04-tools/06-debugging-tools.md)
+    - [07-testing-tools.md](../20-resources/04-tools/07-testing-tools.md)
+    - [08-devops-tools.md](../20-resources/04-tools/08-devops-tools.md)
+    - [09-cloud-tools.md](../20-resources/04-tools/09-cloud-tools.md)
+    - [10-security-tools.md](../20-resources/04-tools/10-security-tools.md)
+  - **[05-ASSETS/](../20-resources/05-assets/)**
+    - [README.md](../20-resources/05-assets/README.md)
+    - [IMAGES/](../20-resources/05-assets/images/)
+    - [VIDEOS/](../20-resources/05-assets/videos/)
+    - [OTHERS/](../20-resources/05-assets/others/)
+  - **[06-LINKS/](../20-resources/06-links/)**
+    - [README.md](../20-resources/06-links/README.md)
+    - [01-programming.md](../20-resources/06-links/01-programming.md)
+    - [02-software-engineering.md](../20-resources/06-links/02-software-engineering.md)
+    - [03-frontend.md](../20-resources/06-links/03-frontend.md)
+    - [04-backend.md](../20-resources/06-links/04-backend.md)
+    - [05-databases.md](../20-resources/06-links/05-databases.md)
+    - [06-algorithms-and-data-structures.md](../20-resources/06-links/06-algorithms-and-data-structures.md)
+    - [07-system-design.md](../20-resources/06-links/07-system-design.md)
+    - [08-devops.md](../20-resources/06-links/08-devops.md)
+    - [09-cloud.md](../20-resources/06-links/09-cloud.md)
+    - [10-security.md](../20-resources/06-links/10-security.md)
+    - [11-networking.md](../20-resources/06-links/11-networking.md)
+    - [12-operating-systems.md](../20-resources/06-links/12-operating-systems.md)
+    - [13-communities.md](../20-resources/06-links/13-communities.md)
+    - [14-newsletters.md](../20-resources/06-links/14-newsletters.md)
