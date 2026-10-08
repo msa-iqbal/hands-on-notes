@@ -6,15 +6,16 @@
 
 - [00-INDEX/](../00-index/)
   - [01-MASTER-TOC.md](../00-index/01-master-toc.md)
-  - [02-PROBLEM-SOLVING-C.md](../00-index/02-problem-solving-c.md)
-  - [03-PROBLEM-SOLVING-CPP.md](../00-index/03-problem-solving-cpp.md)
-  - [04-PROBLEM-SOLVING-JAVASCRIPT.md](../00-index/04-problem-solving-javascript.md)
-  - [05-PROBLEM-SOLVING-TYPESCRIPT.md](../00-index/05-problem-solving-typescript.md)
-  - [06-ALGORITHMS-AND-DATA-STRUCTURES.md](../00-index/06-algorithms-and-data-structures.md)
-  - [07-ROADMAP-WEB-DEVELOPMENT.md](../00-index/07-roadmap-web-development.md)
-  - [08-ROADMAP-DEVOPS.md](../00-index/08-roadmap-devops.md)
+  - [02-PROBLEM-SOLVING-C.md](21-problem-solving-c.md)
+  - [03-PROBLEM-SOLVING-CPP.md](22-problem-solving-cpp.md)
+  - [04-PROBLEM-SOLVING-JAVASCRIPT.md](23-problem-solving-javascript.md)
+  - [05-PROBLEM-SOLVING-TYPESCRIPT.md](24-problem-solving-typescript.md)
+  - [06-ALGORITHMS-AND-DATA-STRUCTURES.md](25-algorithms-and-data-structures.md)
+  - [07-ROADMAP-WEB-DEVELOPMENT.md](26-roadmap-web-development.md)
+  - [08-ROADMAP-DEVOPS.md](27-roadmap-devops.md)
 
 ---
+
 # 01-CORE
 
 Developer Fundamentals
@@ -4272,7 +4273,7 @@ Frontend Application Development
   - **[07-BROWSER-EXTENSIONS/](../19-reference/07-browser-extensions/)**
     - [README.md](../19-reference/07-browser-extensions/README.md)
     - [01-google-chrome.md](../19-reference/07-browser-extensions/01-google-chrome.md)
-    - [02-mozila-firefox.md](../19-reference/07-browser-extensions/02-mozila-firefox.md)
+    - [02-mozila-firefox.md](../19-reference/07-browser-extensions/02-mozilla-firefox.md)
   - **[08-ENVIRONMENT/](../19-reference/08-environment/)**
     - [README.md](../19-reference/08-environment/README.md)
     - [01-environment-variables.md](../19-reference/08-environment/01-environment-variables.md)
