@@ -1,5 +1,16 @@
 # 05-BACKEND
 
+| **FOUNDATION**                      | **DEVELOPMENT**                       | **SYSTEMS**                             | **REFERENCE & SUPPORT**                       |
+| ----------------------------------- | ------------------------------------- | --------------------------------------- | --------------------------------------------- |
+| [00-INDEX](./00-master-toc.md)      | [03-WEB](./03-web.md)                 | [07-OS](./07-os.md)                     | [16-SNIPPETS](./16-snippets.md)               |
+| [01-CORE](./01-core.md)             | [04-FRONTEND](./04-frontend.md)       | [08-DEVOPS](./08-devops.md)             | [17-RECIPES](./17-recipes.md)                 |
+| [02-LANGUAGES](./02-languages.md)   | [05-BACKEND](./05-backend.md)         | [09-CLOUD](./09-cloud.md)               | [18-TROUBLESHOOTING](./18-troubleshooting.md) |
+| [06-DATABASE](./06-database.md)     | [10-ENGINEERING](./10-engineering.md) | [11-ARCHITECTURE](./11-architecture.md) | [19-REFERENCE](./19-reference.md)             |
+| [12-ALGORITHMS](./12-algorithms.md) | [13-SECURITY](./13-security.md)       | [14-TOOLS](./14-tools.md)               | [20-RESOURCES](./20-resources.md)             |
+| [15-MOBILE](./15-mobile.md)         |                                       |                                         |                                               |
+
+---
+
 - **[05-BACKEND/](../05-backend/)**
   - [README.md](../05-backend/README.md)
   - **[01-NODE-JS/](../05-backend/01-node-js/)**
