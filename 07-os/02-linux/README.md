@@ -4,21 +4,25 @@ Practical, structured notes for learning, configuring, managing, troubleshooting
 
 ## Contents
 
-|#|Topic|What You'll Learn|
-|---|---|---|
-|00|Quick Notes|Short Linux notes, quick facts, commands, and frequently referenced information|
-|01|Basics|Linux distributions, kernel, shell, terminal, and package management fundamentals|
-|02|Filesystem|Linux filesystem hierarchy and important directories such as `/`, `/home`, `/etc`, `/var`, `/usr`, `/opt`, `/tmp`, and `/dev`|
-|03|Users & Groups|Users, groups, account management, group management, and `sudo`|
-|04|Permissions|File permissions, `chmod`, `chown`, `umask`, ACLs, and privilege management|
-|05|Processes|Processes, `ps`, `top`, `kill`, signals, jobs, and process priorities|
-|06|Services|`systemd`, `systemctl`, service units, `journald`, and service management|
-|07|Storage|Disks, partitions, mounting, `/etc/fstab`, LVM, and disk usage|
-|08|Networking|Network interfaces, IP addressing, routing, DNS, SSH, and firewalls|
-|09|Boot|Linux boot process, GRUB, initramfs, and systemd-boot|
-|10|Packages|APT, `dpkg`, Snap, Flatpak, and package repositories|
-|11|Monitoring|CPU, memory, disk, network, and overall system monitoring|
-|—|Toolkits|Linux tools, utilities, commands, and practical tool collections|
+| #   | Topic            | What You'll Learn                                                                                                                 |
+| --- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 01  | Basics           | Linux distributions, kernel, shell, terminal, essential commands, system information, updates, and drivers                        |
+| 02  | Filesystem       | Linux filesystem hierarchy, root, home, `/etc`, `/var`, `/usr`, `/opt`, `/tmp`, and `/dev` directories                            |
+| 03  | Users and Groups | User and group management, account administration, and password management                                                        |
+| 04  | Permissions      | File permissions, `chmod`, `chown`, `umask`, ACLs, and `sudo`                                                                     |
+| 05  | Processes        | Process management, `ps`, `top`, `kill`, signals, jobs, and process priorities                                                    |
+| 06  | Services         | `systemd`, `systemctl`, service files, `journald`, and service management                                                         |
+| 07  | Storage          | Disks, partitions, mounting, `/etc/fstab`, LVM, NTFS, USB storage, and disk usage                                                 |
+| 08  | Networking       | Network interfaces, IP addressing, routing, DNS, SSH, Linux–Windows file sharing, modem and internet configuration, and firewalls |
+| 09  | Boot             | Linux boot process, GRUB, initramfs, systemd-boot, and dual-boot configuration                                                    |
+| 10  | Packages         | APT, DPKG, Snap, Flatpak, and package repositories                                                                                |
+| 11  | Monitoring       | CPU, memory, disk, network, system monitoring, and performance analysis                                                           |
+| 12  | Desktop          | GNOME desktop environment, Bengali fonts, and system tray configuration                                                           |
+| 13  | Applications     | AppImage, DaVinci Resolve, Node.js, and Google Chrome installation and configuration                                              |
+| 14  | Multimedia       | FFmpeg, ImageMagick, ExifTool, and yt-dlp for multimedia processing and management                                                |
+| 15  | Virtualization   | Running Windows with KVM and Android with Waydroid on Linux                                                                       |
+| 16  | Documentation    | PDF compression and OCR using Ghostscript and OCRmyPDF                                                                            |
+| 17  | Miscellaneous    | Android screen mirroring and other useful Linux tips and tools                                                                    |
 
 ## Structure
 

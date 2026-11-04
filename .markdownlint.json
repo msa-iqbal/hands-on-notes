@@ -1,0 +1,27 @@
+{
+  "default": true,
+  "MD001": false,
+  "MD025": false,
+  "MD060": false,
+  "MD003": {
+    "style": "atx"
+  },
+  "MD004": {
+    "style": "asterisk"
+  },
+  "MD007": {
+    "indent": 2
+  },
+  "MD013": false,
+  "MD024": {
+    "siblings_only": true
+  },
+  "MD033": false,
+  "MD041": false,
+  "MD046": {
+    "style": "fenced"
+  },
+  "MD048": {
+    "style": "backtick"
+  }
+}

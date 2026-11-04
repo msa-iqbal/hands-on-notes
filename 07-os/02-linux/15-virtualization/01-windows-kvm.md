@@ -1,59 +1,22 @@
 # How to Install Windows 10/11 on Ubuntu Using KVM/QEMU
 
-Running Windows inside Ubuntu is one of the most useful applications of Linux virtualization. Instead of dual-booting or relying on traditional desktop virtualization software, you can run Windows as a virtual machine using **KVM, QEMU, libvirt, and Virtual Machine Manager (virt-manager)**.
+Running Windows inside Ubuntu is easy with KVM, QEMU, libvirt, and Virtual Machine Manager (virt-manager). These tools let you run Windows in a virtual machine without dual-booting.
 
-This setup provides hardware-assisted virtualization, VirtIO-based storage and networking, UEFI firmware, USB passthrough, snapshots, and convenient VM management.
+Features include hardware virtualization, fast VirtIO storage and networking, USB passthrough, snapshots, and easy VM management.
 
-> **Practical Environment:** ==This guide uses **Windows 10** as the primary hands-on example.== The same general architecture can be used for Windows 11, but Windows 11 requires additional virtual hardware such as TPM 2.0 and Secure Boot-capable UEFI.
->
-> **Important:** Windows 10 reached end of support on **October 14, 2025**. Windows 10 can still run, but standard security and feature updates are no longer provided. For a new VM in 2026, Windows 11 is generally the current supported Windows target; Windows 10 remains useful for legacy applications and compatibility testing.
+> Example: <mark>This guide uses Windows 10</mark>. Windows 11 can also run in a VM but requires TPM 2.0 and UEFI support for Secure Boot.
 
-## Table of Contents
+Note: Windows 10 support ended on October 14, 2025. For a new VM in 2026, Windows 11 is generally the better choice.
+# ☰ RESOURCES & REFERENCES
 
-1. What We Are Building
-2. KVM vs QEMU vs libvirt vs virt-manager
-3. Windows 10 vs Windows 11
-4. Requirements
-5. Check Hardware Virtualization
-6. Install KVM/QEMU and Virtualization Packages
-7. Configure User Permissions
-8. Configure the libvirt Network
-9. Verify the KVM Installation
-10. Install and Open virt-manager
-11. Download Windows ISO
-12. Download VirtIO Drivers
-13. Create the Virtual Machine
-14. Configure UEFI (Especially for Windows 11)
-15. Configure CPU and RAM
-16. Configure the Virtual Disk
-17. Configure the Network
-18. Configure SPICE
-19. Attach the VirtIO ISO
-20. Start Windows Installation
-21. Load the VirtIO Storage Driver
-22. Install Windows
-23. Install VirtIO Guest Drivers
-24. Install SPICE Guest Agent
-25. Test Internet Connectivity
-26. Run and Manage Windows OS
-27. Create the First Snapshot
+> Explore the documentation, tools, guides, and references behind the topic.
 
-- 🗺️ Start and Stop the VM
-- 🗺️ USB Passthrough
-- 🗺️ File Sharing Between Ubuntu and Windows
-- 🗺️ Clipboard Sharing
-- 🗺️ Performance Optimization
-- 🗺️ Back Up the VM
-- 🗺️ VM Autostart
-- 🗺️ Useful virsh Commands
-- 🗺️ Common Problems
-- 🗺️ Recommended Configuration
-- 🗺️ Final Architecture
-- 🗺️ Conclusion
+* [Install windows 10 on Ubuntu KVM](https://youtu.be/ip0HqeMK5yo)
 
 ---
+# 🗁 STEP 1: KVM and QEMU Installation
 
-# 1. What We Are Building
+**What We Are Building**
 
 The final environment will look like this:
 
@@ -90,51 +53,19 @@ The final environment will look like this:
 
 The technologies have different responsibilities.
 
-- **KVM** — KVM (Kernel-based Virtual Machine) is the Linux kernel's hardware virtualization mechanism.
-- **QEMU** — Its provides the virtual machine process and virtual hardware.
-- **libvirt** — Its provides a management layer for QEMU/KVM virtual machines.
-- **virt-manager** — Virtual Machine Manager (`virt-manager`) provides a graphical interface for managing libvirt VMs.
+* **KVM** — KVM (Kernel-based Virtual Machine) is the Linux kernel's hardware virtualization mechanism.
+* **QEMU** — Its provides the virtual machine process and virtual hardware.
+* **libvirt** — Its provides a management layer for QEMU/KVM virtual machines.
+* **virt-manager** — Virtual Machine Manager (`virt-manager`) provides a graphical interface for managing libvirt VMs.
 
 This combination is widely used for Linux virtualization and is an excellent foundation for learning virtualization and DevOps.
 
 Other essentials are —
 
-- **OVMF** — Its provides UEFI firmware for the virtual machine.
-- **VirtIO** — Its provides high-performance paravirtualized devices such as `Virtual disks`, `Network adapters`, `SCSI controllers`
-- **SPICE** — Its provides the graphical console and guest integration features.
-
-# 2. KVM vs QEMU vs libvirt vs virt-manager
-
-A common source of confusion is thinking these are competing virtualization technologies.
-
-They are actually different layers:
-
-```text
-virt-manager
-     │
-     ▼
-  libvirt
-     │
-     ▼
-   QEMU
-     │
-     ▼
-    KVM
-     │
-     ▼
-Physical CPU virtualization
-```
-
-In simple terms:
-
-- KVM → Hardware acceleration
-- QEMU → Virtual machine + virtual hardware
-- libvirt → VM management
-- virt-manager → GUI
-
-This separation makes the platform flexible. You can manage the same VM using either a graphical interface or command-line tools such as `virsh`.
-
-# 3. Windows 10 vs Windows 11
+* **OVMF** — Its provides UEFI firmware for the virtual machine.
+* **VirtIO** — Its provides high-performance paravirtualized devices such as `Virtual disks`, `Network adapters`, `SCSI controllers`
+* **SPICE** — Its provides the graphical console and guest integration features.
+### ၊၊||၊ Windows 10 vs Windows 11
 
 The basic KVM architecture works for both Windows 10 and Windows 11.
 
@@ -142,12 +73,12 @@ However, Windows 11 requires additional virtual hardware.
 
 Microsoft lists requirements including:
 
-- UEFI firmware
-- Secure Boot capability
-- TPM 2.0
-- At least 4 GB RAM
-- At least 64 GB storage
-- At least two virtual processors
+* UEFI firmware
+* Secure Boot capability
+* TPM 2.0
+* At least 4 GB RAM
+* At least 64 GB storage
+* At least two virtual processors
 
 Therefore:
 
@@ -172,18 +103,16 @@ SPICE
 
 For this practical guide, Windows 10 is used because it makes the VirtIO installation process particularly easy to demonstrate.
 
-# 4. Requirements
-
-## Hardware
+### ၊၊||၊ Requirements (Hardware)
 
 Recommended:
 
-- 64-bit Intel or AMD processor
-- Intel VT-x or AMD-V
-- At least 8 GB RAM
-- 80–100 GB free storage
-- SSD recommended
-- Ubuntu 26.04 LTS
+* 64-bit Intel or AMD processor
+* Intel VT-x or AMD-V
+* At least 8 GB RAM
+* 80–100 GB free storage
+* SSD recommended
+* Ubuntu 26.04 LTS
 
 For comfortable Windows virtualization:
 
@@ -198,18 +127,18 @@ is preferable.
 For a host with 16 GB RAM:
 
 ```text
-CPU:       4 vCPU
-RAM:       6 GB
-Disk:      80–100 GB
-Storage:   VirtIO
-Network:   VirtIO
-Display:   SPICE
-Firmware:  UEFI
+CPU       : 4 vCPU
+RAM       : 6 GB
+Disk      : 80–100 GB
+Storage   : VirtIO
+Network   : VirtIO
+Display   : SPICE
+Firmware  : UEFI
 ```
 
 These values are starting points, not strict requirements.
 
-# 5. Check Hardware Virtualization
+### ၊၊||၊ Check Hardware Virtualization
 
 Open Terminal.
 
@@ -232,7 +161,7 @@ For AMD:
 Virtualization: AMD-V
 ```
 
-### Check whether `/dev/kvm` exists
+### ၊၊||၊ Check whether `/dev/kvm` exists
 
 Run:
 
@@ -246,7 +175,7 @@ You should see something similar to:
 crw-rw----+ 1 root kvm ... /dev/kvm
 ```
 
-### Install the KVM checker
+### ၊၊||၊ Install the KVM checker
 
 ```bash
 sudo apt update
@@ -283,7 +212,7 @@ SVM
 AMD-V
 ```
 
-# 6. Install KVM/QEMU and Virtualization Packages
+### ၊၊||၊ Install KVM/QEMU and Virtualization Packages
 
 Ubuntu 26.04 uses newer HWE virtualization packages, so older tutorials may show slightly different package names.
 
@@ -306,7 +235,7 @@ dnsmasq-base \
 cpu-checker
 ```
 
-### What these packages provide
+What these packages provide -
 
 | Package                 | Purpose                          |
 | ----------------------- | -------------------------------- |
@@ -320,7 +249,7 @@ cpu-checker
 | `dnsmasq-base`          | Virtual network DHCP/DNS support |
 | `cpu-checker`           | KVM capability checking          |
 
-### What about `qemu-kvm`? (Optional)
+### ၊၊||၊ What about `qemu-kvm`? (Optional)
 
 On some Ubuntu versions, tutorials tell you to run:
 
@@ -341,12 +270,12 @@ that isn't necessarily an error.
 For this setup, installing:
 
 ```bash
-qemu-system-x86
+sudo apt install qemu-system-x86
 ```
 
 is sufficient.
 
-# 7. Configure User Permissions
+### ၊၊||၊ Configure User Permissions
 
 Add your user to the KVM and libvirt groups:
 
@@ -367,14 +296,14 @@ kvm
 libvirt
 ```
 
-### Important
+#### 🔥 Important
 
 Log out and log back in.
 
 A reboot is also fine:
 
 ```bash
-sudo reboot
+systemctl reboot -i
 ```
 
 After logging back in:
@@ -383,7 +312,7 @@ After logging back in:
 groups
 ```
 
-# 8. Configure the `libvirt` Network
+### ၊၊||၊ Configure the `libvirt` Network
 
 libvirt normally provides a default NAT network.
 
@@ -396,9 +325,9 @@ virsh net-list --all
 You should see something like:
 
 ```text
- Name      State    Autostart
--------------------------------
- default   active   yes
+Name      State    Autostart   Persistent
+--------------------------------------------
+default   active   yes         yes
 ```
 
 If `default` exists but is inactive:
@@ -419,11 +348,11 @@ Check again:
  virsh net-list --all
 ```
 
-### How the default network works
+### ၊၊||၊ How the default network works
 
 The typical architecture is:
 
-```text
+```plaintext
 Windows VM
     │
     ▼
@@ -433,18 +362,18 @@ VirtIO Network Adapter
 libvirt default network
     │
     ▼
-NAT
+   NAT
     │
     ▼
-Ubuntu
+  Ubuntu
     │
     ▼
-Internet
+ Internet
 ```
 
 The Windows VM does not need a physical network adapter.
 
-# 9. Verify the KVM Installation
+### ၊၊||၊ Verify the KVM Installation
 
 Run:
 
@@ -483,34 +412,9 @@ virsh net-list --all
 
 You want the `default` network active.
 
-# 10. Install and Open `virt-manager`
+# 🗁 STEP-2: Configuration `virt-manager`
 
-The package was already installed in step 5.
-
-Launch it:
-
-```bash
-virt-manager
-```
-
-Or open:
-
-```text
-Applications
-→ Virtual Machine Manager
-```
-
-You should see:
-
-```text
-QEMU/KVM
-```
-
-Double-click the connection.
-
-If it connects successfully, your virtualization environment is ready.
-
-# 11. Download the Windows ISO
+### ၊၊||၊ Download the Windows ISO
 
 For Windows 10, download the ISO from Microsoft's official [Windows 10 download page](https://www.microsoft.com/en-us/software-download/windows10ISO)
 
@@ -536,13 +440,15 @@ For Windows 11:
 
 Use a legitimate Windows license/product key for activation.
 
-# 12. Download VirtIO Drivers
+### ၊၊||၊ Download `VirtIO` Drivers
 
 Windows does not necessarily contain the VirtIO drivers required for your virtual storage and network devices.
 
 The `virtio-win` project provides Windows drivers and guest tools for QEMU/KVM. The project maintains stable and latest ISO builds.
 
 Download the [VirtIO Windows ISO](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso) from the [official VirtIO project](https://virtio-win.github.io/Knowledge-Base/Driver-installation.html)
+
+> Unofficial [download link](http://u.pc.cd/F7N)
 
 Save it as:
 
@@ -560,7 +466,7 @@ You should now have:
 
 VirtIO provides optimized virtual storage and networking drivers for Windows guests running on QEMU/KVM.
 
-# 13. Create the Windows 10 Virtual Machine
+### ၊၊||၊ Create the Windows 10 Virtual Machine
 
 Open Terminal and type:
 
@@ -581,27 +487,27 @@ File
 → New Virtual Machine
 ```
 
-### Step 1 — Installation media
+#### STEP 1 — INSTALLATION MEDIA
 
 The configuration method is shown in the image below:
 
 ![How to Install Windows 10/11 on Ubuntu Using KVM/QEMU](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789883567/Screenshot_From_2026-09-19_09-53-36_tyrehs.png "How to Install Windows 10/11 on Ubuntu Using KVM/QEMU")
 
-- Select **Local install media (ISO image or CDROM)**
-- Then click **Forward**
+* Select **Local install media (ISO image or CDROM)**
+* Then click **Forward**
 
-### Step 2 — Select the Windows ISO
+#### STEP 2 — SELECT THE WINDOWS ISO
 
 The configuration method is shown in the image below:
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789884067/Screenshot_From_2026-09-19_09-54-54_scadbd.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789884067/Screenshot_From_2026-09-19_09-54-54_scadbd.png)
 
-- Click **Browse**
-- Select from `~/Downloads/Win10_22H2.iso`
-- virt-manager may automatically detect: `Microsoft Windows 10`. (If it doesn't, select the appropriate Windows version manually.)
-- Click **Forward**
+* Click **Browse**
+* Select from `~/Downloads/Win10_22H2.iso`
+* virt-manager may automatically detect: `Microsoft Windows 10`. (If it doesn't, select the appropriate Windows version manually.)
+* Click **Forward**
 
-### Step 3 — Allocate RAM and CPU
+#### STEP 3 — ALLOCATE RAM AND CPU
 
 For a 16 GB host, a reasonable starting point is:
 
@@ -627,28 +533,68 @@ The configuration method is shown in the image below:
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885219/3_Create_new_virtual_machine_f0ruqz.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885219/3_Create_new_virtual_machine_f0ruqz.png)
 
-- Set RAM as `4096` MB (4GB) (NB: Its depends on your host computer)
-- Set CPU cores as `4` (NB: Its depends on your host computer)
-- Then Click **Forward**.
+* Set RAM as `4096` MB (4GB) (NB: Its depends on your host computer)
+* Set CPU cores as `4` (NB: Its depends on your host computer)
+* Then Click **Forward**.
+
+#### STEP 4 — ALLOCATE STORAGE
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792466195/1._KVM-Configuration_ejx3tf.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792466195/1._KVM-Configuration_ejx3tf.png)
+
+Create a virtual disk storage:
+
+```text
+80–100 GB
+```
+
+For a general-purpose Windows VM:
+
+```text
+100 GB
+```
+
+is a comfortable starting point if sufficient host storage is available.
+
+The virtual disk format as `qcow2`
+
+The default libvirt location is commonly:
+
+```text
+/var/lib/libvirt/images/
+```
+
+For example:
+
+```text
+/var/lib/libvirt/images/Windows-10.qcow2
+```
+
+#### STEP 5 — CREATE A NEW VIRTUAL MACHINE
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885405/4_Create_new_virtual_machine_zum7sh.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885405/4_Create_new_virtual_machine_zum7sh.png)
 
-- Set name of VM OS
-- Select Network
+* Set name of VM OS
+* Select Network
 
 Avoid giving the VM almost all of the host's RAM.
 
 Ubuntu still needs memory for:
 
-- GNOME
-- Browser
-- VS Code
-- Docker
-- Background services
-- QEMU
-- Other applications
+* GNOME
+* Browser
+* VS Code
+* Docker
+* Background services
+* QEMU
+* Other applications
 
-# 14. Configure UEFI (Especially for `Windows 11`)
+The configuration method is shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885739/5_Create_new_virtual_machine_hjqipv.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885739/5_Create_new_virtual_machine_hjqipv.png)
+
+### ၊၊||၊ Configure UEFI (Especially for `Windows 11`)
+
+💡<mark>If you want to install Windows 10 os, you can ignore this step.</mark>
 
 Before starting installation, enable UEFI.
 
@@ -685,11 +631,106 @@ UEFI
 
 Microsoft requires TPM 2.0 and UEFI/Secure Boot capability for Windows 11.
 
+### ၊၊||၊ Configure the Virtual Disk
+
+#### STEP-1: CONFIGURE THE `SATA DISK-1`
+
 The configuration method is shown in the image below:
 
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885739/5_Create_new_virtual_machine_hjqipv.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885739/5_Create_new_virtual_machine_hjqipv.png)
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885993/6_Configure_the_Virtual_Machine_eh1mnj.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885993/6_Configure_the_Virtual_Machine_eh1mnj.png)
 
-# 15. Configure the CPU
+* Select **SATA Disk 1**
+* Set **Disk bus** as `VirtIO`
+* Click **Apply**
+
+This gives Windows high-performance paravirtualized storage.
+
+However, Windows Setup may not initially recognize the disk. That is why the VirtIO ISO must also be attached.
+
+#### STEP-2: ATTACH THE `VirtIO` ISO
+
+The configuration method is shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886621/9_Configure_the_Virtual_Machine_iaivq9.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886621/9_Configure_the_Virtual_Machine_iaivq9.png)
+
+In virt-manager:
+
+* Click **Add Hardware**
+* Select **Storage**
+* Select as `Select or create custom storage`
+* Click **Manage** and select from `~/Downloads/virtio-win-0.1.302.iso`
+* Then click **Choose Volume**
+
+Now, Which setting you have to configure that shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789887060/10_Configure_the_Virtual_Machine_elbeku.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789887060/10_Configure_the_Virtual_Machine_elbeku.png)
+
+* Set **Device Type** as `CDROM device`
+* Set **Bus type** as `SATA`
+* Then click **Finish**
+
+#### STEP-3: CHECK `SATA CDROM-1` and `SATA CDROM-2`
+
+`SATA CDROM-1` will be configured with Windows 10 ISO.
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792468435/6.1_ymv3vi.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792468435/6.1_ymv3vi.png)
+
+`SATA CDROM-2` will be configured with `virtio-win-0.1.302.iso`.
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792468435/6.2_lu1nla.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792468435/6.2_lu1nla.png)
+
+#### STEP-4: SET BOOT SEQUENCE
+
+Which setting you have to configure that shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789892322/12_Configure_the_Virtual_Machine_kb6fn9.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789892322/12_Configure_the_Virtual_Machine_kb6fn9.png)
+
+* Select **Boot Options**
+* Select as `Enable boot menu` and organize boot sequences as -
+  * `SATA CDROM 1`
+  * `VirtIO Disk 1`
+* Click **Apply**
+
+### ၊၊||၊ Configure SPICE Display
+
+The configuration method is shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1790075428/62_Configure_SPICE_Display_be7ss0.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1790075428/62_Configure_SPICE_Display_be7ss0.png)
+
+* Click **Add Hardware**
+* Select **Graphics**
+* Set type as `Spice server`
+* Then click **Finish**
+
+For the video device, use a model supported by your current virt-manager/QEMU/Windows combination. QXL remains a common SPICE configuration; VirtIO-GPU may also be available depending on the stack and Windows driver support.
+
+Note: If any problem faced for selecting as `Spice server`, then switched as `VNC server`
+### ၊၊||၊ Configure the Network
+
+The configuration method is shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886336/8_Configure_the_Virtual_Machine_pnw4bn.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886336/8_Configure_the_Virtual_Machine_pnw4bn.png)
+
+* Select the network interface as **NIC :9d:f3:8f**
+* Set `Network source` as `Virtual network 'default': NAT`
+* Set `Device model` as `virtio`
+* Then click **Apply**
+
+The final network architecture is:
+
+```text
+Internet
+   |
+Ubuntu
+   |
+libvirt_NAT
+   |
+VirtIO_NIC
+   |
+Windows
+```
+
+### ၊၊||၊ Configure the CPU
 
 Use:
 
@@ -700,7 +741,7 @@ host-passthrough
 
 This exposes appropriate host CPU features to the guest.
 
-### Important CPU topology correction
+#### 💡Important! <mark>CPU topology correction</mark>
 
 Do **not** use:
 
@@ -738,137 +779,14 @@ The configuration method is shown in the image below:
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789891839/11_Configure_the_Virtual_Machine_fvnhcf.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789891839/11_Configure_the_Virtual_Machine_fvnhcf.png)
 
-- Select **CPUs**
-- Select `Configuration` as `Copy host CPU configuration (host-passthrough)`
-- Select `Manually set CPU topology` and set as Sockets: `1`, Cores: `2`, Threads: `2`
-- Click **Apply**
+* Select **CPUs**
+* Select `Configuration` as `Copy host CPU configuration (host-passthrough)`
+* Select `Manually set CPU topology` and set as Sockets: `1`, Cores: `2`, Threads: `2`
+* Click **Apply**
 
-# 16. Configure the Virtual Disk
+# 🗁 STEP-3: Windows Installation
 
-Create a virtual disk:
-
-```text
-80–100 GB
-```
-
-For a general-purpose Windows VM:
-
-```text
-100 GB
-```
-
-is a comfortable starting point if sufficient host storage is available.
-
-The virtual disk format as `qcow2`
-
-The default libvirt location is commonly:
-
-```text
-/var/lib/libvirt/images/
-```
-
-For example:
-
-```text
-/var/lib/libvirt/images/Windows-10.qcow2
-```
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1790076272/63_Configure_the_Virtual_Disk_gdynmc.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1790076272/63_Configure_the_Virtual_Disk_gdynmc.png)
-
-- Click **Add Hardware**
-- Select **Storage**
-- Select as `Create a disk image for the virtual machine` and set your prefer storage.
-- Then click **Finish** option
-
-### Configure VirtIO Storage
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885993/6_Configure_the_Virtual_Machine_eh1mnj.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885993/6_Configure_the_Virtual_Machine_eh1mnj.png)
-
-- Select **SATA Disk 1**
-- Set **Disk bus** as `VirtIO`
-- Click **Apply**
-
-This gives Windows high-performance paravirtualized storage.
-
-However, Windows Setup may not initially recognize the disk. That is why the VirtIO ISO must also be attached.
-
-# 17. Configure the Network
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886336/8_Configure_the_Virtual_Machine_pnw4bn.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886336/8_Configure_the_Virtual_Machine_pnw4bn.png)
-
-- Select the network interface as **NIC :9d:f3:8f**
-- Set `Network source` as `Virtual network 'default': NAT`
-- Set `Device model` as `virtio`
-- Then click **Apply**
-
-The final network architecture is:
-
-```text
-Internet
-   |
-Ubuntu
-   |
-libvirt_NAT
-   |
-VirtIO_NIC
-   |
-Windows
-```
-
-# 18. Configure SPICE Display
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1790075428/62_Configure_SPICE_Display_be7ss0.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1790075428/62_Configure_SPICE_Display_be7ss0.png)
-
-- Click **Add Hardware**
-- Select **Graphics**
-- Set type as `Spice server`
-- Then click **Finish**
-
-For the video device, use a model supported by your current virt-manager/QEMU/Windows combination. QXL remains a common SPICE configuration; VirtIO-GPU may also be available depending on the stack and Windows driver support.
-
-Note: If any problem faced for selecting as `Spice server`, then switched as `VNC server`
-
-# 19. Attach the VirtIO ISO
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886621/9_Configure_the_Virtual_Machine_iaivq9.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789886621/9_Configure_the_Virtual_Machine_iaivq9.png)
-
-In virt-manager:
-
-- Click **Add Hardware**
-- Select **Storage**
-- Select as `Select or create custom storage`
-- Click **Manage** and select from `~/Downloads/virtio-win-0.1.302.iso`
-- Then click **Choose Volume**
-
-Now, Which setting you have to configure that shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789887060/10_Configure_the_Virtual_Machine_elbeku.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789887060/10_Configure_the_Virtual_Machine_elbeku.png)
-
-- Set **Device Type** as `CDROM device`
-- Set **Bus type** as `SATA`
-- Then click **Finish**
-
-Finally, Which setting you have to configure that shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789892322/12_Configure_the_Virtual_Machine_kb6fn9.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789892322/12_Configure_the_Virtual_Machine_kb6fn9.png)
-
-- Select **Boot Options**
-- Select as `Enable boot menu` and organize boot sequences as -
-  - `SATA CDROM 1`
-  - `VirtIO Disk 1`
-- Click **Apply**
-
-# 20. Start Windows Installation
+### STEP-1: START WINDOWS INSTALLATION
 
 The configuration method is shown in the image below:
 
@@ -880,8 +798,8 @@ Click **Begin Installation**
 
 When `Allow inhibiting shortcut` diaglog box shown then click `Allow` button.
 
-- Select **Language**
-- Select **Time and currency Keyboard**
+* Select **Language**
+* Select **Time and currency Keyboard**
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893008/15_Windows_OS_Installation_on_Virtual_Machine_n89efn.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893008/15_Windows_OS_Installation_on_Virtual_Machine_n89efn.png)
 
@@ -903,7 +821,7 @@ Accept **I accept the license terms**
 
 Select as `Custom: Install Windows only (advanced)`
 
-# 21. Load the VirtIO Storage Driver
+### STEP-2 (Method-1): LOAD THE `VirtIO` STORAGE DRIVER
 
 When you may reach as `Where do you want to install Windows?` and No drives were found.
 
@@ -913,57 +831,43 @@ This happens because Windows Setup does not have the required VirtIO storage dri
 
 Click **Load driver**
 
-Then:
-
-```text
-Browse
-```
-
-Open the VirtIO CD-ROM.
-
-Depending on the VirtIO release and storage controller, look for directories such as:
-
-```text
-viostor
-vioscsi
-```
-
-Then select the appropriate Windows 10 64-bit driver directory.
-
-For example:
-
-```text
-amd64
-```
-
-The exact directory structure can change between VirtIO releases, so don't hard-code a specific path such as:
-
-```text
-E:\amd64\w10\viostor.inf
-```
-
-unless that exact path exists on the ISO you're using.
-
-Select the appropriate `.inf` driver.
-
-Windows Setup should then detect the virtual disk.
-
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893243/21_Windows_OS_Installation_on_Virtual_Machine_kurqpu.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893243/21_Windows_OS_Installation_on_Virtual_Machine_kurqpu.png)
 
 Then, click **OK**
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893246/22_Windows_OS_Installation_on_Virtual_Machine_hawe5x.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893246/22_Windows_OS_Installation_on_Virtual_Machine_hawe5x.png)
 
-Select as `Red Hat VirtIO SCSI controller (E:\amd64\w10\viostor.inf)`
-
-# 22. Install Windows
-
-The configuration method is shown in the image below:
+Select as `Red Hat VirtIO SCSI controller (E:\amd64\w10\viostor.inf)` and then click **Next**
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893253/23_Windows_OS_Installation_on_Virtual_Machine_tu2fau.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893253/23_Windows_OS_Installation_on_Virtual_Machine_tu2fau.png)
 
-- Select as **Drive 0 Unallocated Space**
-- Click **Next** option.
+Select as **Drive 0 Unallocated Space** and click **Next** option.
+
+Windows will create the necessary partitions automatically. The installation will proceed and the VM will restart several times. Once Windows starts booting from the virtual disk, you may remove the Windows installation ISO.
+
+💡Keep the `VirtIO ISO` attached until the required drivers have been installed.
+
+### STEP-2 (Method-2): LOAD THE `VirtIO` STORAGE DRIVER (Recommended)
+
+When you may reach as `Where do you want to install Windows?` and No drives were found.
+
+This happens because Windows Setup does not have the required VirtIO storage driver loaded.
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893241/20_Windows_OS_Installation_on_Virtual_Machine_qrdkdg.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893241/20_Windows_OS_Installation_on_Virtual_Machine_qrdkdg.png)
+
+Click **Load driver**
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792551593/2V_lbigef.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792551593/2V_lbigef.png)
+
+* Then, click **Browse**
+* Navigate to:
+
+```plaintext
+"CD Drive (E:) virtio-win-0.1.302" > viostor > w10 > amd64
+```
+
+* Then **Select** and click **OK**. Its select `viostor.inf` file automatically.
+* Click `Red Hat VirtIO SCSI controller (E:\viostor\w10\amd64\viostor.inf)` and also click **Next**.
 
 Windows will create the necessary partitions automatically.
 
@@ -971,17 +875,17 @@ The installation will proceed and the VM will restart several times.
 
 Once Windows starts booting from the virtual disk, you may remove the Windows installation ISO.
 
-Keep the VirtIO ISO attached until the required drivers have been installed.
+Keep the `VirtIO ISO` attached until the required drivers have been installed.
 
-### Complete Windows Initial Setup
+### STEP-3: COMPLETE WINDOWS INITIAL SETUP
 
 Complete the normal Windows setup:
 
-- Keyboard layout
-- Network
-- User account
-- Password/PIN
-- Privacy settings
+* Keyboard layout
+* Network
+* User account
+* Password/PIN
+* Privacy settings
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893247/24_Windows_OS_Installation_on_Virtual_Machine_kuactk.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789893247/24_Windows_OS_Installation_on_Virtual_Machine_kuactk.png)
 
@@ -1003,7 +907,9 @@ Complete the normal Windows setup:
 
 If you temporarily install without Internet access, you can connect the VirtIO network after installing the network driver.
 
-# 23. Install VirtIO Guest Drivers
+# 🗁 STEP-4: Install `VirtIO` Guest Drivers
+
+### STEP-1: NETWORK CONNECTION AND OTHERS PERIPHERALS
 
 After reaching the Windows desktop, open:
 
@@ -1011,45 +917,31 @@ After reaching the Windows desktop, open:
 This PC
 ```
 
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554634/5V_oy3gcp.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554634/5V_oy3gcp.png)
+
 Open the VirtIO CD-ROM.
 
-Depending on the VirtIO ISO, you may find:
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554636/6V_tebyxa.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554636/6V_tebyxa.png)
+
+You may find:
 
 ```text
 virtio-win-gt-x64.msi
 ```
 
-or other guest-tool installers.
-
 Install the appropriate package.
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554636/7V_odaot4.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554636/7V_odaot4.png)
+
+When these driver icon come to up, then select each for as `Entire feature will be installed on local hard drive` and click **Next**.
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554635/9V_w4waqo.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792554635/9V_w4waqo.png)
+
+When the pop-up box come to up, click **Yes**.
 
 Restart Windows.
 
-### Verify VirtIO Devices
-
-Open **Device Manager**
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897672/31_Windows_OS_Driver_Installation_on_Virtual_Machine_t66mm7.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897672/31_Windows_OS_Driver_Installation_on_Virtual_Machine_t66mm7.png)
-
-Check:
-
-- Disk drives
-- Storage controllers
-- Network adapters
-- Display adapters
-- System devices
-
-There should be no unexplained yellow warning icons (⚠️).
-
-If you see one, right-click it:
-
-```text
-Update driver → Browse my computer for drivers
-```
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897674/32_Windows_OS_Driver_Installation_on_Virtual_Machine_lqyapq.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897674/32_Windows_OS_Driver_Installation_on_Virtual_Machine_lqyapq.png)
-
-# 24. Install SPICE Guest Agent
+### STEP-2: INSTALL `SPICE Guest Agent` (DISPLAY/GRAPHICS DRIVER)
 
 SPICE guest components are separate from the general VirtIO driver package.
 
@@ -1057,12 +949,14 @@ The SPICE project provides Windows guest tools including SPICE-related guest com
 
 Download the appropriate [SPICE guest tools](https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe) from the official [SPICE](https://www.spice-space.org/download.html) download area and install them inside Windows.
 
+> Unofficial [download link](http://u.pc.cd/F7N)
+
 This can provide features such as:
 
-- Better mouse integration
-- Clipboard integration
-- Guest-agent communication
-- Improved desktop integration
+* Better mouse integration
+* Clipboard integration
+* Guest-agent communication
+* Improved desktop integration
 
 The configuration method is shown in the image below:
 
@@ -1072,54 +966,53 @@ The configuration method is shown in the image below:
 
 Restart Windows after installation.
 
-# 25. Test Internet Connectivity
+### STEP-3: VERIFY `VirtIO` DEVICES
 
-Open Command Prompt:
+Go to **Search box**
 
-```powershell
-ipconfig
-```
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897672/31_Windows_OS_Driver_Installation_on_Virtual_Machine_t66mm7.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897672/31_Windows_OS_Driver_Installation_on_Virtual_Machine_t66mm7.png)
 
-The VM will commonly receive an address in:
+Open **Device Manager**
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792556216/01_fgmkli.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792556216/01_fgmkli.png)
+
+Check:
+
+* Disk drives
+* Storage controllers
+* Network adapters
+* Display adapters
+* System devices
+
+There should be no unexplained yellow warning icons (⚠️).
+
+If you don't see the yellow warning icon, it means that all drivers are installed correctly and there are no driver warnings.
+
+If you see one, right-click it:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897674/32_Windows_OS_Driver_Installation_on_Virtual_Machine_lqyapq.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789897674/32_Windows_OS_Driver_Installation_on_Virtual_Machine_lqyapq.png)
+
+Click **Update driver** and  then click **Browse my computer for drivers**
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792557451/122_sxlwxy.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792557451/122_sxlwxy.png)
+
+Select **VirtIO** drive or navigate to:
 
 ```text
-192.168.122.x
+"CD Drive (E:) virtio-win-0.1.302" > viostor > w10 > amd64
 ```
 
-when using the standard libvirt NAT network.
+Click **OK**.
 
-Test the network:
+💡 This method is highly likely to solve this issue.
 
-```powershell
-ping 8.8.8.8
-```
+# 🖆 Run and Manage Windows-OS
 
-Then test DNS:
-
-```powershell
-ping google.com
-```
-
-If both work:
-
-```text
-Network      ✓
-DNS          ✓
-VirtIO NIC   ✓
-Internet     ✓
-```
-
-# 26. Run and Manage Windows-OS
-
-### ❏❏❏ Install `virt-viewer` on Ubuntu
+### STEP-1: INSTALL `virt-viewer` ON UBUNTU
 
 `virt-viewer` can connect to a virtual machine and display its graphical console in full-screen mode. Therefore, you can use it to view your Windows VM. This step is optional.
 
 First, check whether `virt-viewer` is already installed.
-
-The configuration method is shown in the image below:
-
-![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789903957/49_Install_virt-viewer_on_Ubuntu_bq4zri.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789903957/49_Install_virt-viewer_on_Ubuntu_bq4zri.png)
 
 Open the Ubuntu terminal and type:
 
@@ -1127,13 +1020,17 @@ Open the Ubuntu terminal and type:
 virt-viewer
 ```
 
+The configuration method is shown in the image below:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789903957/49_Install_virt-viewer_on_Ubuntu_bq4zri.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789903957/49_Install_virt-viewer_on_Ubuntu_bq4zri.png)
+
 If `virt-viewer` is not installed, install it using:
 
 ```bash
 sudo apt install virt-viewer
 ```
 
-### ❏❏❏ Run Windows 10/11 OS with KVM/QEMU
+### STEP-2 (Method-1): RUN WINDOWS 10/11 OS WITH KVM-QEMU
 
 Suppose you are using Windows 10 as the guest OS.
 
@@ -1167,7 +1064,71 @@ When the **Allow inhibiting shortcuts** dialog box appears, click the **Allow** 
 
 Now, enjoy!
 
-# 27. Create the First Snapshot
+### STEP-2 (Method-2): RUN WINDOWS 10/11 OS WITH KVM-QEMU
+
+#### START VIRTUAL MACHINE
+
+Open terminal and type:
+
+```bash
+virsh start Windows-10
+```
+
+Here, replace `Windows-10` with the name you gave while creating the Virtual Machine.
+
+Example:
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885405/4_Create_new_virtual_machine_zum7sh.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789885405/4_Create_new_virtual_machine_zum7sh.png)
+
+Here, you used name as `win10`. So, your terminal command have to:
+
+```bash
+virsh start win10
+```
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792563281/1258_wt89i8.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792563281/1258_wt89i8.png)
+
+**Check status**
+
+```bash
+virsh list --all
+```
+
+Open `Windows 10` with **Virt-Viewer**
+
+```bash
+virt-viewer
+```
+
+When open a pop-up box as **Choose a virtual machine**, select `win10` and click **Connect**
+
+Now your **Windows 10 OS** will be run.
+
+Now, enjoy!
+
+#### SHUTDOWN VIRTUAL MACHINE
+
+Shutdown your Windows OS
+
+![https://res.cloudinary.com/du7tjwbyi/image/upload/v1792569052/235_uyto7f.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1792569052/235_uyto7f.png)
+
+Then open terminal and type:
+
+```bash
+virsh shutdown win10
+```
+
+If you have trouble shutting down Windows, you can use this command to <mark>force your virtual machine to shut down.</mark>
+
+```bash
+virsh destroy win10
+```
+
+`destroy` does not delete the VM. It immediately stops the guest, similar to physically powering off a computer.
+
+Use graceful shutdown whenever possible.
+
+# 🖆 Create the First Snapshot
 
 Once Windows is completely configured, shut it down.
 
@@ -1193,62 +1154,28 @@ Windows-10-Base-Apps
 
 Snapshots are useful recovery points, but they should **not replace proper VM backups**.
 
----
-
----
-
----
-
-# 🗺️ Start and Stop the VM
-
-**Start**
-
-```bash
-virsh start Windows-10
-```
-
-**Check status**
-
-```bash
-virsh list --all
-```
-
-**Graceful shutdown**
-
-```bash
-virsh shutdown Windows-10
-```
-
-**Force power off**
-
-```bash
-virsh destroy Windows-10
-```
-
-`destroy` does not delete the VM. It immediately stops the guest, similar to physically powering off a computer.
-
-Use graceful shutdown whenever possible.
-
-# 🗺️ USB Passthrough
+# 🖆 USB Passthrough
 
 USB devices can be passed from Ubuntu to Windows.
 
 Examples include:
 
-- USB flash drives
-- Android phones
-- USB printers
-- USB adapters
-- USB license dongles
+* USB flash drives
+* Android phones
+* USB printers
+* USB adapters
+* USB license dongles
+
+### STEP-1: WHEN YOU WANT TO CONNECT USB DEVICES
 
 The configuration method is shown in the image below:
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905739/57_USB_Device_Allow-Disallow_pacerc.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905739/57_USB_Device_Allow-Disallow_pacerc.png)
 
-In virt-manager:
+In **virt-manager**:
 
-- Select **Virtual Machine**
-- Select **Redirect USB device**
+* Select **Virtual Machine**
+* Select **Redirect USB device**
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905743/58_USB_Device_Allow-Disallow_fuuf1a.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905743/58_USB_Device_Allow-Disallow_fuuf1a.png)
 
@@ -1256,13 +1183,13 @@ Select the desired USB device and click.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905747/59_USB_Device_Allow-Disallow_qohbq5.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905747/59_USB_Device_Allow-Disallow_qohbq5.png)
 
-### When you want to disconnect or eject USB devices
+### STEP-2: WHEN YOU WANT TO DISCONNECT / EJECT USB DEVICES
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905753/61_USB_Device_Allow-Disallow_pr2etl.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789905753/61_USB_Device_Allow-Disallow_pr2etl.png)
 
-Uncheck your USB-Device and close the windows.
+**Unchecked** your USB-Device and close the windows.
 
-#### You can also inspect USB devices from Ubuntu
+### ၊၊||၊ YOU CAN ALSO INSPECT USB DEVICES FROM UBUNTU
 
 ```bash
 lsusb
@@ -1274,15 +1201,15 @@ Example:
 Bus 001 Device 003: ID 046d:c077 Logitech Mouse
 ```
 
-# 🗺️ File Sharing Between Ubuntu and Windows
-
-Your original article's file-sharing section needs the most cleanup.
+# 🖆 File Sharing Between Ubuntu and Windows
 
 There are two different directions.
 
-### Ubuntu → Windows
+### STEP-1: Ubuntu → Windows
 
 If Ubuntu contains the files you want Windows to access, use Samba or another network-sharing mechanism on Ubuntu.
+
+> 💡 Note: If you want to learn how to install and configure SMB on Linux, see [this note](06-file-sharing-with-linux.md).
 
 Windows can then access:
 
@@ -1292,48 +1219,25 @@ Windows can then access:
 
 depending on the host-side network configuration.
 
-### Windows → Ubuntu
+### STEP-2: Windows → Ubuntu
 
 If Windows contains the files you want Ubuntu to access, share the folder from Windows using SMB.
 
-For example:
-
 ```text
-Windows shared folder
-        │
-        ▼
-SMB
-        │
-        ▼
-Ubuntu Files
+Windows shared folder ➜ [---SMB---] ➜ Ubuntu Files
 ```
 
-From Ubuntu, you can access:
-
-```text
-smb://192.168.122.x/
-```
-
-where `192.168.122.x` is the Windows VM's address.
-
-### In Windows OS
+#### 🗺️ In `Windows OS`
 
 The configuration method is shown in the image below:
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898832/35_Share_specific_folder_publicly_mvlx86.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898832/35_Share_specific_folder_publicly_mvlx86.png)
 
-- Create a folder and right-click it. When a new window opens, go to the `Sharing` tab.
-- Select `Advanced Sharing` and click it.
-  - Select `Share this folder` and click the `Permissions` button.
-    - Select `Everyone` and check the required permission options.
-    - Click `Apply` and then click `OK`.
+**Folder Properties** > **Sharing** > **Advanced Sharing** > Check **Share this folder** > **Permissions** > Choose **Everyone** & set permissions > **Apply** > **OK**.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898834/36_Share_specific_folder_publicly_v1uavs.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898834/36_Share_specific_folder_publicly_v1uavs.png)
 
-- Select the folder and right-click it. When a new window opens, go to the `Security` tab.
-- Select the `Everyone` option.
-  - Check the required permission options.
-  - Click `Apply` and then click `OK`.
+**Folder Properties** > **Security** > Select **Everyone** > Set permissions > **Apply** > **OK**.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898837/37_Share_specific_folder_publicly_husdzd.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898837/37_Share_specific_folder_publicly_husdzd.png)
 
@@ -1343,22 +1247,22 @@ Go to the search box and type `Manage advanced sharing settings`.
 
 Expand `Private (current profile)`.
 
-- Enable `Turn on network discovery`.
-- Enable `Turn on file and printer sharing`.
+* Enable `Turn on network discovery`.
+* Enable `Turn on file and printer sharing`.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898844/39_Share_specific_folder_publicly_qjb4eo.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898844/39_Share_specific_folder_publicly_qjb4eo.png)
 
 Expand `Guest or Public`.
 
-- Enable `Turn on network discovery`.
-- Enable `Turn on file and printer sharing`.
+* Enable `Turn on network discovery`.
+* Enable `Turn on file and printer sharing`.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898859/40_Share_specific_folder_publicly_dxgmb1.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898859/40_Share_specific_folder_publicly_dxgmb1.png)
 
 Expand `All Networks`.
 
-- Enable `Turn on sharing so anyone with network access can read and write files in the Public folders`.
-- Enable `Use 128-bit encryption to help protect file sharing connections (recommended)`.
+* Enable `Turn on sharing so anyone with network access can read and write files in the Public folders`.
+* Enable `Use 128-bit encryption to help protect file sharing connections (recommended)`.
 
 For normal use, **do not disable password-protected sharing**. Using authenticated SMB access is preferable.
 
@@ -1376,6 +1280,10 @@ ipconfig
 
 Then look for the **IPv4 Address**. This is the IP address of the Windows 10 VM. For example, suppose the IP address is `192.168.122.128`.
 
+#### 🗺️ Access from `Ubuntu`
+
+> 💡 Note: If you want to learn how to install and configure SMB on Linux, see [this note](06-file-sharing-with-linux.md).
+
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898866/43_Share_specific_folder_publicly_j2d7wq.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898866/43_Share_specific_folder_publicly_j2d7wq.png)
 
 Open **Files** on Ubuntu and go to the **Network** section. Enter:
@@ -1386,9 +1294,9 @@ smb://192.168.122.128
 
 Then press **Enter**.
 
-- After pressing **Enter**, a new **Authentication Required** window will appear.
-- Select the password field and enter your Windows login password.
-- Click the **Connect** button.
+* After pressing **Enter**, a new **Authentication Required** window will appear.
+* Select the password field and enter your Windows login password.
+* Click the **Connect** button.
 
 ![https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898851/44_Share_specific_folder_publicly_m09wqu.png](https://res.cloudinary.com/du7tjwbyi/image/upload/v1789898851/44_Share_specific_folder_publicly_m09wqu.png)
 
@@ -1404,192 +1312,7 @@ spice-guest-tools-latest.exe
 
 You can then access this file from Ubuntu through the Windows SMB share.
 
-# 🗺️ Clipboard Sharing
-
-With SPICE guest components installed and the VM configured for SPICE, clipboard integration may allow:
-
-```text
-Ubuntu
-  ↓
-Copy
-  ↓
-Windows
-```
-
-and:
-
-```text
-Windows
-  ↓
-Copy
-  ↓
-Ubuntu
-```
-
-Test both directions.
-
-For large files, use SMB or another file-transfer mechanism rather than clipboard or drag-and-drop.
-
-# 🗺️ Performance Optimization
-
-Once the VM is working, verify the following.
-
-**CPU**
-
-```text
-host-passthrough
-```
-
-**Storage**
-
-```text
-VirtIO
-```
-
-**Network**
-
-```text
-VirtIO
-```
-
-**Firmware**
-
-```text
-UEFI
-```
-
-**Display**
-
-```text
-SPICE
-```
-
-**Disk**
-
-```text
-qcow2
-```
-
-Ubuntu 26.04's current QEMU/libvirt stack includes modern VirtIO and virtualization improvements, so current Ubuntu packages are preferable to manually installing old QEMU/libvirt versions from third-party guides. ([Ubuntu Documentation](https://documentation.ubuntu.com/release-notes/26.04/summary-for-lts-users/ "Ubuntu 26.04 LTS summary - Ubuntu release notes"))
-
-### ❏❏❏ Don't Overallocate RAM
-
-Suppose the host has:
-
-```text
-16 GB RAM
-```
-
-Don't give Windows:
-
-```text
-14 GB
-```
-
-and leave Ubuntu with only 2 GB.
-
-A more reasonable starting point is:
-
-```text
-Ubuntu → 8–10 GB
-Windows → 6–8 GB
-```
-
-Adjust according to your workload.
-
-If you're running:
-
-```text
-VS Code
-Docker
-Chrome
-Firefox
-Kubernetes
-```
-
-on Ubuntu simultaneously, leave more RAM for the host.
-
-### ❏❏❏ Don't Overallocate CPU
-
-If your processor has:
-
-```text
-8 logical CPUs
-```
-
-start with:
-
-```text
-Windows → 4 vCPU
-```
-
-and allow Ubuntu to use the remaining CPU capacity.
-
-More vCPUs do not automatically mean better VM performance.
-
-### ❏❏❏ Check VM Information
-
-Run:
-
-```bash
-virsh dominfo Windows-10
-```
-
-You can see:
-
-```text
-State
-CPU(s)
-Max memory
-Used memory
-Autostart
-```
-
-### ❏❏❏ Check the QEMU Process
-
-Run:
-
-```bash
-ps aux | grep '[q]emu'
-```
-
-This allows you to inspect the QEMU process associated with the running VM.
-
-### ❏❏❏ Check libvirt Logs
-
-If a VM refuses to start, check:
-
-```bash
-sudo journalctl -u libvirtd --since today
-```
-
-On modular libvirt installations, you may also need:
-
-```bash
-sudo journalctl -u virtqemud --since today
-```
-
-### ❏❏❏ VM Storage Location
-
-The default libvirt storage location is commonly:
-
-```text
-/var/lib/libvirt/images/
-```
-
-Check:
-
-```bash
-sudo ls -lh /var/lib/libvirt/images/
-```
-
-You may see:
-
-```text
-Windows-10.qcow2
-```
-
-# 🗺️ Back Up the VM
+# 🖆 Backup the Virtual Machine (VM)
 
 First shut down Windows:
 
@@ -1626,31 +1349,7 @@ Windows-10.qcow2
 
 For a serious backup strategy, store the backup on a **different physical disk** from the original VM.
 
-# 🗺️ VM Autostart
-
-### Enable VM Autostart
-
-If you want Windows to start automatically with Ubuntu:
-
-```bash
-virsh autostart Windows-10
-```
-
-Check:
-
-```bash
-virsh dominfo Windows-10
-```
-
-### To disable
-
-```bash
-virsh autostart --disable Windows-10
-```
-
-For laptops and workstations, manual startup is often more convenient.
-
-# 🗺️ Useful `virsh` Commands
+# 🖆 Useful `virsh` Commands
 
 **List VMs**
 
@@ -1718,9 +1417,9 @@ virsh autostart Windows-10
 virsh autostart --disable Windows-10
 ```
 
-# 🗺️ Common Problem
+# 🖆 Common Problem
 
-### ❏❏❏ Common Problem: `/dev/kvm` Doesn't Exist
+### ❏❏❏  `/dev/kvm` Doesn't Exist
 
 Check:
 
@@ -1754,7 +1453,7 @@ ls -l /dev/kvm
 
 If it still doesn't exist, verify that virtualization is enabled in BIOS/UEFI.
 
-### ❏❏❏ Common Problem: KVM Acceleration Is Unavailable
+### ❏❏❏ KVM Acceleration Is Unavailable
 
 Run:
 
@@ -1776,7 +1475,7 @@ kvm-ok
 
 again.
 
-### ❏❏❏ Common Problem: `default` Network Is Inactive
+### ❏❏❏ `default` Network Is Inactive
 
 Check:
 
@@ -1796,7 +1495,7 @@ Then:
 sudo virsh net-autostart default
 ```
 
-### ❏❏❏ Common Problem: Windows Says "No Drives Found"
+### ❏❏❏ Windows Says "No Drives Found"
 
 This normally means that the VirtIO storage driver has not been loaded.
 
@@ -1815,9 +1514,9 @@ Select the appropriate `.inf` file.
 
 The virtual disk should then appear.
 
-### ❏❏❏ Common Problem: Windows Has No Internet
+### ❏❏❏ Windows Has No Internet
 
-In virt-manager, check:
+In **virt-manager**, check:
 
 ```text
 Network source:
@@ -1833,9 +1532,9 @@ VirtIO
 
 Then verify the VirtIO network driver inside Windows.
 
-Run:
+Run in windows terminal:
 
-```cmd
+```powershell
 ipconfig
 ```
 
@@ -1848,7 +1547,7 @@ Device Manager
 
 and install the appropriate VirtIO driver.
 
-### ❏❏❏ Common Problem: Common Problem: Display Is Slow
+### ❏❏❏ Display Is Slow
 
 Verify:
 
@@ -1861,7 +1560,7 @@ and make sure the appropriate Windows display/guest components are installed.
 
 Also verify that the video device configured in virt-manager has a compatible Windows driver.
 
-### ❏❏❏ Common Problem: Common Problem: Windows Won't Boot After Changing Disk Bus
+### ❏❏❏ Windows Won't Boot After Changing Disk Bus
 
 Suppose Windows was installed using:
 
@@ -1893,7 +1592,7 @@ Boot Windows
 
 Don't change storage controllers randomly after installation.
 
-### ❏❏❏ Common Problem: Common Problem: VM Is Extremely Slow
+### ❏❏❏ VM Is Extremely Slow
 
 Check:
 
@@ -1928,13 +1627,13 @@ top
 
 If Ubuntu is running out of RAM or CPU, reduce the VM's allocation.
 
-# 🗺️ Recommended Configuration
+# 🖆 Recommended Configuration
 
 For a host with 16 GB RAM:
 
 ```text
 ┌──────────────────────────────────┐
-│        Windows VM                │
+│           Windows VM             │
 ├──────────────────────────────────┤
 │ RAM          6 GB                │
 │ CPU          4 vCPU              │
@@ -1956,117 +1655,7 @@ TPM            2.0
 Secure Boot    Enabled/Supported
 ```
 
-### ❏❏❏ Complete Ubuntu Installation Commands
-
-For a standard Ubuntu 26.04 setup:
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install -y \
-qemu-kvm \
-qemu-system-x86 \
-qemu-utils \
-libvirt-daemon-system \
-libvirt-clients \
-virt-manager \
-ovmf \
-bridge-utils \
-dnsmasq-base \
-cpu-checker
-```
-
-Add your user:
-
-```bash
-sudo usermod -aG kvm,libvirt $USER
-```
-
-Configure libvirt:
-
-```bash
-sudo systemctl enable --now libvirtd
-```
-
-Configure the default network:
-
-```bash
-sudo virsh net-start default
-```
-
-If it is already running, that's fine.
-
-Enable autostart:
-
-```bash
-sudo virsh net-autostart default
-```
-
-Check KVM:
-
-```bash
-kvm-ok
-```
-
-Reboot:
-
-```bash
-sudo reboot
-```
-
-After reboot:
-
-```bash
-groups
-```
-
-Then:
-
-```bash
-virt-manager
-```
-
-### ❏❏❏ Windows 11 Additional Configuration
-
-If you want to use Windows 11 instead of Windows 10, create the VM using:
-
-```text
-UEFI
-TPM 2.0
-Secure Boot
-4+ GB RAM
-2+ vCPU
-64+ GB storage
-```
-
-Microsoft specifically lists TPM 2.0, UEFI/Secure Boot capability, storage, memory, and processor requirements for Windows 11. ([Microsoft Support](https://support.microsoft.com/en-us/windows/experience/compatibility/windows-11-system-requirements "Windows 11 System Requirements | Microsoft Support"))
-
-In virt-manager, you can add a virtual TPM through:
-
-```text
-Add Hardware
-→ TPM
-```
-
-Choose:
-
-```text
-TPM Type:
-Emulated
-```
-
-and:
-
-```text
-Version:
-2.0
-```
-
-The exact virt-manager UI may differ slightly between Ubuntu releases.
-
-# 🗺️ Final Architecture
+# ☰ Final Architecture
 
 After configuration:
 
@@ -2097,6 +1686,6 @@ After configuration:
      VirtIO      VirtIO     Passthrough
 ```
 
-# 🗺️ Conclusion
+# ☰ Conclusion
 
 KVM/QEMU is a powerful way to run Windows inside Ubuntu without dual-booting.

@@ -86,11 +86,11 @@ Quick command/reference
 
 Notes should be:
 
-- Practical
-- Clear
-- Searchable
-- Reusable
-- Easy to maintain
+* Practical
+* Clear
+* Searchable
+* Reusable
+* Easy to maintain
 
 Avoid unnecessary duplication.
 

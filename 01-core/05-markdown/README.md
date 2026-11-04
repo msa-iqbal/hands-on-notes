@@ -27,21 +27,21 @@ The numbering provides a consistent learning sequence while keeping Markdown syn
 
 ## Focus
 
-- Markdown fundamentals
-- Markdown syntax
-- Document structure
-- Headings
-- Lists and task lists
-- Links and references
-- Images
-- Tables
-- Inline code
-- Code blocks
-- Syntax highlighting
-- GitHub Markdown
-- GitHub-specific features
-- Advanced Markdown
-- Technical documentation
+* Markdown fundamentals
+* Markdown syntax
+* Document structure
+* Headings
+* Lists and task lists
+* Links and references
+* Images
+* Tables
+* Inline code
+* Code blocks
+* Syntax highlighting
+* GitHub Markdown
+* GitHub-specific features
+* Advanced Markdown
+* Technical documentation
 
 ## Goal
 

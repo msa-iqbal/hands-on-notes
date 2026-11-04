@@ -1,45 +1,48 @@
 # Links
 
-Curated **useful websites, communities, newsletters, and online resources** for software development and technical learning.
+> Websites, online tools, and software applications for browsers, Linux, macOS, Windows, Android, and iOS.
 
 ## Contents
 
-|#|Topic|What You'll Find|
-|---|---|---|
-|01|Programming|Useful programming websites, references, and learning resources|
-|02|Software Engineering|Engineering resources, practices, and professional references|
-|03|Frontend|Frontend development websites, tools, and communities|
-|04|Backend|Backend development resources, APIs, and technical communities|
-|05|Databases|Database resources, communities, references, and learning materials|
-|06|Algorithms and Data Structures|Problem-solving platforms and algorithm resources|
-|07|System Design|System design references, architecture resources, and communities|
-|08|DevOps|DevOps resources, platforms, communities, and technical references|
-|09|Cloud|Cloud resources, platforms, learning materials, and communities|
-|10|Security|Security resources, communities, advisories, and references|
-|11|Networking|Networking resources, references, and technical communities|
-|12|Operating Systems|OS resources, administration references, and communities|
-|13|Communities|Developer communities, forums, discussion platforms, and groups|
-|14|Newsletters|Technical newsletters and recurring industry resources|
+| #  | Topic   | What You'll Find                                   |
+| -- | ------- | -------------------------------------------------- |
+| 01 | Web     | Websites, online tools, and browser-based services |
+| 02 | Linux   | Software and applications for Linux                |
+| 03 | macOS   | Software and applications for macOS                |
+| 04 | Windows | Software and applications for Windows              |
+| 05 | Android | Apps and software for Android devices              |
+| 06 | iOS     | Apps and software for iPhone and iPad              |
 
 ## Structure
 
-Links are organized by subject so useful websites can be found without searching through unrelated resources. General communities and newsletters have dedicated sections because they span multiple technologies.
+The toolkit collection is organized by platform and usage environment for quick access to useful websites, online tools, and software.
 
-Links should be kept useful, relevant, and reasonably maintained. Prefer authoritative, active, and technically valuable sources.
+The Web section contains websites and online tools that can be used directly through a web browser. It is not limited to web development and may include productivity, utilities, media, communication, education, file conversion, design, AI, and other browser-based services.
+
+The Linux, macOS, and Windows sections contain software and applications that can be installed and used on their respective desktop operating systems.
+
+The Android and iOS sections contain mobile applications and useful software for their respective platforms.
+
+Toolkit pages should remain practical, searchable, and easy to maintain.
 
 ## Focus
 
-- Learning websites
-- Technical references
-- Developer communities
-- Programming resources
-- Engineering resources
-- DevOps and cloud resources
-- Security resources
-- Networking resources
-- Operating-system resources
-- Newsletters
+* Websites and online tools
+* Browser-based services
+* Online utilities
+* Productivity software
+* Linux applications
+* macOS applications
+* Windows applications
+* Android apps
+* iOS apps
+* Development and technical software
+* Design and media software
+* Communication and collaboration software
+* AI and automation tools
+* File and document tools
+* Useful everyday software
 
 ## Goal
 
-> Maintain a curated collection of useful online resources that are worth revisiting, sharing, and using during technical work.
+> Build a practical toolkit collection that makes useful websites, online tools, software, and applications easy to find and use.

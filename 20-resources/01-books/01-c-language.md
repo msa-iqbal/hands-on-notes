@@ -29,9 +29,9 @@ C is a general-purpose, procedural, and case-sensitive programming language deve
 
 **Recommended Tools**
 
-- **Editor**: [Visual Studio Code](https://code.visualstudio.com/) with the official [C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
-- **IDE**: [Code::Blocks](http://www.codeblocks.org/) — preconfigured and suitable for beginners
-- **Online Compiler**: [CodeChef IDE](https://www.codechef.com/ide) — for quick practice and testing
+* **Editor**: [Visual Studio Code](https://code.visualstudio.com/) with the official [C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+* **IDE**: [Code::Blocks](http://www.codeblocks.org/) — preconfigured and suitable for beginners
+* **Online Compiler**: [CodeChef IDE](https://www.codechef.com/ide) — for quick practice and testing
 
 ---
 
@@ -39,27 +39,27 @@ C is a general-purpose, procedural, and case-sensitive programming language deve
 
 ### Key Features
 
-- **Procedural Language:** Emphasizes functions and step-by-step procedures.
+* **Procedural Language:** Emphasizes functions and step-by-step procedures.
 
-- **Low-level Access:** Offers direct memory manipulation using pointers.
+* **Low-level Access:** Offers direct memory manipulation using pointers.
 
-- **Portability:** C programs can be compiled and run on many types of machines with minimal changes.
+* **Portability:** C programs can be compiled and run on many types of machines with minimal changes.
 
-- **Efficient Performance:** Known for its speed and close-to-hardware behavior.
+* **Efficient Performance:** Known for its speed and close-to-hardware behavior.
 
-- **Rich Library Support:** Comes with a standard library for I/O, string manipulation, memory allocation, etc.
+* **Rich Library Support:** Comes with a standard library for I/O, string manipulation, memory allocation, etc.
 
-- **Modular Code:** Code can be organized into functions for reusability and clarity.
+* **Modular Code:** Code can be organized into functions for reusability and clarity.
 
 ### Why C is Important
 
-- **Foundation Language:** Languages like C++, Java, C#, and even Python are influenced by C.
+* **Foundation Language:** Languages like C++, Java, C#, and even Python are influenced by C.
 
-- **Operating Systems:** Core components of OSs like Linux, Windows, and macOS are written in C.
+* **Operating Systems:** Core components of OSs like Linux, Windows, and macOS are written in C.
 
-- **Embedded Systems:** Used extensively in firmware and microcontroller programming.
+* **Embedded Systems:** Used extensively in firmware and microcontroller programming.
 
-- **Compilers & Interpreters:** Many compilers (e.g., GCC) and interpreters are themselves written in C.
+* **Compilers & Interpreters:** Many compilers (e.g., GCC) and interpreters are themselves written in C.
 
 ### Basic Example
 
@@ -171,9 +171,9 @@ int main() {
 
 > [!NOTE]
 >
-> - Escape sequences are used in both **character** (`'\n'`) and **string** (`"\n"`) literals.
-> - They are vital for **text formatting**, **controlling output**, and representing special characters.
-> - Some (like `\f`, `\a`) may not have visible effects in modern terminals, but they are still standard.
+> * Escape sequences are used in both **character** (`'\n'`) and **string** (`"\n"`) literals.
+> * They are vital for **text formatting**, **controlling output**, and representing special characters.
+> * Some (like `\f`, `\a`) may not have visible effects in modern terminals, but they are still standard.
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -185,9 +185,9 @@ int main() {
 
 A **variable** is a **named memory location** used to store a value that can be changed during program execution.
 
-- Acts as a **storage unit** for data.
-- Must be **declared** with a data type before use.
-- The value of a variable **can be changed** during program execution.
+* Acts as a **storage unit** for data.
+* Must be **declared** with a data type before use.
+* The value of a variable **can be changed** during program execution.
 
 **Syntax:**
 
@@ -277,10 +277,10 @@ char grade = 'A';
 
 > [!TIP]
 >
-> - Variable values are stored in **RAM**.
-> - Use `const` for **read-only** values.
-> - Initialize variables to **avoid garbage values**.
-> - Use meaningful names for better **code readability**.
+> * Variable values are stored in **RAM**.
+> * Use `const` for **read-only** values.
+> * Initialize variables to **avoid garbage values**.
+> * Use meaningful names for better **code readability**.
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -304,8 +304,8 @@ All input/output operations in C require the `stdio.h` header file.
 
 **`printf()` – Formatted Output**
 
-- Used to display output to the screen.
-- Supports format specifiers like `%d`, `%f`, `%c`, etc.
+* Used to display output to the screen.
+* Supports format specifiers like `%d`, `%f`, `%c`, etc.
 
 **Syntax:**
 
@@ -324,8 +324,8 @@ printf("Age is %d", age);  // Output: Age is 20
 
 **`scanf()` – Formatted Input**
 
-- Used to read input from the user.
-- Requires **address-of operator (`&`)** for variables (except strings).
+* Used to read input from the user.
+* Requires **address-of operator (`&`)** for variables (except strings).
 
 **Syntax:**
 
@@ -412,9 +412,9 @@ puts(name);
 
 > [!NOTE]
 >
-> - `scanf("%s", str)` reads only a **single word** (no spaces). Use `fgets()` for full-line input.
-> - `printf()` does not require the address-of operator.
-> - Be careful with buffer issues when mixing `scanf()` with `gets()` or `fgets()`.
+> * `scanf("%s", str)` reads only a **single word** (no spaces). Use `fgets()` for full-line input.
+> * `printf()` does not require the address-of operator.
+> * Be careful with buffer issues when mixing `scanf()` with `gets()` or `fgets()`.
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -428,42 +428,42 @@ puts(name);
 
 **Basic Data Types:**
 
-- **`char`**: Stores a single character.
-  - Size: 1 byte
-  - Range: `-128` to `127` (signed) or `0` to `255` (unsigned)
-- **`int`**: Stores integer values.
+* **`char`**: Stores a single character.
+  * Size: 1 byte
+  * Range: `-128` to `127` (signed) or `0` to `255` (unsigned)
+* **`int`**: Stores integer values.
 
-  - Size: 2 or 4 bytes (depending on system architecture)
-  - Range: `-32,768` to `32,767` (16-bit) or `-2^31` to `2^31 - 1` (32-bit)
+  * Size: 2 or 4 bytes (depending on system architecture)
+  * Range: `-32,768` to `32,767` (16-bit) or `-2^31` to `2^31 - 1` (32-bit)
 
-- **`float`**: Stores single-precision floating point numbers.
+* **`float`**: Stores single-precision floating point numbers.
 
-  - Size: 4 bytes
-  - Range: `1.2E-38` to `3.4E+38`
+  * Size: 4 bytes
+  * Range: `1.2E-38` to `3.4E+38`
 
-- **`double`**: Stores double-precision floating point numbers.
+* **`double`**: Stores double-precision floating point numbers.
 
-  - Size: 8 bytes
-  - Range: `2.3E-308` to `1.7E+308`
+  * Size: 8 bytes
+  * Range: `2.3E-308` to `1.7E+308`
 
-- **`void`**: Represents an absence of data. It is used in functions that do not return a value.
+* **`void`**: Represents an absence of data. It is used in functions that do not return a value.
 
 **Derived Data Types:**
 
-- **`array`**: Collection of elements of the same type.
-- **`pointer`**: A variable that stores the memory address of another variable.
-- **`struct`**: Collection of variables of different data types.
-- **`union`**: Collection of variables that share the same memory location.
-- **`enum`**: A user-defined data type with a set of named integer constants.
+* **`array`**: Collection of elements of the same type.
+* **`pointer`**: A variable that stores the memory address of another variable.
+* **`struct`**: Collection of variables of different data types.
+* **`union`**: Collection of variables that share the same memory location.
+* **`enum`**: A user-defined data type with a set of named integer constants.
 
 ### **Modifiers**
 
 Modifiers alter the range of fundamental data types.
 
-- **`signed`**: Allows negative numbers.
-- **`unsigned`**: Disallows negative numbers, expanding the positive range.
-- **`long`**: Increases the range of `int` and `double`.
-- **`short`**: Reduces the size of `int` to save memory.
+* **`signed`**: Allows negative numbers.
+* **`unsigned`**: Disallows negative numbers, expanding the positive range.
+* **`long`**: Increases the range of `int` and `double`.
+* **`short`**: Reduces the size of `int` to save memory.
 
 ### **Format Specifiers in C**
 
@@ -514,10 +514,10 @@ int main() {
 
 > [!NOTE]
 >
-> - `%d` and `%i` can be used interchangeably for integers in **printf** and **scanf**.
-> - `%lf` is used for **double** in **printf** but can be used as `%f` in **scanf**.
-> - The `long` and `short` modifiers help control the size and range of data types in C.
-> - The `%p` specifier is used to print the address of a variable (pointer).
+> * `%d` and `%i` can be used interchangeably for integers in **printf** and **scanf**.
+> * `%lf` is used for **double** in **printf** but can be used as `%f` in **scanf**.
+> * The `long` and `short` modifiers help control the size and range of data types in C.
+> * The `%p` specifier is used to print the address of a variable (pointer).
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -603,8 +603,8 @@ Operate on binary digits.
 
 **Condition**:
 
-- Work with bit/byte
-- Work into only integer number
+* Work with bit/byte
+* Work into only integer number
 
 **Operation Steps:**
 
@@ -1121,9 +1121,9 @@ functionName (arguments);
 
 **The Function Components are -**
 
-- **Function Declaration**
-- **Function Definition**
-- **Function Call**
+* **Function Declaration**
+* **Function Definition**
+* **Function Call**
 
 **Function Declaration:**  
 Tells the compiler about the function's name, return type, and parameters — before it is used.
@@ -1132,11 +1132,11 @@ Tells the compiler about the function's name, return type, and parameters — be
 int add(int a, int b);  // Declaration
 ```
 
-- Return type: `int`
+* Return type: `int`
 
-- Function name: `add`
+* Function name: `add`
 
-- Parameters: `int a, int b`
+* Parameters: `int a, int b`
 
 _💡 Think of this as informing the compiler: “Hey! I’ll use a function like this later.”_
 
@@ -1149,7 +1149,7 @@ int add(int a, int b) {
 }
 ```
 
-- This is where the logic of **addition** is implemented.
+* This is where the logic of **addition** is implemented.
 
 **Function Call**
 
@@ -1159,9 +1159,9 @@ Used to **invoke/execute** the function and get the result.
 int result = add(3, 5);  // Function call
 ```
 
-- Passes arguments `3` and `5` to the function
+* Passes arguments `3` and `5` to the function
 
-- Stores the returned value in `result`
+* Stores the returned value in `result`
 
 **Full Example with All Components**
 
@@ -1321,29 +1321,29 @@ Example: `printf()`, `scanf()`, `strlen()`, `malloc()`, etc.
 
 You don't need to define these functions, but you must include the appropriate header files.
 
-- `stdio.h` (Standard input-output.header):
+* `stdio.h` (Standard input-output.header):
 
-  - Inside of Header: `printf()`, `scanf()`, `getchar()`, `putchar()`, `gets()`, `puts()`, `fopen()`, `fclose()`, `feof()`
+  * Inside of Header: `printf()`, `scanf()`, `getchar()`, `putchar()`, `gets()`, `puts()`, `fopen()`, `fclose()`, `feof()`
 
-- `conio.h` (Console input-output.header) - Contains declaration for console I/O
+* `conio.h` (Console input-output.header) - Contains declaration for console I/O
 
-  - Inside of Header: `clrscr()`, `getch()`, `exit()`
+  * Inside of Header: `clrscr()`, `getch()`, `exit()`
 
-- `ctype.h` (Character Type.header) - Used for Character-handling.
+* `ctype.h` (Character Type.header) - Used for Character-handling.
 
-  - Inside of Header: `isupper()`, `islower()`, `isalpha()`
+  * Inside of Header: `isupper()`, `islower()`, `isalpha()`
 
-- `math.h` (Mathematics.header) - Declares mathematical functions and macros.
+* `math.h` (Mathematics.header) - Declares mathematical functions and macros.
 
-  - Inside of Header: `pow()`, `sqrt()`, `sin()`, `cos()`, `tan()`, `log()`
+  * Inside of Header: `pow()`, `sqrt()`, `sin()`, `cos()`, `tan()`, `log()`
 
-- `stdlib.h` (Standard Library.header) - For number conversion, storage allocation
+* `stdlib.h` (Standard Library.header) - For number conversion, storage allocation
 
-  - Inside of Header: `rand()`, `srand()`
+  * Inside of Header: `rand()`, `srand()`
 
-- `string.h` (String.header) - Used for manipulate strings.
+* `string.h` (String.header) - Used for manipulate strings.
 
-  - Inside of Header: `strlen()`, `strctp()`, `strcmp()`, `strcat()`, `strlwr()`, `strupr()`,`strrev()`
+  * Inside of Header: `strlen()`, `strctp()`, `strcmp()`, `strcat()`, `strlwr()`, `strupr()`,`strrev()`
 
 **Example: `sizeof()`**
 
@@ -1751,9 +1751,9 @@ data_type array_name[array_size];
 
 **Explanation:**
 
-- **`data_type`**: The data type of the array elements (e.g., `int`, `float`, `char`).
-- **`array_name`**: The name of the array.
-- **`array_size`**: The number of elements the array can hold.
+* **`data_type`**: The data type of the array elements (e.g., `int`, `float`, `char`).
+* **`array_name`**: The name of the array.
+* **`array_size`**: The number of elements the array can hold.
 
 **Example:**
 
@@ -1779,9 +1779,9 @@ Third number: 30
 
 > [!NOTE]
 >
-> - **Index starts at `0`:** The first element is accessed as `array[0]`
-> - **Fixed size:** The size of the array must be defined at the time of declaration
-> - **Same type:** All elements must be of the same type (e.g., all `int`, `float`, etc.)
+> * **Index starts at `0`:** The first element is accessed as `array[0]`
+> * **Fixed size:** The size of the array must be defined at the time of declaration
+> * **Same type:** All elements must be of the same type (e.g., all `int`, `float`, etc.)
 
 **Array Declaration, Initialization and Accessing:**
 
@@ -1869,9 +1869,9 @@ datatype variable_name = array_name [rows] [columns];
 
 **Explanation:**
 
-- **`type`**: The data type of the array elements (e.g., `int`, `float`).
-- **`rows`**: The number of rows in the array.
-- **`columns`**: The number of columns in the array.
+* **`type`**: The data type of the array elements (e.g., `int`, `float`).
+* **`rows`**: The number of rows in the array.
+* **`columns`**: The number of columns in the array.
 
 **Example:**
 
@@ -1956,15 +1956,15 @@ datatype variable_name = array_name [size1] [size2] [size3];
 
 **Explanation:**
 
-- **`size1`**: The size of the first dimension (number of 2D arrays).
-- **`size2`**: The size of the second dimension (number of rows in each 2D array).
-- **`size3`**: The size of the third dimension (number of columns in each 2D array).
+* **`size1`**: The size of the first dimension (number of 2D arrays).
+* **`size2`**: The size of the second dimension (number of rows in each 2D array).
+* **`size3`**: The size of the third dimension (number of columns in each 2D array).
 
 > [!NOTE]
 >
-> - **Fixed Size:** The size of each dimension must be specified at compile time (except for the first dimension, which can sometimes be omitted in the declaration if the array is initialized).
-> - **Memory Layout:** Multi-dimensional arrays are stored in a contiguous block of memory. For a 2D array, the elements are stored row by row.
-> - **Access:** Elements are accessed using multiple indices, one for each dimension.
+> * **Fixed Size:** The size of each dimension must be specified at compile time (except for the first dimension, which can sometimes be omitted in the declaration if the array is initialized).
+> * **Memory Layout:** Multi-dimensional arrays are stored in a contiguous block of memory. For a 2D array, the elements are stored row by row.
+> * **Access:** Elements are accessed using multiple indices, one for each dimension.
 
 **Example:**
 
@@ -2238,11 +2238,11 @@ A **pointer** is a **variable that stores the address of another variable**.
 data_type *pointer_name;
 ```
 
-- The **`data_type`** of the variable that the pointer will point to.
+* The **`data_type`** of the variable that the pointer will point to.
 
-- `*` indicates it’s a pointer.
+* `*` indicates it’s a pointer.
 
-- `pointer_name` stores the address of an integer variable.
+* `pointer_name` stores the address of an integer variable.
 
 **Example:**
 
@@ -2254,8 +2254,8 @@ float *pointer_name;  // Pointer to a float
 
 Instead of holding a data value, it holds the **memory address** of a variable. Here,
 
-- `&` symbol is used to get the address of the variable.
-- `*` symbol is used to get the value of the variable that the pointer is pointing to.
+* `&` symbol is used to get the address of the variable.
+* `*` symbol is used to get the value of the variable that the pointer is pointing to.
 
 **Assigning a Value to a Pointer**
 
@@ -2470,11 +2470,11 @@ Number: 5
 
 ### Why Pointer?
 
-- Pointers are powerful features in C/C++ that set them apart from languages like Java and Python.
+* Pointers are powerful features in C/C++ that set them apart from languages like Java and Python.
 
-- They enable efficient memory management, making software faster and more resource-aware.
+* They enable efficient memory management, making software faster and more resource-aware.
 
-- However, overusing pointers can make code harder to understand and maintain.
+* However, overusing pointers can make code harder to understand and maintain.
 
   <!-- START "Jump to Top"-->
   <p align="right">
@@ -2486,9 +2486,9 @@ Number: 5
 
 C provides powerful user-defined data types that help group different data under one name. These include:
 
-- `struct` → Structure
-- `union` → Union
-- `enum` → Enumeration
+* `struct` → Structure
+* `union` → Union
+* `enum` → Enumeration
 
 ### Structure
 
@@ -2643,8 +2643,8 @@ Unlike static memory allocation (fixed size), dynamic memory can **grow or shrin
 
 The `malloc()` function in C is used to **dynamically allocate memory** at runtime from the heap. It stands for **Memory Allocation**.
 
-- It returns a `void *` (pointer to void), which should be **typecast** to the appropriate type.
-- The allocated memory contains **garbage values** (uninitialized).
+* It returns a `void *` (pointer to void), which should be **typecast** to the appropriate type.
+* The allocated memory contains **garbage values** (uninitialized).
 
 **Syntax:**
 
@@ -2688,8 +2688,8 @@ int main() {
 
 The `calloc()` function in C is used to **dynamically allocate memory** at runtime — just like `malloc()`, but with two key differences:
 
-- It allocates **contiguous memory blocks**.
-- It **initializes** all allocated memory to **zero**.
+* It allocates **contiguous memory blocks**.
+* It **initializes** all allocated memory to **zero**.
 
 **Syntax:**
 
@@ -2731,8 +2731,8 @@ int main() {
 
 The `realloc()` function in C is used to **resize previously allocated memory** (via `malloc()` or `calloc()`), either increasing or decreasing its size.
 
-- It avoids the need to manually allocate a new block and copy data.
-- Contents up to the **minimum of old and new sizes** are preserved.
+* It avoids the need to manually allocate a new block and copy data.
+* Contents up to the **minimum of old and new sizes** are preserved.
 
 **Syntax:**
 
@@ -2772,8 +2772,8 @@ int main() {
 
 The `free()` function is used to **release dynamically allocated memory** back to the system once you're done using it.
 
-- Prevents **memory leaks**
-- Only used for memory allocated with `malloc()`, `calloc()`, or `realloc()`
+* Prevents **memory leaks**
+* Only used for memory allocated with `malloc()`, `calloc()`, or `realloc()`
 
 **Example:**
 
@@ -3016,11 +3016,11 @@ Hello, File Handling in C!
 
 ### File I/O Error Handling
 
-- Always check if `fopen()` returns `NULL`.
+* Always check if `fopen()` returns `NULL`.
 
-- Always call `fclose()` to free resources.
+* Always call `fclose()` to free resources.
 
-- Ensure proper file permissions (read/write access).
+* Ensure proper file permissions (read/write access).
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -3268,9 +3268,9 @@ Error handling refers to the **process of responding to and recovering from erro
 
 C does not have built-in exception handling like modern languages (e.g., try-catch), so error detection and response are done using:
 
-- Return values (status codes)
-- `errno` (global error variable)
-- `perror()` and `strerror()` for error messages
+* Return values (status codes)
+* `errno` (global error variable)
+* `perror()` and `strerror()` for error messages
 
 **Common Techniques for Error Handling in C**
 
@@ -3339,9 +3339,9 @@ Error Description: No such file or directory
 
 > [!IMPORTANT]
 >
-> - Always check the return value of functions like `fopen()`, `malloc()`, `read()`, etc.
-> - Use `perror()` or `strerror(errno)` to understand the error.
-> - Avoid relying on `errno` if the function you're calling does not explicitly set it.
+> * Always check the return value of functions like `fopen()`, `malloc()`, `read()`, etc.
+> * Use `perror()` or `strerror(errno)` to understand the error.
+> * Avoid relying on `errno` if the function you're calling does not explicitly set it.
 
 <!-- START "Jump to Top"-->
 <p align="right">

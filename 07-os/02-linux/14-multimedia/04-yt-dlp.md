@@ -2,11 +2,9 @@
 
 A practical command reference for downloading, converting, organizing, and troubleshooting video and audio using **yt-dlp + FFmpeg**.
 
----
+# 🗁 Introduction
 
-# 1. Introduction
-
-## 1.1 What is yt-dlp?
+## What is yt-dlp?
 
 **yt-dlp** is a command-line audio/video downloader supporting thousands of websites.
 
@@ -25,15 +23,13 @@ It supports:
 - Browser cookies
 - Post-processing
 
-### Basic Syntax
+**Basic Syntax**
 
 ```bash
 yt-dlp [OPTIONS] URL
 ```
 
----
-
-## 1.2 What is FFmpeg?
+## What is FFmpeg?
 
 **FFmpeg** is a multimedia framework used for:
 
@@ -61,9 +57,7 @@ Audio Stream
 Final Media
 ```
 
----
-
-## 1.3 How yt-dlp + FFmpeg Work Together
+## How yt-dlp + FFmpeg Work Together
 
 ```text
              yt-dlp
@@ -92,9 +86,7 @@ FFmpeg  →  Merge / Convert / Process
 FFprobe →  Inspect
 ```
 
----
-
-## 1.4 Prerequisites
+## Prerequisites
 
 This guide assumes:
 
@@ -115,49 +107,41 @@ or:
 cat /etc/os-release
 ```
 
----
+# 🗁 Installation & Verification
 
-## 1.5 Installation & Verification
+## Install FFmpeg
 
-### Install FFmpeg
+Update package lists and install FFmpeg:
 
 ```bash
 sudo apt update
-sudo apt install ffmpeg
+sudo apt install ffmpeg -y
 ```
 
 Optional additional codec support:
 
 ```bash
-sudo apt install ffmpeg libavcodec-extra
+sudo apt install libavcodec-extra -y
 ```
 
-Verify:
+Verify the installation:
 
-```bash
+```text
 ffmpeg -version
-```
-
-```bash
 ffprobe -version
-```
-
-```bash
 which ffmpeg
 which ffprobe
 ```
 
----
-
-### Install yt-dlp
+## Install yt-dlp
 
 Install `curl`:
 
 ```bash
-sudo apt install curl
+sudo apt install curl -y
 ```
 
-Download the standalone binary:
+Download the latest standalone yt-dlp binary:
 
 ```bash
 sudo curl -L \
@@ -171,27 +155,126 @@ Make it executable:
 sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
 
-Verify:
+Verify the installation:
 
 ```bash
 yt-dlp --version
-```
-
-```bash
 which yt-dlp
 ```
 
-Expected:
+Expected binary path:
 
 ```text
 /usr/local/bin/yt-dlp
 ```
 
----
+## Install Deno
 
-# 2. Videos
+Deno provides the JavaScript runtime needed for modern YouTube extraction in yt-dlp.
 
-## 2.1 Basic Download
+Install Deno:
+
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+
+Add Deno to the current terminal's PATH:
+
+```bash
+export PATH="$HOME/.deno/bin:$PATH"
+```
+
+Make the PATH configuration permanent:
+
+```bash
+echo 'export PATH="$HOME/.deno/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Verify the installation:
+
+```bash
+deno --version
+which deno
+```
+
+Expected executable path:
+
+```text
+/home/YOUR_USERNAME/.deno/bin/deno
+```
+
+## Verify All Installations
+
+Run:
+
+```bash
+ffmpeg -version
+ffprobe -version
+yt-dlp --version
+deno --version
+```
+
+## Download YouTube Videos (Testing)
+
+Use this command to download the best available MP4 video up to 1080p with M4A audio:
+
+```bash
+yt-dlp \
+  --remote-components ejs:npm \
+  -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]/best" \
+  --merge-output-format mp4 \
+  --embed-thumbnail \
+  --no-playlist \
+  "https://youtu.be/VIDEO_ID"
+```
+
+Replace `https://youtu.be/VIDEO_ID` with the actual YouTube video URL.
+
+**Command options**
+
+- `--remote-components ejs:npm`: enables yt-dlp's remote JavaScript challenge-solving components.
+- `-f`: selects MP4 video and M4A audio, preferring resolutions up to 1080p.
+- `--merge-output-format mp4`: merges separate video and audio streams into an MP4 container.
+- `--embed-thumbnail`: embeds the thumbnail when supported.
+- `--no-playlist`: downloads only the specified video.
+## Update yt-dlp
+
+Update the standalone binary when needed:
+
+```bash
+sudo yt-dlp -U
+```
+
+Verify the updated version:
+
+```bash
+yt-dlp --version
+```
+
+## Troubleshooting
+
+If Deno is not found:
+
+```
+export PATH="$HOME/.deno/bin:$PATH"
+source ~/.bashrc
+```
+
+If YouTube extraction still fails, test the video:
+
+```bash
+yt-dlp \
+  --remote-components ejs:npm \
+  --simulate \
+  --verbose \
+  "https://youtu.be/VIDEO_ID"
+```
+
+If the video remains unavailable, check whether it is private, deleted, region-restricted, or requires authentication.
+# 🗁 Videos
+
+## Basic Download
 
 The simplest video download:
 
@@ -207,15 +290,13 @@ Check:
 ls
 ```
 
----
-
-## 2.2 Best Quality
+## Best Quality
 
 ```bash
 yt-dlp -f "bv*+ba/b" "YOUTUBE_URL"
 ```
 
-### Format meaning
+**Format meaning**
 
 ```text
 bv* = best video
@@ -223,9 +304,7 @@ ba  = best audio
 /b  = fallback to best combined format
 ```
 
----
-
-## 2.3 List Available Formats
+## List Available Formats
 
 Before selecting a specific resolution:
 
@@ -255,9 +334,7 @@ ID     EXT     RESOLUTION
 
 Format IDs vary between videos, so don't blindly reuse IDs.
 
----
-
-## 2.4 Specific Resolution
+## Specific Resolution
 
 ### Maximum 720p
 
@@ -304,9 +381,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 2.5 MP4
+## MP4
 
 General MP4:
 
@@ -326,9 +401,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 2.6 1080p MP4
+### 1080p MP4
 
 ### Single Video (Recommended)
 
@@ -341,7 +414,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
-### What it does
+**What it does**
 
 ```text
 Video     → 1080p MP4
@@ -351,9 +424,7 @@ Thumbnail → Embedded
 Playlist  → Disabled
 ```
 
----
-
-## 2.7 720p MP4
+## 720p MP4
 
 ### Single Video (Recommended)
 
@@ -380,13 +451,9 @@ yt-dlp \
 find . -type f -name '*.jpg' -delete
 ```
 
-### Note
+Note: Thumbnail embedding may not work reliably with every MP4 combination/container.
 
-Thumbnail embedding may not work reliably with every MP4 combination/container.
-
----
-
-## 2.8 Playlists
+## Playlists
 
 Download an entire playlist:
 
@@ -421,9 +488,7 @@ yt-dlp \
   "PLAYLIST_URL"
 ```
 
----
-
-## 2.9 Subtitles
+## Subtitles
 
 List subtitles:
 
@@ -471,9 +536,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 2.10 Thumbnails & Metadata
+## Thumbnails & Metadata
 
 Download thumbnail:
 
@@ -509,9 +572,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 2.11 Output Organization
+## Output Organization
 
 Create a dedicated YouTube directory:
 
@@ -586,11 +647,9 @@ YouTube/
         └── 03 - Video Three.mp4
 ```
 
----
+# 🗁 Audio
 
-# 3. Audio
-
-## 3.1 Audio Only
+## Audio Only
 
 Best available audio:
 
@@ -604,9 +663,7 @@ Equivalent:
 yt-dlp -f "bestaudio" "YOUTUBE_URL"
 ```
 
----
-
-## 3.2 MP3
+## MP3
 
 Basic MP3 extraction:
 
@@ -627,9 +684,7 @@ means:
 
 > Extract audio.
 
----
-
-## 3.3 MP3 320K (Recommended)
+### MP3 320K (Recommended)
 
 ```bash
 yt-dlp \
@@ -648,13 +703,11 @@ Output:
 Song Title.mp3
 ```
 
-### Important
+**Important**
 
 `320K` specifies the target MP3 bitrate. It does **not** create additional quality beyond the original source.
 
----
-
-## 3.4 MP3 + Thumbnail
+### MP3 + Thumbnail
 
 ```bash
 yt-dlp \
@@ -670,7 +723,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
-### Thumbnail workflow
+**Thumbnail workflow**
 
 ```text
 YouTube
@@ -686,9 +739,7 @@ Convert → JPG
 Embed JPG into MP3
 ```
 
----
-
-## 3.5 Temporary Thumbnail Cleanup (Recommended)
+## Temporary Thumbnail Cleanup (Recommended)
 
 > NOTE: Deletes JPG files in the current directory. For safety, use a dedicated download directory.
 
@@ -709,7 +760,7 @@ yt-dlp \
 rm -f -- *.jpg
 ```
 
-### Why `&&`?
+**Why `&&`?**
 
 ```bash
 command1 && command2
@@ -719,15 +770,13 @@ means:
 
 > Execute `command2` only when `command1` succeeds.
 
-### JPG cleanup
+ **JPG cleanup**
 
 ```bash
 rm -f -- *.jpg
 ```
 
----
-
-## 3.6 Playlist MP3 (Recommended)
+## Playlist MP3 (Recommended)
 
 ### MP3 + 320K + Thumbnail
 
@@ -745,7 +794,7 @@ yt-dlp \
 find . -type f -name '*.jpg' -delete
 ```
 
-### Output structure
+**Output structure**
 
 ```text
 Playlist Name/
@@ -755,7 +804,7 @@ Playlist Name/
 └── ...
 ```
 
-### Output template
+**Output template**
 
 ```bash
 %(playlist)s/
@@ -785,9 +834,7 @@ Creates two-digit numbering:
 
 Uses the video/song title.
 
----
-
-## 3.7 Other Audio Formats
+## Other Audio Formats
 
 ### M4A
 
@@ -818,11 +865,9 @@ yt-dlp \
 
 FFmpeg performs the audio conversion.
 
----
+# 🗁 Troubleshooting
 
-# 4. Troubleshooting
-
-## 4.1 `yt-dlp: command not found`
+## `yt-dlp: command not found`
 
 Check:
 
@@ -848,9 +893,7 @@ Then:
 yt-dlp --version
 ```
 
----
-
-## 4.2 `ffmpeg: command not found`
+## `ffmpeg: command not found`
 
 Install FFmpeg:
 
@@ -865,9 +908,7 @@ Verify:
 ffmpeg -version
 ```
 
----
-
-## 4.3 FFmpeg Is Not Detected
+## FFmpeg Is Not Detected
 
 Check:
 
@@ -887,9 +928,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 4.4 Download Only Gives Low Resolution
+## Download Only Gives Low Resolution
 
 First inspect available formats:
 
@@ -908,9 +947,7 @@ yt-dlp \
 
 High-quality downloads frequently require separate video and audio streams, so FFmpeg must be available.
 
----
-
-## 4.5 MP3 Conversion Fails
+## MP3 Conversion Fails
 
 Check FFmpeg:
 
@@ -927,9 +964,7 @@ yt-dlp \
   "YOUTUBE_URL"
 ```
 
----
-
-## 4.6 YouTube / Extractor Errors
+## YouTube / Extractor Errors
 
 First update yt-dlp:
 
@@ -949,9 +984,7 @@ If the stable version has a current extractor problem, try the nightly build:
 sudo yt-dlp --update-to nightly
 ```
 
----
-
-## 4.7 Verbose Debugging
+## Verbose Debugging
 
 When a command fails:
 
@@ -978,9 +1011,7 @@ Verbose output can reveal:
 - Network behavior
 - Post-processing errors
 
----
-
-## 4.8 Media Inspection with FFprobe
+## Media Inspection with FFprobe
 
 Check FFprobe:
 
@@ -1000,9 +1031,7 @@ Concise output:
 ffprobe -hide_banner "video.mp4"
 ```
 
----
-
-## 4.9 Update yt-dlp and FFmpeg
+# 🗁 Update yt-dlp and FFmpeg
 
 ### Update yt-dlp
 
@@ -1027,11 +1056,9 @@ yt-dlp --version
 ffmpeg -version
 ```
 
----
+# 🗁 Conclusion
 
-# 5. Conclusion
-
-## 5.1 Daily Command Cheat Sheet
+## Daily Command Cheat Sheet
 
 ### Download
 
@@ -1133,9 +1160,7 @@ yt-dlp --verbose "URL"
 sudo yt-dlp -U
 ```
 
----
-
-## 5.2 Recommended Workflow
+# 🗁 Recommended Workflow
 
 For everyday usage, think of the workflow as:
 
