@@ -145,13 +145,13 @@ The title may appear as a tooltip when the user hovers over the link in supporte
 [MDN Documentation](https://developer.mozilla.org "Web Development Documentation")
 ```
 
-## 5. Reference-Style Links
+# 🗁 Reference-Style Links
 
 Reference-style links separate link text from the URL definition.
 
 This is useful when a document contains repeated links or long URLs.
 
-### Syntax
+**Syntax**
 
 ```markdown
 [Link Text][reference]
@@ -159,7 +159,7 @@ This is useful when a document contains repeated links or long URLs.
 [reference]: https://example.com
 ```
 
-### Example
+**Example**
 
 ```markdown
 Visit [GitHub][github] to explore repositories.
@@ -192,19 +192,19 @@ You can also omit the reference label from the link:
 
 Reference labels are generally case-insensitive and whitespace-normalized under CommonMark.
 
-## 6. Internal Links (Anchor Links)
+# 🗁 Internal Links (Anchor Links)
 
 Internal links allow readers to navigate to different sections within the same document.
 
 They commonly use heading-generated anchors.
 
-### Syntax
+**Syntax**
 
 ```markdown
 [Link Text](#heading-id)
 ```
 
-### Example
+**Example**
 
 ```markdown
 # JavaScript Guide
@@ -261,11 +261,11 @@ Typical GitHub anchor:
 
 **Note:** Anchor-generation rules differ between platforms. Verify anchors in the target renderer.
 
-## 7. Links to Other Markdown Files
+# 🗁 Links to Other Markdown Files
 
 You can connect different Markdown documents within a project.
 
-### Example Project Structure
+**Example Project Structure**
 
 ```text
 documentation/
@@ -301,17 +301,17 @@ documentation/
 
 This technique is useful for building documentation indexes and knowledge bases.
 
-## 8. Email Links
+# 🗁 Email Links
 
 You can create clickable email addresses using the `mailto:` protocol.
 
-### Syntax
+**Syntax**
 
 ```markdown
 [Email Us](mailto:info@example.com)
 ```
 
-### Example
+**Example**
 
 ```markdown
 [Contact Support](mailto:support@example.com)
@@ -325,17 +325,17 @@ You can create clickable email addresses using the `mailto:` protocol.
 
 This opens the user's default email application when supported.
 
-## 9. Telephone Links
+# 🗁 Telephone Links
 
 You can create clickable telephone links using the `tel:` protocol.
 
-### Syntax
+**Syntax**
 
 ```markdown
 [Call Us](tel:+8801700000000)
 ```
 
-### Example
+**Example**
 
 ```markdown
 [Contact Support](tel:+8801700000000)
@@ -343,7 +343,7 @@ You can create clickable telephone links using the `tel:` protocol.
 
 Telephone-link behavior depends on the user's device and application.
 
-## 10. Links with Special Characters
+# 🗁 Links with Special Characters
 
 URLs may contain characters that have special meanings.
 
@@ -357,19 +357,19 @@ For example:
 
 Use URL encoding where necessary.
 
-### Example: URL with Spaces
+**Example: URL with Spaces**
 
 ```markdown
 [Documentation](https://example.com/my%20documents)
 ```
 
-### Example: Query Parameters
+**Example: Query Parameters**
 
 ```markdown
 [Search Google](https://www.google.com/search?q=markdown)
 ```
 
-### Example: Parentheses in URLs
+**Example: Parentheses in URLs**
 
 Angle brackets can help delimit URLs containing parentheses:
 
@@ -379,11 +379,11 @@ Angle brackets can help delimit URLs containing parentheses:
 
 Always test complex links in your target Markdown renderer.
 
-## 11. Automatic Links
+# 🗁 Automatic Links
 
 CommonMark supports automatic links for URLs enclosed in angle brackets.
 
-### Example
+**Example**
 
 ```markdown
 <https://github.com>
@@ -397,7 +397,7 @@ These are rendered as clickable links in compatible processors.
 
 GitHub Flavored Markdown additionally supports extended autolinking for many bare URLs and email addresses.
 
-## 12. Links with Formatting
+# 🗁 Links with Formatting
 
 You can apply inline formatting to link text.
 
@@ -419,7 +419,7 @@ You can apply inline formatting to link text.
 [***Web Development Guide***](https://developer.mozilla.org)
 ```
 
-## 13. Linking to Specific Lines or Files on GitHub
+# 🗁 Linking to Specific Lines or Files on GitHub
 
 GitHub allows you to link to particular files and line ranges in repositories.
 
@@ -443,11 +443,11 @@ GitHub allows you to link to particular files and line ranges in repositories.
 
 Replace the example repository information with your actual repository path.
 
-## 14. Creating a Table of Contents with Links
+# 🗁 Creating a Table of Contents with Links
 
 Internal links can create a navigable Table of Contents.
 
-### Example
+**Example**
 
 ```markdown
 # Networking Documentation
@@ -481,7 +481,7 @@ Network protection concepts.
 Summary of networking fundamentals.
 ```
 
-## 15. Link Best Practices
+# 🖆 Best Practices
 
 1. Use descriptive link text.
 2. Avoid meaningless text such as "click here."
@@ -493,160 +493,3 @@ Summary of networking fundamentals.
 8. Avoid excessively long visible URLs.
 9. Keep link destinations relevant.
 10. Check for broken links periodically.
-
-## 16. Common Mistakes
-
-### Mistake 1: Incorrect Link Syntax
-
-Incorrect:
-
-```markdown
-[GitHub] https://github.com
-```
-
-Correct:
-
-```markdown
-[GitHub](https://github.com)
-```
-
-### Mistake 2: Missing Closing Parenthesis
-
-Incorrect:
-
-```markdown
-[GitHub](https://github.com
-```
-
-Correct:
-
-```markdown
-[GitHub](https://github.com)
-```
-
-### Mistake 3: Incorrect Relative Path
-
-Incorrect:
-
-```markdown
-[Basics](basics.md)
-```
-
-If the actual file is inside a `docs` folder, the correct path from the project root is:
-
-```markdown
-[Basics](docs/basics.md)
-```
-
-### Mistake 4: Incorrect Anchor
-
-Incorrect:
-
-```markdown
-[Introduction](#Introduction)
-```
-
-The capitalization may not match the target renderer's generated anchor.
-
-Typical GitHub anchor:
-
-```markdown
-[Introduction](#introduction)
-```
-
-### Mistake 5: Using Spaces in File Paths Without Encoding
-
-A path containing spaces may need URL encoding.
-
-```markdown
-[Project Guide](docs/project%20guide.md)
-```
-
-## 17. Real-World Documentation Example
-
-```markdown
-# Software Project Documentation
-
-## Quick Navigation
-
-- [Installation](docs/installation.md)
-- [Configuration](docs/configuration.md)
-- [API Reference](docs/api.md)
-- [Troubleshooting](docs/troubleshooting.md)
-
-## External Resources
-
-- [GitHub](https://github.com)
-- [MDN](https://developer.mozilla.org)
-- [Node.js](https://nodejs.org)
-
-## Contact
-
-- [Email Support](mailto:support@example.com)
-- [Call Support](tel:+8801700000000)
-
-## Installation
-
-Read the [Installation Guide](docs/installation.md).
-
-For configuration instructions, see the [Configuration Guide](docs/configuration.md).
-```
-
-## 18. Practice Exercises
-
-### Exercise 1: External Links
-
-Create links to five popular developer websites.
-
-### Exercise 2: Relative Links
-
-Create a project structure with:
-
-* README.md
-* docs/installation.md
-* docs/configuration.md
-* docs/api.md
-
-Link all documentation files from README.md.
-
-### Exercise 3: Internal Links
-
-Create a document with five sections and a clickable Table of Contents.
-
-### Exercise 4: Reference Links
-
-Create five reference-style links to developer resources.
-
-### Exercise 5: Contact Links
-
-Create:
-
-* An email link.
-* An email link with a subject.
-* A telephone link.
-
-### Exercise 6: GitHub Navigation
-
-Create links to:
-
-* A GitHub repository.
-* A Markdown file in that repository.
-* A specific line in a source file.
-
-## 19. Key Takeaways
-
-* Markdown links use square brackets and parentheses.
-* Absolute URLs point to complete external addresses.
-* Relative URLs connect files within a project.
-* Reference-style links separate link definitions from link text.
-* Anchor links navigate to document sections.
-* `mailto:` creates email links.
-* `tel:` creates telephone links.
-* GitHub supports links to specific file lines.
-* Descriptive link text improves documentation usability.
-
----
-
-**Previous:** `04-lists.md`
-
-**Next:** `06-images.md`

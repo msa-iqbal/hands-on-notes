@@ -7,15 +7,16 @@ Quick-reference commands, shortcuts, ports, HTTP status codes, MIME types, file 
 | #   | Topic              | What You'll Learn                              |
 | --- | ------------------ | ---------------------------------------------- |
 | 01  | Commands           | Common development and system commands         |
-| 02  | Shortcuts          | Useful keyboard shortcuts                      |
-| 03  | Ports              | Common network and service ports               |
-| 04  | HTTP Status        | HTTP status codes and meanings                 |
-| 05  | MIME Types         | Common MIME types and content types            |
-| 06  | File Extensions    | Common file extensions and formats             |
-| 07  | Browser Extensions | Useful browser extensions                      |
-| 08  | Environment        | Environment variables and configuration        |
-| 09  | Problem Solving    | Problem-solving and troubleshooting techniques |
-| 10  | Glossary           | Common software and technical terms            |
+| 02  | Cheat Sheet        | Quick references, syntax, and code snippets    |
+| 03  | Shortcuts          | Useful keyboard shortcuts                      |
+| 04  | Ports              | Common network and service ports               |
+| 05  | HTTP Status        | HTTP status codes and meanings                 |
+| 06  | MIME Types         | Common MIME types and content types            |
+| 07  | File Extensions    | Common file extensions and formats             |
+| 08  | Browser Extensions | Useful browser extensions                      |
+| 09  | Environment        | Environment variables and configuration        |
+| 10  | Problem Solving    | Problem-solving and troubleshooting techniques |
+| 11  | Glossary           | Common software and technical terms            |
 
 ## Structure
 

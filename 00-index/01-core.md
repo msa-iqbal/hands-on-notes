@@ -83,17 +83,17 @@ _This is a concise master table that provides easy access to various tables of c
 ## 🗁 05-MARKDOWN/
 
 * [🗁 05-MARKDOWN/](../01-core/05-markdown/)
-  * [README.md](../01-core/05-markdown/README.md)
-  * [01-basics.md](../01-core/05-markdown/01-basics.md)
-  * [02-syntax.md](../01-core/05-markdown/02-syntax.md)
-  * [03-headings.md](../01-core/05-markdown/03-headings.md)
-  * [04-lists.md](../01-core/05-markdown/04-lists.md)
-  * [05-links.md](../01-core/05-markdown/05-links.md)
-  * [06-images.md](../01-core/05-markdown/06-images.md)
-  * [07-tables.md](../01-core/05-markdown/07-tables.md)
-  * [08-code-blocks.md](../01-core/05-markdown/08-code-blocks.md)
-  * [09-github-markdown.md](../01-core/05-markdown/09-github-markdown.md)
-  * [10-advanced.md](../01-core/05-markdown/10-advanced.md)
+  * [README.md](../01-core/05-markdown/README.md) 🗎 2026.11.05
+  * [01-basics.md](../01-core/05-markdown/01-basics.md) 🗎 2026.11.05
+  * [02-syntax.md](../01-core/05-markdown/02-syntax.md) 🗎 2026.11.05
+  * [03-headings.md](../01-core/05-markdown/03-headings.md) 🗎 2026.11.05
+  * [04-lists.md](../01-core/05-markdown/04-lists.md) 🗎 2026.11.05
+  * [05-links.md](../01-core/05-markdown/05-links.md) 🗎 2026.11.05
+  * [06-images.md](../01-core/05-markdown/06-images.md) 🗎 2026.11.05
+  * [07-tables.md](../01-core/05-markdown/07-tables.md) 🗎 2026.11.05
+  * [08-code-blocks.md](../01-core/05-markdown/08-code-blocks.md) 🗎 2026.11.05
+  * [09-github-markdown.md](../01-core/05-markdown/09-github-markdown.md) 🗎 2026.11.05
+  * [10-advanced.md](../01-core/05-markdown/10-advanced.md) 🗎 2026.11.05
 
 ## 🗁 06-HTTP/
 

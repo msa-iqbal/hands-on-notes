@@ -483,4 +483,4 @@ This setup gives Brave users an excellent balance of **privacy, security, perfor
 
 > Explore the documentation, tools, guides, and references behind the topic.
 
-* [Brave (Extensions) - Based on Chromium](../../19-reference/07-browser-extensions/01-google-chrome.md)
+* [Brave (Extensions) - Based on Chromium](01-google-chrome.md)

@@ -2,6 +2,13 @@
 
 Practical **Markdown** notes covering syntax, document structure, formatting, links, images, tables, code blocks, GitHub Markdown, and advanced features.
 
+### ☰ RESOURCES & REFERENCES
+
+> Explore the documentation, tools, guides, and references behind the topic.
+
+* [Emoji Shortcodes](../../19-reference/02-cheat-sheet/01-emoji-shortcodes.md)
+* [Complete Quick Guide](../../20-resources/01-books/05-markdown.md)
+
 ## Contents
 
 | #   | Topic           | What You'll Find                                                                                                         |

@@ -36,107 +36,113 @@ _This is a concise master table that provides easy access to various tables of c
   * [12-terraform-commands.md](../19-reference/01-commands/12-terraform-commands.md)
   * [13-ansible-commands.md](../19-reference/01-commands/13-ansible-commands.md)
 
-## 🗁 02-SHORTCUTS/
+## 🗁 02-CHEAT-SHEET/
 
-* [🗁 02-SHORTCUTS/](../19-reference/02-shortcuts/)
-  * [README.md](../19-reference/02-shortcuts/README.md)
-  * [01-terminal-shortcuts.md](../19-reference/02-shortcuts/01-terminal-shortcuts.md)
-  * [02-bash-shortcuts.md](../19-reference/02-shortcuts/02-bash-shortcuts.md)
-  * [03-zsh-shortcuts.md](../19-reference/02-shortcuts/03-zsh-shortcuts.md)
-  * [04-vim-shortcuts.md](../19-reference/02-shortcuts/04-vim-shortcuts.md)
-  * [05-vscode-shortcuts.md](../19-reference/02-shortcuts/05-vscode-shortcuts.md)
-  * [06-git-shortcuts.md](../19-reference/02-shortcuts/06-git-shortcuts.md)
-  * [07-browser-shortcuts.md](../19-reference/02-shortcuts/07-browser-shortcuts.md)
-  * [08-windows-shortcuts.md](../19-reference/02-shortcuts/08-windows-shortcuts.md)
-  * [09-macos-shortcuts.md](../19-reference/02-shortcuts/09-macos-shortcuts.md)
-  * [10-linux-shortcuts.md](../19-reference/02-shortcuts/10-linux-shortcuts.md)
+* [🗁 02-CHEAT-SHEET/](../19-reference/02-cheat-sheet/)
+  * [README.md](../19-reference/02-cheat-sheet/README.md)
+  * [01-emoji-shortcodes.md](../19-reference/02-cheat-sheet/01-emoji-shortcodes.md)
+  
+## 🗁 03-SHORTCUTS/
 
-## 🗁 03-PORTS/
+* [🗁 03-SHORTCUTS/](../19-reference/03-shortcuts/)
+  * [README.md](../19-reference/03-shortcuts/README.md)
+  * [01-terminal-shortcuts.md](../19-reference/03-shortcuts/01-terminal-shortcuts.md)
+  * [02-bash-shortcuts.md](../19-reference/03-shortcuts/02-bash-shortcuts.md)
+  * [03-zsh-shortcuts.md](../19-reference/03-shortcuts/03-zsh-shortcuts.md)
+  * [04-vim-shortcuts.md](../19-reference/03-shortcuts/04-vim-shortcuts.md)
+  * [05-vscode-shortcuts.md](../19-reference/03-shortcuts/05-vscode-shortcuts.md)
+  * [06-git-shortcuts.md](../19-reference/03-shortcuts/06-git-shortcuts.md)
+  * [07-browser-shortcuts.md](../19-reference/03-shortcuts/07-browser-shortcuts.md)
+  * [08-windows-shortcuts.md](../19-reference/03-shortcuts/08-windows-shortcuts.md)
+  * [09-macos-shortcuts.md](../19-reference/03-shortcuts/09-macos-shortcuts.md)
+  * [10-linux-shortcuts.md](../19-reference/03-shortcuts/10-linux-shortcuts.md)
 
-* [🗁 03-PORTS/](../19-reference/03-ports/)
-  * [README.md](../19-reference/03-ports/README.md)
-  * [01-common-ports.md](../19-reference/03-ports/01-common-ports.md)
-  * [02-web-ports.md](../19-reference/03-ports/02-web-ports.md)
-  * [03-database-ports.md](../19-reference/03-ports/03-database-ports.md)
-  * [04-ssh-and-remote-access.md](../19-reference/03-ports/04-ssh-and-remote-access.md)
-  * [05-mail-ports.md](../19-reference/03-ports/05-mail-ports.md)
-  * [06-file-sharing-ports.md](../19-reference/03-ports/06-file-sharing-ports.md)
-  * [07-container-and-orchestration-ports.md](../19-reference/03-ports/07-container-and-orchestration-ports.md)
-  * [08-monitoring-ports.md](../19-reference/03-ports/08-monitoring-ports.md)
-  * [09-development-ports.md](../19-reference/03-ports/09-development-ports.md)
+## 🗁 04-PORTS/
 
-## 🗁 04-HTTP-STATUS/
+* [🗁 04-PORTS/](../19-reference/04-ports/)
+  * [README.md](../19-reference/04-ports/README.md)
+  * [01-common-ports.md](../19-reference/04-ports/01-common-ports.md)
+  * [02-web-ports.md](../19-reference/04-ports/02-web-ports.md)
+  * [03-database-ports.md](../19-reference/04-ports/03-database-ports.md)
+  * [04-ssh-and-remote-access.md](../19-reference/04-ports/04-ssh-and-remote-access.md)
+  * [05-mail-ports.md](../19-reference/04-ports/05-mail-ports.md)
+  * [06-file-sharing-ports.md](../19-reference/04-ports/06-file-sharing-ports.md)
+  * [07-container-and-orchestration-ports.md](../19-reference/04-ports/07-container-and-orchestration-ports.md)
+  * [08-monitoring-ports.md](../19-reference/04-ports/08-monitoring-ports.md)
+  * [09-development-ports.md](../19-reference/04-ports/09-development-ports.md)
 
-* [🗁 04-HTTP-STATUS/](../19-reference/04-http-status/)
-  * [README.md](../19-reference/04-http-status/README.md)
-  * [01-1xx-informational.md](../19-reference/04-http-status/01-1xx-informational.md)
-  * [02-2xx-success.md](../19-reference/04-http-status/02-2xx-success.md)
-  * [03-3xx-redirection.md](../19-reference/04-http-status/03-3xx-redirection.md)
-  * [04-4xx-client-errors.md](../19-reference/04-http-status/04-4xx-client-errors.md)
-  * [05-5xx-server-errors.md](../19-reference/04-http-status/05-5xx-server-errors.md)
-  * [06-status-code-cheatsheet.md](../19-reference/04-http-status/06-status-code-cheatsheet.md)
+## 🗁 05-HTTP-STATUS/
 
-## 🗁 05-MIME-TYPES/
+* [🗁 05-HTTP-STATUS/](../19-reference/05-http-status/)
+  * [README.md](../19-reference/05-http-status/README.md)
+  * [01-1xx-informational.md](../19-reference/05-http-status/01-1xx-informational.md)
+  * [02-2xx-success.md](../19-reference/05-http-status/02-2xx-success.md)
+  * [03-3xx-redirection.md](../19-reference/05-http-status/03-3xx-redirection.md)
+  * [04-4xx-client-errors.md](../19-reference/05-http-status/04-4xx-client-errors.md)
+  * [05-5xx-server-errors.md](../19-reference/05-http-status/05-5xx-server-errors.md)
+  * [06-status-code-cheatsheet.md](../19-reference/05-http-status/06-status-code-cheatsheet.md)
 
-* [🗁 05-MIME-TYPES/](../19-reference/05-mime-types/)
-  * [README.md](../19-reference/05-mime-types/README.md)
-  * [01-text.md](../19-reference/05-mime-types/01-text.md)
-  * [02-images.md](../19-reference/05-mime-types/02-images.md)
-  * [03-audio.md](../19-reference/05-mime-types/03-audio.md)
-  * [04-video.md](../19-reference/05-mime-types/04-video.md)
-  * [05-application.md](../19-reference/05-mime-types/05-application.md)
-  * [06-fonts.md](../19-reference/05-mime-types/06-fonts.md)
-  * [07-archives.md](../19-reference/05-mime-types/07-archives.md)
-  * [08-common-mime-types.md](../19-reference/05-mime-types/08-common-mime-types.md)
+## 🗁 06-MIME-TYPES/
 
-## 🗁 06-FILE-EXTENSIONS/
+* [🗁 06-MIME-TYPES/](../19-reference/06-mime-types/)
+  * [README.md](../19-reference/06-mime-types/README.md)
+  * [01-text.md](../19-reference/06-mime-types/01-text.md)
+  * [02-images.md](../19-reference/06-mime-types/02-images.md)
+  * [03-audio.md](../19-reference/06-mime-types/03-audio.md)
+  * [04-video.md](../19-reference/06-mime-types/04-video.md)
+  * [05-application.md](../19-reference/06-mime-types/05-application.md)
+  * [06-fonts.md](../19-reference/06-mime-types/06-fonts.md)
+  * [07-archives.md](../19-reference/06-mime-types/07-archives.md)
+  * [08-common-mime-types.md](../19-reference/06-mime-types/08-common-mime-types.md)
 
-* [🗁 06-FILE-EXTENSIONS/](../19-reference/06-file-extensions/)
-  * [README.md](../19-reference/06-file-extensions/README.md)
-  * [01-text-files.md](../19-reference/06-file-extensions/01-text-files.md)
-  * [02-source-code.md](../19-reference/06-file-extensions/02-source-code.md)
-  * [03-configuration-files.md](../19-reference/06-file-extensions/03-configuration-files.md)
-  * [04-documents.md](../19-reference/06-file-extensions/04-documents.md)
-  * [05-images.md](../19-reference/06-file-extensions/05-images.md)
-  * [06-audio.md](../19-reference/06-file-extensions/06-audio.md)
-  * [07-video.md](../19-reference/06-file-extensions/07-video.md)
-  * [08-archives.md](../19-reference/06-file-extensions/08-archives.md)
-  * [09-databases.md](../19-reference/06-file-extensions/09-databases.md)
-  * [10-executable-files.md](../19-reference/06-file-extensions/10-executable-files.md)
+## 🗁 07-FILE-EXTENSIONS/
 
-## 🗁 07-BROWSER-EXTENSIONS/
+* [🗁 07-FILE-EXTENSIONS/](../19-reference/07-file-extensions/)
+  * [README.md](../19-reference/07-file-extensions/README.md)
+  * [01-text-files.md](01-text-files.md)
+  * [02-source-code.md](02-source-code.md)
+  * [03-configuration-files.md](../19-reference/07-file-extensions/03-configuration-files.md)
+  * [04-documents.md](../19-reference/07-file-extensions/04-documents.md)
+  * [05-images.md](../19-reference/07-file-extensions/05-images.md)
+  * [06-audio.md](../19-reference/07-file-extensions/06-audio.md)
+  * [07-video.md](../19-reference/07-file-extensions/07-video.md)
+  * [08-archives.md](../19-reference/07-file-extensions/08-archives.md)
+  * [09-databases.md](../19-reference/07-file-extensions/09-databases.md)
+  * [10-executable-files.md](../19-reference/07-file-extensions/10-executable-files.md)
 
-* [🗁 07-BROWSER-EXTENSIONS/](../19-reference/07-browser-extensions/)
-  * [README.md](../19-reference/07-browser-extensions/README.md)
-  * [01-google-chrome.md](../19-reference/07-browser-extensions/01-google-chrome.md) 🗎 2026.07.23
-  * [02-mozila-firefox.md](../19-reference/07-browser-extensions/02-mozilla-firefox.md) 🗎 2026.07.23
+## 🗁 08-BROWSER-EXTENSIONS/
 
-## 🗁 08-ENVIRONMENT/
+* [🗁 08-BROWSER-EXTENSIONS/](../19-reference/08-browser-extensions/)
+  * [README.md](../19-reference/08-browser-extensions/README.md)
+  * [01-google-chrome.md](../19-reference/08-browser-extensions/01-google-chrome.md) 🗎 2026.07.23
+  * [02-mozila-firefox.md](../19-reference/08-browser-extensions/02-mozilla-firefox.md) 🗎 2026.07.23
 
-* [🗁 08-ENVIRONMENT/](../19-reference/08-environment/)
-  * [README.md](../19-reference/08-environment/README.md)
-  * [01-environment-variables.md](../19-reference/08-environment/01-environment-variables.md)
-  * [02-path.md](../19-reference/08-environment/02-path.md)
-  * [03-linux-environment.md](../19-reference/08-environment/03-linux-environment.md)
-  * [04-windows-environment.md](../19-reference/08-environment/04-windows-environment.md)
-  * [05-macos-environment.md](../19-reference/08-environment/05-macos-environment.md)
-  * [06-node-js-environment.md](../19-reference/08-environment/06-node-js-environment.md)
-  * [07-python-environment.md](../19-reference/08-environment/07-python-environment.md)
-  * [08-java-environment.md](../19-reference/08-environment/08-java-environment.md)
-  * [09-docker-environment.md](../19-reference/08-environment/09-docker-environment.md)
-  * [10-ci-cd-environment.md](../19-reference/08-environment/10-ci-cd-environment.md)
+## 🗁 09-ENVIRONMENT/
 
-## 🗁 09-PROBLEM-SOLVING/
+* [🗁 09-ENVIRONMENT/](../19-reference/09-environment/)
+  * [README.md](../19-reference/09-environment/README.md)
+  * [01-environment-variables.md](../19-reference/09-environment/01-environment-variables.md)
+  * [02-path.md](../19-reference/09-environment/02-path.md)
+  * [03-linux-environment.md](../19-reference/09-environment/03-linux-environment.md)
+  * [04-windows-environment.md](../19-reference/09-environment/04-windows-environment.md)
+  * [05-macos-environment.md](../19-reference/09-environment/05-macos-environment.md)
+  * [06-node-js-environment.md](../19-reference/09-environment/06-node-js-environment.md)
+  * [07-python-environment.md](../19-reference/09-environment/07-python-environment.md)
+  * [08-java-environment.md](../19-reference/09-environment/08-java-environment.md)
+  * [09-docker-environment.md](../19-reference/09-environment/09-docker-environment.md)
+  * [10-ci-cd-environment.md](../19-reference/09-environment/10-ci-cd-environment.md)
 
-* [🗁 09-PROBLEM-SOLVING/](../19-reference/09-problem-solving/)
-* [README.md](../19-reference/09-problem-solving/README.md)
+## 🗁 10-PROBLEM-SOLVING/
+
+* [🗁 10-PROBLEM-SOLVING/](../19-reference/10-problem-solving/)
+* [README.md](hands-on-notes/19-reference/10-problem-solving/README.md)
 
 **INTERNAL DIRECTORIES**
 
-* [🗁 09-PROBLEM-SOLVING/01-C/](../19-reference/09-problem-solving/01-c/)
-* [🗁 09-PROBLEM-SOLVING/02-CPP/](../19-reference/09-problem-solving/02-cpp/)
-* [🗁 09-PROBLEM-SOLVING/03-JAVASCRIPT/](../19-reference/09-problem-solving/03-javascript/)
-* [🗁 09-PROBLEM-SOLVING/04-TYPESCRIPT/](../19-reference/09-problem-solving/04-typescript/)
+* [🗁 10-problem-solving/01-C/](../19-reference/10-problem-solving/01-c/)
+* [🗁 10-problem-solving/02-CPP/](../19-reference/10-problem-solving/02-cpp/)
+* [🗁 10-problem-solving/03-JAVASCRIPT/](../19-reference/10-problem-solving/03-javascript/)
+* [🗁 10-problem-solving/04-TYPESCRIPT/](../19-reference/10-problem-solving/04-typescript/)
 
 **RELATED INDEX FILES**
 
@@ -145,29 +151,18 @@ _This is a concise master table that provides easy access to various tables of c
 * [INDEX* (../00-index/23-problem-solving-javascript.md)](../00-index/23-problem-solving-javascript.md)
 * [INDEX* (../00-index/24-problem-solving-typescript.md)](../00-index/24-problem-solving-typescript.md)
 
-## 🗁 10-GLOSSARY/
+## 🗁 11-GLOSSARY/
 
-* [🗁 10-GLOSSARY/](../19-reference/10-glossary/)
-  * [README.md](../19-reference/10-glossary/README.md)
-  * [01-software-engineering-terms.md](../19-reference/10-glossary/01-software-engineering-terms.md)
-  * [02-programming-terms.md](../19-reference/10-glossary/02-programming-terms.md)
-  * [03-web-terms.md](../19-reference/10-glossary/03-web-terms.md)
-  * [04-backend-terms.md](../19-reference/10-glossary/04-backend-terms.md)
-  * [05-frontend-terms.md](../19-reference/10-glossary/05-frontend-terms.md)
-  * [06-database-terms.md](../19-reference/10-glossary/06-database-terms.md)
-  * [07-devops-terms.md](../19-reference/10-glossary/07-devops-terms.md)
-  * [08-cloud-terms.md](../19-reference/10-glossary/08-cloud-terms.md)
-  * [09-networking-terms.md](../19-reference/10-glossary/09-networking-terms.md)
-  * [10-security-terms.md](../19-reference/10-glossary/10-security-terms.md)
-  * [11-architecture-terms.md](../19-reference/10-glossary/11-architecture-terms.md)
-
-## 🗁 11-TOOLKITS/
-
-* [🗁 11-TOOLKITS/](../19-reference/11-toolkits/)
-  * [README.md](hands-on-notes/20-resources/06-links/README.md)
-  * [01-web.md](01-web.md) 🗎 2026.10.08
-  * [02-linux.md](02-linux.md) 🗎 2026.10.08
-  * [03-mac.md](03-mac.md)
-  * [04-windows.md](04-windows.md) 🗎 2026.10.08
-  * [05-android.md](05-android.md) 🗎 2026.10.08
-  * [06-ios.md](06-ios.md)
+* [🗁 11-GLOSSARY/](../19-reference/11-glossary/)
+  * [README.md](../19-reference/11-glossary/README.md)
+  * [01-software-engineering-terms.md](../19-reference/11-glossary/01-software-engineering-terms.md)
+  * [02-programming-terms.md](../19-reference/11-glossary/02-programming-terms.md)
+  * [03-web-terms.md](../19-reference/11-glossary/03-web-terms.md)
+  * [04-backend-terms.md](../19-reference/11-glossary/04-backend-terms.md)
+  * [05-frontend-terms.md](../19-reference/11-glossary/05-frontend-terms.md)
+  * [06-database-terms.md](../19-reference/11-glossary/06-database-terms.md)
+  * [07-devops-terms.md](../19-reference/11-glossary/07-devops-terms.md)
+  * [08-cloud-terms.md](../19-reference/11-glossary/08-cloud-terms.md)
+  * [09-networking-terms.md](../19-reference/11-glossary/09-networking-terms.md)
+  * [10-security-terms.md](../19-reference/11-glossary/10-security-terms.md)
+  * [11-architecture-terms.md](../19-reference/11-glossary/11-architecture-terms.md)

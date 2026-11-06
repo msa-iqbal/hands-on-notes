@@ -53,3 +53,15 @@ The numbering provides a consistent learning order while keeping related Git con
 ## Goal
 
 > Maintain a practical Git reference that makes version control easy to learn, understand, troubleshoot, and use effectively in everyday software development.
+
+## 🖆 RESOURCES & REFERENCES
+
+> Explore the documentation, tools, guides, and references behind the topic.
+
+**Official Documentation**
+
+- Git Official Website: <https://git-scm.com/>
+- Git Documentation: <https://git-scm.com/docs>
+- Git Reference: <https://git-scm.com/docs/git>
+- Git Objects: <https://git-scm.com/book/en/v2/Git-Internals-Git-Objects>
+- Git Internals: <https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain>

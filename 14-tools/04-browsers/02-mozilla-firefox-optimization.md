@@ -479,4 +479,4 @@ Firefox provides some of the strongest privacy protections available in a mainst
 
 > Explore the documentation, tools, guides, and references behind the topic.
 
-* [Mozila Firefox (Extensions)](../../19-reference/07-browser-extensions/02-mozilla-firefox.md)
+* [Mozila Firefox (Extensions)](02-mozilla-firefox.md)

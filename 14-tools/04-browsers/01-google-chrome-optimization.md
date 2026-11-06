@@ -476,4 +476,4 @@ This setup delivers an excellent balance of **speed, security, privacy, battery 
 
 > Explore the documentation, tools, guides, and references behind the topic.
 
-* [Google Chrome (Extensions)](../../19-reference/07-browser-extensions/01-google-chrome.md)
+* [Google Chrome (Extensions)](01-google-chrome.md)

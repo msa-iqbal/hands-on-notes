@@ -4881,7 +4881,7 @@ This section offers a curated collection of frequently encountered C++ programmi
 
 **Build real-world skills:**
 Check out beginner-friendly to intermediate-level projects here:  
-[C++ Mini Projects Repository](hands-on-notes/19-reference/09-problem-solving/02-cpp/29-projects/README.md)
+[C++ Mini Projects Repository](hands-on-notes/19-reference/10-problem-solving/02-cpp/29-projects/README.md)
 
 <!-- START "Jump to Top"-->
 <p align="right">
