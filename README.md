@@ -14,7 +14,7 @@ This repository contains notes, snippets, recipes, troubleshooting guides, refer
 
 |   # | Category                                          | Purpose                                       |
 | --: | ------------------------------------------------- | --------------------------------------------- |
-|  00 | [Index](00-master-toc.md)              | Master repository index                       |
+|  00 | [Index](./00-index/00-master-toc.md)              | Master repository index                       |
 |  01 | [Core](./01-core/README.md)                       | Fundamental concepts and technologies         |
 |  02 | [Languages](./02-languages/README.md)             | Programming languages                         |
 |  03 | [Web](./03-web/README.md)                         | Web technologies and browser platform         |
