@@ -15,58 +15,38 @@ This allows developers to create clean, focused, and meaningful commits.
 
 # 🗁 Understanding the Git Workflow
 
-Git uses three primary areas when managing changes:
+Git uses four primary areas when managing changes:
 
-* Working tree
-* Staging area (index)
-* Repository history
+* Working Directory
+* Staging Area (Index)
+* Local Repository
+* Remote Repository
 
 **Git Workflow Diagram**
 
-```text
-        Working Tree
-        (Edit files)
-             |
-             | git add
-             |
-             v
-        Staging Area
-        (Prepare changes)
-             |
-             | git commit
-             |
-             v
-       Repository History
-       (Record snapshot)
-```
+![Git Workflow Diagram](https://res.cloudinary.com/du7tjwbyi/image/upload/v1794022954/git-commit-and-stage_daqvvj.jpg)
 
-### Working Tree
+**Core Areas Explained**
 
-The working tree contains the project files you currently edit.
+* **Working Directory**: Working Directory: Your local project folder where you write, edit, create, and delete files in real time. Changes here are unstaged.
 
-Changes made here are not automatically included in the next commit.
+* **Staging Area (Index):** A holding or preparation zone (the "waiting room") where you select specific modified files or hunks you want to package into your next commit
 
-### Staging Area
+* **Local Repository (`.git` directory):** Where Git permanently stores your project history as a timeline of immutable snapshots
 
-The staging area stores the content selected for the next commit.
+* **Remote Repository:** A cloud or server-hosted version of your project (such as GitHub, GitLab, or Bitbucket) used to share work with others
 
-It allows you to choose exactly which changes should be recorded.
+**Important Workflow Commands:**
 
-### Repository History
-
-When you create a commit, Git records the staged snapshot as a new commit object.
-
-The commit becomes part of the repository's history.
-
-### Important Workflow Commands
-
-```bash
-git status
-git add <file>
-git diff
-git diff --staged
-git commit -m "Commit message"
-```
+| Action                    | Command                         | What it does                                                                   |
+| ------------------------- | ------------------------------- | ------------------------------------------------------------------------------ |
+| **Check status**          | `git status`                    | Shows which files are modified, staged, or untracked.                          |
+| **View unstaged changes** | `git diff`                      | Shows differences between your **Working Directory** and the **Staging Area**. |
+| **View staged changes**   | `git diff --staged`             | Shows differences between your **Staging Area** and the **Local Repository**.  |
+| **Stage changes**         | `git add <file>` or `git add .` | Moves changes from the working directory to the staging area.                  |
+| **Commit changes**        | `git commit -m "Your message"`  | Saves staged files as a permanent snapshot in your local repository.           |
+| **Push to remote**        | `git push`                      | Uploads local repository commits to the remote server.                         |
+| **Pull from remote**      | `git pull`                      | Downloads and merges changes from the remote repository into your local files. |
 
 # 🗁 Understanding the Staging Area
 
@@ -178,19 +158,19 @@ After committing it, Git records its content in repository history.
 
 The `git add` command stages changes for the next commit.
 
-### Stage a Specific File
+**Stage a Specific File**
 
 ```bash
 git add README.md
 ```
 
-### Stage Multiple Files
+**Stage Multiple Files**
 
 ```bash
 git add README.md app.js style.css
 ```
 
-### Stage All Changes in the Current Directory
+**Stage All Changes in the Current Directory**
 
 ```bash
 git add .
@@ -198,7 +178,7 @@ git add .
 
 This stages changes under the current directory, including new, modified, and deleted files.
 
-### Stage All Changes Across the Working Tree
+**Stage All Changes Across the Working Tree**
 
 ```bash
 git add -A
@@ -206,7 +186,7 @@ git add -A
 
 This stages additions, modifications, and deletions throughout the working tree.
 
-### Stage Modified and Deleted Tracked Files
+**Stage Modified and Deleted Tracked Files**
 
 ```bash
 git add -u
@@ -214,7 +194,7 @@ git add -u
 
 This updates the index for tracked files without staging new untracked files.
 
-### Stage Files Using a Pattern
+**Stage Files Using a Pattern**
 
 ```bash
 git add "*.js"
@@ -222,7 +202,7 @@ git add "*.js"
 
 This stages matching JavaScript files according to the pathspec.
 
-### Interactive Staging
+**Interactive Staging**
 
 ```bash
 git add -i
@@ -230,7 +210,7 @@ git add -i
 
 Opens an interactive interface for selecting changes to stage.
 
-### Stage Changes Patch by Patch
+**Stage Changes Patch by Patch**
 
 ```bash
 git add -p
@@ -1252,7 +1232,7 @@ Inspect the result:
 git log --oneline -3
 ```
 
-### Exercise: Work with .gitignore
+### Exercise: Work with `.gitignore`
 
 Create a file:
 
