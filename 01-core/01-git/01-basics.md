@@ -722,7 +722,7 @@ A tree stores information such as:
 * Object types.
 * Object IDs.
 
-## Commit Object
+# 🗁 Commit Object
 
 A commit represents a recorded project snapshot.
 
