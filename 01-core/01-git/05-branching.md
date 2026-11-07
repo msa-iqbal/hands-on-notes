@@ -63,7 +63,7 @@ A --- B --- C --- D
 
 The `main` branch remains at `C`, while `development` points to `D`.
 
-#### Why Branching Matters
+### Why Branching Matters
 
 Without branching, developers would need to work directly on a shared line of development.
 
@@ -133,7 +133,7 @@ Output:
 
 Both branches point to the same initial commit.
 
-#### Important Characteristics
+### Important Characteristics
 
 * A branch is a reference, not a separate copy of the repository.
 * Creating a branch does not automatically switch to it.
@@ -155,7 +155,7 @@ HEAD -> refs/heads/main
 
 This means the current branch is `main`.
 
-#### Inspect HEAD
+### Inspect HEAD
 
 ```bash
 cat .git/HEAD
@@ -185,7 +185,7 @@ Show the current commit:
 git rev-parse HEAD
 ```
 
-#### HEAD and Branches
+### HEAD and Branches
 
 Suppose the repository has two branches:
 
@@ -373,7 +373,7 @@ This also creates and switches to a new branch.
 
 Git provides several options for displaying branches.
 
-#### List Local Branches
+### List Local Branches
 
 ```bash
 git branch
@@ -389,7 +389,7 @@ Example:
 * main
 ```
 
-#### List Remote-Tracking Branches
+### List Remote-Tracking Branches
 
 ```bash
 git branch -r
@@ -411,19 +411,19 @@ git branch -a
 
 This displays both local branches and remote-tracking branches.
 
-#### Show the Current Branch
+### Show the Current Branch
 
 ```bash
 git branch --show-current
 ```
 
-#### Show Branches with Their Latest Commit
+### Show Branches with Their Latest Commit
 
 ```bash
 git branch -v
 ```
 
-#### Show Branches with Upstream Information
+### Show Branches with Upstream Information
 
 ```bash
 git branch -vv
@@ -431,7 +431,7 @@ git branch -vv
 
 This displays each local branch's upstream relationship, when configured, along with its latest commit.
 
-#### Show Merged Branches
+### Show Merged Branches
 
 ```bash
 git branch --merged
@@ -439,7 +439,7 @@ git branch --merged
 
 Lists branches whose tips are reachable from the current branch.
 
-#### Show Unmerged Branches
+### Show Unmerged Branches
 
 ```bash
 git branch --no-merged
@@ -451,7 +451,7 @@ Lists branches whose tips are not reachable from the current branch.
 
 The `git branch -m` command renames a local branch.
 
-#### Rename the Current Branch
+### Rename the Current Branch
 
 ```bash
 git branch -m development
@@ -459,7 +459,7 @@ git branch -m development
 
 If the current branch is `dev`, this renames it to `development`.
 
-#### Rename Another Local Branch
+### Rename Another Local Branch
 
 ```bash
 git branch -m old-name new-name
@@ -471,7 +471,7 @@ Example:
 git branch -m dev development
 ```
 
-#### Force Rename
+### Force Rename
 
 ```bash
 git branch -M old-name new-name
@@ -481,7 +481,7 @@ The `-M` option allows the destination branch name to be overwritten if it alrea
 
 Use this carefully.
 
-#### Renaming a Branch on a Remote
+### Renaming a Branch on a Remote
 
 Renaming a local branch does not automatically rename its counterpart on a remote server.
 
@@ -501,7 +501,7 @@ Before deleting the old remote branch, coordinate with collaborators and update 
 
 Git provides commands for deleting local branches.
 
-#### Delete a Local Branch
+### Delete a Local Branch
 
 ```bash
 git branch -d feature/login
@@ -509,7 +509,7 @@ git branch -d feature/login
 
 The `-d` option refuses to delete a branch if Git determines it contains commits that are not merged into its upstream branch or `HEAD`.
 
-#### Force Delete a Local Branch
+### Force Delete a Local Branch
 
 ```bash
 git branch -D feature/login
@@ -519,7 +519,7 @@ The `-D` option forces deletion even if Git considers the branch unmerged.
 
 Use it carefully because the branch reference is removed.
 
-#### Delete a Remote Branch
+### Delete a Remote Branch
 
 ```bash
 git push origin --delete feature/login
@@ -527,7 +527,7 @@ git push origin --delete feature/login
 
 This asks the remote repository to delete the specified branch.
 
-#### Alternative Remote Deletion Syntax
+### Alternative Remote Deletion Syntax
 
 ```bash
 git push origin :feature/login
@@ -535,7 +535,7 @@ git push origin :feature/login
 
 This is an older refspec-based form of remote branch deletion.
 
-#### Prune Stale Remote-Tracking Branches
+### Prune Stale Remote-Tracking Branches
 
 ```bash
 git fetch --prune
@@ -543,7 +543,7 @@ git fetch --prune
 
 Removes local remote-tracking references for branches that no longer exist on the remote.
 
-#### 💡IMPORTANT
+### 💡IMPORTANT
 
 Deleting a branch does not necessarily delete the commits it referenced.
 
@@ -562,7 +562,7 @@ Upstream:     origin/main
 
 This relationship allows Git to determine which remote branch should be used for operations such as `git pull` and `git push`.
 
-#### Create a Tracking Branch
+### Create a Tracking Branch
 
 ```bash
 git switch --track origin/development
@@ -570,19 +570,19 @@ git switch --track origin/development
 
 This creates a local branch based on `origin/development` and configures its upstream.
 
-#### Explicitly Set the Local Branch Name
+### Explicitly Set the Local Branch Name
 
 ```bash
 git switch -c development --track origin/development
 ```
 
-#### Set Upstream for an Existing Branch
+### Set Upstream for an Existing Branch
 
 ```bash
 git branch --set-upstream-to=origin/development development
 ```
 
-#### Set Upstream While Pushing
+### Set Upstream While Pushing
 
 ```bash
 git push -u origin development
@@ -592,7 +592,7 @@ The `-u` option is short for `--set-upstream`.
 
 It establishes the upstream relationship for the local branch.
 
-#### Inspect Tracking Information
+### Inspect Tracking Information
 
 ```bash
 git branch -vv
@@ -616,7 +616,7 @@ Local branch: development
 Upstream:     origin/development
 ```
 
-#### Display the Upstream Branch
+### Display the Upstream Branch
 
 ```bash
 git rev-parse --abbrev-ref --symbolic-full-name @{upstream}
@@ -624,7 +624,7 @@ git rev-parse --abbrev-ref --symbolic-full-name @{upstream}
 
 This returns the configured upstream reference.
 
-#### Display Ahead and Behind Information
+### Display Ahead and Behind Information
 
 ```bash
 git status -sb
@@ -641,7 +641,7 @@ This means:
 * The local branch has two commits not present in its upstream.
 * The upstream has one commit not present locally.
 
-#### Configure the Default Push Behavior
+### Configure the Default Push Behavior
 
 ```bash
 git config --global push.autoSetupRemote true
@@ -649,7 +649,7 @@ git config --global push.autoSetupRemote true
 
 With this configuration, a first push of a new branch can automatically establish its upstream when applicable.
 
-#### 💡IMPORTANT
+### 💡IMPORTANT
 
 A remote-tracking branch such as `origin/main` is not the remote branch itself. It is a local reference updated by operations such as `git fetch`.
 
@@ -673,20 +673,20 @@ Example configuration:
 
 This tells Git that the local `development` branch tracks the remote `development` branch on `origin`.
 
-#### View the Upstream of a Branch
+### View the Upstream of a Branch
 
 ```bash
 git config --get branch.development.remote
 git config --get branch.development.merge
 ```
 
-#### Set the Upstream
+### Set the Upstream
 
 ```bash
 git branch --set-upstream-to=origin/development development
 ```
 
-#### Remove the Upstream
+### Remove the Upstream
 
 ```bash
 git branch --unset-upstream development
@@ -696,7 +696,7 @@ git branch --unset-upstream development
 
 Git allows developers to compare branches to understand how their histories differ.
 
-#### Compare Two Branch Names
+### Compare Two Branch Names
 
 ```bash
 git diff main development
@@ -704,7 +704,7 @@ git diff main development
 
 Displays file-content differences between the two branch tips.
 
-#### Show Commits in One Branch but Not Another
+### Show Commits in One Branch but Not Another
 
 ```bash
 git log main..development
@@ -712,7 +712,7 @@ git log main..development
 
 Shows commits reachable from `development` but not from `main`.
 
-#### Show Commits in the Opposite Direction
+### Show Commits in the Opposite Direction
 
 ```bash
 git log development..main
@@ -720,7 +720,7 @@ git log development..main
 
 Shows commits reachable from `main` but not from `development`.
 
-#### Show Commits Unique to Either Branch
+### Show Commits Unique to Either Branch
 
 ```bash
 git log --oneline --left-right main...development
@@ -733,7 +733,7 @@ Output markers:
 * `<` indicates commits unique to the left side.
 * `>` indicates commits unique to the right side.
 
-#### Find the Common Ancestor
+### Find the Common Ancestor
 
 ```bash
 git merge-base main development
@@ -741,7 +741,7 @@ git merge-base main development
 
 Returns the best common ancestor commit of the two branches.
 
-#### Show Branch Relationships
+### Show Branch Relationships
 
 ```bash
 git log --oneline --graph --decorate --all
@@ -769,7 +769,7 @@ git checkout <commit-hash>
 
 Git checks out the specified commit without switching to a local branch.
 
-#### What Happens in Detached HEAD?
+### What Happens in Detached HEAD?
 
 You can:
 
@@ -780,13 +780,13 @@ You can:
 
 However, if you create commits in detached HEAD state, no branch automatically points to them.
 
-#### Return to a Branch
+### Return to a Branch
 
 ```bash
 git switch main
 ```
 
-#### Create a Branch from Detached HEAD
+### Create a Branch from Detached HEAD
 
 If you want to preserve commits created in detached HEAD state:
 
@@ -796,7 +796,7 @@ git switch -c experiment
 
 This creates a branch at the current commit and attaches `HEAD` to it.
 
-#### Check Whether HEAD Is Detached
+### Check Whether HEAD Is Detached
 
 ```bash
 git status
@@ -821,7 +821,7 @@ Common naming patterns include:
 | `test/` | Test-related work | `test/authentication` |
 | `chore/` | Maintenance work | `chore/update-dependencies` |
 
-#### Naming Recommendations
+### Naming Recommendations
 
 * Use lowercase letters.
 * Separate words with hyphens.
@@ -833,7 +833,7 @@ Common naming patterns include:
 
 # 🗁 Common Branching Workflows
 
-#### Feature Branch Workflow
+### Feature Branch Workflow
 
 This workflow creates a separate branch for each feature.
 
@@ -852,7 +852,7 @@ git push -u origin feature/user-authentication
 
 The feature can then be reviewed and integrated through a pull request.
 
-#### Bug-Fix Branch Workflow
+### Bug-Fix Branch Workflow
 
 ```bash
 git switch main
@@ -867,7 +867,7 @@ git commit -m "fix(auth): resolve login validation error"
 git push -u origin bugfix/login-error
 ```
 
-#### Hotfix Branch Workflow
+### Hotfix Branch Workflow
 
 Hotfix branches are commonly created from the production branch or the relevant release branch.
 
@@ -882,7 +882,7 @@ git commit -m "fix(payment): handle failed transactions"
 git push -u origin hotfix/payment-failure
 ```
 
-#### Release Branch Workflow
+### Release Branch Workflow
 
 A release branch can be used to prepare a version for deployment.
 
@@ -893,7 +893,7 @@ git switch -c release/2.0.0
 
 Release-specific changes, testing, and stabilization can happen on this branch.
 
-#### Git Flow Overview
+### Git Flow Overview
 
 Git Flow is a branching model with commonly used branch categories:
 
@@ -924,7 +924,7 @@ Other approaches, such as GitHub Flow and trunk-based development, use different
 
 # 🖆 Common Problems and Troubleshooting
 
-#### Branch Already Exists
+### Branch Already Exists
 
 Error:
 
@@ -944,7 +944,7 @@ Switch to the existing branch:
 git switch development
 ```
 
-#### Branch Has Unmerged Changes
+### Branch Has Unmerged Changes
 
 Error:
 
@@ -968,7 +968,7 @@ git branch -D feature/login
 
 Use force deletion only after confirming that the work can be discarded.
 
-#### Cannot Switch Branches Because of Local Changes
+### Cannot Switch Branches Because of Local Changes
 
 Error:
 
@@ -1001,7 +1001,7 @@ Then switch branches:
 git switch development
 ```
 
-#### Branch Has No Upstream
+### Branch Has No Upstream
 
 Git may report:
 
@@ -1015,7 +1015,7 @@ Set the upstream:
 git push -u origin development
 ```
 
-#### Remote-Tracking Branch Is Missing
+### Remote-Tracking Branch Is Missing
 
 Fetch remote references:
 
@@ -1035,7 +1035,7 @@ If the remote branch exists, create a local tracking branch:
 git switch --track origin/development
 ```
 
-#### Local Branch Is Behind the Remote
+### Local Branch Is Behind the Remote
 
 Fetch and inspect:
 
@@ -1046,7 +1046,7 @@ git status -sb
 
 Integrate the upstream changes using the team's chosen merge or rebase workflow.
 
-#### Branch Is in Detached HEAD State
+### Branch Is in Detached HEAD State
 
 Check:
 
@@ -1068,7 +1068,7 @@ git switch -c saved-work
 
 # 🖆 Practical Exercises
 
-#### Exercise: Create and Switch Branches
+### Exercise: Create and Switch Branches
 
 Create a repository:
 
@@ -1110,7 +1110,7 @@ Inspect the history:
 git log --oneline --graph --all
 ```
 
-#### Exercise: Create Feature Branches
+### Exercise: Create Feature Branches
 
 ```bash
 git switch main
@@ -1136,7 +1136,7 @@ git branch -a
 git log --oneline --graph --all
 ```
 
-#### Exercise: Rename and Delete Branches
+### Exercise: Rename and Delete Branches
 
 Create a branch:
 
@@ -1163,7 +1163,7 @@ Delete it:
 git branch -d new-feature
 ```
 
-#### Exercise: Track a Remote Branch
+### Exercise: Track a Remote Branch
 
 Create a local branch and push it:
 
@@ -1178,7 +1178,7 @@ Inspect tracking information:
 git branch -vv
 ```
 
-#### Exercise: Explore Detached HEAD
+### Exercise: Explore Detached HEAD
 
 Find a commit:
 
