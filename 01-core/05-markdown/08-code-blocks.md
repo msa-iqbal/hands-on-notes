@@ -81,7 +81,7 @@ Syntax highlighting applies language-specific colors to code.
 
 To enable it, specify the programming language immediately after the opening backticks.
 
-### JavaScript
+### 🖆 JavaScript
 
 ````markdown
 ```javascript
@@ -93,7 +93,7 @@ greet("Rahim");
 ```
 ````
 
-### Python
+### 🖆 Python
 
 ````markdown
 ```python
@@ -104,7 +104,7 @@ greet("Rahim")
 ```
 ````
 
-### PHP
+### 🖆 PHP
 
 ````markdown
 ```php
@@ -120,7 +120,7 @@ greet("Rahim");
 ```
 ````
 
-### HTML
+### 🖆 HTML
 
 ````markdown
 ```html
@@ -136,7 +136,7 @@ greet("Rahim");
 ```
 ````
 
-### CSS
+### 🖆 CSS
 
 ````markdown
 ```css
@@ -152,7 +152,7 @@ h1 {
 ```
 ````
 
-### SQL
+### 🖆 SQL
 
 ````markdown
 ```sql
@@ -165,7 +165,7 @@ WHERE salary > 30000;
 ```
 ````
 
-### Bash
+### 🖆 Bash
 
 ````markdown
 ```bash
@@ -177,7 +177,7 @@ cd projects
 ```
 ````
 
-### JSON
+### 🖆 JSON
 
 ````markdown
 ```json
@@ -242,7 +242,7 @@ This allows the inner triple-backtick fence to remain part of the displayed exam
 
 You can also use tildes (`~~~`) as an alternative fence.
 
-### Example
+### 🖆 Example
 
 ````markdown
 ~~~python
@@ -256,7 +256,7 @@ Both backticks and tildes are supported by common Markdown implementations.
 
 Code blocks are useful for documenting terminal commands.
 
-### Linux Commands
+### 🖆 Linux Commands
 
 ````markdown
 ```bash
@@ -267,7 +267,7 @@ cd my-project
 ```
 ````
 
-### Git Commands
+### 🖆 Git Commands
 
 ````markdown
 ```bash
@@ -278,7 +278,7 @@ git status
 ```
 ````
 
-### NPM Commands
+### 🖆 NPM Commands
 
 ````markdown
 ```bash
@@ -288,7 +288,7 @@ npm run build
 ```
 ````
 
-### Output
+### 🖆 Output
 
 ```bash
 npm install
@@ -302,7 +302,7 @@ Use the appropriate language identifier when possible. For shell commands, `bash
 
 Code blocks are frequently used for configuration examples.
 
-### `.env`
+### 🖆 `.env`
 
 ````markdown
 ```dotenv
@@ -313,7 +313,7 @@ APP_URL=http://localhost:8000
 ```
 ````
 
-### `package.json`
+### 🖆 `package.json`
 
 ````markdown
 ```json
@@ -328,7 +328,7 @@ APP_URL=http://localhost:8000
 ```
 ````
 
-### `nginx.conf`
+### 🖆 `nginx.conf`
 
 ````markdown
 ```nginx
@@ -350,13 +350,13 @@ server {
 
 Use inline code for short paths and fenced code blocks for directory structures.
 
-### Single File Path
+### 🖆 Single File Path
 
 ```markdown
 The configuration file is located at `config/database.php`.
 ```
 
-### Directory Structure
+### 🖆 Directory Structure
 
 ````markdown
 ```text
@@ -484,7 +484,7 @@ Avoid placing large fenced code blocks inside table cells. Standard Markdown tab
 
 GitHub supports several useful features around code blocks.
 
-### Syntax Highlighting
+### 🖆 Syntax Highlighting
 
 GitHub uses language identifiers to highlight source code.
 
@@ -493,7 +493,7 @@ const message = "Hello GitHub!";
 console.log(message);
 ```
 
-### Code Line References
+### 🖆 Code Line References
 
 GitHub allows users to link to specific lines in a source file.
 
@@ -511,7 +511,7 @@ https://github.com/username/repository/blob/main/src/app.js#L10-L20
 
 Replace the example username, repository, branch, and file path with actual values.
 
-### Diff Code Blocks
+### 🖆 Diff Code Blocks
 
 Use `diff` to demonstrate code changes.
 
@@ -533,7 +533,7 @@ The `-` and `+` prefixes represent removed and added lines in a diff-style examp
 
 **Note:** Diff highlighting is supported by GitHub and many other renderers, but exact colors and presentation can vary.
 
-# 🗁 Common Mistakes
+# 🖆 Common Mistakes
 
 | Mistake                             | Problem                                       | Solution                         |
 | ----------------------------------- | --------------------------------------------- | -------------------------------- |
@@ -545,7 +545,7 @@ The `-` and `+` prefixes represent removed and added lines in a diff-style examp
 | Missing blank lines around fences   | Some renderers may parse content unexpectedly | Separate blocks with blank lines |
 | Using unsupported language names    | No syntax highlighting                        | Check renderer language support  |
 
-# 🗁 Best Practices
+# 🖆 Best Practices
 
 1. Use inline code for short technical references.
 2. Use fenced code blocks for multiple lines.

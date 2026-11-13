@@ -40,20 +40,20 @@ Markdown allows HTML integration in many implementations.
 
 HTML is useful when Markdown syntax cannot express the structure or formatting you need.
 
-### HTML Headings
+### 🖆 HTML Headings
 
 ```html
 <h2>Advanced Documentation</h2>
 <h3>Technical Details</h3>
 ```
 
-### HTML Paragraphs
+### 🖆 HTML Paragraphs
 
 ```html
 <p>This is an HTML paragraph inside a Markdown document.</p>
 ```
 
-### HTML Line Breaks
+### 🖆 HTML Line Breaks
 
 ```html
 First line.<br>
@@ -61,13 +61,13 @@ Second line.<br>
 Third line.
 ```
 
-### HTML Horizontal Rule
+### 🖆 HTML Horizontal Rule
 
 ```html
 <hr>
 ```
 
-### HTML Details and Summary
+### 🖆 HTML Details and Summary
 
 ```html
 <details>
@@ -78,7 +78,7 @@ Third line.
 </details>
 ```
 
-### HTML Superscript and Subscript
+### 🖆 HTML Superscript and Subscript
 
 ```html
 <p>Water formula: H<sub>2</sub>O</p>
@@ -157,7 +157,7 @@ The alternative is more portable across Markdown renderers.
 
 A table of contents (TOC) helps readers navigate long Markdown documents.
 
-### Manual Table of Contents
+### 🖆 Manual Table of Contents
 
 ```markdown
 # Documentation
@@ -191,7 +191,7 @@ Usage examples.
 Common problems and solutions.
 ```
 
-### Automatic Heading Anchors
+### 🖆 Automatic Heading Anchors
 
 GitHub automatically generates heading anchors.
 
@@ -207,13 +207,13 @@ Usually produces this anchor:
 #installation-guide
 ```
 
-### Linking to a Heading
+### 🖆 Linking to a Heading
 
 ```markdown
 [Go to Installation](#installation-guide)
 ```
 
-### Heading Anchor Rules on GitHub
+### 🖆 Heading Anchor Rules on GitHub
 
 GitHub generally:
 
@@ -290,13 +290,13 @@ Use nested structures when they improve organization. Excessively nested Markdow
 
 Markdown image syntax is sufficient for ordinary images, but HTML can provide additional control.
 
-### Image Dimensions
+### 🖆 Image Dimensions
 
 ```html
 <img src="assets/logo.png" alt="Project Logo" width="200">
 ```
 
-### Image Width and Height
+### 🖆 Image Width and Height
 
 ```html
 <img
@@ -307,7 +307,7 @@ Markdown image syntax is sufficient for ordinary images, but HTML can provide ad
 >
 ```
 
-### Centered Image
+### 🖆 Centered Image
 
 ```html
 <p align="center">
@@ -315,7 +315,7 @@ Markdown image syntax is sufficient for ordinary images, but HTML can provide ad
 </p>
 ```
 
-### Image With Caption
+### 🖆 Image With Caption
 
 ```html
 <figure>
@@ -330,9 +330,9 @@ Markdown image syntax is sufficient for ordinary images, but HTML can provide ad
 
 Markdown files can be generated, converted, checked, and published automatically.
 
-### Markdown Conversion
+### 🖆 Markdown Conversion
 
-#### Markdown to HTML
+#### ⌘ Markdown to HTML
 
 A Markdown converter can transform Markdown into HTML.
 
@@ -342,7 +342,7 @@ For example, with Pandoc:
 pandoc README.md -o README.html
 ```
 
-#### Markdown to PDF
+#### ⌘ Markdown to PDF
 
 ```bash
 pandoc README.md -o README.pdf
@@ -350,13 +350,13 @@ pandoc README.md -o README.pdf
 
 PDF output may require an appropriate PDF engine and additional configuration.
 
-#### Markdown to Word
+#### ⌘ Markdown to Word
 
 ```bash
 pandoc README.md -o README.docx
 ```
 
-### Markdown Linting
+### 🖆 Markdown Linting
 
 Markdown linters help identify formatting inconsistencies.
 
@@ -386,7 +386,7 @@ Example `.markdownlint-cli2.jsonc`:
 }
 ```
 
-### Prettier Formatting
+### 🖆 Prettier Formatting
 
 Prettier can format Markdown files consistently.
 
@@ -408,7 +408,7 @@ Check formatting without modifying files:
 npx prettier --check "**/*.md"
 ```
 
-### Tool Comparison
+### 🖆 Tool Comparison
 
 | Tool | Purpose |
 | ------ | --------- |
@@ -423,37 +423,37 @@ npx prettier --check "**/*.md"
 
 Markdown files are commonly maintained alongside source code in Git repositories.
 
-### Create a Documentation File
+### 🖆 Create a Documentation File
 
 ```bash
 touch README.md
 ```
 
-### Check Changes
+### 🖆 Check Changes
 
 ```bash
 git status
 ```
 
-### Stage Documentation
+### 🖆 Stage Documentation
 
 ```bash
 git add README.md
 ```
 
-### Commit Changes
+### 🖆 Commit Changes
 
 ```bash
 git commit -m "docs: add project documentation"
 ```
 
-### Push Changes
+### 🖆 Push Changes
 
 ```bash
 git push origin main
 ```
 
-### Conventional Commit Examples
+### 🖆 Conventional Commit Examples
 
 | Commit Message | Purpose |
 | ---------------- | --------- |
@@ -468,7 +468,7 @@ The `docs` prefix is a widely used Conventional Commits convention for documenta
 
 Markdown can be used as the content source for documentation websites.
 
-### MkDocs
+### 🖆 MkDocs
 
 MkDocs generates documentation websites from Markdown files and a YAML configuration file.
 
@@ -494,7 +494,7 @@ nav:
   - Configuration: configuration.md
 ```
 
-### Docusaurus
+### 🖆 Docusaurus
 
 Docusaurus is a documentation website framework that supports Markdown and MDX.
 
@@ -509,7 +509,7 @@ my-docs/
 └── package.json
 ```
 
-### Jekyll
+### 🖆 Jekyll
 
 Jekyll can generate static websites from Markdown and other source files.
 
@@ -524,7 +524,7 @@ my-site/
     └── 2026-01-01-first-post.md
 ```
 
-### Comparison
+### 🖆 Comparison
 
 | Tool | Main Purpose |
 | ------ | -------------- |
@@ -538,7 +538,7 @@ my-site/
 
 Accessible documentation helps more people understand and use your content.
 
-### Meaningful Image Alt Text
+### 🖆 Meaningful Image Alt Text
 
 Poor:
 
@@ -552,7 +552,7 @@ Better:
 ![OSI model showing seven network layers](osi-model.png)
 ```
 
-### Descriptive Links
+### 🖆 Descriptive Links
 
 Poor:
 
@@ -566,14 +566,14 @@ Better:
 [Read the installation guide](https://example.com)
 ```
 
-### Logical Heading Hierarchy
+### 🖆 Logical Heading Hierarchy
 
 Poor:
 
 ```markdown
 # Project
 
-#### Installation
+#### ⌘ Installation
 
 ## Configuration
 ```
@@ -588,11 +588,11 @@ Better:
 ## Configuration
 ```
 
-### Clear Tables
+### 🖆 Clear Tables
 
 Use descriptive column headings and avoid unnecessarily complex table structures.
 
-### Accessibility Checklist
+### 🖆 Accessibility Checklist
 
 * Use meaningful alternative text for informative images.
 * Use descriptive link text.
@@ -608,7 +608,7 @@ Markdown documents may contain links, images, and embedded HTML.
 
 When processing untrusted Markdown, security matters.
 
-### Important Risks
+### 🖆 Important Risks
 
 | Risk | Description |
 | ------ | ------------- |
@@ -617,7 +617,7 @@ When processing untrusted Markdown, security matters.
 | Remote resources | External images or resources may expose information |
 | HTML injection | Untrusted HTML may alter rendered content |
 
-### Security Best Practices
+### 🖆 Security Best Practices
 
 1. Sanitize HTML when rendering untrusted Markdown.
 2. Use a trusted Markdown parser.
@@ -635,7 +635,7 @@ Never assume user-submitted Markdown is safe simply because it is plain text. Th
 
 Consistent documentation patterns make large projects easier to understand and maintain.
 
-### 🕮 Standard Documentation Template
+### 🖆 Standard Documentation Template
 
 ```markdown
 # Topic Name
@@ -662,60 +662,60 @@ Detailed explanation.
 Example syntax
 ```
 
-#### Examples
+#### ⌘ Examples
 
 Practical examples.
 
-#### Use Cases
+#### ⌘ Use Cases
 
 Real-world applications.
 
-#### Common Mistakes
+#### ⌘ Common Mistakes
 
 Common errors and solutions.
 
-#### Best Practices
+#### ⌘ Best Practices
 
 Recommended approaches.
 
-#### Exercises
+#### ⌘ Exercises
 
 Practice activities.
 
-#### Key Takeaways
+#### ⌘ Key Takeaways
 
 Important points to remember.
 
-### 🕮 API Documentation Template
+### 🖆 🕮 API Documentation Template
 
-#### API Endpoint
+#### ⌘ API Endpoint
 
-#### Endpoint
+#### ⌘ Endpoint
 
 `GET /api/users`
 
-#### Description
+#### ⌘ Description
 
 Retrieve a list of users.
 
-#### Authentication
+#### ⌘ Authentication
 
 Bearer token required.
 
-#### Request Parameters
+#### ⌘ Request Parameters
 
 | Parameter | Type    | Required |
 | --------- | ------- | -------- |
 | page      | integer | No       |
 | limit     | integer | No       |
 
-#### Example Request
+#### ⌘ Example Request
 
 ```bash
 curl -X GET https://example.com/api/users
 ```
 
-#### Example Response
+#### ⌘ Example Response
 
 ```json
 {
@@ -729,7 +729,7 @@ curl -X GET https://example.com/api/users
 }
 ```
 
-#### Response Codes
+#### ⌘ Response Codes
 
 | Code | Description |
 |------|-------------|
@@ -737,11 +737,11 @@ curl -X GET https://example.com/api/users
 | 401 | Unauthorized |
 | 500 | Server error |
 
-### 🕮 Configuration Documentation Template
+### 🖆 Configuration Documentation Template
 
-#### Configuration
+#### ⌘ Configuration
 
-#### Environment Variables
+#### ⌘ Environment Variables
 
 | Variable  | Description             | Default     |
 | --------- | ----------------------- | ----------- |
@@ -749,7 +749,7 @@ curl -X GET https://example.com/api/users
 | APP_DEBUG | Debug mode              | false       |
 | APP_PORT  | Application port        | 3000        |
 
-#### Example Configuration
+#### ⌘ Example Configuration
 
 ```dotenv
 APP_ENV=development
@@ -757,7 +757,7 @@ APP_DEBUG=true
 APP_PORT=3000
 ```
 
-#### 💡 Notes
+#### 💡 NOTES
 
 * Never commit production secrets.
 * Use environment-specific configuration.
@@ -767,14 +767,14 @@ APP_PORT=3000
 
 Professional technical documentation should be accurate, consistent, searchable, and maintainable.
 
-### Organization
+### 🖆 Organization
 
 * Use descriptive file names.
 * Organize topics into logical folders.
 * Maintain a central README or index.
 * Use consistent numbering when a learning sequence requires it.
 
-### Content
+### 🖆 Content
 
 * Start each document with a clear overview.
 * Explain technical terms.
@@ -782,7 +782,7 @@ Professional technical documentation should be accurate, consistent, searchable,
 * Add troubleshooting guidance.
 * Provide exercises where appropriate.
 
-### Formatting
+### 🖆 Formatting
 
 * Maintain a consistent heading hierarchy.
 * Use code blocks for technical examples.
@@ -790,7 +790,7 @@ Professional technical documentation should be accurate, consistent, searchable,
 * Use alerts selectively.
 * Avoid unnecessary HTML.
 
-### Maintenance
+### 🖆 Maintenance
 
 * Review outdated examples.
 * Verify links regularly.

@@ -11,7 +11,7 @@ For example:
 Output: 😄 🚀 💻 🔥
 
 ---
-### ☰ RESOURCES & REFERENCES
+### 🖆 RESOURCES & REFERENCES
 
 > Explore the documentation, tools, guides, and references behind the topic.
 

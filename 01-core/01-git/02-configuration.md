@@ -49,7 +49,7 @@ git config --global init.defaultBranch main
 
 This sets `main` as the default initial branch name for newly initialized repositories, unless an initialization option explicitly overrides it.
 
-### Install Git
+### 🖆 Install Git
 
 On Debian or Ubuntu:
 
@@ -78,7 +78,7 @@ Verify the installation:
 git --version
 ```
 
-### Check Your Git Identity
+### 🖆 Check Your Git Identity
 
 Check whether a name and email are configured:
 
@@ -96,7 +96,7 @@ git config --global user.email "you@example.com"
 
 Use an email address you intend to associate with your commits. If you use a hosting provider's privacy email, configure that address where appropriate.
 
-### Configuration Key Structure
+### 🖆 Configuration Key Structure
 
 Git configuration keys generally consist of a section and a variable.
 
@@ -130,7 +130,7 @@ core.editor
 core.autocrlf
 ```
 
-### Why Git Configuration Matters
+### 🖆 Why Git Configuration Matters
 
 Correct configuration helps provide:
 
@@ -154,7 +154,7 @@ The principal scopes are:
 4. Worktree.
 5. Command.
 
-### System Configuration
+### 🖆 System Configuration
 
 System configuration applies to all users and repositories on a particular installation of Git.
 
@@ -191,7 +191,7 @@ Characteristics:
 
 The exact system configuration path can vary by platform and Git installation.
 
-### Global Configuration
+### 🖆 Global Configuration
 
 Global configuration normally applies to all repositories used by the current operating-system user, unless a more specific setting overrides it.
 
@@ -230,7 +230,7 @@ Characteristics:
 
 Global configuration is the usual place for personal Git preferences.
 
-### Local Configuration
+### 🖆 Local Configuration
 
 Local configuration applies to one repository.
 
@@ -290,7 +290,7 @@ git config --local user.email "muhammad@company.com"
 
 Commits in that repository will use the repository-specific email, while other repositories can continue using the global email.
 
-### Worktree Configuration
+### 🖆 Worktree Configuration
 
 Git worktrees allow multiple working directories to be associated with one repository.
 
@@ -327,7 +327,7 @@ Characteristics:
 * Requires the `extensions.worktreeConfig` extension to be enabled.
 * Takes precedence over ordinary local configuration for applicable keys.
 
-### Command-Level Configuration
+### 🖆 Command-Level Configuration
 
 Command-level configuration applies to one Git invocation.
 
@@ -352,7 +352,7 @@ Characteristics:
 * Useful in scripts, automation, testing, and one-time overrides.
 * Has high precedence among the standard configuration scopes.
 
-### Configuration Scope Comparison
+### 🖆 Configuration Scope Comparison
 
 | Scope    | Applies to                                        | Typical location or source                                     |
 | -------- | ------------------------------------------------- | -------------------------------------------------------------- |
@@ -384,7 +384,7 @@ For ordinary single-valued settings, the higher-precedence value generally takes
 
 Other configuration sources can also matter. Conditional includes, environment variables, and command-line options can affect the configuration Git reads. Do not assume that every setting is represented by only one value: some keys are multi-valued and are accumulated or interpreted specially.
 
-### Example of Precedence
+### 🖆 Example of Precedence
 
 Set a value at the system level:
 
@@ -412,7 +412,7 @@ Local User
 
 The local value takes precedence over the global and system values.
 
-### Inspect Configuration Origins and Scopes
+### 🖆 Inspect Configuration Origins and Scopes
 
 To see values and the files from which they were read:
 
@@ -434,7 +434,7 @@ git config --show-origin --show-scope --get user.email
 
 These commands are especially useful when a setting does not behave as expected.
 
-### Single-Valued and Multi-Valued Settings
+### 🖆 Single-Valued and Multi-Valued Settings
 
 Many settings are used as a single effective value. Other settings can have multiple entries.
 
@@ -463,7 +463,7 @@ The behavior of repeated values depends on the configuration key and the command
 
 Git stores many settings in plain-text configuration files.
 
-### System Configuration
+### 🖆 System Configuration
 
 A common Linux location is:
 
@@ -473,7 +473,7 @@ A common Linux location is:
 
 This file contains system-wide settings.
 
-### Global Configuration
+### 🖆 Global Configuration
 
 Common locations include:
 
@@ -484,7 +484,7 @@ Common locations include:
 
 The exact file Git uses can be affected by environment variables and installation details.
 
-### Local Configuration
+### 🖆 Local Configuration
 
 A standard repository commonly stores local configuration at:
 
@@ -496,7 +496,7 @@ project/
 
 For linked worktrees, the Git directory may be a file reference rather than a directory inside the working tree. Use Git commands to inspect configuration rather than assuming every repository has the same physical layout.
 
-### Worktree Configuration
+### 🖆 Worktree Configuration
 
 When worktree configuration is enabled, a linked worktree can have its own configuration file, commonly located under the repository's common Git directory:
 
@@ -507,7 +507,7 @@ When worktree configuration is enabled, a linked worktree can have its own confi
         └── config.worktree
 ```
 
-### Example `.gitconfig`
+### 🖆 Example `.gitconfig`
 
 A global configuration file might look like this:
 
@@ -555,7 +555,7 @@ This file defines:
 
 Git provides several commands for inspecting configuration.
 
-### View Configuration Values
+### 🖆 View Configuration Values
 
 ```bash
 git config --list
@@ -563,13 +563,13 @@ git config --list
 
 This lists configuration entries Git reads for the current context. A key may appear more than once.
 
-### View Global Configuration
+### 🖆 View Global Configuration
 
 ```bash
 git config --global --list
 ```
 
-### View Local Configuration
+### 🖆 View Local Configuration
 
 Run inside a repository:
 
@@ -577,7 +577,7 @@ Run inside a repository:
 git config --local --list
 ```
 
-### View System Configuration
+### 🖆 View System Configuration
 
 ```bash
 git config --system --list
@@ -585,7 +585,7 @@ git config --system --list
 
 Reading system configuration may depend on platform permissions and installation details.
 
-### View a Specific Value
+### 🖆 View a Specific Value
 
 ```bash
 git config user.name
@@ -595,25 +595,25 @@ git config init.defaultBranch
 
 Without a scope option, Git reads the applicable configuration sources for the current context.
 
-### View Configuration with Origins
+### 🖆 View Configuration with Origins
 
 ```bash
 git config --list --show-origin
 ```
 
-### View Configuration with Scopes
+### 🖆 View Configuration with Scopes
 
 ```bash
 git config --list --show-scope
 ```
 
-### View Both Origin and Scope
+### 🖆 View Both Origin and Scope
 
 ```bash
 git config --list --show-origin --show-scope
 ```
 
-### Important Inspection Commands
+### 🖆 Important Inspection Commands
 
 | Command                                             | Purpose                                |
 | --------------------------------------------------- | -------------------------------------- |
@@ -634,19 +634,19 @@ The primary identity settings are:
 * `user.name`
 * `user.email`
 
-### Configure Username
+### 🖆 Configure Username
 
 ```bash
 git config --global user.name "Muhammad Iqbal"
 ```
 
-### Configure Email
+### 🖆 Configure Email
 
 ```bash
 git config --global user.email "developer@example.com"
 ```
 
-### Verify Identity
+### 🖆 Verify Identity
 
 ```bash
 git config --global user.name
@@ -660,7 +660,7 @@ git config user.name
 git config user.email
 ```
 
-### Configure Repository-Specific Identity
+### 🖆 Configure Repository-Specific Identity
 
 Inside a repository:
 
@@ -669,7 +669,7 @@ git config --local user.name "Muhammad Iqbal"
 git config --local user.email "work@example.com"
 ```
 
-### Author vs. Committer
+### 🖆 Author vs. Committer
 
 Git distinguishes between the author and committer.
 
@@ -685,7 +685,7 @@ Inspect commit metadata with:
 git log --format=fuller
 ```
 
-### Identity Is Not Authentication
+### 🖆 Identity Is Not Authentication
 
 `user.name` and `user.email` configure commit metadata.
 
@@ -724,7 +724,7 @@ git init
 
 The initial branch will be named `main`, provided no explicit initialization option overrides the configured default.
 
-### Initialize with an Explicit Branch Name
+### 🖆 Initialize with an Explicit Branch Name
 
 ```bash
 git init -b main
@@ -732,7 +732,7 @@ git init -b main
 
 The `-b` option explicitly specifies the initial branch name for that repository.
 
-### Why Configure the Default Branch?
+### 🖆 Why Configure the Default Branch?
 
 * Keeps branch naming consistent across projects.
 * Aligns with the naming used by many hosting platforms.
@@ -752,7 +752,7 @@ Git sometimes opens a text editor for:
 
 Configure the editor with `core.editor`.
 
-### Visual Studio Code
+### 🖆 Visual Studio Code
 
 ```bash
 git config --global core.editor "code --wait"
@@ -760,31 +760,31 @@ git config --global core.editor "code --wait"
 
 The `--wait` option makes the command wait for the VS Code editing session to close before Git continues.
 
-### Vim
+### 🖆 Vim
 
 ```bash
 git config --global core.editor "vim"
 ```
 
-### Nano
+### 🖆 Nano
 
 ```bash
 git config --global core.editor "nano"
 ```
 
-### Notepad on Windows
+### 🖆 Notepad on Windows
 
 ```powershell
 git config --global core.editor "notepad"
 ```
 
-### Verify the Editor
+### 🖆 Verify the Editor
 
 ```bash
 git config --global core.editor
 ```
 
-### Common Editors
+### 🖆 Common Editors
 
 | Editor | Configuration |
 | --- | --- |
@@ -808,7 +808,7 @@ Operating systems commonly use different line-ending conventions.
 
 Git provides `core.autocrlf` to control certain automatic line-ending conversions between the working tree and the index.
 
-### `core.autocrlf = true`
+### 🖆 `core.autocrlf = true`
 
 ```bash
 git config --global core.autocrlf true
@@ -821,7 +821,7 @@ Typically:
 
 This is commonly used in Windows development environments.
 
-### `core.autocrlf = input`
+### 🖆 `core.autocrlf = input`
 
 ```bash
 git config --global core.autocrlf input
@@ -834,7 +834,7 @@ Typically:
 
 This is commonly used on Linux and macOS.
 
-### `core.autocrlf = false`
+### 🖆 `core.autocrlf = false`
 
 ```bash
 git config --global core.autocrlf false
@@ -842,7 +842,7 @@ git config --global core.autocrlf false
 
 Disables automatic conversion through this setting. It does not prevent `.gitattributes` rules or other tools from managing line endings.
 
-### Repository-Level `.gitattributes`
+### 🖆 Repository-Level `.gitattributes`
 
 For teams, a repository-level `.gitattributes` file provides explicit and shareable line-ending rules.
 
@@ -867,7 +867,7 @@ Example:
 
 The exact rules should match the project's file types and platform requirements. `.gitattributes` is generally more predictable for team-wide behavior than relying only on each developer's global setting.
 
-### Inspect Line-Ending Behavior
+### 🖆 Inspect Line-Ending Behavior
 
 ```bash
 git ls-files --eol
@@ -885,7 +885,7 @@ The relevant setting is:
 core.filemode
 ```
 
-### Enable File-Mode Tracking
+### 🖆 Enable File-Mode Tracking
 
 ```bash
 git config --local core.filemode true
@@ -893,7 +893,7 @@ git config --local core.filemode true
 
 Git can detect executable-bit changes in the working tree.
 
-### Disable File-Mode Tracking
+### 🖆 Disable File-Mode Tracking
 
 ```bash
 git config --local core.filemode false
@@ -901,7 +901,7 @@ git config --local core.filemode false
 
 Git ignores executable-bit differences detected in the working tree. This can be useful on filesystems that do not preserve executable permissions reliably.
 
-### Inspect Tracked File Modes
+### 🖆 Inspect Tracked File Modes
 
 ```bash
 git ls-files --stage
@@ -922,7 +922,7 @@ Git represents symbolic links and submodule entries using special modes.
 
 Aliases create shortcuts for frequently used Git subcommands. They reduce repetitive typing and can make common workflows faster.
 
-### Create a Basic Alias
+### 🖆 Create a Basic Alias
 
 ```bash
 git config --global alias.st status
@@ -940,7 +940,7 @@ This is equivalent to:
 git status
 ```
 
-### Useful Git Aliases
+### 🖆 Useful Git Aliases
 
 ```bash
 # Status
@@ -978,7 +978,7 @@ git lg
 git last
 ```
 
-### Aliases with Shell Commands
+### 🖆 Aliases with Shell Commands
 
 A Git alias can execute a shell command when its value begins with `!`.
 
@@ -996,7 +996,7 @@ git root
 
 This prints the root directory of the current repository.
 
-### Configure Aliases in `.gitconfig`
+### 🖆 Configure Aliases in `.gitconfig`
 
 ```ini
 [alias]
@@ -1027,7 +1027,7 @@ Depending on the server and authentication method, Git may need credentials.
 
 Git supports credential helpers that assist with retrieving and storing authentication information.
 
-### What Is a Credential Helper?
+### 🖆 What Is a Credential Helper?
 
 A credential helper is a program or mechanism that helps Git obtain credentials when communicating with a remote service.
 
@@ -1039,7 +1039,7 @@ Common approaches include:
 * Temporary in-memory caching.
 * Custom credential helper programs.
 
-### Inspect Credential Helpers
+### 🖆 Inspect Credential Helpers
 
 ```bash
 git config --show-origin --get-all credential.helper
@@ -1047,7 +1047,7 @@ git config --show-origin --get-all credential.helper
 
 The `--get-all` option is useful because multiple helpers may be configured.
 
-### Configure Git Credential Manager
+### 🖆 Configure Git Credential Manager
 
 If Git Credential Manager is installed and its helper name is `manager`, configure it with:
 
@@ -1061,7 +1061,7 @@ The helper name can vary by installation and version. Use the installation's doc
 git credential-manager --version
 ```
 
-### Configure Temporary Credential Cache
+### 🖆 Configure Temporary Credential Cache
 
 ```bash
 git config --global credential.helper 'cache --timeout=3600'
@@ -1069,7 +1069,7 @@ git config --global credential.helper 'cache --timeout=3600'
 
 This uses Git's cache helper to keep credentials in memory for up to 3,600 seconds, subject to helper behavior.
 
-### Remove Credential Helper Configuration
+### 🖆 Remove Credential Helper Configuration
 
 ```bash
 git config --global --unset-all credential.helper
@@ -1077,7 +1077,7 @@ git config --global --unset-all credential.helper
 
 This removes all global values for that key. It does not necessarily erase credentials already stored by an external credential manager.
 
-### Security Considerations
+### 🖆 Security Considerations
 
 * Avoid placing access tokens or passwords directly in `.gitconfig`.
 * Avoid using plain-text credential storage on shared or untrusted systems.
@@ -1108,7 +1108,7 @@ If you already have a suitable key pair, you can use it instead of generating a 
 
 If not, follow the steps below.
 
-### Step 1: Generate a New SSH Key
+### 🖆 Step 1: Generate a New SSH Key
 
 GitHub documentation: [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
@@ -1149,7 +1149,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Copy the complete output. You will need it in Step 3.
 
-### Step 2: Start the SSH Agent and Add Your Key
+### 🖆 Step 2: Start the SSH Agent and Add Your Key
 
 The SSH agent manages your private key and can remember its passphrase during your session.
 
@@ -1167,7 +1167,7 @@ ssh-add ~/.ssh/id_ed25519
 
 If you configured a passphrase, enter it when prompted.
 
-### Step 3: Add Your SSH Public Key to GitHub
+### 🖆 Step 3: Add Your SSH Public Key to GitHub
 
 GitHub documentation: [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
@@ -1181,7 +1181,7 @@ GitHub documentation: [Adding a new SSH key to your GitHub account](https://docs
 
 Your public key is now registered with your GitHub account.
 
-### Step 4: Test the SSH Connection
+### 🖆 Step 4: Test the SSH Connection
 
 Run the following command:
 
@@ -1199,7 +1199,7 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 
 **SSH is now configured and ready to use with GitHub.**
 
-### SSH vs. HTTPS
+### 🖆 SSH vs. HTTPS
 
 Git supports two common methods for connecting to remote repositories: SSH and HTTPS.
 
@@ -1224,7 +1224,7 @@ Git supports several signing formats, including:
 
 Signing is distinct from authenticating to a remote repository.
 
-### Configure GPG Signing
+### 🖆 Configure GPG Signing
 
 After creating and configuring a GPG key, set the signing key:
 
@@ -1238,7 +1238,7 @@ Enable commit signing by default:
 git config --global commit.gpgsign true
 ```
 
-### Configure SSH Signing
+### 🖆 Configure SSH Signing
 
 Set SSH as the signing format:
 
@@ -1260,7 +1260,7 @@ git config --global commit.gpgsign true
 
 For SSH signing, Git uses the corresponding private key to create the signature. The public key is used for verification.
 
-### Sign an Individual Commit
+### 🖆 Sign an Individual Commit
 
 ```bash
 git commit -S -m "Add signed commit"
@@ -1268,7 +1268,7 @@ git commit -S -m "Add signed commit"
 
 The `-S` option requests a signed commit.
 
-### Verify a Commit Signature
+### 🖆 Verify a Commit Signature
 
 ```bash
 git verify-commit HEAD
@@ -1280,7 +1280,7 @@ Verify a signed tag:
 git verify-tag v1.0.0
 ```
 
-### Important Distinction
+### 🖆 Important Distinction
 
 * **Authentication** establishes whether you can access a remote service.
 * **Commit signing** provides a cryptographic signature that can be verified.
@@ -1294,7 +1294,7 @@ Git supports conditional includes. They allow Git to load additional configurati
 
 This is useful when maintaining separate personal, company, or client identities.
 
-### Directory-Based Configuration with `includeIf`
+### 🖆 Directory-Based Configuration with `includeIf`
 
 Add conditional includes to your global configuration file:
 
@@ -1308,7 +1308,7 @@ Add conditional includes to your global configuration file:
 
 The `gitdir` condition matches repositories based on their Git directory location. Pay attention to path matching and trailing slashes when designing directory rules.
 
-### Work Configuration
+### 🖆 Work Configuration
 
 Create:
 
@@ -1324,7 +1324,7 @@ Content:
     email = muhammad@company.com
 ```
 
-### Personal Configuration
+### 🖆 Personal Configuration
 
 Create:
 
@@ -1342,7 +1342,7 @@ Content:
 
 Repositories whose Git directories match the corresponding conditions can use the appropriate identity.
 
-### Branch-Based Conditional Configuration
+### 🖆 Branch-Based Conditional Configuration
 
 Git also supports conditions based on the currently checked-out branch.
 
@@ -1357,7 +1357,7 @@ This condition matches when the current branch matches the specified pattern.
 
 Branch-based conditions are context-dependent: they require a repository with a current branch that can be evaluated. They are not a substitute for directory-based identity separation in every workflow.
 
-### Why Use Conditional Configuration?
+### 🖆 Why Use Conditional Configuration?
 
 * Separate personal and company identities.
 * Apply project-specific defaults automatically.
@@ -1368,7 +1368,7 @@ Branch-based conditions are context-dependent: they require a repository with a 
 
 Git configuration files use an INI-like syntax.
 
-### Basic Structure
+### 🖆 Basic Structure
 
 ```ini
 [section]
@@ -1383,7 +1383,7 @@ Example:
     email = developer@example.com
 ```
 
-### Subsections
+### 🖆 Subsections
 
 Git supports subsections.
 
@@ -1397,7 +1397,7 @@ Example:
 
 Here, `origin` is a subsection of the `remote` section.
 
-### Boolean Values
+### 🖆 Boolean Values
 
 Git supports boolean configuration values.
 
@@ -1424,7 +1424,7 @@ off
 
 Git also accepts certain boolean values without an explicit value in configuration-file syntax. Consult the documentation for the particular key.
 
-### Comments
+### 🖆 Comments
 
 Configuration files support comments beginning with `#` or `;`.
 
@@ -1438,7 +1438,7 @@ Example:
     email = developer@example.com
 ```
 
-### Multiple Values
+### 🖆 Multiple Values
 
 Some keys can have multiple values.
 
@@ -1489,7 +1489,7 @@ The following settings are useful in everyday development.
 | `merge.tool` | Preferred merge tool |
 | `color.ui` | Colorized command output |
 
-### Configure Pull Behavior
+### 🖆 Configure Pull Behavior
 
 Merge-based pull:
 
@@ -1515,7 +1515,7 @@ These settings represent different integration policies. Choose the policy that 
 * `pull.rebase=true` rebases local commits on top of the fetched upstream history.
 * `pull.ff=only` allows pull to update only when a fast-forward is possible; it refuses a divergent update rather than creating a merge commit.
 
-### Configure Push Behavior
+### 🖆 Configure Push Behavior
 
 ```bash
 git config --global push.default simple
@@ -1523,7 +1523,7 @@ git config --global push.default simple
 
 The `simple` setting is a common and predictable default. It generally pushes the current branch to its upstream branch when the names match.
 
-### Prune Stale Remote-Tracking References
+### 🖆 Prune Stale Remote-Tracking References
 
 ```bash
 git config --global fetch.prune true
@@ -1531,7 +1531,7 @@ git config --global fetch.prune true
 
 This removes remote-tracking references for branches that no longer exist on the remote during fetch operations.
 
-### Configure Conflict Resolution Reuse
+### 🖆 Configure Conflict Resolution Reuse
 
 ```bash
 git config --global rerere.enabled true
@@ -1541,7 +1541,7 @@ git config --global rerere.enabled true
 
 Git can record how you resolve a conflict and reuse that resolution when it encounters a sufficiently similar conflict again.
 
-### Configure the Diff Algorithm
+### 🖆 Configure the Diff Algorithm
 
 ```bash
 git config --global diff.algorithm histogram
@@ -1560,37 +1560,37 @@ Different algorithms can produce different diff presentations. The best choice d
 
 Git provides commands for adding, changing, reading, and deleting configuration values.
 
-#### Set a Configuration Value
+### 🖆# Set a Configuration Value
 
 ```bash
 git config --global user.name "Muhammad Iqbal"
 ```
 
-#### Read a Configuration Value
+### 🖆# Read a Configuration Value
 
 ```bash
 git config --global user.name
 ```
 
-#### Remove a Configuration Value
+### 🖆# Remove a Configuration Value
 
 ```bash
 git config --global --unset user.name
 ```
 
-#### Remove All Values for a Key
+### 🖆# Remove All Values for a Key
 
 ```bash
 git config --global --unset-all credential.helper
 ```
 
-#### Replace All Values
+### 🖆# Replace All Values
 
 ```bash
 git config --global --replace-all user.email "new@example.com"
 ```
 
-#### Add Another Value
+### 🖆# Add Another Value
 
 ```bash
 git config --global --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
@@ -1598,13 +1598,13 @@ git config --global --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin
 
 Use `--add` only when the key's semantics support multiple values. For single-valued settings such as `user.email`, a single effective value is generally preferable.
 
-#### Edit a Configuration File
+### 🖆# Edit a Configuration File
 
 ```bash
 git config --global --edit
 ```
 
-#### Inspect Configuration Syntax
+### 🖆# Inspect Configuration Syntax
 
 Git parses configuration files when reading them. A useful check is:
 
@@ -1614,7 +1614,7 @@ git config --list
 
 If a configuration file contains invalid syntax, Git may report a parsing error.
 
-#### Environment-Based Configuration
+### 🖆# Environment-Based Configuration
 
 Git supports environment variables that influence configuration.
 
@@ -1644,14 +1644,14 @@ Environment variables are useful in automation and controlled execution environm
 
 A well-configured Git environment reduces mistakes and improves productivity.
 
-#### Configure Identity Globally
+### 🖆# Configure Identity Globally
 
 ```bash
 git config --global user.name "Muhammad Iqbal"
 git config --global user.email "developer@example.com"
 ```
 
-#### Use Repository-Specific Identity When Necessary
+### 🖆# Use Repository-Specific Identity When Necessary
 
 For a company repository:
 
@@ -1659,35 +1659,35 @@ For a company repository:
 git config --local user.email "muhammad@company.com"
 ```
 
-#### Use `main` as the Default Initial Branch
+### 🖆# Use `main` as the Default Initial Branch
 
 ```bash
 git config --global init.defaultBranch main
 ```
 
-#### Choose an Appropriate Editor
+### 🖆# Choose an Appropriate Editor
 
 ```bash
 git config --global core.editor "code --wait"
 ```
 
-#### Establish Consistent Line Endings
+### 🖆# Establish Consistent Line Endings
 
 Use a repository-level `.gitattributes` file to establish shared file-handling rules.
 
-#### Use Meaningful Aliases
+### 🖆# Use Meaningful Aliases
 
 Create shortcuts for frequently used commands without sacrificing clarity.
 
-#### Use Secure Credential Management
+### 🖆# Use Secure Credential Management
 
 Prefer an operating-system credential manager or another secure credential helper. Do not store access tokens in plain-text configuration files.
 
-#### Use Conditional Configuration for Multiple Identities
+### 🖆# Use Conditional Configuration for Multiple Identities
 
 Use `includeIf` to separate personal, company, and client identities.
 
-#### Inspect Configuration Sources
+### 🖆# Inspect Configuration Sources
 
 When a setting behaves unexpectedly, run:
 
@@ -1695,17 +1695,17 @@ When a setting behaves unexpectedly, run:
 git config --list --show-origin --show-scope
 ```
 
-#### Avoid Unnecessary Global Overrides
+### 🖆# Avoid Unnecessary Global Overrides
 
 Keep repository-specific settings local whenever possible. This prevents one project's requirements from unexpectedly affecting unrelated projects.
 
-#### Keep Shared Repository Rules in the Repository
+### 🖆# Keep Shared Repository Rules in the Repository
 
 Use repository-level files such as `.gitattributes` when a rule should apply consistently to everyone working on the project.
 
 # 🖆 Common Git Configuration Problems
 
-#### Problem 1: Wrong Commit Author
+### 🖆# Problem 1: Wrong Commit Author
 
 **Symptom:** Commits show an unexpected name or email address.
 
@@ -1736,7 +1736,7 @@ git config --local user.email "correct@example.com"
 
 Changing configuration affects future commits. It does not automatically rewrite identity metadata in existing commits.
 
-#### Problem 2: Wrong Default Branch
+### 🖆# Problem 2: Wrong Default Branch
 
 **Symptom:** New repositories initialize with an unexpected branch name.
 
@@ -1748,7 +1748,7 @@ git config --global init.defaultBranch main
 
 This affects future repository initialization. It does not rename existing branches.
 
-#### Problem 3: Editor Does Not Open
+### 🖆# Problem 3: Editor Does Not Open
 
 **Symptom:** Git cannot find the configured editor.
 
@@ -1778,7 +1778,7 @@ git config --global core.editor "vim"
 
 For VS Code, use `code --wait` so Git waits for the editing session to finish.
 
-#### Problem 4: Unexpected Line-Ending Changes
+### 🖆# Problem 4: Unexpected Line-Ending Changes
 
 **Symptom:** Git reports changes across many lines even though the visible content appears identical.
 
@@ -1796,7 +1796,7 @@ git ls-files --eol
 
 Review the repository's `.gitattributes` rules and coordinate line-ending settings with the team.
 
-#### Problem 5: Authentication Failure
+### 🖆# Problem 5: Authentication Failure
 
 **Symptom:** Git cannot authenticate when pushing or pulling.
 
@@ -1820,7 +1820,7 @@ ssh -T git@github.com
 
 For HTTPS, verify that the credential manager is configured and that the account has the required repository permissions.
 
-#### Problem 6: Unexpected Configuration Override
+### 🖆# Problem 6: Unexpected Configuration Override
 
 **Symptom:** You change a global setting, but Git continues using another value.
 
@@ -1838,7 +1838,7 @@ git config --show-origin --show-scope --get user.email
 
 A local, worktree, command-level, conditional, or environment-provided value may be affecting the result.
 
-#### Problem 7: Git Reports an Invalid Configuration File
+### 🖆# Problem 7: Git Reports an Invalid Configuration File
 
 **Symptom:** Git reports a configuration parsing error.
 
@@ -1861,7 +1861,7 @@ After correcting the file, run the command again to confirm that Git can read th
 
 These exercises build practical experience with Git configuration. Perform them in a test environment or a practice repository.
 
-#### Exercise 1: Configure Git Identity
+### 🖆# Exercise 1: Configure Git Identity
 
 **Objective:** Configure your global Git identity.
 
@@ -1884,7 +1884,7 @@ Expected learning:
 * User identity.
 * Configuration inspection.
 
-#### Exercise 2: Configure the Default Branch
+### 🖆# Exercise 2: Configure the Default Branch
 
 **Objective:** Set `main` as the default initial branch.
 
@@ -1914,7 +1914,7 @@ Expected learning:
 * Repository initialization.
 * Initial branch naming.
 
-#### Exercise 3: Configure a Repository-Specific Identity
+### 🖆# Exercise 3: Configure a Repository-Specific Identity
 
 **Objective:** Override the global identity for one repository.
 
@@ -1937,7 +1937,7 @@ Expected learning:
 * Configuration precedence.
 * Multiple development identities.
 
-#### Exercise 4: Create Git Aliases
+### 🖆# Exercise 4: Create Git Aliases
 
 **Objective:** Improve command-line productivity.
 
@@ -1961,7 +1961,7 @@ Expected learning:
 * Custom subcommands.
 * Configuration files.
 
-#### Exercise 5: Configure the Default Editor
+### 🖆# Exercise 5: Configure the Default Editor
 
 **Objective:** Set your preferred editor.
 
@@ -1983,7 +1983,7 @@ Expected learning:
 * External editor integration.
 * Git's editor invocation behavior.
 
-#### Exercise 6: Explore Configuration Precedence
+### 🖆# Exercise 6: Explore Configuration Precedence
 
 **Objective:** Understand how global and local settings interact.
 
@@ -2036,7 +2036,7 @@ Expected learning:
 * Configuration origins.
 * Removing an override.
 
-#### Exercise 7: Create a Practical Global Configuration
+### 🖆# Exercise 7: Create a Practical Global Configuration
 
 **Objective:** Configure common Git defaults.
 
@@ -2061,7 +2061,7 @@ Expected learning:
 * Global configuration management.
 * Practical environment setup.
 
-#### Exercise 8: Configure Conditional Identity
+### 🖆# Exercise 8: Configure Conditional Identity
 
 **Objective:** Use different identities for personal and work repositories.
 
@@ -2124,7 +2124,7 @@ Expected learning:
 * Identity separation.
 * Multiple development environments.
 
-#### Exercise 9: Inspect Configuration Origins
+### 🖆# Exercise 9: Inspect Configuration Origins
 
 **Objective:** Find where a setting is defined.
 
@@ -2146,7 +2146,7 @@ Expected learning:
 * Scope inspection.
 * Configuration file locations.
 
-#### Exercise 10: Configure and Inspect Line Endings
+### 🖆# Exercise 10: Configure and Inspect Line Endings
 
 **Objective:** Understand line-ending behavior.
 
@@ -2179,7 +2179,7 @@ Expected learning:
 
 # 🖆 Interview Questions
 
-### Beginner Level
+### 🖆 Beginner Level
 
 **1. What is Git configuration?**
 
@@ -2219,7 +2219,7 @@ git config --global user.email "you@example.com"
 git config --list
 ```
 
-### Intermediate Level
+### 🖆 Intermediate Level
 
 **9. What is Git configuration precedence?**
 
@@ -2257,7 +2257,7 @@ Both are identity fields recorded in commit metadata. The name identifies the co
 
 No. It is commit metadata, not an authentication credential.
 
-### Advanced Level
+### 🖆 Advanced Level
 
 **17. What is conditional Git configuration?**
 
@@ -2294,3 +2294,16 @@ It displays the source file or origin from which a configuration entry was read.
 **25. Can Git use different identities for different repositories?**
 
 Yes. Local configuration and conditional includes can define different identities for different repositories or repository locations.
+
+# 🖆 RESOURCES & REFERENCES
+
+> Explore the documentation, tools, guides, and references behind the topic.
+
+**Official Git Documentation**
+
+* Git Configuration: [https://git-scm.com/docs/git-config](https://git-scm.com/docs/git-config)
+* Git Configuration Files: [https://git-scm.com/docs/git-config#FILES](https://git-scm.com/docs/git-config#FILES)
+* Git Environment Variables: [https://git-scm.com/docs/git#_environment_variables](https://git-scm.com/docs/git#_environment_variables)
+* Git Attributes: [https://git-scm.com/docs/gitattributes](https://git-scm.com/docs/gitattributes)
+* Git Credentials: [https://git-scm.com/docs/gitcredentials](https://git-scm.com/docs/gitcredentials)
+* Git SSH Documentation: [https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)

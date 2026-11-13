@@ -26,19 +26,19 @@ The numbering provides a consistent learning sequence while keeping frequently u
 
 ## Focus
 
-- Terminal fundamentals
-- Command-line usage
-- Command syntax and options
-- Path and directory navigation
-- File and directory management
-- Standard input and output
-- Pipes and command pipelines
-- Input and output redirection
-- Process management
-- Background jobs
-- Command history
-- Keyboard shortcuts
-- Command-line productivity
+* Terminal fundamentals
+* Command-line usage
+* Command syntax and options
+* Path and directory navigation
+* File and directory management
+* Standard input and output
+* Pipes and command pipelines
+* Input and output redirection
+* Process management
+* Background jobs
+* Command history
+* Keyboard shortcuts
+* Command-line productivity
 
 ## Goal
 

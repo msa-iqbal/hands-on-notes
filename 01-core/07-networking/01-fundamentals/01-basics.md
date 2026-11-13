@@ -1,389 +1,833 @@
-# Computer Networking Basics
+# Networking Basics
 
-A computer network is a collection of interconnected devices that communicate and exchange data through wired or wireless communication links.
+Networking is the process of connecting two or more computing devices so they can communicate, exchange data, and share resources.
 
-These devices may include computers, smartphones, servers, printers, switches, routers, wireless access points, and Internet of Things (IoT) devices.
+A computer network allows devices such as computers, servers, smartphones, printers, routers, and switches to communicate through wired or wireless connections.
 
-Networks enable users and applications to share information, access services, communicate remotely, and use centralized resources.
+Networking is the foundation of the Internet, cloud computing, distributed systems, web applications, and modern IT infrastructure.
 
-#### Real-World Example
+# 🗁 What Is Computer Networking?
 
-When you open a website:
+Computer networking refers to the technologies, protocols, hardware, and software that enable devices to exchange information.
 
-1. Your computer or smartphone connects to a local network.
-2. The device determines how to reach the destination.
-3. A router forwards traffic toward the Internet when the destination is remote.
-4. Network infrastructure transports the traffic to the destination server.
-5. The server processes the request and sends a response.
-6. Your browser receives the response and displays the website.
+A network can be as simple as two computers connected directly or as complex as the global Internet connecting billions of devices.
 
-This process involves several networking technologies working together.
+**Example:**
 
-# 🗁 Why Computer Networks Are Important
+Consider a small office with:
 
-Computer networks provide:
+* Five desktop computers.
+* One network printer.
+* One router.
+* One network switch.
+* One Internet connection.
 
-* **Resource sharing:** Share printers, storage, applications, and other resources.
-* **Communication:** Support email, messaging, voice calls, and video conferencing.
-* **Centralized management:** Manage users, devices, and services centrally.
-* **Remote access:** Access systems and services from different locations.
-* **Scalability:** Connect additional users, devices, and services.
-* **Reliability:** Use redundant links and devices to maintain connectivity.
-* **Security controls:** Enforce access policies, authentication, segmentation, and traffic filtering.
-* **Cost efficiency:** Share infrastructure and centralized services.
+All computers can communicate through the local network, access the shared printer, and connect to the Internet through the router.
+
+```text
+                  Internet
+                     |
+                  [Router]
+                     |
+                  [Switch]
+                /    |    \
+               /     |     \
+            [PC-1] [PC-2] [PC-3]
+                     |
+                 [Printer]
+```
+
+This is a basic example of a local area network.
+
+# 🗁 Why Do We Need Networking?
+
+Networking makes it possible for devices and applications to communicate without requiring direct physical interaction.
+
+Common purposes include:
+
+### 🖆 Resource Sharing
+
+Devices can share resources such as:
+
+* Printers.
+* Storage devices.
+* Files and folders.
+* Internet connections.
+* Applications and services.
+
+### 🖆 Communication
+
+Networks enable communication between users and systems through:
+
+* Email.
+* Instant messaging.
+* Voice over IP (VoIP).
+* Video conferencing.
+* Collaboration platforms.
+
+### 🖆 Data Exchange
+
+Applications use networks to exchange information between clients, servers, databases, and external services.
+
+For example, when a browser requests a webpage, it communicates with a web server over a network.
+
+### 🖆 Centralized Management
+
+Organizations can manage users, devices, applications, and resources through centralized network infrastructure.
+
+### 🖆 Scalability
+
+Networks allow organizations to add more devices, services, users, and locations without redesigning the entire infrastructure.
+
+### 🖆 Remote Access
+
+Users can access organizational resources from remote locations through technologies such as VPNs and secure remote-access services.
 
 # 🗁 Basic Components of a Network
 
-### End Devices
+A computer network consists of several components that work together to provide communication.
 
-End devices are the systems that originate or consume network communication.
+### 🖆 Network Devices
 
-Examples:
+Physical or virtual devices that connect networks and forward data.
 
-* Desktop computers
-* Laptops
-* Smartphones
-* Servers
-* Network printers
-* IP cameras
-* Smart sensors
+Common examples:
 
-An end device commonly uses a network interface to connect to a network.
+| Device | Purpose |
+| --- | --- |
+| Router | Connects different IP networks |
+| Switch | Connects devices within a local network |
+| Hub | Repeats incoming signals to all ports |
+| Bridge | Connects network segments at Layer 2 |
+| Access Point | Provides wireless network connectivity |
+| Modem | Converts signals for a particular access technology |
+| Firewall | Controls network traffic according to security rules |
+| Network Interface Card (NIC) | Provides a device with network connectivity |
 
-### Network Interface
+### 🖆 Network Interfaces
 
-A network interface provides connectivity between a device and a network.
+A network interface is the point through which a device connects to a network.
 
 Examples include:
 
-* Ethernet network interface cards (NICs)
-* Wi-Fi adapters
-* Virtual network interfaces
-* Fiber-optic network interfaces
+* Ethernet interfaces.
+* Wireless interfaces.
+* Fiber-optic interfaces.
+* Virtual network interfaces.
 
-![He](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F612II75jdSL._AC_SL1500_.jpg&f=1&nofb=1&ipt=564d21ff9d8d9ffe470ab9a500096b6daa269919dfd26a6dea050eb6dbb5cf54&ipo=images)
+On Linux, you can inspect network interfaces using:
 
-A network interface can have a link-layer address, such as a MAC address, and may be configured with one or more IP addresses.
-
-### Transmission Media
-
-Transmission media carry signals between network interfaces.
-
-Examples:
-
-* Twisted-pair copper cable
-* Fiber-optic cable
-* Radio waves used by Wi-Fi
-* Microwave links
-
-<figure>    <img src="https://res.cloudinary.com/du7tjwbyi/image/upload/v1793415818/Radio_Wave_yk384c.jpg" alt="Alt text" />    <figcaption>Figure: How Wi-Fi Networks Distribute Data via Radio Waves</figcaption></figure>
-
-<figure>    <img src="https://res.cloudinary.com/du7tjwbyi/image/upload/v1793419203/Microwave_links1_auzqwu.jpg" alt="Alt text" />    <figcaption>Figure: Microwave Links and Two-Way Communication in Live Broadcasting</figcaption></figure>
-
-### Intermediary Devices
-
-Intermediary devices connect network segments, forward traffic, or enforce network policies.
-
-Examples:
-
-* Switches
-* Routers
-* Wireless access points
-* Firewalls
-* Network bridges
-
-Different devices operate at different protocol layers and perform different functions.
-
-### Network Services
-
-Network services provide capabilities required by clients and applications.
-
-Examples:
-
-* DNS resolves domain names to IP addresses.
-* DHCP automatically provides IP configuration.
-* NTP synchronizes system clocks.
-* Authentication services verify user or device identities.
-* Web servers deliver web content.
-
-# 🗁 How Network Communication Works
-
-Consider a laptop accessing a web server.
-
-```text
-[LAPTOP]
-    🠟
-[SWITCH or WI-FI ACCESS POINT]
-    🠟
-[ROUTER]
-    🠟
-[ISP NETWORK] 🠊 [INTERNET] 🠊 [WEB SERVER]
+```bash
+ip link show
 ```
 
-A simplified communication sequence is:
+To display IP addresses assigned to interfaces:
 
-1. The application generates data.
-2. The operating system prepares the data for transmission using the appropriate protocols.
-3. The device determines whether the destination is local or remote.
-4. The network interface transmits the data.
-5. Network devices forward the traffic toward the destination.
-6. The receiving device processes the incoming data.
-7. The application receives the data and responds as required.
+```bash
+ip addr show
+```
 
-The exact process depends on the protocols, network topology, and destination.
+### 🖆 Transmission Media
 
-# 🗁 Fundamental Communication Concepts
+Transmission media provide the path through which data travels.
 
-### Sender and Receiver
+Common types include:
 
-* **Sender:** The device or application that transmits data.
-* **Receiver:** The device or application that receives data.
+* Twisted-pair copper cables.
+* Coaxial cables.
+* Fiber-optic cables.
+* Wireless radio signals.
 
-The same device can act as both sender and receiver during a two-way communication session.
+### 🖆 Network Protocols
 
-### Protocol
+Protocols define the rules that devices follow when communicating.
 
-A protocol is a defined set of rules that governs communication between systems.
+Examples include:
+
+| Protocol | Purpose |
+| --- | --- |
+| Ethernet | Wired local network communication |
+| IP | Logical addressing and packet delivery |
+| TCP | Reliable, connection-oriented transport |
+| UDP | Connectionless transport |
+| HTTP | Web communication |
+| HTTPS | Encrypted web communication |
+| DNS | Domain-name resolution |
+| DHCP | Automatic IP configuration |
+
+### 🖆 Network Software
+
+Network software enables devices to communicate and provides services to users and applications.
+
+Examples include:
+
+* Network operating systems.
+* Network drivers.
+* DNS and DHCP services.
+* Web servers.
+* Firewall software.
+* Network monitoring tools.
+
+# 🗁 How Does Network Communication Work?
+
+Network communication involves sending data from a source device to a destination device.
+
+Consider what happens when a computer accesses a website.
+
+```text
+       Client Computer
+              |
+              | HTTP/HTTPS Request
+              |
+          [Router]
+              |
+              | Internet
+              |
+        [Destination Server]
+              |
+              | HTTP/HTTPS Response
+              |
+          [Router]
+              |
+              |
+       Client Computer
+```
+
+The communication process can be understood through these stages:
+
+### 🖆 Source Generates Data
+
+An application creates data that needs to be transmitted.
+
+For example, a browser generates an HTTP request when a user opens a website.
+
+### 🖆 Data Is Encapsulated
+
+Networking protocols add the information required for communication.
+
+Depending on the protocol, this information can include:
+
+* Source and destination addresses.
+* Source and destination ports.
+* Protocol identifiers.
+* Error-checking information.
+
+### 🖆 Data Travels Through the Network
+
+The operating system sends the data through an appropriate network interface.
+
+Switches forward Ethernet frames within local networks, while routers forward IP packets between networks.
+
+### 🖆 Destination Receives Data
+
+The destination device receives the transmitted data and processes it according to the relevant network protocols.
+
+### 🖆 Response Is Returned
+
+The destination application may generate a response, which travels back through the network to the original device.
+
+# 🗁 Types of Network Communication
+
+Network communication can be classified according to how devices exchange information.
+
+### 🖆 Unicast
+
+Unicast is communication between one sender and one specific receiver.
+
+Example:
+
+A computer sends a request to a web server.
+
+```text
+[Sender] ----------> [Receiver]
+```
+
+### 🖆 Broadcast
+
+Broadcast is communication in which one sender transmits data to all devices within the relevant broadcast domain.
+
+Example:
+
+An IPv4 ARP request is commonly sent as an Ethernet broadcast.
+
+```text
+                  [Device A]
+                      |
+        +-------------+-------------+
+        |             |             |
+     [Device B]   [Device C]   [Device D]
+```
+
+### 🖆 Multicast
+
+Multicast allows one sender to transmit data to a specific group of interested receivers.
+
+Example:
+
+A multicast video stream can be delivered to multiple subscribed devices without sending an independent stream to every receiver.
+
+```text
+                  [Sender]
+                      |
+                [Multicast Group]
+                  /    |    \
+                 /     |     \
+              [PC-1] [PC-2] [PC-3]
+```
+
+These communication methods are explored in detail in the dedicated networking fundamentals topics.
+
+# 🗁 Network Addressing Fundamentals
+
+Devices need addresses so that network communication can identify the intended destination.
+
+Two important addressing concepts are MAC addresses and IP addresses.
+
+### 🖆 MAC Address
+
+A Media Access Control (MAC) address is a link-layer address associated with a network interface.
+
+Example:
+
+```text
+00:1A:2B:3C:4D:5E
+```
+
+MAC addresses are primarily used for communication within a local Layer 2 network.
+
+### 🖆 IP Address
+
+An Internet Protocol (IP) address identifies a network interface within an IP network.
+
+IPv4 example:
+
+```text
+192.168.1.10
+```
+
+IPv6 example:
+
+```text
+2001:db8:1::10
+```
+
+IP addresses are used for logical addressing and packet delivery across interconnected networks.
+
+### 🖆 Port Number
+
+A port number identifies a communication endpoint associated with a transport-layer protocol.
 
 Examples:
 
-| Protocol | Purpose                                                      |
-| -------- | ------------------------------------------------------------ |
-| Ethernet | Local wired network communication                            |
-| IP       | Addressing and forwarding packets between networks           |
-| TCP      | Reliable, ordered byte-stream transport                      |
-| UDP      | Connectionless datagram transport                            |
-| DNS      | Domain-name resolution                                       |
-| HTTP     | Web application communication                                |
-| TLS      | Cryptographic protection for supported application protocols |
+| Port | Common Service |
+| --- | --- |
+| 22 | SSH |
+| 53 | DNS |
+| 80 | HTTP |
+| 443 | HTTPS |
+| 3306 | MySQL |
+| 5432 | PostgreSQL |
 
-### Addressing
+A typical network connection can be described using:
 
-Addresses identify interfaces, hosts, or services within particular communication systems.
+* Source IP address.
+* Destination IP address.
+* Transport protocol.
+* Source port.
+* Destination port.
 
-Important address types include:
+For TCP and UDP, these values help identify communication flows between applications.
 
-* **MAC address:** Used for link-layer delivery on technologies such as Ethernet.
-* **IP address:** Used for logical addressing and routing.
-* **Port number:** Identifies a transport-layer endpoint associated with an application or service.
-* **Domain name:** A human-readable name that can be resolved through DNS.
+# 🗁 Client-Server Architecture
 
-These identifiers serve different purposes and are not interchangeable.
+Client-server architecture is a networking model in which clients request services and servers provide them.
 
-### Data Encapsulation
+### 🖆 Client
 
-As application data moves through a protocol stack, each layer may add its own control information.
-
-A simplified example is:
-
-```text
-Application data 🠊 TCP segment 🠊 IP packet 🠊 Ethernet frame 🠊 Physical signals
-```
-
-The receiving system processes the information in the reverse direction. This process is explored in detail in the Network Models section.
-
-### Bandwidth and Throughput
-
-* **Bandwidth:** A link's nominal capacity or a communication channel's specified capacity, depending on context.
-* **Throughput:** The actual rate at which data is successfully transferred.
-* **Goodput:** The rate of useful application data delivered, excluding protocol overhead and retransmitted data.
-
-A 100 Mbps link does not guarantee 100 Mbps of application goodput.
-
-### Latency
-
-Latency is the time required for data to travel between endpoints or for a specified communication operation to complete.
-
-Network delay can include:
-
-* Processing delay
-* Queuing delay
-* Transmission delay
-* Propagation delay
-
-Round-trip time (RTT) measures the time for a signal or packet to travel to a destination and for a response to return.
-
-### Packet Loss
-
-Packet loss occurs when packets fail to reach their intended destination or are discarded before delivery.
-
-Common causes include congestion, physical-layer errors, faulty equipment, routing problems, and intentional filtering.
-
-### Jitter
-
-Jitter describes variation in packet delay. It matters for real-time applications such as voice calls, video conferencing, and interactive media.
-
-# 🗁 Local and Remote Communication
-
-A device commonly communicates with two broad destination categories:
-
-* **Local destination:** Reachable directly on the same logical IP subnet, subject to the network configuration.
-* **Remote destination:** Requires forwarding through a router or another Layer 3 forwarding mechanism.
-
-For example:
-
-```text
-Laptop IP:      192.168.10.20/24
-Server IP:      192.168.10.50/24
-Gateway:        192.168.10.1
-Remote server:  203.0.113.10
-```
-
-The laptop can normally reach `192.168.10.50` directly at Layer 2 if both devices are in the same VLAN and no isolation policy prevents communication.
-
-To reach `203.0.113.10`, the laptop normally sends the traffic to its default gateway.
-
-The addresses in this example are documentation addresses, not recommended public destinations for real connectivity tests.
-
-# 🗁 Client-Server and Peer-to-Peer Models
-
-### Client-Server
-
-A client requests a service from a server.
+A client is a device or application that requests resources or services.
 
 Examples:
 
-* A browser requests a web page from a web server.
-* A DNS client queries a DNS resolver.
-* A computer requests an address from a DHCP server.
+* Web browsers.
+* Mobile applications.
+* Email clients.
+* Database clients.
 
-### Peer-to-Peer (P2P)
+### 🖆 Server
 
-Peers communicate or share resources without every exchange depending on a single central application server.
+A server is a system or application that provides resources or services to clients.
 
-Examples include certain file-sharing systems and distributed applications.
+Examples:
 
-Client-server and peer-to-peer describe application or resource-sharing architectures; they do not define the physical network topology.
+* Web servers.
+* Database servers.
+* DNS servers.
+* File servers.
+* Mail servers.
 
-# 🗁 Network Performance Metrics
+**Example: Web Application**
 
-| Metric | Meaning | Typical unit |
+```text
+             +----------------+
+             |  Web Browser   |
+             |    Client      |
+             +----------------+
+                     |
+                     | HTTPS
+                     |
+             +----------------+
+             |   Web Server   |
+             +----------------+
+                     |
+                     | Database Query
+                     |
+             +----------------+
+             | Database Server|
+             +----------------+
+```
+
+When a user opens a web application:
+
+* The browser sends an HTTP request.
+* The web server processes the request.
+* The web server may communicate with a database.
+* The server returns an HTTP response.
+* The browser displays the result.
+
+A single machine can act as both a client and a server depending on the communication taking place.
+
+# 🗁 Peer-to-Peer Networking
+
+Peer-to-peer (P2P) networking is a communication model in which devices can communicate and share resources directly without requiring a dedicated central server for every interaction.
+
+Each participating device is called a peer.
+
+```text
+              [Peer A]
+              /      \
+             /        \
+        [Peer B] ---- [Peer C]
+             \        /
+              \      /
+              [Peer D]
+```
+
+Common examples include:
+
+* Peer-to-peer file sharing.
+* Distributed communication systems.
+* Blockchain networks.
+* Some multiplayer networking architectures.
+
+### 🖆 Client-Server vs Peer-to-Peer
+
+| Feature | Client-Server | Peer-to-Peer |
 | --- | --- | --- |
-| Bandwidth | Specified or nominal capacity | bit/s |
-| Throughput | Actual transfer rate | bit/s |
-| Goodput | Useful application-data rate | bit/s |
-| Latency | Delay | ms |
-| RTT | Round-trip delay | ms |
-| Packet loss | Missing or discarded packets | % |
-| Jitter | Variation in packet delay | ms |
-| Availability | Time a service is operational | % |
+| Architecture | Centralized service provider | Distributed peers |
+| Communication | Clients request server services | Peers communicate directly |
+| Management | Usually centrally managed | Often distributed |
+| Scalability | Depends on server infrastructure | Depends on peer participation and design |
+| Failure impact | Server failure may affect clients | Individual peer failure may have limited impact |
+| Example | Web application | BitTorrent |
 
-Always identify what a measurement represents. For example, bandwidth and throughput are not synonyms.
+# 🗁 Network Topology Overview
 
-# 🗁 Basic Network Inspection
+Network topology describes how network devices and connections are arranged.
 
-### Windows
+Two important categories are:
 
-Display IP configuration:
+### 🖆 Physical Topology
 
-```powershell
-ipconfig /all
-```
+Physical topology describes the actual physical arrangement of devices, cables, and network connections.
 
-Display MAC addresses:
+### 🖆 Logical Topology
 
-```powershell
-getmac /v
-```
+Logical topology describes how data flows between devices, regardless of their physical arrangement.
 
-Inspect the route table:
+Common topology types include:
 
-```powershell
-route print
-```
+| Topology | Description |
+| --- | --- |
+| Bus | Devices share a common communication medium |
+| Star | Devices connect through a central device |
+| Ring | Devices form a closed communication loop |
+| Mesh | Devices have multiple interconnections |
+| Tree | Devices are arranged in a hierarchical structure |
+| Hybrid | Combines multiple topology types |
 
-Test reachability:
+Detailed topology concepts are covered in the network topologies documentation.
 
-```powershell
-ping 192.168.10.1
-```
+# 🗁 LAN, WAN, and the Internet
 
-Inspect the IPv4 neighbor cache:
+Networks can be categorized according to their geographical coverage and purpose.
 
-```powershell
-arp -a
-```
+### 🖆 Local Area Network (LAN)
 
-### Linux
+A LAN connects devices within a limited geographical area.
 
-Display IP addresses:
+Examples:
+
+* Home networks.
+* Office networks.
+* School networks.
+* Laboratory networks.
+
+### 🖆 Wide Area Network (WAN)
+
+A WAN connects networks across larger geographical areas.
+
+Examples:
+
+* Networks connecting multiple company branches.
+* ISP backbone networks.
+* Enterprise networks spanning multiple regions.
+
+### 🖆 Internet
+
+The Internet is a global system of interconnected networks that communicate using the TCP/IP protocol suite.
+
+It allows devices and services around the world to exchange information.
+
+### 🖆 Intranet
+
+An intranet is a private network or collection of services accessible within an organization.
+
+### 🖆 Extranet
+
+An extranet provides controlled access to selected internal resources for authorized external users or organizations.
+
+# 🗁 Network Performance Fundamentals
+
+Network performance describes how effectively a network transfers data and responds to communication requests.
+
+Important performance metrics include:
+
+### 🖆 Bandwidth
+
+Bandwidth represents the maximum data-transfer capacity of a network connection under specified conditions.
+
+It is commonly measured in:
+
+* Kbps.
+* Mbps.
+* Gbps.
+* Tbps.
+
+### 🖆 Throughput
+
+Throughput is the actual rate at which data is successfully transferred over a network.
+
+### 🖆 Latency
+
+Latency is the time required for data to travel between two points.
+
+It is commonly measured in milliseconds (ms).
+
+### 🖆 Jitter
+
+Jitter describes variations in packet delay over time.
+
+High jitter can negatively affect real-time applications such as voice and video communication.
+
+### 🖆 Packet Loss
+
+Packet loss occurs when transmitted packets fail to reach their intended destination.
+
+It can result from congestion, transmission errors, faulty equipment, or other network problems.
+
+These performance metrics are explored in greater detail in the QoS and bandwidth section.
+
+# 🗁 Essential Networking Commands in Ubuntu
+
+Ubuntu provides several command-line utilities for inspecting and troubleshooting network connectivity.
+
+### 🖆 Display Network Interfaces
 
 ```bash
-ip addr
+ip link show
 ```
 
-Display network interfaces:
+Displays available network interfaces and their link-layer status.
+
+### 🖆 Display IP Addresses
 
 ```bash
-ip link
+ip addr show
 ```
 
-Display routes:
+Displays IPv4 and IPv6 addresses assigned to interfaces.
+
+### 🖆 Display Routing Table
 
 ```bash
-ip route
+ip route show
 ```
 
-Inspect the neighbor cache:
+Displays the IPv4 routing table.
+
+For IPv6:
 
 ```bash
-ip neigh
+ip -6 route show
 ```
 
-Test reachability:
+### 🖆 Test Network Connectivity
 
 ```bash
-ping -c 4 192.168.10.1
+ping -c 4 8.8.8.8
 ```
 
-Replace example addresses with the appropriate addresses for your own network.
+Sends four ICMP Echo Requests to the specified destination.
 
-# 🖆 Review Questions
+### 🖆 Trace the Network Path
 
-#### What is a computer network?
+Install traceroute if necessary:
 
-A computer network is a collection of interconnected devices that communicate and exchange data through wired or wireless communication links.
+```bash
+sudo apt update
+sudo apt install traceroute
+```
 
-#### What roles do end devices and intermediary devices play?
+Trace the path to a destination:
 
- **End devices** originate or consume network communication (e.g., computers, smartphones, servers).
+```bash
+traceroute google.com
+```
 
-**Intermediary devices** connect network segments, forward traffic, or enforce network policies (e.g., switches, routers, firewalls).
+### 🖆 Inspect DNS Resolution
 
-#### What is a network protocol?
+Install DNS utilities if necessary:
 
-A network protocol is a defined set of rules that governs communication between systems.
+```bash
+sudo apt install dnsutils
+```
 
-#### How do MAC addresses differ from IP addresses?
+Query a DNS server:
 
-* A **MAC address** is a link-layer address used for local delivery (such as on Ethernet).
-* An **IP address** is used for logical addressing and routing across networks.
+```bash
+dig google.com
+```
 
-#### What is the difference between bandwidth, throughput, and goodput?
+### 🖆 Display Listening Ports
 
-* **Bandwidth:** A link's nominal capacity or a communication channel's specified capacity.
-* **Throughput:** The actual rate at which data is successfully transferred.
-* **Goodput:** The rate of useful application data delivered, excluding protocol overhead and retransmitted data.
+```bash
+ss -tuln
+```
 
-#### What is latency, and how does it differ from jitter?
+Displays listening TCP and UDP sockets.
 
-* **Latency** is the time required for data to travel between endpoints or for a specified communication operation to complete (delay).
-* **Jitter** describes the variation in packet delay over time.
+### 🖆 Display Network Connections
 
-#### Why does a device use a default gateway?
+```bash
+ss -tunap
+```
 
-A device uses a default gateway to forward traffic to remote destinations outside its own local IP subnet.
+Displays TCP and UDP sockets with process information where permissions allow.
 
-#### What is the difference between client-server and peer-to-peer architectures?
+### 🖆 Display the ARP and Neighbor Table
 
-* **Client-server:** Clients request services from a centralized server.
-* **Peer-to-peer (P2P):** Participants exchange resources or communicate as peers without depending on a single central application server.
+```bash
+ip neigh show
+```
 
-#### Why does a successful ping not guarantee that a web service is working?
+Displays the kernel's neighbor table, including IPv4 ARP and IPv6 neighbor information.
 
-A successful ping only proves basic reachability (ICMP response); it does not guarantee that the specific application service or web server process is running and listening.
+# 🗁 Common Networking Terms
 
-#### Which commands display network configuration on your operating system?
+| Term | Meaning |
+| --- | --- |
+| Node | Any device or endpoint connected to a network |
+| Host | A network-connected device that can send or receive data |
+| Client | A device or application requesting a service |
+| Server | A system providing services or resources |
+| Packet | A unit of data at the network layer |
+| Frame | A unit of data at the data-link layer |
+| Segment | Commonly refers to a TCP transport-layer data unit |
+| Datagram | A connectionless transport-layer data unit, commonly associated with UDP |
+| Protocol | A set of rules governing communication |
+| Interface | A connection point between a device and a network |
+| Gateway | A device or system that provides a path to another network |
+| Subnet | A logical subdivision of an IP network |
+| Bandwidth | Available data-transfer capacity |
+| Throughput | Actual achieved data-transfer rate |
+| Latency | Communication delay |
+| Packet Loss | Failure of transmitted packets to reach their destination |
 
-* **Windows:** `ipconfig /all`
-* **Linux:** `ip addr` (or `ip link`, `ip route`)
+# 🗁 Common Networking Mistakes
+
+### 🖆 Confusing MAC Addresses with IP Addresses
+
+A MAC address is used for link-layer communication, while an IP address provides logical addressing at the network layer.
+
+They serve different purposes.
+
+### 🖆 Assuming a Switch and Router Are the Same
+
+A traditional Layer 2 switch forwards Ethernet frames using MAC addresses.
+
+A router forwards IP packets between networks using routing information.
+
+Some modern devices combine switching and routing functionality, but the underlying roles remain distinct.
+
+### 🖆 Confusing Bandwidth with Throughput
+
+Bandwidth represents capacity, while throughput represents the actual transfer rate achieved.
+
+A connection with high bandwidth does not necessarily guarantee high throughput.
+
+### 🖆 Assuming Successful Ping Means Everything Works
+
+Ping tests ICMP reachability, not whether every application, port, or service is functioning correctly.
+
+A server may respond to HTTPS requests while blocking ICMP Echo Requests.
+
+### 🖆 Ignoring DNS
+
+A network connection can have working IP connectivity but still fail to access websites because of DNS resolution problems.
+
+Always distinguish between IP connectivity and name resolution.
+
+### 🖆 Ignoring the Default Gateway
+
+A device generally needs an appropriate default gateway to communicate with destinations outside its directly connected IP network.
+
+Incorrect gateway configuration can prevent external connectivity.
+
+# 🗁 Practical Exercises
+
+Use Ubuntu Linux or a virtual machine to complete these exercises.
+
+### 🖆 Exercise: Inspect Your Network Interfaces
+
+Run:
+
+```bash
+ip link show
+ip addr show
+```
+
+Identify:
+
+* Your Ethernet interface, if present.
+* Your wireless interface, if present.
+* The loopback interface.
+* The MAC address of each interface.
+* The assigned IPv4 and IPv6 addresses.
+
+### 🖆 Exercise: Inspect Your Routing Table
+
+Run:
+
+```bash
+ip route show
+```
+
+Identify:
+
+* The default route.
+* The gateway address.
+* Directly connected networks.
+* The interface used for each route.
+
+### 🖆 Exercise: Test Connectivity
+
+Test an external IP address:
+
+```bash
+ping -c 4 8.8.8.8
+```
+
+Then test a domain name:
+
+```bash
+ping -c 4 google.com
+```
+
+Compare the results and determine whether IP connectivity and DNS resolution are working.
+
+### 🖆 Exercise: Inspect Listening Services
+
+Run:
+
+```bash
+ss -tuln
+```
+
+Identify:
+
+* Listening TCP ports.
+* Listening UDP ports.
+* Services bound to `127.0.0.1`.
+* Services listening on all IPv4 interfaces (`0.0.0.0`).
+
+### 🖆 Exercise: Build a Small Virtual Network
+
+Create a simple network using VirtualBox or another virtualization platform.
+
+Requirements:
+
+* Create two Ubuntu virtual machines.
+* Connect both machines to the same virtual network.
+* Assign IP addresses within the same subnet.
+* Test communication using `ping`.
+* Inspect their neighbor tables using `ip neigh show`.
+
+Record the IP addresses, interfaces, and test results.
+
+# 🗁 Interview Questions
+
+**What is computer networking?**
+
+Computer networking is the practice of connecting devices so they can communicate and exchange data through communication protocols and network infrastructure.
+
+**Why do we need computer networks?**
+
+Networks enable resource sharing, communication, data exchange, centralized management, remote access, and scalable infrastructure.
+
+**What is the difference between a client and a server?**
+
+A client requests services or resources, while a server provides them.
+
+**What is the difference between a MAC address and an IP address?**
+
+A MAC address is a link-layer address used for local network communication, whereas an IP address is a logical address used for communication across IP networks.
+
+**What is the difference between a switch and a router?**
+
+A switch primarily forwards Ethernet frames within a Layer 2 network, while a router forwards IP packets between different networks.
+
+**What is the difference between LAN and WAN?**
+
+A LAN connects devices within a limited geographical area, while a WAN connects networks across larger geographical areas.
+
+**What is the Internet?**
+
+The Internet is a global collection of interconnected networks that communicate using the TCP/IP protocol suite.
+
+**What is a network protocol?**
+
+A network protocol defines the rules, formats, and procedures that devices follow to communicate.
+
+**What is the difference between bandwidth and throughput?**
+
+Bandwidth describes the capacity of a connection, while throughput measures the actual data-transfer rate achieved.
+
+**What is latency?**
+
+Latency is the time required for data to travel between two points in a network.
+
+**What is the difference between unicast, broadcast, and multicast?**
+
+Unicast communicates with one receiver, broadcast communicates with all devices in a broadcast domain, and multicast communicates with a specific group of receivers.
+
+**What is the purpose of a default gateway?**
+
+A default gateway provides a path for sending traffic to destinations outside a device's directly connected networks.
+
+# 🗁 References
+
+* [Cisco Networking Basics](https://www.cisco.com/)
+* [Cloudflare Learning Center](https://www.cloudflare.com/learning/)
+* [IBM Networking Fundamentals](https://www.ibm.com/think/topics/networking)
+* [Ubuntu Server Networking Documentation](https://documentation.ubuntu.com/server/how-to/networking/)
+* [Linux iproute2 Documentation](https://www.kernel.org/doc/html/latest/networking/)

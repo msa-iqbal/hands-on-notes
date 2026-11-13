@@ -1,200 +1,693 @@
 # Network Types
 
-Networks can be classified according to geographic coverage, ownership, communication technology, access model, and purpose.
+Computer networks can be classified according to their geographical coverage, ownership, architecture, communication technology, and intended purpose.
 
-Understanding these classifications helps network engineers select appropriate architectures, technologies, security controls, and connectivity solutions.
+Understanding different network types helps network engineers choose appropriate technologies, design network infrastructure, and determine how devices and locations should communicate.
+
+This document covers the major network classifications, their characteristics, practical applications, and differences.
+
+# 🗁 Classification of Networks
+
+Networks are commonly classified based on geographical coverage.
+
+The major network types include:
+
+* Personal Area Network (PAN).
+* Local Area Network (LAN).
+* Wireless Local Area Network (WLAN).
+* Campus Area Network (CAN).
+* Metropolitan Area Network (MAN).
+* Wide Area Network (WAN).
+* Global Area Network (GAN).
+
+Each network type serves different connectivity requirements.
 
 # 🗁 Personal Area Network (PAN)
 
-A Personal Area Network connects devices around an individual over a short distance.
+A Personal Area Network (PAN) connects personal devices within a relatively short distance around an individual.
 
-**Examples:**
+PANs are commonly used to connect devices such as smartphones, laptops, headphones, smartwatches, and wireless peripherals.
 
-* A smartphone connected to wireless earbuds using Bluetooth.
-* A laptop connected to a phone through a personal hotspot.
-* A smartwatch communicating with a smartphone.
+### 🖆 Characteristics
 
-**Characteristics:**
+* Covers a very small geographical area.
+* Usually operates within a few meters.
+* Supports communication between personal devices.
+* Can use wired or wireless technologies.
+* Typically requires relatively simple configuration.
 
-* Short-range connectivity.
-* Usually limited to personal devices.
-* Commonly uses Bluetooth, USB, or other short-range technologies.
+### 🖆 Common Technologies
+
+| Technology | Purpose |
+| --- | --- |
+| Bluetooth | Connects wireless headphones, keyboards, and other peripherals |
+| USB | Provides wired communication between devices |
+| NFC | Enables very short-range communication |
+| Infrared | Supports short-range line-of-sight communication |
+
+### 🖆 Example
+
+A smartphone connected to wireless headphones through Bluetooth creates a simple PAN.
+
+```text
+             [Smartphone]
+                  |
+              Bluetooth
+                  |
+             [Headphones]
+                  |
+              Bluetooth
+                  |
+              [Smartwatch]
+```
+
+### 🖆 Practical Applications
+
+* Connecting wireless headphones.
+* Synchronizing smartwatches.
+* Sharing files between nearby devices.
+* Connecting wireless keyboards and mice.
+* Communicating with personal IoT devices.
 
 # 🗁 Local Area Network (LAN)
 
-A Local Area Network connects devices within a limited area, such as a home, office, laboratory, or building.
+A Local Area Network (LAN) connects computers and other devices within a limited geographical area, such as a home, office, school, or laboratory.
 
-**Examples:**
+LANs commonly use Ethernet switches, routers, and network cables to provide connectivity.
 
-* Computers connected to an office switch.
-* A home Ethernet network.
-* A computer laboratory network.
+### 🖆 Characteristics
 
-**Characteristics:**
+* Covers a limited geographical area.
+* Usually owned and managed by an individual or organization.
+* Supports high-speed communication.
+* Provides local resource sharing.
+* Typically has lower latency than long-distance networks.
+* Can operate independently of an Internet connection.
 
-* Usually privately administered.
-* Commonly uses Ethernet and Wi-Fi.
-* Typically offers high capacity within the local environment.
-* Can use VLANs to create separate logical broadcast domains.
+### 🖆 Common Technologies
 
-A LAN can contain multiple IP subnets and VLANs. The terms LAN, IP subnet, and broadcast domain are related but not interchangeable.
+* Ethernet.
+* IPv4 and IPv6.
+* TCP and UDP.
+* VLANs.
+* Wi-Fi for wireless access.
 
-## Difference between a LAN and VLAN
+### 🖆 Example
 
-The difference between **LAN** and **VLAN**:
+An office LAN connects computers, printers, servers, and other network devices.
 
-#### What is a LAN (Local Area Network)?
+```text
+                  [Router]
+                     |
+                  [Switch]
+              /      |      \
+             /       |       \
+          [PC-1]  [PC-2]  [Printer]
+                     |
+                  [Server]
+```
 
-* It is a **physical** network.
-* **Simple Example:** Suppose you have 5 computers in a room at your home or office. You connect them together using a network switch and cables—that is a LAN. Everything is physically connected with real wires right in front of you.
+All connected devices can communicate through the local network according to their addressing and security configurations.
 
-#### What is a VLAN (Virtual Local Area Network)?
+### 🖆 Practical Applications
 
-* It is a **virtual or logical** network (created through software).
-* **Simple Example:** Suppose you have 10 computers in the same room at your office. You want 5 of them to be for the 'Accounts' department and the other 5 for the 'IT' department. Instead of buying separate cables or switches, you use software inside the switch to divide them into two separate groups. This division is a VLAN.
+* Office networking.
+* Home networking.
+* Computer laboratories.
+* File and printer sharing.
+* Local database access.
+* Internal application hosting.
 
-**Main Differences at a Glance:**
+# 🗁 Wireless Local Area Network (WLAN)
 
-| Feature                    | LAN (Local Area Network)                                                                    | VLAN (Virtual Local Area Network)                                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Structure**              | It is a real or **physical** connection (built with wires and switches).                    | It is a **virtual or logical** connection created through software.                                                               |
-| **Security**               | Relatively lower, because everyone on the same network can access or see each other's data. | Much higher, because specific groups or departments can be kept isolated from one another (e.g., HR cannot access Finance files). |
-| **Flexibility & Mobility** | If a computer is moved from one place to another, cabling often needs to be changed.        | No matter where the computer is moved, it can be kept in its original group simply through software configuration.                |
+A Wireless Local Area Network (WLAN) provides local network connectivity through wireless communication rather than requiring a physical Ethernet connection for every client device.
 
-# 🗁Wireless Local Area Network (WLAN)
+WLANs commonly use Wi-Fi technologies based on the IEEE 802.11 family of standards.
 
-A WLAN is a LAN that uses wireless communication, commonly IEEE 802.11 Wi-Fi.
+### 🖆 Characteristics
 
-**Components:**
+* Provides wireless connectivity within a limited area.
+* Allows devices to connect without Ethernet cables.
+* Uses wireless access points.
+* Supports mobile devices and roaming.
+* Requires appropriate wireless security configuration.
+* Can experience interference and signal degradation.
 
-* Wireless clients.
-* Access points (APs).
-* Ethernet switching infrastructure.
-* Optional routers, controllers, and authentication servers.
+### 🖆 Common Technologies
 
-A WLAN can connect clients to a wired LAN through an access point.
+* IEEE 802.11 standards.
+* Wi-Fi 4, Wi-Fi 5, Wi-Fi 6, and newer generations.
+* WPA2 and WPA3 security.
+* 2.4 GHz, 5 GHz, and 6 GHz frequency bands where supported.
 
-Wi-Fi does not automatically eliminate the need for switching, routing, addressing, or security controls.
+### 🖆 Example
+
+A wireless router or access point connects laptops, smartphones, and tablets to the local network.
+
+```text
+                  [Router]
+                     |
+                [Access Point]
+                     |
+              Wireless Connection
+                /     |      \
+               /      |       \
+           [Laptop] [Phone] [Tablet]
+```
+
+### 🖆 Practical Applications
+
+* Home Wi-Fi networks.
+* Office wireless connectivity.
+* Public Wi-Fi hotspots.
+* Educational institutions.
+* Wireless IoT deployments.
+
+### 🖆 LAN vs WLAN
+
+| Feature | LAN | WLAN |
+| --- | --- | --- |
+| Connectivity | Commonly wired | Wireless |
+| Medium | Ethernet cable | Radio frequency |
+| Mobility | Limited by cable connection | Supports mobility within coverage |
+| Interference | Generally less susceptible to radio interference | Susceptible to wireless interference |
+| Security | Physical and network access controls | Requires wireless authentication and encryption |
+| Typical technology | Ethernet | Wi-Fi |
+
+A WLAN is a type of LAN. The distinction primarily concerns how devices connect to the local network.
+
+# 🗁 Campus Area Network (CAN)
+
+A Campus Area Network (CAN) connects multiple LANs across a geographically limited campus or organizational property.
+
+It is commonly used by universities, hospitals, corporate campuses, and large educational institutions.
+
+A CAN is larger than an individual building LAN but generally smaller than a metropolitan network.
+
+### 🖆 Characteristics
+
+* Connects multiple local networks.
+* Covers a campus or a group of nearby buildings.
+* Usually managed by a single organization.
+* Commonly uses fiber-optic backbone connections.
+* Supports centralized network management.
+* Can use VLANs and routing to separate departments.
+
+### 🖆 Example
+
+A university connects its administration building, library, laboratories, and student accommodation through a campus backbone.
+
+```text
+                  [Core Router]
+                       |
+                 [Core Switch]
+                       |
+          +------------+------------+
+          |            |            |
+       [Building A] [Building B] [Building C]
+          |            |            |
+       [Switch]     [Switch]     [Switch]
+          |            |            |
+       [Clients]    [Clients]    [Clients]
+```
+
+Each building may have its own LAN, while the campus backbone provides communication between them.
+
+### 🖆 Practical Applications
+
+* University campuses.
+* Hospital networks.
+* Corporate office campuses.
+* Industrial facilities.
+* Research institutions.
 
 # 🗁 Metropolitan Area Network (MAN)
 
-A Metropolitan Area Network interconnects networks across a city or metropolitan region.
+A Metropolitan Area Network (MAN) connects multiple networks across a city or metropolitan region.
 
-**Examples:**
+MANs are commonly operated by telecommunications companies, service providers, government organizations, and large enterprises.
 
-* A municipal fiber network.
-* A service provider's metropolitan Ethernet infrastructure.
-* Interconnected campuses across a city.
+### 🖆 Characteristics
 
-MAN is primarily a geographic classification, not a specific protocol.
+* Covers a city or metropolitan region.
+* Connects multiple LANs or campus networks.
+* Often uses fiber-optic infrastructure.
+* Can provide high-speed connectivity between geographically separated locations.
+* May be operated by a telecommunications provider.
+* Can support enterprise and service-provider services.
+
+### 🖆 Common Technologies
+
+* Metro Ethernet.
+* Fiber-optic networks.
+* Carrier Ethernet.
+* MPLS-based services.
+* Provider-managed optical transport.
+
+### 🖆 Example
+
+A company connects its offices across a city using a service-provider Metro Ethernet network.
+
+```text
+             [Head Office LAN]
+                    |
+                    |
+              [Metro Network]
+               /     |     \
+              /      |      \
+        [Branch A] [Branch B] [Branch C]
+           LAN        LAN       LAN
+```
+
+The provider's metropolitan infrastructure carries traffic between the different office locations.
+
+### 🖆 Practical Applications
+
+* Connecting company branches across a city.
+* Municipal government networks.
+* University networks spanning multiple city locations.
+* Telecommunications infrastructure.
+* Metropolitan Internet services.
 
 # 🗁 Wide Area Network (WAN)
 
-A Wide Area Network connects networks across large geographic areas.
+A Wide Area Network (WAN) connects multiple networks across large geographical areas, such as countries, regions, or continents.
 
-**Examples:**
+WANs allow organizations to connect geographically distributed offices, data centers, cloud environments, and remote users.
 
-* A company connecting offices in multiple countries.
-* An ISP connecting regional points of presence.
-* A branch office connected to headquarters through a private WAN or VPN.
+### 🖆 Characteristics
 
-WAN technologies may include:
+* Covers large geographical areas.
+* Connects multiple LANs and other networks.
+* Often depends on telecommunications service providers.
+* Can use leased lines, fiber, MPLS, broadband, and wireless technologies.
+* May involve higher latency than local networks.
+* Requires routing between different networks.
 
+### 🖆 Common Technologies
+
+* MPLS.
 * Leased lines.
-* MPLS-based services.
-* Carrier Ethernet.
-* Fiber-optic transport.
-* Microwave links.
-* Cellular connectivity.
-* Internet-based VPNs.
+* Metro Ethernet.
+* Broadband Internet.
+* IPsec VPN.
+* SD-WAN.
+* Satellite connectivity.
+* Long-distance fiber-optic networks.
 
-A WAN can be privately operated, provider-managed, or built using a combination of services.
+### 🖆 Example
+
+A multinational company connects its offices in different countries through a WAN.
+
+```text
+               [Head Office]
+                    |
+                 [WAN]
+              /     |     \
+             /      |      \
+       [Branch A] [Branch B] [Branch C]
+          Asia      Europe    America
+```
+
+Each branch maintains its own local network, while WAN connectivity enables communication between locations.
+
+### 🖆 Practical Applications
+
+* Enterprise branch connectivity.
+* Banking networks.
+* International business infrastructure.
+* Cloud connectivity.
+* ISP backbone connectivity.
+* Data center interconnection.
 
 # 🗁 Global Area Network (GAN)
 
-A Global Area Network describes connectivity spanning a global scale.
+A Global Area Network (GAN) is a network architecture that provides connectivity across multiple geographical regions or worldwide locations.
 
-The term is less standardized in everyday network engineering than LAN and WAN. Global connectivity is commonly implemented through interconnected carrier networks, Internet backbones, satellite systems, and international transport infrastructure.
+The term describes global-scale connectivity rather than one universally standardized network technology.
 
-# 🗁 Storage Area Network (SAN)
+GANs can involve interconnected WANs, satellite communication systems, undersea fiber cables, and international telecommunications infrastructure.
 
-A Storage Area Network provides specialized network connectivity between servers and shared storage systems.
+### 🖆 Characteristics
+
+* Supports worldwide connectivity.
+* Connects geographically distributed networks.
+* Can use multiple telecommunications technologies.
+* Requires coordination across network providers and regions.
+* May involve complex routing and network management.
+
+### 🖆 Example
+
+A global organization operates data centers in Asia, Europe, and North America and connects them through international network infrastructure.
+
+```text
+             [Asia Data Center]
+                    |
+                    |
+             [Global Network]
+               /          \
+              /            \
+ [Europe Data Center]  [US Data Center]
+```
+
+### 🖆 Practical Applications
+
+* Global enterprise networks.
+* International telecommunications.
+* Worldwide cloud infrastructure.
+* Global content delivery networks.
+* International satellite communication.
+
+# 🗁 Other Important Network Types
+
+Besides geographical classifications, networks can also be categorized by their architecture, purpose, or specialized technology.
+
+### 🖆 Storage Area Network (SAN)
+
+A Storage Area Network is a specialized high-speed network that provides servers with access to shared block-level storage.
+
+SANs are commonly used in enterprise data centers.
+
+Characteristics:
+
+* Provides centralized storage connectivity.
+* Supports block-level storage access.
+* Separates storage traffic from ordinary user traffic.
+* Can provide redundancy and high availability.
 
 Common technologies include:
 
 * Fibre Channel.
+* iSCSI.
 * Fibre Channel over Ethernet (FCoE).
-* Internet Small Computer Systems Interface (iSCSI) over Ethernet/IP.
 
-SANs are designed for storage access, availability, and performance requirements. They are distinct from ordinary file-sharing networks, although both may use Ethernet/IP technologies.
+Example:
 
-# 🗁 Virtual Private Network (VPN)
+```text
+       [Server A]       [Server B]
+            |                |
+            +--------+-------+
+                     |
+                 [SAN Fabric]
+                     |
+              [Storage Array]
+```
 
-A VPN creates a logical private communication path over an underlying network, often the public Internet.
+### 🖆 Virtual Private Network (VPN)
 
-Common applications:
+A Virtual Private Network creates a logical private communication path over an underlying network, commonly the public Internet.
 
-* Remote access for employees.
-* Site-to-site connectivity between offices.
-* Secure administrative access.
-* Interconnecting cloud and on-premises networks.
+VPN technologies can provide encryption, authentication, and secure connectivity between devices or networks.
 
-VPN technologies include IPsec, WireGuard, and OpenVPN.
+Common VPN technologies include:
 
-A VPN is a logical connectivity solution rather than a geographic network category.
+* WireGuard.
+* IPsec.
+* OpenVPN.
+* SSL/TLS-based VPN solutions.
 
-# 🗁 Intranet, Extranet, and Internet
+Example:
 
-### Intranet
+```text
+       [Remote User]
+             |
+          Internet
+             |
+        [VPN Gateway]
+             |
+       [Private Network]
+```
 
-A private organizational network or set of internal services accessible to authorized members.
+### 🖆 Virtual LAN (VLAN)
 
-### Extranet
+A Virtual LAN logically separates devices into different Layer 2 broadcast domains, even when they share the same physical switching infrastructure.
 
-A controlled extension of an organization's resources to external parties, such as suppliers, business partners, or customers.
+VLANs are commonly used to improve network segmentation, security, and traffic management.
 
-### Internet
+Example:
 
-The global system of interconnected IP networks that exchange traffic using common protocols and routing arrangements.
+```text
+                [Managed Switch]
+                  /          \
+                 /            \
+            VLAN 10          VLAN 20
+             Sales            IT
+           /      \         /    \
+        [PC-1]  [PC-2]   [PC-3] [PC-4]
+```
 
-The Internet is not a single network owned by one organization.
+Although all devices connect to the same physical switch, VLAN membership separates their Layer 2 broadcast domains.
 
-# 🗁 Client-Server and Peer-to-Peer Networks
+### 🖆 Software-Defined Wide Area Network (SD-WAN)
 
-These describe how services and resources are organized rather than how large a network is.
+SD-WAN is an approach to managing WAN connectivity through centralized software-based policies and intelligent traffic steering.
 
-**Client-server:** Clients request services from servers.
+It can use multiple underlying connections, such as broadband Internet, MPLS, and LTE or 5G.
 
-**Peer-to-peer:** Participants exchange resources or communicate as peers, potentially without a single central application server.
+Characteristics:
 
-A peer-to-peer application can still run over a LAN or the Internet.
+* Centralized policy management.
+* Application-aware traffic steering.
+* Multiple WAN transport options.
+* Automated path selection.
+* Improved visibility into WAN performance.
 
-# 🖆 Review Questions
+### 🖆 Content Delivery Network (CDN)
 
-#### How does a LAN differ from a WAN?
+A Content Delivery Network is a geographically distributed system of servers that delivers content closer to end users.
 
-A **LAN (Local Area Network)** connects devices within a limited geographic area such as a home, office, or building.
+CDNs reduce content delivery latency, improve availability, and reduce the load on origin servers.
 
-A **WAN (Wide Area Network)** connects networks across large geographic areas such as multiple cities, countries, or regional points of presence.
+Example:
 
-#### Is every LAN wired?
+A user in Bangladesh may receive website images and static assets from a nearby CDN edge location rather than retrieving every resource from a distant origin server.
 
-No. While many LANs use wired Ethernet, a **WLAN (Wireless Local Area Network)** is a type of LAN that uses wireless communication (such as Wi-Fi) instead of physical wires.
+# 🗁 Network Types Comparison
 
-#### What is the purpose of a SAN?
+The following table summarizes the major network classifications.
 
-A **SAN (Storage Area Network)** provides specialized network connectivity between servers and shared storage systems to meet specific storage access, availability, and performance requirements.
+| Network Type | Coverage | Typical Use |
+| --- | --- | --- |
+| PAN | Personal space | Connecting personal devices |
+| LAN | Home, office, or building | Local device communication |
+| WLAN | Local wireless coverage | Wi-Fi connectivity |
+| CAN | Campus or organizational property | Connecting multiple building LANs |
+| MAN | City or metropolitan region | Connecting networks across a city |
+| WAN | Country, region, or continent | Connecting distant networks |
+| GAN | Worldwide | Global network connectivity |
+| SAN | Data center or storage infrastructure | Shared storage connectivity |
+| VPN | Logical overlay across an underlying network | Secure remote or site-to-site connectivity |
+| VLAN | Logical Layer 2 network | Network segmentation |
+| SD-WAN | Multiple WAN locations | Software-managed WAN connectivity |
+| CDN | Distributed global edge infrastructure | Efficient content delivery |
 
-#### Why is a VPN not simply another geographic network type?
+# 🗁 Choosing the Right Network Type
 
-A **VPN (Virtual Private Network)** is a logical connectivity solution that creates a private communication path over an underlying network (like the public Internet), rather than being defined by a specific physical or geographic boundary.
+Network design depends on geographical coverage, performance requirements, security, cost, scalability, and operational requirements.
 
-#### Can an organization use LAN, WAN, WLAN, and VPN technologies together?
+Consider the following scenarios.
 
-Yes. Multiple network classifications and technologies can apply to the same organization simultaneously (e.g., using a LAN/WLAN locally, a WAN for branch offices, and a VPN for remote employees).
+| Scenario | Suitable Network Type |
+| --- | --- |
+| Connecting a smartphone to Bluetooth headphones | PAN |
+| Connecting computers in a small office | LAN |
+| Providing wireless connectivity in a home | WLAN |
+| Connecting buildings within a university | CAN |
+| Connecting branches across a city | MAN |
+| Connecting offices across countries | WAN |
+| Providing worldwide connectivity | GAN |
+| Connecting servers to shared storage | SAN |
+| Securely connecting remote employees | VPN |
+| Separating departments on a switch | VLAN |
+| Managing multiple enterprise WAN links | SD-WAN |
+| Delivering website content globally | CDN |
 
-#### How do an intranet and an extranet differ?
+A real-world infrastructure may combine several network types.
 
-An **intranet** is a private organizational network or internal service accessible only to authorized members of that organization.
+For example, an international company may use:
 
-An **extranet** is a controlled extension of an organization's resources shared with external parties, such as business partners, suppliers, or customers.
+* LANs inside individual offices.
+* WLANs for employee wireless access.
+* VLANs for department segmentation.
+* A CAN for its headquarters campus.
+* A WAN or SD-WAN for branch connectivity.
+* VPNs for remote employees.
+* A SAN for data center storage.
+* CDNs for delivering application content.
+
+# 🗁 Practical Examples
+
+### 🖆 Home Network
+
+A typical home network contains:
+
+* A router connected to an ISP.
+* Ethernet-connected desktop computers.
+* Wi-Fi-connected smartphones.
+* Smart televisions and IoT devices.
+
+This is primarily a LAN with a WLAN for wireless access.
+
+### 🖆 University Network
+
+A university may have:
+
+* Separate LANs for administrative departments.
+* WLAN coverage for students and employees.
+* A campus backbone connecting buildings.
+* VLANs separating students, staff, and servers.
+* WAN connectivity to external networks.
+
+This is a CAN built from multiple LANs and WLANs.
+
+### 🖆 Internet Service Provider Network
+
+An ISP may operate:
+
+* Access networks for subscribers.
+* Metropolitan fiber infrastructure.
+* Regional aggregation networks.
+* National backbone networks.
+* International upstream connections.
+
+These networks work together to deliver Internet connectivity to customers.
+
+### 🖆 Multinational Enterprise Network
+
+A multinational company may connect its global offices using WAN infrastructure.
+
+Each office maintains a LAN, while centralized network services, VPNs, and SD-WAN policies provide secure communication between locations.
+
+# 🗁 Common Misconceptions
+
+### 🖆 LAN and WLAN Are Completely Different Network Categories
+
+A WLAN is a wireless form of local area networking. Both provide local network connectivity, but they use different access media.
+
+### 🖆 WAN Always Means the Internet
+
+A WAN is not necessarily the public Internet. An organization can operate a private WAN using dedicated connectivity or provider-managed services.
+
+### 🖆 MAN Is Always Owned by a Government
+
+A metropolitan network may be owned or operated by telecommunications companies, enterprises, governments, or other organizations.
+
+### 🖆 VPN Is a Physical Network Type
+
+A VPN is generally a logical network overlay that operates over an underlying physical or virtual network.
+
+### 🖆 VLAN Requires Separate Physical Switches
+
+VLANs allow multiple logical Layer 2 networks to operate on shared physical switching infrastructure.
+
+# 🗁 Practical Exercises
+
+### 🖆 Exercise: Classify Network Scenarios
+
+Identify the most appropriate network type for each scenario.
+
+* A smartphone communicates with a smartwatch using Bluetooth.
+* A company connects computers within one office.
+* A university connects five buildings through fiber.
+* A bank connects branches across different countries.
+* A data center connects servers to shared storage.
+* A remote employee securely accesses the company network.
+* A switch separates HR and Finance devices into different broadcast domains.
+
+### 🖆 Exercise: Design a Small Office Network
+
+Design a network for an office with:
+
+* Ten desktop computers.
+* Five wireless laptops.
+* Two network printers.
+* One file server.
+* One router.
+* One managed switch.
+* One wireless access point.
+
+Identify:
+
+* The network type.
+* Required network devices.
+* Wired and wireless connections.
+* IP addressing requirements.
+* Whether VLANs are necessary.
+* How the network connects to the Internet.
+
+### 🖆 Exercise: Design a University Campus Network
+
+Create a conceptual design for a university with three buildings.
+
+Requirements:
+
+* Each building has its own LAN.
+* All buildings connect through a fiber backbone.
+* Students and staff use separate VLANs.
+* Wireless access is available throughout the campus.
+* Internet connectivity is provided through a central gateway.
+
+Identify the network types and technologies involved.
+
+# 🗁 Interview Questions
+
+**What is a PAN?**
+
+A Personal Area Network connects personal devices over a short distance, commonly using Bluetooth, USB, or NFC.
+
+**What is a LAN?**
+
+A Local Area Network connects devices within a limited geographical area, such as a home, office, or building.
+
+**What is the difference between LAN and WLAN?**
+
+A LAN provides local network connectivity, commonly through Ethernet, while a WLAN provides local connectivity through wireless technologies such as Wi-Fi.
+
+**What is a CAN?**
+
+A Campus Area Network connects multiple LANs across a campus or organizational property.
+
+**What is a MAN?**
+
+A Metropolitan Area Network connects networks across a city or metropolitan region.
+
+**What is a WAN?**
+
+A Wide Area Network connects multiple networks across large geographical areas, such as countries or continents.
+
+**What is a GAN?**
+
+A Global Area Network describes network infrastructure that provides connectivity across worldwide geographical regions.
+
+**What is the difference between LAN and WAN?**
+
+A LAN covers a limited geographical area, while a WAN connects networks across much larger distances.
+
+**What is a SAN?**
+
+A Storage Area Network is a specialized network that provides servers with access to shared block-level storage.
+
+**What is a VPN?**
+
+A Virtual Private Network provides a logical private communication path over an underlying network, often using encryption and authentication.
+
+**What is a VLAN?**
+
+A Virtual LAN logically separates devices into different Layer 2 broadcast domains on shared switching infrastructure.
+
+**What is SD-WAN?**
+
+SD-WAN uses software-defined policies to manage WAN connections and intelligently direct network traffic across available transport links.
+
+**Can an organization use multiple network types simultaneously?**
+
+Yes. Organizations commonly combine LAN, WLAN, VLAN, CAN, WAN, VPN, and other technologies to build their network infrastructure.
+
+# 🗁 References
+
+* [Cisco Networking](https://www.cisco.com/)
+* [Cloudflare Learning Center](https://www.cloudflare.com/learning/)
+* [IEEE 802 Standards](https://standards.ieee.org/)
+* [Wi-Fi Alliance](https://www.wi-fi.org/)
+* [Internet Engineering Task Force (IETF)](https://www.ietf.org/)
+* [MikroTik Documentation](https://help.mikrotik.com/docs/)

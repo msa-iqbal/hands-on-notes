@@ -60,7 +60,7 @@ Incorrect:
 
 # 🗁 Understanding the Six Heading Levels
 
-### H1 — Main Heading
+### 🖆 H1 — Main Heading
 
 H1 represents the primary title of a document.
 
@@ -74,7 +74,7 @@ Typical usage:
 * Main project title
 * Main tutorial title
 
-### H2 — Major Section
+### 🖆 H2 — Major Section
 
 H2 represents a major section within a document.
 
@@ -88,7 +88,7 @@ Typical usage:
 * Major documentation sections
 * Learning modules
 
-### H3 — Subsection
+### 🖆 H3 — Subsection
 
 H3 represents a subsection under an H2 section.
 
@@ -102,7 +102,7 @@ Typical usage:
 * Features
 * Subtopics
 
-### H4 — Sub-subsection
+### 🖆 H4 — Sub-subsection
 
 H4 provides additional organization within an H3 section.
 
@@ -110,7 +110,7 @@ H4 provides additional organization within an H3 section.
 #### HTML Elements
 ```
 
-### H5 — Detailed Subsection
+### 🖆 H5 — Detailed Subsection
 
 H5 is useful for more detailed documentation.
 
@@ -118,7 +118,7 @@ H5 is useful for more detailed documentation.
 ##### Block Elements
 ```
 
-### H6 — Lowest Heading Level
+### 🖆 H6 — Lowest Heading Level
 
 H6 is the smallest heading level supported by Markdown.
 
@@ -183,7 +183,7 @@ Markdown also supports Setext-style headings.
 
 Unlike ATX syntax, Setext uses underline characters.
 
-### H1 Syntax
+### 🖆 H1 Syntax
 
 Use equal signs (`=`) below the heading.
 
@@ -192,7 +192,7 @@ Web Development
 ===============
 ```
 
-### H2 Syntax
+### 🖆 H2 Syntax
 
 Use hyphens (`-`) below the heading
 
@@ -248,19 +248,19 @@ Closing hashes are optional and generally unnecessary.
 
 You can use inline Markdown formatting inside headings.
 
-### Bold Heading
+### 🖆 Bold Heading
 
 ```markdown
 ## **Important Concepts**
 ```
 
-### Italic Heading
+### 🖆 Italic Heading
 
 ```markdown
 ## *Advanced Topics*
 ```
 
-### Combined Formatting
+### 🖆 Combined Formatting
 
 ```markdown
 ## **Frontend** and *Backend*
@@ -377,7 +377,7 @@ A TOC is particularly useful for long technical documents.
 
 # 🖆 Common Mistakes
 
-### Mistake 1: Missing Space
+### 🖆 Mistake 1: Missing Space
 
 Incorrect:
 
@@ -391,7 +391,7 @@ Correct:
 ## Installation
 ```
 
-### Mistake 2: Skipping Heading Levels
+### 🖆 Mistake 2: Skipping Heading Levels
 
 Less organized:
 
@@ -410,10 +410,10 @@ Better:
 ### TCP
 ```
 
-### Mistake 3: Using Multiple Main Titles
+### 🖆 Mistake 3: Using Multiple Main Titles
 
 Avoid creating several unrelated H1 headings in a single document unless the document structure specifically requires them.
 
-### Mistake 4: Using Headings for Visual Styling
+### 🖆 Mistake 4: Using Headings for Visual Styling
 
 Do not use headings just because you want larger text. Use bold or other appropriate inline formatting instead.

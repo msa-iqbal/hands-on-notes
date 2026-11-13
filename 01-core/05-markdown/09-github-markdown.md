@@ -20,7 +20,7 @@ GFM makes GitHub documentation more interactive, readable, and useful for develo
 
 GFM is a Markdown specification based on CommonMark with additional GitHub-specific extensions.
 
-### Standard Markdown vs GFM
+### 🖆 Standard Markdown vs GFM
 
 | Feature | CommonMark | GitHub Flavored Markdown |
 | --------- | ------------ | -------------------------- |
@@ -110,7 +110,7 @@ Output:
 | `- [ ]` | Incomplete task |
 | `- [x]` | Completed task  |
 
-### Nested Task Lists
+### 🖆 Nested Task Lists
 
 ```markdown
 - [x] Frontend
@@ -203,42 +203,42 @@ GitHub supports special blockquote syntax for displaying alerts.
 
 Alerts highlight important information such as notes, tips, warnings, and cautions.
 
-### Note
+### 🖆 Note
 
 ```markdown
 > [!NOTE]
 > Additional information that users should know.
 ```
 
-### Tip
+### 🖆 Tip
 
 ```markdown
 > [!TIP]
 > Use meaningful commit messages to make project history easier to understand.
 ```
 
-### Important
+### 🖆 Important
 
 ```markdown
 > [!IMPORTANT]
 > Configure environment variables before running the application.
 ```
 
-### Warning
+### 🖆 Warning
 
 ```markdown
 > [!WARNING]
 > Changing production configuration may affect application availability.
 ```
 
-### Caution
+### 🖆 Caution
 
 ```markdown
 > [!CAUTION]
 > Deleting a production database can result in permanent data loss.
 ```
 
-### Alert Types
+### 🖆 Alert Types
 
 | Alert | Purpose |
 | ------- | --------- |
@@ -278,25 +278,25 @@ A mention may notify the referenced user depending on the GitHub context and not
 
 GitHub can automatically link issue and pull request references.
 
-### Issue Reference
+### 🖆 Issue Reference
 
 ```markdown
 Fixes #25
 ```
 
-### Pull Request Reference
+### 🖆 Pull Request Reference
 
 ```markdown
 Related to #42
 ```
 
-### Cross-Repository Reference
+### 🖆 Cross-Repository Reference
 
 ```markdown
 owner/repository#123
 ```
 
-### Commit Reference
+### 🖆 Commit Reference
 
 ```markdown
 See commit abc1234 for the implementation.
@@ -320,7 +320,7 @@ GitHub automatically links recognized references to the corresponding resources.
 
 GitHub supports emoji shortcodes in many GitHub text fields.
 
-### ☰ RESOURCES & REFERENCES
+### 🖆 ☰ RESOURCES & REFERENCES
 
 > Explore the documentation, tools, guides, and references behind the topic.
 
@@ -416,19 +416,19 @@ GitHub supports HTML `<details>` and `<summary>` elements for collapsible conten
 
 Relative links allow you to reference files within the same repository.
 
-### Link to README
+### 🖆 Link to README
 
 ```markdown
 [Read Documentation](README.md)
 ```
 
-### Link to Another Folder
+### 🖆 Link to Another Folder
 
 ```markdown
 [Networking Fundamentals](07-networking/01-fundamentals/readme.md)
 ```
 
-### Link to an Image
+### 🖆 Link to an Image
 
 ```markdown
 ![Project Logo](assets/logo.png)
@@ -462,7 +462,7 @@ Relative paths are useful because links continue to work when the repository is 
 
 GitHub supports fenced code blocks with syntax highlighting.
 
-### Example: JavaScript (Any supported languages)
+### 🖆 Example: JavaScript (Any supported languages)
 
 ```javascript
 const user = {
@@ -473,14 +473,14 @@ const user = {
 console.log(user);
 ```
 
-### Example: Diff
+### 🖆 Example: Diff
 
 ```diff
 - const port = 3000;
 + const port = 8000;
 ```
 
-### Example: Terminal
+### 🖆 Example: Terminal
 
 ```bash
 npm install

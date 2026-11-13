@@ -20,7 +20,7 @@ Version Control Systems (VCS) solve these problems by maintaining a structured h
 
 Git is one of the most widely used version control systems in modern software engineering.
 
-### Version Control
+### 🖆 Version Control
 
 Version control is a system for recording, managing, and tracking changes made to files over time.
 
@@ -83,7 +83,7 @@ A VCS generally provides:
 * Conflict detection and resolution.
 * Branching and merging.
 
-### Version Control Example
+### 🖆 Version Control Example
 
 Imagine a configuration file:
 
@@ -116,7 +116,7 @@ const config = {
 
 This makes it possible to understand exactly what changed.
 
-### What Does Version Control Track?
+### 🖆 What Does Version Control Track?
 
 Depending on the system and configuration, version control can track:
 
@@ -138,7 +138,7 @@ Git primarily tracks file contents and their relationships within the repository
 
 Version control is important because it makes software development more predictable, traceable, and collaborative.
 
-### Change Tracking
+### 🖆 Change Tracking
 
 Developers can inspect modifications made to a project.
 
@@ -148,7 +148,7 @@ git diff
 
 This displays unstaged changes between the working directory and the index.
 
-### History Management
+### 🖆 History Management
 
 Git maintains a history of commits.
 
@@ -158,7 +158,7 @@ git log
 
 You can inspect previous changes and identify when particular functionality was introduced.
 
-### Rollback and Recovery
+### 🖆 Rollback and Recovery
 
 If a change introduces a problem, Git provides different mechanisms to recover or reverse it.
 
@@ -172,7 +172,7 @@ git reset
 
 These commands have different purposes and consequences, which will be covered in dedicated chapters.
 
-### Parallel Development
+### 🖆 Parallel Development
 
 Multiple developers can work on different features using separate branches.
 
@@ -192,7 +192,7 @@ Multiple developers can work on different features using separate branches.
                   main
 ```
 
-### Collaboration
+### 🖆 Collaboration
 
 Developers can share changes through remote repositories.
 
@@ -205,7 +205,7 @@ Git supports collaboration workflows using:
 * Merge
 * Rebase
 
-### Accountability
+### 🖆 Accountability
 
 Commit metadata helps identify:
 
@@ -217,7 +217,7 @@ Commit metadata helps identify:
 
 This makes project history easier to audit and understand.
 
-### Project Stability
+### 🖆 Project Stability
 
 Version control allows teams to maintain stable production code while developing new features independently.
 
@@ -229,7 +229,7 @@ Version control systems are commonly divided into three major categories:
 2. Centralized Version Control Systems.
 3. Distributed Version Control Systems.
 
-### Local Version Control System (LVCS)
+### 🖆 Local Version Control System (LVCS)
 
 A Local Version Control System maintains version history on a single computer.
 
@@ -268,7 +268,7 @@ Developer's Computer
 
 Local version control is insufficient for teams that need coordinated development and shared project history.
 
-### Centralized Version Control System (CVCS)
+### 🖆 Centralized Version Control System (CVCS)
 
 A Centralized Version Control System stores the main repository on a central server.
 
@@ -315,7 +315,7 @@ Developers connect to that server to obtain files and submit changes.
 * Network connectivity is needed for many repository operations.
 * The central server can become a bottleneck or single point of failure for repository access.
 
-### Distributed Version Control System (DVCS)
+### 🖆 Distributed Version Control System (DVCS)
 
 A Distributed Version Control System gives each developer a complete repository copy, including project history.
 
@@ -362,7 +362,7 @@ Developers can perform most version control operations locally.
 * Understanding distributed history can take time.
 * Repository copies may consume additional storage.
 
-### Comparison of Version Control Systems
+### 🖆 Comparison of Version Control Systems
 
 | Feature | Local VCS | Centralized VCS | Distributed VCS |
 | --- | --- | --- | --- |
@@ -373,7 +373,7 @@ Developers can perform most version control operations locally.
 | Collaboration | Limited | Centralized | Distributed |
 | Examples | RCS | SVN, CVS | Git, Mercurial |
 
-### 💡 Important Concept
+### 🖆 💡 IMPORTANT CONCEPT
 
 Git is a Distributed Version Control System.
 
@@ -387,7 +387,7 @@ It was created by Linus Torvalds in 2005.
 
 Git was initially developed to support the Linux kernel development process.
 
-### Important Characteristics
+### 🖆 Important Characteristics
 
 * **Distributed**: Each clone contains the repository's history and objects.
 * **Snapshot-Based**: Git records project snapshots through commits.
@@ -396,7 +396,7 @@ Git was initially developed to support the Linux kernel development process.
 * **Integrity**: Git uses hashes to identify objects and detect content changes.
 * **Performance**: Most operations are performed locally.
 
-### Git Is Not GitHub
+### 🖆 Git Is Not GitHub
 
 Git and GitHub serve different purposes.
 
@@ -419,7 +419,7 @@ Git was designed around several important principles.
 
 Understanding these principles helps explain why Git behaves differently from many other version control systems.
 
-### Everything Is Local First
+### 🖆 Everything Is Local First
 
 Git performs most operations locally.
 
@@ -437,7 +437,7 @@ These commands generally do not require network access.
 
 Remote operations are needed when exchanging changes with another repository.
 
-### Data Integrity
+### 🖆 Data Integrity
 
 Git uses cryptographic hashes to identify repository objects.
 
@@ -445,7 +445,7 @@ An object's identity is based on its content and object type.
 
 This makes accidental or unauthorized content changes detectable.
 
-### Branching Is Lightweight
+### 🖆 Branching Is Lightweight
 
 Creating a Git branch generally creates a new reference pointing to a commit.
 
@@ -455,7 +455,7 @@ It does not duplicate the entire project directory or history.
 git branch feature-login
 ```
 
-### Immutable Object Storage
+### 🖆 Immutable Object Storage
 
 Git objects are treated as immutable.
 
@@ -463,13 +463,13 @@ When content changes, Git creates new objects rather than modifying existing obj
 
 This supports reliable historical snapshots.
 
-### Efficient Storage
+### 🖆 Efficient Storage
 
 Git uses content-addressable objects, compression, and packfiles to store repository data efficiently.
 
 Identical content can be reused rather than stored repeatedly as separate objects.
 
-### History Through Commits
+### 🖆 History Through Commits
 
 Commits form a directed acyclic graph (DAG).
 
@@ -485,7 +485,7 @@ Git primarily stores snapshots of project states.
 
 It does not simply maintain a traditional list of line-by-line differences as its fundamental storage model.
 
-### Snapshot-Based Storage
+### 🖆 Snapshot-Based Storage
 
 Imagine a project containing three files:
 
@@ -520,7 +520,7 @@ Git can reuse existing objects for unchanged content.
 
 It does not need to create a completely new copy of every unchanged file.
 
-### Snapshot Sharing
+### 🖆 Snapshot Sharing
 
 ```text
                 Commit A
@@ -548,7 +548,7 @@ In this simplified example:
 
 Unchanged content can be shared between snapshots.
 
-### Why This Matters
+### 🖆 Why This Matters
 
 This design makes Git:
 
@@ -561,7 +561,7 @@ This design makes Git:
 
 Different version control systems use different approaches to store historical changes.
 
-### Delta-Based Storage
+### 🖆 Delta-Based Storage
 
 A delta-based system can store an original version and subsequent differences.
 
@@ -585,7 +585,7 @@ Version 3
 
 To reconstruct a later version, the system may need to apply a sequence of differences.
 
-### Snapshot-Based Storage in Git
+### 🖆 Snapshot-Based Storage in Git
 
 Git represents commits as project snapshots.
 
@@ -601,7 +601,7 @@ Git can reuse identical objects across snapshots.
 
 Git may also use delta compression internally when storing objects in packfiles.
 
-### Comparison
+### 🖆 Comparison
 
 | Feature              | Delta-Based Model                             | Git Snapshot Model                   |
 | -------------------- | --------------------------------------------- | ------------------------------------ |
@@ -626,7 +626,7 @@ The four primary Git object types are:
 
 These objects are stored in Git's object database.
 
-### Simplified Git Data Model
+### 🖆 Simplified Git Data Model
 
 ```text
              Branch Reference
@@ -653,7 +653,7 @@ A blob stores file content.
 
 A tag object can provide an annotated reference to another Git object.
 
-### Git Object Database
+### 🖆 Git Object Database
 
 Git stores its objects inside:
 
@@ -667,7 +667,7 @@ Git uses object IDs to locate and reference them.
 
 # 🗁 Git Object Types
 
-### Blob Object
+### 🖆 Blob Object
 
 A blob stores the content of a file.
 
@@ -688,7 +688,7 @@ If two files have identical content, Git can reuse the same blob object for both
 * Does not store directory structure.
 * Identified by an object hash.
 
-### Tree Object
+### 🖆 Tree Object
 
 A tree represents a directory.
 
@@ -755,7 +755,7 @@ The above is a simplified representation. The actual object contains structured 
 * An initial commit has no parent.
 * A merge commit generally has two or more parents.
 
-### Tag Object
+### 🖆 Tag Object
 
 Git supports two important types of tags.
 
@@ -820,7 +820,7 @@ Historically, SHA-1 has been the default Git object format in most repositories.
 
 Git also supports SHA-256 repository formats, although interoperability and ecosystem support must be considered when choosing an object format.
 
-### Why Hashing Matters
+### 🖆 Why Hashing Matters
 
 Hashing provides:
 
@@ -829,7 +829,7 @@ Hashing provides:
 * Duplicate content detection.
 * Reliable object references.
 
-### Git Object ID Example
+### 🖆 Git Object ID Example
 
 ```bash
 git hash-object README.md
@@ -845,7 +845,7 @@ git hash-object -w README.md
 
 The `-w` option writes the object into the Git object database.
 
-### Inspecting Git Objects
+### 🖆 Inspecting Git Objects
 
 ```bash
 git cat-file -t <object-id>
@@ -878,7 +878,7 @@ The most important states are:
 3. Modified.
 4. Staged.
 
-### Untracked
+### 🖆 Untracked
 
 A newly created file that Git is not currently tracking.
 
@@ -891,13 +891,13 @@ git status
 
 Git reports that `app.js` is untracked.
 
-### Unmodified
+### 🖆 Unmodified
 
 A tracked file whose content matches the version in the current commit.
 
 There are no changes to record.
 
-### Modified
+### 🖆 Modified
 
 A tracked file that has been changed in the working directory but has not yet been staged.
 
@@ -910,7 +910,7 @@ git status
 
 Git identifies the file as modified.
 
-### Staged
+### 🖆 Staged
 
 A change that has been added to the staging area and is prepared for the next commit.
 
@@ -920,7 +920,7 @@ git add app.js
 
 The change is now staged.
 
-### State Transition
+### 🖆 State Transition
 
 ```text
              Untracked
@@ -948,25 +948,25 @@ A staged file can also be modified again before committing. In that case, Git ca
 
 Git's fundamental workflow involves three local working areas and, optionally, a remote repository.
 
-### Working Directory
+### 🖆 Working Directory
 
 The working directory contains the checked-out project files.
 
 You edit files here.
 
-### Staging Area (Index)
+### 🖆 Staging Area (Index)
 
 The staging area stores the proposed contents of the next commit.
 
 It allows developers to select exactly which changes should be included.
 
-### Local Repository
+### 🖆 Local Repository
 
 The local repository contains committed Git objects and references.
 
 Commits are stored in the local repository's object database.
 
-### Remote Repository
+### 🖆 Remote Repository
 
 A remote repository is another repository that your local repository can communicate with.
 
@@ -1045,7 +1045,7 @@ git switch feature-login
 
 HEAD follows the newly checked-out branch.
 
-### HEAD and Detached HEAD
+### 🖆 HEAD and Detached HEAD
 
 Normally:
 
@@ -1065,7 +1065,7 @@ This is useful for inspecting historical commits.
 
 However, commits created while detached may not be referenced by a branch. Create a branch if you want to preserve that work reliably.
 
-### Inspecting HEAD
+### 🖆 Inspecting HEAD
 
 ```bash
 git status
@@ -1095,7 +1095,7 @@ A DAG consists of:
 * Directed edges representing parent relationships.
 * No directed cycles.
 
-### Linear History
+### 🖆 Linear History
 
 ```text
 A --> B --> C --> D
@@ -1103,7 +1103,7 @@ A --> B --> C --> D
 
 Each commit has one parent, except the initial commit.
 
-### Branching History
+### 🖆 Branching History
 
 ```text
        B --> C
@@ -1115,7 +1115,7 @@ A ---          E
 
 This is a simplified graph showing two lines of development that later converge.
 
-### Viewing History
+### 🖆 Viewing History
 
 ```bash
 git log
@@ -1139,7 +1139,7 @@ Detailed history with references:
 git log --oneline --decorate --graph --all
 ```
 
-### Commit Relationships
+### 🖆 Commit Relationships
 
 A commit references its parent commit or commits.
 
@@ -1157,14 +1157,14 @@ Git can use these relationships to:
 
 A standard Git workflow consists of several stages.
 
-### Step 1: Create a Project
+### 🖆 Step 1: Create a Project
 
 ```bash
 mkdir git-basics
 cd git-basics
 ```
 
-### Step 2: Initialize Git
+### 🖆 Step 2: Initialize Git
 
 ```bash
 git init
@@ -1172,13 +1172,13 @@ git init
 
 This creates a new Git repository.
 
-### Step 3: Create a File
+### 🖆 Step 3: Create a File
 
 ```bash
 echo "# Git Basics" > README.md
 ```
 
-### Step 4: Inspect Repository Status
+### 🖆 Step 4: Inspect Repository Status
 
 ```bash
 git status
@@ -1186,37 +1186,37 @@ git status
 
 The new file should appear as untracked.
 
-### Step 5: Stage the File
+### 🖆 Step 5: Stage the File
 
 ```bash
 git add README.md
 ```
 
-### Step 6: Create a Commit
+### 🖆 Step 6: Create a Commit
 
 ```bash
 git commit -m "Initial commit"
 ```
 
-### Step 7: Inspect Commit History
+### 🖆 Step 7: Inspect Commit History
 
 ```bash
 git log --oneline
 ```
 
-### Step 8: Modify the File
+### 🖆 Step 8: Modify the File
 
 ```bash
 echo "Learning Git fundamentals." >> README.md
 ```
 
-### Step 9: Inspect the Difference
+### 🖆 Step 9: Inspect the Difference
 
 ```bash
 git diff
 ```
 
-### Step 10: Stage and Commit Again
+### 🖆 Step 10: Stage and Commit Again
 
 ```bash
 git add README.md
@@ -1248,7 +1248,7 @@ This section introduces frequently used Git commands.
 | `git pull`      | Fetch and integrate remote changes |
 | `git push`      | Push commits to a remote           |
 
-### Useful Command Combinations
+### 🖆 Useful Command Combinations
 
 ```bash
 # Initialize repository
@@ -1290,7 +1290,7 @@ Other systems are used in different development environments.
 | Main use cases | General software development | Centralized project management | Distributed development | Large codebases and game development |
 | Repository history | Local clone | Primarily server-side | Local clone | Server-managed |
 
-### When to Use Git
+### 🖆 When to Use Git
 
 Git is particularly useful for:
 
@@ -1333,13 +1333,13 @@ Understanding Git terminology is essential before learning advanced operations.
 
 # 🖆 Common Beginner Mistakes
 
-### Thinking Git and GitHub Are the Same
+### 🖆 Thinking Git and GitHub Are the Same
 
 Git is version control software.
 
 GitHub is a hosting and collaboration platform.
 
-### Thinking `git add` Creates a Commit
+### 🖆 Thinking `git add` Creates a Commit
 
 It does not.
 
@@ -1347,21 +1347,21 @@ It does not.
 
 `git commit` records that staged content.
 
-### Thinking Every Commit Duplicates the Entire Project
+### 🖆 Thinking Every Commit Duplicates the Entire Project
 
 Git represents project snapshots using trees and blobs and reuses identical objects.
 
-### Thinking a Branch Is a Separate Repository
+### 🖆 Thinking a Branch Is a Separate Repository
 
 A branch is generally a lightweight reference to a commit.
 
-### Thinking Every Git Command Requires Internet
+### 🖆 Thinking Every Git Command Requires Internet
 
 Most Git operations work locally.
 
 Remote operations require communication with another repository.
 
-### Ignoring Repository Status
+### 🖆 Ignoring Repository Status
 
 Always inspect the repository state before important operations.
 
@@ -1369,7 +1369,7 @@ Always inspect the repository state before important operations.
 git status
 ```
 
-### Making Unclear Commit Messages
+### 🖆 Making Unclear Commit Messages
 
 Avoid:
 
@@ -1387,7 +1387,7 @@ git commit -m "Add user authentication middleware"
 
 A useful commit message describes the purpose of the change.
 
-### Confusing Working Directory and Staging Area
+### 🖆 Confusing Working Directory and Staging Area
 
 A file can contain staged changes and additional unstaged modifications simultaneously.
 
@@ -1453,7 +1453,7 @@ Adjust ignore patterns according to the project and team requirements.
 
 The following exercises will help you understand the fundamentals through actual Git operations.
 
-### Exercise 1: Initialize a Repository
+### 🖆 Exercise 1: Initialize a Repository
 
 **Objective:** Create your first Git repository.
 
@@ -1472,7 +1472,7 @@ Expected learning:
 * The `.git` directory.
 * Initial repository status.
 
-### Exercise 2: Create and Track Files
+### 🖆 Exercise 2: Create and Track Files
 
 **Objective:** Understand untracked and staged states.
 
@@ -1492,7 +1492,7 @@ Expected learning:
 * Staging area.
 * Tracking files.
 
-### Exercise 3: Create Your First Commit
+### 🖆 Exercise 3: Create Your First Commit
 
 **Objective:** Record project history.
 
@@ -1508,7 +1508,7 @@ Expected learning:
 * Commit messages.
 * Commit history.
 
-### Exercise 4: Understand File Modifications
+### 🖆 Exercise 4: Understand File Modifications
 
 **Objective:** Understand modified and staged states.
 
@@ -1533,7 +1533,7 @@ Expected learning:
 * Staged changes.
 * Commit creation.
 
-### Exercise 5: Explore Git Objects
+### 🖆 Exercise 5: Explore Git Objects
 
 **Objective:** Inspect Git's internal object database.
 
@@ -1561,7 +1561,7 @@ Expected learning:
 * Object IDs.
 * Content-addressable storage.
 
-### Exercise 6: Inspect Repository Internals
+### 🖆 Exercise 6: Inspect Repository Internals
 
 **Objective:** Explore the `.git` directory.
 
@@ -1579,7 +1579,7 @@ Expected learning:
 * Object storage.
 * HEAD reference.
 
-### Exercise 7: Explore Commit History
+### 🖆 Exercise 7: Explore Commit History
 
 **Objective:** Understand commit relationships.
 
@@ -1597,7 +1597,7 @@ Expected learning:
 * Parent relationships.
 * Graph visualization.
 
-### Exercise 8: Understand Snapshot Reuse
+### 🖆 Exercise 8: Understand Snapshot Reuse
 
 **Objective:** Observe how unchanged content is reused.
 
@@ -1628,7 +1628,7 @@ Expected learning:
 
 # 🖆 Interview Questions
 
-### Beginner Level
+### 🖆 Beginner Level
 
 **1. What is version control?**
 
@@ -1662,7 +1662,7 @@ The staging area is an index that holds the proposed content of the next commit.
 
 Git is a version control system, whereas GitHub is a platform for hosting Git repositories and collaborating on projects.
 
-### Intermediate Level
+### 🖆 Intermediate Level
 
 **9. What are the three major types of version control systems?**
 
@@ -1694,7 +1694,7 @@ A detached HEAD state occurs when HEAD points directly to a commit instead of re
 
 A Directed Acyclic Graph is a graph structure in which directed relationships do not form cycles. Git uses a DAG to represent commit history.
 
-### Advanced Level
+### 🖆 Advanced Level
 
 **16. Does Git store complete copies of every file in every commit?**
 

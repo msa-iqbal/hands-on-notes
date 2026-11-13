@@ -16,7 +16,8 @@ Markdown uses characters such as:
 These characters are interpreted by a Markdown processor to produce formatted output.
 
 Markdown documents are generally built using two types of elements.
-### Block Elements
+
+### 🖆 Block Elements
 
 Block elements create separate sections or structures.
 
@@ -30,7 +31,7 @@ Examples:
 * Tables
 * Horizontal rules
 
-### Inline Elements
+### 🖆 Inline Elements
 
 Inline elements format text within a block.
 
@@ -74,21 +75,21 @@ A blank line separates paragraphs.
 
 There are multiple ways to create a line break.
 
-### Method 1: Two Trailing Spaces
+### 🖆 Method 1: Two Trailing Spaces
 
 ```markdown
 First line.  
 Second line.
 ```
 
-### Method 2: Backslash
+### 🖆 Method 2: Backslash
 
 ```markdown
 First line.\
 Second line.
 ```
 
-### Method 3: HTML Break Tag
+### 🖆 Method 3: HTML Break Tag
 
 ```markdown
 First line.<br>
@@ -149,7 +150,7 @@ This is commonly supported by GitHub Flavored Markdown.
 
 Markdown supports ordered and unordered lists.
 
-### Unordered Lists
+### 🖆 Unordered Lists
 
 Use hyphens, asterisks, or plus signs.
 
@@ -171,7 +172,7 @@ Use hyphens, asterisks, or plus signs.
 + JavaScript
 ```
 
-### Ordered Lists
+### 🖆 Ordered Lists
 
 Use numbers followed by periods.
 

@@ -16,94 +16,94 @@ _This is a concise master table that provides easy access to various tables of c
 # 🗁 03-WEB
 
 * [🗁 03-WEB/](../03-web/)
-  * [README.md](../03-web/README.md)
+  * [README.md](../03-web/README.md) 🗎 2026.11.08
 
 ## 🗁 01-HTML/
 
 * [🗁 01-HTML/](../03-web/01-html/)
-  * [README.md](../03-web/01-html/README.md)
+  * [README.md](../03-web/01-html/README.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/01-BASICS/](../03-web/01-html/01-basics/)
 
 * [🗁 01-BASICS/](../03-web/01-html/01-basics/)
-  * [01-introduction.md](../03-web/01-html/01-basics/01-introduction.md)
-  * [02-document-structure.md](../03-web/01-html/01-basics/02-document-structure.md)
-  * [03-doctype.md](../03-web/01-html/01-basics/03-doctype.md)
-  * [04-head-and-body.md](../03-web/01-html/01-basics/04-head-and-body.md)
-  * [05-html-attributes.md](../03-web/01-html/01-basics/05-html-attributes.md)
-  * [06-comments.md](../03-web/01-html/01-basics/06-comments.md)
+  * [01-introduction.md](../03-web/01-html/01-basics/01-introduction.md) 🗎 2026.11.08
+  * [02-document-structure.md](../03-web/01-html/01-basics/02-document-structure.md) 🗎 2026.11.08
+  * [03-doctype.md](../03-web/01-html/01-basics/03-doctype.md) 🗎 2026.11.08
+  * [04-head-and-body.md](../03-web/01-html/01-basics/04-head-and-body.md) 🗎 2026.11.08
+  * [05-html-attributes.md](../03-web/01-html/01-basics/05-html-attributes.md) 🗎 2026.11.08
+  * [06-comments.md](../03-web/01-html/01-basics/06-comments.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/02-ELEMENTS/](../03-web/01-html/02-elements/)
 
 * [🗁 02-ELEMENTS/](../03-web/01-html/02-elements/)
-  * [01-headings.md](../03-web/01-html/02-elements/01-headings.md)
-  * [02-paragraphs.md](../03-web/01-html/02-elements/02-paragraphs.md)
-  * [03-links.md](../03-web/01-html/02-elements/03-links.md)
-  * [04-lists.md](../03-web/01-html/02-elements/04-lists.md)
-  * [05-div-and-span.md](../03-web/01-html/02-elements/05-div-and-span.md)
-  * [06-text-elements.md](../03-web/01-html/02-elements/06-text-elements.md)
-  * [07-other-elements.md](../03-web/01-html/02-elements/07-other-elements.md)
+  * [01-headings.md](../03-web/01-html/02-elements/01-headings.md) 🗎 2026.11.08
+  * [02-paragraphs.md](../03-web/01-html/02-elements/02-paragraphs.md) 🗎 2026.11.08
+  * [03-links.md](../03-web/01-html/02-elements/03-links.md) 🗎 2026.11.08
+  * [04-lists.md](../03-web/01-html/02-elements/04-lists.md) 🗎 2026.11.08
+  * [05-div-and-span.md](../03-web/01-html/02-elements/05-div-and-span.md) 🗎 2026.11.08
+  * [06-text-elements.md](../03-web/01-html/02-elements/06-text-elements.md) 🗎 2026.11.08
+  * [07-other-elements.md](../03-web/01-html/02-elements/07-other-elements.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/03-ATTRIBUTES/](../03-web/01-html/03-attributes/)
 
 * [🗁 03-ATTRIBUTES/](../03-web/01-html/03-attributes/)
-  * [01-global-attributes.md](../03-web/01-html/03-attributes/01-global-attributes.md)
-  * [02-id-and-class.md](../03-web/01-html/03-attributes/02-id-and-class.md)
-  * [03-data-attributes.md](../03-web/01-html/03-attributes/03-data-attributes.md)
-  * [04-boolean-attributes.md](../03-web/01-html/03-attributes/04-boolean-attributes.md)
-  * [05-custom-attributes.md](../03-web/01-html/03-attributes/05-custom-attributes.md)
+  * [01-global-attributes.md](../03-web/01-html/03-attributes/01-global-attributes.md) 🗎 2026.11.08
+  * [02-id-and-class.md](../03-web/01-html/03-attributes/02-id-and-class.md) 🗎 2026.11.08
+  * [03-data-attributes.md](../03-web/01-html/03-attributes/03-data-attributes.md) 🗎 2026.11.08
+  * [04-boolean-attributes.md](../03-web/01-html/03-attributes/04-boolean-attributes.md) 🗎 2026.11.08
+  * [05-custom-attributes.md](../03-web/01-html/03-attributes/05-custom-attributes.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/04-SEMANTIC-HTML/](../03-web/01-html/04-semantic-html/)
 
 * [🗁 04-SEMANTIC-HTML/](../03-web/01-html/04-semantic-html/)
-  * [01-header.md](../03-web/01-html/04-semantic-html/01-header.md)
-  * [02-nav.md](../03-web/01-html/04-semantic-html/02-nav.md)
-  * [03-main.md](../03-web/01-html/04-semantic-html/03-main.md)
-  * [04-section.md](../03-web/01-html/04-semantic-html/04-section.md)
-  * [05-article.md](../03-web/01-html/04-semantic-html/05-article.md)
-  * [06-aside.md](../03-web/01-html/04-semantic-html/06-aside.md)
-  * [07-footer.md](../03-web/01-html/04-semantic-html/07-footer.md)
+  * [01-header.md](../03-web/01-html/04-semantic-html/01-header.md) 🗎 2026.11.08
+  * [02-nav.md](../03-web/01-html/04-semantic-html/02-nav.md) 🗎 2026.11.08
+  * [03-main.md](../03-web/01-html/04-semantic-html/03-main.md) 🗎 2026.11.08
+  * [04-section.md](../03-web/01-html/04-semantic-html/04-section.md) 🗎 2026.11.08
+  * [05-article.md](../03-web/01-html/04-semantic-html/05-article.md) 🗎 2026.11.08
+  * [06-aside.md](../03-web/01-html/04-semantic-html/06-aside.md) 🗎 2026.11.08
+  * [07-footer.md](../03-web/01-html/04-semantic-html/07-footer.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/05-FORMS/](../03-web/01-html/05-forms/)
 
 * [🗁 05-FORMS/](../03-web/01-html/05-forms/)
-  * [01-form.md](../03-web/01-html/05-forms/01-form.md)
-  * [02-input.md](../03-web/01-html/05-forms/02-input.md)
-  * [03-label.md](../03-web/01-html/05-forms/03-label.md)
-  * [04-select.md](../03-web/01-html/05-forms/04-select.md)
-  * [05-textarea.md](../03-web/01-html/05-forms/05-textarea.md)
-  * [06-button.md](../03-web/01-html/05-forms/06-button.md)
-  * [07-validation.md](../03-web/01-html/05-forms/07-validation.md)
-  * [08-form-data.md](../03-web/01-html/05-forms/08-form-data.md)
+  * [01-form.md](../03-web/01-html/05-forms/01-form.md) 🗎 2026.11.08
+  * [02-input.md](../03-web/01-html/05-forms/02-input.md) 🗎 2026.11.08
+  * [03-label.md](../03-web/01-html/05-forms/03-label.md) 🗎 2026.11.08
+  * [04-select.md](../03-web/01-html/05-forms/04-select.md) 🗎 2026.11.08
+  * [05-textarea.md](../03-web/01-html/05-forms/05-textarea.md) 🗎 2026.11.08
+  * [06-button.md](../03-web/01-html/05-forms/06-button.md) 🗎 2026.11.08
+  * [07-validation.md](../03-web/01-html/05-forms/07-validation.md) 🗎 2026.11.08
+  * [08-form-data.md](../03-web/01-html/05-forms/08-form-data.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/06-TABLES/](../03-web/01-html/06-tables/)
 
 * [🗁 06-TABLES/](../03-web/01-html/06-tables/)
-  * [01-table.md](../03-web/01-html/06-tables/01-table.md)
-  * [02-table-rows.md](../03-web/01-html/06-tables/02-table-rows.md)
-  * [03-table-headings.md](../03-web/01-html/06-tables/03-table-headings.md)
-  * [04-table-sections.md](../03-web/01-html/06-tables/04-table-sections.md)
-  * [05-accessible-tables.md](../03-web/01-html/06-tables/05-accessible-tables.md)
+  * [01-table.md](../03-web/01-html/06-tables/01-table.md) 🗎 2026.11.08
+  * [02-table-rows.md](../03-web/01-html/06-tables/02-table-rows.md) 🗎 2026.11.08
+  * [03-table-headings.md](../03-web/01-html/06-tables/03-table-headings.md) 🗎 2026.11.08
+  * [04-table-sections.md](../03-web/01-html/06-tables/04-table-sections.md) 🗎 2026.11.08
+  * [05-accessible-tables.md](../03-web/01-html/06-tables/05-accessible-tables.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/07-MEDIA/](../03-web/01-html/07-media/)
 
 * [🗁 07-MEDIA/](../03-web/01-html/07-media/)
-  * [01-images.md](../03-web/01-html/07-media/01-images.md)
-  * [02-audio.md](../03-web/01-html/07-media/02-audio.md)
-  * [03-video.md](../03-web/01-html/07-media/03-video.md)
-  * [04-picture.md](../03-web/01-html/07-media/04-picture.md)
-  * [05-responsive-images.md](../03-web/01-html/07-media/05-responsive-images.md)
-  * [06-embedded-content.md](../03-web/01-html/07-media/06-embedded-content.md)
+  * [01-images.md](../03-web/01-html/07-media/01-images.md) 🗎 2026.11.08
+  * [02-audio.md](../03-web/01-html/07-media/02-audio.md) 🗎 2026.11.08
+  * [03-video.md](../03-web/01-html/07-media/03-video.md) 🗎 2026.11.08
+  * [04-picture.md](../03-web/01-html/07-media/04-picture.md) 🗎 2026.11.08
+  * [05-responsive-images.md](../03-web/01-html/07-media/05-responsive-images.md) 🗎 2026.11.08
+  * [06-embedded-content.md](../03-web/01-html/07-media/06-embedded-content.md) 🗎 2026.11.08
 
 #### [🗁 01-HTML/08-ACCESSIBILITY/](../03-web/01-html/08-accessibility/)
 
 * [🗁 08-ACCESSIBILITY/](../03-web/01-html/08-accessibility/)
-  * [01-accessible-html.md](../03-web/01-html/08-accessibility/01-accessible-html.md)
-  * [02-landmarks.md](../03-web/01-html/08-accessibility/02-landmarks.md)
-  * [03-heading-hierarchy.md](../03-web/01-html/08-accessibility/03-heading-hierarchy.md)
-  * [04-labels.md](../03-web/01-html/08-accessibility/04-labels.md)
-  * [05-alt-text.md](../03-web/01-html/08-accessibility/05-alt-text.md)
-  * [06-aria-basics.md](../03-web/01-html/08-accessibility/06-aria-basics.md)
+  * [01-accessible-html.md](../03-web/01-html/08-accessibility/01-accessible-html.md) 🗎 2026.11.08
+  * [02-landmarks.md](../03-web/01-html/08-accessibility/02-landmarks.md) 🗎 2026.11.08
+  * [03-heading-hierarchy.md](../03-web/01-html/08-accessibility/03-heading-hierarchy.md) 🗎 2026.11.08
+  * [04-labels.md](../03-web/01-html/08-accessibility/04-labels.md) 🗎 2026.11.08
+  * [05-alt-text.md](../03-web/01-html/08-accessibility/05-alt-text.md) 🗎 2026.11.08
+  * [06-aria-basics.md](../03-web/01-html/08-accessibility/06-aria-basics.md) 🗎 2026.11.08
 
 ## 🗁 02-CSS/
 

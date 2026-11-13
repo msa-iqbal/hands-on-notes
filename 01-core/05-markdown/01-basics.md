@@ -110,7 +110,7 @@ The `.md` extension is the recommended choice for most projects.
 
 # 🗁 Where Is Markdown Used?
 
-### Software Development
+### 🖆 Software Development
 
 * GitHub repository documentation
 * GitLab project documentation
@@ -118,7 +118,7 @@ The `.md` extension is the recommended choice for most projects.
 * API documentation
 * Developer notes
 
-### Technical Documentation
+### 🖆 Technical Documentation
 
 * Installation guides
 * Configuration instructions
@@ -126,7 +126,7 @@ The `.md` extension is the recommended choice for most projects.
 * Tutorials
 * Knowledge bases
 
-### Content Management
+### 🖆 Content Management
 
 * Personal notes
 * Technical blogs

@@ -4,29 +4,29 @@ Practical **computer networking** notes covering networking fundamentals, networ
 
 ## Contents
 
-| # | Topic | What You'll Find |
-| --- | --- | --- |
-| 01 | Fundamentals | Networking basics, network types, topologies, devices, media, Ethernet, MAC addresses, unicast, broadcast, multicast, and common terminology |
-| 02 | Network Models | OSI model, TCP/IP model, model comparisons, encapsulation, and network protocol data units (PDUs) |
-| 03 | IP Addressing | IPv4, IPv6, public and private IPs, static and dynamic addressing, subnet masks, CIDR, subnetting, supernetting, and addressing practice |
-| 04 | Transport Layer | TCP, UDP, ports, sockets, connection handshakes, termination, flow control, congestion control, and common port numbers |
-| 05 | Application Protocols | DNS, DHCP, HTTP, HTTPS, TLS, FTP, SFTP, SSH, Telnet, email protocols, NTP, SNMP, Syslog, and protocol troubleshooting |
-| 06 | Switching and VLANs | Switching fundamentals, MAC address tables, bridging, VLANs, access and trunk ports, 802.1Q, inter-VLAN routing, STP, and link aggregation |
-| 07 | Network Layer Protocols | ICMP, ARP, NDP, IGMP, MLD, IP fragmentation, MTU, TTL, hop limit, Path MTU Discovery, ping, and traceroute |
-| 08 | Routing | Routing fundamentals, routing tables, connected, static, default, and dynamic routes, metrics, policy-based routing, OSPF, BGP, RIP, ECMP, and routing labs |
-| 09 | NAT and Firewall | NAT, PAT, packet filtering, stateful and stateless firewalls, connection tracking, source and destination NAT, masquerade, port forwarding, and firewall hardening |
-| 10 | Wireless Networking | Wireless fundamentals, IEEE 802.11, frequency bands, channels, Wi-Fi standards, SSID, BSSID, wireless security, bridging, interference, and troubleshooting |
-| 11 | VPN and Tunneling | VPN fundamentals, site-to-site and remote-access VPNs, IPsec, WireGuard, OpenVPN, GRE, VXLAN, PPP, tunneling, and troubleshooting |
-| 12 | Proxy and Load Balancing | Proxy fundamentals, forward and reverse proxies, transparent proxies, load-balancing methods, PCC, WAN failover, and policy-based load balancing |
-| 13 | QoS and Bandwidth | Quality of Service, bandwidth, throughput, latency, jitter, packet loss, traffic shaping, policing, prioritization, queues, PCQ, and QoS labs |
-| 14 | Network Security | Security fundamentals, network threats, AAA, RADIUS, 802.1X, secure management, DDoS, network access control, certificates, PKI, and security monitoring |
-| 15 | ISP Networking | ISP architecture, last-mile connectivity, fiber optics, PON, GPON, EPON, PPPoE, hotspot services, RADIUS, CGNAT, BGP, upstream peering, IXP, and bandwidth planning |
-| 16 | MikroTik RouterOS | RouterOS administration, interfaces, bridging, IP and DHCP, NAT, firewall, routing, VLANs, wireless, QoS, VPNs, ISP services, failover, monitoring, automation, and practical projects |
-| 17 | Network Monitoring | Monitoring fundamentals, SNMP, centralized logging, NetFlow, traffic analysis, latency, packet loss, alerting, and monitoring tools |
-| 18 | Troubleshooting | Troubleshooting methodology, physical connectivity, IP, DNS, DHCP, routing, NAT, firewall, VLAN, wireless, VPN, and packet-capture analysis |
-| 19 | Labs and Practice | Lab environment setup, VirtualBox, CHR, GNS3, EVE-NG, connectivity labs, subnetting, routing, firewall, VLAN, VPN, ISP scenarios, and capstone projects |
-| 20 | Certifications and Career | MikroTik certification roadmaps, MTCNA, advanced MikroTik certifications, network engineering career development, and interview questions |
-| 21 | References | Networking glossary, common protocols and ports, networking commands, subnetting and MikroTik CLI cheat sheets, network diagrams, and official documentation |
+| #   | Topic                     | What You'll Find                                                                                                                                                                       |
+| --- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01  | Fundamentals              | Networking basics, network types, topologies, devices, media, Ethernet, MAC addresses, unicast, broadcast, multicast, and common terminology                                           |
+| 02  | Network Models            | OSI model, TCP/IP model, model comparisons, encapsulation, and network protocol data units (PDUs)                                                                                      |
+| 03  | IP Addressing             | IPv4, IPv6, public and private IPs, static and dynamic addressing, subnet masks, CIDR, subnetting, supernetting, and addressing practice                                               |
+| 04  | Transport Layer           | TCP, UDP, ports, sockets, connection handshakes, termination, flow control, congestion control, and common port numbers                                                                |
+| 05  | Application Protocols     | DNS, DHCP, HTTP, HTTPS, TLS, FTP, SFTP, SSH, Telnet, email protocols, NTP, SNMP, Syslog, and protocol troubleshooting                                                                  |
+| 06  | Switching and VLANs       | Switching fundamentals, MAC address tables, bridging, VLANs, access and trunk ports, 802.1Q, inter-VLAN routing, STP, and link aggregation                                             |
+| 07  | Network Layer Protocols   | ICMP, ARP, NDP, IGMP, MLD, IP fragmentation, MTU, TTL, hop limit, Path MTU Discovery, ping, and traceroute                                                                             |
+| 08  | Routing                   | Routing fundamentals, routing tables, connected, static, default, and dynamic routes, metrics, policy-based routing, OSPF, BGP, RIP, ECMP, and routing labs                            |
+| 09  | NAT and Firewall          | NAT, PAT, packet filtering, stateful and stateless firewalls, connection tracking, source and destination NAT, masquerade, port forwarding, and firewall hardening                     |
+| 10  | Wireless Networking       | Wireless fundamentals, IEEE 802.11, frequency bands, channels, Wi-Fi standards, SSID, BSSID, wireless security, bridging, interference, and troubleshooting                            |
+| 11  | VPN and Tunneling         | VPN fundamentals, site-to-site and remote-access VPNs, IPsec, WireGuard, OpenVPN, GRE, VXLAN, PPP, tunneling, and troubleshooting                                                      |
+| 12  | Proxy and Load Balancing  | Proxy fundamentals, forward and reverse proxies, transparent proxies, load-balancing methods, PCC, WAN failover, and policy-based load balancing                                       |
+| 13  | QoS and Bandwidth         | Quality of Service, bandwidth, throughput, latency, jitter, packet loss, traffic shaping, policing, prioritization, queues, PCQ, and QoS labs                                          |
+| 14  | Network Security          | Security fundamentals, network threats, AAA, RADIUS, 802.1X, secure management, DDoS, network access control, certificates, PKI, and security monitoring                               |
+| 15  | ISP Networking            | ISP architecture, last-mile connectivity, fiber optics, PON, GPON, EPON, PPPoE, hotspot services, RADIUS, CGNAT, BGP, upstream peering, IXP, and bandwidth planning                    |
+| 16  | MikroTik RouterOS         | RouterOS administration, interfaces, bridging, IP and DHCP, NAT, firewall, routing, VLANs, wireless, QoS, VPNs, ISP services, failover, monitoring, automation, and practical projects |
+| 17  | Network Monitoring        | Monitoring fundamentals, SNMP, centralized logging, NetFlow, traffic analysis, latency, packet loss, alerting, and monitoring tools                                                    |
+| 18  | Troubleshooting           | Troubleshooting methodology, physical connectivity, IP, DNS, DHCP, routing, NAT, firewall, VLAN, wireless, VPN, and packet-capture analysis                                            |
+| 19  | Labs and Practice         | Lab environment setup, VirtualBox, CHR, GNS3, EVE-NG, connectivity labs, subnetting, routing, firewall, VLAN, VPN, ISP scenarios, and capstone projects                                |
+| 20  | Certifications and Career | MikroTik certification roadmaps, MTCNA, advanced MikroTik certifications, network engineering career development, and interview questions                                              |
+| 21  | References                | Networking glossary, common protocols and ports, networking commands, subnetting and MikroTik CLI cheat sheets, network diagrams, and official documentation                           |
 
 ## Structure
 

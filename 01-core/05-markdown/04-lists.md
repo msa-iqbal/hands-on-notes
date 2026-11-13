@@ -21,7 +21,7 @@ Markdown supports three markers:
 * Asterisk (`*`)
 * Plus (`+`)
 
-### Method-1: Using Hyphens (Recommended)
+### 🖆 Method-1: Using Hyphens (Recommended)
 
 ```markdown
 - HTML
@@ -32,7 +32,7 @@ Markdown supports three markers:
 
 Use hyphens (`-`) consistently throughout your documentation because they are widely used and easy to read.
 
-### Method-2: Using Asterisks
+### 🖆 Method-2: Using Asterisks
 
 ```markdown
 * HTML
@@ -41,7 +41,7 @@ Use hyphens (`-`) consistently throughout your documentation because they are wi
 * PHP
 ```
 
-### Method-3:  Using Plus Signs
+### 🖆 Method-3:  Using Plus Signs
 
 ```markdown
 + HTML
@@ -74,7 +74,7 @@ Rendered Output:
 3. Install dependencies
 4. Start the application
 
-### Automatic Numbering
+### 🖆 Automatic Numbering
 
 Markdown processors generally calculate the displayed numbering from the list structure.
 
@@ -92,7 +92,7 @@ This commonly renders as:
 
 However, using sequential numbers in source Markdown is clearer and easier to maintain.
 
-### Starting Number
+### 🖆 Starting Number
 
 You can specify a starting number.
 
@@ -110,7 +110,7 @@ Nested lists allow you to create sub-items inside another list.
 
 Indent child items consistently, commonly with two or four spaces.
 
-### Nested Unordered Lists
+### 🖆 Nested Unordered Lists
 
 ```markdown
 - Frontend
@@ -124,7 +124,7 @@ Indent child items consistently, commonly with two or four spaces.
   - Python
 ```
 
-### Nested Ordered Lists
+### 🖆 Nested Ordered Lists
 
 ```markdown
 1. Frontend Development
@@ -138,7 +138,7 @@ Indent child items consistently, commonly with two or four spaces.
    3. Python
 ```
 
-### Three-Level Nested Lists
+### 🖆 Three-Level Nested Lists
 
 ```markdown
 - Programming
@@ -194,7 +194,7 @@ Task lists display checkboxes that can represent completed and incomplete tasks.
 
 This syntax is supported by GitHub Flavored Markdown (GFM).
 
-### Unchecked Task
+### 🖆 Unchecked Task
 
 ```markdown
 - [ ] Learn HTML
@@ -202,7 +202,7 @@ This syntax is supported by GitHub Flavored Markdown (GFM).
 - [ ] Learn JavaScript
 ```
 
-### Checked Task
+### 🖆 Checked Task
 
 ```markdown
 - [x] Learn HTML
@@ -216,7 +216,7 @@ This syntax is supported by GitHub Flavored Markdown (GFM).
 * [x] Learn CSS
 * [ ] Learn JavaScript
 
-### Ordered Task Lists
+### 🖆 Ordered Task Lists
 
 ```markdown
 1. [x] Install Node.js
@@ -225,7 +225,7 @@ This syntax is supported by GitHub Flavored Markdown (GFM).
 4. [ ] Run application
 ```
 
-### Nested Task Lists
+### 🖆 Nested Task Lists
 
 ```markdown
 - [ ] Frontend Development
@@ -400,7 +400,7 @@ This creates a visual separation between sections.
 
 # 🗁 Common Markdown List Mistakes
 
-### Mistake 1: Inconsistent Indentation
+### 🖆 Mistake 1: Inconsistent Indentation
 
 Incorrect or inconsistent indentation can produce unexpected nesting.
 
@@ -420,7 +420,7 @@ Better:
   - JavaScript
 ```
 
-### Mistake 2: Missing Space After Marker
+### 🖆 Mistake 2: Missing Space After Marker
 
 Incorrect:
 
@@ -434,7 +434,7 @@ Correct:
 - HTML
 ```
 
-### Mistake 3: Incorrect Task List Syntax
+### 🖆 Mistake 3: Incorrect Task List Syntax
 
 Incorrect:
 
@@ -448,7 +448,7 @@ Correct:
 - [ ] Learn HTML
 ```
 
-### Mistake 4: Mixing Markers Unnecessarily
+### 🖆 Mistake 4: Mixing Markers Unnecessarily
 
 Avoid switching between hyphens, asterisks, and plus signs without a reason.
 

@@ -72,7 +72,7 @@ An absolute image URL points to an image hosted at a complete web address.
 ![Example Image](https://example.com/images/banner.png)
 ```
 
-### When to Use
+### 🖆 When to Use
 
 Use absolute URLs when:
 
@@ -109,7 +109,7 @@ Inside `README.md`:
 ![Project Logo](images/logo.png)
 ```
 
-### Image from a Subdirectory
+### 🖆 Image from a Subdirectory
 
 Inside `docs/installation.md`:
 
@@ -117,7 +117,7 @@ Inside `docs/installation.md`:
 ![Installation Screenshot](../images/dashboard.png)
 ```
 
-### Image from the Same Directory
+### 🖆 Image from the Same Directory
 
 If an image is in the same directory as the Markdown file:
 
@@ -125,7 +125,7 @@ If an image is in the same directory as the Markdown file:
 ![Screenshot](screenshot.png)
 ```
 
-**💡 Important**
+**💡 IMPORTANT**
 
 Relative paths are generally preferable for images stored inside your project repository.
 
@@ -141,7 +141,7 @@ Alternative text describes the content or purpose of an image.
 ![Network topology showing three routers connected to a central switch](images/network-topology.png)
 ```
 
-### Why Alt Text Matters
+### 🖆 Why Alt Text Matters
 
 1. Improves accessibility.
 2. Helps screen readers describe images.
@@ -149,7 +149,7 @@ Alternative text describes the content or purpose of an image.
 4. Makes documentation more understandable.
 5. Improves the quality of technical documentation.
 
-### Good vs Poor Alt Text
+### 🖆 Good vs Poor Alt Text
 
 Poor:
 
@@ -204,13 +204,13 @@ Standard Markdown image syntax does not provide a portable way to specify image 
 
 Some Markdown processors support embedded HTML.
 
-### Using HTML Width
+### 🖆 Using HTML Width
 
 ```html
 <img src="images/logo.png" alt="Company Logo" width="200">
 ```
 
-### Using HTML Width and Height
+### 🖆 Using HTML Width and Height
 
 ```html
 <img
@@ -221,7 +221,7 @@ Some Markdown processors support embedded HTML.
 >
 ```
 
-### Responsive Image
+### 🖆 Responsive Image
 
 ```html
 <img
@@ -251,7 +251,7 @@ You can combine image syntax with link syntax to make an image clickable.
 
 When a user clicks the image, the browser navigates to GitHub.
 
-### Common Use Cases
+### 🖆 Common Use Cases
 
 * Project badges
 * Website previews
@@ -286,7 +286,7 @@ my-project/
         └── workflow.svg
 ```
 
-### Referencing Images from README.md
+### 🖆 Referencing Images from README.md
 
 ```markdown
 # My Project
@@ -302,7 +302,7 @@ my-project/
 ![System Architecture](assets/images/architecture.png)
 ```
 
-### Referencing Images from docs/guide.md
+### 🖆 Referencing Images from docs/guide.md
 
 ```markdown
 ![Project Screenshot](../assets/images/screenshot.png)
@@ -330,7 +330,7 @@ Standard Markdown does not define image alignment controls.
 
 You can use HTML where supported.
 
-### Center Alignment
+### 🖆 Center Alignment
 
 ```html
 <p align="center">
@@ -338,7 +338,7 @@ You can use HTML where supported.
 </p>
 ```
 
-### Left Alignment
+### 🖆 Left Alignment
 
 ```html
 <p align="left">
@@ -346,7 +346,7 @@ You can use HTML where supported.
 </p>
 ```
 
-### Right Alignment
+### 🖆 Right Alignment
 
 ```html
 <p align="right">
@@ -375,6 +375,17 @@ Common use cases:
 
 # 🖆 Best Practices
 
+1. Use lowercase filenames.
+2. Separate words using hyphens.
+3. Use descriptive filenames.
+4. Keep images in dedicated directories.
+5. Prefer relative paths for repository assets.
+6. Optimize large images.
+7. Write meaningful alternative text.
+8. Avoid unnecessary duplicate images.
+9. Verify image paths before publishing.
+10. Use appropriate formats for the content.
+
 Use descriptive filenames and organized directories.
 
 Recommended:
@@ -397,16 +408,3 @@ images/
 ├── final2.png
 └── screenshot123.png
 ```
-
----
-
-1. Use lowercase filenames.
-2. Separate words using hyphens.
-3. Use descriptive filenames.
-4. Keep images in dedicated directories.
-5. Prefer relative paths for repository assets.
-6. Optimize large images.
-7. Write meaningful alternative text.
-8. Avoid unnecessary duplicate images.
-9. Verify image paths before publishing.
-10. Use appropriate formats for the content.

@@ -64,7 +64,7 @@ The separator row must contain at least three hyphens per column in standard GFM
 
 Markdown tables support three types of column alignment.
 
-### Left Alignment
+### 🖆 Left Alignment
 
 Use a colon at the beginning of the separator.
 
@@ -75,7 +75,7 @@ Use a colon at the beginning of the separator.
 | Karim | HR |
 ```
 
-### Center Alignment
+### 🖆 Center Alignment
 
 Use colons at both ends.
 
@@ -86,7 +86,7 @@ Use colons at both ends.
 | Karim | HR |
 ```
 
-### Right Alignment
+### 🖆 Right Alignment
 
 Use a colon at the end.
 
@@ -97,7 +97,7 @@ Use a colon at the end.
 | Monitor | 18000 |
 ```
 
-### Alignment Reference
+### 🖆 Alignment Reference
 
 | Syntax | Alignment |
 |--------|-----------|
@@ -116,7 +116,7 @@ Use a colon at the end.
 
 Markdown tables support many inline formatting elements.
 
-### Bold Text
+### 🖆 Bold Text
 
 ```markdown
 | Name | Status |
@@ -125,7 +125,7 @@ Markdown tables support many inline formatting elements.
 | Karim | **Inactive** |
 ```
 
-### Italic Text
+### 🖆 Italic Text
 
 ```markdown
 | Technology | Description |
@@ -134,7 +134,7 @@ Markdown tables support many inline formatting elements.
 | *CSS* | Styling language |
 ```
 
-### Strikethrough
+### 🖆 Strikethrough
 
 ```markdown
 | Task | Status |
@@ -143,7 +143,7 @@ Markdown tables support many inline formatting elements.
 | Testing | Completed |
 ```
 
-### Inline Code
+### 🖆 Inline Code
 
 ```markdown
 | Command | Description |
@@ -152,7 +152,7 @@ Markdown tables support many inline formatting elements.
 | `npm install` | Install dependencies |
 ```
 
-### Combining Formatting
+### 🖆 Combining Formatting
 
 ```markdown
 | Feature | Description |
@@ -267,7 +267,7 @@ Output
 
 When Markdown table syntax is insufficient, HTML tables can provide additional control.
 
-### Example
+### 🖆 Example
 
 ```html
 <table>

@@ -93,7 +93,7 @@ git commit -m "Update project documentation and application logic"
 
 Only the staged versions are included in that commit.
 
-### Why the Staging Area Matters
+### 🖆 Why the Staging Area Matters
 
 * Allows selective commits.
 * Helps separate unrelated changes.
@@ -105,7 +105,7 @@ Only the staged versions are included in that commit.
 
 Git classifies files based on whether they are already tracked by the repository.
 
-### Untracked Files
+### 🖆 Untracked Files
 
 An untracked file exists in the working tree but is not currently tracked by Git.
 
@@ -129,7 +129,7 @@ Start tracking it by staging:
 git add notes.txt
 ```
 
-### Tracked Files
+### 🖆 Tracked Files
 
 A tracked file is known to Git.
 
@@ -139,7 +139,7 @@ Tracked files can be:
 * Modified
 * Staged for the next commit
 
-### File Status Overview
+### 🖆 File Status Overview
 
 | File State | Meaning |
 | --- | --- |
@@ -148,7 +148,7 @@ Tracked files can be:
 | Modified | Tracked file has unstaged changes |
 | Staged | Changes are prepared for the next commit |
 
-### Important Distinction
+### 🖆 Important Distinction
 
 A file becomes tracked when it is added to Git's index.
 
@@ -224,7 +224,7 @@ It is especially useful when a file contains unrelated modifications.
 
 Git provides several commands for reviewing changes before committing.
 
-### Check Repository Status
+### 🖆 Check Repository Status
 
 ```bash
 git status
@@ -232,7 +232,7 @@ git status
 
 Displays staged, unstaged, and untracked changes.
 
-### Show Unstaged Changes
+### 🖆 Show Unstaged Changes
 
 ```bash
 git diff
@@ -242,7 +242,7 @@ Compares the working tree against the staging area.
 
 It shows modifications that have not yet been staged.
 
-### Show Staged Changes
+### 🖆 Show Staged Changes
 
 ```bash
 git diff --staged
@@ -256,7 +256,7 @@ The following command is equivalent:
 git diff --cached
 ```
 
-### Show Changes Between Working Tree and Last Commit
+### 🖆 Show Changes Between Working Tree and Last Commit
 
 ```bash
 git diff HEAD
@@ -264,7 +264,7 @@ git diff HEAD
 
 Displays differences between the current working tree and the current commit, including staged and unstaged tracked-file changes.
 
-### Show a Summary of Changes
+### 🖆 Show a Summary of Changes
 
 ```bash
 git diff --stat
@@ -272,7 +272,7 @@ git diff --stat
 
 Displays a summary of modified files and line changes.
 
-### Show Changed Filenames
+### 🖆 Show Changed Filenames
 
 ```bash
 git diff --name-only
@@ -280,7 +280,7 @@ git diff --name-only
 
 Lists filenames with differences.
 
-### Show Staged Filenames
+### 🖆 Show Staged Filenames
 
 ```bash
 git diff --staged --name-only
@@ -313,7 +313,7 @@ Sometimes you stage files accidentally or decide that certain changes should not
 
 Git provides commands to remove changes from the staging area without necessarily discarding them from the working tree.
 
-### Unstage a Specific File
+### 🖆 Unstage a Specific File
 
 ```bash
 git restore --staged README.md
@@ -321,7 +321,7 @@ git restore --staged README.md
 
 The file becomes unstaged, but its working-tree modifications remain.
 
-### Unstage All Staged Changes
+### 🖆 Unstage All Staged Changes
 
 ```bash
 git restore --staged .
@@ -329,7 +329,7 @@ git restore --staged .
 
 Removes staged changes from the index while preserving the working-tree files.
 
-### Alternative: Use git reset
+### 🖆 Alternative: Use git reset
 
 ```bash
 git reset HEAD README.md
@@ -337,7 +337,7 @@ git reset HEAD README.md
 
 This unstages the file while preserving its working-tree modifications.
 
-### Important Distinction
+### 🖆 Important Distinction
 
 | Command | Effect |
 | --- | --- |
@@ -363,7 +363,7 @@ Each commit contains:
 
 Git commits form a history through parent-child relationships.
 
-### Commit Structure
+### 🖆 Commit Structure
 
 ```text
 Commit
@@ -377,7 +377,7 @@ Commit
 └── Commit Message
 ```
 
-### Commit History
+### 🖆 Commit History
 
 A typical commit history looks like:
 
@@ -394,7 +394,7 @@ Each commit points to its parent.
 
 This structure allows Git to reconstruct project history.
 
-### Important Properties
+### 🖆 Important Properties
 
 * Commits are identified by object IDs.
 * Commits are immutable objects.
@@ -406,14 +406,14 @@ This structure allows Git to reconstruct project history.
 
 The `git commit` command records staged changes in repository history.
 
-### Create a Commit
+### 🖆 Create a Commit
 
 ```bash
 git add README.md
 git commit -m "Add project documentation"
 ```
 
-### Commit All Modified Tracked Files
+### 🖆 Commit All Modified Tracked Files
 
 ```bash
 git commit -a -m "Update application files"
@@ -423,7 +423,7 @@ The `-a` option automatically stages modifications and deletions to tracked file
 
 It does not automatically stage new untracked files.
 
-### Open the Commit Message Editor
+### 🖆 Open the Commit Message Editor
 
 ```bash
 git commit
@@ -431,7 +431,7 @@ git commit
 
 Git opens the configured editor so you can write a commit message.
 
-### Create an Empty Commit
+### 🖆 Create an Empty Commit
 
 ```bash
 git commit --allow-empty -m "Trigger deployment"
@@ -441,7 +441,7 @@ This creates a commit without staged file changes.
 
 It can be useful for triggering automation or recording an event.
 
-### Sign a Commit
+### 🖆 Sign a Commit
 
 ```bash
 git commit -S -m "Add signed commit"
@@ -449,7 +449,7 @@ git commit -S -m "Add signed commit"
 
 This creates a cryptographically signed commit using the configured signing key.
 
-### Commit with a Specific Author
+### 🖆 Commit with a Specific Author
 
 ```bash
 git -c user.name="Developer Name" \
@@ -467,7 +467,7 @@ A commit message describes the purpose of a change.
 
 Good commit messages make repository history easier to understand.
 
-### Recommended Structure
+### 🖆 Recommended Structure
 
 ```text
 Short summary of the change
@@ -478,7 +478,7 @@ Optional detailed explanation of:
 - Important implementation details
 ```
 
-### Good Commit Messages
+### 🖆 Good Commit Messages
 
 ```text
 Add user authentication
@@ -488,7 +488,7 @@ Refactor database connection logic
 Add pagination to product listing
 ```
 
-### Poor Commit Messages
+### 🖆 Poor Commit Messages
 
 ```text
 update
@@ -501,7 +501,7 @@ final
 
 These messages do not communicate the purpose of the changes.
 
-### Conventional Commit Format
+### 🖆 Conventional Commit Format
 
 A widely used commit-message convention is Conventional Commits.
 
@@ -535,7 +535,7 @@ git commit -m "docs: update installation guide"
 git commit -m "refactor(user): simplify profile validation"
 ```
 
-### Breaking Changes
+### 🖆 Breaking Changes
 
 Conventional Commits can communicate breaking changes using `!`:
 
@@ -549,7 +549,7 @@ A detailed description can also include a `BREAKING CHANGE:` footer.
 
 Git provides several commands for viewing repository history.
 
-### Show Commit History
+### 🖆 Show Commit History
 
 ```bash
 git log
@@ -557,7 +557,7 @@ git log
 
 Displays detailed commit history.
 
-### Compact Commit History
+### 🖆 Compact Commit History
 
 ```bash
 git log --oneline
@@ -565,7 +565,7 @@ git log --oneline
 
 Displays one line per commit.
 
-### Show Graphical Commit History
+### 🖆 Show Graphical Commit History
 
 ```bash
 git log --oneline --graph --all
@@ -573,19 +573,19 @@ git log --oneline --graph --all
 
 Displays a compact graph of commits across available references.
 
-### Show the Latest Commit
+### 🖆 Show the Latest Commit
 
 ```bash
 git log -1
 ```
 
-### Show the Latest Commit in One Line
+### 🖆 Show the Latest Commit in One Line
 
 ```bash
 git log -1 --oneline
 ```
 
-### Show Commit Statistics
+### 🖆 Show Commit Statistics
 
 ```bash
 git log --stat
@@ -593,7 +593,7 @@ git log --stat
 
 Displays changed files and line statistics for commits.
 
-### Show Commit Details
+### 🖆 Show Commit Details
 
 ```bash
 git show HEAD
@@ -601,25 +601,25 @@ git show HEAD
 
 Displays the latest commit's metadata and changes.
 
-### Show a Specific Commit
+### 🖆 Show a Specific Commit
 
 ```bash
 git show <commit-hash>
 ```
 
-### Show Commit History for a File
+### 🖆 Show Commit History for a File
 
 ```bash
 git log -- README.md
 ```
 
-### Show File History with Changes
+### 🖆 Show File History with Changes
 
 ```bash
 git log -p -- README.md
 ```
 
-### Limit the Number of Commits
+### 🖆 Limit the Number of Commits
 
 ```bash
 git log -5
@@ -627,19 +627,19 @@ git log -5
 
 Displays the latest five commits.
 
-### Filter by Author
+### 🖆 Filter by Author
 
 ```bash
 git log --author="Developer Name"
 ```
 
-### Filter by Commit Message
+### 🖆 Filter by Commit Message
 
 ```bash
 git log --grep="authentication"
 ```
 
-### Filter by Date
+### 🖆 Filter by Date
 
 ```bash
 git log --since="2026-01-01" --until="2026-12-31"
@@ -649,11 +649,11 @@ git log --since="2026-01-01" --until="2026-12-31"
 
 Every commit contains metadata describing who created the change and who recorded it.
 
-### Author
+### 🖆 Author
 
 The author is the person who originally wrote the changes.
 
-### Committer
+### 🖆 Committer
 
 The committer is the person who created the commit object.
 
@@ -661,37 +661,37 @@ In ordinary commits, the author and committer are usually the same person.
 
 They can differ when commits are applied, cherry-picked, rebased, or otherwise recreated by another person.
 
-### Inspect Commit Metadata
+### 🖆 Inspect Commit Metadata
 
 ```bash
 git show --format=fuller HEAD
 ```
 
-### Show Author Information
+### 🖆 Show Author Information
 
 ```bash
 git log -1 --format="%an <%ae>"
 ```
 
-### Show Committer Information
+### 🖆 Show Committer Information
 
 ```bash
 git log -1 --format="%cn <%ce>"
 ```
 
-### Show Commit Hash
+### 🖆 Show Commit Hash
 
 ```bash
 git rev-parse HEAD
 ```
 
-### Show Commit Date
+### 🖆 Show Commit Date
 
 ```bash
 git log -1 --format="%cd"
 ```
 
-### Common Format Placeholders
+### 🖆 Common Format Placeholders
 
 | Placeholder | Meaning |
 | --- | --- |
@@ -717,13 +717,13 @@ The `git commit --amend` command replaces the latest commit with a new commit.
 
 It is commonly used to correct a commit message or include forgotten changes.
 
-### Change the Latest Commit Message
+### 🖆 Change the Latest Commit Message
 
 ```bash
 git commit --amend -m "Correct commit message"
 ```
 
-### Add Forgotten Changes to the Latest Commit
+### 🖆 Add Forgotten Changes to the Latest Commit
 
 ```bash
 git add forgotten-file.js
@@ -732,13 +732,13 @@ git commit --amend --no-edit
 
 The `--no-edit` option keeps the existing commit message.
 
-### Change the Author
+### 🖆 Change the Author
 
 ```bash
 git commit --amend --author="Developer Name <developer@example.com>"
 ```
 
-### Important
+### 🖆 Important
 
 Amending a commit creates a replacement commit with a different object ID.
 
@@ -748,19 +748,19 @@ Avoid amending commits that have already been shared with others unless you unde
 
 Git provides several commands to compare changes between commits and repository states.
 
-### Compare Working Tree with Staging Area
+### 🖆 Compare Working Tree with Staging Area
 
 ```bash
 git diff
 ```
 
-### Compare Staging Area with Latest Commit
+### 🖆 Compare Staging Area with Latest Commit
 
 ```bash
 git diff --staged
 ```
 
-### Compare Two Commits
+### 🖆 Compare Two Commits
 
 ```bash
 git diff <commit-1> <commit-2>
@@ -774,7 +774,7 @@ git diff HEAD~1 HEAD
 
 Compares the previous commit with the current commit.
 
-### Compare Two Branches
+### 🖆 Compare Two Branches
 
 ```bash
 git diff main development
@@ -782,19 +782,19 @@ git diff main development
 
 Shows the differences between the tips of the two branches.
 
-### Compare a Specific File Between Commits
+### 🖆 Compare a Specific File Between Commits
 
 ```bash
 git diff HEAD~1 HEAD -- README.md
 ```
 
-### Compare Commit Statistics
+### 🖆 Compare Commit Statistics
 
 ```bash
 git diff --stat HEAD~1 HEAD
 ```
 
-### Understand HEAD~ and HEAD^
+### 🖆 Understand HEAD~ and HEAD^
 
 For a commit with a single parent:
 
@@ -808,7 +808,7 @@ For merge commits, parent selection matters. `HEAD^2` refers to the second paren
 
 Git provides different commands for deleting files from the working tree and repository index.
 
-### Remove a File from Git and Working Tree
+### 🖆 Remove a File from Git and Working Tree
 
 ```bash
 git rm README.md
@@ -822,7 +822,7 @@ Commit the deletion:
 git commit -m "Remove outdated documentation"
 ```
 
-### Remove a File from Git Tracking but Keep It Locally
+### 🖆 Remove a File from Git Tracking but Keep It Locally
 
 ```bash
 git rm --cached config.local.json
@@ -834,13 +834,13 @@ This is useful when a file was accidentally tracked and should no longer be incl
 
 Add it to `.gitignore` if it should remain untracked.
 
-### Remove a Directory
+### 🖆 Remove a Directory
 
 ```bash
 git rm -r old-directory/
 ```
 
-### Important
+### 🖆 Important
 
 Removing a file from tracking does not remove it from previous commits.
 
@@ -859,7 +859,7 @@ It is commonly used for:
 * Environment-specific configuration.
 * Editor-generated files.
 
-### Create a `.gitignore` File
+### 🖆 Create a `.gitignore` File
 
 ```bash
 touch .gitignore
@@ -890,7 +890,7 @@ build/
 Thumbs.db
 ```
 
-### Important Rules
+### 🖆 Important Rules
 
 * `.gitignore` does not affect files already tracked by Git.
 * Patterns can match files and directories.
@@ -898,7 +898,7 @@ Thumbs.db
 * A trailing slash specifies a directory pattern.
 * `!` can negate an ignore pattern, with some parent-directory limitations.
 
-### Stop Tracking an Already Tracked File
+### 🖆 Stop Tracking an Already Tracked File
 
 ```bash
 git rm --cached .env
@@ -917,7 +917,7 @@ git add .gitignore
 git commit -m "Stop tracking environment configuration"
 ```
 
-### Inspect Ignore Rules
+### 🖆 Inspect Ignore Rules
 
 ```bash
 git check-ignore -v .env
@@ -927,7 +927,7 @@ This shows which ignore rule matches the specified path.
 
 # 🗁 Advanced Staging Techniques
 
-### Stage Individual Changes
+### 🖆 Stage Individual Changes
 
 ```bash
 git add -p
@@ -949,31 +949,31 @@ Common responses include:
 
 This is useful when a single file contains multiple unrelated changes.
 
-### Stage a Specific Patch
+### 🖆 Stage a Specific Patch
 
 ```bash
 git add -p README.md
 ```
 
-### Stage an Entire File
+### 🖆 Stage an Entire File
 
 ```bash
 git add README.md
 ```
 
-### Stage All Changes
+### 🖆 Stage All Changes
 
 ```bash
 git add -A
 ```
 
-### Stage Only Tracked Changes
+### 🖆 Stage Only Tracked Changes
 
 ```bash
 git add -u
 ```
 
-### Commit Only Selected Files
+### 🖆 Commit Only Selected Files
 
 ```bash
 git commit README.md -m "Update documentation"
@@ -1000,7 +1000,7 @@ For most workflows, explicitly staging changes and then using `git commit` is ea
 
 # 🖆 Common Problems and Troubleshooting
 
-### Nothing to Commit
+### 🖆 Nothing to Commit
 
 Message:
 
@@ -1020,7 +1020,7 @@ git status
 
 Make changes or stage existing changes before committing.
 
-### Changes Not Included in Commit
+### 🖆 Changes Not Included in Commit
 
 Cause:
 
@@ -1035,7 +1035,7 @@ git diff --staged
 git commit -m "Update files"
 ```
 
-### Accidentally Staged a File
+### 🖆 Accidentally Staged a File
 
 Solution:
 
@@ -1045,7 +1045,7 @@ git restore --staged <file>
 
 This preserves the file's working-tree changes.
 
-### Accidentally Staged a Secret
+### 🖆 Accidentally Staged a Secret
 
 If the secret has not been committed:
 
@@ -1057,7 +1057,7 @@ Then add it to `.gitignore`.
 
 If the secret has already been committed or pushed, removing it from the latest snapshot is not sufficient. Rotate the exposed credential and follow an appropriate history-cleanup process.
 
-### Commit Message Is Incorrect
+### 🖆 Commit Message Is Incorrect
 
 If the commit is the latest commit and has not been shared:
 
@@ -1065,7 +1065,7 @@ If the commit is the latest commit and has not been shared:
 git commit --amend -m "Correct message"
 ```
 
-### New Files Are Not Included by `git commit -a`
+### 🖆 New Files Are Not Included by `git commit -a`
 
 Cause:
 
@@ -1078,7 +1078,7 @@ git add new-file.js
 git commit -m "Add new file"
 ```
 
-### File Is Still Being Tracked Despite `.gitignore`
+### 🖆 File Is Still Being Tracked Despite `.gitignore`
 
 Cause:
 
@@ -1094,7 +1094,7 @@ Then commit the change.
 
 # 🖆 Practical Exercises
 
-### Exercise: Create Your First Commit
+### 🖆 Exercise: Create Your First Commit
 
 Create a repository:
 
@@ -1125,7 +1125,7 @@ git status
 git log --oneline
 ```
 
-### Exercise: Stage Selected Files
+### 🖆 Exercise: Stage Selected Files
 
 Create multiple files:
 
@@ -1156,7 +1156,7 @@ git commit -m "feat: add application and styles"
 
 Observe that `notes.md` remains untracked.
 
-### Exercise: Practice Unstaging
+### 🖆 Exercise: Practice Unstaging
 
 Modify a tracked file:
 
@@ -1179,7 +1179,7 @@ git status
 
 The modification should remain in the working tree.
 
-### Exercise: Practice Partial Staging
+### 🖆 Exercise: Practice Partial Staging
 
 Add two separate changes to the same file.
 
@@ -1203,7 +1203,7 @@ git diff
 git diff --staged
 ```
 
-### Exercise: Amend a Commit
+### 🖆 Exercise: Amend a Commit
 
 Create a commit:
 
@@ -1232,7 +1232,7 @@ Inspect the result:
 git log --oneline -3
 ```
 
-### Exercise: Work with `.gitignore`
+### 🖆 Exercise: Work with `.gitignore`
 
 Create a file:
 
@@ -1257,7 +1257,7 @@ git check-ignore -v .env
 
 # 🖆 Interview Questions
 
-### Beginner
+### 🖆 Beginner
 
 **What is the Git staging area?**
 
@@ -1279,7 +1279,7 @@ Staged changes are prepared for the next commit. Unstaged changes exist in the w
 
 It displays the current branch and the state of tracked, untracked, staged, and unstaged changes.
 
-### Intermediate
+### 🖆 Intermediate
 
 **What is the difference between git add . and git add -A?**
 
@@ -1301,7 +1301,7 @@ It replaces the latest commit, commonly to correct its message or include additi
 
 The author originally wrote the changes. The committer created the commit object.
 
-### Advanced
+### 🖆 Advanced
 
 **What is Git's index?**
 
@@ -1326,3 +1326,25 @@ Amending changes commit identity and rewrites history. This can create synchroni
 **What is the difference between git restore --staged and git restore?**
 
 `git restore --staged` unstages changes. `git restore` can discard unstaged working-tree changes.
+
+# 🖆 RESOURCES & REFERENCES
+
+> Explore the documentation, tools, guides, and references behind the topic.
+
+**Official Git Documentation**
+
+* [Git Documentation](https://git-scm.com/docs)
+* [git-add](https://git-scm.com/docs/git-add)
+* [git-status](https://git-scm.com/docs/git-status)
+* [git-diff](https://git-scm.com/docs/git-diff)
+* [git-commit](https://git-scm.com/docs/git-commit)
+* [git-log](https://git-scm.com/docs/git-log)
+* [git-show](https://git-scm.com/docs/git-show)
+* [git-restore](https://git-scm.com/docs/git-restore)
+* [git-rm](https://git-scm.com/docs/git-rm)
+* [gitignore](https://git-scm.com/docs/gitignore)
+
+**Additional Learning**
+
+* [Pro Git — Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+* [Conventional Commits](https://www.conventionalcommits.org/)

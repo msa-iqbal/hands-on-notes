@@ -52,7 +52,7 @@ It generally includes:
 [GitHub Documentation](https://docs.github.com)
 ```
 
-### When to Use
+### 🖆 When to Use
 
 Use absolute URLs when linking to external websites or resources.
 
@@ -81,13 +81,13 @@ project/
     └── sample.md
 ```
 
-### Link to a File in the Same Directory
+### 🖆 Link to a File in the Same Directory
 
 ```markdown
 [Installation Guide](installation.md)
 ```
 
-### Link to a File in a Subdirectory
+### 🖆 Link to a File in a Subdirectory
 
 From `README.md`:
 
@@ -95,7 +95,7 @@ From `README.md`:
 [Installation Guide](docs/installation.md)
 ```
 
-### Link to a Parent Directory
+### 🖆 Link to a Parent Directory
 
 From `docs/installation.md`:
 
@@ -103,7 +103,7 @@ From `docs/installation.md`:
 [Project README](../README.md)
 ```
 
-### Link to a File in Another Directory
+### 🖆 Link to a File in Another Directory
 
 From `docs/installation.md`:
 
@@ -111,13 +111,13 @@ From `docs/installation.md`:
 [Sample File](../examples/sample.md)
 ```
 
-### Link to an Image File
+### 🖆 Link to an Image File
 
 ```markdown
 [View Logo](../images/logo.png)
 ```
 
-### When to Use
+### 🖆 When to Use
 
 Relative URLs are recommended for internal project documentation because they usually remain valid when the project is moved or cloned.
 
@@ -170,7 +170,7 @@ You can learn web development from [MDN][mdn].
 [mdn]: https://developer.mozilla.org
 ```
 
-### Shortcut Reference Links
+### 🖆 Shortcut Reference Links
 
 When the reference label matches the link text, you can use:
 
@@ -180,7 +180,7 @@ When the reference label matches the link text, you can use:
 [GitHub]: https://github.com
 ```
 
-### Collapsed Reference Links
+### 🖆 Collapsed Reference Links
 
 You can also omit the reference label from the link:
 
@@ -226,7 +226,7 @@ Functions organize reusable code.
 [Go to Functions](#functions)
 ```
 
-### Common GitHub Anchor Rules
+### 🖆 Common GitHub Anchor Rules
 
 GitHub commonly generates heading anchors by:
 
@@ -282,7 +282,7 @@ documentation/
     └── examples.md
 ```
 
-### Links from README.md
+### 🖆 Links from README.md
 
 ```markdown
 # Documentation
@@ -317,7 +317,7 @@ You can create clickable email addresses using the `mailto:` protocol.
 [Contact Support](mailto:support@example.com)
 ```
 
-### Email with Subject
+### 🖆 Email with Subject
 
 ```markdown
 [Send Feedback](mailto:feedback@example.com?subject=Website%20Feedback)
@@ -401,19 +401,19 @@ GitHub Flavored Markdown additionally supports extended autolinking for many bar
 
 You can apply inline formatting to link text.
 
-### Bold Link
+### 🖆 Bold Link
 
 ```markdown
 [**GitHub**](https://github.com)
 ```
 
-### Italic Link
+### 🖆 Italic Link
 
 ```markdown
 [*MDN Documentation*](https://developer.mozilla.org)
 ```
 
-### Combined Link
+### 🖆 Combined Link
 
 ```markdown
 [***Web Development Guide***](https://developer.mozilla.org)
@@ -423,19 +423,19 @@ You can apply inline formatting to link text.
 
 GitHub allows you to link to particular files and line ranges in repositories.
 
-### Link to a Repository File
+### 🖆 Link to a Repository File
 
 ```markdown
 [View Source Code](https://github.com/username/repository/blob/main/README.md)
 ```
 
-### Link to a Specific Line
+### 🖆 Link to a Specific Line
 
 ```markdown
 [View Line 10](https://github.com/username/repository/blob/main/README.md#L10)
 ```
 
-### Link to a Line Range
+### 🖆 Link to a Line Range
 
 ```markdown
 [View Lines 10-20](https://github.com/username/repository/blob/main/README.md#L10-L20)
