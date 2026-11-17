@@ -36,16 +36,16 @@ Each topic is separated into focused notes for easier learning and reference.
 
 ## Focus
 
-- TypeScript fundamentals
-- Static typing and type inference
-- Functions, objects, interfaces, and classes
-- Generics and utility types
-- Type narrowing and advanced types
-- Modules and configuration
-- JavaScript interoperability
-- Modern TypeScript tooling
-- Testing and type testing
-- Large-project patterns and performance
+* TypeScript fundamentals
+* Static typing and type inference
+* Functions, objects, interfaces, and classes
+* Generics and utility types
+* Type narrowing and advanced types
+* Modules and configuration
+* JavaScript interoperability
+* Modern TypeScript tooling
+* Testing and type testing
+* Large-project patterns and performance
 
 ## Goal
 

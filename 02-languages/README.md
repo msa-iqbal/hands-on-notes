@@ -19,22 +19,22 @@ Language-specific notes should remain in their respective directories, while con
 
 ## Focus
 
-- Programming language fundamentals
-- Syntax and language features
-- Variables and data types
-- Operators and expressions
-- Control flow
-- Functions
-- Object-oriented programming
-- Memory management
-- Data structures
-- Error handling
-- Modules and packages
-- Concurrency and asynchronous programming
-- Standard libraries
-- Language tooling
-- Advanced language features
-- Practical programming examples
+* Programming language fundamentals
+* Syntax and language features
+* Variables and data types
+* Operators and expressions
+* Control flow
+* Functions
+* Object-oriented programming
+* Memory management
+* Data structures
+* Error handling
+* Modules and packages
+* Concurrency and asynchronous programming
+* Standard libraries
+* Language tooling
+* Advanced language features
+* Practical programming examples
 
 ## Goal
 

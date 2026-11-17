@@ -46,19 +46,65 @@ _This is a concise master table that provides easy access to various tables of c
 
 ## 🗁 03-DOCUMENTATION/
 
+#### [🗁 03-DOCUMENTATION](../20-resources/03-documentation/)
+
 * [🗁 03-DOCUMENTATION/](../20-resources/03-documentation/)
   * [README.md](../20-resources/03-documentation/README.md)
-  * [01-programming-languages.md](../20-resources/03-documentation/01-programming-languages.md)
-  * [02-frontend.md](../20-resources/03-documentation/02-frontend.md)
-  * [03-backend.md](../20-resources/03-documentation/03-backend.md)
-  * [04-databases.md](../20-resources/03-documentation/04-databases.md)
-  * [05-devops.md](../20-resources/03-documentation/05-devops.md)
-  * [06-cloud.md](../20-resources/03-documentation/06-cloud.md)
-  * [07-operating-systems.md](../20-resources/03-documentation/07-operating-systems.md)
-  * [08-networking.md](../20-resources/03-documentation/08-networking.md)
-  * [09-security.md](../20-resources/03-documentation/09-security.md)
-  * [10-frameworks.md](../20-resources/03-documentation/10-frameworks.md)
-  * [11-tools.md](../20-resources/03-documentation/11-tools.md)
+
+#### [🗁 03-DOCUMENTATION/01-PROGRAMMING-LANGUAGES/](../20-resources/03-documentation/01-programming-languages/)
+
+* [🗁 03-DOCUMENTATION/01-PROGRAMMING-LANGUAGES/](../20-resources/03-documentation/01-programming-languages/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/02-FRONTEND/](../20-resources/03-documentation/02-frontend/)
+
+* [🗁 03-DOCUMENTATION/02-FRONTEND/](../20-resources/03-documentation/02-frontend/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/03-BACKEND/](../20-resources/03-documentation/03-backend/)
+
+* [🗁 03-DOCUMENTATION/03-BACKEND/](../20-resources/03-documentation/03-backend/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/04-DATABASES/](../20-resources/03-documentation/04-databases/)
+
+* [🗁 03-DOCUMENTATION/04-DATABASES/](../20-resources/03-documentation/04-databases/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/05-DEVOPS/](../20-resources/03-documentation/05-devops/)
+
+* [🗁 03-DOCUMENTATION/05-DEVOPS/](../20-resources/03-documentation/05-devops/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/06-CLOUD/](../20-resources/03-documentation/06-cloud/)
+
+* [🗁 03-DOCUMENTATION/06-CLOUD/](../20-resources/03-documentation/06-cloud/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/07-OPERATING-SYSTEMS/](../20-resources/03-documentation/07-operating-systems/)
+
+* [🗁 03-DOCUMENTATION/07-OPERATING-SYSTEMS/](../20-resources/03-documentation/07-operating-systems/)
+  * [01-remove-forgotten-pdf-password-protection-gnu-linux.md](../20-resources/03-documentation/07-operating-systems/01-remove-forgotten-pdf-password-protection-gnu-linux.md) 🗎 2026.11.15
+
+#### [🗁 03-DOCUMENTATION/08-NETWORKING/](../20-resources/03-documentation/08-networking/)
+
+* [🗁 03-DOCUMENTATION/08-NETWORKING/](../20-resources/03-documentation/08-networking/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/09-SECURITY/](../20-resources/03-documentation/09-security/)
+
+* [🗁 03-DOCUMENTATION/09-SECURITY/](../20-resources/03-documentation/09-security/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/10-FRAMEWORKS/](../20-resources/03-documentation/10-frameworks/)
+
+* [🗁 03-DOCUMENTATION/10-FRAMEWORKS/](../20-resources/03-documentation/10-frameworks/)
+  * [README.md](../20-resources/03-documentation/README.md)
+
+#### [🗁 03-DOCUMENTATION/11-TOOLS/](../20-resources/03-documentation/11-tools/)
+
+* [🗁 03-DOCUMENTATION/11-TOOLS/](../20-resources/03-documentation/11-tools/)
+  * [README.md](../20-resources/03-documentation/README.md)
 
 ## 🗁 04-TOOLS/
 

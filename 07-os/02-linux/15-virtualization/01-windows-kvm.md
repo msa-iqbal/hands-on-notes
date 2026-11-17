@@ -20,36 +20,7 @@ Note: Windows 10 support ended on October 14, 2025. For a new VM in 2026, Window
 
 The final environment will look like this:
 
-```text
-┌──────────────────────────────────────────────────┐
-│                (Ubuntu 26.04 Host)               │
-│                                                  │
-│  ┌────────────────────────────────────────────┐  │
-│  │           (Virtual Machine Manager)        │  │
-│  │                                            │  │
-│  │                virt-manager                │  │
-│  │                     │                      │  │
-│  │                  libvirt                   │  │
-│  │                     │                      │  │
-│  │                    QEMU                    │  │
-│  │                     │                      │  │
-│  │                    KVM                     │  │
-│  │                     │                      │  │
-│  │       ┌────────────────────────────┐       │  │
-│  │       │       Windows 10/11        │       │  │
-│  │       │                            │       │  │
-│  │       │  4 vCPU                    │       │  │
-│  │       │  6 GB RAM                  │       │  │
-│  │       │  VirtIO Disk               │       │  │
-│  │       │  VirtIO Network            │       │  │
-│  │       │  SPICE Display             │       │  │
-│  │       │  UEFI                      │       │  │
-│  │       └────────────────────────────┘       │  │
-│  └────────────────────────────────────────────┘  │
-│                                                  │
-│                (Intel VT-x / AMD-V)              │
-└──────────────────────────────────────────────────┘
-```
+![Linux KVM/QEMU](https://res.cloudinary.com/du7tjwbyi/image/upload/v1794731574/linux-kvm-qemu_q1z0wt.jpg)
 
 The technologies have different responsibilities.
 
